@@ -1,0 +1,191 @@
+# Systems Design
+
+## Electrical and energy
+### Goals
+- Deliver workday reliability with reserve margin
+- Keep wiring safe, labeled, and serviceable
+
+### Planning snapshot (as-of `2026-02-11`)
+- Battery bank (corrected): `2x 48V 100Ah LiFePO4` from BOM row 3 (`9.6 kWh` nominal).
+- House architecture: `48V` core with `48V->12V` conversion.
+- Inverter/charger candidate: Victron MultiPlus-II `48/3000/35-50`.
+- Charge sources in current BOM: solar MPPT, Sterling alternator B2B path (factory alternator now, high-output alternator as purchase-later option), shore AC charger path.
+- Monitoring and protection: Cerbo GX, SmartShunt, battery temp sensing, Class T primary fuse + branch fusing.
+
+### Modeling rules (procurement-first plus full-load)
+- Primary procurement source of truth is `bom/bom_estimated_items.csv`.
+- Load model is maintained in `bom/load_model_wh.csv` (model v3) and includes BOM-sourced installed loads plus owner-supplied work electronics (kept out of BOM cost totals).
+- Legacy workbook WH model assumptions are retired and not used.
+
+### Input reference (maintained)
+| Input | Current value | Source |
+| --- | --- | --- |
+| Battery bank | `2x 48V 100Ah` | `bom/bom_estimated_items.csv` row 3 |
+| Inverter/charger | MultiPlus-II `48/3000/35-50` | `bom/bom_estimated_items.csv` row 12 |
+| Alternator charging | Sterling `BB1248120` (`12V/24V -> 48V`, `120A`) + `BBR` remote | `bom/bom_estimated_items.csv` rows 18 and 26 |
+| Vehicle alternator assumption (current) | Factory `240A` (user-reported) with `65%` BBR limit option for extended idle sessions | `docs/TRACKING.md` |
+| Purchase-later alternator path | Mechman 370A alternator + Big 3 wiring estimate | `bom/bom_estimated_items.csv` rows 103 and 104 |
+| DC conversion | Orion-Tr `48/12 30A` (`360W`) | `bom/bom_estimated_items.csv` row 20 |
+| Solar array candidate | `900W` flexible (`9x100W`, 3S3P) | `bom/bom_estimated_items.csv` row 24 |
+| Solar controller | SmartSolar `MPPT 150/45` | `bom/bom_estimated_items.csv` row 25 |
+| Load profiles (BOM + owner-supplied office loads) | `core_workday`, `winter_workday`, `minimal_idle_day` | `bom/load_model_wh.csv` |
+| Owner-supplied office assumptions | Laptop + 27 inch 1440p monitor + tablet/peripheral charging | `bom/load_model_wh.csv` rows marked `Owner-Supplied` |
+
+### Modeled expected usage
+Load totals below are from `bom/load_model_wh.csv` model v3 (BOM loads plus owner-supplied office loads).
+
+| Scenario | Daily energy | 5-day workweek energy | 7-day week energy | Dominant contributors |
+| --- | --- | --- | --- | --- |
+| `core_workday` | `3,530 Wh` | `17,650 Wh` | `24,710 Wh` | Laptop, monitor, Starlink, cooking, inverter idle |
+| `winter_workday` | `4,202 Wh` | `21,010 Wh` | `29,414 Wh` | Laptop, monitor, Starlink, diesel heater, cooking |
+| `minimal_idle_day` | `624 Wh` | `3,120 Wh` | `4,368 Wh` | Fridge + always-on monitoring/detector loads |
+
+### Capacity analysis (corrected battery bank)
+| Metric | Formula | Result |
+| --- | --- | --- |
+| Nominal battery energy | `48V x 100Ah x 2` | `9,600 Wh` |
+| Usable energy to 20% reserve floor | `9,600 x 0.8` | `7,680 Wh` |
+| Core day depth of discharge | `3,530 / 9,600` | `36.77%` per day |
+| Winter day depth of discharge | `4,202 / 9,600` | `43.77%` per day |
+
+### Autonomy (no charging)
+| Scenario | Days (`100% -> 20%`) |
+| --- | --- |
+| `core_workday` | `2.18` |
+| `winter_workday` | `1.83` |
+| `minimal_idle_day` | `12.31` |
+
+### Charging potential
+All values are planning-level and should be replaced with measured charge logs after shakedown tests.
+
+#### Solar charging (`900W` flexible `3S3P` focus)
+Base planning factor for your target roof setup is now `68%` end-to-end harvest efficiency, with sensitivity from `60%` (poor conditions) to `75%` (strong conditions).
+
+| Derate component | Planning factor | Note |
+| --- | --- | --- |
+| Nameplate realization | `0.95` | Manufacturing variance and real-world rating spread |
+| Thermal factor (flexible with air gap) | `0.90` | Better than bonded-flat flexible, still hotter than rigid stand-off |
+| MPPT + wiring efficiency | `0.96` | Controller and cable losses |
+| Flat-roof angle/azimuth factor | `0.88` | No seasonal tilt optimization |
+| Soiling + mismatch + partial shading allowance | `0.93` | Dirt, string mismatch, and intermittent shade impacts |
+| Combined planning factor | `~0.68` | Product of factors above |
+
+| `900W` array efficiency | 2 PSH day | 4 PSH day | 5 PSH day | Net vs `core_workday` at 4 PSH | Net vs `winter_workday` at 4 PSH |
+| --- | --- | --- | --- | --- | --- |
+| `60%` | `1,080 Wh` | `2,160 Wh` | `2,700 Wh` | `-1,370 Wh/day` | `-2,042 Wh/day` |
+| `68%` (planning base) | `1,224 Wh` | `2,448 Wh` | `3,060 Wh` | `-1,082 Wh/day` | `-1,754 Wh/day` |
+| `75%` | `1,350 Wh` | `2,700 Wh` | `3,375 Wh` | `-830 Wh/day` | `-1,502 Wh/day` |
+
+- Break-even PSH at `900W`:
+- `core_workday` (base `68%`): `3,530 / (900 x 0.68) = 5.77` PSH/day.
+- `winter_workday` (base `68%`): `4,202 / (900 x 0.68) = 6.87` PSH/day.
+- Sensitivity band for `winter_workday`: `6.23` PSH/day (`75%`) to `7.78` PSH/day (`60%`).
+- `MPPT 150/45` is not the bottleneck for the current array range.
+
+#### Alternator charging (Sterling `BB1248120` + `BBR`)
+- Charger nameplate output: up to `120A` to the `48V` bank (`~6,816W` at `56.8V`).
+- Remote-limited output case requested: `65%` cap (`78A`, `~4,430W` at `56.8V`).
+- Practical `240A` factory-alternator planning cap (assume `70A` non-house vehicle load, `14.2V` alternator voltage, `90%` conversion efficiency): `~2,173W` to house battery (`~38A` at `56.8V`).
+- Extended-idle stock-alternator strategy: use the BBR remote current limit (`~65%` baseline) unless temperature/voltage logs support a higher continuous setting.
+- Purchase-later vehicle-side path: Mechman 370A alternator (`$599`) plus Big 3 wiring upgrade estimate (`$225`) are tracked in BOM for added idle-current headroom.
+- Installation notes captured from provided reference: direct-fit/OEM plug claim, possible `1/2` to `1` inch shorter belt with smaller pulley, and required Big 3 wiring addition.
+- Drive time to replace one modeled day:
+- `core_workday`: `0.80h` at remote `65%` output setting, `1.62h` at `240A` alternator planning cap.
+- `winter_workday`: `0.95h` at remote `65%` output setting, `1.93h` at `240A` alternator planning cap.
+- Implementation note: remote `%` output setting is not the same as alternator-safe current; final setting should be locked from belt/alternator temperature plus voltage-drop logs.
+
+#### Shore charging (MultiPlus-II charger path)
+- Charger limit from model string: `35A`.
+- At `56.8V` absorption target, charger power is about `1,988W`.
+- Ideal bulk-only recharge times:
+- Replace one `core_workday`: `1.78h`.
+- Replace one `winter_workday`: `2.11h`.
+- Recharge from `20%` to `100%`: `3.86h`.
+- Real-world times are longer due to absorption taper near full charge.
+
+### Operational implications and constraints
+- Battery capacity now supports roughly `1.8-2.2` office-workdays without charging depending on season and reserve policy.
+- With `900W` flexible solar at the base `68%` factor, `4` PSH leaves a material daily deficit for both `core_workday` and `winter_workday`.
+- Shore charging can materially recover SOC in a single evening (`~3.86h` from `20%` to `100%` in bulk-ideal terms).
+- Alternator recovery potential is materially stronger with the Sterling path, but continuous output is still constrained by real alternator headroom and thermal limits.
+- If the Mechman alternator path is purchased later, complete Big 3 wiring and re-baseline safe continuous BBR limits before extended idling use.
+- MultiPlus-II `48/3000` inverter continuous output (`~2,400W`) can be exceeded by simultaneous induction + microwave + other AC loads, so high-draw AC loads need sequencing.
+- `48->12V 30A` converter (`360W`) requires load budgeting before adding new 12V devices beyond current modeled assumptions.
+
+### Safety baseline
+- Positive path sequence: battery -> Class T fuse (near source) -> disconnect -> positive busbar -> fused branch feeds
+- Negative path sequence: battery -> SmartShunt -> negative busbar -> all load returns on load side of shunt
+- Big 3 rule set (vehicle side): keep factory wiring in place, add Big 3 as parallel/augmentation, fuse the alternator-to-battery positive run inline, and prep grounds to bare metal.
+- If the truck uses an RVC ground-sensor loop, route the upgraded ground path through the loop per vehicle requirements.
+- Battery thermal strategy: insulated battery box, ducted warm-air branch, thermostat/relay enable logic
+- Wiring practices: grommets, loom, glands, abrasion protection, and bend-radius validation
+- Reference links from workbook notes:
+- `https://youtu.be/dSYKabw_rgs?t=651`
+- `https://www.diodeled.com/45-channel.html`
+
+## Solar
+- Current target options captured: flexible array around `900W` (`9x100W`) or rigid array around `600-800W`.
+- Constraint to validate: added roof load from solar plus Starlink plus fan/struts.
+- Open point: passthrough route preference (passenger wall vs cab wall vs roof).
+- Energy takeaway from the current modeled load: moving from `600W` to `900W` improves expected harvest by about `720-900 Wh/day` at `4` PSH, depending on realized system efficiency, but still does not close the office-workday deficit by itself.
+
+### Electrical reference maintenance workflow
+- Update trigger conditions:
+- Any change to battery, inverter/charger, DC-DC, or solar components in `bom/bom_estimated_items.csv`.
+- Any measured field data that materially changes duty-cycle assumptions.
+- Any change in appliance selection, owner-supplied office electronics, or expected duty cycle in `bom/load_model_wh.csv`.
+- Update process:
+1. Update component rows and assumptions in `bom/load_model_wh.csv`.
+2. Recalculate scenario daily Wh totals in this file from that CSV.
+3. Recalculate autonomy at the active reserve floor (`usable Wh / daily Wh`).
+4. Recalculate charging tables with latest charge source ratings and assumptions.
+5. Record what changed in `docs/TRACKING.md` (decision/risk/open questions) and `logs/LOG.md`.
+6. Remove stale assumptions that are not backed by BOM rows or explicit owner-supplied load assumptions.
+- Formula quick reference:
+```text
+battery_nominal_wh = battery_voltage_v * battery_capacity_ah * battery_quantity
+daily_wh = sum(component_wh_per_day) + conversion_loss_wh
+autonomy_days = usable_battery_wh / daily_wh
+solar_daily_wh = array_watts * effective_psh * solar_efficiency_factor
+solar_efficiency_factor = nameplate_realization * thermal_factor * mppt_wiring_factor * orientation_factor * soiling_shading_factor
+alternator_daily_wh = dc_dc_output_watts * drive_hours
+alternator_practical_w = (alternator_rated_a - vehicle_base_load_a) * alternator_voltage_v * conversion_efficiency
+house_charge_current_a = alternator_practical_w / charge_voltage_v
+shore_charge_power_w = charge_voltage * charger_current_a
+bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
+```
+- Retired model note:
+- `bom/load_model_wh.csv` v1 (workbook-derived chart) and v2 (BOM-only) are superseded by model v3 (BOM plus owner-supplied office loads).
+
+## Communications
+- Primary internet path: Starlink Standard (DC power conversion item tracked in BOM)
+- Secondary/fallback path: TBD (cellular path and carrier diversity not frozen)
+- Placement constraint: routing and passthrough location unresolved
+
+## Plumbing (if included in phase 1)
+- Water capacity candidates captured: `10 gal` compact concept and `~25 gal` tank option
+- Pump candidate captured: Shurflo 3.0 GPM class
+- Water heating candidate captured: portable propane tankless model
+- Freeze and winterization strategy: TBD
+
+## Cabinetry and structure
+- Aluminum extrusion strategy: 10-series and 15-series mix, with service chase/toe-kick concept for wiring
+- Desk concepts captured: Vecel/Lagun style fold-in options and pneumatic pedestal concepts
+- Material ideas captured: phenolic/richlite top, sound treatment, panel anti-rattle tape
+- Monitor travel strategy concept: stow-low assisted deployment with structural bracing
+
+## HVAC and condensation
+- Heating approach in notes: diesel heater with possible branch to battery compartment
+- Ventilation: Maxxair fan included in current camper config
+- Condensation controls and climate envelope limits: TBD
+
+## Safety
+- Fire detection and suppression layout:
+- CO/smoke monitoring approach:
+- Emergency shutdown steps:
+
+## Source artifacts
+- `docs/SYSTEMS_workbook_build_notes.md`
+- `docs/SYSTEMS_workbook_electrical_notes.md`
+- `docs/SYSTEMS_workbook_vecel_consult.md`
+- `bom/load_model_wh.csv`

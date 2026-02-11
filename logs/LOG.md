@@ -1,0 +1,78 @@
+# Project Log
+
+Single running log for build progress and test evidence.
+
+## Entry template
+- Date:
+- Work completed:
+- Measurements/data:
+- Tests run:
+- Issues:
+- Next actions:
+
+## 2026-02-11
+- Workspace structure simplified and consolidated for lower documentation overhead.
+- Canonical docs reduced to four core files in `docs/`.
+- Imported and dissected `Camper Build.xlsx` into AI-friendly artifacts.
+- Added normalized BOM exports:
+- `bom/bom_estimated_items.csv`
+- `bom/bom_budget_options.csv`
+- `bom/bom_misc_items.csv`
+- `bom/load_model_wh.csv`
+- `bom/bom_summary.json`
+- Added CAD-friendly layout exports:
+- `cad/drawings/layout_1_annotations.csv`
+- `cad/drawings/layout_1_fills.csv`
+- `cad/drawings/layout_2_annotations.csv`
+- `cad/drawings/layout_2_fills.csv`
+- Extracted workbook-embedded media:
+- `media/inspiration/workbook_import/` (non-layout images)
+- `cad/drawings/workbook_import/` (layout-sheet images)
+- `media/inspiration/workbook_import/manifest.json` maps source sheet to extracted files.
+- Updated canonical docs (`docs/PROJECT.md`, `docs/SYSTEMS.md`, `docs/OPERATIONS.md`, `docs/TRACKING.md`) and `bom/BOM.md` with workbook-derived content.
+- Added maintained electrical capacity and charging reference to `docs/SYSTEMS.md` with:
+- Scenario-based usage models aligned to remote-office goals.
+- Battery autonomy math (`100%->0%` and `100%->20%` reserve floor).
+- Solar, alternator, and shore charging potential tables.
+- Formula block and update workflow for future recalculation.
+- Updated `docs/TRACKING.md` with:
+- Decision D-003 (canonical maintained electrical model).
+- Risk R-004 (inverter overload risk from simultaneous high-draw AC loads).
+- Performed full electrical model reset from BOM source of truth:
+- Temporary battery interpretation was set to `2x 51.2V 400Ah LiFePO4` (later corrected same day).
+- Replaced `bom/load_model_wh.csv` with BOM-derived model v2 (`core_workday`, `winter_workday`, `minimal_idle_day`).
+- Recalculated `docs/SYSTEMS.md` capacity, autonomy, and charging potential from BOM-derived values.
+- Added tracking updates:
+- Decision D-004 (retire workbook WH model, BOM-only model).
+- Risk R-005 (later revised after battery capacity correction).
+- Corrected battery capacity interpretation after follow-up clarification:
+- Installed bank is `2x 48V 100Ah` (not `2x 400Ah`).
+- `400Ah` is treated as max 4-battery system capability, not installed capacity.
+- Updated `bom/bom_estimated_items.csv` battery row and recalculated `docs/SYSTEMS.md` capacity/autonomy/shore-recharge numbers.
+- Updated `docs/TRACKING.md` with Decision D-005 and revised Risk R-005 to reflect reduced no-charge autonomy.
+- Reviewed electrical model for winter-fridge and solar-assumption accuracy:
+- Updated `bom/load_model_wh.csv` winter fridge from `55%` to `40%` duty-cycle assumption.
+- Recalculated winter conversion-loss row and total from `3,181 Wh/day` to `3,003 Wh/day`.
+- Updated `docs/SYSTEMS.md` with:
+- revised winter DoD/autonomy/charging replacement times,
+- a dedicated `20%` minimum SOC reserve-floor framing for autonomy,
+- and a `900W` flexible `3S3P` solar derate model (base `68%`, sensitivity `60%-75%`).
+- Updated `docs/TRACKING.md` with Decision D-006 and follow-up validation action for measured fridge/solar logs.
+- Resolved RF-001 policy mismatch for owner-supplied office electronics:
+- Kept owner devices out of BOM procurement cost tracking.
+- Added explicit owner-supplied load rows (laptop, 27 inch 1440p monitor, tablet/peripherals) to `bom/load_model_wh.csv` model v3.
+- Recalculated `docs/SYSTEMS.md` load totals, autonomy, and charging replacement times against model v3.
+- Updated `docs/TRACKING.md` with Decision D-007 and refreshed load/risk/open-question entries.
+- Marked `docs/TEMP_electrical_red_flags.md` RF-001 as closed pending measured validation.
+- Swapped alternator charging architecture to Sterling:
+- Updated `bom/bom_estimated_items.csv` row `18` to Sterling `BB1248120` (`$807`) and added row `26` for Sterling `BBR` remote (`$108`).
+- Updated BOM rollups in `bom/BOM.md` and `bom/bom_summary.json` (current estimated total now `$45,879.64`; Power System subtotal `$5,041.00`).
+- Reworked alternator charging math in `docs/SYSTEMS.md` for Sterling nameplate, `65%` remote-limited output, and a practical `240A` alternator planning cap.
+- Added decision D-008 in `docs/TRACKING.md` and closed RF-002 in `docs/TEMP_electrical_red_flags.md`.
+- Added purchase-later vehicle charging upgrade path:
+- Added JS high-output alternator (`$548`) and Big 3 wiring estimate (`$225`) to `bom/bom_estimated_items.csv`.
+- Added Big 3 note to existing 2/0 cable row to indicate gauge compatibility and expected extra length when upgrade is activated.
+- Updated BOM rollups (`bom/BOM.md`, `bom/bom_summary.json`) to total `$46,652.64` with `102` estimated line items.
+- Updated planning docs (`docs/SYSTEMS.md`, `docs/PROJECT.md`, `docs/TRACKING.md`, `docs/TEMP_electrical_red_flags.md`) with staged stock-alternator-first strategy and purchase-later fitment/spec lock actions.
+- Swapped purchase-later alternator candidate from JS to Mechman 370A (SKU `11532370`) at `$599`.
+- Re-synced BOM rollups after price/model swap (current CSV total `$46,703.64`; Power System subtotal `$5,640.00`; `102` estimated line items).

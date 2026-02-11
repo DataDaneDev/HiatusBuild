@@ -1,0 +1,22 @@
+{
+  "price_sheet_estimated_total_formula": "=SUM(D2:D103)",
+  "price_sheet_estimated_total_value": 45396.64,
+  "current_estimated_total_from_csv": 46703.64,
+  "price_sheet_budget_total_formula": "=SUM(G2:G105)",
+  "price_sheet_budget_total_value": 35636,
+  "current_category_subtotals_from_csv": {
+    "Camper Platform": 33488.64,
+    "Power System": 5640,
+    "Interior": 4560,
+    "Appliances": 1968,
+    "Hardware": 912,
+    "Tools": 80,
+    "Misc": 55
+  },
+  "line_item_counts": {
+    "estimated_items": 102,
+    "budget_options": 24,
+    "misc_items": 15
+  },
+  "notes": "Workbook totals are from import-time formulas. Current CSV totals include post-import BOM edits (Sterling BB1248120 + BBR, Mechman 370A alternator purchase-later line, Big 3 wiring estimate)."
+}
