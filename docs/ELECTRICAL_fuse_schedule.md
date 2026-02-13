@@ -63,8 +63,8 @@ Related docs:
 | `12V-05` | CO + propane detector | `3A` | `18/2` | Always-on safety load |
 | `12V-06` | LED strips | `5A` | `18/2` | Lighting branch |
 | `12V-07` | Cerbo GX power feed (assumed via `12V` panel) | `3A` | `18/2` | Assumption until final harness lock |
-| `12V-08` | Spare branch 1 | `15A` placeholder | `14 AWG duplex` | Reserve |
-| `12V-09` | Spare branch 2 | `15A` placeholder | `14 AWG duplex` | Reserve |
+| `12V-08` | USB-C PD branch (office zone, `2` outlets) | `10A` baseline | `14 AWG duplex` | DC-fed USB charging to reduce inverter idle/conversion overhead; zone budget target `~100-120W` |
+| `12V-09` | USB-C PD branch (galley zone, `2` outlets) | `10A` baseline | `14 AWG duplex` | DC-fed USB charging path for kitchen/workflow devices; zone budget target `~100-120W` |
 
 ## Holder Ecosystem Standard (Procurement Guidance)
 | Fuse family | Preferred holder style | Why |

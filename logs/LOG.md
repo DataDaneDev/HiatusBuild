@@ -10,6 +10,32 @@ Single running log for build progress and test evidence.
 - Issues:
 - Next actions:
 
+## 2026-02-13
+- Ran PRF-003 research sweep focused on AC distribution right-sizing for the current truck-camper architecture.
+- Reviewed current project AC assumptions in:
+- `bom/bom_estimated_items.csv` (rows `13`, `14`, `15`, `67`, `68`)
+- `bom/load_model_wh.csv` (owner-supplied office AC-path assumptions)
+- `docs/ELECTRICAL_overview_diagram.md` (shore + inverter AC topology)
+- Quantified modeled AC-related energy share at roughly `27.9%` (`core_workday`) to `30.7%` (`winter_workday`) for current assumptions.
+- Updated `docs/TEMP_procurement_red_flags.md` PRF-003 to:
+- Separate "AC safety requirements" from "panel size/mounting method" assumptions.
+- Add confirmed Phase 1 AC load list and right-sized architecture options.
+- Document that DIN rail is optional pending final enclosure choice.
+- Keep PRF-003 open until AC topology lock and SKU lock are complete.
+- Expanded `docs/ELECTRICAL_overview_diagram.md` AC section from high-level path to full hierarchy:
+- Shore-source path, MultiPlus transfer/charger behavior, AC-out branch strategy, optional AC-out-2 handling, and USB-C PD strategy.
+- Added AC operating-behavior notes, protection-chain requirements, procurement gap checklist, and detailed AC conductor-segment entries (`C-28` through `C-35`).
+- Added new tracking open questions in `docs/TRACKING.md` for shore-interface lock (`15A` vs `30A`) and USB charging path lock (DC USB-C PD vs AC USB receptacles).
+- Locked Phase 1 AC/USB baseline for procurement:
+- AC-out-1 split into two branches (`20A` galley + `15A` office) with `4` total `120V` receptacle locations (`2` galley, `2` office).
+- USB charging baseline locked to `4` DC-fed USB-C PD points (`2` office + `2` galley) on dedicated `12V` branches.
+- Updated `bom/bom_estimated_items.csv`:
+- Refined rows `13`, `14`, `15`, and `17`.
+- Added rows `107-118` for shore interface, AC enclosure/protection, receptacle hardware, AC wire scope, USB-C PD hardware, and optional 12V-converter expansion path.
+- Set USB-C PD zone design intent to two `10A` fused `12V` branches (office + galley) to keep demand aligned with current Orion headroom assumptions.
+- Updated `docs/ELECTRICAL_overview_diagram.md` and `docs/ELECTRICAL_fuse_schedule.md` to map AC branches and USB-C PD branch circuits to the locked baseline.
+- Added decision `D-013` in `docs/TRACKING.md` and replaced prior AC architecture open questions with a SKU-lock follow-up item.
+
 ## 2026-02-12
 - Built RF-003 decision support for power-distribution topology in `docs/SYSTEMS.md`:
 - Compared `DIY discrete` vs `Lynx one-module` vs `Lynx two-module`.

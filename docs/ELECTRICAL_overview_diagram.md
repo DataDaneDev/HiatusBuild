@@ -1,6 +1,6 @@
-# Electrical Topology Diagram (Implementation v3)
+# Electrical Topology Diagram (Implementation v4)
 
-As-of date: `2026-02-12`
+As-of date: `2026-02-13`
 
 Purpose: provide a complete, install-level electrical topology for the current build scope, including all major electrical components, fuse IDs, fuse housings, and planned wire gauges.
 
@@ -119,19 +119,83 @@ flowchart LR
     CERBO_PWR --> N12
 ```
 
-## AC Path Topology (Shore + Inverter Output)
+## AC Path Topology (Shore + Inverter Output, Full Hierarchy)
 ```mermaid
 flowchart LR
-    SHORE["Shore AC inlet"]
-    ACBRK["20A AC breaker\nDIN rail mount"]
-    MULTI["MultiPlus-II AC in/out"]
-    GFCI["GFCI outlets / AC branch"]
-    ACLOADS["AC loads\ninduction, microwave, office chargers"]
+    subgraph SHORE_SRC["Shore Source Path"]
+        INLET["Shore inlet (120VAC)"]
+        CORD["Shore cord + adapters\n(service-limited by pedestal/source)"]
+        EMS["Optional EMS/surge protection"]
+        ACINBRK["AC input breaker/disconnect\n20A target (or sized to source)"]
+        INLET --> CORD --> EMS --> ACINBRK
+    end
 
-    SHORE -- "10/3 AC cable" --> ACBRK
-    ACBRK -- "12 AWG AC" --> MULTI
-    MULTI -- "12 AWG AC branch" --> GFCI --> ACLOADS
+    subgraph MULTI_AC["MultiPlus-II AC Conversion + Transfer"]
+        ACIN["AC-in terminals (L/N/PE)"]
+        XFER["Internal transfer relay + charger stage\n(shore present = pass-through + charging)"]
+        OUT1["AC-out-1 (inverter-backed output)"]
+        OUT2["AC-out-2 (shore-only optional output)"]
+        ACIN --> XFER --> OUT1
+        XFER --> OUT2
+    end
+
+    subgraph AC_DIST["AC Distribution and Protection"]
+        OUT1PROT["UL943-class RCD/GFCI + branch breaker(s)\nfor AC-out-1"]
+        BR_A["Branch A: galley outlets"]
+        BR_B["Branch B: office outlets"]
+        OUT2PROT["AC-out-2 breaker + RCD/GFCI\n(shore-only future loads, optional)"]
+        OUT1PROT --> BR_A
+        OUT1PROT --> BR_B
+    end
+
+    subgraph AC_LOADS["Planned AC Loads"]
+        IND["Induction cooktop"]
+        MW["Microwave"]
+        MON["External monitor + office chargers"]
+        GENOUT["General 120V receptacles\n4 total locations (2 galley, 2 office)"]
+        SHORE_ONLY["Future shore-only load (optional)\nA/C or electric water heat"]
+    end
+
+    subgraph USB_PD["USB/USB-C PD Strategy"]
+        PD_DC["Locked: 12V branch -> DC USB-C PD modules\n4 total points (2 office, 2 galley)"]
+        PD_AC["Alternative: USB receptacles on AC branch"]
+    end
+
+    ACINBRK --> ACIN
+    OUT1 --> OUT1PROT
+    OUT2 --> OUT2PROT
+
+    BR_A --> IND
+    BR_A --> MW
+    BR_A --> MON
+    BR_B --> GENOUT
+    OUT2PROT --> SHORE_ONLY
+
+    BR_A -. "if AC USB outlets selected" .-> PD_AC
 ```
+
+### AC Operating Behavior (Expected)
+- Shore present: MultiPlus transfer relay closes, AC-in is passed to AC-out paths, and charger stage charges the `48V` bank.
+- Shore absent: MultiPlus transfers to inverter mode and powers `AC-out-1` from battery; `AC-out-2` drops by design.
+- Input current limit should be set to the actual shore source (`15A`, `20A`, or `30A` adapter-limited) to avoid pedestal/source breaker trips.
+
+### AC Safety/Protection Chain (What Must Exist)
+- Upstream AC input protection/disconnect before MultiPlus AC-in.
+- AC-out branch protection including UL943-class residual-current protection and overcurrent protection sized to branch wiring and expected load.
+- Continuous equipment grounding path from shore inlet through MultiPlus and branch circuits, plus chassis bond in mobile install context.
+- Neutral/ground handling must follow MultiPlus relay behavior; do not add an always-bonded downstream neutral-ground bond in branch receptacle wiring.
+
+### AC Reference Basis (Manufacturer Guidance)
+- Victron MultiPlus-II `120V` installation guidance (`AC-in` breaker sizing, UL943-class residual-current protection on outputs, and AC-out-2 shore-only behavior): `https://www.victronenergy.com/media/pg/MultiPlus-II_120V/en/installation.html`
+- Victron MultiPlus-II datasheet (`48/3000/35-50` baseline model reference): `https://www.victronenergy.com/upload/documents/Datasheet-MultiPlus-II-inverter-charger-120V-EN.pdf`
+
+### AC/USB Baseline Locked For BOM
+- Shore interface: `30A` RV-style inlet baseline with adapter kit for `15A`/`20A` hookups.
+- AC input protection: dedicated AC input breaker/disconnect upstream of MultiPlus AC-in.
+- AC-out-1 distribution: two protected branches (`20A` galley, `15A` office) with GFCI-at-first-outlet strategy.
+- Receptacle plan: `4` total `120V` receptacle locations (`2` galley, `2` office).
+- USB charging plan: `4` DC-fed USB-C PD points on `12V` branches (`2` office, `2` galley) with `10A` per-zone branch fuse baseline.
+- AC-out-2 remains optional and not in Phase 1 procurement baseline.
 
 ## Monitoring and Control Topology
 ```mermaid
@@ -199,15 +263,25 @@ flowchart LR
 | `C-25` | 12V panel -> LED strips | `12V` | Branch load | `F-10` `5A` | `18/2` |
 | `C-26` | 12V panel -> Cerbo GX power feed | `12V` | Branch load (`~3W`) | `F-10` `3A` (assumed) | `18/2` |
 | `C-27` | PV strings -> `F-09` combiner -> MPPT PV input | PV string voltage (`3S`) | String current + combiner output current | `F-09A/B/C` `15A` each | `10 AWG` PV wire |
-| `C-28` | Shore inlet -> AC breaker -> Multi AC-in | `120VAC` | Shore branch current | `20A` AC breaker | `10/3` inlet feed, `12 AWG` branch to inverter |
-| `C-29` | Multi AC-out -> GFCI/outlet branches | `120VAC` | Inverter AC branch current | AC breakers + GFCI protection | `12 AWG` branch wire |
+| `C-28` | Shore inlet -> shore cord/adapter -> AC input breaker/disconnect | `120VAC` | Source-limited shore current | Source-size-matched AC breaker/disconnect (`20A` target baseline) | `10/3` shore feed to inlet/breaker area |
+| `C-29` | AC input breaker/disconnect -> MultiPlus AC-in | `120VAC` | MultiPlus AC input current | Upstream AC breaker/disconnect (`C-28`) | `12 AWG` stranded AC conductors |
+| `C-30` | MultiPlus AC-out-1 -> branch RCD/GFCI + breaker assembly | `120VAC` | Inverter-backed branch distribution current | UL943-class RCD/GFCI + branch breakers (`20A` galley, `15A` office) | `12 AWG` stranded AC conductors |
+| `C-31` | Branch A -> galley receptacle locations (`2`) | `120VAC` | Branch load (induction, microwave, galley outlets) | `C-30` branch protection stack | `12 AWG` stranded AC conductors |
+| `C-32` | Branch B -> office receptacle locations (`2`) | `120VAC` | Branch load (monitor and office outlet use) | `C-30` branch protection stack | `12 AWG` stranded AC conductors |
+| `C-33` | MultiPlus AC-out-2 (optional) -> shore-only future load branch | `120VAC` | Shore-only branch current | Dedicated breaker + UL943-class RCD/GFCI for AC-out-2 | `12 AWG` stranded AC conductors |
+| `C-34` | 12V panel -> USB-C PD branch (office zone, `2` outlets) | `12V` | Device charging branch current (zone budget target `~100-120W`) | `F-10` branch fuse (`10A` baseline) | `14 AWG duplex` baseline |
+| `C-35` | 12V panel -> USB-C PD branch (galley zone, `2` outlets) | `12V` | Device charging branch current (zone budget target `~100-120W`) | `F-10` branch fuse (`10A` baseline) | `14 AWG duplex` baseline |
 
 ## Additional Components Included In Topology Scope
 - `48V` disconnect (`275A`)
 - Pre-charge resistor (commissioning/soft-charge aid before connecting large DC loads)
 - 12V negative busbar
-- AC breaker + DIN rail
-- GFCI outlet branch hardware
+- Shore AC inlet + cord/adapter interface hardware
+- AC input breaker/disconnect hardware (compact load-center baseline; DIN-only if swapped at SKU lock)
+- AC branch RCD/GFCI + breaker hardware
+- Receptacle boxes + `120V` outlets (`4` planned locations: `2` galley, `2` office)
+- Optional AC-out-2 branch protection path for future shore-only loads
+- USB-C PD branch hardware (`4` DC-fed points, `2` office + `2` galley)
 - Battery temperature sensor wiring to inverter/monitoring path
 - SmartShunt fused positive sense/power lead (factory harness)
 
@@ -220,5 +294,6 @@ flowchart LR
 6. Big 3 alternator-upgrade path is purchase-later; this diagram captures the current stock-alternator-first architecture.
 
 ## Completion Status
-- Topology is complete for current BOM scope and load model scope.
-- Remaining work is procurement-level SKU lock and field-validation (run lengths, thermal checks, and voltage-drop measurements).
+- DC/PV topology is complete for current BOM scope and load model scope.
+- AC hierarchy is now complete at architecture level, including transfer behavior, branch strategy, and protection chain.
+- Remaining work is SKU-level part lock and run-length field validation for the now-locked AC/USB architecture.

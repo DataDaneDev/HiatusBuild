@@ -117,6 +117,15 @@
 - Result: Updated `bom/bom_estimated_items.csv` row `18`, recalculated alternator charging section values in `docs/SYSTEMS.md`, and expanded `docs/ELECTRICAL_overview_diagram.md` + `docs/ELECTRICAL_fuse_schedule.md` to full implementation detail.
 - Follow-up: Validate real-world Sterling output power/current with instrumented charge logs and finalize holder SKUs before purchase freeze.
 
+- ID: D-013
+- Date: 2026-02-13
+- Decision: Lock Phase 1 camper AC/USB distribution baseline to two AC-out-1 branches plus DC-fed USB-C PD branches.
+- Context: Previous AC scope was concept-level and procurement rows were incomplete, creating uncertainty around receptacle count, USB strategy, and shore interface hardware.
+- Options considered: Single AC branch only, multi-branch panel with AC USB receptacles, or two AC branches with DC-fed USB-C PD outlets.
+- Decision drivers: Practical usability (galley + office), safety/protection clarity, and reduced inverter idle/conversion losses for device charging.
+- Result: Locked baseline to `4` total `120V` receptacle locations (`2` galley, `2` office), AC-out-1 branch split (`20A` galley + `15A` office), and `4` DC-fed USB-C PD points (`2` office + `2` galley) with `10A` per-zone fuse baseline. Added corresponding BOM scope in rows `107-118` and aligned AC hierarchy in `docs/ELECTRICAL_overview_diagram.md`.
+- Follow-up: Lock final SKU selections for inlet, enclosure/breakers, receptacles, and USB-C PD modules, then validate Orion `48/12-30` headroom under simultaneous-use scenarios before purchase freeze.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -179,6 +188,8 @@
 - Confirm required shorter belt length and final belt part number if the Mechman alternator is installed
 - Lock Big 3 spec package (additional cable length, inline fuse type/rating, lug count, and RVC ground-loop routing requirement)
 - Confirm measured daily draw for owner-supplied laptop/monitor/tablet charging to replace planning assumptions
+- Lock final SKU set for AC/USB hardware (`rows 13-15`, `107-118`) and verify physical fitment with cabinet layout
+- Validate Orion `48/12-30` converter headroom with the new USB-C PD branch plan (`12V-08`, `12V-09`) and trigger row `118` only if sustained overload is observed
 - Final passthrough locations for solar, shore power, and fuel/heater paths
 - Rigid vs flexible solar strategy under roof weight constraints
 - Secondary internet strategy and minimum acceptable fallback performance
