@@ -25,4 +25,4 @@
 | Met 100% of production timelines |  |  |  |  |  | Comments or other customizations → Hi! Hoping for a few passthroughs, and have a few Qs about roof weight. Shore power input (driver, towards cab?) Solar passthrough. Is roof passthrough viable? Curious where the lighting/fan wires run. Otherwise, could do driver side passthrough(s) with a coiled cable, similar to other owners I've seen. I'm aiming for as much rigid solar as I can fit, space dependent. Will also have standard Starlink (7lbs) mounted, plus the fan. With beefier struts, is 100lbs or so a problem? If so, I will consider flexible solar. Thanks, looking forward! |  |
 | 15 orders came after me |  |  |  |  |  |  |  |
 | someone delayed |  |  |  |  |  |  |  |
-| Vecel works with Hiatus |  |  |  |  |  |  |  |
+| Furniture partner option discussed with Hiatus |  |  |  |  |  |  |  |

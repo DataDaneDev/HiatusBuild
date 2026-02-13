@@ -1,5 +1,7 @@
 # Electrical Notes
 
+Note: this file is a workbook extract reference. Current electrical topology, fuse plan, and monitoring baseline are maintained in `docs/SYSTEMS.md`, `docs/ELECTRICAL_overview_diagram.md`, and `docs/ELECTRICAL_fuse_schedule.md`.
+
 | A | B | C |
 | --- | --- | --- |
 | Slotted Trunking |  |  |

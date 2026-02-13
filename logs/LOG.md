@@ -10,13 +10,29 @@ Single running log for build progress and test evidence.
 - Issues:
 - Next actions:
 
+## 2026-02-12
+- Built RF-003 decision support for power-distribution topology in `docs/SYSTEMS.md`:
+- Compared `DIY discrete` vs `Lynx one-module` vs `Lynx two-module`.
+- Listed required component groupings for each topology.
+- Added planning-level cost deltas using current BOM rows plus explicit Lynx price assumptions.
+- Added clear decision rule for whether `1` Lynx is sufficient or when `2` is justified.
+- Updated `docs/TEMP_electrical_red_flags.md` RF-003 references and status to `Open (decision-ready)`.
+- Added high-level electrical architecture draft in `docs/ELECTRICAL_overview_diagram.md` using a topology-only Mermaid diagram.
+- Linked the new diagram from `docs/SYSTEMS.md` and indexed it in `docs/README.md`.
+- Kept this revision intentionally free of fuse/disconnect/wire-gauge details pending final topology lock.
+- Performed full electrical-system sweep for fuse/holder/gauge consistency:
+- Corrected Sterling `BB1248120` spec basis from `120A @ 48V` assumption to `~1500W` max output (`~26A` at `57.6V`) in `bom/bom_estimated_items.csv` and `docs/SYSTEMS.md`.
+- Recalculated alternator charging replacement-time assumptions in `docs/SYSTEMS.md`.
+- Replaced `docs/ELECTRICAL_overview_diagram.md` with implementation-level topology including all major components, fuse holders, and conductor schedule.
+- Reworked `docs/ELECTRICAL_fuse_schedule.md` to include full fuse housing methods, branch gauge tie-ins, and sweep findings.
+- Added decision `D-012` in `docs/TRACKING.md` and closed new red flag `RF-008` in `docs/TEMP_electrical_red_flags.md`.
+
 ## 2026-02-11
 - Workspace structure simplified and consolidated for lower documentation overhead.
 - Canonical docs reduced to four core files in `docs/`.
 - Imported and dissected `Camper Build.xlsx` into AI-friendly artifacts.
 - Added normalized BOM exports:
 - `bom/bom_estimated_items.csv`
-- `bom/bom_budget_options.csv`
 - `bom/bom_misc_items.csv`
 - `bom/load_model_wh.csv`
 - `bom/bom_summary.json`

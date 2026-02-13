@@ -52,7 +52,7 @@
 - Options considered: Keep oversized model or correct to installed battery count and capacity.
 - Decision drivers: Accuracy of autonomy and charging predictions.
 - Result: BOM battery row and all capacity/autonomy calculations were corrected in `docs/SYSTEMS.md`.
-- Follow-up: Add exact battery SKU datasheet to `references/` and confirm nominal voltage convention (`48V` label vs `51.2V` LiFePO4 nominal).
+- Follow-up: `2026-02-12` convention locked: keep `48V` as system label and use `51.2V` nominal for battery Wh accounting.
 
 - ID: D-006
 - Date: 2026-02-11
@@ -89,6 +89,33 @@
 - Decision drivers: Planning transparency, safer high-current upgrade path, and clearer future procurement sequencing.
 - Result: Added purchase-later lines in BOM (`row 103` Mechman 370A alternator, `row 104` Big 3 estimate), added Big 3 wire notes to existing cable rows, and updated systems documentation with the staged strategy.
 - Follow-up: Confirm exact fitment and belt length for the truck platform, then lock final Big 3 cable/fuse spec before purchase.
+
+- ID: D-010
+- Date: 2026-02-12
+- Decision: Lock Phase 1 distribution topology to `Lynx one-module` using `Victron Lynx Distributor M10` (`LYN060102010`).
+- Context: Previous documentation included mixed Lynx/discrete language and ambiguous implementation baselines.
+- Options considered: Keep discrete fuse-block topology, lock Lynx one-module, lock Lynx two-module.
+- Decision drivers: Standardized layout, reduced wiring ambiguity, and alignment with current `4` modeled `48V` branch count.
+- Result: Updated BOM Lynx row (`row 6`) and converted core electrical documentation to Lynx-only implementation baseline.
+- Follow-up: Confirm whether future expansion requires adding a second Lynx module.
+
+- ID: D-011
+- Date: 2026-02-12
+- Decision: Adopt a documented fuse baseline with explicit fuse IDs, locations, and spare inventory tied to BOM rows.
+- Context: Fuse plan previously existed as mixed assumptions, not a single implementation schedule.
+- Options considered: Keep generic fuse notes, track fuse values in BOM only, or maintain a dedicated fuse schedule linked to BOM.
+- Decision drivers: Safety traceability, procurement clarity, and easier install-time validation.
+- Result: Added `docs/ELECTRICAL_fuse_schedule.md`, mapped fuse groups to BOM rows (`7`, `10`, `11`, `16`, `105`, `106`), and set baseline battery Class T quantity to `2x` for two battery-positive conductors.
+- Follow-up: Lock exact fuse-holder SKUs and finalize any holder ecosystem constraints before purchase.
+
+- ID: D-012
+- Date: 2026-02-12
+- Decision: Correct Sterling `BB1248120` electrical rating assumptions and promote the electrical topology artifact to implementation-level scope.
+- Context: Existing planning text treated `BB1248120` as `120A` on the `48V` output, which overstated alternator charging recovery, and the topology diagram still excluded holder/wire-gauge implementation detail.
+- Options considered: Keep existing assumptions, patch only charge-rate math, or patch charge-rate math and complete the fuse-holder + conductor topology together.
+- Decision drivers: Safety planning accuracy, implementation readiness, and removal of unresolved holder/gauge ambiguity.
+- Result: Updated `bom/bom_estimated_items.csv` row `18`, recalculated alternator charging section values in `docs/SYSTEMS.md`, and expanded `docs/ELECTRICAL_overview_diagram.md` + `docs/ELECTRICAL_fuse_schedule.md` to full implementation detail.
+- Follow-up: Validate real-world Sterling output power/current with instrumented charge logs and finalize holder SKUs before purchase freeze.
 
 ## Risk register
 - ID: R-001
@@ -152,13 +179,16 @@
 - Confirm required shorter belt length and final belt part number if the Mechman alternator is installed
 - Lock Big 3 spec package (additional cable length, inline fuse type/rating, lug count, and RVC ground-loop routing requirement)
 - Confirm measured daily draw for owner-supplied laptop/monitor/tablet charging to replace planning assumptions
-- Confirm battery datasheet nominal voltage convention (`48V` marketed vs `51.2V` nominal) for final energy accounting standard
 - Final passthrough locations for solar, shore power, and fuel/heater paths
 - Rigid vs flexible solar strategy under roof weight constraints
 - Secondary internet strategy and minimum acceptable fallback performance
 - Battery compartment heating and control implementation details (sensor, relay, setpoints)
 - Storage/security SOP for flight windows
 - Measured fridge compressor duty cycle by ambient band (cold, mild, hot) to replace modeled assumptions
+- Final fuse-holder SKU standard for Orion input/output, Sterling input, and PV string fusing hardware
+- Validate the chosen `F-05 + F-06` split-protection Orion branch against final measured run lengths and voltage drop
+- Confirm acceptable monitoring expectation that Orion is not a direct GX telemetry node in current architecture
+- Confirm measured Sterling `BB1248120` output current/power at idle and driving RPM bands for charge-time planning
 
 ## Reusable templates
 ### Daily log
@@ -178,5 +208,9 @@
 - Pass/Fail:
 
 ## Source artifacts
+- `docs/SYSTEMS.md`
 - `docs/PROJECT_workbook_hiatus_consult.md`
 - `docs/SYSTEMS_workbook_build_notes.md`
+- `docs/SYSTEMS_workbook_electrical_notes.md`
+- `docs/ELECTRICAL_overview_diagram.md`
+- `docs/ELECTRICAL_fuse_schedule.md`

@@ -1,5 +1,7 @@
 # Build Notes
 
+Note: this is a raw workbook extract for traceability. Active implementation baseline is maintained in `docs/SYSTEMS.md`, `docs/ELECTRICAL_overview_diagram.md`, and `docs/ELECTRICAL_fuse_schedule.md`. Legacy standalone busbar wording below is superseded by the locked Lynx topology.
+
 | A | B |
 | --- | --- |
 | Battery Heating | Battery box insulated and as small as practical |

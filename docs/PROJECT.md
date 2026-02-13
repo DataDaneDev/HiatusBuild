@@ -48,6 +48,7 @@
 - M7: shakedown and punch-list closure
 
 ## Immediate next decisions
+- Build a full fuse schedule for the locked Lynx architecture (main protection, all branch fuses, vehicle-side protection where applicable)
 - Freeze autonomy policy using modeled profiles (BOM + owner-supplied office loads) with a `20%` minimum SOC reserve floor
 - Confirm passthrough locations (solar, shore, fuel/heater routing) with Hiatus before production lock
 - Validate Sterling `BB1248120` + `BBR` current-limit operating envelope on the factory `240A` alternator; keep Mechman 370A alternator + Big 3 as purchase-later path pending fitment confirmation and install timing

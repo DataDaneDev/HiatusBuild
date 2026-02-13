@@ -10,6 +10,7 @@
 - Battery SOC and charging paths verified
 - Communications primary and fallback validated
 - Critical spares onboard (fuses, terminals, core tools)
+- Fuse inventory verified against `docs/ELECTRICAL_fuse_schedule.md` (installed + spare counts)
 - Workstation and data gear secured for travel
 
 ## Arrival/setup checklist (starter)

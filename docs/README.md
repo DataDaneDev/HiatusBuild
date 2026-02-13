@@ -13,5 +13,8 @@ Supplementary workbook extracts (non-canonical, for traceability):
 - `docs/PROJECT_workbook_hiatus_consult.md`
 - `docs/SYSTEMS_workbook_build_notes.md`
 - `docs/SYSTEMS_workbook_electrical_notes.md`
-- `docs/SYSTEMS_workbook_vecel_consult.md`
 - `docs/OPERATIONS_workbook_marketplace_finds.md`
+
+Supplementary working artifacts:
+- `docs/ELECTRICAL_overview_diagram.md` (implementation-level topology with components, fuse/holder map, and conductor schedule assumptions)
+- `docs/ELECTRICAL_fuse_schedule.md` (fuse IDs, housing/holder methods, gauge tie-ins, spare inventory, and BOM row mapping)

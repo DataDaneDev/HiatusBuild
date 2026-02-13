@@ -5,8 +5,13 @@
 - Deliver workday reliability with reserve margin
 - Keep wiring safe, labeled, and serviceable
 
-### Planning snapshot (as-of `2026-02-11`)
-- Battery bank (corrected): `2x 48V 100Ah LiFePO4` from BOM row 3 (`9.6 kWh` nominal).
+### Electrical doc links
+- Implementation topology (components, fuses, holders, gauges): `docs/ELECTRICAL_overview_diagram.md`
+- Fuse IDs, locations, housing methods, spares, and BOM mapping: `docs/ELECTRICAL_fuse_schedule.md`
+- Electrical decisions, risks, and unresolved items: `docs/TRACKING.md`
+
+### Planning snapshot (as-of `2026-02-12`)
+- Battery bank (corrected): `2x 48V 100Ah LiFePO4` from BOM row 3 (`10.24 kWh` nominal at `51.2V` battery nominal).
 - House architecture: `48V` core with `48V->12V` conversion.
 - Inverter/charger candidate: Victron MultiPlus-II `48/3000/35-50`.
 - Charge sources in current BOM: solar MPPT, Sterling alternator B2B path (factory alternator now, high-output alternator as purchase-later option), shore AC charger path.
@@ -16,13 +21,14 @@
 - Primary procurement source of truth is `bom/bom_estimated_items.csv`.
 - Load model is maintained in `bom/load_model_wh.csv` (model v3) and includes BOM-sourced installed loads plus owner-supplied work electronics (kept out of BOM cost totals).
 - Legacy workbook WH model assumptions are retired and not used.
+- Voltage convention: use `48V` as architecture label, but use `51.2V` nominal for battery Wh accounting.
 
 ### Input reference (maintained)
 | Input | Current value | Source |
 | --- | --- | --- |
 | Battery bank | `2x 48V 100Ah` | `bom/bom_estimated_items.csv` row 3 |
 | Inverter/charger | MultiPlus-II `48/3000/35-50` | `bom/bom_estimated_items.csv` row 12 |
-| Alternator charging | Sterling `BB1248120` (`12V/24V -> 48V`, `120A`) + `BBR` remote | `bom/bom_estimated_items.csv` rows 18 and 26 |
+| Alternator charging | Sterling `BB1248120` (`12V/24V -> 48V`, `~1500W` max, `~26A` at `57.6V`) + `BBR` remote | `bom/bom_estimated_items.csv` rows 18 and 26 |
 | Vehicle alternator assumption (current) | Factory `240A` (user-reported) with `65%` BBR limit option for extended idle sessions | `docs/TRACKING.md` |
 | Purchase-later alternator path | Mechman 370A alternator + Big 3 wiring estimate | `bom/bom_estimated_items.csv` rows 103 and 104 |
 | DC conversion | Orion-Tr `48/12 30A` (`360W`) | `bom/bom_estimated_items.csv` row 20 |
@@ -43,17 +49,17 @@ Load totals below are from `bom/load_model_wh.csv` model v3 (BOM loads plus owne
 ### Capacity analysis (corrected battery bank)
 | Metric | Formula | Result |
 | --- | --- | --- |
-| Nominal battery energy | `48V x 100Ah x 2` | `9,600 Wh` |
-| Usable energy to 20% reserve floor | `9,600 x 0.8` | `7,680 Wh` |
-| Core day depth of discharge | `3,530 / 9,600` | `36.77%` per day |
-| Winter day depth of discharge | `4,202 / 9,600` | `43.77%` per day |
+| Nominal battery energy | `51.2V x 100Ah x 2` | `10,240 Wh` |
+| Usable energy to 20% reserve floor | `10,240 x 0.8` | `8,192 Wh` |
+| Core day depth of discharge | `3,530 / 10,240` | `34.47%` per day |
+| Winter day depth of discharge | `4,202 / 10,240` | `41.04%` per day |
 
 ### Autonomy (no charging)
 | Scenario | Days (`100% -> 20%`) |
 | --- | --- |
-| `core_workday` | `2.18` |
-| `winter_workday` | `1.83` |
-| `minimal_idle_day` | `12.31` |
+| `core_workday` | `2.32` |
+| `winter_workday` | `1.95` |
+| `minimal_idle_day` | `13.13` |
 
 ### Charging potential
 All values are planning-level and should be replaced with measured charge logs after shakedown tests.
@@ -83,15 +89,15 @@ Base planning factor for your target roof setup is now `68%` end-to-end harvest 
 - `MPPT 150/45` is not the bottleneck for the current array range.
 
 #### Alternator charging (Sterling `BB1248120` + `BBR`)
-- Charger nameplate output: up to `120A` to the `48V` bank (`~6,816W` at `56.8V`).
-- Remote-limited output case requested: `65%` cap (`78A`, `~4,430W` at `56.8V`).
-- Practical `240A` factory-alternator planning cap (assume `70A` non-house vehicle load, `14.2V` alternator voltage, `90%` conversion efficiency): `~2,173W` to house battery (`~38A` at `56.8V`).
+- Charger output ceiling for `BB1248120`: about `1,500W` max (`~26A` at `57.6V`, `~26.4A` at `56.8V`).
+- Remote-limited output case requested: `65%` cap (`~975W`, `~17.2A` at `56.8V`).
+- Practical `240A` factory-alternator planning cap (assume `70A` non-house vehicle load, `14.2V` alternator voltage, `90%` conversion efficiency): `~2,173W` available on vehicle side, but `BB1248120` output cap (`~1,500W`) is the limiting factor.
 - Extended-idle stock-alternator strategy: use the BBR remote current limit (`~65%` baseline) unless temperature/voltage logs support a higher continuous setting.
 - Purchase-later vehicle-side path: Mechman 370A alternator (`$599`) plus Big 3 wiring upgrade estimate (`$225`) are tracked in BOM for added idle-current headroom.
 - Installation notes captured from provided reference: direct-fit/OEM plug claim, possible `1/2` to `1` inch shorter belt with smaller pulley, and required Big 3 wiring addition.
 - Drive time to replace one modeled day:
-- `core_workday`: `0.80h` at remote `65%` output setting, `1.62h` at `240A` alternator planning cap.
-- `winter_workday`: `0.95h` at remote `65%` output setting, `1.93h` at `240A` alternator planning cap.
+- `core_workday`: `3.62h` at remote `65%` output setting, `2.35h` at charger max output.
+- `winter_workday`: `4.31h` at remote `65%` output setting, `2.80h` at charger max output.
 - Implementation note: remote `%` output setting is not the same as alternator-safe current; final setting should be locked from belt/alternator temperature plus voltage-drop logs.
 
 #### Shore charging (MultiPlus-II charger path)
@@ -107,14 +113,14 @@ Base planning factor for your target roof setup is now `68%` end-to-end harvest 
 - Battery capacity now supports roughly `1.8-2.2` office-workdays without charging depending on season and reserve policy.
 - With `900W` flexible solar at the base `68%` factor, `4` PSH leaves a material daily deficit for both `core_workday` and `winter_workday`.
 - Shore charging can materially recover SOC in a single evening (`~3.86h` from `20%` to `100%` in bulk-ideal terms).
-- Alternator recovery potential is materially stronger with the Sterling path, but continuous output is still constrained by real alternator headroom and thermal limits.
+- Alternator recovery potential is meaningful, but the current Sterling charger path is capped near `1.5kW`, so recovery is slower than earlier `120A@48V` planning assumptions.
 - If the Mechman alternator path is purchased later, complete Big 3 wiring and re-baseline safe continuous BBR limits before extended idling use.
 - MultiPlus-II `48/3000` inverter continuous output (`~2,400W`) can be exceeded by simultaneous induction + microwave + other AC loads, so high-draw AC loads need sequencing.
 - `48->12V 30A` converter (`360W`) requires load budgeting before adding new 12V devices beyond current modeled assumptions.
 
 ### Safety baseline
-- Positive path sequence: battery -> Class T fuse (near source) -> disconnect -> positive busbar -> fused branch feeds
-- Negative path sequence: battery -> SmartShunt -> negative busbar -> all load returns on load side of shunt
+- Positive path sequence: battery -> Class T fuse (near source) -> disconnect -> Lynx Distributor -> fused branch feeds
+- Negative path sequence: battery -> SmartShunt -> Lynx Distributor negative bus -> all load returns on load side of shunt
 - Big 3 rule set (vehicle side): keep factory wiring in place, add Big 3 as parallel/augmentation, fuse the alternator-to-battery positive run inline, and prep grounds to bare metal.
 - If the truck uses an RVC ground-sensor loop, route the upgraded ground path through the loop per vehicle requirements.
 - Battery thermal strategy: insulated battery box, ducted warm-air branch, thermostat/relay enable logic
@@ -122,6 +128,51 @@ Base planning factor for your target roof setup is now `68%` end-to-end harvest 
 - Reference links from workbook notes:
 - `https://youtu.be/dSYKabw_rgs?t=651`
 - `https://www.diodeled.com/45-channel.html`
+
+### Electrical overview diagram (implementation)
+- Full implementation-level topology diagram: `docs/ELECTRICAL_overview_diagram.md`
+- Scope includes fuse IDs, fuse-holder/housing methods, branch wire-gauge selections, and documented sizing assumptions.
+
+### RF-003 Distribution Topology Decision (Lynx Locked)
+Decision date: `2026-02-12`
+
+Approved architecture for Phase 1:
+- `Victron Lynx Distributor M10` (`LYN060102010`) is the single distribution backbone.
+- Current tracked unit price is `$192.47`.
+- Current modeled `48V` fused branches (`4` total):
+- MultiPlus-II `48/3000`
+- SmartSolar `150/45`
+- Sterling `BB1248120` output
+- Orion-Tr `48/12`
+- `1x` Lynx Distributor covers current branch count with `0` spare fused outputs.
+- If future branch expansion is needed, add a second Lynx module in that phase.
+
+Implementation notes:
+- `Lynx Distributor` includes the negative busbar, so a separate standalone negative bus is not required in the Lynx path.
+- `Lynx Distributor` branch-fuse LEDs need a `Lynx Shunt VE.Can` or `Lynx Smart BMS`; with `SmartShunt`-only monitoring, LED fuse indication is not active.
+- Main Class T protection baseline is `2x` (one per battery-positive conductor) and is tracked in the fuse schedule/BOM.
+
+Reference links:
+- Lynx Distributor manual/specs: `https://www.victronenergy.com/media/pg/Lynx_Distributor/en/introduction.html`
+- Lynx Distributor retail example: `https://www.invertersrus.com/product/victron-lynx-distributor/`
+
+### Fuse Determination Baseline (Lynx)
+Objective: maintain a complete start-to-finish fuse schedule for the approved Lynx architecture.
+
+Current detailed schedule (active reference):
+- `docs/ELECTRICAL_fuse_schedule.md`
+
+Scope covered:
+1. Main battery protection (`Class T`) quantity, rating, and placement.
+2. Lynx branch fuses for each `48V` branch (MultiPlus, MPPT, Sterling output, Orion input).
+3. Vehicle-side alternator/Big-3 inline fuse requirements when that path is activated.
+4. Any additional protective devices required by manufacturer manuals for both charge-source and load paths.
+
+Method:
+1. Pull max current requirements and overcurrent guidance from each device manual.
+2. Confirm planned wire gauge/length/insulation assumptions for each run.
+3. Size each fuse to protect the conductor first while meeting equipment requirements.
+4. Build final fuse matrix with part numbers, quantities, and BOM row mapping.
 
 ## Solar
 - Current target options captured: flexible array around `900W` (`9x100W`) or rigid array around `600-800W`.
@@ -170,7 +221,7 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 
 ## Cabinetry and structure
 - Aluminum extrusion strategy: 10-series and 15-series mix, with service chase/toe-kick concept for wiring
-- Desk concepts captured: Vecel/Lagun style fold-in options and pneumatic pedestal concepts
+- Desk concepts captured: Lagun-style fold-in options and pneumatic pedestal concepts
 - Material ideas captured: phenolic/richlite top, sound treatment, panel anti-rattle tape
 - Monitor travel strategy concept: stow-low assisted deployment with structural bracing
 
@@ -187,5 +238,4 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 ## Source artifacts
 - `docs/SYSTEMS_workbook_build_notes.md`
 - `docs/SYSTEMS_workbook_electrical_notes.md`
-- `docs/SYSTEMS_workbook_vecel_consult.md`
 - `bom/load_model_wh.csv`

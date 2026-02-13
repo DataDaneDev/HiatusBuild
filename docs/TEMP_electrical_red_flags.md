@@ -1,7 +1,7 @@
 # Temporary Electrical Red Flags
 
 Purpose: hold unresolved electrical documentation issues so they can be closed one by one.
-Status date: 2026-02-11
+Status date: 2026-02-12
 
 ## RF-001 Non-BOM Work Loads Excluded From Canonical Model
 - Severity: High
@@ -39,32 +39,29 @@ Status date: 2026-02-11
 
 ## RF-003 Power Distribution Topology Ambiguity (Lynx vs Discrete)
 - Severity: Medium
-- Issue: BOM includes `Lynx Distributor` but safety documentation is still primarily written as discrete class-T + busbar + branch fuses.
-- Why this matters: Could cause procurement or wiring-diagram mismatches.
+- Issue: Previously unresolved.
+- Resolution completed (`2026-02-12`):
+- Topology locked to `Lynx one-module` (`Victron Lynx Distributor M10`, `LYN060102010`) for Phase 1.
+- SYSTEMS documentation converted to Lynx-only implementation baseline and DIY comparison content removed.
+- Next workstream explicitly defined: full start-to-finish fuse schedule for this locked topology.
 - Current references:
 - `bom/bom_estimated_items.csv:6`
-- `bom/bom_estimated_items.csv:7`
-- `docs/SYSTEMS.md:108`
-- `docs/SYSTEMS_workbook_build_notes.md:11`
-- Clarification needed:
-- Single approved distribution topology for implementation.
-- Resolution target:
-- Keep only one architecture in BOM and SYSTEMS docs.
-- Status: Open
+- `docs/SYSTEMS.md` (`RF-003 Distribution Topology Decision (Lynx Locked)`)
+- `docs/ELECTRICAL_overview_diagram.md`
+- Status: Closed (`2026-02-12`)
 
 ## RF-004 Battery Energy Convention Not Finalized (48V vs 51.2V)
 - Severity: Medium
-- Issue: Model currently uses `48V` nominal; open note says final standard may be `51.2V`.
+- Issue: Resolved.
 - Why this matters: Capacity/autonomy/charge-time outputs shift when nominal voltage basis changes.
 - Current references:
-- `docs/SYSTEMS.md:44`
-- `docs/TRACKING.md:55`
-- `docs/TRACKING.md:116`
-- Clarification needed:
-- Official accounting convention for battery energy calculations.
-- Resolution target:
-- Lock convention and recalculate all dependent tables.
-- Status: Open
+- `docs/SYSTEMS.md`
+- `docs/TRACKING.md`
+- Resolution completed (`2026-02-12`):
+- Keep `48V` as architecture/system label.
+- Use `51.2V` nominal for battery Wh accounting in model tables.
+- Recalculate dependent capacity/autonomy values in `docs/SYSTEMS.md`.
+- Status: Closed (`2026-02-12`)
 
 ## RF-005 Fridge Row Semantics Could Be Misread
 - Severity: Low-Medium
@@ -108,9 +105,21 @@ Status date: 2026-02-11
 - Lock alternator SKU + belt + Big 3 spec in BOM notes before purchase.
 - Status: Open
 
+## RF-008 Sterling BB1248120 Output Rating Assumption Was Incorrect In Planning Math
+- Severity: High
+- Issue: A prior planning revision treated `BB1248120` as `120A` on the `48V` output path.
+- Why this matters: Charge-recovery timelines and alternator strategy decisions were materially overstated.
+- Current references:
+- `bom/bom_estimated_items.csv` row `18`
+- `docs/SYSTEMS.md` (Alternator charging section)
+- `docs/TRACKING.md` (`D-012`)
+- Resolution completed (`2026-02-12`):
+- Corrected charger basis to `~1500W` max output (`~26A` at `57.6V` nominal output setting).
+- Recalculated alternator-recovery time assumptions in `docs/SYSTEMS.md`.
+- Updated electrical topology and fuse docs to implementation-level detail with holder and conductor mapping.
+- Status: Closed (`2026-02-12`)
+
 ## Suggested Resolution Order
-1. RF-004 Battery energy convention
-2. RF-007 Purchase-later alternator integration
-3. RF-003 Distribution topology
-4. RF-005 Load model column semantics
-5. RF-006 Historical wording cleanup
+1. RF-007 Purchase-later alternator integration
+2. RF-005 Load model column semantics
+3. RF-006 Historical wording cleanup
