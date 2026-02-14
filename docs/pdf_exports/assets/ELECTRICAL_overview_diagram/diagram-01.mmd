@@ -1,0 +1,60 @@
+flowchart LR
+    subgraph VEHICLE_12V["Vehicle 12V Charging Path"]
+        ALT["Factory alternator\n(240A assumed)"]
+        START["Starter battery 12V"]
+        F08["F-08 150A\nsealed engine-bay holder"]
+        B2B["Sterling BB1248120\n12V->48V (~1.5kW max)"]
+        BBR["Sterling BBR remote\ncurrent-limit control"]
+        ALT --> START
+        START -- "2/0 AWG" --> F08 --> B2B
+        BBR -. "control harness" .- B2B
+    end
+
+    subgraph PV_PATH["Solar Path (900W, 3S3P)"]
+        PVA["PV String A\n3x100W"]
+        PVB["PV String B\n3x100W"]
+        PVC["PV String C\n3x100W"]
+        F09A["F-09A 15A gPV"]
+        F09B["F-09B 15A gPV"]
+        F09C["F-09C 15A gPV"]
+        COMB["PV combiner enclosure\n3x 10x38 fuse holders"]
+        MPPT["Victron SmartSolar\nMPPT 150/45"]
+        PVA -- "10 AWG PV" --> F09A --> COMB
+        PVB -- "10 AWG PV" --> F09B --> COMB
+        PVC -- "10 AWG PV" --> F09C --> COMB
+        COMB -- "10 AWG PV +/-" --> MPPT
+    end
+
+    subgraph HOUSE_48V["House 48V Core"]
+        BATA["Battery A\n48V 100Ah"]
+        BATB["Battery B\n48V 100Ah"]
+        F01A["F-01A 225A Class T\nBlue Sea block"]
+        F01B["F-01B 225A Class T\nBlue Sea block"]
+        DISC["48V disconnect\nVictron 275A"]
+        SHUNT["SmartShunt 500A\nmain negative path"]
+        LYNX["Victron Lynx Distributor M10\n+ bus / - bus / 4 MEGA slots"]
+        MULTI["MultiPlus-II\n48/3000/35-50"]
+        ORION["Orion-Tr 48/12-30\nIsolated"]
+        F06["F-06 20A (or 23A)\ninline >=58V holder"]
+    end
+
+    BATA -- "2/0 AWG +" --> F01A --> DISC
+    BATB -- "2/0 AWG +" --> F01B --> DISC
+    DISC -- "2/0 AWG +" --> LYNX
+
+    BATA -- "2/0 AWG -" --> SHUNT
+    BATB -- "2/0 AWG -" --> SHUNT
+    SHUNT -- "2/0 AWG -" --> LYNX
+    LYNX -. "SmartShunt fused + sense/power lead\n(factory harness)" .- SHUNT
+
+    LYNX -- "Slot 1: F-02 125A MEGA\n2/0 AWG +" --> MULTI
+    MULTI -- "2/0 AWG -" --> LYNX
+
+    MPPT -- "BAT+ via Slot 2: F-03 60A MEGA\n6 AWG" --> LYNX
+    MPPT -- "BAT- 6 AWG" --> LYNX
+
+    B2B -- "OUT+ via Slot 3: F-04 40A MEGA\n6 AWG" --> LYNX
+    B2B -- "OUT- 6 AWG" --> LYNX
+
+    LYNX -- "Slot 4: F-05 40A MEGA\n6 AWG" --> F06 --> ORION
+    ORION -- "48V input - (6 AWG)" --> LYNX

@@ -1,0 +1,36 @@
+flowchart LR
+    ORION["Orion-Tr 48/12-30\nIsolated converter"]
+    F07["F-07 60A\ninline holder near Orion"]
+    PANEL["12V fuse panel\nBlue Sea 5026/5032 style"]
+    N12["12V negative busbar"]
+
+    STAR["12V-01 Starlink PSU\n10A / 14 AWG"]
+    FRIDGE["12V-02 Fridge\n15A / 14 AWG"]
+    HEATER["12V-03 Diesel heater\n15A / 14 AWG"]
+    PUMP["12V-04 Water pump\n10A / 14 AWG"]
+    DET["12V-05 CO+Propane detector\n3A / 18/2"]
+    LED["12V-06 LED strips\n5A / 18/2"]
+    CERBO_PWR["12V-07 Cerbo GX feed\n3A / 18/2 (assumed)"]
+    SP1["12V-08 Spare\n15A / 14 AWG"]
+    SP2["12V-09 Spare\n15A / 14 AWG"]
+
+    ORION -- "12V + (6 AWG)" --> F07 --> PANEL
+    ORION -- "12V - (6 AWG)" --> N12
+
+    PANEL --> STAR
+    PANEL --> FRIDGE
+    PANEL --> HEATER
+    PANEL --> PUMP
+    PANEL --> DET
+    PANEL --> LED
+    PANEL --> CERBO_PWR
+    PANEL --> SP1
+    PANEL --> SP2
+
+    STAR --> N12
+    FRIDGE --> N12
+    HEATER --> N12
+    PUMP --> N12
+    DET --> N12
+    LED --> N12
+    CERBO_PWR --> N12

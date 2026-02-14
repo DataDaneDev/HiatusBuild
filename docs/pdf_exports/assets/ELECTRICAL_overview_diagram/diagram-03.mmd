@@ -1,0 +1,51 @@
+flowchart LR
+    subgraph SHORE_SRC["Shore Source Path"]
+        INLET["Shore inlet (120VAC)"]
+        CORD["Shore cord + adapters\n(service-limited by pedestal/source)"]
+        EMS["Optional EMS/surge protection"]
+        ACINBRK["AC input breaker/disconnect\n20A target (or sized to source)"]
+        INLET --> CORD --> EMS --> ACINBRK
+    end
+
+    subgraph MULTI_AC["MultiPlus-II AC Conversion + Transfer"]
+        ACIN["AC-in terminals (L/N/PE)"]
+        XFER["Internal transfer relay + charger stage\n(shore present = pass-through + charging)"]
+        OUT1["AC-out-1 (inverter-backed output)"]
+        OUT2["AC-out-2 (shore-only optional output)"]
+        ACIN --> XFER --> OUT1
+        XFER --> OUT2
+    end
+
+    subgraph AC_DIST["AC Distribution and Protection"]
+        OUT1PROT["UL943-class RCD/GFCI + branch breaker(s)\nfor AC-out-1"]
+        BR_A["Branch A: galley outlets"]
+        BR_B["Branch B: office outlets"]
+        OUT2PROT["AC-out-2 breaker + RCD/GFCI\n(shore-only future loads, optional)"]
+        OUT1PROT --> BR_A
+        OUT1PROT --> BR_B
+    end
+
+    subgraph AC_LOADS["Planned AC Loads"]
+        IND["Induction cooktop"]
+        MW["Microwave"]
+        MON["External monitor + office chargers"]
+        GENOUT["General 120V receptacles\n4 total locations (2 galley, 2 office)"]
+        SHORE_ONLY["Future shore-only load (optional)\nA/C or electric water heat"]
+    end
+
+    subgraph USB_PD["USB/USB-C PD Strategy"]
+        PD_DC["Locked: 12V branch -> DC USB-C PD modules\n4 total points (2 office, 2 galley)"]
+        PD_AC["Alternative: USB receptacles on AC branch"]
+    end
+
+    ACINBRK --> ACIN
+    OUT1 --> OUT1PROT
+    OUT2 --> OUT2PROT
+
+    BR_A --> IND
+    BR_A --> MW
+    BR_A --> MON
+    BR_B --> GENOUT
+    OUT2PROT --> SHORE_ONLY
+
+    BR_A -. "if AC USB outlets selected" .-> PD_AC

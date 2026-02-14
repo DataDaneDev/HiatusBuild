@@ -1,0 +1,15 @@
+flowchart LR
+    CERBO["Cerbo GX"]
+    MULTI["MultiPlus-II"]
+    MPPT["SmartSolar MPPT"]
+    SHUNT["SmartShunt 500A"]
+    ORION["Orion-Tr 48/12"]
+    BTEMP["Battery temp sensor"]
+    SHUNT_PWR["SmartShunt fused + lead\n(factory harness)"]
+
+    CERBO -. "VE.Bus" .- MULTI
+    CERBO -. "VE.Direct" .- MPPT
+    CERBO -. "VE.Direct" .- SHUNT
+    ORION -. "VictronConnect/BLE\n(no direct GX link in this baseline)" .- CERBO
+    BTEMP -. "temp input" .- MULTI
+    SHUNT_PWR -. "power/sense harness" .- SHUNT
