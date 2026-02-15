@@ -135,6 +135,15 @@
 - Result: Added `docs/PROJECT_build_order_of_operations.md` and linked it from `docs/PROJECT.md` as the active sequencing baseline.
 - Follow-up: Update date windows after first dry-fit rehearsal and add sequence-specific risks if schedule compression appears.
 
+- ID: D-015
+- Date: 2026-02-15
+- Decision: Adopt a consolidated multi-system safety baseline in `docs/SYSTEMS.md` covering `48V`, `12V`, `120VAC`, and propane architecture controls.
+- Context: Safety guidance existed across fuse/topology notes and placeholder sections, but there was no single integrated baseline for commissioning, emergency shutdown, and propane/CO risk controls.
+- Options considered: Keep safety details distributed only in implementation docs, create a separate standalone safety doc, or expand the canonical systems safety section with cross-links.
+- Decision drivers: High-consequence risk reduction, clearer pre-energization hold points, and faster install-time validation.
+- Result: Expanded `docs/SYSTEMS.md` `## Safety` with architecture-specific hazards, required controls, commissioning checks, emergency shutdown order, and pre-close inspection gates.
+- Follow-up: Lock propane appliance listing/venting path and convert safety hold points into dated test records in `logs/LOG.md` during commissioning.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -190,6 +199,33 @@
 - Owner: Sunny
 - Status: Open
 
+- ID: R-007
+- Risk: High-fault-current `48V` battery architecture can produce severe arc/thermal events during commissioning or service if isolation, torque, polarity, or fuse-voltage controls are missed.
+- Impact (1-5): 5
+- Likelihood (1-5): 2
+- Mitigation: Enforce documented pre-energization checks (polarity, torque witness, correct fuse voltage class, bus insulation covers, disconnect/isolation verification) and require controlled service procedure.
+- Trigger: First full-system energization and any major rewiring event.
+- Owner: Sunny
+- Status: Open
+
+- ID: R-008
+- Risk: Propane leak or combustion byproduct exposure (CO) could occur if rear-mount routing, passthrough sealing, detector placement, or appliance listing/venting assumptions are wrong.
+- Impact (1-5): 5
+- Likelihood (1-5): 3
+- Mitigation: Keep outdoor-only propane appliances out of enclosed use, require leak/pressure checks after every gas-path change, lock detector layout, and confirm listed venting method before indoor hot-water decisions.
+- Trigger: Propane passthrough fabrication and final water-heater selection.
+- Owner: Sunny
+- Status: Open
+
+- ID: R-009
+- Risk: AC shock/fire risk from neutral-ground misconfiguration or incomplete GFCI/RCD protection on branch circuits.
+- Impact (1-5): 5
+- Likelihood (1-5): 2
+- Mitigation: Preserve AC protection chain (`shore breaker -> MultiPlus -> branch protection`), validate outlet polarity and GFCI/RCD operation at commissioning, and verify ground continuity/chassis bonding.
+- Trigger: AC branch wiring completion and first shore/inverter live test.
+- Owner: Sunny
+- Status: Open
+
 ## Open questions
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)
 - Lock initial BBR current-limit setpoint for the assumed `240A` factory alternator after first instrumented charge tests
@@ -209,6 +245,10 @@
 - Validate the chosen `F-05 + F-06` split-protection Orion branch against final measured run lengths and voltage drop
 - Confirm acceptable monitoring expectation that Orion is not a direct GX telemetry node in current architecture
 - Confirm measured Sterling `BB1248120` output current/power at idle and driving RPM bands for charge-time planning
+- Lock final propane water-heater path: outdoor-use-only portable workflow vs listed indoor/RV unit with compliant venting/clearance package
+- Lock propane passthrough hardware standard and no-concealed-joints rule for final routing
+- Define and document recurring leak-test cadence (post-service, pre-trip, and periodic maintenance interval)
+- Lock final fire detection/suppression layout (LP detector location, CO/smoke detector locations, extinguisher count/placement)
 
 ## Reusable templates
 ### Daily log

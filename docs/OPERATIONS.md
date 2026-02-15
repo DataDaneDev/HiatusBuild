@@ -25,6 +25,26 @@
 - Solar cleaning/inspection interval: TBD
 - Cable chafe and connector condition checks: TBD
 
+## Safety-critical checks (build + field)
+### Pre-energization (after wiring changes)
+- Verify correct fuse values/voltage classes against `docs/ELECTRICAL_fuse_schedule.md`.
+- Confirm terminal torque marks, busbar covers, and abrasion protection on all high-current runs.
+- Confirm `48V` disconnect operation and expected de-energization behavior.
+- Validate AC branch polarity and GFCI/RCD trip on each outlet branch before normal use.
+- Confirm detector status (LP/CO/smoke powered, test function passes, expiration date in range).
+
+### Propane-specific checks
+- Tank bracket tight, valve accessible, and hose routing clear of heat/chafe zones.
+- No propane odor before opening cabin; if odor exists, keep system off and ventilate.
+- Leak-check propane path after any fitting change and before travel segments with planned propane use.
+- Keep cylinder valve closed during fueling, service, and long-term storage windows.
+- Do not operate portable outdoor-only propane appliances inside enclosed cabin space.
+
+### Incident response quick actions
+- If electrical burning odor/smoke: drop load, open `48V` disconnect, remove shore input, assess with extinguisher ready.
+- If propane alarm or gas odor: close tank valve, remove ignition sources, ventilate immediately, and do not restore gas flow until fault is found.
+- Log each incident or near-miss in `logs/LOG.md` and add unresolved hazards to `docs/TRACKING.md`.
+
 ## Marketplace sourcing routine (from workbook)
 - Daily 5-minute scan: 80/20 extrusion, RV water tank, sink/faucet, office chair, monitor arm, cooktop, fridge, diesel heater, camper parts.
 - Save searches and enable notifications to capture liquidation listings quickly.

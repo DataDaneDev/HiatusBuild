@@ -8,6 +8,7 @@
 ### Electrical doc links
 - Implementation topology (components, fuses, holders, gauges): `docs/ELECTRICAL_overview_diagram.md`
 - Fuse IDs, locations, housing methods, spares, and BOM mapping: `docs/ELECTRICAL_fuse_schedule.md`
+- Voltage architecture trade study (`12V` vs `48V`): `docs/ELECTRICAL_12V_vs_48V_trade_study.md`
 - Electrical decisions, risks, and unresolved items: `docs/TRACKING.md`
 
 ### Planning snapshot (as-of `2026-02-12`)
@@ -231,9 +232,86 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 - Condensation controls and climate envelope limits: TBD
 
 ## Safety
-- Fire detection and suppression layout:
-- CO/smoke monitoring approach:
-- Emergency shutdown steps:
+- Purpose: define a practical, build-ready safety baseline for the current architecture (`48V 10.24kWh` house bank, `12V` distribution, `120VAC` shore/inverter path, and propane-supported heating/hot-water concepts).
+- Priority order: prevent ignition and overcurrent faults, preserve safe shutdown paths, detect hazards early, and make isolation/service repeatable.
+- Final install gate: before energizing or using propane in service, verify all items against manufacturer manuals and complete licensed inspection where required.
+
+### System-wide controls
+- Keep one-line diagrams, fuse IDs, and conductor IDs synchronized across:
+- `docs/ELECTRICAL_overview_diagram.md`
+- `docs/ELECTRICAL_fuse_schedule.md`
+- `docs/TRACKING.md`
+- Ensure all protection and isolation devices are physically accessible without disassembling fixed furniture.
+- Keep gas components and AC/DC electrical components separated by design; no mixed service cavities without physical barriers and clear labeling.
+- Label every branch and shutoff point so an operator can isolate faults quickly under stress.
+
+### 48V battery system safety (primary)
+- Main hazards: high fault current, sustained DC arc potential, short-circuit heating, incorrect polarity during service, and thermal stress events.
+- Required architecture controls:
+- Battery positive path stays: battery -> Class T fuse near source -> main disconnect -> Lynx fused branches.
+- Battery negative path stays: battery -> SmartShunt -> Lynx negative bus (all returns on load side of shunt).
+- Use only voltage-appropriate overcurrent devices on house DC branches (`58V`/`80V` class on `48V` paths); do not substitute `32V` automotive-only fuses on `48V` circuits.
+- Keep all busbars/studs covered and insulated; use boot covers, strain relief, and abrasion protection on all near-bus runs.
+- Commissioning controls (first energization and after major rework):
+1. Verify polarity and expected voltage at each segment before inserting branch fuses.
+2. Confirm torque marks on all high-current terminals and re-check after initial thermal cycles.
+3. Confirm the disconnect fully de-energizes downstream service zones as intended.
+4. Validate no unintended parallel return paths bypassing shunt measurement.
+- Service controls:
+- Remove conductive jewelry, use insulated tools, and keep one-hand work practice on live-exposure checks.
+- Never perform branch rewiring with battery disconnect closed unless the specific test requires energized state and a spotter is present.
+
+### 12V distribution safety
+- Main hazards: feeder overload from converter limits, hidden voltage drop causing heat at terminations, and unfused accessory additions.
+- Required controls:
+- Keep Orion output feeder fused at source (`F-07`) and avoid adding unfused taps between Orion and panel.
+- Maintain branch-level fuse-to-conductor coordination per `docs/ELECTRICAL_fuse_schedule.md`.
+- Keep always-on detector branch (`12V-05`) protected but never switch-controlled.
+- If sustained `12V` demand exceeds Orion headroom, treat converter expansion (`BOM row 118`) as a safety action, not a convenience upgrade.
+
+### 120VAC shore/inverter safety
+- Main hazards: shock from miswired neutral/ground, ground-fault exposure at outlets, and overcurrent heating from undersized branch protection.
+- Required controls:
+- Keep shore path order: shore inlet -> input breaker/disconnect -> MultiPlus AC-in.
+- Keep AC-out branch protection stack with UL943-class GFCI/RCD and correctly sized overcurrent protection for each branch conductor.
+- Preserve continuous equipment grounding and chassis bond through all AC paths.
+- Do not add a fixed downstream neutral-ground bond in branch wiring; neutral/ground behavior must follow MultiPlus transfer/bonding design.
+- Commissioning checks:
+1. Receptacle polarity test on each outlet location.
+2. GFCI/RCD trip test at each protected branch.
+3. Verify AC-out-2 behaves as shore-only path (if enabled).
+
+### Propane safety (rear-mounted tank plus passthrough and hot-water path)
+- Main hazards: leak accumulation, ignition near electrical equipment, CO exposure, and using outdoor-only appliances in enclosed space.
+- Rear-mount tank controls:
+- Keep cylinder upright and externally mounted with impact-resistant bracketry and valve protection.
+- Keep tank shutoff valve accessible from outside without tools.
+- Protect hose/regulator routing from road debris, abrasion, and exhaust heat zones.
+- Propane passthrough controls:
+- Use sealed bulkhead/pass-through hardware with chafe protection at all penetrations.
+- Avoid concealed unions/joints in inaccessible cavities; keep serviceable connections at inspection points.
+- Perform leak tests after any connection change and before each trip phase where propane is used.
+- Appliance selection rule (critical):
+- Treat portable outdoor tankless heaters as outdoor-use-only unless a specific model is explicitly listed for indoor/RV enclosed installation with compliant venting.
+- If an indoor propane water-heating path is pursued, lock to an RV/marine-listed indoor unit with approved venting/combustion-air method and documented install clearances before purchase.
+- Detection and ventilation controls:
+- Keep an LP detector low in cabin, CO detector in breathing zone, and smoke detector high in cabin.
+- Test detector alarm functions on a recurring schedule and replace by manufacturer expiration date.
+
+### Emergency shutdown baseline
+1. Remove active high-draw loads (AC and gas appliances) if safe to do so.
+2. Open the `48V` main disconnect and remove shore input.
+3. Close propane cylinder valve at the tank.
+4. Ventilate cabin area and confirm detectors are active.
+5. Use fire extinguisher only if contained/incipient and exit path is clear; otherwise evacuate and call emergency services.
+6. Do not re-energize or reopen gas supply until fault root cause is identified and corrected.
+
+### Safety hold points before walls/panels are closed
+- Complete and document high-current DC inspection (polarity, fuse value, terminal torque, insulation/boots).
+- Complete AC verification (polarity, GFCI/RCD trip tests, branch labeling, ground continuity).
+- Complete propane leak check and pressure-hold verification with all planned valves/fittings in final positions.
+- Complete detector placement and functional alarm tests.
+- Record evidence in `logs/LOG.md` and track unresolved items in `docs/TRACKING.md`.
 
 ## Source artifacts
 - `docs/SYSTEMS_workbook_build_notes.md`

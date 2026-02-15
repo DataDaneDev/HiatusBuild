@@ -10,6 +10,28 @@ Single running log for build progress and test evidence.
 - Issues:
 - Next actions:
 
+## 2026-02-15
+- Performed integrated safety deep-dive for the current architecture with focus on the `48V 10.24kWh` system plus `12V`, `120VAC`, and propane paths.
+- Expanded `docs/SYSTEMS.md` `## Safety` from placeholder bullets to a build-ready baseline covering:
+- system-wide controls and isolation/access principles
+- `48V` high-fault-current hazard controls and commissioning checks
+- `12V` distribution protections and Orion headroom safety trigger
+- `120VAC` protection-chain and commissioning test requirements
+- propane rear-mount/passthrough controls and indoor water-heater selection rule
+- emergency shutdown order and pre-close safety hold points
+- Updated governance in `docs/TRACKING.md`:
+- Added decision `D-015` (consolidated safety baseline adoption)
+- Added risks `R-007` (`48V` arc/thermal fault exposure), `R-008` (propane/CO exposure), and `R-009` (AC neutral-ground/GFCI protection risk)
+- Added open questions to lock propane heater listing/venting path, passthrough hardware rules, leak-test cadence, and detector/extinguisher layout.
+- Added operations-ready checklist content in `docs/OPERATIONS.md`:
+- pre-energization checks
+- propane-specific checks
+- incident-response quick actions
+- Measurements/data: none captured in this documentation pass.
+- Tests run: none (documentation update only).
+- Issues: final propane appliance path and venting method remain unresolved and now explicitly tracked.
+- Next actions: convert safety hold points to dated commissioning test records during wiring and gas-system validation.
+
 ## 2026-02-13
 - Ran PRF-003 research sweep focused on AC distribution right-sizing for the current truck-camper architecture.
 - Reviewed current project AC assumptions in:
