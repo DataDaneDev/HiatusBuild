@@ -47,6 +47,12 @@
 - M6: install date (May 7, 2026)
 - M7: shakedown and punch-list closure
 
+## Build sequencing baseline (as-of 2026-02-15)
+- Build sequencing is now tracked as an overlapping phase plan (not strict serial trades).
+- Target install date remains fixed at May 7, 2026 (`81` days from this baseline date).
+- Detailed stage-by-stage order of operations, dependencies, and draft date windows:
+- `docs/PROJECT_build_order_of_operations.md`
+
 ## Immediate next decisions
 - Build a full fuse schedule for the locked Lynx architecture (main protection, all branch fuses, vehicle-side protection where applicable)
 - Freeze autonomy policy using modeled profiles (BOM + owner-supplied office loads) with a `20%` minimum SOC reserve floor

@@ -22,5 +22,6 @@ Supplementary workbook extracts (non-canonical, for traceability):
 Supplementary working artifacts:
 - `docs/ELECTRICAL_overview_diagram.md` (implementation-level topology with components, fuse/holder map, and conductor schedule assumptions)
 - `docs/ELECTRICAL_fuse_schedule.md` (fuse IDs, housing/holder methods, gauge tie-ins, spare inventory, and BOM row mapping)
+- `docs/PROJECT_build_order_of_operations.md` (staged build order with parallel workstreams, hold points, and date-window planning)
 - `docs/TEMP_electrical_red_flags.md` (temporary electrical issue tracker and resolution queue)
 - `docs/TEMP_procurement_red_flags.md` (temporary procurement-readiness issue tracker and resolution queue)

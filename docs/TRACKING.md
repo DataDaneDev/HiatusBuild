@@ -126,6 +126,15 @@
 - Result: Locked baseline to `4` total `120V` receptacle locations (`2` galley, `2` office), AC-out-1 branch split (`20A` galley + `15A` office), and `4` DC-fed USB-C PD points (`2` office + `2` galley) with `10A` per-zone fuse baseline. Added corresponding BOM scope in rows `107-118` and aligned AC hierarchy in `docs/ELECTRICAL_overview_diagram.md`.
 - Follow-up: Lock final SKU selections for inlet, enclosure/breakers, receptacles, and USB-C PD modules, then validate Orion `48/12-30` headroom under simultaneous-use scenarios before purchase freeze.
 
+- ID: D-014
+- Date: 2026-02-15
+- Decision: Adopt an overlapping build-sequence baseline with module-first prep before camper install date.
+- Context: Install date is fixed (`2026-05-07`) and major build quality risks come from sequence errors (closing walls before rough-in validation, delayed module prep, and routing rework).
+- Options considered: Strict serial trade flow, ad hoc sequencing, or staged sequence with explicit hold points and parallel workstreams.
+- Decision drivers: Maintain install-date readiness, reduce rework risk, and keep system serviceability.
+- Result: Added `docs/PROJECT_build_order_of_operations.md` and linked it from `docs/PROJECT.md` as the active sequencing baseline.
+- Follow-up: Update date windows after first dry-fit rehearsal and add sequence-specific risks if schedule compression appears.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
