@@ -178,7 +178,9 @@ Method:
 ## Solar
 - Current target options captured: flexible array around `900W` (`9x100W`) or rigid array around `600-800W`.
 - Constraint to validate: added roof load from solar plus Starlink plus fan/struts.
-- Open point: passthrough route preference (passenger wall vs cab wall vs roof).
+- Hardwall popup wiring baseline for planning: no hidden in-wall solar run; use exterior-rated coiled jumper cable(s) from roof solar exit to a lower-shell weatherproof passthrough.
+- BOM scope for that routing method is tracked in `bom/bom_estimated_items.csv` row `121`.
+- Open points: exact passthrough location and connector standard (`MC4` direct vs bulkhead adapter strategy) before SKU lock.
 - Energy takeaway from the current modeled load: moving from `600W` to `900W` improves expected harvest by about `720-900 Wh/day` at `4` PSH, depending on realized system efficiency, but still does not close the office-workday deficit by itself.
 
 ### Electrical reference maintenance workflow
@@ -222,6 +224,7 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 
 ## Cabinetry and structure
 - Aluminum extrusion strategy: 10-series and 15-series mix, with service chase/toe-kick concept for wiring
+- Modular mounting baseline now includes T-slot/strut rails both exterior (recovery/tool mounts like shovel/Maxtrax) and interior (baskets/hooks/tie-down points); BOM rows `119` and `120`.
 - Desk concepts captured: Lagun-style fold-in options and pneumatic pedestal concepts
 - Material ideas captured: phenolic/richlite top, sound treatment, panel anti-rattle tape
 - Monitor travel strategy concept: stow-low assisted deployment with structural bracing

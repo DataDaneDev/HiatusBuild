@@ -144,6 +144,15 @@
 - Result: Expanded `docs/SYSTEMS.md` `## Safety` with architecture-specific hazards, required controls, commissioning checks, emergency shutdown order, and pre-close inspection gates.
 - Follow-up: Lock propane appliance listing/venting path and convert safety hold points into dated test records in `logs/LOG.md` during commissioning.
 
+- ID: D-016
+- Date: 2026-02-15
+- Decision: Add explicit scope for modular inside/outside mounting rails and hardwall-popup solar jumper passthrough wiring.
+- Context: Build intent requires flexible exterior/interior gear mounting (shovel/Maxtrax and interior hooks/baskets), and hardwall popup construction makes concealed in-wall solar routing impractical.
+- Options considered: Leave as informal notes only, add one generic placeholder line, or add explicit BOM + systems + sequencing entries.
+- Decision drivers: Procurement visibility, serviceable routing, and reduced install-day rework.
+- Result: Added BOM rows `119`, `120`, and `121`; updated `docs/SYSTEMS.md` (`## Solar`, `## Cabinetry and structure`) and `docs/PROJECT_build_order_of_operations.md` (Batches `B`, `C`, and `E`) to include the new scope.
+- Follow-up: Lock final rail profile/attachment ecosystem and finalize solar jumper connector/passthrough SKU choices before purchase freeze.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -226,6 +235,15 @@
 - Owner: Sunny
 - Status: Open
 
+- ID: R-010
+- Risk: Roof-to-shell coiled solar jumper routing can chafe, snag, or leak at passthrough points if cable travel and strain relief are not validated through popup cycles.
+- Impact (1-5): 4
+- Likelihood (1-5): 3
+- Mitigation: Use UV/weather-rated cable, abrasion sleeves, drip loop + strain relief, and repeat open/close travel-cycle checks before final sealing.
+- Trigger: First full roof open/close cycle test with finalized cable length and routing.
+- Owner: Sunny
+- Status: Open
+
 ## Open questions
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)
 - Lock initial BBR current-limit setpoint for the assumed `240A` factory alternator after first instrumented charge tests
@@ -236,7 +254,9 @@
 - Lock final SKU set for AC/USB hardware (`rows 13-15`, `107-118`) and verify physical fitment with cabinet layout
 - Validate Orion `48/12-30` converter headroom with the new USB-C PD branch plan (`12V-08`, `12V-09`) and trigger row `118` only if sustained overload is observed
 - Final passthrough locations for solar, shore power, and fuel/heater paths
+- Lock roof-to-shell solar jumper connector strategy and exact service-loop length for full popup travel
 - Rigid vs flexible solar strategy under roof weight constraints
+- Lock interior/exterior mounting rail ecosystem (rail profile, nut/hardware standard, bracket interfaces) and final linear-foot allowances
 - Secondary internet strategy and minimum acceptable fallback performance
 - Battery compartment heating and control implementation details (sensor, relay, setpoints)
 - Storage/security SOP for flight windows

@@ -57,5 +57,7 @@
 - Build a full fuse schedule for the locked Lynx architecture (main protection, all branch fuses, vehicle-side protection where applicable)
 - Freeze autonomy policy using modeled profiles (BOM + owner-supplied office loads) with a `20%` minimum SOC reserve floor
 - Confirm passthrough locations (solar, shore, fuel/heater routing) with Hiatus before production lock
+- Lock hardwall-popup solar jumper approach details (connector family, passthrough hardware SKU, and service-loop length for roof travel)
 - Validate Sterling `BB1248120` + `BBR` current-limit operating envelope on the factory `240A` alternator; keep Mechman 370A alternator + Big 3 as purchase-later path pending fitment confirmation and install timing
 - Choose final solar panel type (flex vs rigid)
+- Lock interior/exterior T-slot or strut mounting ecosystem and bracket/accessory interface standard

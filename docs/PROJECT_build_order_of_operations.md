@@ -60,41 +60,67 @@
 - Stream D: shell execution
 - Once shell is available, execute penetrations -> rough-in -> close-up using prepared modules and harnesses.
 
-## Date-window draft plan (baseline date: February 15, 2026)
-1. February 16 to February 29
-- Freeze interior layout and service map.
-- Freeze penetration map and builder questions list.
-- Place remaining long-lead orders.
+## Date-window draft plan (baseline date: February 15, 2026; no purchases placed yet)
+1. February 16 to February 23 (`Batch A` order wave: no-regret core electrical)
+- Freeze interior layout/service map enough to lock cabinet footprints and service access.
+- Place the first order wave from `bom/bom_estimated_items.csv` for bench-critical electrical:
+- Core power and charging: rows `3`, `4`, `5`, `6`, `7`, `10`, `11`, `12`, `16`, `17`, `18`, `20`, `22`, `23`, `26`, `27`.
+- Bench-build tooling (if not already owned): rows `52`, `53`, `60`.
+- Keep unresolved solar/AC SKU rows out of this first wave.
+- Track vendor + ETA per ordered row (single source of truth remains `bom/bom_estimated_items.csv`).
 
-2. March 1 to March 22
-- Build and bench-test electrical module(s) and sub-panels.
-- Build cabinet/module frames and mounting interfaces.
-- Build labeled harness sets and branch bundles to planned lengths.
+2. February 24 to March 7 (`Batch B` order wave: AC shore/output + unresolved electrical SKUs)
+- Clear currently open procurement blockers before ordering: AC enclosure/breaker family lock, holder ecosystem lock, and pre-charge strategy.
+- Place second order wave:
+- AC inlet/distribution/receptacles: rows `13`, `15`, `107`, `108`, `109`, `110`, `111`, `112`, `115`.
+- Solar generation and roof-to-shell routing path after panel-style lock: rows `24`, `25`, `102`, `106`, `121`.
+- Pre-charge and fuse-spares closeout after holder/SKU lock: rows `19`, `105`.
+- Keep deprecated BOM rows out of purchase carts: rows `8`, `9`, `14`.
 
-3. March 23 to April 12
-- Complete plumbing subassemblies (tank/pump/manifold concepts).
+3. March 8 to March 22 (`Batch C` order wave: route-length-dependent cable + install consumables)
+- Build and bench-test electrical module(s) and sub-panels in parallel with harness prep.
+- After first route-length validation, place cable/termination wave:
+- Primary wire + cable stock: rows `28`, `29`, `30`, `31`, `32`, `33`, `113`, `114`.
+- Lugs, heatshrink, and protection consumables: rows `34` through `51`, and row `116`.
+- Exterior mounting rail hardware for shell-mounted cargo points: row `119`.
+- Method-dependent tooling: rows `58`, `59` (only if needed for selected plumbing/fabrication method).
+- Build labeled harness sets and branch bundles to measured lengths (not assumed lengths).
+
+4. March 23 to April 12 (`Batch D` order wave: appliances + plumbing/thermal buildables)
+- Complete plumbing and heating subassemblies (tank/pump/manifold and heater support hardware).
+- Place appliance/plumbing wave:
+- Electrical loads and galley appliances: rows `61`, `67`, `68`, `79`.
+- Heat/water path: rows `62`, `63`, `64`, `65`, `66`, `72`, `73`, `74`, `75`, `76`, `77`, `78`.
+- Propane support completion: rows `69`, `70`, `71`, `85`.
+- Plumbing misc completion: rows `80`, `81`, `82`, `83`, `84`.
 - Build install templates/jigs for repeatable placement.
-- Finalize commissioning checklists and label packs.
 
-4. April 13 to May 3
-- Re-verify BOM completeness against install sequence.
+5. April 13 to May 3 (`Batch E` order wave: cabinetry/interior + closeout)
+- Re-verify BOM completeness against install sequence and identify any still-unordered required rows.
+- Place interior/module wave:
+- Cabinet/interior and structure items: rows `87` through `101`, plus row `120`.
+- Remaining general fabrication tools (if still needed): rows `54`, `55`, `56`, `57`.
+- Any remaining fastener/consumable top-off from prior waves.
 - Perform dry-fit rehearsal of module footprints and fastener plans.
 - Prep install kits by stage (penetrations, rough-in, close-up, commissioning).
 
-5. May 4 to May 6
-- Final pre-install readiness gate:
-- all hardware on hand,
-- all modules bench-tested,
-- all drawings/checklists printed/exported,
-- known risks logged in `docs/TRACKING.md`.
+6. May 4 to May 6 (final pre-install readiness gate)
+- Confirm all required Batch `A` to `E` items are delivered (not just ordered).
+- Confirm all modules bench-tested and labeled.
+- Confirm drawings/checklists exported and field-ready.
+- Confirm known risks logged in `docs/TRACKING.md`.
 
-6. May 7 (install day)
+7. May 7 (install day)
 - Execute shell-dependent scope and drop in prebuilt modules where possible.
 - Capture deviations from planned routing or dimensions immediately.
 
-7. May 8 to May 24
+8. May 8 to May 24 (finish + commissioning)
 - Complete rough-in/termination sequence if not finished on install day.
 - Run commissioning tests and first shakedown cycle.
+
+## Deferred / purchase-later rows (do not include in Batch A to E)
+- Optional 12V expansion and alternator-upgrade path: rows `103`, `104`, `118`.
+- Deferred battery buffer path: row `21`.
 
 ## Critical hold points (do not skip)
 - Hold 1: No penetrations until layout + service map is frozen.
