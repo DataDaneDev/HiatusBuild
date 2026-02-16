@@ -225,6 +225,7 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 ## Cabinetry and structure
 - Aluminum extrusion strategy: 10-series and 15-series mix, with service chase/toe-kick concept for wiring
 - Modular mounting baseline now includes T-slot/strut rails both exterior (recovery/tool mounts like shovel/Maxtrax) and interior (baskets/hooks/tie-down points); BOM rows `119` and `120`.
+- Drawer hardware baseline includes `4x` soft-close undermount slide kits for primary cabinetry drawers; BOM row `122`.
 - Desk concepts captured: Lagun-style fold-in options and pneumatic pedestal concepts
 - Material ideas captured: phenolic/richlite top, sound treatment, panel anti-rattle tape
 - Monitor travel strategy concept: stow-low assisted deployment with structural bracing

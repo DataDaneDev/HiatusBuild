@@ -1,7 +1,7 @@
 # Project
 
 ## Snapshot
-- As-of date: February 11, 2026
+- As-of date: February 16, 2026
 - Install milestone: May 7, 2026
 - Mission: build a reliable off-grid camper workspace suitable for full-time professional use
 
@@ -47,14 +47,16 @@
 - M6: install date (May 7, 2026)
 - M7: shakedown and punch-list closure
 
-## Build sequencing baseline (as-of 2026-02-15)
+## Build sequencing baseline (as-of 2026-02-16)
 - Build sequencing is now tracked as an overlapping phase plan (not strict serial trades).
-- Target install date remains fixed at May 7, 2026 (`81` days from this baseline date).
+- Target install date remains fixed at May 7, 2026 (`80` days from this baseline date).
+- Accelerated procurement phase (`Batch A+`) is active in `bom/bom_estimated_items.csv` with core electrical plus bench-build wiring/consumables pulled into February 16 to February 21.
 - Detailed stage-by-stage order of operations, dependencies, and draft date windows:
 - `docs/PROJECT_build_order_of_operations.md`
 
 ## Immediate next decisions
-- Build a full fuse schedule for the locked Lynx architecture (main protection, all branch fuses, vehicle-side protection where applicable)
+- Execute `Batch A+` purchase wave and capture vendor/ETA status for rows `3`, `4`, `5`, `6`, `7`, `10`, `11`, `12`, `16`, `17`, `18`, `20`, `22`, `23`, `26`, `27`, `28` through `45`, `52`, `53`, `60`
+- Validate the full fuse schedule against final holder/SKU selections and cart contents for the locked Lynx architecture
 - Freeze autonomy policy using modeled profiles (BOM + owner-supplied office loads) with a `20%` minimum SOC reserve floor
 - Confirm passthrough locations (solar, shore, fuel/heater routing) with Hiatus before production lock
 - Lock hardwall-popup solar jumper approach details (connector family, passthrough hardware SKU, and service-loop length for roof travel)

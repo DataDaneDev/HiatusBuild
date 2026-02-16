@@ -10,6 +10,25 @@ Single running log for build progress and test evidence.
 - Issues:
 - Next actions:
 
+## 2026-02-16
+- Updated procurement sequencing to an accelerated `Batch A+` phase so the electrical bench build can start without waiting for later cable/consumable waves.
+- Updated `bom/bom_estimated_items.csv` purchase windows:
+- `2026-02-16`: rows `3`, `12`, `18`, `20`, `22`, `23`
+- `2026-02-17`: rows `4`, `5`, `6`, `7`, `10`, `11`, `16`, `17`, `26`, `27`
+- `2026-02-18`: rows `52`, `53`, `60`
+- `2026-02-19`: rows `28`, `29`, `30`, `31`, `32`, `33`
+- `2026-02-20`: rows `34`, `35`, `36`, `37`, `38`, `39`, `40`, `41`
+- `2026-02-21`: rows `42`, `43`, `44`, `45`
+- Restored missing BOM row `122` as a placeholder interior procurement line item for drawer-slide kits so canonical row references remain coherent.
+- Synchronized planning/governance docs:
+- `docs/PROJECT_build_order_of_operations.md` updated from `Batch A` to `Batch A+` and adjusted downstream batch scope.
+- `docs/PROJECT.md` sequencing baseline updated to `2026-02-16` with active `Batch A+` note.
+- `docs/TRACKING.md` updated with decisions `D-019` and `D-020`.
+- Measurements/data: none captured (documentation/procurement-plan update only).
+- Tests run: row-level verification of targeted BOM date updates (`37` checks, `0` mismatches).
+- Issues: initial BOM write attempt was blocked by a temporary file lock; write succeeded after lock release.
+- Next actions: convert planned purchase dates to actual ordered status with vendor + ETA per row and identify any SKU substitutions before harness fabrication.
+
 ## 2026-02-15
 - Performed integrated safety deep-dive for the current architecture with focus on the `48V 10.24kWh` system plus `12V`, `120VAC`, and propane paths.
 - Expanded `docs/SYSTEMS.md` `## Safety` from placeholder bullets to a build-ready baseline covering:

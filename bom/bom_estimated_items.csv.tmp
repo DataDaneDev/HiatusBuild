@@ -1,0 +1,120 @@
+row,category,component,est_price,price_flag,description_notes,est_purchase_date
+2,Camper Platform,Hiatus Camper,33488.64,user_filled,,
+3,Power System,Batteries,1356,user_filled,"48V 100Ah LiFePO4 Golf Cart Lithium Battery (2x), 200A BMS low-temp protection, max 4 batteries = 400Ah system",2026-02-16
+12,Power System,Inverter/Transfer Switch/Charger,937,user_filled,"Victron MultiPlus-II 48/3000/35-50 (48V, 3kVA)",2026-02-16
+18,Power System,Alternator Charging,807,ai_set,"Sterling Power BB1248120 battery-to-battery charger (12V or 24V input to 48V output, ~1500W max, ~26A at 57.6V). Requires fused input/output paths per fuse schedule.",2026-02-16
+24,Power System,Solar Panels,700,user_filled,9x100w (3S3P) flexible. PV string fusing and holder/combiner are tracked as separate BOM line items.,2026-03-03
+25,Power System,Solar Controller,211,user_filled,Victron SmartSolar MPPT 150/45,2026-03-03
+5,Power System,48v disconnect,35,user_filled,Victron Energy Battery Switch ON/Off 275 amp,2026-02-18
+6,Power System,Lynx Distributor,192.47,ai_set,Victron Lynx Distributor M10 (LYN060102010),2026-02-18
+7,Power System,Battery Class T Protection (Lynx plan),318.78,ai_set,2x Blue Sea Class T blocks + 2x 225A Class T fuses installed (one per battery positive) + 2x spare 225A fuses.,2026-02-18
+10,Power System,Lynx 48V branch MEGA fuses (installed),119,ai_set,"Installed in Lynx Distributor: 125A (MultiPlus) x1, 60A (MPPT) x1, 40A (Sterling output) x1, 40A (Orion feeder) x1. Use 58V/80V-rated MEGA fuses only.",2026-02-18
+11,Power System,Inline high-current fuse hardware (installed),85,ai_set,Sterling input: 150A + holder (12V side). Orion input: 20A/23A 58V + holder. Orion 12V output to fuse panel: 60A + holder.,2026-02-18
+19,Power System,Pre-charge Resistor,,blank,"RecPro or equivalent pre-charge resistors, or ensure your BMS handles this",2026-03-03
+4,Power System,Battery Temp Sensor,21,user_filled,"Temperature Sensor for Victron Energy Quattro, MultiPlus and GX Device",2026-02-21
+22,Power System,Monitoring,240,user_filled,Victron Cerbo GX,2026-02-16
+23,Power System,Battery Monitor,93,user_filled,Victron SmartShunt 500A,2026-02-16
+20,Power System,DC Conversion,196,user_filled,Orion-Tr DC to DC Converter - 48/12-Volt 30 amp 360-Watt - IP43 Protected - for Dual Battery Systems - Isolated.,2026-02-16
+16,Power System,12v fuse panel + branch/spare blade fuses,72,ai_set,Blue Sea 5026/5032 style fuse block + branch ATO/ATC fuses + spare blade fuse kit.,2026-02-18
+17,Power System,12v negative bussbar,38,ai_set,"Covered marine-style 12V negative busbar (100A+), shared return point for Orion output and 12V branch returns including USB-C PD circuits.",2026-02-18
+27,Power System,Starlink DC DC PS,65,user_filled,Starlink DC Power Supply,2026-02-18
+115,Power System,USB-C PD outlets (12V-fed),140,ai_set,4x DC-fed USB-C PD outlet modules (target: 2 office + 2 galley). Prefer 60W+ USB-C per port modules with branch-level shared power budget (~100-120W per zone).,2026-02-27
+21,Power System,12v Buffer,,blank,(skip for now) 12v LiFePO4 50ah,
+118,Power System,OPTIONAL (purchase later): 12V converter expansion,,blank,"If sustained 12V loads + USB-C PD demand exceed Orion 48/12-30 headroom, add parallel converter capacity or move to higher-output 48V->12V conversion.",
+105,Power System,48V spare fuse kit (MEGA/MIDI),255,ai_set,"Spares: MEGA 125A x2, 60A x2, 40A x3; Orion-input 58V fuse x2; Sterling-input 150A spare x1.",2026-03-03
+106,Power System,PV string fuse set + holder (3S3P),65,ai_set,3x installed 15A gPV string fuses + 3x spare 15A gPV fuses + fuse holder/combiner hardware near roof entry.,2026-03-03
+26,Power System,Alternator Charger Remote,108,ai_set,Sterling Power BBR remote controller for BB1248120 current limiting and control,2026-02-18
+103,Power System,Alternator Upgrade (purchase later),599,ai_set,Mechman 370A alternator for Ford truck 7.3L (SKU 11532370) purchase-later option; shorter belt required; not recommended for sustained use above 5000 RPM engine speed,
+107,Power System,Shore power inlet + weatherproof hatch,75,ai_set,30A RV-style shore inlet baseline (with adapter policy for 15A/20A hookups); lock final NEMA/interface style during SKU phase.,2026-02-24
+108,Power System,Shore cord + adapter kit,135,ai_set,30A shore cord plus 30A-to-15A and 30A-to-20A dogbone adapters for mixed pedestal/household hookups.,2026-02-24
+13,Power System,AC input breaker/disconnect,18,ai_set,20A single-pole baseline for shore AC input to MultiPlus AC-in; final rating must match shore service/current-limit policy.,2026-02-24
+109,Power System,AC load center / breaker enclosure,65,ai_set,Compact 4-6 space AC enclosure for shore-input disconnect and AC-out branch breaker layout (non-DIN acceptable).,2026-02-24
+110,Power System,AC branch breaker set (AC-out-1),28,ai_set,Branch breakers for AC-out-1 distribution: 20A galley branch + 15A office branch + one spare position.,2026-02-24
+15,Power System,GFCI outlet(s),38,ai_set,2x GFCI receptacles (first outlet on each AC-out-1 branch: galley + office). Use downstream feed-through protection where applicable.,2026-02-27
+111,Power System,Standard AC receptacles (non-GFCI),18,ai_set,"2x duplex receptacles for downstream branch locations, giving 4 total receptacle locations with row 15 (2 galley, 2 office).",2026-02-27
+112,Power System,AC outlet boxes + faceplates,32,ai_set,4x receptacle boxes + covers/faceplates + strain-relief/clamp hardware for final outlet install.,2026-02-27
+14,Power System,DEPRECATED (AC): DIN rail mount,,blank,Not required if using compact AC load-center enclosure; include only if DIN-format breaker hardware is selected.,
+8,Power System,DEPRECATED (Lynx): separate 48V negative busbar,,blank,Not required in locked Lynx topology; Lynx Distributor provides negative bus.,
+9,Power System,DEPRECATED (Lynx): separate 6-way MEGA fuse holder,,blank,Not required; Lynx Distributor provides 4 fused 48V branch slots.,
+28,Hardware,Wire (red+black),300,user_filled,2/0 Gauge (30') baseline. Big 3 calls for 1/0 minimum pure copper; this gauge is acceptable if true OFC. Plan ~15 ft extra when alternator upgrade is activated.,2026-03-09
+29,Hardware,,72,user_filled,6 AWG (20'),2026-03-09
+30,Hardware,,36,user_filled,4 AWG (25'),2026-03-09
+104,Hardware,Big 3 wiring upgrade (purchase later estimate),225,ai_set,Estimated incremental wiring-only cost if not buying a full kit: ~15 ft additional 2/0 OFC-equivalent cable + extra lugs/heatshrink + inline fuse and holder + chassis ground prep consumables,
+34,Hardware,Lugs,14,user_filled,2/0 AWG × M10: ~6–8,2026-03-12
+35,Hardware,,13,user_filled,2/0 AWG × M8: ~4–6,2026-03-12
+36,Hardware,,8,user_filled,6 AWG × M8: ~10–12,2026-03-12
+37,Hardware,,7,user_filled,4 AWG × M8/M10: ~2–4,2026-03-12
+38,Hardware,Adhesive Heatshrink (red+black),12,user_filled,Feb-00,2026-03-12
+39,Hardware,,4,user_filled,6 AWG,2026-03-12
+40,Hardware,,4,user_filled,4 AWG,2026-03-12
+51,Hardware,antioxidant compound for ground,12,user_filled,Noalox,2026-03-16
+31,Hardware,,31,user_filled,10 AWG duplex (30'),2026-03-09
+32,Hardware,,19,user_filled,14 AWG duplex (30'),2026-03-09
+33,Hardware,,14,user_filled,18/2 100',2026-03-09
+41,Hardware,,4,user_filled,12 AWG,2026-03-12
+116,Hardware,USB-C PD branch wiring + terminals,45,ai_set,"14 AWG duplex branch wire, terminals, and install consumables for two dedicated USB-C PD circuits from the 12V fuse panel (office + galley zones).",2026-03-16
+113,Hardware,"AC branch cable (stranded, 12 AWG)",95,ai_set,Stranded AC cable for MultiPlus AC-out-1 branch runs to galley/office receptacle locations (target combined run allowance ~50-75 ft).,2026-03-09
+114,Hardware,"Shore feed cable (stranded, 10/3)",85,ai_set,Stranded 10/3 cable for shore inlet to AC input breaker/disconnect and AC-in routing to MultiPlus (length to confirm after layout lock).,2026-03-09
+42,Hardware,Split loom,30,user_filled,"3/8"" - 1""",2026-03-12
+43,Hardware,Rubber Grommets,10,user_filled,,2026-03-12
+44,Hardware,Strain relief/cable glands,20,user_filled,,2026-03-12
+45,Hardware,P-clamps,20,user_filled,,2026-03-12
+46,Hardware,stainless hardware,30,user_filled,"1/4-20 stainless 3/4"" & 1"", fender washers, nylocks",2026-03-16
+47,Hardware,t-nuts,7,user_filled,,2026-03-16
+48,Hardware,Adhesive cable mounts,7,user_filled,,2026-03-16
+49,Hardware,Zip ties,7,user_filled,,2026-03-16
+50,Hardware,rubber washers,6,user_filled,,2026-03-16
+61,Appliances,Fridge,400,user_filled,35-50qt fridge,2026-03-24
+79,Appliances,Starlink,349,user_filled,Standard,2026-03-27
+67,Appliances,Cooktop,120,user_filled,Induction 1x,2026-03-27
+68,Appliances,Microwave,80,user_filled,Compact 700W,2026-03-27
+62,Appliances,Diesel Heater,190,user_filled,LF Bros 2KW Diesel Heater,2026-03-24
+63,Appliances,Heater T,10,user_filled,ZTUOAUMA 60mm T-Piece Diesel,2026-03-24
+64,Appliances,CO + Propane Detector,47,user_filled,,2026-03-24
+65,Appliances,Diesel Tank,95,user_filled,"Scepter 12 gal (no, do 1 small inside, 1 large outside)",2026-03-24
+66,Appliances,Diesel Pump,75,user_filled,,2026-03-24
+69,Appliances,Propane Mount,63,user_filled,5lb & 10lb Propane Tank Mount Holder Bracket for Car RV Trailers Truck Boat Jeep,2026-03-27
+70,Appliances,Propane Tank,73,user_filled,Home Depot,2026-03-27
+71,Appliances,Propane Tank Gauge,,blank,,2026-03-27
+72,Appliances,Water Heater,170,user_filled,"Flame King Tankless Outdoor Portable Camping Hot Shower Propane Gas 5L 1.32GPM Water Heater 34,000 BTU",2026-03-31
+73,Appliances,Water Tank,120,user_filled,classAcustoms | T-2500 | One (25 gal),2026-03-31
+74,Appliances,Water Pump,103,user_filled,Shurflo 3.0 GPM + Silencing Kit.,2026-03-31
+75,Appliances,Water Inlet Hose,23,user_filled,Camco EvoFlex2 25-ft,2026-03-31
+76,Appliances,Water Filter (hose),21,user_filled,Camco TastePure,2026-03-31
+77,Appliances,Water Filter (cabinet),,blank,,2026-03-31
+78,Appliances,Water Inlet,29,user_filled,All Metal RV City Water Inlet with Check Valve,2026-03-31
+80,Plumbing Misc,Tee,,blank,"PEX, sink to water heater",2026-04-04
+81,Plumbing Misc,Ball Valve,,blank,Sink to water heater,2026-04-04
+82,Plumbing Misc,Quick-connect set,,blank,"water rated, garden-hose style (GHT) (2 sets)",2026-04-04
+83,Plumbing Misc,Check Valve,,blank,Sink to water heater (on hose),2026-04-04
+84,Plumbing Misc,Potable Water Hose,,blank,"6-10', sink to water heater",2026-04-04
+85,Plumbing Misc,Propane QD,,blank,,2026-04-04
+87,Interior,Cabinetry,4000,user_filled,"DIY. Sink, faucet, nice desk, office chair, plumbing",2026-04-14
+88,Interior,Insulation,,blank,"3m thinsulate or halvlok wall, + reflectix, behind cabinets",2026-04-14
+89,Interior,Aluminum Extrusion,,blank,"10s, 15s for desk. Full length (under 92"" to save shipping)",2026-04-14
+90,Interior,corner bracket,,blank,simple,2026-04-14
+91,Interior,Corner bracket adapter,,blank,10s to 15s (or just drill out a regular 10s bracket?,2026-04-14
+92,Interior,corner gusset,,blank,4 hole,2026-04-14
+93,Interior,flat brackets,,blank,2 hole,2026-04-14
+94,Interior,90 flat brackets,,blank,3 hole,2026-04-18
+95,Interior,Spacers or shims,,blank,"1/2"", 1/8"", 1/4"" hole. Thermal break between alum and walls. Plastic or wood.",2026-04-18
+96,Interior,VHB Tape,,blank,"Very High Bonding. Between aluminum and panels, to assist with panel adhesian for short screws (if front facing screw heads are undesired)",2026-04-18
+97,Interior,Foam tape or adhesive,,blank,"prevent 1/4"" panels in 80/20 grove from rattling",2026-04-18
+98,Interior,LED Strips,200,user_filled,Govee,2026-04-18
+99,Interior,Monitor Arm,200,user_filled,Heavy Duty (Ergotron style),2026-04-18
+100,Interior,Chair,160,user_filled,Tervo Model U | Folding Office Chair for Small Spaces,2026-04-18
+101,Interior,Sound system/bar?,,blank,,2026-04-28
+52,Tools,Label Maker,18,user_filled,,2026-02-21
+53,Tools,Hydraulic lug crimper (8-2/0),45,user_filled,,2026-02-21
+54,Tools,Track Saw/Table Saw,,blank,track = easier angles,2026-04-22
+55,Tools,Orbital sander,,blank,,2026-04-22
+56,Tools,Domno/bisqut joiner,,blank,,2026-04-22
+57,Tools,digital Level,,blank,,2026-04-22
+58,Tools,PEX expander,,blank,If I go PEX instead of braided hose,2026-03-20
+59,Tools,Step bits,,blank,bores out 80/20 so flat heads fit (after pilot hole),2026-03-16
+60,Tools,Ratchet cable cutter,17,user_filled,QWORK 4/0 Gauge Wire Cutter,2026-02-21
+102,Misc,Solar panel mounts,55,user_filled,48 in. x 4 ft. Multiwall Polycarbonate Panel in Clear (multiple),2026-03-03
+119,Hardware,Exterior T-slot/strut rails + mounts,325,ai_set,"Exterior modular rails for shovel/Maxtrax and general gear carry (starter allowance: 2-4 rail sections, end caps, backing plates, and stainless mounting hardware).",2026-03-16
+120,Interior,Interior T-slot/strut rails + accessory hardware,210,ai_set,"Interior modular rail allowance for baskets/hooks/tie-down points (rail sections, spring nuts/T-nuts, brackets, and install hardware).",2026-04-14
+121,Power System,Solar roof-to-shell coiled jumper + passthrough kit,165,ai_set,"Hardwall popup routing baseline: exterior-rated coiled solar jumper(s) from roof array to lower shell weatherproof passthrough, plus bulkhead/gland, strain relief, and service loop hardware.",2026-03-03
+122,Interior,Drawer slide bundle (18in BLUM TANDEM + BLUMOTION),146.76,user_filled,"Qty 4 kits for cabinetry drawers. Bundle includes 563H slides, locking devices (T51.1901L/T51.1901R), rear mounting brackets, screws, and install instructions.",2026-04-14

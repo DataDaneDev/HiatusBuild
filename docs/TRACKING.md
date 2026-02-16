@@ -153,6 +153,42 @@
 - Result: Added BOM rows `119`, `120`, and `121`; updated `docs/SYSTEMS.md` (`## Solar`, `## Cabinetry and structure`) and `docs/PROJECT_build_order_of_operations.md` (Batches `B`, `C`, and `E`) to include the new scope.
 - Follow-up: Lock final rail profile/attachment ecosystem and finalize solar jumper connector/passthrough SKU choices before purchase freeze.
 
+- ID: D-017
+- Date: 2026-02-16
+- Decision: Reopen the `12V` vs `24V` vs `48V` core architecture decision (superseding the “48V default” assumption from D-002 pending final scope lock).
+- Context: The electrical baseline assumed an AC-capable kitchen (induction + microwave) and a `3kVA` inverter class. The updated direction may be propane cooking + DC-first office (AC-light).
+- Options considered: Full `12V` core, `24V` core + `12V` distribution, keep `48V` core + `12V` distribution.
+- Decision drivers: Reduce space/complexity for a truck-bed camper, keep fast charging (alternator + solar), preserve a large bank (`10–15 kWh`), and avoid unnecessary high-current wiring or conversion layers.
+- Result: Updated `docs/ELECTRICAL_12V_vs_48V_trade_study.md` to reflect Scope A vs Scope B decision logic and to enumerate BOM/topology deltas by voltage. Final architecture selection is pending explicit AC policy + inverter approach lock.
+- Follow-up: Superseded by D-018 architecture lock.
+
+- ID: D-018
+- Date: 2026-02-16
+- Decision: Lock architecture to `48V` core + `12V` distribution.
+- Context: After reopening the voltage study under a possible AC-light/propane scope, the project direction is to keep the existing `48V` implementation path.
+- Options considered: Full `12V` core, `24V` core + `12V` distribution, keep `48V` core + `12V` distribution.
+- Decision drivers: Keep fast charging + large bank performance margin, retain lower main-path current, and avoid redesign churn across BOM/topology/fuse documentation.
+- Result: Updated `docs/ELECTRICAL_12V_vs_48V_trade_study.md` recommendation and bottom-line sections to reflect `48V` as the active architecture.
+- Follow-up: If AC load mix changes materially, update `bom/load_model_wh.csv` scenarios and recalculate `docs/SYSTEMS.md` while staying on `48V`.
+
+- ID: D-019
+- Date: 2026-02-16
+- Decision: Accelerate procurement to a `Batch A+` wave so bench-build work can start immediately after core component arrivals.
+- Context: Core electrical items alone would not enable practical bench assembly without pulled-forward wiring, lugs, fuse hardware, and basic electrical build tools.
+- Options considered: Keep original phased dates (`Batch A` core only then later cable/consumables), ad hoc manual pull-forward, or explicit `Batch A+` resequencing with synchronized docs.
+- Decision drivers: Reduce idle wait time between deliveries, remove bench-build blockers early, and keep one coherent source of truth across BOM, sequencing, and logs.
+- Result: Updated `bom/bom_estimated_items.csv` `est_purchase_date` values for rows `3`, `4`, `5`, `6`, `7`, `10`, `11`, `12`, `16`, `17`, `18`, `20`, `22`, `23`, `26`, `27`, `28` through `45`, `52`, `53`, and `60`; synchronized `docs/PROJECT_build_order_of_operations.md` and `docs/PROJECT.md` to reflect the accelerated wave.
+- Follow-up: Capture actual order date/vendor/ETA status for each `Batch A+` row and flag any substitutions before bench wiring starts.
+
+- ID: D-020
+- Date: 2026-02-16
+- Decision: Restore BOM row `122` as a placeholder interior line item for drawer-slide procurement tracking.
+- Context: Canonical docs referenced row `122` for drawer hardware, but the row was missing from `bom/bom_estimated_items.csv`, creating a cross-document reference gap.
+- Options considered: Remove row-`122` references from docs, or reinsert row `122` in BOM with unresolved pricing.
+- Decision drivers: Keep row-ID traceability stable and preserve documentation consistency until cabinetry SKU lock.
+- Result: Added row `122` to `bom/bom_estimated_items.csv` (`Drawer slide kits (soft-close undermount)`) with blank price and `2026-04-14` planning date.
+- Follow-up: Lock final drawer-slide SKU (length/load class/brand) and populate price before interior procurement wave.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
