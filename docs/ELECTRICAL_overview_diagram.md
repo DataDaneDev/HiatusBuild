@@ -1,12 +1,13 @@
 # Electrical Topology Diagram (Implementation v4)
 
-As-of date: `2026-02-17`
+As-of date: `2026-02-18`
 
 Purpose: provide a complete, install-level electrical topology for the current build scope, including all major electrical components, fuse IDs, fuse housings, and planned wire gauges.
 
 Related docs:
 - Canonical electrical/system baseline: `docs/SYSTEMS.md`
 - Detailed fuse matrix: `docs/ELECTRICAL_fuse_schedule.md`
+- Battery and trunk recalculation record: `docs/ELECTRICAL_battery_fuse_wire_recalc_2026-02-18.md`
 - Decisions and unresolved items: `docs/TRACKING.md`
 - Procurement source of truth: `bom/bom_estimated_items.csv`
 
@@ -14,6 +15,20 @@ Related docs:
 - Corrected Sterling `BB1248120` modeling basis to `~1500W` max output (`~26A` at `57.6V`), replacing prior `120A @ 48V` planning assumption.
 - Added explicit fuse-holder/housing definitions for every fuse family (`Class T`, Lynx `MEGA`, inline `MIDI/ANL/AMI`, PV `gPV`, and `ATO/ATC`).
 - Added conductor schedule across `48V`, `12V`, PV, and AC segments with explicit assumptions.
+- Updated 12V topology to a shared bus fed by Orion-Tr Smart and a `12V 100Ah` buffer battery, with `F-11` source fuse plus `SW-12V-BATT` manual isolation.
+
+## Battery Fuse/Wire Recalculation Basis (2026-02-18)
+- Scope in this pass is limited to battery-side and major `48V` trunk paths (`C-01` through `C-15`).
+- Provisional battery listing inputs used: `51.2V 100Ah`, `<=200A` current limit per battery.
+- Conservative sizing factors used in this pass:
+1. Parallel-sharing factor `K_share = 1.5`
+2. Continuous margin factor `K_cont = 1.25`
+- Current envelope used for battery-discharge branch sizing in current architecture: `I_total = F-02 + F-05 = 125A + 40A = 165A`.
+- Per-battery design current: `I_batt_design = (165A / 3) * 1.5 = 82.5A`.
+- Continuous-adjusted minimum battery branch fuse threshold: `I_fuse_min = 82.5A * 1.25 = 103.1A`.
+- Provisional battery branch fuse selection: `F-01A/B/C = 200A Class T`, constrained by the provisional battery `<=200A` current-limit listing.
+- Final lock gate: validate true `51.2V` battery datasheet/manual current and terminal limits before permanent fuse lock; if lower limits are confirmed, move to `175A`.
+- Cable procurement remains scenario-band based until CAD run lengths are frozen. Current buy baseline for `2/0` is `50 ft` total (replacing legacy `30 ft` placeholder).
 
 ## Complete Power Topology (48V Core + Charge Sources)
 ```mermaid
@@ -48,9 +63,9 @@ flowchart LR
         BATA["Battery A\n48V 100Ah"]
         BATB["Battery B\n48V 100Ah"]
         BATC["Battery C\n48V 100Ah"]
-        F01A["F-01A 225A Class T\nBlue Sea block"]
-        F01B["F-01B 225A Class T\nBlue Sea block"]
-        F01C["F-01C 225A Class T\nBlue Sea block"]
+        F01A["F-01A 200A Class T\nBlue Sea block (provisional)"]
+        F01B["F-01B 200A Class T\nBlue Sea block (provisional)"]
+        F01C["F-01C 200A Class T\nBlue Sea block (provisional)"]
         POSBUS["48V + busbar (battery-side)\ncombine after Class T fuses"]
         NEGBUS["48V - busbar (battery-side)\ncombine before SmartShunt"]
         DISC["48V disconnect\nVictron 275A"]
@@ -87,13 +102,17 @@ flowchart LR
     ORION -- "48V input - (6 AWG)" --> LYNX
 ```
 
-## 12V Distribution Topology (From Orion)
+## 12V Distribution Topology (Shared Bus With Buffer Battery)
 ```mermaid
 flowchart LR
-    ORION["Orion-Tr 48/12-30\nIsolated converter"]
+    ORION["Orion-Tr Smart 48/12-30\nIsolated converter"]
     F07["F-07 60A\ninline holder near Orion"]
+    P12["12V positive bus\n(shared distribution post)"]
     PANEL["12V fuse panel\nBlue Sea 5026/5032 style"]
     N12["12V negative busbar"]
+    B12["12V 100Ah LiFePO4\nbuffer battery"]
+    F11["F-11 100A class\nbattery main fuse"]
+    SW12["SW-12V-BATT\nmanual battery disconnect"]
 
     STAR["12V-01 Starlink PSU\n10A / 14 AWG"]
     FRIDGE["12V-02 Fridge\n15A / 14 AWG"]
@@ -102,11 +121,14 @@ flowchart LR
     DET["12V-05 CO+Propane detector\n3A / 18/2"]
     LED["12V-06 LED strips\n5A / 18/2"]
     CERBO_PWR["12V-07 Cerbo GX feed\n3A / 18/2 (assumed)"]
-    SP1["12V-08 Spare\n15A / 14 AWG"]
-    SP2["12V-09 Spare\n15A / 14 AWG"]
+    USB_OFFICE["12V-08 Office USB PD station\n20A / 12 AWG"]
+    USB_GALLEY["12V-09 Galley USB PD station\n15A / 14 AWG"]
 
-    ORION -- "12V + (6 AWG)" --> F07 --> PANEL
+    ORION -- "12V + (6 AWG)" --> F07 --> P12
     ORION -- "12V - (6 AWG)" --> N12
+    B12 -- "BAT+ (4 AWG)" --> F11 --> SW12 --> P12
+    B12 -- "BAT- (4 AWG)" --> N12
+    P12 -- "12V feed (6 AWG)" --> PANEL
 
     PANEL --> STAR
     PANEL --> FRIDGE
@@ -115,8 +137,8 @@ flowchart LR
     PANEL --> DET
     PANEL --> LED
     PANEL --> CERBO_PWR
-    PANEL --> SP1
-    PANEL --> SP2
+    PANEL --> USB_OFFICE
+    PANEL --> USB_GALLEY
 
     STAR --> N12
     FRIDGE --> N12
@@ -125,6 +147,8 @@ flowchart LR
     DET --> N12
     LED --> N12
     CERBO_PWR --> N12
+    USB_OFFICE --> N12
+    USB_GALLEY --> N12
 ```
 
 ## AC Path Topology (Shore + Inverter Output, Full Hierarchy)
@@ -165,7 +189,7 @@ flowchart LR
     end
 
     subgraph USB_PD["USB/USB-C PD Strategy"]
-        PD_DC["Locked: 12V branch -> DC USB-C PD modules\n4 total points (2 office, 2 galley)"]
+        PD_DC["Locked: 12V branch -> USB PD stations\n2 total stations (office + galley)"]
         PD_AC["Alternative: USB receptacles on AC branch"]
     end
 
@@ -202,7 +226,7 @@ flowchart LR
 - AC input protection: dedicated AC input breaker/disconnect upstream of MultiPlus AC-in.
 - AC-out-1 distribution: two protected branches (`20A` galley, `15A` office) with GFCI-at-first-outlet strategy.
 - Receptacle plan: `4` total `120V` receptacle locations (`2` galley, `2` office).
-- USB charging plan: `4` DC-fed USB-C PD points on `12V` branches (`2` office, `2` galley) with `10A` per-zone branch fuse baseline.
+- USB charging plan: `2` DC-fed USB PD station assemblies on `12V` branches (`1` office, `1` galley) with branch baselines of `20A` (office) and `15A` (galley).
 - AC-out-2 remains optional and not in Phase 1 procurement baseline.
 
 ## Monitoring and Control Topology
@@ -224,12 +248,12 @@ flowchart LR
     SHUNT_PWR -. "power/sense harness" .- SHUNT
 ```
 
-## Fuse Housing Map (Where Each Fuse Is Physically Housed)
-| Fuse ID | Fuse value | Housing method | Location |
+## Fuse and Switch Housing Map (Where Each Item Is Physically Housed)
+| Item ID | Item value/type | Housing method | Location |
 | --- | --- | --- | --- |
-| `F-01A` | `225A Class T` | Blue Sea Class T fuse block | Battery compartment near Battery A `+` |
-| `F-01B` | `225A Class T` | Blue Sea Class T fuse block | Battery compartment near Battery B `+` |
-| `F-01C` | `225A Class T` | Blue Sea Class T fuse block | Battery compartment near Battery C `+` |
+| `F-01A` | `200A Class T` (provisional) | Blue Sea Class T fuse block (`110A-200A` family) | Battery compartment near Battery A `+` |
+| `F-01B` | `200A Class T` (provisional) | Blue Sea Class T fuse block (`110A-200A` family) | Battery compartment near Battery B `+` |
+| `F-01C` | `200A Class T` (provisional) | Blue Sea Class T fuse block (`110A-200A` family) | Battery compartment near Battery C `+` |
 | `F-02` | `125A MEGA` | Lynx integrated slot holder | Lynx Slot 1 |
 | `F-03` | `60A MEGA` | Lynx integrated slot holder | Lynx Slot 2 |
 | `F-04` | `40A MEGA` | Lynx integrated slot holder | Lynx Slot 3 |
@@ -239,14 +263,16 @@ flowchart LR
 | `F-08` | `150A` | Sealed engine-bay MEGA/ANL holder | Engine bay near starter battery `+` |
 | `F-09A/B/C` | `15A gPV` each | `10x38` touch-safe fuse holders in PV combiner | Roof-entry combiner enclosure |
 | `F-10` | Per branch (`ATO/ATC`) | Integrated blade sockets in 12V panel | Electrical cabinet |
+| `F-11` | `100A` class (12V buffer battery main) | Sealed inline MIDI/AMI/ANL holder | Within ~`7"` of 12V buffer battery positive post |
+| `SW-12V-BATT` | Manual battery disconnect switch | Sealed rotary DC switch body | Electrical cabinet near 12V positive bus for service access |
 | `OEM-SHUNT` | Factory low-current inline fuse (SmartShunt harness) | Integrated inline holder in Victron harness lead | Electrical cabinet near Lynx positive tap |
 
 ## Conductor Schedule (Start-to-Finish)
 | Segment ID | Circuit segment | Nominal voltage | Current basis | Overcurrent protection | Planned wire gauge |
 | --- | --- | --- | --- | --- | --- |
-| `C-01` | Battery A `+` -> `F-01A` | `48V` | Battery branch, fuse-limited | `F-01A` `225A` | `2/0 AWG` |
-| `C-02` | Battery B `+` -> `F-01B` | `48V` | Battery branch, fuse-limited | `F-01B` `225A` | `2/0 AWG` |
-| `C-02C` | Battery C `+` -> `F-01C` | `48V` | Battery branch, fuse-limited | `F-01C` `225A` | `2/0 AWG` |
+| `C-01` | Battery A `+` -> `F-01A` | `48V` | Battery branch, fuse-limited | `F-01A` `200A` provisional | `2/0 AWG` |
+| `C-02` | Battery B `+` -> `F-01B` | `48V` | Battery branch, fuse-limited | `F-01B` `200A` provisional | `2/0 AWG` |
+| `C-02C` | Battery C `+` -> `F-01C` | `48V` | Battery branch, fuse-limited | `F-01C` `200A` provisional | `2/0 AWG` |
 | `C-03` | Class T outputs -> battery-side `48V +` busbar -> disconnect input | `48V` | Combined trunk current | `F-01A/B/C` | `2/0 AWG` each branch |
 | `C-04` | Disconnect output -> Lynx `+` bus | `48V` | Aggregate branch current (`<=265A` theoretical from Lynx slots) | Upstream Class T fuses | `2/0 AWG` |
 | `C-05` | Battery negatives -> battery-side `48V -` busbar -> SmartShunt battery side | `48V` | Aggregate return current | N/A (main negative path) | `2/0 AWG` each branch |
@@ -263,8 +289,11 @@ flowchart LR
 | `C-15` | Orion `48V -` input -> Lynx `-` bus | `48V` | Orion input return current | `F-06` protects paired positive | `6 AWG` |
 | `C-16` | Starter battery `+` -> `F-08` -> Sterling input `+` | `12V` | Charger input path, fuse-limited | `F-08` `150A` | `2/0 AWG` planned (`2 AWG` minimum per Sterling table) |
 | `C-17` | Vehicle return/chassis -> Sterling input `-` | `12V` | Charger input return | `F-08` protects paired positive | `2/0 AWG` planned |
-| `C-18` | Orion `12V +` -> `F-07` -> 12V panel `+` bus | `12V` | Converter output path (`30A` continuous, `60A` fuse) | `F-07` `60A` | `6 AWG` planned (`8 AWG` minimum per Orion table) |
+| `C-18` | Orion `12V +` -> `F-07` -> shared 12V positive bus | `12V` | Converter output path (`30A` continuous, `60A` fuse) | `F-07` `60A` | `6 AWG` planned (`8 AWG` minimum per Orion table) |
 | `C-19` | Orion `12V -` -> 12V negative busbar | `12V` | Converter output return | `F-07` protects paired positive | `6 AWG` |
+| `C-19A` | 12V buffer battery `+` -> `F-11` -> `SW-12V-BATT` -> shared 12V positive bus | `12V` | Buffer source path and service isolation path | `F-11` `100A` class | `4 AWG` planned |
+| `C-19B` | 12V buffer battery `-` -> 12V negative busbar | `12V` | Buffer battery return path | N/A (paired with `C-19A`) | `4 AWG` planned |
+| `C-19C` | Shared 12V positive bus -> 12V fuse panel `+` bus | `12V` | Main 12V distribution feed path | Upstream source fuses (`F-07` / `F-11`) | `6 AWG` planned |
 | `C-20` | 12V panel -> Starlink PSU | `12V` | Branch load | `F-10` `10A` | `14 AWG duplex` |
 | `C-21` | 12V panel -> Fridge | `12V` | Branch load | `F-10` `15A` | `14 AWG duplex` |
 | `C-22` | 12V panel -> Diesel heater | `12V` | Branch load | `F-10` `15A` | `14 AWG duplex` |
@@ -279,8 +308,8 @@ flowchart LR
 | `C-31` | Branch A -> galley receptacle locations (`2`) | `120VAC` | Branch load (induction, microwave, galley outlets) | `C-30` branch protection stack | `12 AWG` stranded AC conductors |
 | `C-32` | Branch B -> office receptacle locations (`2`) | `120VAC` | Branch load (monitor and office outlet use) | `C-30` branch protection stack | `12 AWG` stranded AC conductors |
 | `C-33` | MultiPlus AC-out-2 (optional) -> shore-only future load branch | `120VAC` | Shore-only branch current | Dedicated breaker + UL943-class RCD/GFCI for AC-out-2 | `12 AWG` stranded AC conductors |
-| `C-34` | 12V panel -> USB-C PD branch (office zone, `2` outlets) | `12V` | Device charging branch current (zone budget target `~100-120W`) | `F-10` branch fuse (`10A` baseline) | `14 AWG duplex` baseline |
-| `C-35` | 12V panel -> USB-C PD branch (galley zone, `2` outlets) | `12V` | Device charging branch current (zone budget target `~100-120W`) | `F-10` branch fuse (`10A` baseline) | `14 AWG duplex` baseline |
+| `C-34` | 12V panel -> USB PD station branch (office zone) | `12V` | High-demand office charging branch (`100W + 65W` class station budget) | `F-10` branch fuse (`20A`) | `12 AWG duplex` baseline |
+| `C-35` | 12V panel -> USB PD station branch (galley zone) | `12V` | Galley charging branch (`65W` class USB-C plus USB-A/C loads) | `F-10` branch fuse (`15A`) | `14 AWG duplex` baseline |
 
 ## 3x Battery Bank Bench-Build Cut List (2/0 AWG)
 Purpose: make the bench build orderable without needing final camper run lengths. Treat lengths below as *bench module* lengths only; final install harnesses should be re-cut after layout freeze.
@@ -312,13 +341,15 @@ Torque reference (verify against your exact manuals/hardware):
 - Pre-charge resistor (commissioning/soft-charge aid before connecting large DC loads)
 - Battery-side `48V +` combine busbar (after Class T fuses)
 - Battery-side `48V -` combine busbar (battery-only, before SmartShunt)
+- Shared 12V positive bus/distribution post (Orion + buffer battery feed combine point)
 - 12V negative busbar
+- 12V buffer battery main fuse (`F-11`) and manual disconnect switch (`SW-12V-BATT`)
 - Shore AC inlet + cord/adapter interface hardware
 - AC input breaker/disconnect hardware (compact load-center baseline; DIN-only if swapped at SKU lock)
 - AC branch RCD/GFCI + breaker hardware
 - Receptacle boxes + `120V` outlets (`4` planned locations: `2` galley, `2` office)
 - Optional AC-out-2 branch protection path for future shore-only loads
-- USB-C PD branch hardware (`4` DC-fed points, `2` office + `2` galley)
+- USB PD station branch hardware (`2` stations: office + galley)
 - Battery temperature sensor wiring to inverter/monitoring path
 - SmartShunt fused positive sense/power lead (factory harness)
 
@@ -328,7 +359,10 @@ Torque reference (verify against your exact manuals/hardware):
 3. `F-09` PV string fuse value (`15A`) remains provisional until final module datasheet max-series-fuse rating is confirmed.
 4. Cerbo GX feed is assumed from the `12V` panel (`12V-07`) for branch-level serviceability.
 5. Orion branch remains split-protection (`F-05` upstream feeder + `F-06` device-level input fuse).
-6. Big 3 alternator-upgrade path is purchase-later; this diagram captures the current stock-alternator-first architecture.
+6. No low-voltage-disconnect (LVD) automation is included in Phase 1; protection is source fusing plus manual `SW-12V-BATT` isolation.
+7. Big 3 alternator-upgrade path is purchase-later; this diagram captures the current stock-alternator-first architecture.
+8. `F-01A/B/C` are provisionally set to `200A` pending final `51.2V` battery datasheet/manual confirmation; if validated limits are lower, shift to `175A`.
+9. `2/0` cable quantity planning for procurement is scenario-band based (`50 ft` total baseline) until CAD route lengths are locked.
 
 ## Completion Status
 - DC/PV topology is complete for current BOM scope and load model scope.

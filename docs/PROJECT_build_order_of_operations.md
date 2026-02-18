@@ -64,7 +64,7 @@
 1. February 16 to February 21 (`Batch A+` order wave: bench-build-capable electrical stack)
 - Freeze interior layout/service map enough to lock cabinet footprints and service access.
 - Execute the accelerated wave from `bom/bom_estimated_items.csv`:
-- Core power and charging (`2026-02-16` target): rows `3`, `12`, `18`, `20`, `22`, `23`.
+- Core power and charging (`2026-02-16` target): rows `3`, `12`, `18`, `20`, `21`, `22`, `23`.
 - Protection/distribution and near-term tooling (`2026-02-17` to `2026-02-18` target): rows `4`, `5`, `6`, `7`, `10`, `11`, `16`, `17`, `26`, `27`, `52`, `53`, `60`, `117`.
 - Primary cable, lugs, and protection consumables (`2026-02-19` to `2026-02-21` target): rows `28` through `45`.
 - Keep unresolved solar/AC SKU rows out of this wave unless blockers are explicitly cleared.
@@ -76,6 +76,7 @@
 - AC inlet/distribution/receptacles: rows `13`, `15`, `107`, `108`, `109`, `110`, `111`, `112`, `115`.
 - Solar generation and roof-to-shell routing path after panel-style lock: rows `24`, `25`, `102`, `106`, `121`.
 - Pre-charge and fuse-spares closeout after holder/SKU lock: rows `19`, `105`.
+- Close remaining 12V-bus hardware SKU lock (`F-11` holder family and `SW-12V-BATT` switch model/location) before cart freeze.
 - Keep deprecated BOM rows out of purchase carts: rows `8`, `9`, `14`.
 
 3. March 8 to March 22 (`Batch C` order wave: remaining route-length-dependent cable + install consumables)
@@ -121,7 +122,6 @@
 
 ## Deferred / purchase-later rows (do not include in Batch A+ to E)
 - Optional 12V expansion and alternator-upgrade path: rows `103`, `104`, `118`.
-- Deferred battery buffer path: row `21`.
 
 ## Critical hold points (do not skip)
 - Hold 1: No penetrations until layout + service map is frozen.

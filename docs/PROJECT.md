@@ -1,7 +1,7 @@
 # Project
 
 ## Snapshot
-- As-of date: February 16, 2026
+- As-of date: February 18, 2026
 - Install milestone: May 7, 2026
 - Mission: build a reliable off-grid camper workspace suitable for full-time professional use
 
@@ -55,8 +55,9 @@
 - `docs/PROJECT_build_order_of_operations.md`
 
 ## Immediate next decisions
-- Execute `Batch A+` purchase wave and capture vendor/ETA status for rows `3`, `4`, `5`, `6`, `7`, `10`, `11`, `12`, `16`, `17`, `18`, `20`, `22`, `23`, `26`, `27`, `28` through `45`, `52`, `53`, `60`, `117`
+- Execute `Batch A+` purchase wave and capture vendor/ETA status for rows `3`, `4`, `5`, `6`, `7`, `10`, `11`, `12`, `16`, `17`, `18`, `20`, `21`, `22`, `23`, `26`, `27`, `28` through `45`, `52`, `53`, `60`, `117`
 - Validate the full fuse schedule against final holder/SKU selections and cart contents for the locked Lynx architecture
+- Validate shared 12V bus behavior (`Orion + buffer battery`) including `F-11` and `SW-12V-BATT` service isolation behavior under office/galley USB station loads
 - Freeze autonomy policy using modeled profiles (BOM + owner-supplied office loads) with a `20%` minimum SOC reserve floor
 - Confirm passthrough locations (solar, shore, fuel/heater routing) with Hiatus before production lock
 - Lock hardwall-popup solar jumper approach details (connector family, passthrough hardware SKU, and service-loop length for roof travel)

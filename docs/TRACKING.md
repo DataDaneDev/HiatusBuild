@@ -123,8 +123,8 @@
 - Context: Previous AC scope was concept-level and procurement rows were incomplete, creating uncertainty around receptacle count, USB strategy, and shore interface hardware.
 - Options considered: Single AC branch only, multi-branch panel with AC USB receptacles, or two AC branches with DC-fed USB-C PD outlets.
 - Decision drivers: Practical usability (galley + office), safety/protection clarity, and reduced inverter idle/conversion losses for device charging.
-- Result: Locked baseline to `4` total `120V` receptacle locations (`2` galley, `2` office), AC-out-1 branch split (`20A` galley + `15A` office), and `4` DC-fed USB-C PD points (`2` office + `2` galley) with `10A` per-zone fuse baseline. Added corresponding BOM scope in rows `107-118` and aligned AC hierarchy in `docs/ELECTRICAL_overview_diagram.md`.
-- Follow-up: Lock final SKU selections for inlet, enclosure/breakers, receptacles, and USB-C PD modules, then validate Orion `48/12-30` headroom under simultaneous-use scenarios before purchase freeze.
+- Result: Locked baseline to `4` total `120V` receptacle locations (`2` galley, `2` office), AC-out-1 branch split (`20A` galley + `15A` office), and an initial DC-fed USB-C PD baseline. Added corresponding BOM scope in rows `107-118` and aligned AC hierarchy in `docs/ELECTRICAL_overview_diagram.md`.
+- Follow-up: Superseded in part by D-022 (USB station packaging, branch sizing changes, and 12V buffer-battery integration details).
 
 - ID: D-014
 - Date: 2026-02-15
@@ -197,6 +197,16 @@
 - Decision drivers: Autonomy margin with a `20%` reserve floor, bench-build readiness for `Batch A+`, and parallel-bank current sharing.
 - Result: Updated topology docs to add `Battery C` + `F-01C` Class T protection and added a 3-battery bench cut list for `2/0` cabling/lugs.
 - Follow-up: Verify battery terminal stud size before ordering lugs; ensure batteries are at the same SOC/voltage before first parallel tie.
+
+- ID: D-022
+- Date: 2026-02-18
+- Decision: Refresh the 12V subsystem to a shared battery-backed bus using Orion-Tr Smart `48/12-30`, a `12V 100Ah LiFePO4` buffer battery, and two USB PD station branches.
+- Context: Prior docs/BOM still treated the 12V buffer battery as deferred and used a `4`-point USB module baseline with `10A` per-zone fusing.
+- Options considered: keep Orion-only 12V panel feed, add manual backup-only battery path, or lock a shared bus with source fusing and manual battery isolation.
+- Decision drivers: better transient support for office/galley USB charging, cleaner service isolation, and minimal added control complexity.
+- Result: Updated BOM row `20` (Orion Smart, `$243`), activated row `21` (`12V 100Ah LiFePO4`, `$113`), updated row `115` (two USB PD stations, `$100`), and revised canonical electrical docs to add `F-11` (`100A` class) + `SW-12V-BATT` in the 12V path.
+- Superseded assumptions: D-013's `4`-point USB/`10A`-zone baseline and deferred buffer-battery assumption for row `21`.
+- Follow-up: lock final SKU family for `F-11` holder and `SW-12V-BATT` switch, then confirm under-load behavior of office `20A` and galley `15A` USB branches before procurement freeze.
 
 ## Risk register
 - ID: R-001
@@ -297,7 +307,7 @@
 - Lock Big 3 spec package (additional cable length, inline fuse type/rating, lug count, and RVC ground-loop routing requirement)
 - Confirm measured daily draw for owner-supplied laptop/monitor/tablet charging to replace planning assumptions
 - Lock final SKU set for AC/USB hardware (`rows 13-15`, `107-118`) and verify physical fitment with cabinet layout
-- Validate Orion `48/12-30` converter headroom with the new USB-C PD branch plan (`12V-08`, `12V-09`) and trigger row `118` only if sustained overload is observed
+- Validate Orion `48/12-30` converter headroom with the updated USB station branch plan (`12V-08` office `20A`, `12V-09` galley `15A`) and trigger row `118` only if sustained overload is observed
 - Final passthrough locations for solar, shore power, and fuel/heater paths
 - Lock roof-to-shell solar jumper connector strategy and exact service-loop length for full popup travel
 - Rigid vs flexible solar strategy under roof weight constraints
@@ -307,6 +317,7 @@
 - Storage/security SOP for flight windows
 - Measured fridge compressor duty cycle by ambient band (cold, mild, hot) to replace modeled assumptions
 - Final fuse-holder SKU standard for Orion input/output, Sterling input, and PV string fusing hardware
+- Final SKU lock for `F-11` holder family and `SW-12V-BATT` switch model/location
 - Validate the chosen `F-05 + F-06` split-protection Orion branch against final measured run lengths and voltage drop
 - Confirm acceptable monitoring expectation that Orion is not a direct GX telemetry node in current architecture
 - Confirm measured Sterling `BB1248120` output current/power at idle and driving RPM bands for charge-time planning

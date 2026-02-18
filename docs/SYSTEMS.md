@@ -11,9 +11,9 @@
 - Voltage architecture trade study (`12V` vs `48V`): `docs/ELECTRICAL_12V_vs_48V_trade_study.md`
 - Electrical decisions, risks, and unresolved items: `docs/TRACKING.md`
 
-### Planning snapshot (as-of `2026-02-17`)
+### Planning snapshot (as-of `2026-02-18`)
 - Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).
-- House architecture: `48V` core with `48V->12V` conversion.
+- House architecture: `48V` core with `48V->12V` conversion feeding a shared battery-backed `12V` bus.
 - Inverter/charger candidate: Victron MultiPlus-II `48/3000/35-50`.
 - Charge sources in current BOM: solar MPPT, Sterling alternator B2B path (factory alternator now, high-output alternator as purchase-later option), shore AC charger path.
 - Monitoring and protection: Cerbo GX, SmartShunt, battery temp sensing, Class T primary fuse + branch fusing.
@@ -32,7 +32,8 @@
 | Alternator charging | Sterling `BB1248120` (`12V/24V -> 48V`, `~1500W` max, `~26A` at `57.6V`) + `BBR` remote | `bom/bom_estimated_items.csv` rows 18 and 26 |
 | Vehicle alternator assumption (current) | Factory `240A` (user-reported) with `65%` BBR limit option for extended idle sessions | `docs/TRACKING.md` |
 | Purchase-later alternator path | Mechman 370A alternator + Big 3 wiring estimate | `bom/bom_estimated_items.csv` rows 103 and 104 |
-| DC conversion | Orion-Tr `48/12 30A` (`360W`) | `bom/bom_estimated_items.csv` row 20 |
+| DC conversion | Orion-Tr Smart `48/12 30A` (`360W`) | `bom/bom_estimated_items.csv` row 20 |
+| 12V buffer battery | `12V 100Ah LiFePO4` on shared 12V bus (`F-11` + `SW-12V-BATT`) | `bom/bom_estimated_items.csv` row 21 |
 | Solar array candidate | `900W` flexible (`9x100W`, 3S3P) | `bom/bom_estimated_items.csv` row 24 |
 | Solar controller | SmartSolar `MPPT 150/45` | `bom/bom_estimated_items.csv` row 25 |
 | Load profiles (BOM + owner-supplied office loads) | `core_workday`, `winter_workday`, `minimal_idle_day` | `bom/load_model_wh.csv` |
@@ -117,7 +118,7 @@ Base planning factor for your target roof setup is now `68%` end-to-end harvest 
 - Alternator recovery potential is meaningful, but the current Sterling charger path is capped near `1.5kW`, so recovery is slower than earlier `120A@48V` planning assumptions.
 - If the Mechman alternator path is purchased later, complete Big 3 wiring and re-baseline safe continuous BBR limits before extended idling use.
 - MultiPlus-II `48/3000` inverter continuous output (`~2,400W`) can be exceeded by simultaneous induction + microwave + other AC loads, so high-draw AC loads need sequencing.
-- `48->12V 30A` converter (`360W`) requires load budgeting before adding new 12V devices beyond current modeled assumptions.
+- `48->12V 30A` converter (`360W`) is the continuous charging/feed ceiling into the 12V bus; buffer battery supports short transients but sustained overload still requires load budgeting.
 
 ### Safety baseline
 - Positive path sequence: battery -> Class T fuse (near source) -> disconnect -> Lynx Distributor -> fused branch feeds
@@ -144,14 +145,14 @@ Approved architecture for Phase 1:
 - MultiPlus-II `48/3000`
 - SmartSolar `150/45`
 - Sterling `BB1248120` output
-- Orion-Tr `48/12`
+- Orion-Tr Smart `48/12` (shared 12V bus feeder)
 - `1x` Lynx Distributor covers current branch count with `0` spare fused outputs.
 - If future branch expansion is needed, add a second Lynx module in that phase.
 
 Implementation notes:
 - `Lynx Distributor` includes the negative busbar, so a separate standalone negative bus is not required in the Lynx path.
 - `Lynx Distributor` branch-fuse LEDs need a `Lynx Shunt VE.Can` or `Lynx Smart BMS`; with `SmartShunt`-only monitoring, LED fuse indication is not active.
-- Main Class T protection baseline is `2x` (one per battery-positive conductor) and is tracked in the fuse schedule/BOM.
+- Main Class T protection baseline is `3x` (one per battery-positive conductor) and is tracked in the fuse schedule/BOM.
 
 Reference links:
 - Lynx Distributor manual/specs: `https://www.victronenergy.com/media/pg/Lynx_Distributor/en/introduction.html`
@@ -268,7 +269,8 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 ### 12V distribution safety
 - Main hazards: feeder overload from converter limits, hidden voltage drop causing heat at terminations, and unfused accessory additions.
 - Required controls:
-- Keep Orion output feeder fused at source (`F-07`) and avoid adding unfused taps between Orion and panel.
+- Keep Orion output feeder fused at source (`F-07`) and avoid adding unfused taps between Orion and the shared 12V bus.
+- Keep 12V buffer battery positive protected at source (`F-11`) and route service isolation through `SW-12V-BATT` downstream of `F-11`.
 - Maintain branch-level fuse-to-conductor coordination per `docs/ELECTRICAL_fuse_schedule.md`.
 - Keep always-on detector branch (`12V-05`) protected but never switch-controlled.
 - If sustained `12V` demand exceeds Orion headroom, treat converter expansion (`BOM row 118`) as a safety action, not a convenience upgrade.
