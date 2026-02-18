@@ -31,12 +31,12 @@
 - Confirm terminal torque marks, busbar covers, and abrasion protection on all high-current runs.
 - Confirm `48V` disconnect operation and expected de-energization behavior.
 - Confirm `F-11` (`12V` buffer battery main fuse) is installed at source and matches planned amp class.
-- Confirm `SW-12V-BATT` switching behavior and labeling (open = battery isolated, closed = shared bus enabled).
+- Confirm `SW-12V-BATT` switching behavior and labeling (closed = NORMAL operation, open = SERVICE battery isolation).
 - Validate AC branch polarity and GFCI/RCD trip on each outlet branch before normal use.
 - Confirm detector status (LP/CO/smoke powered, test function passes, expiration date in range).
 
 ### Bench-test (electrical module)
-Bench-test intent: validate wiring correctness and basic device behavior (shunt, converter, inverter/charger) *before* install, using controlled energization and small loads.
+Bench-test intent: validate wiring correctness and basic device behavior (shunt, Orion charger path, inverter/charger) *before* install, using controlled energization and small loads.
 
 - Battery parallel tie: measure each battery voltage before paralleling; bring packs to near-equal voltage/SOC first to avoid large equalization currents.
 - Safe energization order (DC): keep `48V` disconnect open and remove Lynx branch fuses; connect negatives first (battery negatives to battery-side negative combine, then to SmartShunt battery side); wire positives to Class T blocks with Class T fuses removed.
@@ -45,8 +45,8 @@ Bench-test intent: validate wiring correctness and basic device behavior (shunt,
 - MultiPlus inrush: expect some inrush when first connecting the inverter branch; use a pre-charge method if needed (pre-charge resistor/switch or a temporary pre-charge lead) and stop if you see abnormal arcing/heating.
 - Functional checks: verify SmartShunt reads voltage correctly, Orion outputs stable `12V` under load, MultiPlus inverts correctly into a small known load, and MultiPlus charges correctly when AC-in is applied.
 - 12V mode checks:
-1. Orion-only mode: open `SW-12V-BATT`, keep Orion active, and verify 12V panel remains stable under expected baseline load.
-2. Battery-backed mode: close `SW-12V-BATT` and verify shared-bus stability under office + galley USB station loads.
+1. Orion-only mode (service validation): open `SW-12V-BATT`, keep Orion active, and verify 12V panel remains stable under expected baseline load.
+2. Battery-backed mode (normal operation): close `SW-12V-BATT` and verify shared-junction stability under office + galley USB station loads.
 3. Service isolation mode: open `SW-12V-BATT` and verify 12V battery branch is fully isolated while Orion path remains testable.
 - Shutdown check: open `48V` disconnect and confirm the system de-energizes as expected; verify no unintended return paths bypass shunt measurement.
 

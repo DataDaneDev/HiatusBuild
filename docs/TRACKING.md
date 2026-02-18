@@ -307,7 +307,7 @@
 - Lock Big 3 spec package (additional cable length, inline fuse type/rating, lug count, and RVC ground-loop routing requirement)
 - Confirm measured daily draw for owner-supplied laptop/monitor/tablet charging to replace planning assumptions
 - Lock final SKU set for AC/USB hardware (`rows 13-15`, `107-118`) and verify physical fitment with cabinet layout
-- Validate Orion `48/12-30` converter headroom with the updated USB station branch plan (`12V-08` office `20A`, `12V-09` galley `15A`) and trigger row `118` only if sustained overload is observed
+- Validate Orion `48/12-30` charger headroom with the updated USB station branch plan (`12V-08` office `20A`, `12V-09` galley `15A`) and trigger row `118` only if sustained overload is observed
 - Final passthrough locations for solar, shore power, and fuel/heater paths
 - Lock roof-to-shell solar jumper connector strategy and exact service-loop length for full popup travel
 - Rigid vs flexible solar strategy under roof weight constraints
