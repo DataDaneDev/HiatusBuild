@@ -1,0 +1,8 @@
+date_seen,tool_category,tool_subtype,platform,line,motor,model_id,kit_or_tool_only,included_items,battery_included_count,battery_included_ah_each,charger_included,listing_price,negotiated_price,target_price,new_price_reference,condition_notes,test_notes,missing_parts_or_hidden_costs,seller,location,link,status,reason_passed,warranty_or_receipt,serial_or_date_code,storage_location,notes
+2026-02-17,impact driver,1/4in hex,ONE+ 18V,ONE+ HP,brushless,,,,0,,no,,,,,,"","","",,,,"watching",,,,"",,
+2026-02-17,drill/driver,1/2in drill driver,ONE+ 18V,ONE+,brushed,,,,0,,no,,,,,,"","","",,,,"watching",,,,"",,
+2026-02-17,oscillating multi-tool,variable speed,ONE+ 18V,ONE+ HP,brushless,,,,0,,no,,,,,,"","","",,,,"watching",,,,"",,
+2026-02-17,miter saw,10in sliding compound,Corded,,n/a,,,,0,,n/a,,,,,,"","","(blade/stand/dust)","",,"","watching",,,,"",,
+2026-02-17,router,trim router,ONE+ 18V,ONE+,brushed,,,,0,,no,,,,,,"","","(bits/collet/base)","",,"","watching",,,,"",,
+2026-02-17,sander,5in random orbital,ONE+ 18V,ONE+,brushed,,,,0,,no,,,,,,"","","(pads/discs/vac adapter)","",,"","watching",,,,"",,
+

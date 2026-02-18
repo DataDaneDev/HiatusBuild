@@ -76,7 +76,7 @@
 - Date: 2026-02-11
 - Decision: Freeze alternator charging architecture to Sterling `BB1248120` with `BBR` remote control.
 - Context: Prior BOM/docs left alternator charging open between dual Orion and Sterling options, keeping recovery-time math ambiguous.
-- Options considered: `2x Orion-Tr Smart 12/48`, Sterling `BB1248120` without remote control, Sterling `BB1248120` with `BBR` remote.
+- Options considered: `2x Orion-Tr 12/48` (legacy pre-Sterling option), Sterling `BB1248120` without remote control, Sterling `BB1248120` with `BBR` remote.
 - Decision drivers: Significantly higher charge-rate ceiling, adjustable output limiting from the remote, and simplified single-unit charging architecture.
 - Result: Updated BOM (`row 18` charger, `row 26` remote), recalculated alternator charging in `docs/SYSTEMS.md`, and replaced unresolved Orion references in canonical planning docs.
 - Follow-up: Bench-test alternator and belt thermal behavior with staged BBR limits before locking continuous operating setpoint.
@@ -189,6 +189,15 @@
 - Result: Added row `122` to `bom/bom_estimated_items.csv` (`Drawer slide kits (soft-close undermount)`) with blank price and `2026-04-14` planning date.
 - Follow-up: Lock final drawer-slide SKU (length/load class/brand) and populate price before interior procurement wave.
 
+- ID: D-021
+- Date: 2026-02-17
+- Decision: Increase the house battery bank to `3x 48V 100Ah` LiFePO4 in parallel (from `2x`).
+- Context: Space and payload margin allow a 3rd battery, and added capacity reduces “power anxiety” and reduces per-battery charge/discharge current.
+- Options considered: Keep `2x` (`~10.24 kWh`), move to `3x` (`~15.36 kWh`), or jump to `4x` (`~20.48 kWh`) with higher cost and diminishing charging recovery speed.
+- Decision drivers: Autonomy margin with a `20%` reserve floor, bench-build readiness for `Batch A+`, and parallel-bank current sharing.
+- Result: Updated topology docs to add `Battery C` + `F-01C` Class T protection and added a 3-battery bench cut list for `2/0` cabling/lugs.
+- Follow-up: Verify battery terminal stud size before ordering lugs; ensure batteries are at the same SOC/voltage before first parallel tie.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -227,7 +236,7 @@
 - Status: Open
 
 - ID: R-005
-- Risk: Combined installed + owner-supplied office loads reduce no-charge autonomy to roughly `1.8-2.2` workdays in active work scenarios.
+- Risk: Combined installed + owner-supplied office loads reduce no-charge autonomy to roughly `2.9-3.5` workdays in active work scenarios (season-dependent) even with the 3-battery bank.
 - Impact (1-5): 4
 - Likelihood (1-5): 3
 - Mitigation: Enforce SOC reserve policy, lock charging strategy (solar + alternator + shore cadence), and validate real duty cycles in shakedown tests.

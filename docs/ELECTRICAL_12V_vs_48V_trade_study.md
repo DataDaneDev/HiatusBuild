@@ -1,6 +1,6 @@
 # Electrical Trade Study: 12V vs 24V vs 48V Core
 
-As-of date: `2026-02-16`
+As-of date: `2026-02-17`
 
 Purpose: re-evaluate the house electrical voltage architecture (`12V`, `24V`, or `48V` core) for a DIY truck bed camper remote-office build, and make explicit *exactly* what changes in BOM, wiring, and protection when switching.
 
@@ -38,7 +38,7 @@ Planning-level impact using the current load model v3 as a starting point:
 These are derived deltas from the existing rows; they should be locked by editing `bom/load_model_wh.csv` once you commit to the propane/no-microwave scope.
 
 ## Current Build Snapshot (What The Repo Is Currently Designed Around)
-- Battery bank: `2x 48V 100Ah` LiFePO4 (`10.24 kWh` nominal).
+- Battery bank: `3x 48V 100Ah` LiFePO4 (`15.36 kWh` nominal).
 - Inverter/charger: Victron MultiPlus-II `48/3000/35-50`.
 - Solar: `900W` array with MPPT `150/45`.
 - Alternator charging: Sterling `BB1248120` (`~1500W` max output, ~`26A` at ~`57V` battery voltage).
@@ -113,7 +113,7 @@ Assumption: you still want a `12V` distribution layer for RV-native loads (fridg
 Switching is not just “change battery voltage”; it cascades through charge sources, protection, and wiring.
 
 1. Battery architecture (`bom row 3`)
-- Current: `2x 48V 100Ah`.
+- Current: `3x 48V 100Ah`.
 - Full `12V` equivalent: roughly `800Ah` class bank (for same `10.24kWh` energy) or `~1200Ah` for `15.36kWh`.
 - `24V` equivalent: `~400Ah` (`10.24kWh`) to `~600Ah` (`15.36kWh`).
 
@@ -149,7 +149,7 @@ This is intentionally “class of part,” not a final SKU lock.
 
 | BOM row | Current (48V baseline) | If 12V core | If 24V core |
 | ---: | --- | --- | --- |
-| `3` | `2x 48V 100Ah` batteries | Replace with `~10–15 kWh` 12V bank (`~800–1200Ah` total) | Replace with `~10–15 kWh` 24V bank (`~400–600Ah` total) |
+| `3` | `3x 48V 100Ah` batteries | Replace with `~10–15 kWh` 12V bank (`~800–1200Ah` total) | Replace with `~10–15 kWh` 24V bank (`~400–600Ah` total) |
 | `12` | MultiPlus-II `48/3000` | Replace with smaller `12V` inverter/charger *or* “small inverter + standalone charger” | Replace with `24V` inverter/charger sized to real AC needs |
 | `18` + `26` | Sterling `BB1248120` + `BBR` (12/24 -> 48) | Replace with `12V -> 12V` current-limited alternator charging strategy (`~100A` class for `~1.5kW`) | Replace with `12V -> 24V` alternator charger (`~60A` class for `~1.5kW`) |
 | `20` | Orion `48/12-30` | Remove (12V loads feed directly) | Replace with a `24/12` converter sized to 12V loads |

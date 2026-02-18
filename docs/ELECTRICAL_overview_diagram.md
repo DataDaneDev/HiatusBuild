@@ -1,6 +1,6 @@
 # Electrical Topology Diagram (Implementation v4)
 
-As-of date: `2026-02-13`
+As-of date: `2026-02-17`
 
 Purpose: provide a complete, install-level electrical topology for the current build scope, including all major electrical components, fuse IDs, fuse housings, and planned wire gauges.
 
@@ -47,8 +47,12 @@ flowchart LR
     subgraph HOUSE_48V["House 48V Core"]
         BATA["Battery A\n48V 100Ah"]
         BATB["Battery B\n48V 100Ah"]
+        BATC["Battery C\n48V 100Ah"]
         F01A["F-01A 225A Class T\nBlue Sea block"]
         F01B["F-01B 225A Class T\nBlue Sea block"]
+        F01C["F-01C 225A Class T\nBlue Sea block"]
+        POSBUS["48V + busbar (battery-side)\ncombine after Class T fuses"]
+        NEGBUS["48V - busbar (battery-side)\ncombine before SmartShunt"]
         DISC["48V disconnect\nVictron 275A"]
         SHUNT["SmartShunt 500A\nmain negative path"]
         LYNX["Victron Lynx Distributor M10\n+ bus / - bus / 4 MEGA slots"]
@@ -57,12 +61,16 @@ flowchart LR
         F06["F-06 20A (or 23A)\ninline >=58V holder"]
     end
 
-    BATA -- "2/0 AWG +" --> F01A --> DISC
-    BATB -- "2/0 AWG +" --> F01B --> DISC
+    BATA -- "2/0 AWG +" --> F01A --> POSBUS
+    BATB -- "2/0 AWG +" --> F01B --> POSBUS
+    BATC -- "2/0 AWG +" --> F01C --> POSBUS
+    POSBUS -- "2/0 AWG +" --> DISC
     DISC -- "2/0 AWG +" --> LYNX
 
-    BATA -- "2/0 AWG -" --> SHUNT
-    BATB -- "2/0 AWG -" --> SHUNT
+    BATA -- "2/0 AWG -" --> NEGBUS
+    BATB -- "2/0 AWG -" --> NEGBUS
+    BATC -- "2/0 AWG -" --> NEGBUS
+    NEGBUS -- "2/0 AWG -" --> SHUNT
     SHUNT -- "2/0 AWG -" --> LYNX
     LYNX -. "SmartShunt fused + sense/power lead\n(factory harness)" .- SHUNT
 
@@ -221,6 +229,7 @@ flowchart LR
 | --- | --- | --- | --- |
 | `F-01A` | `225A Class T` | Blue Sea Class T fuse block | Battery compartment near Battery A `+` |
 | `F-01B` | `225A Class T` | Blue Sea Class T fuse block | Battery compartment near Battery B `+` |
+| `F-01C` | `225A Class T` | Blue Sea Class T fuse block | Battery compartment near Battery C `+` |
 | `F-02` | `125A MEGA` | Lynx integrated slot holder | Lynx Slot 1 |
 | `F-03` | `60A MEGA` | Lynx integrated slot holder | Lynx Slot 2 |
 | `F-04` | `40A MEGA` | Lynx integrated slot holder | Lynx Slot 3 |
@@ -237,9 +246,10 @@ flowchart LR
 | --- | --- | --- | --- | --- | --- |
 | `C-01` | Battery A `+` -> `F-01A` | `48V` | Battery branch, fuse-limited | `F-01A` `225A` | `2/0 AWG` |
 | `C-02` | Battery B `+` -> `F-01B` | `48V` | Battery branch, fuse-limited | `F-01B` `225A` | `2/0 AWG` |
-| `C-03` | Class T outputs -> disconnect input | `48V` | Combined trunk current | `F-01A/B` | `2/0 AWG` each branch |
+| `C-02C` | Battery C `+` -> `F-01C` | `48V` | Battery branch, fuse-limited | `F-01C` `225A` | `2/0 AWG` |
+| `C-03` | Class T outputs -> battery-side `48V +` busbar -> disconnect input | `48V` | Combined trunk current | `F-01A/B/C` | `2/0 AWG` each branch |
 | `C-04` | Disconnect output -> Lynx `+` bus | `48V` | Aggregate branch current (`<=265A` theoretical from Lynx slots) | Upstream Class T fuses | `2/0 AWG` |
-| `C-05` | Battery negatives -> SmartShunt battery side | `48V` | Aggregate return current | N/A (main negative path) | `2/0 AWG` each branch |
+| `C-05` | Battery negatives -> battery-side `48V -` busbar -> SmartShunt battery side | `48V` | Aggregate return current | N/A (main negative path) | `2/0 AWG` each branch |
 | `C-06` | SmartShunt load side -> Lynx `-` bus | `48V` | Aggregate return current | N/A | `2/0 AWG` |
 | `C-06A` | Lynx positive tap -> SmartShunt positive sense/power lead | `48V` | Shunt electronics supply (very low current) | Factory inline fuse in OEM harness | OEM harness lead |
 | `C-07` | Lynx Slot 1 (`F-02`) -> MultiPlus `DC+` | `48V` | Inverter branch, fuse-limited | `F-02` `125A` | `2/0 AWG` (manual minimum `AWG 1` on short runs) |
@@ -272,9 +282,36 @@ flowchart LR
 | `C-34` | 12V panel -> USB-C PD branch (office zone, `2` outlets) | `12V` | Device charging branch current (zone budget target `~100-120W`) | `F-10` branch fuse (`10A` baseline) | `14 AWG duplex` baseline |
 | `C-35` | 12V panel -> USB-C PD branch (galley zone, `2` outlets) | `12V` | Device charging branch current (zone budget target `~100-120W`) | `F-10` branch fuse (`10A` baseline) | `14 AWG duplex` baseline |
 
+## 3x Battery Bank Bench-Build Cut List (2/0 AWG)
+Purpose: make the bench build orderable without needing final camper run lengths. Treat lengths below as *bench module* lengths only; final install harnesses should be re-cut after layout freeze.
+
+Assumptions:
+1. Battery terminals are `M8` (verify your battery stud size before ordering lugs).
+2. Class T fuse blocks and battery-side busbars use `3/8"` studs (treat as `M10` lugs unless your specific hardware differs).
+3. Lynx Distributor is the `M10` model (main connections `M10`; internal/fuse studs may still be `M8` depending on the position).
+
+| Cable ID | Qty | From -> To | Color | Gauge | Lug A | Lug B |
+| --- | --- | --- | --- | --- | --- | --- |
+| `BATT+_A/B/C` | `3` | Battery `+` -> Class T block line side | red | `2/0` | `M8` | `M10` |
+| `FUSE_TO_POSBUS_A/B/C` | `3` | Class T block load side -> `48V +` busbar | red | `2/0` | `M10` | `M10` |
+| `POSBUS_TO_DISC` | `1` | `48V +` busbar -> disconnect input | red | `2/0` | `M10` | `M10` |
+| `DISC_TO_LYNX+` | `1` | disconnect output -> Lynx `+` input | red | `2/0` | `M10` | `M10` |
+| `BATT-_A/B/C` | `3` | Battery `-` -> `48V -` busbar | black | `2/0` | `M8` | `M10` |
+| `NEGBUS_TO_SHUNT` | `1` | `48V -` busbar -> SmartShunt battery side | black | `2/0` | `M10` | `M10` |
+| `SHUNT_TO_LYNX-` | `1` | SmartShunt load side -> Lynx `-` input | black | `2/0` | `M10` | `M10` |
+| `LYNX_SLOT1_TO_MULTI+` | `1` | Lynx Slot 1 `DC+` -> MultiPlus `DC+` | red | `2/0` | `M8` | `M8` |
+| `LYNX_TO_MULTI-` | `1` | Lynx `-` -> MultiPlus `DC-` | black | `2/0` | `M8` | `M8` |
+
+Torque reference (verify against your exact manuals/hardware):
+- MultiPlus-II DC terminals: `12 Nm` (`M8` nut) per Victron installation guidance.
+- SmartShunt shunt bolts: max `21 Nm` (`M10` on 500A model) per Victron installation guidance.
+- Lynx Distributor `M10` model: `M10` nuts `33 Nm` (older serials may be lower), and `M8` nuts `14 Nm` per Victron Lynx installation guidance.
+
 ## Additional Components Included In Topology Scope
 - `48V` disconnect (`275A`)
 - Pre-charge resistor (commissioning/soft-charge aid before connecting large DC loads)
+- Battery-side `48V +` combine busbar (after Class T fuses)
+- Battery-side `48V -` combine busbar (battery-only, before SmartShunt)
 - 12V negative busbar
 - Shore AC inlet + cord/adapter interface hardware
 - AC input breaker/disconnect hardware (compact load-center baseline; DIN-only if swapped at SKU lock)

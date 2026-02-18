@@ -65,7 +65,7 @@
 - Freeze interior layout/service map enough to lock cabinet footprints and service access.
 - Execute the accelerated wave from `bom/bom_estimated_items.csv`:
 - Core power and charging (`2026-02-16` target): rows `3`, `12`, `18`, `20`, `22`, `23`.
-- Protection/distribution and near-term tooling (`2026-02-17` to `2026-02-18` target): rows `4`, `5`, `6`, `7`, `10`, `11`, `16`, `17`, `26`, `27`, `52`, `53`, `60`.
+- Protection/distribution and near-term tooling (`2026-02-17` to `2026-02-18` target): rows `4`, `5`, `6`, `7`, `10`, `11`, `16`, `17`, `26`, `27`, `52`, `53`, `60`, `117`.
 - Primary cable, lugs, and protection consumables (`2026-02-19` to `2026-02-21` target): rows `28` through `45`.
 - Keep unresolved solar/AC SKU rows out of this wave unless blockers are explicitly cleared.
 - Track vendor + ETA per ordered row and move rows from planned to ordered status in the procurement tracker.

@@ -162,3 +162,21 @@
 | van build parts |
 | camper conversion |
 | These bundles are insane value if someone quit a build. |
+| 🧰 TOOLS (Ryobi-first) |
+| ryobi one+ |
+| ryobi hp |
+| ryobi brushless |
+| ryobi drill impact combo |
+| oscillating multi tool ryobi |
+| miter saw |
+| router |
+| random orbital sander |
+| Look for |
+| Tool-only deals (batteries optional) |
+| Bundles that include extra batteries + charger |
+| Avoid |
+| Damaged/swollen batteries |
+| Missing critical parts (router bases, miter saw fence/guard) |
+| Use tracker |
+| `docs/OPERATIONS_workbook_marketplace_tools.md` |
+| `bom/tools_marketplace_tracker.csv` |

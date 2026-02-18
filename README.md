@@ -57,6 +57,7 @@ Use this table first whenever you are deciding where to put information.
 2. `docs/SYSTEMS_workbook_build_notes.md`
 3. `docs/SYSTEMS_workbook_electrical_notes.md`
 4. `docs/OPERATIONS_workbook_marketplace_finds.md`
+5. `docs/OPERATIONS_workbook_marketplace_tools.md`
 - Temporary issue trackers still present for compatibility:
 1. `docs/TEMP_electrical_red_flags.md`
 2. `docs/TEMP_procurement_red_flags.md`

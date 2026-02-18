@@ -1,6 +1,6 @@
 # Electrical Fuse Schedule (Implementation - Lynx Topology)
 
-As-of date: `2026-02-12`
+As-of date: `2026-02-17`
 
 Purpose: define each required fuse by circuit, protected conductor/device, holder/housing method, physical placement, and linked wire gauge assumptions for the approved Phase 1 Lynx architecture.
 
@@ -19,7 +19,8 @@ Related docs:
 
 ## Design Basis
 - Topology: `Victron Lynx Distributor M10` (`LYN060102010`) with `4` fused `48V` branches.
-- Battery bank assumption: `2x 48V 100Ah` batteries in parallel (`2` separate battery-positive conductors leaving batteries).
+- Battery bank assumption: `3x 48V 100Ah` batteries in parallel (`3` separate battery-positive conductors leaving batteries).
+- Parallel-bank safety rule: use one Class T fuse per battery-positive conductor leaving the battery. A single shared “bank fuse” does not protect the individual battery leads and does not prevent cross-feed faults between parallel batteries.
 - Branch devices on Lynx:
 1. MultiPlus-II `48/3000`
 2. SmartSolar `150/45`
@@ -31,7 +32,7 @@ Related docs:
 ## Manufacturer References Used
 - Victron MultiPlus-II `120V` installation page (recommends `125A` DC fuse for `48/3000`; cable table includes `AWG 1` to `AWG 2/0` by length): `https://www.victronenergy.com/media/pg/MultiPlus-II_120V/en/installation.html`
 - Victron SmartSolar MPPT `150/45` installation/spec pages (`50A-63A` battery fuse range, terminal limit `16 mm2`/`AWG 6`): `https://www.victronenergy.com/media/pg/Manual_SmartSolar_MPPT_150-35__150-45/en/installation.html` and `https://www.victronenergy.com/media/pg/Manual_SmartSolar_MPPT_150-35__150-45/en/technical-specifications.html`
-- Victron Orion-Tr Smart (isolated) installation page (`48V` side fuse `20A`; `12V` side fuse `60A`; cable table): `https://www.victronenergy.com/media/pg/Orion-Tr_Smart_DC-DC_Charger_(isolated)/en/installation.html`
+- Victron Orion-Tr DC-DC Converter (isolated) product page, manual, and datasheet (`48V` models require external input fuse per manual; `48/12-30` output rating and terminal limits per datasheet): `https://www.victronenergy.com/dc-dc-converters/orion-tr-dc-dc-converters-isolated`
 - Victron Lynx Distributor manual (MEGA fuse carrier format): `https://www.victronenergy.com/media/pg/Lynx_Distributor/en/installation.html`
 - Victron fuse datasheet (for `48V` systems use `58V`-class fuses): `https://www.victronenergy.com/upload/documents/Datasheet-Fuses-EN.pdf`
 - Sterling BB12V->48V charger references (model list includes `BB1248120`, fuse/cable guidance): `https://sterling-power.com/products/battery-to-battery-chargers-12v-to-48v`
@@ -42,6 +43,7 @@ Related docs:
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `F-01A` | Battery A `+` -> bank positive combine/disconnect input | Battery A positive cable leaving battery | Class T (`>=125VDC`) | `225A` | Blue Sea Class T fuse block (covered stud mount) | Battery compartment, within ~`7"` of Battery A positive post | `2/0 AWG` |
 | `F-01B` | Battery B `+` -> bank positive combine/disconnect input | Battery B positive cable leaving battery | Class T (`>=125VDC`) | `225A` | Blue Sea Class T fuse block (covered stud mount) | Battery compartment, within ~`7"` of Battery B positive post | `2/0 AWG` |
+| `F-01C` | Battery C `+` -> bank positive combine/disconnect input | Battery C positive cable leaving battery | Class T (`>=125VDC`) | `225A` | Blue Sea Class T fuse block (covered stud mount) | Battery compartment, within ~`7"` of Battery C positive post | `2/0 AWG` |
 | `F-02` | Lynx Slot 1 -> MultiPlus `DC+` | Main inverter positive feeder | `MEGA`, `58V` or `80V` | `125A` | Integrated Lynx Distributor fuse slot | Lynx Distributor, Slot 1 | `2/0 AWG` planned (`AWG 1` minimum on short run) |
 | `F-03` | Lynx Slot 2 -> SmartSolar `BAT+` | MPPT battery-side positive feeder | `MEGA`, `58V` or `80V` | `60A` | Integrated Lynx Distributor fuse slot | Lynx Distributor, Slot 2 | `6 AWG` |
 | `F-04` | Lynx Slot 3 -> Sterling `BB1248120` output `+` | Sterling output feeder to house `48V` bus | `MEGA`, `58V` or `80V` | `40A` | Integrated Lynx Distributor fuse slot | Lynx Distributor, Slot 3 | `6 AWG` planned (`10 AWG` minimum per Sterling table) |
@@ -81,7 +83,7 @@ Related docs:
 ## Spare Fuse Inventory
 | Fuse type | Installed qty | Spare qty to carry | Notes |
 | --- | --- | --- | --- |
-| Class T `225A` | `2` | `2` | One spare per installed battery fuse |
+| Class T `225A` | `3` | `3` | One spare per installed battery fuse |
 | `MEGA 125A` (`58V/80V`) | `1` | `2` | MultiPlus branch |
 | `MEGA 60A` (`58V/80V`) | `1` | `2` | MPPT branch |
 | `MEGA 40A` (`58V/80V`) | `2` | `3` | Sterling + Orion feeder branches |
@@ -95,7 +97,7 @@ Related docs:
 ## BOM Row Mapping
 | Fuse scope | BOM row(s) |
 | --- | --- |
-| Main battery Class T protection (`F-01A/F-01B`) + Class T spares | `bom/bom_estimated_items.csv` row `7` |
+| Main battery Class T protection (`F-01A/F-01B/F-01C`) + Class T spares | `bom/bom_estimated_items.csv` row `7` |
 | Lynx branch MEGA fuses installed (`F-02` to `F-05`) | `bom/bom_estimated_items.csv` row `10` |
 | Inline Orion/Sterling installed fuse hardware (`F-06`, `F-07`, `F-08`) | `bom/bom_estimated_items.csv` row `11` |
 | 12V branch panel and blade fuses (`F-10`) | `bom/bom_estimated_items.csv` row `16` |

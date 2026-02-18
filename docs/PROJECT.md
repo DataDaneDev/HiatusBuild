@@ -55,7 +55,7 @@
 - `docs/PROJECT_build_order_of_operations.md`
 
 ## Immediate next decisions
-- Execute `Batch A+` purchase wave and capture vendor/ETA status for rows `3`, `4`, `5`, `6`, `7`, `10`, `11`, `12`, `16`, `17`, `18`, `20`, `22`, `23`, `26`, `27`, `28` through `45`, `52`, `53`, `60`
+- Execute `Batch A+` purchase wave and capture vendor/ETA status for rows `3`, `4`, `5`, `6`, `7`, `10`, `11`, `12`, `16`, `17`, `18`, `20`, `22`, `23`, `26`, `27`, `28` through `45`, `52`, `53`, `60`, `117`
 - Validate the full fuse schedule against final holder/SKU selections and cart contents for the locked Lynx architecture
 - Freeze autonomy policy using modeled profiles (BOM + owner-supplied office loads) with a `20%` minimum SOC reserve floor
 - Confirm passthrough locations (solar, shore, fuel/heater routing) with Hiatus before production lock

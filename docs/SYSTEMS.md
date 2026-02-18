@@ -11,8 +11,8 @@
 - Voltage architecture trade study (`12V` vs `48V`): `docs/ELECTRICAL_12V_vs_48V_trade_study.md`
 - Electrical decisions, risks, and unresolved items: `docs/TRACKING.md`
 
-### Planning snapshot (as-of `2026-02-12`)
-- Battery bank (corrected): `2x 48V 100Ah LiFePO4` from BOM row 3 (`10.24 kWh` nominal at `51.2V` battery nominal).
+### Planning snapshot (as-of `2026-02-17`)
+- Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).
 - House architecture: `48V` core with `48V->12V` conversion.
 - Inverter/charger candidate: Victron MultiPlus-II `48/3000/35-50`.
 - Charge sources in current BOM: solar MPPT, Sterling alternator B2B path (factory alternator now, high-output alternator as purchase-later option), shore AC charger path.
@@ -27,7 +27,7 @@
 ### Input reference (maintained)
 | Input | Current value | Source |
 | --- | --- | --- |
-| Battery bank | `2x 48V 100Ah` | `bom/bom_estimated_items.csv` row 3 |
+| Battery bank | `3x 48V 100Ah` | `bom/bom_estimated_items.csv` row 3 |
 | Inverter/charger | MultiPlus-II `48/3000/35-50` | `bom/bom_estimated_items.csv` row 12 |
 | Alternator charging | Sterling `BB1248120` (`12V/24V -> 48V`, `~1500W` max, `~26A` at `57.6V`) + `BBR` remote | `bom/bom_estimated_items.csv` rows 18 and 26 |
 | Vehicle alternator assumption (current) | Factory `240A` (user-reported) with `65%` BBR limit option for extended idle sessions | `docs/TRACKING.md` |
@@ -50,17 +50,17 @@ Load totals below are from `bom/load_model_wh.csv` model v3 (BOM loads plus owne
 ### Capacity analysis (corrected battery bank)
 | Metric | Formula | Result |
 | --- | --- | --- |
-| Nominal battery energy | `51.2V x 100Ah x 2` | `10,240 Wh` |
-| Usable energy to 20% reserve floor | `10,240 x 0.8` | `8,192 Wh` |
-| Core day depth of discharge | `3,530 / 10,240` | `34.47%` per day |
-| Winter day depth of discharge | `4,202 / 10,240` | `41.04%` per day |
+| Nominal battery energy | `51.2V x 100Ah x 3` | `15,360 Wh` |
+| Usable energy to 20% reserve floor | `15,360 x 0.8` | `12,288 Wh` |
+| Core day depth of discharge | `3,530 / 15,360` | `22.98%` per day |
+| Winter day depth of discharge | `4,202 / 15,360` | `27.36%` per day |
 
 ### Autonomy (no charging)
 | Scenario | Days (`100% -> 20%`) |
 | --- | --- |
-| `core_workday` | `2.32` |
-| `winter_workday` | `1.95` |
-| `minimal_idle_day` | `13.13` |
+| `core_workday` | `3.48` |
+| `winter_workday` | `2.92` |
+| `minimal_idle_day` | `19.69` |
 
 ### Charging potential
 All values are planning-level and should be replaced with measured charge logs after shakedown tests.
@@ -107,13 +107,13 @@ Base planning factor for your target roof setup is now `68%` end-to-end harvest 
 - Ideal bulk-only recharge times:
 - Replace one `core_workday`: `1.78h`.
 - Replace one `winter_workday`: `2.11h`.
-- Recharge from `20%` to `100%`: `3.86h`.
+- Recharge from `20%` to `100%`: `6.18h`.
 - Real-world times are longer due to absorption taper near full charge.
 
 ### Operational implications and constraints
-- Battery capacity now supports roughly `1.8-2.2` office-workdays without charging depending on season and reserve policy.
+- Battery capacity now supports roughly `2.9-3.5` office-workdays without charging depending on season and reserve policy.
 - With `900W` flexible solar at the base `68%` factor, `4` PSH leaves a material daily deficit for both `core_workday` and `winter_workday`.
-- Shore charging can materially recover SOC in a single evening (`~3.86h` from `20%` to `100%` in bulk-ideal terms).
+- Shore charging can materially recover SOC in a single evening (`~6.18h` from `20%` to `100%` in bulk-ideal terms).
 - Alternator recovery potential is meaningful, but the current Sterling charger path is capped near `1.5kW`, so recovery is slower than earlier `120A@48V` planning assumptions.
 - If the Mechman alternator path is purchased later, complete Big 3 wiring and re-baseline safe continuous BBR limits before extended idling use.
 - MultiPlus-II `48/3000` inverter continuous output (`~2,400W`) can be exceeded by simultaneous induction + microwave + other AC loads, so high-draw AC loads need sequencing.
@@ -236,7 +236,7 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 - Condensation controls and climate envelope limits: TBD
 
 ## Safety
-- Purpose: define a practical, build-ready safety baseline for the current architecture (`48V 10.24kWh` house bank, `12V` distribution, `120VAC` shore/inverter path, and propane-supported heating/hot-water concepts).
+- Purpose: define a practical, build-ready safety baseline for the current architecture (`48V 15.36kWh` house bank, `12V` distribution, `120VAC` shore/inverter path, and propane-supported heating/hot-water concepts).
 - Priority order: prevent ignition and overcurrent faults, preserve safe shutdown paths, detect hazards early, and make isolation/service repeatable.
 - Final install gate: before energizing or using propane in service, verify all items against manufacturer manuals and complete licensed inspection where required.
 

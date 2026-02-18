@@ -1,13 +1,14 @@
 row,category,component,est_price,price_flag,description_notes,est_purchase_date
 2,Camper Platform,Hiatus Camper,33488.64,user_filled,,
-3,Power System,Batteries,1356,user_filled,"48V 100Ah LiFePO4 Golf Cart Lithium Battery (2x), 200A BMS low-temp protection, max 4 batteries = 400Ah system",2026-02-16
+3,Power System,Batteries,1617,user_filled,"48V 100Ah LiFePO4 Golf Cart Lithium Battery (3x), 200A BMS low-temp protection, max 4 batteries = 400Ah system. Price basis: ~$539 each.",2026-02-17
 12,Power System,Inverter/Transfer Switch/Charger,937,user_filled,"Victron MultiPlus-II 48/3000/35-50 (48V, 3kVA)",2026-02-16
 18,Power System,Alternator Charging,807,ai_set,"Sterling Power BB1248120 battery-to-battery charger (12V or 24V input to 48V output, ~1500W max, ~26A at 57.6V). Requires fused input/output paths per fuse schedule.",2026-02-16
 24,Power System,Solar Panels,700,user_filled,9x100w (3S3P) flexible. PV string fusing and holder/combiner are tracked as separate BOM line items.,2026-03-03
 25,Power System,Solar Controller,211,user_filled,Victron SmartSolar MPPT 150/45,2026-03-03
 5,Power System,48v disconnect,35,user_filled,Victron Energy Battery Switch ON/Off 275 amp,2026-02-17
 6,Power System,Lynx Distributor,192.47,ai_set,Victron Lynx Distributor M10 (LYN060102010),2026-02-17
-7,Power System,Battery Class T Protection (Lynx plan),318.78,ai_set,2x Blue Sea Class T blocks + 2x 225A Class T fuses installed (one per battery positive) + 2x spare 225A fuses.,2026-02-17
+7,Power System,Battery Class T Protection (Lynx plan),478.17,ai_set,3x Blue Sea Class T blocks + 3x 225A Class T fuses installed (one per battery positive) + 3x spare 225A fuses.,2026-02-17
+117,Power System,48V battery-side combine busbars,85,ai_set,2x covered 600A+ busbars: 48V + busbar (combine after Class T fuses) and 48V - busbar (battery-only combine before SmartShunt). Reduces lug stacking on the disconnect and SmartShunt studs.,2026-02-17
 10,Power System,Lynx 48V branch MEGA fuses (installed),119,ai_set,"Installed in Lynx Distributor: 125A (MultiPlus) x1, 60A (MPPT) x1, 40A (Sterling output) x1, 40A (Orion feeder) x1. Use 58V/80V-rated MEGA fuses only.",2026-02-17
 11,Power System,Inline high-current fuse hardware (installed),85,ai_set,Sterling input: 150A + holder (12V side). Orion input: 20A/23A 58V + holder. Orion 12V output to fuse panel: 60A + holder.,2026-02-17
 19,Power System,Pre-charge Resistor,,blank,"RecPro or equivalent pre-charge resistors, or ensure your BMS handles this",2026-03-03
@@ -40,8 +41,8 @@ row,category,component,est_price,price_flag,description_notes,est_purchase_date
 29,Hardware,,72,user_filled,6 AWG (20'),2026-02-19
 30,Hardware,,36,user_filled,4 AWG (25'),2026-02-19
 104,Hardware,Big 3 wiring upgrade (purchase later estimate),225,ai_set,Estimated incremental wiring-only cost if not buying a full kit: ~15 ft additional 2/0 OFC-equivalent cable + extra lugs/heatshrink + inline fuse and holder + chassis ground prep consumables,
-34,Hardware,Lugs,14,user_filled,2/0 AWG × M10: ~6–8,2026-02-20
-35,Hardware,,13,user_filled,2/0 AWG × M8: ~4–6,2026-02-20
+34,Hardware,Lugs,14,user_filled,2/0 AWG × M10 (3/8 in stud): ~20–24 (3x battery bank + busbars + spares),2026-02-20
+35,Hardware,,13,user_filled,2/0 AWG × M8 (5/16 in stud): ~10–14 (battery posts + Lynx/MultiPlus + spares),2026-02-20
 36,Hardware,,8,user_filled,6 AWG × M8: ~10–12,2026-02-20
 37,Hardware,,7,user_filled,4 AWG × M8/M10: ~2–4,2026-02-20
 38,Hardware,Adhesive Heatshrink (red+black),12,user_filled,Feb-00,2026-02-20
