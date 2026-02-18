@@ -20,7 +20,7 @@ Related docs:
 | Battery nominal voltage | `51.2V` | Current BOM convention |
 | Battery current limit | `<=200A` per battery (provisional) | Product listing text provided by owner |
 | Battery-side conductors | `2/0 AWG` copper | Current build baseline |
-| Lynx discharge-active branch limits | `F-02=125A`, `F-05=40A` | Current branch architecture |
+| Lynx discharge-active branch limits | `F-02=125A`, `F-05=30A` | Current branch architecture |
 | MPPT/charger branch limits | `F-03=60A`, `F-04=40A` | Current branch architecture |
 | Sharing factor `K_share` | `1.5` | Conservative parallel-imbalance factor |
 | Continuous margin `K_cont` | `1.25` | Conservative continuous-load margin |
@@ -37,13 +37,13 @@ Select Class T fuse within [I_fuse_min, I_fuse_max]
 
 ## Battery Branch Fuse Envelope Calculation
 1. Discharge envelope:
-- `I_total_discharge = 125A + 40A = 165A`
+- `I_total_discharge = 125A + 30A = 155A`
 
 2. Per-battery design current with conservative sharing:
-- `I_batt_design = (165A / 3) * 1.5 = 82.5A`
+- `I_batt_design = (155A / 3) * 1.5 = 77.5A`
 
 3. Continuous-adjusted minimum:
-- `I_fuse_min = 82.5A * 1.25 = 103.1A`
+- `I_fuse_min = 77.5A * 1.25 = 96.9A`
 
 4. Maximum allowed:
 - `I_fuse_max = min(200A provisional battery limit, conductor limit, terminal/busbar limits)`
@@ -77,12 +77,12 @@ Assumptions for quick voltage-drop screen:
 - Two-conductor DC loop method:
 `V_drop = I * (2 * L_one_way * R_per_ft)`
 
-### A) `2/0 AWG` main trunk screen (`I=165A`)
+### A) `2/0 AWG` main trunk screen (`I=155A`)
 | One-way length `L` | Loop resistance | Vdrop | % of `51.2V` |
 | --- | --- | --- | --- |
-| `3 ft` | `0.000467 ohm` | `0.077V` | `0.15%` |
-| `6 ft` | `0.000935 ohm` | `0.154V` | `0.30%` |
-| `10 ft` | `0.001558 ohm` | `0.257V` | `0.50%` |
+| `3 ft` | `0.000467 ohm` | `0.072V` | `0.14%` |
+| `6 ft` | `0.000935 ohm` | `0.145V` | `0.28%` |
+| `10 ft` | `0.001558 ohm` | `0.241V` | `0.47%` |
 
 Result: passes `<=2%` target with substantial margin.
 

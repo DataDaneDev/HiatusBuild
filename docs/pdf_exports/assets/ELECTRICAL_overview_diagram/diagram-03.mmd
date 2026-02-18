@@ -4,7 +4,9 @@ flowchart LR
         CORD["Shore cord + adapters\n(service-limited by pedestal/source)"]
         EMS["Optional EMS/surge protection"]
         ACINBRK["AC input breaker/disconnect\n20A target (or sized to source)"]
-        INLET --> CORD --> EMS --> ACINBRK
+        INLET -- "10/3 shore, ~3 ft (ASSUMED)" --> CORD
+        CORD -- "10/3 shore, ~2 ft (ASSUMED)" --> EMS
+        EMS -- "10/3 shore, ~3 ft (ASSUMED)" --> ACINBRK
     end
 
     subgraph MULTI_AC["MultiPlus-II AC Conversion + Transfer"]
@@ -21,8 +23,8 @@ flowchart LR
         BR_A["Branch A: galley outlets"]
         BR_B["Branch B: office outlets"]
         OUT2PROT["AC-out-2 breaker + RCD/GFCI\n(shore-only future loads, optional)"]
-        OUT1PROT --> BR_A
-        OUT1PROT --> BR_B
+        OUT1PROT -- "12 AWG branch cable, ~15 ft (ASSUMED)" --> BR_A
+        OUT1PROT -- "12 AWG branch cable, ~15 ft (ASSUMED)" --> BR_B
     end
 
     subgraph AC_LOADS["Planned AC Loads"]
@@ -34,18 +36,18 @@ flowchart LR
     end
 
     subgraph USB_PD["USB/USB-C PD Strategy"]
-        PD_DC["Locked: 12V branch -> DC USB-C PD modules\n4 total points (2 office, 2 galley)"]
+        PD_DC["Locked: 12V branch -> USB PD stations\n2 total stations (office + galley)"]
         PD_AC["Alternative: USB receptacles on AC branch"]
     end
 
-    ACINBRK --> ACIN
-    OUT1 --> OUT1PROT
-    OUT2 --> OUT2PROT
+    ACINBRK -- "12 AWG AC conductors, ~2.5 ft" --> ACIN
+    OUT1 -- "12 AWG AC conductors, ~2.5 ft" --> OUT1PROT
+    OUT2 -- "12 AWG AC conductors, ~15 ft (ASSUMED optional)" --> OUT2PROT
 
     BR_A --> IND
     BR_A --> MW
     BR_A --> MON
     BR_B --> GENOUT
-    OUT2PROT --> SHORE_ONLY
+    OUT2PROT -- "12 AWG AC conductors, ~15 ft (ASSUMED optional)" --> SHORE_ONLY
 
     BR_A -. "if AC USB outlets selected" .-> PD_AC
