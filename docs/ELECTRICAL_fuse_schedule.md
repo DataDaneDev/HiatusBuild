@@ -63,7 +63,7 @@ Related docs:
 | `F-04` | Lynx Slot 3 -> Sterling `BB1248120` output `+` | Sterling output feeder to house `48V` bus | `MEGA`, `58V` or `80V` | `40A` | Integrated Lynx Distributor fuse slot | Lynx Distributor, Slot 3 | `6 AWG` planned (`10 AWG` minimum per Sterling table) |
 | `F-05` | Lynx Slot 4 -> `48V` auxiliary feeder (Orion branch) | Aux feeder from Lynx to Orion-branch fuse point | `MEGA`, `58V` or `80V` | `30A` | Integrated Lynx Distributor fuse slot | Lynx Distributor, Slot 4 | `6 AWG` |
 | `F-06` | `48V` aux feeder -> Orion `48V` input `+` | Orion input lead (device protection) | Inline MIDI/AMI/ANL family rated `>=58VDC` | `20A` target (`23A` if using Victron MIDI family) | Sealed inline fuse holder mounted on backplate | Electrical cabinet, mounted at source end of Orion input lead | `6 AWG` planned (`8 AWG` minimum per Orion cable table) |
-| `F-07` | Orion `12V` output `+` -> 12V fuse block main `+` stud | Main `12V` feeder from Orion into shared source-combine point | Inline MIDI/AMI/ANL family rated `>=32VDC` | `60A` | Sealed inline fuse holder mounted on backplate | Electrical cabinet, within ~`7"` of Orion `12V` output stud | `6 AWG` planned (`8 AWG` minimum per Orion cable table) |
+| `F-07` | Orion `12V` output `+` -> 12V fuse block main `+` stud | Main `12V` feeder from Orion into shared source-combine point | `MEGA`, `58V` or `80V` | `60A` | Victron MEGA fuse holder (external, non-Lynx) | Electrical cabinet, within ~`7"` of Orion `12V` output stud | `6 AWG` planned (`8 AWG` minimum per Orion cable table) |
 | `F-08` | Starter battery `+` -> Sterling `BB1248120` input `+` | Vehicle-side charger input cable | MEGA/ANL equivalent rated `>=32VDC` | `150A` | Sealed engine-bay fuse holder with high-temp cover | Engine bay, within ~`7"` of starter battery positive post | `2/0 AWG` planned (`2 AWG` minimum per Sterling table) |
 | `F-09A/B/C` | PV string `+` leads -> MPPT PV combiner | Each solar string positive conductor and reverse-current path | `gPV` string fuse (`>=150VDC`) | `15A` each (provisional) | `10x38` touch-safe PV fuse holders in weatherproof combiner enclosure | Roof-entry combiner near gland/pass-through | `10 AWG` PV wire |
 | `F-10` | `12V` fuse block branch circuits -> each `12V` load | Individual `12V` branch conductors and load circuits | ATO/ATC blade fuses (`32V` class) | Per-circuit | Integrated sockets in generic marine `12V` fuse block | `12V` fuse block in electrical cabinet | Per branch (table below) |
@@ -102,9 +102,9 @@ Related docs:
 | Fuse family | Preferred holder style | Why |
 | --- | --- | --- |
 | Class T (`F-01A/B/C`) | Covered stud-mounted marine block (`110A-200A` family for current baseline) | High interrupt capacity and robust battery-compartment mounting; holder family must match chosen Class T range |
-| MEGA (`58V/80V`) in Lynx | Lynx integrated holders only | Eliminates separate branch fuse block and keeps topology locked |
+| MEGA (`58V/80V`) in Lynx (`F-02` to `F-05`) | Lynx integrated holders only | Eliminates separate branch fuse block and keeps topology locked |
 | Inline `48V` Orion input (`F-06`) | Sealed MIDI/AMI-compatible holder on interior backplate | Keeps source-end protection near branch takeoff |
-| Inline `12V` Orion output (`F-07`) | Sealed MIDI/AMI-compatible holder at Orion output | Protects full shared-junction feeder length |
+| Orion output (`F-07`) `60A MEGA` | Victron external MEGA holder at Orion output | Standardizes `60A` spare pool with MPPT fuse family |
 | 12V buffer battery main (`F-11`) | Sealed MIDI/AMI/ANL holder near battery | Protects shared 12V source-junction path from battery fault current |
 | 12V battery disconnect (`SW-12V-BATT`) | Sealed rotary DC switch near distribution cabinet access | Provides simple service isolation without adding LVD complexity |
 | Engine-bay Sterling input (`F-08`) | Sealed MEGA/ANL holder, high-temp/engine-bay suitable | Environmental robustness and source-proximate protection |
@@ -118,11 +118,10 @@ Related docs:
 | Class T `200A` (provisional installed) | `3` | `3` | One spare per installed battery fuse while `200A` baseline is active |
 | Class T `175A` (alternate pending final battery datasheet lock) | `0` | `3` optional | Optional non-regret alternate set if budget allows; install only if final lock gate requires lower value |
 | `MEGA 125A` (`58V/80V`) | `1` | `4` | MultiPlus branch; BOM lock is `x5` total |
-| `MEGA 60A` (`58V/80V`) | `1` | `2` | MPPT branch |
+| `MEGA 60A` (`58V/80V`) | `2` | `4` | Shared pool for MPPT (`F-03`) + Orion output (`F-07`); target `6` total |
 | `MEGA 40A` (`58V/80V`) | `1` | `2` | Sterling branch; BOM lock is `x3` total |
 | `MEGA 30A` (`58V`) | `1` | `2` | Orion feeder branch; BOM lock is `x3` total |
 | Orion input fuse (`20A` target / `23A` MIDI) | `1` | `2` | Match installed holder family |
-| Orion output fuse `60A` (`32V+`) | `1` | `2` | Main `12V` feeder protection |
 | 12V buffer battery main fuse (`100A` class) | `1` | `2` | Keep exact spare value matched to final `F-11` holder family |
 | Sterling input fuse `150A` (`32V+`) | `1` | `1` | Vehicle-side charger input |
 | PV string fuse `15A gPV` | `3` | `3` | One spare per string |
@@ -134,7 +133,7 @@ Related docs:
 | --- | --- |
 | Main battery Class T protection (`F-01A/F-01B/F-01C`) + Class T spares | `bom/bom_estimated_items.csv` row `7` |
 | Lynx branch MEGA fuses (`F-02` to `F-05`) installed + spare set | `bom/bom_estimated_items.csv` row `10` |
-| Inline Orion/Sterling installed fuse hardware (`F-06`, `F-07`, `F-08`) | `bom/bom_estimated_items.csv` row `11` |
+| Orion/Sterling installed fuse-holder hardware (`F-06`, `F-07`, `F-08`) | `bom/bom_estimated_items.csv` row `11` |
 | 12V buffer battery and main fuse (`F-11`) | `bom/bom_estimated_items.csv` row `21` |
 | 12V branch panel and blade fuses (`F-10`) | `bom/bom_estimated_items.csv` row `16` |
 | SmartShunt OEM fused lead (`OEM-SHUNT`) | `bom/bom_estimated_items.csv` row `23` (included with SmartShunt kit) |
@@ -142,13 +141,13 @@ Related docs:
 | PV string fuses + holder (`F-09A/B/C`) and spares | `bom/bom_estimated_items.csv` row `106` |
 
 ## Lynx MEGA Procurement Lock (BOM Sync)
-- Locked row `10` description: `125A x5`, `60A x3`, `40A x3`, `30A x3` (includes installed set plus spares).
-- Locked row `10` total cost: `$57.92`.
+- Updated row `10` fuse-family lock: `125A x5`, `60A x6` (shared `F-03` + `F-07` pool), `40A x3`, `30A x3`.
+- Updated row `10` estimate tracks the added `60A` pack for `6` total `60A` MEGA fuses.
 
 ## Assumptions and Open Items
 1. Wire sizing above assumes copper conductors, enclosed vehicle routing, and the one-way run-length estimate set in `docs/ELECTRICAL_overview_diagram.md` (`2026-02-18` pass).
 2. `F-09A/B/C` remains provisional at `15A` pending final solar module datasheet max-series-fuse confirmation.
-3. Final SKU lock is still required for inline holders used by `F-06`, `F-07`, `F-08`, and `F-11`, plus `SW-12V-BATT`.
+3. Final SKU lock is still required for inline holders used by `F-06`, `F-08`, and `F-11`, plus the external Victron MEGA holder for `F-07` and `SW-12V-BATT`.
 4. If Orion run lengths exceed the short/medium assumption, keep `F-06`/`F-07` and upsize conductors before energizing.
 5. Do not use `32V` automotive MEGA fuses on `48V` house circuits; use `58V`/`80V` DC-rated fuses only.
 6. Keep the SmartShunt fused lead as an OEM harness item unless an equivalent voltage-rated replacement is fully validated.

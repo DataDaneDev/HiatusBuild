@@ -115,7 +115,7 @@ flowchart LR
 ```mermaid
 flowchart LR
     ORION["Orion-Tr Smart 48/12-30\nIsolated charger"]
-    F07["F-07 60A\ninline holder near Orion"]
+    F07["F-07 60A MEGA (58V)\nVictron MEGA holder near Orion"]
     PANEL["12V fuse block\n12-circuit, integrated negative bus\nmain + / - studs (source combine + shared return)"]
     B12["12V 100Ah LiFePO4\nbuffer battery"]
     F11["F-11 100A class\nbattery main fuse"]
@@ -277,7 +277,7 @@ flowchart LR
 | `F-04` | `40A MEGA` | Lynx integrated slot holder | Lynx Slot 3 |
 | `F-05` | `30A MEGA` | Lynx integrated slot holder | Lynx Slot 4 |
 | `F-06` | `20A` target / `23A` MIDI fallback | Inline sealed holder (`>=58VDC`) | Electrical cabinet near Orion branch source |
-| `F-07` | `60A` | Inline sealed holder (`>=32VDC`) | Electrical cabinet at Orion `12V +` source end |
+| `F-07` | `60A MEGA` (`58V` class) | Victron MEGA fuse holder | Electrical cabinet at Orion `12V +` source end |
 | `F-08` | `150A` | Sealed engine-bay MEGA/ANL holder | Engine bay near starter battery `+` |
 | `F-09A/B/C` | `15A gPV` each | `10x38` touch-safe fuse holders in PV combiner | Roof-entry combiner enclosure |
 | `F-10` | Per branch (`ATO/ATC`) | Integrated blade sockets in generic 12V fuse block | Electrical cabinet |

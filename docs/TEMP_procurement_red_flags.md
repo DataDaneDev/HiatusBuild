@@ -62,7 +62,7 @@ Status date: 2026-02-13
 - `docs/TRACKING.md` (open question on final fuse-holder SKU standard)
 - `bom/bom_estimated_items.csv` rows `11`, `105`, `106`
 - Clarification needed:
-- Final SKUs for inline holders covering `F-06`, `F-07`, `F-08`, and PV combiner hardware standard.
+- Final SKUs for inline holders covering `F-06`, `F-08`, `F-11`, plus the external Victron MEGA holder for `F-07` and PV combiner hardware standard.
 - Resolution target:
 - Freeze holder SKU ecosystem and update BOM notes to reflect exact installed hardware.
 - Status: Open
