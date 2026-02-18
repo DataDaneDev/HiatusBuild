@@ -116,9 +116,7 @@ flowchart LR
 flowchart LR
     ORION["Orion-Tr Smart 48/12-30\nIsolated charger"]
     F07["F-07 60A\ninline holder near Orion"]
-    P12["12V positive junction\n(shared source combine point)"]
-    PANEL["12V fuse block\n(generic 12-circuit with branch fuses)"]
-    N12["12V negative return junction"]
+    PANEL["12V fuse block\n12-circuit, integrated negative bus\nmain + / - studs (source combine + shared return)"]
     B12["12V 100Ah LiFePO4\nbuffer battery"]
     F11["F-11 100A class\nbattery main fuse"]
     SW12["SW-12V-BATT\nmanual battery disconnect"]
@@ -133,12 +131,11 @@ flowchart LR
     USB_OFFICE["12V-08 Office USB PD station\n20A / 12 AWG"]
     USB_GALLEY["12V-09 Galley USB PD station\n15A / 14 AWG"]
 
-    ORION -- "6 AWG, ~2.5 ft" --> F07 --> P12
-    ORION -- "6 AWG, ~2.5 ft" --> N12
-    B12 -- "4 AWG, ~2.5 ft" --> F11 --> SW12 --> P12
-    B12 -- "4 AWG, ~2.5 ft" --> N12
-    P12 -- "6 AWG, ~2.5 ft" --> PANEL
-    P12 -. "maintenance charge path when SW-12V-BATT is closed" .-> B12
+    ORION -- "6 AWG, ~2.5 ft to main + stud" --> F07 --> PANEL
+    ORION -- "6 AWG, ~2.5 ft to main - / neg bus" --> PANEL
+    B12 -- "4 AWG, ~2.5 ft to main + stud" --> F11 --> SW12 --> PANEL
+    B12 -- "4 AWG, ~2.5 ft to main - / neg bus" --> PANEL
+    PANEL -. "maintenance charge path to buffer battery\nwhen SW-12V-BATT is closed" .-> B12
 
     PANEL -- "14 AWG duplex, ~8 ft (ASSUMED)" --> STAR
     PANEL -- "14 AWG duplex, ~12 ft (ASSUMED)" --> FRIDGE
@@ -150,24 +147,25 @@ flowchart LR
     PANEL -- "12 AWG duplex, ~5 ft (ASSUMED short run)" --> USB_OFFICE
     PANEL -- "14 AWG duplex, ~8 ft (ASSUMED)" --> USB_GALLEY
 
-    STAR -- "return in duplex, ~8 ft" --> N12
-    FRIDGE -- "return in duplex, ~12 ft" --> N12
-    HEATER -- "return in duplex, ~8 ft" --> N12
-    PUMP -- "return in duplex, ~8 ft" --> N12
-    DET -- "return in 18/2, ~8 ft" --> N12
-    LED -- "return in 18/2, ~8 ft" --> N12
-    CERBO_PWR -- "return in 18/2, ~2.5 ft" --> N12
-    USB_OFFICE -- "return in duplex, ~5 ft" --> N12
-    USB_GALLEY -- "return in duplex, ~8 ft" --> N12
+    STAR -- "return in duplex, ~8 ft" --> PANEL
+    FRIDGE -- "return in duplex, ~12 ft" --> PANEL
+    HEATER -- "return in duplex, ~8 ft" --> PANEL
+    PUMP -- "return in duplex, ~8 ft" --> PANEL
+    DET -- "return in 18/2, ~8 ft" --> PANEL
+    LED -- "return in 18/2, ~8 ft" --> PANEL
+    CERBO_PWR -- "return in 18/2, ~2.5 ft" --> PANEL
+    USB_OFFICE -- "return in duplex, ~5 ft" --> PANEL
+    USB_GALLEY -- "return in duplex, ~8 ft" --> PANEL
 ```
 
 ### 12V Operating Intent (Locked)
 - Orion-Tr Smart `48/12-30` is the primary `12V` charger/feed source.
 - `SW-12V-BATT` is **normally closed** in operation; open is service/isolation mode only.
-- With `SW-12V-BATT` closed, Orion output on `P12` maintains/charges the `12V` buffer battery through the shared junction path.
-- With `SW-12V-BATT` open, the buffer battery is isolated from `P12`; this mode is for service/troubleshooting only and not the default operating state.
+- With `SW-12V-BATT` closed, Orion output at the fuse-block main `+` stud maintains/charges the `12V` buffer battery through the shared-junction path.
+- With `SW-12V-BATT` open, the buffer battery is isolated from the main `+` stud; this mode is for service/troubleshooting only and not the default operating state.
 - The buffer battery remains in the active operating path during normal use and is intended to absorb transients/peaks on the `12V` rail.
-- `P12` and `N12` are junction points (source-combine + return junction), not a requirement for large standalone bus bars.
+- The fuse block is the `12V` junction device in this baseline: main `+` stud is the source-combine point, and the integrated negative bus/main `-` is the shared return point.
+- Do not solder-splice high-current source conductors; terminate with crimped lugs on rated studs/junction hardware.
 
 ## AC Path Topology (Shore + Inverter Output, Full Hierarchy)
 ```mermaid
@@ -284,7 +282,7 @@ flowchart LR
 | `F-09A/B/C` | `15A gPV` each | `10x38` touch-safe fuse holders in PV combiner | Roof-entry combiner enclosure |
 | `F-10` | Per branch (`ATO/ATC`) | Integrated blade sockets in generic 12V fuse block | Electrical cabinet |
 | `F-11` | `100A` class (12V buffer battery main) | Sealed inline MIDI/AMI/ANL holder | Within ~`7"` of 12V buffer battery positive post |
-| `SW-12V-BATT` | Manual battery disconnect switch | Sealed rotary DC switch body | Electrical cabinet near 12V positive junction for service access |
+| `SW-12V-BATT` | Manual battery disconnect switch | Sealed rotary DC switch body | Electrical cabinet near 12V fuse-block main `+` stud for service access |
 | `OEM-SHUNT` | Factory low-current inline fuse (SmartShunt harness) | Integrated inline holder in Victron harness lead | Electrical cabinet near Lynx positive tap |
 
 ## Conductor Schedule (Start-to-Finish)
@@ -309,11 +307,10 @@ flowchart LR
 | `C-15` | Orion `48V -` input -> Lynx `-` bus | `48V` | Orion input return current | `F-06` protects paired positive | `6 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-16` | Starter battery `+` -> `F-08` -> Sterling input `+` | `12V` | Charger input path, fuse-limited | `F-08` `150A` | `2/0 AWG` planned (`2 AWG` minimum per Sterling table) | `12 ft` (`ASSUMED`, long vehicle run) |
 | `C-17` | Vehicle return/chassis -> Sterling input `-` | `12V` | Charger input return | `F-08` protects paired positive | `2/0 AWG` planned | `12 ft` (`ASSUMED`, long vehicle run) |
-| `C-18` | Orion `12V +` -> `F-07` -> shared 12V positive junction | `12V` | Charger output path (`30A` continuous, `60A` fuse) | `F-07` `60A` | `6 AWG` planned (`8 AWG` minimum per Orion table) | `2.5 ft` (`ASSUMED`) |
-| `C-19` | Orion `12V -` -> 12V negative return junction | `12V` | Charger output return | `F-07` protects paired positive | `6 AWG` | `2.5 ft` (`ASSUMED`) |
-| `C-19A` | 12V buffer battery `+` -> `F-11` -> `SW-12V-BATT` -> shared 12V positive junction | `12V` | Buffer source path and service isolation path | `F-11` `100A` class | `4 AWG` planned | `2.5 ft` (`ASSUMED`) |
-| `C-19B` | 12V buffer battery `-` -> 12V negative return junction | `12V` | Buffer battery return path | N/A (paired with `C-19A`) | `4 AWG` planned | `2.5 ft` (`ASSUMED`) |
-| `C-19C` | Shared 12V positive junction -> 12V fuse block `+` feed | `12V` | Main 12V distribution feed path | Upstream source fuses (`F-07` / `F-11`) | `6 AWG` planned | `2.5 ft` (`ASSUMED`) |
+| `C-18` | Orion `12V +` -> `F-07` -> 12V fuse block main `+` stud | `12V` | Charger output path (`30A` continuous, `60A` fuse) | `F-07` `60A` | `6 AWG` planned (`8 AWG` minimum per Orion table) | `2.5 ft` (`ASSUMED`) |
+| `C-19` | Orion `12V -` -> 12V fuse block integrated `-` bus / main `-` stud | `12V` | Charger output return | `F-07` protects paired positive | `6 AWG` | `2.5 ft` (`ASSUMED`) |
+| `C-19A` | 12V buffer battery `+` -> `F-11` -> `SW-12V-BATT` -> 12V fuse block main `+` stud | `12V` | Buffer source path and service isolation path | `F-11` `100A` class | `4 AWG` planned | `2.5 ft` (`ASSUMED`) |
+| `C-19B` | 12V buffer battery `-` -> 12V fuse block integrated `-` bus / main `-` stud | `12V` | Buffer battery return path | N/A (paired with `C-19A`) | `4 AWG` planned | `2.5 ft` (`ASSUMED`) |
 | `C-20` | 12V panel -> Starlink PSU | `12V` | Branch load | `F-10` `10A` | `14 AWG duplex` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-21` | 12V panel -> Fridge | `12V` | Branch load | `F-10` `15A` | `14 AWG duplex` | `12 ft` (`ASSUMED`, far-load branch) |
 | `C-22` | 12V panel -> Diesel heater | `12V` | Branch load | `F-10` `15A` | `14 AWG duplex` | `8 ft` (`ASSUMED`, near-load branch) |
@@ -358,11 +355,10 @@ Calculation basis for drop screening:
 | `C-15` | Orion `48V -` | Lynx `-` bus | `F-06` paired | `20A` | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG black`) | PASS |
 | `C-16` | Starter battery `+` | Sterling input `+` | `F-08 150A` | `125A` design | `2/0 AWG` | `12 ft` | `1.95%` @ `12V` | Row `28` (`2/0 red`) | PASS (near 2%; keep routing clean) |
 | `C-17` | Vehicle return/chassis | Sterling input `-` | `F-08` paired | `125A` design | `2/0 AWG` | `12 ft` | `1.95%` @ `12V` | Row `28` (`2/0 black`) | PASS (near 2%; verify crimp/ground prep) |
-| `C-18` | Orion `12V +` | Shared `12V +` junction | `F-07 60A` | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG red`) | PASS |
-| `C-19` | Orion `12V -` | `12V -` return junction | `F-07` paired | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG black`) | PASS |
-| `C-19A` | Buffer battery `+` | Shared `12V +` junction (via `F-11/SW`) | `F-11 100A` | `50A` design | `4 AWG` | `2.5 ft` | `0.52%` @ `12V` | Row `30` (`4 AWG red`) | PASS |
-| `C-19B` | Buffer battery `-` | `12V -` return junction | N/A | `50A` design | `4 AWG` | `2.5 ft` | `0.52%` @ `12V` | Row `30` (`4 AWG black`) | PASS |
-| `C-19C` | Shared `12V +` junction | 12V fuse block `+` feed | Upstream source fuses | `60A` screen | `6 AWG` | `2.5 ft` | `0.99%` @ `12V` | Row `29` (`6 AWG red`) | PASS |
+| `C-18` | Orion `12V +` | Fuse block main `+` stud | `F-07 60A` | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG red`) | PASS |
+| `C-19` | Orion `12V -` | Fuse block integrated `-` bus / main `-` stud | `F-07` paired | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG black`) | PASS |
+| `C-19A` | Buffer battery `+` | Fuse block main `+` stud (via `F-11/SW`) | `F-11 100A` | `50A` design | `4 AWG` | `2.5 ft` | `0.52%` @ `12V` | Row `30` (`4 AWG red`) | PASS |
+| `C-19B` | Buffer battery `-` | Fuse block integrated `-` bus / main `-` stud | N/A | `50A` design | `4 AWG` | `2.5 ft` | `0.52%` @ `12V` | Row `30` (`4 AWG black`) | PASS |
 | `C-20` | 12V fuse panel | Starlink PSU | `F-10 10A` | `8A` | `14 AWG duplex` | `8 ft` | `2.69%` @ `12V` | Row `32` (`14 AWG duplex`) | PASS (near 3%) |
 | `C-21` | 12V fuse panel | Fridge | `F-10 15A` | `7A` | `14 AWG duplex` | `12 ft` | `3.54%` @ `12V` | Row `32` (`14 AWG duplex`) | WARN (shorten run or move to `12 AWG`) |
 | `C-22` | 12V fuse panel | Diesel heater | `F-10 15A` | `10A` startup screen | `14 AWG duplex` | `8 ft` | `3.37%` @ `12V` | Row `32` (`14 AWG duplex`) | WARN (startup drop margin tight) |
@@ -385,7 +381,7 @@ Calculation basis for drop screening:
 | --- | --- | --- | --- |
 | `2/0 AWG` red | `34.5 ft` | `C-01`, `C-02`, `C-02C`, `C-03`, `C-04`, `C-07`, `C-16` | `28` |
 | `2/0 AWG` black | `27.0 ft` | `C-05`, `C-06`, `C-08`, `C-17` | `28` |
-| `6 AWG` red | `15.0 ft` | `C-09`, `C-11`, `C-13`, `C-14`, `C-18`, `C-19C` | `29` |
+| `6 AWG` red | `12.5 ft` | `C-09`, `C-11`, `C-13`, `C-14`, `C-18` | `29` |
 | `6 AWG` black | `10.0 ft` | `C-10`, `C-12`, `C-15`, `C-19` | `29` |
 | `4 AWG` red | `2.5 ft` | `C-19A` | `30` |
 | `4 AWG` black | `2.5 ft` | `C-19B` | `30` |
@@ -436,8 +432,8 @@ Torque reference (verify against your exact manuals/hardware):
 - Pre-charge resistor (commissioning/soft-charge aid before connecting large DC loads)
 - Battery-side `48V +` combine busbar (after Class T fuses)
 - Battery-side `48V -` combine busbar (battery-only, before SmartShunt)
-- Shared 12V positive junction/distribution post (Orion + buffer battery feed combine point)
-- 12V negative return junction
+- 12V fuse block main `+` stud used as source-combine point (Orion + buffer battery feed)
+- 12V fuse block integrated negative bus/main `-` used as shared return point
 - 12V buffer battery main fuse (`F-11`) and manual disconnect switch (`SW-12V-BATT`)
 - Shore AC inlet + cord/adapter interface hardware
 - AC input breaker/disconnect hardware (compact load-center baseline; DIN-only if swapped at SKU lock)

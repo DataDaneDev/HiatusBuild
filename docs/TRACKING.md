@@ -200,11 +200,11 @@
 
 - ID: D-022
 - Date: 2026-02-18
-- Decision: Refresh the 12V subsystem to a shared battery-backed bus using Orion-Tr Smart `48/12-30`, a `12V 100Ah LiFePO4` buffer battery, and two USB PD station branches.
+- Decision: Refresh the 12V subsystem to a shared battery-backed fuse-block junction using Orion-Tr Smart `48/12-30`, a `12V 100Ah LiFePO4` buffer battery, and two USB PD station branches.
 - Context: Prior docs/BOM still treated the 12V buffer battery as deferred and used a `4`-point USB module baseline with `10A` per-zone fusing.
 - Options considered: keep Orion-only 12V panel feed, add manual backup-only battery path, or lock a shared bus with source fusing and manual battery isolation.
 - Decision drivers: better transient support for office/galley USB charging, cleaner service isolation, and minimal added control complexity.
-- Result: Updated BOM row `20` (Orion Smart, `$243`), activated row `21` (`12V 100Ah LiFePO4`, `$113`), updated row `115` (two USB PD stations, `$100`), and revised canonical electrical docs to add `F-11` (`100A` class) + `SW-12V-BATT` in the 12V path.
+- Result: Updated BOM row `20` (Orion Smart, `$243`), activated row `21` (`12V 100Ah LiFePO4`, `$113`), updated row `115` (two USB PD stations, `$100`), and revised canonical electrical docs to add `F-11` (`100A` class) + `SW-12V-BATT` in the 12V path with the fuse block main `+`/integrated `-` used as the junction pair.
 - Superseded assumptions: D-013's `4`-point USB/`10A`-zone baseline and deferred buffer-battery assumption for row `21`.
 - Follow-up: lock final SKU family for `F-11` holder and `SW-12V-BATT` switch, then confirm under-load behavior of office `20A` and galley `15A` USB branches before procurement freeze.
 

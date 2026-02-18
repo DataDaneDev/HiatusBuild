@@ -273,6 +273,8 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 - Keep 12V buffer battery positive protected at source (`F-11`) and route service isolation through `SW-12V-BATT` downstream of `F-11`.
 - Keep `SW-12V-BATT` in its normal closed position during operation; use open position only for service isolation/diagnostics.
 - In normal closed operation, Orion supports both active 12V loads and buffer-battery maintenance through the shared junction path.
+- In this baseline, the 12V fuse block is the shared junction device (`main +` stud combine point plus integrated negative bus return point).
+- Do not solder-splice high-current 12V source conductors; use crimped lugs on rated stud terminals.
 - Maintain branch-level fuse-to-conductor coordination per `docs/ELECTRICAL_fuse_schedule.md`.
 - Keep always-on detector branch (`12V-05`) protected but never switch-controlled.
 - If sustained `12V` demand exceeds Orion headroom, treat additional `48V->12V` charger capacity (`BOM row 118`) as a safety action, not a convenience upgrade.

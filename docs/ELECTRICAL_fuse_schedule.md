@@ -21,7 +21,7 @@ Related docs:
 ## Design Basis
 - Topology: `Victron Lynx Distributor M10` (`LYN060102010`) with `4` fused `48V` branches.
 - Battery bank assumption: `3x 48V 100Ah` batteries in parallel (`3` separate battery-positive conductors leaving batteries).
-- 12V distribution assumption: shared 12V junction fed by Orion-Tr Smart `48/12-30` charger and a `12V 100Ah LiFePO4` buffer battery branch.
+- 12V distribution assumption: 12V fuse block used as the shared junction device (main `+` stud = source combine, integrated negative bus/main `-` = return), fed by Orion-Tr Smart `48/12-30` charger and a `12V 100Ah LiFePO4` buffer battery branch.
 - Parallel-bank safety rule: use one Class T fuse per battery-positive conductor leaving the battery. A single shared “bank fuse” does not protect the individual battery leads and does not prevent cross-feed faults between parallel batteries.
 - Branch devices on Lynx:
 1. MultiPlus-II `48/3000`
@@ -63,11 +63,11 @@ Related docs:
 | `F-04` | Lynx Slot 3 -> Sterling `BB1248120` output `+` | Sterling output feeder to house `48V` bus | `MEGA`, `58V` or `80V` | `40A` | Integrated Lynx Distributor fuse slot | Lynx Distributor, Slot 3 | `6 AWG` planned (`10 AWG` minimum per Sterling table) |
 | `F-05` | Lynx Slot 4 -> `48V` auxiliary feeder (Orion branch) | Aux feeder from Lynx to Orion-branch fuse point | `MEGA`, `58V` or `80V` | `30A` | Integrated Lynx Distributor fuse slot | Lynx Distributor, Slot 4 | `6 AWG` |
 | `F-06` | `48V` aux feeder -> Orion `48V` input `+` | Orion input lead (device protection) | Inline MIDI/AMI/ANL family rated `>=58VDC` | `20A` target (`23A` if using Victron MIDI family) | Sealed inline fuse holder mounted on backplate | Electrical cabinet, mounted at source end of Orion input lead | `6 AWG` planned (`8 AWG` minimum per Orion cable table) |
-| `F-07` | Orion `12V` output `+` -> shared `12V` positive junction | Main `12V` feeder from Orion into shared source-combine point | Inline MIDI/AMI/ANL family rated `>=32VDC` | `60A` | Sealed inline fuse holder mounted on backplate | Electrical cabinet, within ~`7"` of Orion `12V` output stud | `6 AWG` planned (`8 AWG` minimum per Orion cable table) |
+| `F-07` | Orion `12V` output `+` -> 12V fuse block main `+` stud | Main `12V` feeder from Orion into shared source-combine point | Inline MIDI/AMI/ANL family rated `>=32VDC` | `60A` | Sealed inline fuse holder mounted on backplate | Electrical cabinet, within ~`7"` of Orion `12V` output stud | `6 AWG` planned (`8 AWG` minimum per Orion cable table) |
 | `F-08` | Starter battery `+` -> Sterling `BB1248120` input `+` | Vehicle-side charger input cable | MEGA/ANL equivalent rated `>=32VDC` | `150A` | Sealed engine-bay fuse holder with high-temp cover | Engine bay, within ~`7"` of starter battery positive post | `2/0 AWG` planned (`2 AWG` minimum per Sterling table) |
 | `F-09A/B/C` | PV string `+` leads -> MPPT PV combiner | Each solar string positive conductor and reverse-current path | `gPV` string fuse (`>=150VDC`) | `15A` each (provisional) | `10x38` touch-safe PV fuse holders in weatherproof combiner enclosure | Roof-entry combiner near gland/pass-through | `10 AWG` PV wire |
 | `F-10` | `12V` fuse block branch circuits -> each `12V` load | Individual `12V` branch conductors and load circuits | ATO/ATC blade fuses (`32V` class) | Per-circuit | Integrated sockets in generic marine `12V` fuse block | `12V` fuse block in electrical cabinet | Per branch (table below) |
-| `F-11` | 12V buffer battery `+` -> shared 12V positive junction via `SW-12V-BATT` | Buffer battery source cable and downstream junction fault exposure | Inline MIDI/AMI/ANL family rated `>=32VDC` | `100A` class baseline | Sealed inline holder mounted close to battery positive | Within ~`7"` of 12V buffer battery positive post | `4 AWG` planned |
+| `F-11` | 12V buffer battery `+` -> 12V fuse block main `+` stud via `SW-12V-BATT` | Buffer battery source cable and downstream junction fault exposure | Inline MIDI/AMI/ANL family rated `>=32VDC` | `100A` class baseline | Sealed inline holder mounted close to battery positive | Within ~`7"` of 12V buffer battery positive post | `4 AWG` planned |
 | `OEM-SHUNT` | Lynx positive tap -> SmartShunt positive sense/power lead | SmartShunt electronics lead | Victron OEM inline low-current fuse (factory harness) | OEM value (small-current harness fuse) | Integrated inline holder in supplied harness | Electrical cabinet near Lynx positive tap | OEM harness lead |
 
 ## 12V Buffer Battery Switching Requirement
@@ -75,8 +75,9 @@ Related docs:
 - Operational default:
 1. `SW-12V-BATT` closed (`NORMAL`) for battery-backed shared-junction operation.
 2. `SW-12V-BATT` open (`SERVICE`) for battery isolation or Orion-only validation mode.
-- Service-path note: the Orion `12V` output remains connected to the shared 12V junction through `F-07` even when `SW-12V-BATT` is open.
-- Maintenance-path note: when `SW-12V-BATT` is closed, Orion output can maintain/charge the buffer battery through the shared positive junction (`P12` equivalent in the topology diagram).
+- Service-path note: the Orion `12V` output remains connected to the fuse-block main `+` stud through `F-07` even when `SW-12V-BATT` is open.
+- Maintenance-path note: when `SW-12V-BATT` is closed, Orion output can maintain/charge the buffer battery through the shared fuse-block main `+` stud path.
+- Do not solder-splice high-current source conductors; use crimped lugs on rated studs/junction hardware.
 - Keep always-on safety branch (`12V-05`) unswitched at branch level; isolation is handled at source path controls.
 
 ## 12V Branch Fuse + Gauge Assignments (Initial Build)

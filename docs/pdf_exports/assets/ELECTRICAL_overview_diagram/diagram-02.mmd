@@ -1,9 +1,7 @@
 flowchart LR
     ORION["Orion-Tr Smart 48/12-30\nIsolated charger"]
     F07["F-07 60A\ninline holder near Orion"]
-    P12["12V positive junction\n(shared source combine point)"]
-    PANEL["12V fuse block\n(generic 12-circuit with branch fuses)"]
-    N12["12V negative return junction"]
+    PANEL["12V fuse block\n12-circuit, integrated negative bus\nmain + / - studs (source combine + shared return)"]
     B12["12V 100Ah LiFePO4\nbuffer battery"]
     F11["F-11 100A class\nbattery main fuse"]
     SW12["SW-12V-BATT\nmanual battery disconnect"]
@@ -18,12 +16,11 @@ flowchart LR
     USB_OFFICE["12V-08 Office USB PD station\n20A / 12 AWG"]
     USB_GALLEY["12V-09 Galley USB PD station\n15A / 14 AWG"]
 
-    ORION -- "6 AWG, ~2.5 ft" --> F07 --> P12
-    ORION -- "6 AWG, ~2.5 ft" --> N12
-    B12 -- "4 AWG, ~2.5 ft" --> F11 --> SW12 --> P12
-    B12 -- "4 AWG, ~2.5 ft" --> N12
-    P12 -- "6 AWG, ~2.5 ft" --> PANEL
-    P12 -. "maintenance charge path when SW-12V-BATT is closed" .-> B12
+    ORION -- "6 AWG, ~2.5 ft to main + stud" --> F07 --> PANEL
+    ORION -- "6 AWG, ~2.5 ft to main - / neg bus" --> PANEL
+    B12 -- "4 AWG, ~2.5 ft to main + stud" --> F11 --> SW12 --> PANEL
+    B12 -- "4 AWG, ~2.5 ft to main - / neg bus" --> PANEL
+    PANEL -. "maintenance charge path to buffer battery\nwhen SW-12V-BATT is closed" .-> B12
 
     PANEL -- "14 AWG duplex, ~8 ft (ASSUMED)" --> STAR
     PANEL -- "14 AWG duplex, ~12 ft (ASSUMED)" --> FRIDGE
@@ -35,12 +32,12 @@ flowchart LR
     PANEL -- "12 AWG duplex, ~5 ft (ASSUMED short run)" --> USB_OFFICE
     PANEL -- "14 AWG duplex, ~8 ft (ASSUMED)" --> USB_GALLEY
 
-    STAR -- "return in duplex, ~8 ft" --> N12
-    FRIDGE -- "return in duplex, ~12 ft" --> N12
-    HEATER -- "return in duplex, ~8 ft" --> N12
-    PUMP -- "return in duplex, ~8 ft" --> N12
-    DET -- "return in 18/2, ~8 ft" --> N12
-    LED -- "return in 18/2, ~8 ft" --> N12
-    CERBO_PWR -- "return in 18/2, ~2.5 ft" --> N12
-    USB_OFFICE -- "return in duplex, ~5 ft" --> N12
-    USB_GALLEY -- "return in duplex, ~8 ft" --> N12
+    STAR -- "return in duplex, ~8 ft" --> PANEL
+    FRIDGE -- "return in duplex, ~12 ft" --> PANEL
+    HEATER -- "return in duplex, ~8 ft" --> PANEL
+    PUMP -- "return in duplex, ~8 ft" --> PANEL
+    DET -- "return in 18/2, ~8 ft" --> PANEL
+    LED -- "return in 18/2, ~8 ft" --> PANEL
+    CERBO_PWR -- "return in 18/2, ~2.5 ft" --> PANEL
+    USB_OFFICE -- "return in duplex, ~5 ft" --> PANEL
+    USB_GALLEY -- "return in duplex, ~8 ft" --> PANEL

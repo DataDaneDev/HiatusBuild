@@ -25,7 +25,7 @@ Status date: 2026-02-13
 - Current references:
 - `bom/bom_estimated_items.csv` row `13` (`AC input breaker/disconnect`)
 - `bom/bom_estimated_items.csv` row `14` (`DEPRECATED (AC): DIN rail mount`)
-- `bom/bom_estimated_items.csv` row `17` (`12v negative bussbar`)
+- `bom/bom_estimated_items.csv` row `17` (`DEPRECATED (12V): separate negative busbar`)
 - `bom/bom_estimated_items.csv` row `19` (`Pre-charge Resistor`)
 - Clarification needed:
 - Final SKU choices for newly locked AC/DC rows (breaker enclosure family, branch breaker models, receptacle family, USB-C PD module family).

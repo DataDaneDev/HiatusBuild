@@ -32,6 +32,8 @@
 - Confirm `48V` disconnect operation and expected de-energization behavior.
 - Confirm `F-11` (`12V` buffer battery main fuse) is installed at source and matches planned amp class.
 - Confirm `SW-12V-BATT` switching behavior and labeling (closed = NORMAL operation, open = SERVICE battery isolation).
+- Confirm 12V fuse-block main `+`/`-` stud terminations are tight, protected, and not over-stacked beyond hardware guidance.
+- Confirm no solder-spliced high-current source joins are present in the 12V source-combine path.
 - Validate AC branch polarity and GFCI/RCD trip on each outlet branch before normal use.
 - Confirm detector status (LP/CO/smoke powered, test function passes, expiration date in range).
 
