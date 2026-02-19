@@ -2,11 +2,13 @@ flowchart LR
     subgraph SHORE_SRC["Shore Source Path"]
         INLET["Shore inlet (120VAC)"]
         CORD["Shore cord + adapters\n(service-limited by pedestal/source)"]
-        EMS["Optional EMS/surge protection"]
-        ACINBRK["AC input breaker/disconnect\n20A target (or sized to source)"]
+        EMS["Hardwired EMS/surge protection\n(required in Phase 1)"]
+        INPANEL["AC-in DIN enclosure\n(input neutral bar + input ground bar)"]
+        ACINBRK["AC input breaker/disconnect\n30A UL489 target"]
         INLET -- "10/3 shore, ~3 ft (ASSUMED)" --> CORD
         CORD -- "10/3 shore, ~2 ft (ASSUMED)" --> EMS
-        EMS -- "10/3 shore, ~3 ft (ASSUMED)" --> ACINBRK
+        EMS -- "10/3 shore, ~3 ft (ASSUMED)" --> INPANEL
+        INPANEL --> ACINBRK
     end
 
     subgraph MULTI_AC["MultiPlus-II AC Conversion + Transfer"]
@@ -19,10 +21,12 @@ flowchart LR
     end
 
     subgraph AC_DIST["AC Distribution and Protection"]
-        OUT1PROT["UL943-class RCD/GFCI + branch breaker(s)\nfor AC-out-1"]
+        OUTPANEL["AC-out DIN enclosure\n(output neutral bar + output ground bar)"]
+        OUT1PROT["Branch protection for AC-out-1\n20A galley + 15A office; GFCI at first outlet"]
         BR_A["Branch A: galley outlets"]
         BR_B["Branch B: office outlets"]
-        OUT2PROT["AC-out-2 breaker + RCD/GFCI\n(shore-only future loads, optional)"]
+        OUT2PROT["AC-out-2 reserve path only\n(capped route, no energized Phase 1 hardware)"]
+        OUTPANEL --> OUT1PROT
         OUT1PROT -- "12 AWG branch cable, ~15 ft (ASSUMED)" --> BR_A
         OUT1PROT -- "12 AWG branch cable, ~15 ft (ASSUMED)" --> BR_B
     end
@@ -40,14 +44,14 @@ flowchart LR
         PD_AC["Alternative: USB receptacles on AC branch"]
     end
 
-    ACINBRK -- "12 AWG AC conductors, ~2.5 ft" --> ACIN
+    ACINBRK -- "10 AWG AC conductors, ~2.5 ft" --> ACIN
     OUT1 -- "12 AWG AC conductors, ~2.5 ft" --> OUT1PROT
-    OUT2 -- "12 AWG AC conductors, ~15 ft (ASSUMED optional)" --> OUT2PROT
+    OUT2 -. "12 AWG capped reserve route, ~15 ft (ASSUMED optional)" .-> OUT2PROT
 
     BR_A --> IND
     BR_A --> MW
     BR_A --> MON
     BR_B --> GENOUT
-    OUT2PROT -- "12 AWG AC conductors, ~15 ft (ASSUMED optional)" --> SHORE_ONLY
+    OUT2PROT -. "future activation only" .-> SHORE_ONLY
 
     BR_A -. "if AC USB outlets selected" .-> PD_AC
