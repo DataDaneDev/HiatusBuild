@@ -1,7 +1,7 @@
 # Project
 
 ## Snapshot
-- As-of date: February 18, 2026
+- As-of date: February 19, 2026
 - Install milestone: May 7, 2026
 - Mission: build a reliable off-grid camper workspace suitable for full-time professional use
 
@@ -64,3 +64,42 @@
 - Validate Sterling `BB1248120` + `BBR` current-limit operating envelope on the factory `240A` alternator; keep Mechman 370A alternator + Big 3 as purchase-later path pending fitment confirmation and install timing
 - Choose final solar panel type (flex vs rigid)
 - Lock interior/exterior T-slot or strut mounting ecosystem and bracket/accessory interface standard
+
+## Unblock sprint (next 72 hours)
+Purpose: convert “planning certainty” into a buildable, orderable physical layout (especially the electrical cabinet), without CAD’ing every bend radius.
+
+### Outcome targets (definition of done)
+By end of the sprint, you can point to a single “electrical module footprint” and say it is real:
+1. Electrical cabinet envelope is locked (W x H x D), plus required service-access clearance.
+2. All major electrical components fit on a 1:1 backer board mockup with cable exits accounted for.
+3. A cabinet strategy is selected that matches build skills (Phase 1 = simple, serviceable; Phase 2 = pretty skins/lighting).
+4. A purchase gate is cleared: you either place `Batch A+` orders confidently or you have a specific list of what must change first.
+
+### Day-by-day plan
+#### Day 1 (today)
+1. Pick the cabinet zone and commit to a *bounding box* (not final cabinetry): “electrical lives here”.
+2. Write 10 “non-negotiables” for the electrical cabinet:
+   - example set: short high-current runs, no buried fuses, strain relief at every entry, AC and DC separation, ventilation path, battery restraint, drip-loop mindset.
+3. Decide the Phase 1 aesthetics rule:
+   - Recommended: **no sliding doors** in Phase 1 (hinged or fully removable panels only). Plan for frosted polycarbonate + LEDs later by reserving space and a wire path.
+
+#### Day 2
+1. Do a 1:1 physical layout of the electrical stack:
+   - On a scrap plywood/foam board backer, place full-size paper/cardboard templates for batteries, MultiPlus, Lynx, shunt, DC-DC, breakers, cable glands.
+   - Add “keep-out” zones for cable bend room and service tool access.
+2. Choose entry/exit points and routing corridors (don’t over-precision this):
+   - define: “48V trunk exits left”, “12V exits down/toe-kick chase”, “AC exits up/right”, etc.
+3. If anything doesn’t fit cleanly, resize the cabinet envelope now (this is cheaper than re-buying).
+
+#### Day 3
+1. Build a tiny prototype of your intended cabinetry method:
+   - a short 80/20 frame segment + one panel/door attachment method (hinge OR magnets OR quarter-turn fasteners).
+   - goal: confirm you can build something rigid, square, and non-rattly without woodworking-level joinery.
+2. Update carts using a simple gate:
+   - Buy now: items that are layout-insensitive and/or needed for bench-testing (core protection, bus covers, terminals/lugs, wire management, disconnects, mounting backer materials).
+   - Buy after footprint lock: the expensive “hard-to-return” items whose exact mounting orientation/clearance matters most.
+
+### Cabinetry approach (recommended)
+- Treat 80/20 as the *structure* and simple panels as the *skins*.
+- Prioritize serviceability over concealment: every fuse/disconnect should be reachable without uninstalling major devices.
+- Build “functional first”: once the electrical module works and survives vibration, add frosted panels + LED backlighting as a Phase 2 overlay.

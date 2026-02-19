@@ -208,6 +208,15 @@
 - Superseded assumptions: D-013's `4`-point USB/`10A`-zone baseline and deferred buffer-battery assumption for row `21`.
 - Follow-up: lock final SKU family for `F-11` holder and `SW-12V-BATT` switch, then confirm under-load behavior of office `20A` and galley `15A` USB branches before procurement freeze.
 
+- ID: D-023
+- Date: 2026-02-19
+- Decision: Lock AC architecture to split DIN panels with `30A` AC-in hardware, hardwired EMS, and reserve-only `AC-out-2` for Phase 1.
+- Context: AC docs/BOM had mixed language between a compact load-center baseline and a split DIN approach, and AC procurement rows were not explicit for EMS and DIN panel accessory hardware.
+- Options considered: keep compact load-center baseline, split DIN `20A` AC-in baseline, or split DIN with `30A` AC-in plus source-limited current settings.
+- Decision drivers: compactness, service clarity, lower-complexity branch layout, and complete purchasable-component traceability.
+- Result: updated AC topology and procurement docs to one architecture (`TT-30 -> EMS -> AC-in DIN 30A breaker -> MultiPlus AC-in`, plus AC-out DIN branch panel), updated BOM row meanings for AC rows (`13`, `14`, `109`, `110`, `113`, `114`) and added hardwired EMS row `123`, and adopted a manual AC validation checklist as the acceptance gate.
+- Follow-up: verify locked AC hardware fitment in the cabinet mockup and record checklist pass evidence in `logs/LOG.md`.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -285,7 +294,7 @@
 - Risk: AC shock/fire risk from neutral-ground misconfiguration or incomplete GFCI/RCD protection on branch circuits.
 - Impact (1-5): 5
 - Likelihood (1-5): 2
-- Mitigation: Preserve AC protection chain (`shore breaker -> MultiPlus -> branch protection`), validate outlet polarity and GFCI/RCD operation at commissioning, and verify ground continuity/chassis bonding.
+- Mitigation: Preserve AC protection chain (`shore inlet -> hardwired EMS -> AC-in breaker -> MultiPlus -> branch protection`), validate outlet polarity and GFCI/RCD operation at commissioning, and verify ground continuity/chassis bonding.
 - Trigger: AC branch wiring completion and first shore/inverter live test.
 - Owner: Sunny
 - Status: Open
@@ -306,8 +315,8 @@
 - Confirm required shorter belt length and final belt part number if the Mechman alternator is installed
 - Lock Big 3 spec package (additional cable length, inline fuse type/rating, lug count, and RVC ground-loop routing requirement)
 - Confirm measured daily draw for owner-supplied laptop/monitor/tablet charging to replace planning assumptions
-- Lock final SKU set for AC/USB hardware (`rows 13-15`, `107-118`) and verify physical fitment with cabinet layout
 - Validate Orion `48/12-30` charger headroom with the updated USB station branch plan (`12V-08` office `20A`, `12V-09` galley `15A`) and trigger row `118` only if sustained overload is observed
+- Verify physical fitment and service-access clearances for the locked split-DIN AC hardware set (`rows 13`, `14`, `15`, `107`, `108`, `109`, `110`, `111`, `112`, `113`, `114`, `123`) during cabinet mockup
 - Final passthrough locations for solar, shore power, and fuel/heater paths
 - Lock roof-to-shell solar jumper connector strategy and exact service-loop length for full popup travel
 - Rigid vs flexible solar strategy under roof weight constraints

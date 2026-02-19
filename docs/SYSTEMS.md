@@ -282,14 +282,16 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 ### 120VAC shore/inverter safety
 - Main hazards: shock from miswired neutral/ground, ground-fault exposure at outlets, and overcurrent heating from undersized branch protection.
 - Required controls:
-- Keep shore path order: shore inlet -> input breaker/disconnect -> MultiPlus AC-in.
-- Keep AC-out branch protection stack with UL943-class GFCI/RCD and correctly sized overcurrent protection for each branch conductor.
+- Keep shore path order: shore inlet (`TT-30`) -> hardwired EMS/surge protection -> AC-in DIN enclosure (`30A` UL489 breaker/disconnect) -> MultiPlus AC-in.
+- Keep AC-out path order: MultiPlus AC-out-1 -> AC-out DIN enclosure (`20A` galley + `15A` office branch breakers) -> first-outlet GFCI strategy with downstream protected receptacles.
+- Keep AC-in hardware on a `30A` / `10 AWG` basis, and set MultiPlus input current limit to the actual source (`15A`, `20A`, or `30A`) whenever adapters are used.
+- Keep AC-out-2 as reserve-only in Phase 1 (labeled capped route; no energized branch hardware yet).
 - Preserve continuous equipment grounding and chassis bond through all AC paths.
 - Do not add a fixed downstream neutral-ground bond in branch wiring; neutral/ground behavior must follow MultiPlus transfer/bonding design.
 - Commissioning checks:
 1. Receptacle polarity test on each outlet location.
 2. GFCI/RCD trip test at each protected branch.
-3. Verify AC-out-2 behaves as shore-only path (if enabled).
+3. Verify AC-out-2 remains de-energized as a reserve-only capped route in Phase 1.
 
 ### Propane safety (rear-mounted tank plus passthrough and hot-water path)
 - Main hazards: leak accumulation, ignition near electrical equipment, CO exposure, and using outdoor-only appliances in enclosed space.

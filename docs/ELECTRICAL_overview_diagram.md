@@ -173,11 +173,13 @@ flowchart LR
     subgraph SHORE_SRC["Shore Source Path"]
         INLET["Shore inlet (120VAC)"]
         CORD["Shore cord + adapters\n(service-limited by pedestal/source)"]
-        EMS["Optional EMS/surge protection"]
-        ACINBRK["AC input breaker/disconnect\n20A target (or sized to source)"]
+        EMS["Hardwired EMS/surge protection\n(required in Phase 1)"]
+        INPANEL["AC-in DIN enclosure\n(input neutral bar + input ground bar)"]
+        ACINBRK["AC input breaker/disconnect\n30A UL489 target"]
         INLET -- "10/3 shore, ~3 ft (ASSUMED)" --> CORD
         CORD -- "10/3 shore, ~2 ft (ASSUMED)" --> EMS
-        EMS -- "10/3 shore, ~3 ft (ASSUMED)" --> ACINBRK
+        EMS -- "10/3 shore, ~3 ft (ASSUMED)" --> INPANEL
+        INPANEL --> ACINBRK
     end
 
     subgraph MULTI_AC["MultiPlus-II AC Conversion + Transfer"]
@@ -190,10 +192,12 @@ flowchart LR
     end
 
     subgraph AC_DIST["AC Distribution and Protection"]
-        OUT1PROT["UL943-class RCD/GFCI + branch breaker(s)\nfor AC-out-1"]
+        OUTPANEL["AC-out DIN enclosure\n(output neutral bar + output ground bar)"]
+        OUT1PROT["Branch protection for AC-out-1\n20A galley + 15A office; GFCI at first outlet"]
         BR_A["Branch A: galley outlets"]
         BR_B["Branch B: office outlets"]
-        OUT2PROT["AC-out-2 breaker + RCD/GFCI\n(shore-only future loads, optional)"]
+        OUT2PROT["AC-out-2 reserve path only\n(capped route, no energized Phase 1 hardware)"]
+        OUTPANEL --> OUT1PROT
         OUT1PROT -- "12 AWG branch cable, ~15 ft (ASSUMED)" --> BR_A
         OUT1PROT -- "12 AWG branch cable, ~15 ft (ASSUMED)" --> BR_B
     end
@@ -211,15 +215,15 @@ flowchart LR
         PD_AC["Alternative: USB receptacles on AC branch"]
     end
 
-    ACINBRK -- "12 AWG AC conductors, ~2.5 ft" --> ACIN
+    ACINBRK -- "10 AWG AC conductors, ~2.5 ft" --> ACIN
     OUT1 -- "12 AWG AC conductors, ~2.5 ft" --> OUT1PROT
-    OUT2 -- "12 AWG AC conductors, ~15 ft (ASSUMED optional)" --> OUT2PROT
+    OUT2 -. "12 AWG capped reserve route, ~15 ft (ASSUMED optional)" .-> OUT2PROT
 
     BR_A --> IND
     BR_A --> MW
     BR_A --> MON
     BR_B --> GENOUT
-    OUT2PROT -- "12 AWG AC conductors, ~15 ft (ASSUMED optional)" --> SHORE_ONLY
+    OUT2PROT -. "future activation only" .-> SHORE_ONLY
 
     BR_A -. "if AC USB outlets selected" .-> PD_AC
 ```
@@ -227,11 +231,12 @@ flowchart LR
 ### AC Operating Behavior (Expected)
 - Shore present: MultiPlus transfer relay closes, AC-in is passed to AC-out paths, and charger stage charges the `48V` bank.
 - Shore absent: MultiPlus transfers to inverter mode and powers `AC-out-1` from battery; `AC-out-2` drops by design.
-- Input current limit should be set to the actual shore source (`15A`, `20A`, or `30A` adapter-limited) to avoid pedestal/source breaker trips.
+- AC-in hardware is `30A` (`TT-30` + hardwired EMS + `30A` breaker + `10 AWG` AC-in conductors); set MultiPlus input current limit to actual source (`15A`, `20A`, or `30A`) to avoid pedestal/source breaker trips.
 
 ### AC Safety/Protection Chain (What Must Exist)
-- Upstream AC input protection/disconnect before MultiPlus AC-in.
+- Upstream shore protection chain before MultiPlus AC-in: shore inlet -> hardwired EMS -> `30A` AC input breaker/disconnect.
 - AC-out branch protection including UL943-class residual-current protection and overcurrent protection sized to branch wiring and expected load.
+- Split-panel architecture with dedicated neutral/ground bars per AC enclosure and no AC-in/AC-out neutral mixing.
 - Continuous equipment grounding path from shore inlet through MultiPlus and branch circuits, plus chassis bond in mobile install context.
 - Neutral/ground handling must follow MultiPlus relay behavior; do not add an always-bonded downstream neutral-ground bond in branch receptacle wiring.
 
@@ -241,11 +246,11 @@ flowchart LR
 
 ### AC/USB Baseline Locked For BOM
 - Shore interface: `30A` RV-style inlet baseline with adapter kit for `15A`/`20A` hookups.
-- AC input protection: dedicated AC input breaker/disconnect upstream of MultiPlus AC-in.
+- AC input protection: dedicated hardwired-EMS + AC-in DIN enclosure + `30A` AC input breaker/disconnect upstream of MultiPlus AC-in.
 - AC-out-1 distribution: two protected branches (`20A` galley, `15A` office) with GFCI-at-first-outlet strategy.
 - Receptacle plan: `4` total `120V` receptacle locations (`2` galley, `2` office).
 - USB charging plan: `2` DC-fed USB PD station assemblies on `12V` branches (`1` office, `1` galley) with branch baselines of `20A` (office) and `15A` (galley).
-- AC-out-2 remains optional and not in Phase 1 procurement baseline.
+- AC-out-2 remains reserve-only in Phase 1 (labeled capped route; no energized branch hardware procured).
 
 ## Monitoring and Control Topology
 ```mermaid
@@ -292,8 +297,8 @@ flowchart LR
 | `C-02` | Battery B `+` -> `F-01B` | `48V` | Battery branch, fuse-limited | `F-01B` `200A` provisional | `2/0 AWG` | `2.5 ft` (`ASSUMED`, equal-length set) |
 | `C-02C` | Battery C `+` -> `F-01C` | `48V` | Battery branch, fuse-limited | `F-01C` `200A` provisional | `2/0 AWG` | `2.5 ft` (`ASSUMED`, equal-length set) |
 | `C-03` | Class T outputs -> battery-side `48V +` busbar -> disconnect input | `48V` | Combined trunk current | `F-01A/B/C` | `2/0 AWG` each branch | `2.5 ft each branch` (`ASSUMED`, `4` conductors in rollup) |
-| `C-04` | Disconnect output -> Lynx `+` bus | `48V` | Aggregate branch current (`<=255A` theoretical from Lynx slots) | Upstream Class T fuses | `2/0 AWG` | `2.5 ft` (`ASSUMED`) |
-| `C-05` | Battery negatives -> battery-side `48V -` busbar -> SmartShunt battery side | `48V` | Aggregate return current | N/A (main negative path) | `2/0 AWG` each branch | `2.5 ft each branch` (`ASSUMED`, `4` conductors in rollup) |
+| `C-04` | Disconnect output -> Lynx `+` bus | `48V` | Aggregate discharge design current (`155A` = `F-02 125A` + `F-05 30A`; `255A` Lynx fuse sum is non-concurrent theoretical) | Upstream Class T fuses | `2/0 AWG` | `2.5 ft` (`ASSUMED`) |
+| `C-05` | Battery negatives -> battery-side `48V -` busbar -> SmartShunt battery side | `48V` | Mixed-path rollup: `3x` battery-negative branches at `77.5A` design each + `NEGBUS_TO_SHUNT` trunk at `155A` aggregate | N/A (main negative path) | `2/0 AWG` each branch | `2.5 ft each branch` (`ASSUMED`, `4` conductors in rollup) |
 | `C-06` | SmartShunt load side -> Lynx `-` bus | `48V` | Aggregate return current | N/A | `2/0 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-06A` | Lynx positive tap -> SmartShunt positive sense/power lead | `48V` | Shunt electronics supply (very low current) | Factory inline fuse in OEM harness | OEM harness lead | `2.5 ft` (`ASSUMED`) |
 | `C-07` | Lynx Slot 1 (`F-02`) -> MultiPlus `DC+` | `48V` | Inverter branch, fuse-limited | `F-02` `125A` | `2/0 AWG` (manual minimum `AWG 1` on short runs) | `2.5 ft` (`ASSUMED`) |
@@ -319,12 +324,12 @@ flowchart LR
 | `C-25` | 12V panel -> LED strips | `12V` | Branch load | `F-10` `5A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-26` | 12V panel -> Cerbo GX power feed | `12V` | Branch load (`~3W`) | `F-10` `3A` (assumed) | `18/2` | `2.5 ft` (`ASSUMED`, cabinet internal) |
 | `C-27` | PV strings -> `F-09` combiner -> MPPT PV input | PV string voltage (`3S`) | String current + combiner output current | `F-09A/B/C` `15A` each | `10 AWG` PV wire | `12 ft` trunk + `3x8 ft` string legs (`ASSUMED`) |
-| `C-28` | Shore inlet -> shore cord/adapter -> AC input breaker/disconnect | `120VAC` | Source-limited shore current | Source-size-matched AC breaker/disconnect (`20A` target baseline) | `10/3` shore feed to inlet/breaker area | `8 ft` (`ASSUMED`) |
-| `C-29` | AC input breaker/disconnect -> MultiPlus AC-in | `120VAC` | MultiPlus AC input current | Upstream AC breaker/disconnect (`C-28`) | `12 AWG` stranded AC conductors | `2.5 ft` (`ASSUMED`, cabinet internal) |
+| `C-28` | Shore inlet -> shore cord/adapter -> hardwired EMS -> AC-in DIN enclosure / AC input breaker | `120VAC` | Source-limited shore current (adapter-constrained at source) | `30A` AC input breaker/disconnect baseline with source-current-limit settings policy | `10/3` shore feed to inlet/EMS/AC-in area | `8 ft` (`ASSUMED`) |
+| `C-29` | AC input breaker/disconnect -> MultiPlus AC-in | `120VAC` | MultiPlus AC input current (`30A` hardware basis) | Upstream `30A` AC breaker/disconnect (`C-28`) | `10 AWG` stranded AC conductors | `2.5 ft` (`ASSUMED`, cabinet internal) |
 | `C-30` | MultiPlus AC-out-1 -> branch RCD/GFCI + breaker assembly | `120VAC` | Inverter-backed branch distribution current | UL943-class RCD/GFCI + branch breakers (`20A` galley, `15A` office) | `12 AWG` stranded AC conductors | `2.5 ft` (`ASSUMED`, cabinet internal) |
 | `C-31` | Branch A -> galley receptacle locations (`2`) | `120VAC` | Branch load (induction, microwave, galley outlets) | `C-30` branch protection stack | `12 AWG` stranded AC conductors | `15 ft` (`ASSUMED`, branch leg default) |
 | `C-32` | Branch B -> office receptacle locations (`2`) | `120VAC` | Branch load (monitor and office outlet use) | `C-30` branch protection stack | `12 AWG` stranded AC conductors | `15 ft` (`ASSUMED`, branch leg default) |
-| `C-33` | MultiPlus AC-out-2 (optional) -> shore-only future load branch | `120VAC` | Shore-only branch current | Dedicated breaker + UL943-class RCD/GFCI for AC-out-2 | `12 AWG` stranded AC conductors | `15 ft` (`ASSUMED`, optional branch default) |
+| `C-33` | MultiPlus AC-out-2 (reserve-only) -> capped route for future shore-only branch | `120VAC` | N/A in Phase 1 (route reserved only) | N/A in Phase 1 (no energized branch hardware) | `12 AWG` stranded AC conductors (reserve path only) | `15 ft` (`ASSUMED`, reserve route default) |
 | `C-34` | 12V panel -> USB PD station branch (office zone) | `12V` | High-demand office charging branch (`100W + 65W` class station budget) | `F-10` branch fuse (`20A`) | `12 AWG duplex` baseline | `5 ft` (`ASSUMED`, short-run requirement) |
 | `C-35` | 12V panel -> USB PD station branch (galley zone) | `12V` | Galley charging branch (`65W` class USB-C plus USB-A/C loads) | `F-10` branch fuse (`15A`) | `14 AWG duplex` baseline | `8 ft` (`ASSUMED`, near-load branch) |
 
@@ -333,6 +338,7 @@ Calculation basis for drop screening:
 1. `V_drop = I * (2 * L_one_way * R_per_ft)`
 2. Resistance basis used in this pass (`ohm/ft`): `2/0=0.0000779`, `6 AWG=0.0003951`, `4 AWG=0.0002485`, `12 AWG=0.001588`, `14 AWG=0.002525`, `18/2=0.006385`, `10 AWG=0.000999`.
 3. Design targets: `<=2%` on major `48V` trunks, `<=3%` on planned `12V`/AC branches.
+4. `C-05` is a rollup row that includes both branch and trunk return paths; voltage-drop screen shown is the conservative worst-case (`155A`) within that rollup.
 
 | Circuit ID | From | To | Fuse | Current basis | Gauge | Estimated one-way length | Voltage drop % | BOM gauge bucket | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -341,7 +347,7 @@ Calculation basis for drop screening:
 | `C-02C` | Battery C `+` | `F-01C` | `F-01C 200A` | `77.5A` design branch share | `2/0 AWG` | `2.5 ft` | `0.06%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
 | `C-03` | Class T load studs | `48V +` bus / disconnect input | `F-01A/B/C` | `77.5A` per branch | `2/0 AWG` | `2.5 ft` each (`x4` conductors) | `0.06%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
 | `C-04` | Disconnect output | Lynx `+` bus | Upstream Class T | `155A` aggregate | `2/0 AWG` | `2.5 ft` | `0.12%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
-| `C-05` | Battery `-` branches | SmartShunt battery side via `48V -` bus | N/A | `155A` aggregate return | `2/0 AWG` | `2.5 ft` each (`x4` conductors) | `0.12%` @ `51.2V` | Row `28` (`2/0 black`) | PASS |
+| `C-05` | Battery `-` branches | SmartShunt battery side via `48V -` bus | N/A | `77.5A` per battery-negative branch; row rollup also includes one `155A` trunk (`NEGBUS_TO_SHUNT`) | `2/0 AWG` | `2.5 ft` each (`x4` conductors) | `0.12%` @ `51.2V` (worst-case rollup) | Row `28` (`2/0 black`) | PASS |
 | `C-06` | SmartShunt load side | Lynx `-` bus | N/A | `155A` aggregate return | `2/0 AWG` | `2.5 ft` | `0.12%` @ `51.2V` | Row `28` (`2/0 black`) | PASS |
 | `C-06A` | Lynx positive tap | SmartShunt sense/power lead | OEM inline fuse | OEM harness current | OEM harness | `2.5 ft` | N/A (low-current OEM lead) | Row `23` (kit harness) | PASS |
 | `C-07` | Lynx Slot 1 `DC+` | MultiPlus `DC+` | `F-02 125A` | `125A` | `2/0 AWG` | `2.5 ft` | `0.10%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
@@ -367,12 +373,12 @@ Calculation basis for drop screening:
 | `C-25` | 12V fuse panel | LED strips | `F-10 5A` | `5A` | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |
 | `C-26` | 12V fuse panel | Cerbo GX feed | `F-10 3A` | `0.3A` | `18/2` | `2.5 ft` | `0.08%` @ `12V` | Row `33` (`18/2`) | PASS |
 | `C-27` | PV strings/combiner | MPPT PV input | `F-09A/B/C 15A` | `30A` trunk screen | `10 AWG PV` | `12 ft` trunk + `3x8 ft` string legs | `0.72%` @ `100V` trunk screen | Row `31` (10 AWG pair-equivalent) | PASS (string leg lengths still ASSUMED) |
-| `C-28` | Shore inlet | AC input breaker/disconnect | Source-limited AC OCP | `20A` | `10/3` | `8 ft` | `0.27%` @ `120VAC` | Row `114` (`10/3 shore`) | PASS |
-| `C-29` | AC input breaker/disconnect | MultiPlus AC-in | Upstream AC OCP | `20A` | `12 AWG AC` | `2.5 ft` | `0.13%` @ `120VAC` | Row `113` (`12 AWG AC branch`) | PASS |
+| `C-28` | Shore inlet/EMS path | AC input breaker/disconnect | Source-limited AC OCP | `30A` hardware basis | `10/3` | `8 ft` | `0.40%` @ `120VAC` | Row `114` (`10/3 shore + AC-in feed`) | PASS |
+| `C-29` | AC input breaker/disconnect | MultiPlus AC-in | Upstream AC OCP | `30A` hardware basis | `10 AWG AC` | `2.5 ft` | `0.12%` @ `120VAC` | Row `114` (`10/3 shore + AC-in feed`) | PASS |
 | `C-30` | MultiPlus AC-out-1 | Branch RCD/GFCI+breaker assembly | Branch OCP stack | `20A` | `12 AWG AC` | `2.5 ft` | `0.13%` @ `120VAC` | Row `113` (`12 AWG AC branch`) | PASS |
 | `C-31` | Branch A | Galley receptacle chain | `20A` branch OCP | `20A` | `12 AWG AC` | `15 ft` | `0.79%` @ `120VAC` | Row `113` (`12 AWG AC branch`) | PASS |
 | `C-32` | Branch B | Office receptacle chain | `15A` branch OCP | `15A` | `12 AWG AC` | `15 ft` | `0.60%` @ `120VAC` | Row `113` (`12 AWG AC branch`) | PASS |
-| `C-33` | MultiPlus AC-out-2 | Optional shore-only branch | Optional branch OCP | `15A` | `12 AWG AC` | `15 ft` | `0.60%` @ `120VAC` | Row `113` (`12 AWG AC branch`, optional) | PASS (optional) |
+| `C-33` | MultiPlus AC-out-2 | Reserve-only capped route | N/A in Phase 1 | N/A | `12 AWG AC` (reserve path only) | `15 ft` | `0.60%` @ `120VAC` (future-use screen) | N/A (not procured in Phase 1) | RESERVE |
 | `C-34` | 12V fuse panel | Office USB PD station | `F-10 20A` | `20A` design cap | `12 AWG duplex` | `5 ft` | `2.65%` @ `12V` | Row `116` (`12 AWG + 14 AWG USB set`) | PASS (keep `<=5 ft` or upsize) |
 | `C-35` | 12V fuse panel | Galley USB PD station | `F-10 15A` | `8A` expected | `14 AWG duplex` | `8 ft` | `2.69%` @ `12V` | Row `116` (`12 AWG + 14 AWG USB set`) | PASS (near 3%; if sustained current rises, move to `12 AWG`) |
 
@@ -388,8 +394,8 @@ Calculation basis for drop screening:
 | `10 AWG pair-equivalent` (PV) | `36 ft route` (`72 ft` conductor equivalent) | `C-27` (`3x8 ft` strings + `12 ft` combiner trunk, `ASSUMED`) | `31` |
 | `14 AWG duplex` | `44 ft` | `C-20`, `C-21`, `C-22`, `C-23`, `C-35` | `32` |
 | `18/2` | `18.5 ft` | `C-24`, `C-25`, `C-26` | `33` |
-| `12 AWG AC branch cable` | `50 ft` (includes optional `C-33`) | `C-29` through `C-33` | `113` |
-| `10/3 shore feed` | `8 ft` | `C-28` | `114` |
+| `12 AWG AC branch cable` | `35 ft` (`C-33` excluded in Phase 1) | `C-30` through `C-32` | `113` |
+| `10/3 shore + AC-in feed` | `11 ft` | `C-28`, `C-29` | `114` |
 | USB branch mix (`12 AWG` + `14 AWG`) | `5 ft` (`12 AWG`) + `8 ft` (`14 AWG`) | `C-34`, `C-35` | `116` |
 
 Notes:
@@ -436,10 +442,11 @@ Torque reference (verify against your exact manuals/hardware):
 - 12V fuse block integrated negative bus/main `-` used as shared return point
 - 12V buffer battery main fuse (`F-11`) and manual disconnect switch (`SW-12V-BATT`)
 - Shore AC inlet + cord/adapter interface hardware
-- AC input breaker/disconnect hardware (compact load-center baseline; DIN-only if swapped at SKU lock)
+- Hardwired EMS in shore path before AC-in breaker/disconnect
+- Split AC-in and AC-out DIN enclosures with dedicated neutral/ground bars per enclosure
 - AC branch RCD/GFCI + breaker hardware
 - Receptacle boxes + `120V` outlets (`4` planned locations: `2` galley, `2` office)
-- Optional AC-out-2 branch protection path for future shore-only loads
+- AC-out-2 reserve-only capped route (no energized Phase 1 branch hardware)
 - USB PD station branch hardware (`2` stations: office + galley)
 - Battery temperature sensor wiring to inverter/monitoring path
 - SmartShunt fused positive sense/power lead (factory harness)

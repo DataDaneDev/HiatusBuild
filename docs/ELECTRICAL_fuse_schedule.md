@@ -38,7 +38,7 @@ Related docs:
 - Victron SmartSolar MPPT `150/45` installation/spec pages (`50A-63A` battery fuse range, terminal limit `16 mm2`/`AWG 6`): `https://www.victronenergy.com/media/pg/Manual_SmartSolar_MPPT_150-35__150-45/en/installation.html` and `https://www.victronenergy.com/media/pg/Manual_SmartSolar_MPPT_150-35__150-45/en/technical-specifications.html`
 - Victron Orion-Tr Smart isolated DC-DC charger product page, manual, and datasheet (`48V` models require external input fuse per manual; `48/12-30` output rating and terminal limits per datasheet): `https://www.victronenergy.com/dc-dc-converters/orion-tr-dc-dc-converters-isolated`
 - Victron Lynx Distributor manual (MEGA fuse carrier format): `https://www.victronenergy.com/media/pg/Lynx_Distributor/en/installation.html`
-- Victron Orion-Tr Smart isolated DC-DC installation page (external input fuse guidance): `https://www.victronenergy.com/media/pg/Orion-Tr_Smart_DC-DC_Charger_Isolated/en/installation.html`
+- Victron Orion-Tr Smart isolated DC-DC installation page (external input fuse guidance): `https://www.victronenergy.com/media/pg/Orion-Tr_Smart_DC-DC_Charger_-_Isolated/en/installation.html`
 - Victron fuse datasheet (for `48V` systems use `58V`-class fuses): `https://www.victronenergy.com/upload/documents/Datasheet-Fuses-EN.pdf`
 - Sterling BB12V->48V charger references (model list includes `BB1248120`, fuse/cable guidance): `https://sterling-power.com/products/battery-to-battery-chargers-12v-to-48v`
 - Sterling BB12V->48V charger installation manual PDF (fuse/cable guidance): `https://sterling-power.com/cdn/shop/files/bb1230_1240_1260_12120_122430_241230_241240_241260_241280_242430_124810_1248120_241280_242430_b2b_installation_manual.pdf?v=1739450989`
@@ -69,6 +69,9 @@ Related docs:
 | `F-10` | `12V` fuse block branch circuits -> each `12V` load | Individual `12V` branch conductors and load circuits | ATO/ATC blade fuses (`32V` class) | Per-circuit | Integrated sockets in generic marine `12V` fuse block | `12V` fuse block in electrical cabinet | Per branch (table below) |
 | `F-11` | 12V buffer battery `+` -> 12V fuse block main `+` stud via `SW-12V-BATT` | Buffer battery source cable and downstream junction fault exposure | Inline MIDI/AMI/ANL family rated `>=32VDC` | `100A` class baseline | Sealed inline holder mounted close to battery positive | Within ~`7"` of 12V buffer battery positive post | `4 AWG` planned |
 | `OEM-SHUNT` | Lynx positive tap -> SmartShunt positive sense/power lead | SmartShunt electronics lead | Victron OEM inline low-current fuse (factory harness) | OEM value (small-current harness fuse) | Integrated inline holder in supplied harness | Electrical cabinet near Lynx positive tap | OEM harness lead |
+
+Notes:
+- Victron Orion fuse table is keyed by side voltage (`input or output`). For `48/12-30`: `F-06` tracks the `48V` input side (`20A`/`23A` family), and `F-07` tracks the `12V` output side (`60A`).
 
 ## 12V Buffer Battery Switching Requirement
 - `SW-12V-BATT` is a manual service disconnect in the 12V buffer battery positive path, installed downstream of `F-11`.
@@ -154,3 +157,4 @@ Related docs:
 7. `SW-12V-BATT` is manual-only in Phase 1; no automatic LVD behavior is assumed in this schedule.
 8. Battery listing data (`<=200A` current limit) is currently treated as provisional because the provided screenshot includes `14.6V/14.2V` values that are not a `51.2V` profile; final lock requires validated `51.2V` battery documentation.
 9. If final battery current or terminal limits are lower than current assumptions, down-select `F-01A/B/C` to `175A` and keep fuse-to-conductor coordination synchronized with `docs/ELECTRICAL_overview_diagram.md` and `bom/bom_estimated_items.csv`.
+10. Orion fuse selection is side-voltage based per Victron table (`input or output`), not just converter model number. Keep `F-06` and `F-07` aligned to `48V` input / `12V` output sides.
