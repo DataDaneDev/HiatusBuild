@@ -10,6 +10,28 @@ Single running log for build progress and test evidence.
 - Issues:
 - Next actions:
 
+## 2026-02-20
+- Built a complete parallel `24V candidate` architecture package while preserving canonical `48V` docs:
+- `docs/variants/24v/ELECTRICAL_24V_vs_48V_trade_study.md`
+- `docs/variants/24v/SYSTEMS_24V_candidate.md`
+- `docs/variants/24v/ELECTRICAL_overview_diagram_24V_candidate.md`
+- `docs/variants/24v/ELECTRICAL_fuse_schedule_24V_candidate.md`
+- `docs/variants/24v/DECISION_SCORECARD_24V_vs_48V.md`
+- `bom/variants/24v/bom_estimated_items_24V_candidate.csv`
+- `bom/variants/24v/load_model_wh_24V_candidate.csv`
+- Added `24V_CANDIDATE_STATUS` tags for architecture-sensitive BOM rows and appended explicit `ADD` rows (`124-126`) for candidate-specific migration scope.
+- Added metadata/status rows to both variant CSVs while preserving header schema.
+- Included required decision calculations in the scorecard (`2.5kW` inverter current, Ah sizing, MPPT clipping, alternator current, residual 12V budget).
+- Captured same-day live pricing references in candidate trade-study/scorecard docs with vendor links.
+- Updated `docs/TRACKING.md` with decision `D-024` documenting candidate-package creation and canonical unchanged status.
+- Measurements/data: weighted score outcome from candidate scorecard = `24V 79.9` vs `48V 74.7` (gap `5.2`).
+- Tests run:
+- CSV header parity check between canonical and candidate files.
+- Load-model scenario total verification (candidate totals still `3,530 / 4,202 / 624 Wh/day`).
+- Candidate BOM status-tag presence check for required rows.
+- Issues: none blocking; live-market prices are snapshot values and expected to drift.
+- Next actions: either promote candidate docs to canonical or keep as analysis branch pending final owner lock.
+
 ## 2026-02-16
 - Updated procurement sequencing to an accelerated `Batch A+` phase so the electrical bench build can start without waiting for later cable/consumable waves.
 - Updated `bom/bom_estimated_items.csv` purchase windows:

@@ -217,6 +217,15 @@
 - Result: updated AC topology and procurement docs to one architecture (`TT-30 -> EMS -> AC-in DIN 30A breaker -> MultiPlus AC-in`, plus AC-out DIN branch panel), updated BOM row meanings for AC rows (`13`, `14`, `109`, `110`, `113`, `114`) and added hardwired EMS row `123`, and adopted a manual AC validation checklist as the acceptance gate.
 - Follow-up: verify locked AC hardware fitment in the cabinet mockup and record checklist pass evidence in `logs/LOG.md`.
 
+- ID: D-024
+- Date: 2026-02-20
+- Decision: Create a full parallel `24V candidate` architecture package while keeping canonical implementation docs on `48V`.
+- Context: Owner requested a deep re-evaluation of `24V vs 48V` using current project assumptions (`~15kWh`, `~2.5kW` inverter requirement, AC kitchen retained) with willingness to accept high redesign churn if `24V` wins.
+- Options considered: update canonical docs in-place, create a trade-study-only variant, or create a full parallel candidate package with matched docs + CSVs + scorecard.
+- Decision drivers: protect canonical implementation continuity, keep comparison reproducible, and allow decision-quality analysis before promotion.
+- Result: added variant package under `docs/variants/24v/` and `bom/variants/24v/`, including trade study, systems candidate, topology, fuse schedule, decision scorecard, and candidate CSVs with architecture delta tags and same-day live pricing references.
+- Follow-up: promote or discard candidate package after final owner sign-off; if promoted, rebase canonical `docs/SYSTEMS.md`, `docs/ELECTRICAL_overview_diagram.md`, `docs/ELECTRICAL_fuse_schedule.md`, and BOM/load-model source-of-truth files.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
