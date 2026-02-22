@@ -9,13 +9,15 @@ row,category,component,est_price,price_flag,description_notes,est_purchase_date,
 6,Power System,Lynx Distributor,192.47,ai_set,Victron Lynx Distributor M10 (LYN060102010),2/17/2026,In Cart
 10,Power System,MEGA fuses (Lynx branches + F-07 shared pool),63.91,user_filled,"Installed/stocked MEGA fuse set: 125A (MultiPlus) x5, 60A shared pool (MPPT F-03 + Orion output F-07) x6 total, 40A (Sterling output) x3, 30A (Orion feeder) x3. 60A pack basis: 6 total at $5.99 per 3 ($11.98 total). Use 58V/80V-rated MEGA fuses only.",2/17/2026,In Cart (125a x 5 purchased)
 11,Power System,High-current fuse holder hardware (installed),28.3,user_filled,"Sterling input: 150A + holder (12V side) x2. Orion 12V output (F-07): Victron MEGA fuse holder x1 ($15.30), using shared 60A 58V MEGA fuse family.",2/17/2026,In Cart
-16,Power System,12v fuse panel + branch/spare blade fuses,15,ai_set,"Fuse Block, 12v Fuse Box Holder with LED indicator and integrated negative bus (12V/24V). Use panel main + stud as 12V source-combine point and panel integrated negative bus/main - as shared return (no separate 12V negative busbar required).",2/17/2026,In Cart
+16,Power System,12v fuse panel + branch/spare blade fuses,15,ai_set,"Fuse Block, 12v Fuse Box Holder with LED indicator and integrated negative bus (12V/24V). Use panel main + stud as 12V source-combine point and panel integrated negative bus/main - as shared return (no separate 12V negative busbar required).",2/17/2026,Comes with camper
 26,Power System,Alternator Charger Remote,108,ai_set,Sterling Power BBR remote controller for BB1248120 current limiting and control,2/17/2026,In cart
 27,Power System,Starlink DC DC PS,65,user_filled,Starlink DC Power Supply,2/17/2026,planned
 117,Power System,48V battery-side combine busbars,48,ai_set,2x covered 600A+ busbars: 48V + busbar (combine after Class T fuses) and 48V - busbar (battery-only combine before SmartShunt). Reduces lug stacking on the disconnect and SmartShunt studs.,2/17/2026,In Cart
 7,Power System,Battery Class T Protection (Lynx plan),229.96,user_filled,Purchased 2026-02-18: 200A Class T Fuse Kit TFB1-200 x3 (includes JLLN-200 200A Class T fuse x3 installed) plus JLLN-200 200A spare fuse x1. Purchase total: $229.96. Additional Class T spare top-off (x2) is tracked in row 105.,2/18/2026,purchased
 20,Power System,DC Conversion,243,user_filled,Victron Orion-Tr Smart DC-DC Converter - 48/12-Volt 30 amp 360-Watt - isolated. Primary 48V-to-12V converter feeding shared 12V bus with buffer battery support.,2/18/2026,In cart
 21,Power System,12v Buffer Battery,113,user_filled,12V 100Ah LiFePO4 buffer battery for shared 12V bus support (transient smoothing and continuity for DC loads).,2/18/2026,In cart
+124,Power System,12V buffer battery disconnect (SW-12V-BATT),12.97,user_filled,"Battery Disconnect Switch Master, 12V-48V waterproof isolator On-Off kill switch, 275A high-current class, for manual service isolation downstream of F-11.",2/27/2026,In cart
+125,Power System,12V buffer battery main fuse + holder (F-11 installed),9.99,user_filled,"BOJACK 0/2/4 AWG inline ANL fuse holder with included 100A ANL fuse (installed F-11 path hardware), mounted within ~7 in of 12V buffer battery positive post.",2/27/2026,In cart
 52,Tools,Label Maker,18,user_filled,,2/18/2026,purchased
 53,Tools,Hydraulic lug crimper (8-2/0),40,user_filled,10 Tons Hydraulic Crimping Tool with 9 Dies,2/18/2026,In Cart
 60,Tools,Ratchet cable cutter,9,user_filled,YUZES 9.5 inch Cable Cutter 2/0,2/18/2026,In Cart
@@ -51,7 +53,7 @@ row,category,component,est_price,price_flag,description_notes,est_purchase_date,
 24,Power System,Solar Panels,700,user_filled,9x100w (3S3P) flexible. PV string fusing and holder/combiner are tracked as separate BOM line items.,3/3/2026,planned
 25,Power System,Solar Controller,211,user_filled,Victron SmartSolar MPPT 150/45,3/3/2026,planned
 102,Misc,Solar panel mounts,55,user_filled,48 in. x 4 ft. Multiwall Polycarbonate Panel in Clear (multiple),3/3/2026,planned
-105,Power System,Spare fuse top-off kit (non-Lynx),20,ai_set,"Top-off spares to close remaining gaps: 12V buffer main fuse 100A class x2 (F-11 spare set). ?",3/3/2026,planned
+105,Power System,Spare fuse top-off kit (non-Lynx),6.99,user_filled,"BOJACK 100A 32VDC ANL blade fuse pack (3-count) reserved as F-11 spare set x3. Installed F-11 hardware is tracked separately in row 125.",3/3/2026,In cart
 106,Power System,PV string fuse set + holder (3S3P),65,ai_set,3x installed 15A gPV string fuses + 3x spare 15A gPV fuses + fuse holder/combiner hardware near roof entry.,3/3/2026,planned
 121,Power System,Solar roof-to-shell coiled jumper + passthrough kit,165,ai_set,"Hardwall popup routing baseline: exterior-rated coiled solar jumper(s) from roof array to lower shell weatherproof passthrough, plus bulkhead/gland, strain relief, and service loop hardware.",3/3/2026,planned
 113,Hardware,"AC branch cable (stranded, 12 AWG)",70,ai_set,12 AWG stranded AC branch baseline (no padding): 35 ft total. Source circuits: C-30/C-31/C-32. C-33 is reserve-only and excluded from Phase 1 procurement.,3/9/2026,planned

@@ -1,6 +1,6 @@
 # Electrical Fuse Schedule (Implementation - Lynx Topology)
 
-As-of date: `2026-02-18`
+As-of date: `2026-02-22`
 
 Purpose: define each required fuse by circuit, protected conductor/device, holder/housing method, physical placement, and linked wire gauge assumptions for the approved Phase 1 Lynx architecture with a battery-backed 12V bus.
 
@@ -96,6 +96,21 @@ Notes:
 | `12V-08` | USB PD station branch (office zone) | `20A` | `12 AWG duplex` | Keep `<=5 ft` (estimate-pass assumption) or upsize |
 | `12V-09` | USB PD station branch (galley zone) | `15A` | `14 AWG duplex` | Current estimate pass assumes `~8 ft` and `~8A` expected load; move to `12 AWG` if sustained current rises |
 
+## F-11 Validation (2026-02-22)
+- Scope validated: `C-19A` (12V buffer battery positive path), including `F-11`, `SW-12V-BATT`, and planned `4 AWG` conductor.
+- Documented branch-fuse envelope from `12V-01` through `12V-09`: `96A` theoretical simultaneous maximum (`10+15+15+10+3+5+3+20+15`).
+- Modeled practical load envelope from `bom/load_model_wh.csv` is materially lower (`~300W` average, about `25A @ 12V`), but branch-level surge/transient overlap remains possible.
+- Conductor check for `4 AWG`, `2.5 ft` one-way (`5 ft` loop) using this doc resistance basis (`0.0002485 ohm/ft`):
+1. `50A` -> `0.062V` drop (`0.52% @ 12V`)
+2. `80A` -> `0.099V` drop (`0.83% @ 12V`)
+3. `100A` -> `0.124V` drop (`1.04% @ 12V`)
+- Validation result: keep `F-11` at `100A` class for the current architecture. This preserves margin above the modeled `50A` design basis and near/at the branch-fuse aggregate envelope while staying aligned with the `4 AWG` short-run drop target.
+- Hard lock conditions for this `100A` choice:
+1. Buffer-battery positive path remains `4 AWG` and approximately `2.5 ft` one-way as documented.
+2. `SW-12V-BATT` continuous DC rating is `>=100A` at the installed system voltage class.
+3. The selected `12V 100Ah` battery/BMS continuous discharge rating is `>=100A`.
+- Down-select gate: if final battery/BMS continuous rating is below `100A`, reduce `F-11` to the nearest compliant class (typically `80A`) and synchronize spare stock row `105`.
+
 ## Length-Validation Sync (2026-02-18)
 - `docs/ELECTRICAL_overview_diagram.md` now carries one-way estimated lengths and voltage-drop screening for `C-01` through `C-35`.
 - Lynx Orion-feeder branch fuse (`F-05`) is locked to `30A MEGA` for BOM sync in this pass.
@@ -125,7 +140,7 @@ Notes:
 | `MEGA 40A` (`58V/80V`) | `1` | `2` | Sterling branch; BOM lock is `x3` total |
 | `MEGA 30A` (`58V`) | `1` | `2` | Orion feeder branch; BOM lock is `x3` total |
 | Orion input fuse (`20A` target / `23A` MIDI) | `1` | `2` | Match installed holder family |
-| 12V buffer battery main fuse (`100A` class) | `1` | `2` | Keep exact spare value matched to final `F-11` holder family |
+| 12V buffer battery main fuse (`100A` class) | `1` | `3` | Spare pack basis is BOM row `105` (BOJACK `100A` ANL `3`-count) |
 | Sterling input fuse `150A` (`32V+`) | `1` | `1` | Vehicle-side charger input |
 | PV string fuse `15A gPV` | `3` | `3` | One spare per string |
 | SmartShunt OEM harness fuse | `1` | `1` | Keep OEM-equivalent spare if the fuse is field-replaceable on final harness |
@@ -137,7 +152,9 @@ Notes:
 | Main battery Class T protection (`F-01A/F-01B/F-01C`) + Class T spares | `bom/bom_estimated_items.csv` row `7` |
 | Lynx branch MEGA fuses (`F-02` to `F-05`) installed + spare set | `bom/bom_estimated_items.csv` row `10` |
 | Orion/Sterling installed fuse-holder hardware (`F-06`, `F-07`, `F-08`) | `bom/bom_estimated_items.csv` row `11` |
-| 12V buffer battery and main fuse (`F-11`) | `bom/bom_estimated_items.csv` row `21` |
+| 12V buffer battery (`B12`) | `bom/bom_estimated_items.csv` row `21` |
+| 12V buffer battery main fuse + holder (`F-11`) | `bom/bom_estimated_items.csv` row `125` |
+| 12V battery disconnect (`SW-12V-BATT`) | `bom/bom_estimated_items.csv` row `124` |
 | 12V branch panel and blade fuses (`F-10`) | `bom/bom_estimated_items.csv` row `16` |
 | SmartShunt OEM fused lead (`OEM-SHUNT`) | `bom/bom_estimated_items.csv` row `23` (included with SmartShunt kit) |
 | High-current spare fuse kit (non-Lynx spares, if retained) | `bom/bom_estimated_items.csv` row `105` |
@@ -158,3 +175,4 @@ Notes:
 8. Battery listing data (`<=200A` current limit) is currently treated as provisional because the provided screenshot includes `14.6V/14.2V` values that are not a `51.2V` profile; final lock requires validated `51.2V` battery documentation.
 9. If final battery current or terminal limits are lower than current assumptions, down-select `F-01A/B/C` to `175A` and keep fuse-to-conductor coordination synchronized with `docs/ELECTRICAL_overview_diagram.md` and `bom/bom_estimated_items.csv`.
 10. Orion fuse selection is side-voltage based per Victron table (`input or output`), not just converter model number. Keep `F-06` and `F-07` aligned to `48V` input / `12V` output sides.
+11. Final lock for `F-11` requires explicit 12V buffer battery/BMS continuous discharge-current confirmation; if `<100A`, down-select `F-11` and `SW-12V-BATT`/holder family accordingly.
