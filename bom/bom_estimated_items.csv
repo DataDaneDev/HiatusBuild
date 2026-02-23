@@ -1,10 +1,10 @@
 row,category,component,est_price,price_flag,description_notes,est_purchase_date,purchase_status
-12,Power System,Inverter/Transfer Switch/Charger,937,user_filled,"Victron MultiPlus-II 48/3000/35-50 (48V, 3kVA)",2/16/2026,In Cart
+12,Power System,Inverter/Transfer Switch/Charger,937.55,user_filled,"Victron MultiPlus-II 48/3000/35-50 (48V, 3kVA)",2/16/2026,In Cart
 18,Power System,Alternator Charging,807,ai_set,"Sterling Power BB1248120 battery-to-battery charger (12V or 24V input to 48V output, ~1500W max, ~26A at 57.6V). Requires fused input/output paths per fuse schedule.",2/16/2026,In Cart
 22,Power System,Monitoring,240,user_filled,Victron Cerbo GX,2/16/2026,In Cart
 23,Power System,Battery Monitor,93,user_filled,Victron SmartShunt 300A,2/16/2026,In Cart
 3,Power System,Batteries,1617,user_filled,"48V 100Ah LiFePO4 Golf Cart Lithium Battery (3x), 200A BMS low-temp protection, max 4 batteries = 400Ah system. Price basis: ~$539 each.",2/17/2026,In Cart
-4,Power System,Battery Temp Sensor,0,user_filled,"Temperature Sensor for Victron Energy Quattro, MultiPlus and GX Device (comes with multiplus)",2/17/2026,In Cart
+4,Power System,Battery Temp Sensor,0,user_filled,"Temperature Sensor for Victron Energy Quattro, MultiPlus and GX Device (comes with multiplus)",2/17/2026,Included (with MultiPlus in cart)
 5,Power System,48v disconnect,34.85,user_filled,Victron Energy Battery Switch ON/Off 275 amp,2/17/2026,In Cart
 6,Power System,Lynx Distributor,192.47,ai_set,Victron Lynx Distributor M10 (LYN060102010),2/17/2026,In Cart
 10,Power System,MEGA fuses (Lynx branches + F-07 shared pool),63.91,user_filled,"Installed/stocked MEGA fuse set: 125A (MultiPlus) x5, 60A shared pool (MPPT F-03 + Orion output F-07) x6 total, 40A (Sterling output) x3, 30A (Orion feeder) x3. 60A pack basis: 6 total at $5.99 per 3 ($11.98 total). Use 58V/80V-rated MEGA fuses only.",2/17/2026,In Cart (125a x 5 purchased)
@@ -14,15 +14,22 @@ row,category,component,est_price,price_flag,description_notes,est_purchase_date,
 27,Power System,Starlink DC DC PS,65,user_filled,Starlink DC Power Supply,2/17/2026,planned
 117,Power System,48V battery-side combine busbars,48,ai_set,2x covered 600A+ busbars: 48V + busbar (combine after Class T fuses) and 48V - busbar (battery-only combine before SmartShunt). Reduces lug stacking on the disconnect and SmartShunt studs.,2/17/2026,In Cart
 7,Power System,Battery Class T Protection (Lynx plan),229.96,user_filled,Purchased 2026-02-18: 200A Class T Fuse Kit TFB1-200 x3 (includes JLLN-200 200A Class T fuse x3 installed) plus JLLN-200 200A spare fuse x1. Purchase total: $229.96. Additional Class T spare top-off (x2) is tracked in row 105.,2/18/2026,purchased
-20,Power System,DC Conversion,243,user_filled,Victron Orion-Tr Smart DC-DC Converter - 48/12-Volt 30 amp 360-Watt - isolated. Primary 48V-to-12V converter feeding shared 12V bus with buffer battery support.,2/18/2026,In cart
+20,Power System,DC Conversion,243.95,user_filled,Victron Energy Orion-Tr Smart DC to DC Charger (Bluetooth) - 48/12-Volt 30 amp 360-Watt - Battery Charger for Dual Battery Systems - Isolated,2/23/2026,In Cart
 21,Power System,12v Buffer Battery,113,user_filled,12V 100Ah LiFePO4 buffer battery for shared 12V bus support (transient smoothing and continuity for DC loads).,2/18/2026,In cart
 124,Power System,12V buffer battery disconnect (SW-12V-BATT),12.97,user_filled,"Battery Disconnect Switch Master, 12V-48V waterproof isolator On-Off kill switch, 275A high-current class, for manual service isolation downstream of F-11.",2/27/2026,In cart
 125,Power System,12V buffer battery main fuse + holder (F-11 installed),9.99,user_filled,"BOJACK 0/2/4 AWG inline ANL fuse holder with included 100A ANL fuse (installed F-11 path hardware), mounted within ~7 in of 12V buffer battery positive post.",2/27/2026,In cart
+126,Tools,Rivet nut installation tool kit,32.98,user_filled,Rivet Nut Installation Tool Set (metric assortment) for threaded insert installs in sheet/skin-backed areas.,2/22/2026,In Cart
+127,Hardware,1/4-20 multi-grip rivet nut inserts,29.99,user_filled,AOKLIT 1/4-20 multi-grip steel rivet nuts (100 pack) for thin-wall attachment points.,2/22/2026,In Cart
+128,Hardware,2 AWG red/black cable set (contingency),184.96,user_filled,2 AWG pure-copper cable set (30 ft red + 30 ft black) retained as optional fallback reference only. Removed from active cart after committing to TEMCo 2/0 purchase for row 28.,2/22/2026,Removed from cart
+129,Plumbing Misc,PTFE thread seal tape,5.65,user_filled,Millrose 1/2-inch x 260-inch PTFE tape for threaded plumbing connections,2/22/2026,In Cart
+130,Hardware,Wire-management consumables (adhesive/cover/drag chain),52.45,user_filled,Cord organizer pack + wall cable raceway + drag chain for cable restraint and routing cleanup.,2/22/2026,In Cart
+131,Tools,Layout/marking ruler,26.99,user_filled,Saker adjustable scriber line-marking ruler for cabinetry/layout work,2/22/2026,In Cart
+132,Hardware,CA glue assembly consumable,5.99,user_filled,Super glue gel multi-pack for fixture and trim spot-bonding tasks,2/22/2026,In Cart
 52,Tools,Label Maker,18,user_filled,,2/18/2026,purchased
 53,Tools,Hydraulic lug crimper (8-2/0),40,user_filled,10 Tons Hydraulic Crimping Tool with 9 Dies,2/18/2026,In Cart
 60,Tools,Ratchet cable cutter,9,user_filled,YUZES 9.5 inch Cable Cutter 2/0,2/18/2026,In Cart
-115,Power System,USB-C PD stations (12V-fed),100,ai_set,2x 12V-fed USB PD station assemblies: office station (target includes 100W USB-C plus additional USB-A/C including one 65W port) and galley station (Powerwerks-style assorted USB-C/A including one 65W port).,2/18/2026,In Cart (powerwerks)
-28,Hardware,Wire (red+black),185,user_filled,2/0 AWG fine-strand OFC baseline (no padding): 61.5 ft total = 34.5 ft red + 27.0 ft black. Source circuits: C-01/C-02/C-02C/C-03/C-04/C-05/C-06/C-07/C-08/C-16/C-17. Includes strict equal-length 3x battery parallel branches. Add checkout overage separately.,2/19/2026,In Cart
+115,Power System,USB-C PD stations (12V-fed),100,ai_set,2x 12V-fed USB PD station assemblies: office station (target includes 100W USB-C plus additional USB-A/C including one 65W port) and galley station (Powerwerks-style assorted USB-C/A including one 65W port).,2/18/2026,In Cart (Powerwerks website)
+28,Hardware,Wire (red+black),342.77,user_filled,"TEMCo 2/0 AWG welding-cable purchase now in Amazon cart: 25 ft red + 25 ft black set ($237.75) plus 10 ft red + 10 ft black top-off ($105.02), giving 35 ft red + 35 ft black total. Covers the 2/0 baseline requirement (34.5 ft red + 27.0 ft black) for circuits C-01/C-02/C-02C/C-03/C-04/C-05/C-06/C-07/C-08/C-16/C-17 with spare margin.",2/23/2026,In Cart
 29,Hardware,,36,user_filled,6 AWG baseline (no padding): 22.5 ft total = 12.5 ft red + 10 ft black. Source circuits: C-09/C-10/C-11/C-12/C-13/C-14/C-15/C-18/C-19.,2/19/2026,In Cart
 30,Hardware,,27,user_filled,4 AWG baseline (no padding): 5 ft total = 2.5 ft red + 2.5 ft black. Source circuits: C-19A/C-19B (12V buffer battery path).,2/19/2026,In Cart
 31,Hardware,,31,user_filled,"10 AWG pair-equivalent baseline for PV routing (no padding): 36 ft route total (~72 conductor-ft single-wire equivalent). Source circuit: C-27 (3x ~8 ft string legs + ~12 ft combiner-to-MPPT trunk, ASSUMED).",2/19/2026,planned
@@ -51,14 +58,14 @@ row,category,component,est_price,price_flag,description_notes,est_purchase_date,
 112,Power System,AC outlet boxes + faceplates,32,ai_set,4x receptacle boxes + covers/faceplates + strain-relief/clamp hardware for final outlet install.,2/27/2026,planned
 19,Power System,Pre-charge Resistor,,blank,"RecPro or equivalent pre-charge resistors, or ensure your BMS handles this",3/3/2026,planned
 24,Power System,Solar Panels,700,user_filled,9x100w (3S3P) flexible. PV string fusing and holder/combiner are tracked as separate BOM line items.,3/3/2026,planned
-25,Power System,Solar Controller,211,user_filled,Victron SmartSolar MPPT 150/45,3/3/2026,planned
+25,Power System,Solar Controller,206.55,user_filled,Victron SmartSolar MPPT 150/45,2/22/2026,In Cart
 102,Misc,Solar panel mounts,55,user_filled,48 in. x 4 ft. Multiwall Polycarbonate Panel in Clear (multiple),3/3/2026,planned
-105,Power System,Spare fuse top-off kit (non-Lynx),6.99,user_filled,"BOJACK 100A 32VDC ANL blade fuse pack (3-count) reserved as F-11 spare set x3. Installed F-11 hardware is tracked separately in row 125.",3/3/2026,In cart
+105,Power System,Spare fuse top-off kit (non-Lynx),6.99,user_filled,BOJACK 100A 32VDC ANL blade fuse pack (3-count) reserved as F-11 spare set x3. Installed F-11 hardware is tracked separately in row 125.,3/3/2026,In cart
 106,Power System,PV string fuse set + holder (3S3P),65,ai_set,3x installed 15A gPV string fuses + 3x spare 15A gPV fuses + fuse holder/combiner hardware near roof entry.,3/3/2026,planned
 121,Power System,Solar roof-to-shell coiled jumper + passthrough kit,165,ai_set,"Hardwall popup routing baseline: exterior-rated coiled solar jumper(s) from roof array to lower shell weatherproof passthrough, plus bulkhead/gland, strain relief, and service loop hardware.",3/3/2026,planned
 113,Hardware,"AC branch cable (stranded, 12 AWG)",70,ai_set,12 AWG stranded AC branch baseline (no padding): 35 ft total. Source circuits: C-30/C-31/C-32. C-33 is reserve-only and excluded from Phase 1 procurement.,3/9/2026,planned
 114,Hardware,"Shore + AC-in feed cable (stranded, 10/3)",95,ai_set,Stranded 10/3 AC-in baseline (no padding): 11 ft total. Source circuits: C-28/C-29 for TT-30 shore path through EMS to AC input breaker and MultiPlus AC-in.,3/9/2026,planned
-46,Hardware,stainless hardware,30,user_filled,"1/4-20 stainless 3/4"" & 1"", fender washers, nylocks",3/16/2026,planned
+46,Hardware,stainless hardware,69.21,user_filled,"1/4-20 stainless hardware assortment now in cart: flat-head screws (1 in, 1-1/4 in, 1-1/2 in), washers (flat + fender), and 1/4-20 nylock nuts.",2/22/2026,In Cart
 47,Hardware,t-nuts,7,user_filled,,3/16/2026,planned
 48,Hardware,Adhesive cable mounts,7,user_filled,,3/16/2026,planned
 49,Hardware,Zip ties,7,user_filled,,3/16/2026,planned
@@ -69,7 +76,7 @@ row,category,component,est_price,price_flag,description_notes,est_purchase_date,
 119,Hardware,Exterior T-slot/strut rails + mounts,325,ai_set,"Exterior modular rails for shovel/Maxtrax and general gear carry (starter allowance: 2-4 rail sections, end caps, backing plates, and stainless mounting hardware).",3/16/2026,planned
 58,Tools,PEX expander,,blank,If I go PEX instead of braided hose,3/20/2026,planned
 61,Appliances,Fridge,400,user_filled,35-50qt fridge,3/24/2026,planned
-62,Appliances,Diesel Heater,190,user_filled,LF Bros 2KW Diesel Heater,3/24/2026,planned
+62,Appliances,Diesel Heater,189.99,user_filled,LF Bros 2KW Diesel Heater,2/22/2026,In Cart
 63,Appliances,Heater T,10,user_filled,ZTUOAUMA 60mm T-Piece Diesel,3/24/2026,planned
 64,Appliances,CO + Propane Detector,47,user_filled,,3/24/2026,planned
 65,Appliances,Diesel Tank,95,user_filled,"Scepter 12 gal (no, do 1 small inside, 1 large outside)",3/24/2026,planned
@@ -112,7 +119,7 @@ row,category,component,est_price,price_flag,description_notes,est_purchase_date,
 54,Tools,Track Saw/Table Saw,,blank,track = easier angles,4/22/2026,planned
 55,Tools,Orbital sander,,blank,,4/22/2026,planned
 56,Tools,Domno/bisqut joiner,,blank,,4/22/2026,planned
-57,Tools,digital Level,,blank,,4/22/2026,planned
+57,Tools,digital Level,30.46,user_filled,MOTORHEAD 10-inch digital level,2/22/2026,In Cart
 101,Interior,Sound system/bar?,,blank,,4/28/2026,planned
 2,Camper Platform,Hiatus Camper,33488.64,user_filled,,,planned
 8,Power System,DEPRECATED (Lynx): separate 48V negative busbar,,blank,Not required in locked Lynx topology; Lynx Distributor provides negative bus.,,planned

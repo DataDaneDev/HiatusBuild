@@ -78,7 +78,7 @@ flowchart LR
         POSBUS["48V + busbar (battery-side)\ncombine after Class T fuses"]
         NEGBUS["48V - busbar (battery-side)\ncombine before SmartShunt"]
         DISC["48V disconnect\nVictron 275A"]
-        SHUNT["SmartShunt 500A\nmain negative path"]
+        SHUNT["SmartShunt 300A\nmain negative path"]
         LYNX["Victron Lynx Distributor M10\n+ bus / - bus / 4 MEGA slots"]
         MULTI["MultiPlus-II\n48/3000/35-50"]
         ORION["Orion-Tr Smart 48/12-30\nIsolated charger"]
@@ -258,7 +258,7 @@ flowchart LR
     CERBO["Cerbo GX"]
     MULTI["MultiPlus-II"]
     MPPT["SmartSolar MPPT"]
-    SHUNT["SmartShunt 500A"]
+    SHUNT["SmartShunt 300A"]
     ORION["Orion-Tr Smart 48/12-30 charger"]
     BTEMP["Battery temp sensor"]
     SHUNT_PWR["SmartShunt fused + lead\n(factory harness)"]
@@ -430,7 +430,7 @@ Locked balancing rule for the `3x` parallel bank:
 
 Torque reference (verify against your exact manuals/hardware):
 - MultiPlus-II DC terminals: `12 Nm` (`M8` nut) per Victron installation guidance.
-- SmartShunt shunt bolts: max `21 Nm` (`M10` on 500A model) per Victron installation guidance.
+- SmartShunt shunt bolts: verify torque for the installed `300A` model per Victron installation guidance.
 - Lynx Distributor `M10` model: `M10` nuts `33 Nm` (older serials may be lower), and `M8` nuts `14 Nm` per Victron Lynx installation guidance.
 
 ## Additional Components Included In Topology Scope
