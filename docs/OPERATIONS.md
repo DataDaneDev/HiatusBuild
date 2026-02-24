@@ -44,7 +44,16 @@ Bench-test intent: validate wiring correctness and basic device behavior (shunt,
 - Safe energization order (DC): keep `48V` disconnect open and remove Lynx branch fuses; connect negatives first (battery negatives to battery-side negative combine, then to SmartShunt battery side); wire positives to Class T blocks with Class T fuses removed.
 - Bank bring-up: insert Class T fuses one-at-a-time (disconnect still open) and confirm expected bank voltage at the battery-side busbar.
 - System bring-up: close `48V` disconnect to energize the Lynx bus; then insert Lynx branch fuses one-at-a-time, verifying each branch after insertion.
-- MultiPlus inrush: expect some inrush when first connecting the inverter branch; use a pre-charge method if needed (pre-charge resistor/switch or a temporary pre-charge lead) and stop if you see abnormal arcing/heating.
+- MultiPlus inrush: expect capacitor inrush when first energizing the inverter branch; use the pre-charge lead method below and stop if you see abnormal arcing/heating.
+- Pre-charge lead baseline (current topology):
+1. Preconditions: `F-02` installed, `48V` main disconnect `OFF`, and large `48V` loads/chargers disabled.
+2. Lead construction: insulated alligator-clip lead with `100-150 ohm` wirewound resistor (high-power aluminum-shell style; target `>=50W` body). Add a small inline pre-charge fuse (`1-2A`, DC-rated) on the battery-side lead when available.
+3. Connection points: bypass the `48V` main disconnect by clipping across its two main studs only (battery-side stud to load/Lynx-side stud).
+4. Clip order: connect load-side stud first, then battery-side stud.
+5. Wait for pre-charge: hold for several seconds and confirm low differential across disconnect studs (target `<1-2V` when meter is available).
+6. Close disconnect: turn main disconnect `ON` while pre-charge lead remains attached.
+7. Remove pre-charge lead: remove battery-side clip first, then load-side clip.
+8. Do not use bare wire "touch" methods for pre-charge bypass.
 - Functional checks: verify SmartShunt reads voltage correctly, Orion outputs stable `12V` under load, MultiPlus inverts correctly into a small known load, and MultiPlus charges correctly when AC-in is applied.
 - 12V mode checks:
 1. Orion-only mode (service validation): open `SW-12V-BATT`, keep Orion active, and verify 12V panel remains stable under expected baseline load.

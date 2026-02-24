@@ -1,9 +1,12 @@
 ﻿# Amazon Cart (Cleaned)
 
 - Source file preserved: `bom/Amazon Cart.raw_backup.md`
-- Unique products: 49
-- Total units: 55
-- Cart subtotal: $5,740.85
+- Unique products: 50
+- Total units: 57
+- Cart subtotal: $5,754.98
+- External electrical procurement updates (non-Amazon, not included in subtotal):
+  - `2026-02-23` Mouser purchase: Littelfuse `04980921GXM5` inline MIDI holder (`F-06`) qty `1`, `$17.37` (purchased).
+  - Orion `F-06` fuse stock: `30A` `58V` MIDI (`M5`) qty `4`, `$12` (in cart).
 
 ## Items
 
@@ -24,7 +27,7 @@
 | 13 | iGreely 6 Gauge 6 AWG Wire 10 Feet Black + 10 Feet Red Ultra Flexible Welding Battery Pure Copper Cable + 5pcs of 5/16" & 5pcs 3/8" Copper Cable Lug Terminal Connectors+Heat Shrink Tubing | Size: 6AWG; Color: 10FT Red+10FT Black | 1 | $36.09 | $36.09 |
 | 14 | Brileine 10 Tons Hydraulic Crimping Tool with 9 Dies - Battery Cable Crimper Tool & Wire Rope Crimping Tool for 12 to 2/0 AWG, 1/16" 1/8" 3/16" Stainless Steel Cable Railing Tool | Model: Hydraulic Crimper | 1 | $39.99 | $39.99 |
 | 15 | YUZES 9.5 inch Cable Cutter, Heavy Duty Wire Cutter High Leverage for Aluminum, Copper, Wire, Communications Cable, Cuts up to 2/0 Wire - Cable Cutting Tool with Ergonomic Grip | - | 1 | $9.99 | $9.99 |
-| 17 | Kofelec Mega High Current Fuse, ANM 40A Amp, up to 58V DC, Use for Cars Trucks Buses or Audio Systems, Pack of 3 (40A) | Style: 40A | 1 | $6.64 | $6.64 |
+| 17 | Kofelec Mega High Current Fuse, ANM 40A Amp, up to 58V DC, Use for Cars Trucks Buses or Audio Systems, Pack of 3 (40A) | Style: 40A | 2 | $6.64 | $13.28 |
 | 18 | 1/4-20 x 1-1/2" (20 Pack) Flat Head Hex Socket Cap Screws Bolts, Black Oxide 304 Stainless Steel 18-8, Hex Drive, Bright Finish, Fully Machine Thread | Size: 1/4-20 x 1-1/2" | 1 | $9.19 | $9.19 |
 | 19 | Busieea 50 PCS 1/4" Washers Flat, 7/10" OD, Black Electroplated Flat Washers Made of Stainless Steel 18-8(304), Flat Washer for Decorating Parts | Color: Black-50 | 2 | $3.99 | $7.98 |
 | 20 | 1/4 x 1 Inch 18-8(304) Stainless Steel Fender Washers, Black Zinc Plated Flat Washers for Screws and Bolts, 50 Pieces Large Repair Washers for Home and Industrial Use | Size: 1/4x1" | 1 | $6.89 | $6.89 |
@@ -58,11 +61,12 @@
 | 48 | Victron Energy Orion-Tr Smart DC to DC Charger (Bluetooth) - 48/12-Volt 30 amp 360-Watt - Battery Charger for Dual Battery Systems - Isolated | - | 1 | $243.95 | $243.95 |
 | 49 | TEMCo 2/0 AWG Welding Cable, Red + Black, 25 ft each | Gauge: 2/0 AWG; Length: 25 ft red + 25 ft black | 1 | $237.75 | $237.75 |
 | 50 | TEMCo 2/0 AWG Welding Cable, Red + Black, 10 ft each | Gauge: 2/0 AWG; Length: 10 ft red + 10 ft black | 1 | $105.02 | $105.02 |
+| 51 | LM YN 100 Ohm 5% Wirewound Aluminum Shell Resistor (Pack of 2) | 100 Ohm; 5%; Pack of 2 | 1 | $7.49 | $7.49 |
 
 ## BOM Row Mapping
 
-- Build-linked cart items: 47 of 49
-- Non-build cart items: 2 of 49 (`#24` mouthwash, `#37` razor)
+- Build-linked cart items: 48 of 50
+- Non-build cart items: 2 of 50 (`#24` mouthwash, `#37` razor)
 - Exception: BOM `row 115` remains `In Cart (Powerwerks website)` and is intentionally not tied to Amazon cart.
 
 | Cart # | BOM Row(s) | Component |
@@ -116,11 +120,12 @@
 | 48 | 20 | DC Conversion (Orion-Tr Smart 48/12-30 isolated) |
 | 49 | 28 | Wire (red+black) 2/0 AWG main purchase (TEMCo 25 ft pair) |
 | 50 | 28 | Wire (red+black) 2/0 AWG top-off (TEMCo 10 ft pair) |
+| 51 | 19 | Pre-charge resistor lead (MultiPlus inrush control) |
 
 ## Totals
 
-- Subtotal (55 items): $5,740.85
-- Calculated subtotal from line items: $5,740.85
+- Subtotal (57 items): $5,754.98
+- Calculated subtotal from line items: $5,754.98
 
 ## Cleanup Notes
 

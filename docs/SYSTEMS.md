@@ -9,6 +9,7 @@
 - Implementation topology (components, fuses, holders, gauges): `docs/ELECTRICAL_overview_diagram.md`
 - Fuse IDs, locations, housing methods, spares, and BOM mapping: `docs/ELECTRICAL_fuse_schedule.md`
 - Voltage architecture trade study (`12V` vs `48V`): `docs/ELECTRICAL_12V_vs_48V_trade_study.md`
+- Solar option screening matrix (stringing + MPPT fit flags): `docs/SOLAR_configuration_matrix.md`
 - Electrical decisions, risks, and unresolved items: `docs/TRACKING.md`
 
 ### Planning snapshot (as-of `2026-02-18`)

@@ -315,7 +315,7 @@
 - Confirm required shorter belt length and final belt part number if the Mechman alternator is installed
 - Lock Big 3 spec package (additional cable length, inline fuse type/rating, lug count, and RVC ground-loop routing requirement)
 - Confirm measured daily draw for owner-supplied laptop/monitor/tablet charging to replace planning assumptions
-- Validate Orion `48/12-30` charger headroom with the updated USB station branch plan (`12V-08` office `20A`, `12V-09` galley `15A`) and trigger row `118` only if sustained overload is observed
+- Validate Orion `48/12-30` charger headroom with the current 12V branch plan (including USB stations, `12V-10` Maxxair fan, and `12V-06` LED dimmer lighting) and trigger row `118` only if sustained overload is observed
 - Verify physical fitment and service-access clearances for the locked split-DIN AC hardware set (`rows 13`, `14`, `15`, `107`, `108`, `109`, `110`, `111`, `112`, `113`, `114`, `123`) during cabinet mockup
 - Final passthrough locations for solar, shore power, and fuel/heater paths
 - Lock roof-to-shell solar jumper connector strategy and exact service-loop length for full popup travel

@@ -39,7 +39,7 @@ flowchart LR
         LYNX["Victron Lynx Distributor M10\n+ bus / - bus / 4 MEGA slots"]
         MULTI["MultiPlus-II\n48/3000/35-50"]
         ORION["Orion-Tr Smart 48/12-30\nIsolated charger"]
-        F06["F-06 20A (or 23A)\ninline >=58V holder"]
+        F06["F-06 30A MIDI (58V)\n04980921GXM5 inline holder"]
     end
 
     BATA -- "2/0 AWG +, ~2.5 ft" --> F01A --> POSBUS
@@ -64,5 +64,5 @@ flowchart LR
     B2B -- "OUT+ via Slot 3: F-04 40A MEGA\n6 AWG, ~2.5 ft" --> LYNX
     B2B -- "OUT- 6 AWG, ~2.5 ft" --> LYNX
 
-    LYNX -- "Slot 4: F-05 30A MEGA\n6 AWG, ~2.5 ft" --> F06 --> ORION
+    LYNX -- "Slot 4: F-05 40A MEGA\n6 AWG, ~2.5 ft" --> F06 --> ORION
     ORION -- "48V input - (6 AWG, ~2.5 ft)" --> LYNX

@@ -1,6 +1,6 @@
 # Electrical Topology Diagram (Implementation v5)
 
-As-of date: `2026-02-18`
+As-of date: `2026-02-24`
 
 Purpose: provide a complete, install-level electrical topology for the current build scope, including all major electrical components, fuse IDs, fuse housings, planned wire gauges, and estimated one-way run lengths for procurement planning.
 
@@ -16,7 +16,7 @@ Related docs:
 - Added explicit fuse-holder/housing definitions for every fuse family (`Class T`, Lynx `MEGA`, inline `MIDI/ANL/AMI`, PV `gPV`, and `ATO/ATC`).
 - Added conductor schedule across `48V`, `12V`, PV, and AC segments with explicit assumptions.
 - Updated 12V topology to a shared 12V junction fed by an Orion-Tr Smart `48/12-30` charger and a `12V 100Ah` buffer battery branch, with `F-11` source fuse plus `SW-12V-BATT` manual isolation.
-- Added a full-circuit estimated run-length validation pass (`C-01` through `C-35`) and purchase-ready wire rollup totals.
+- Added a full-circuit estimated run-length validation pass (`C-01` through `C-36`) and purchase-ready wire rollup totals.
 
 ## Length Estimation Defaults Used In This Pass
 1. Cabinet internal interconnect default: `2.5 ft` one-way (`ASSUMED`).
@@ -32,9 +32,9 @@ Related docs:
 - Conservative sizing factors used in this pass:
 1. Parallel-sharing factor `K_share = 1.5`
 2. Continuous margin factor `K_cont = 1.25`
-- Current envelope used for battery-discharge branch sizing in current architecture: `I_total = F-02 + F-05 = 125A + 30A = 155A`.
-- Per-battery design current: `I_batt_design = (155A / 3) * 1.5 = 77.5A`.
-- Continuous-adjusted minimum battery branch fuse threshold: `I_fuse_min = 77.5A * 1.25 = 96.9A`.
+- Current envelope used for battery-discharge branch sizing in current architecture: `I_total = F-02 + F-05 = 125A + 40A = 165A`.
+- Per-battery design current: `I_batt_design = (165A / 3) * 1.5 = 82.5A`.
+- Continuous-adjusted minimum battery branch fuse threshold: `I_fuse_min = 82.5A * 1.25 = 103.1A`.
 - Provisional battery branch fuse selection: `F-01A/B/C = 200A Class T`, constrained by the provisional battery `<=200A` current-limit listing.
 - Final lock gate: validate true `51.2V` battery datasheet/manual current and terminal limits before permanent fuse lock; if lower limits are confirmed, move to `175A`.
 - Cable procurement remains estimate-based until CAD/field run lengths are frozen. This pass sets a no-padding `2/0` estimate baseline of `61.5 ft` total (`34.5 ft` red, `27.0 ft` black), replacing the legacy `50 ft` scenario placeholder.
@@ -82,7 +82,7 @@ flowchart LR
         LYNX["Victron Lynx Distributor M10\n+ bus / - bus / 4 MEGA slots"]
         MULTI["MultiPlus-II\n48/3000/35-50"]
         ORION["Orion-Tr Smart 48/12-30\nIsolated charger"]
-        F06["F-06 20A (or 23A)\ninline >=58V holder"]
+        F06["F-06 30A MIDI (58V)\n04980921GXM5 inline holder"]
     end
 
     BATA -- "2/0 AWG +, ~2.5 ft" --> F01A --> POSBUS
@@ -107,7 +107,7 @@ flowchart LR
     B2B -- "OUT+ via Slot 3: F-04 40A MEGA\n6 AWG, ~2.5 ft" --> LYNX
     B2B -- "OUT- 6 AWG, ~2.5 ft" --> LYNX
 
-    LYNX -- "Slot 4: F-05 30A MEGA\n6 AWG, ~2.5 ft" --> F06 --> ORION
+    LYNX -- "Slot 4: F-05 40A MEGA\n6 AWG, ~2.5 ft" --> F06 --> ORION
     ORION -- "48V input - (6 AWG, ~2.5 ft)" --> LYNX
 ```
 
@@ -126,10 +126,11 @@ flowchart LR
     HEATER["12V-03 Diesel heater\n15A / 14 AWG"]
     PUMP["12V-04 Water pump\n10A / 14 AWG"]
     DET["12V-05 CO+Propane detector\n3A / 18/2"]
-    LED["12V-06 LED strips\n5A / 18/2"]
+    LED["12V-06 LED lights + dimmer\n5A / 18/2 (Hiatus pre-installed)"]
     CERBO_PWR["12V-07 Cerbo GX feed\n3A / 18/2 (assumed)"]
     USB_OFFICE["12V-08 Office USB PD station\n20A / 12 AWG"]
     USB_GALLEY["12V-09 Galley USB PD station\n15A / 14 AWG"]
+    MAXXAIR["12V-10 Maxxair fan\n10A / 14 AWG (Hiatus pre-installed)"]
 
     ORION -- "6 AWG, ~2.5 ft to main + stud" --> F07 --> PANEL
     ORION -- "6 AWG, ~2.5 ft to main - / neg bus" --> PANEL
@@ -146,6 +147,7 @@ flowchart LR
     PANEL -- "18/2, ~2.5 ft (ASSUMED)" --> CERBO_PWR
     PANEL -- "12 AWG duplex, ~5 ft (ASSUMED short run)" --> USB_OFFICE
     PANEL -- "14 AWG duplex, ~8 ft (ASSUMED)" --> USB_GALLEY
+    PANEL -- "14 AWG duplex, ~8 ft (ASSUMED)" --> MAXXAIR
 
     STAR -- "return in duplex, ~8 ft" --> PANEL
     FRIDGE -- "return in duplex, ~12 ft" --> PANEL
@@ -156,6 +158,7 @@ flowchart LR
     CERBO_PWR -- "return in 18/2, ~2.5 ft" --> PANEL
     USB_OFFICE -- "return in duplex, ~5 ft" --> PANEL
     USB_GALLEY -- "return in duplex, ~8 ft" --> PANEL
+    MAXXAIR -- "return in duplex, ~8 ft" --> PANEL
 ```
 
 ### 12V Operating Intent (Locked)
@@ -166,6 +169,7 @@ flowchart LR
 - The buffer battery remains in the active operating path during normal use and is intended to absorb transients/peaks on the `12V` rail.
 - The fuse block is the `12V` junction device in this baseline: main `+` stud is the source-combine point, and the integrated negative bus/main `-` is the shared return point.
 - Do not solder-splice high-current source conductors; terminate with crimped lugs on rated studs/junction hardware.
+- Hiatus pre-installed 12V branches are tracked here as `12V-06` (LED lights with dimmer) and `12V-10` (Maxxair fan); verify final installed branch labeling during electrical audit.
 
 ## AC Path Topology (Shore + Inverter Output, Full Hierarchy)
 ```mermaid
@@ -280,8 +284,8 @@ flowchart LR
 | `F-02` | `125A MEGA` | Lynx integrated slot holder | Lynx Slot 1 |
 | `F-03` | `60A MEGA` | Lynx integrated slot holder | Lynx Slot 2 |
 | `F-04` | `40A MEGA` | Lynx integrated slot holder | Lynx Slot 3 |
-| `F-05` | `30A MEGA` | Lynx integrated slot holder | Lynx Slot 4 |
-| `F-06` | `20A` target / `23A` MIDI fallback | Inline sealed holder (`>=58VDC`) | Electrical cabinet near Orion branch source |
+| `F-05` | `40A MEGA` | Lynx integrated slot holder | Lynx Slot 4 |
+| `F-06` | `30A` MIDI (`58V`) | Littelfuse `04980921GXM5` inline sealed holder (`58VDC`) | Electrical cabinet near Orion branch source |
 | `F-07` | `60A MEGA` (`58V` class) | Victron MEGA fuse holder | Electrical cabinet at Orion `12V +` source end |
 | `F-08` | `150A` | Sealed engine-bay MEGA/ANL holder | Engine bay near starter battery `+` |
 | `F-09A/B/C` | `15A gPV` each | `10x38` touch-safe fuse holders in PV combiner | Roof-entry combiner enclosure |
@@ -297,8 +301,8 @@ flowchart LR
 | `C-02` | Battery B `+` -> `F-01B` | `48V` | Battery branch, fuse-limited | `F-01B` `200A` provisional | `2/0 AWG` | `2.5 ft` (`ASSUMED`, equal-length set) |
 | `C-02C` | Battery C `+` -> `F-01C` | `48V` | Battery branch, fuse-limited | `F-01C` `200A` provisional | `2/0 AWG` | `2.5 ft` (`ASSUMED`, equal-length set) |
 | `C-03` | Class T outputs -> battery-side `48V +` busbar -> disconnect input | `48V` | Combined trunk current | `F-01A/B/C` | `2/0 AWG` each branch | `2.5 ft each branch` (`ASSUMED`, `4` conductors in rollup) |
-| `C-04` | Disconnect output -> Lynx `+` bus | `48V` | Aggregate discharge design current (`155A` = `F-02 125A` + `F-05 30A`; `255A` Lynx fuse sum is non-concurrent theoretical) | Upstream Class T fuses | `2/0 AWG` | `2.5 ft` (`ASSUMED`) |
-| `C-05` | Battery negatives -> battery-side `48V -` busbar -> SmartShunt battery side | `48V` | Mixed-path rollup: `3x` battery-negative branches at `77.5A` design each + `NEGBUS_TO_SHUNT` trunk at `155A` aggregate | N/A (main negative path) | `2/0 AWG` each branch | `2.5 ft each branch` (`ASSUMED`, `4` conductors in rollup) |
+| `C-04` | Disconnect output -> Lynx `+` bus | `48V` | Aggregate discharge design current (`165A` = `F-02 125A` + `F-05 40A`; `265A` Lynx fuse sum is non-concurrent theoretical) | Upstream Class T fuses | `2/0 AWG` | `2.5 ft` (`ASSUMED`) |
+| `C-05` | Battery negatives -> battery-side `48V -` busbar -> SmartShunt battery side | `48V` | Mixed-path rollup: `3x` battery-negative branches at `82.5A` design each + `NEGBUS_TO_SHUNT` trunk at `165A` aggregate | N/A (main negative path) | `2/0 AWG` each branch | `2.5 ft each branch` (`ASSUMED`, `4` conductors in rollup) |
 | `C-06` | SmartShunt load side -> Lynx `-` bus | `48V` | Aggregate return current | N/A | `2/0 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-06A` | Lynx positive tap -> SmartShunt positive sense/power lead | `48V` | Shunt electronics supply (very low current) | Factory inline fuse in OEM harness | OEM harness lead | `2.5 ft` (`ASSUMED`) |
 | `C-07` | Lynx Slot 1 (`F-02`) -> MultiPlus `DC+` | `48V` | Inverter branch, fuse-limited | `F-02` `125A` | `2/0 AWG` (manual minimum `AWG 1` on short runs) | `2.5 ft` (`ASSUMED`) |
@@ -307,8 +311,8 @@ flowchart LR
 | `C-10` | MPPT `BAT-` -> Lynx `-` bus | `48V` | Controller return current | `F-03` protects paired positive | `6 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-11` | Sterling output `+` -> Lynx Slot 3 (`F-04`) | `48V` | Charger output (`~26A` nominal max) | `F-04` `40A` | `6 AWG` planned (`10 AWG` minimum per Sterling table) | `2.5 ft` (`ASSUMED`) |
 | `C-12` | Sterling output `-` -> Lynx `-` bus | `48V` | Charger return current | `F-04` protects paired positive | `6 AWG` | `2.5 ft` (`ASSUMED`) |
-| `C-13` | Lynx Slot 4 (`F-05`) -> `F-06` holder | `48V` | Orion branch feeder, fuse-limited | `F-05` `30A` | `6 AWG` | `2.5 ft` (`ASSUMED`) |
-| `C-14` | `F-06` -> Orion `48V +` input | `48V` | Orion input, fuse-limited | `F-06` `20A`/`23A` | `6 AWG` planned (`8 AWG` minimum per Orion table) | `2.5 ft` (`ASSUMED`) |
+| `C-13` | Lynx Slot 4 (`F-05`) -> `F-06` holder | `48V` | Orion branch feeder, fuse-limited | `F-05` `40A` | `6 AWG` | `2.5 ft` (`ASSUMED`) |
+| `C-14` | `F-06` -> Orion `48V +` input | `48V` | Orion input, fuse-limited | `F-06` `30A` MIDI | `6 AWG` planned (`8 AWG` minimum per Orion table) | `2.5 ft` (`ASSUMED`) |
 | `C-15` | Orion `48V -` input -> Lynx `-` bus | `48V` | Orion input return current | `F-06` protects paired positive | `6 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-16` | Starter battery `+` -> `F-08` -> Sterling input `+` | `12V` | Charger input path, fuse-limited | `F-08` `150A` | `2/0 AWG` planned (`2 AWG` minimum per Sterling table) | `12 ft` (`ASSUMED`, long vehicle run) |
 | `C-17` | Vehicle return/chassis -> Sterling input `-` | `12V` | Charger input return | `F-08` protects paired positive | `2/0 AWG` planned | `12 ft` (`ASSUMED`, long vehicle run) |
@@ -321,7 +325,7 @@ flowchart LR
 | `C-22` | 12V panel -> Diesel heater | `12V` | Branch load | `F-10` `15A` | `14 AWG duplex` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-23` | 12V panel -> Water pump | `12V` | Branch load | `F-10` `10A` | `14 AWG duplex` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-24` | 12V panel -> CO + propane detector | `12V` | Branch load | `F-10` `3A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
-| `C-25` | 12V panel -> LED strips | `12V` | Branch load | `F-10` `5A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
+| `C-25` | 12V panel -> LED lights + dimmer (Hiatus pre-installed) | `12V` | Branch load | `F-10` `5A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-26` | 12V panel -> Cerbo GX power feed | `12V` | Branch load (`~3W`) | `F-10` `3A` (assumed) | `18/2` | `2.5 ft` (`ASSUMED`, cabinet internal) |
 | `C-27` | PV strings -> `F-09` combiner -> MPPT PV input | PV string voltage (`3S`) | String current + combiner output current | `F-09A/B/C` `15A` each | `10 AWG` PV wire | `12 ft` trunk + `3x8 ft` string legs (`ASSUMED`) |
 | `C-28` | Shore inlet -> shore cord/adapter -> hardwired EMS -> AC-in DIN enclosure / AC input breaker | `120VAC` | Source-limited shore current (adapter-constrained at source) | `30A` AC input breaker/disconnect baseline with source-current-limit settings policy | `10/3` shore feed to inlet/EMS/AC-in area | `8 ft` (`ASSUMED`) |
@@ -332,13 +336,14 @@ flowchart LR
 | `C-33` | MultiPlus AC-out-2 (reserve-only) -> capped route for future shore-only branch | `120VAC` | N/A in Phase 1 (route reserved only) | N/A in Phase 1 (no energized branch hardware) | `12 AWG` stranded AC conductors (reserve path only) | `15 ft` (`ASSUMED`, reserve route default) |
 | `C-34` | 12V panel -> USB PD station branch (office zone) | `12V` | High-demand office charging branch (`100W + 65W` class station budget) | `F-10` branch fuse (`20A`) | `12 AWG duplex` baseline | `5 ft` (`ASSUMED`, short-run requirement) |
 | `C-35` | 12V panel -> USB PD station branch (galley zone) | `12V` | Galley charging branch (`65W` class USB-C plus USB-A/C loads) | `F-10` branch fuse (`15A`) | `14 AWG duplex` baseline | `8 ft` (`ASSUMED`, near-load branch) |
+| `C-36` | 12V panel -> Maxxair fan (Hiatus pre-installed) | `12V` | Roof ventilation branch | `F-10` branch fuse (`10A`) | `14 AWG duplex` baseline | `8 ft` (`ASSUMED`, near-load branch) |
 
 ## Wiring Validation Worksheet (Estimate Pass, 2026-02-18)
 Calculation basis for drop screening:
 1. `V_drop = I * (2 * L_one_way * R_per_ft)`
 2. Resistance basis used in this pass (`ohm/ft`): `2/0=0.0000779`, `6 AWG=0.0003951`, `4 AWG=0.0002485`, `12 AWG=0.001588`, `14 AWG=0.002525`, `18/2=0.006385`, `10 AWG=0.000999`.
 3. Design targets: `<=2%` on major `48V` trunks, `<=3%` on planned `12V`/AC branches.
-4. `C-05` is a rollup row that includes both branch and trunk return paths; voltage-drop screen shown is the conservative worst-case (`155A`) within that rollup.
+4. `C-05` is a rollup row that includes both branch and trunk return paths; voltage-drop screen shown is the conservative worst-case (`165A`) within that rollup.
 
 | Circuit ID | From | To | Fuse | Current basis | Gauge | Estimated one-way length | Voltage drop % | BOM gauge bucket | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -346,9 +351,9 @@ Calculation basis for drop screening:
 | `C-02` | Battery B `+` | `F-01B` | `F-01B 200A` | `77.5A` design branch share | `2/0 AWG` | `2.5 ft` | `0.06%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
 | `C-02C` | Battery C `+` | `F-01C` | `F-01C 200A` | `77.5A` design branch share | `2/0 AWG` | `2.5 ft` | `0.06%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
 | `C-03` | Class T load studs | `48V +` bus / disconnect input | `F-01A/B/C` | `77.5A` per branch | `2/0 AWG` | `2.5 ft` each (`x4` conductors) | `0.06%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
-| `C-04` | Disconnect output | Lynx `+` bus | Upstream Class T | `155A` aggregate | `2/0 AWG` | `2.5 ft` | `0.12%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
-| `C-05` | Battery `-` branches | SmartShunt battery side via `48V -` bus | N/A | `77.5A` per battery-negative branch; row rollup also includes one `155A` trunk (`NEGBUS_TO_SHUNT`) | `2/0 AWG` | `2.5 ft` each (`x4` conductors) | `0.12%` @ `51.2V` (worst-case rollup) | Row `28` (`2/0 black`) | PASS |
-| `C-06` | SmartShunt load side | Lynx `-` bus | N/A | `155A` aggregate return | `2/0 AWG` | `2.5 ft` | `0.12%` @ `51.2V` | Row `28` (`2/0 black`) | PASS |
+| `C-04` | Disconnect output | Lynx `+` bus | Upstream Class T | `165A` aggregate | `2/0 AWG` | `2.5 ft` | `0.13%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
+| `C-05` | Battery `-` branches | SmartShunt battery side via `48V -` bus | N/A | `82.5A` per battery-negative branch; row rollup also includes one `165A` trunk (`NEGBUS_TO_SHUNT`) | `2/0 AWG` | `2.5 ft` each (`x4` conductors) | `0.13%` @ `51.2V` (worst-case rollup) | Row `28` (`2/0 black`) | PASS |
+| `C-06` | SmartShunt load side | Lynx `-` bus | N/A | `165A` aggregate return | `2/0 AWG` | `2.5 ft` | `0.13%` @ `51.2V` | Row `28` (`2/0 black`) | PASS |
 | `C-06A` | Lynx positive tap | SmartShunt sense/power lead | OEM inline fuse | OEM harness current | OEM harness | `2.5 ft` | N/A (low-current OEM lead) | Row `23` (kit harness) | PASS |
 | `C-07` | Lynx Slot 1 `DC+` | MultiPlus `DC+` | `F-02 125A` | `125A` | `2/0 AWG` | `2.5 ft` | `0.10%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
 | `C-08` | MultiPlus `DC-` | Lynx `-` bus | `F-02` paired | `125A` | `2/0 AWG` | `2.5 ft` | `0.10%` @ `51.2V` | Row `28` (`2/0 black`) | PASS |
@@ -356,9 +361,9 @@ Calculation basis for drop screening:
 | `C-10` | MPPT `BAT-` | Lynx `-` bus | `F-03` paired | `45A` | `6 AWG` | `2.5 ft` | `0.17%` @ `51.2V` | Row `29` (`6 AWG black`) | PASS |
 | `C-11` | Sterling output `+` | Lynx Slot 3 | `F-04 40A` | `26A` | `6 AWG` | `2.5 ft` | `0.10%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS |
 | `C-12` | Sterling output `-` | Lynx `-` bus | `F-04` paired | `26A` | `6 AWG` | `2.5 ft` | `0.10%` @ `51.2V` | Row `29` (`6 AWG black`) | PASS |
-| `C-13` | Lynx Slot 4 | `F-06` source side | `F-05 30A` | `30A` | `6 AWG` | `2.5 ft` | `0.12%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS |
-| `C-14` | `F-06` load side | Orion `48V +` | `F-06 20A/23A` | `20A` | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS |
-| `C-15` | Orion `48V -` | Lynx `-` bus | `F-06` paired | `20A` | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG black`) | PASS |
+| `C-13` | Lynx Slot 4 | `F-06` source side | `F-05 40A` | `40A` | `6 AWG` | `2.5 ft` | `0.15%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS |
+| `C-14` | `F-06` load side | Orion `48V +` | `F-06 30A MIDI` | `30A` | `6 AWG` | `2.5 ft` | `0.12%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS |
+| `C-15` | Orion `48V -` | Lynx `-` bus | `F-06` paired | `30A` | `6 AWG` | `2.5 ft` | `0.12%` @ `51.2V` | Row `29` (`6 AWG black`) | PASS |
 | `C-16` | Starter battery `+` | Sterling input `+` | `F-08 150A` | `125A` design | `2/0 AWG` | `12 ft` | `1.95%` @ `12V` | Row `28` (`2/0 red`) | PASS (near 2%; keep routing clean) |
 | `C-17` | Vehicle return/chassis | Sterling input `-` | `F-08` paired | `125A` design | `2/0 AWG` | `12 ft` | `1.95%` @ `12V` | Row `28` (`2/0 black`) | PASS (near 2%; verify crimp/ground prep) |
 | `C-18` | Orion `12V +` | Fuse block main `+` stud | `F-07 60A` | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG red`) | PASS |
@@ -370,7 +375,7 @@ Calculation basis for drop screening:
 | `C-22` | 12V fuse panel | Diesel heater | `F-10 15A` | `10A` startup screen | `14 AWG duplex` | `8 ft` | `3.37%` @ `12V` | Row `32` (`14 AWG duplex`) | WARN (startup drop margin tight) |
 | `C-23` | 12V fuse panel | Water pump | `F-10 10A` | `7A` | `14 AWG duplex` | `8 ft` | `2.36%` @ `12V` | Row `32` (`14 AWG duplex`) | PASS |
 | `C-24` | 12V fuse panel | CO+propane detector | `F-10 3A` | `0.2A` | `18/2` | `8 ft` | `0.17%` @ `12V` | Row `33` (`18/2`) | PASS |
-| `C-25` | 12V fuse panel | LED strips | `F-10 5A` | `5A` | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |
+| `C-25` | 12V fuse panel | LED lights + dimmer (Hiatus pre-installed) | `F-10 5A` | `5A` | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |
 | `C-26` | 12V fuse panel | Cerbo GX feed | `F-10 3A` | `0.3A` | `18/2` | `2.5 ft` | `0.08%` @ `12V` | Row `33` (`18/2`) | PASS |
 | `C-27` | PV strings/combiner | MPPT PV input | `F-09A/B/C 15A` | `30A` trunk screen | `10 AWG PV` | `12 ft` trunk + `3x8 ft` string legs | `0.72%` @ `100V` trunk screen | Row `31` (10 AWG pair-equivalent) | PASS (string leg lengths still ASSUMED) |
 | `C-28` | Shore inlet/EMS path | AC input breaker/disconnect | Source-limited AC OCP | `30A` hardware basis | `10/3` | `8 ft` | `0.40%` @ `120VAC` | Row `114` (`10/3 shore + AC-in feed`) | PASS |
@@ -381,6 +386,7 @@ Calculation basis for drop screening:
 | `C-33` | MultiPlus AC-out-2 | Reserve-only capped route | N/A in Phase 1 | N/A | `12 AWG AC` (reserve path only) | `15 ft` | `0.60%` @ `120VAC` (future-use screen) | N/A (not procured in Phase 1) | RESERVE |
 | `C-34` | 12V fuse panel | Office USB PD station | `F-10 20A` | `20A` design cap | `12 AWG duplex` | `5 ft` | `2.65%` @ `12V` | Row `116` (`12 AWG + 14 AWG USB set`) | PASS (keep `<=5 ft` or upsize) |
 | `C-35` | 12V fuse panel | Galley USB PD station | `F-10 15A` | `8A` expected | `14 AWG duplex` | `8 ft` | `2.69%` @ `12V` | Row `116` (`12 AWG + 14 AWG USB set`) | PASS (near 3%; if sustained current rises, move to `12 AWG`) |
+| `C-36` | 12V fuse panel | Maxxair fan (Hiatus pre-installed) | `F-10 10A` | `4A` expected | `14 AWG duplex` | `8 ft` | `1.35%` @ `12V` | Row `32` (`14 AWG duplex`) | PASS |
 
 ## Wire Rollup (No-Padding Purchase Baseline)
 | Gauge / cable family | Estimated total | Source circuits | BOM row |
@@ -392,7 +398,7 @@ Calculation basis for drop screening:
 | `4 AWG` red | `2.5 ft` | `C-19A` | `30` |
 | `4 AWG` black | `2.5 ft` | `C-19B` | `30` |
 | `10 AWG pair-equivalent` (PV) | `36 ft route` (`72 ft` conductor equivalent) | `C-27` (`3x8 ft` strings + `12 ft` combiner trunk, `ASSUMED`) | `31` |
-| `14 AWG duplex` | `44 ft` | `C-20`, `C-21`, `C-22`, `C-23`, `C-35` | `32` |
+| `14 AWG duplex` | `52 ft` | `C-20`, `C-21`, `C-22`, `C-23`, `C-35`, `C-36` | `32` |
 | `18/2` | `18.5 ft` | `C-24`, `C-25`, `C-26` | `33` |
 | `12 AWG AC branch cable` | `35 ft` (`C-33` excluded in Phase 1) | `C-30` through `C-32` | `113` |
 | `10/3 shore + AC-in feed` | `11 ft` | `C-28`, `C-29` | `114` |
