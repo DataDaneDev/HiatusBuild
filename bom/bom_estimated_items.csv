@@ -114,7 +114,7 @@ row,category,component,est_price,price_flag,description_notes,est_purchase_date,
 95,Interior,Spacers or shims,,blank,"1/2"", 1/8"", 1/4"" hole. Thermal break between alum and walls. Plastic or wood.",4/18/2026,planned
 96,Interior,VHB Tape,,blank,"Very High Bonding. Between aluminum and panels, to assist with panel adhesian for short screws (if front facing screw heads are undesired)",4/18/2026,planned
 97,Interior,Foam tape or adhesive,,blank,"prevent 1/4"" panels in 80/20 grove from rattling",4/18/2026,planned
-98,Interior,LED Strips,200,user_filled,Govee,4/18/2026,planned
+98,Interior,LED Strips (ambient/cabinet, separate from Hiatus factory LEDs),200,user_filled,Govee (planned DC branch lighting),4/18/2026,planned
 99,Interior,Monitor Arm,200,user_filled,Heavy Duty (Ergotron style),4/18/2026,planned
 100,Interior,Chair,160,user_filled,Tervo Model U | Folding Office Chair for Small Spaces,4/18/2026,planned
 54,Tools,Track Saw/Table Saw,,blank,track = easier angles,4/22/2026,planned

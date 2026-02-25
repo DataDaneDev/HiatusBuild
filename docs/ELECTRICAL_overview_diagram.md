@@ -16,7 +16,7 @@ Related docs:
 - Added explicit fuse-holder/housing definitions for every fuse family (`Class T`, Lynx `MEGA`, inline `MIDI/ANL/AMI`, PV `gPV`, and `ATO/ATC`).
 - Added conductor schedule across `48V`, `12V`, PV, and AC segments with explicit assumptions.
 - Updated 12V topology to a shared 12V junction fed by an Orion-Tr Smart `48/12-30` charger and a `12V 100Ah` buffer battery branch, with `F-11` source fuse plus `SW-12V-BATT` manual isolation.
-- Added a full-circuit estimated run-length validation pass (`C-01` through `C-36`) and purchase-ready wire rollup totals.
+- Added a full-circuit estimated run-length validation pass (`C-01` through `C-37`) and purchase-ready wire rollup totals.
 
 ## Length Estimation Defaults Used In This Pass
 1. Cabinet internal interconnect default: `2.5 ft` one-way (`ASSUMED`).
@@ -131,6 +131,7 @@ flowchart LR
     USB_OFFICE["12V-08 Office USB PD station\n20A / 12 AWG"]
     USB_GALLEY["12V-09 Galley USB PD station\n15A / 14 AWG"]
     MAXXAIR["12V-10 Maxxair fan\n10A / 14 AWG (Hiatus pre-installed)"]
+    LED_AMBIENT["12V-11 DC ambient/cabinet LED strips\n5A / 18/2 (planned Govee)"]
 
     ORION -- "6 AWG, ~2.5 ft to main + stud" --> F07 --> PANEL
     ORION -- "6 AWG, ~2.5 ft to main - / neg bus" --> PANEL
@@ -148,6 +149,7 @@ flowchart LR
     PANEL -- "12 AWG duplex, ~5 ft (ASSUMED short run)" --> USB_OFFICE
     PANEL -- "14 AWG duplex, ~8 ft (ASSUMED)" --> USB_GALLEY
     PANEL -- "14 AWG duplex, ~8 ft (ASSUMED)" --> MAXXAIR
+    PANEL -- "18/2, ~8 ft (ASSUMED)" --> LED_AMBIENT
 
     STAR -- "return in duplex, ~8 ft" --> PANEL
     FRIDGE -- "return in duplex, ~12 ft" --> PANEL
@@ -159,6 +161,7 @@ flowchart LR
     USB_OFFICE -- "return in duplex, ~5 ft" --> PANEL
     USB_GALLEY -- "return in duplex, ~8 ft" --> PANEL
     MAXXAIR -- "return in duplex, ~8 ft" --> PANEL
+    LED_AMBIENT -- "return in 18/2, ~8 ft" --> PANEL
 ```
 
 ### 12V Operating Intent (Locked)
@@ -169,7 +172,9 @@ flowchart LR
 - The buffer battery remains in the active operating path during normal use and is intended to absorb transients/peaks on the `12V` rail.
 - The fuse block is the `12V` junction device in this baseline: main `+` stud is the source-combine point, and the integrated negative bus/main `-` is the shared return point.
 - Do not solder-splice high-current source conductors; terminate with crimped lugs on rated studs/junction hardware.
-- Hiatus pre-installed 12V branches are tracked here as `12V-06` (LED lights with dimmer) and `12V-10` (Maxxair fan); verify final installed branch labeling during electrical audit.
+- Hiatus pre-installed 12V branches are tracked here as `12V-06` (factory LED lights with dimmer) and `12V-10` (Maxxair fan); verify final installed branch labeling during electrical audit.
+- Planned Govee/ambient strip lighting is a separate branch (`12V-11`) and not part of the Hiatus factory `12V-06` lighting circuit.
+- DC-first lighting intent: keep ambient/cabinet strip lighting on `12V-11` so nighttime lighting does not require inverter operation.
 
 ## AC Path Topology (Shore + Inverter Output, Full Hierarchy)
 ```mermaid
@@ -337,6 +342,7 @@ flowchart LR
 | `C-34` | 12V panel -> USB PD station branch (office zone) | `12V` | High-demand office charging branch (`100W + 65W` class station budget) | `F-10` branch fuse (`20A`) | `12 AWG duplex` baseline | `5 ft` (`ASSUMED`, short-run requirement) |
 | `C-35` | 12V panel -> USB PD station branch (galley zone) | `12V` | Galley charging branch (`65W` class USB-C plus USB-A/C loads) | `F-10` branch fuse (`15A`) | `14 AWG duplex` baseline | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-36` | 12V panel -> Maxxair fan (Hiatus pre-installed) | `12V` | Roof ventilation branch | `F-10` branch fuse (`10A`) | `14 AWG duplex` baseline | `8 ft` (`ASSUMED`, near-load branch) |
+| `C-37` | 12V panel -> DC ambient/cabinet LED strips (planned Govee) | `12V` | Branch load | `F-10` branch fuse (`5A`) | `18/2` baseline | `8 ft` (`ASSUMED`, near-load branch) |
 
 ## Wiring Validation Worksheet (Estimate Pass, 2026-02-18)
 Calculation basis for drop screening:
@@ -387,6 +393,7 @@ Calculation basis for drop screening:
 | `C-34` | 12V fuse panel | Office USB PD station | `F-10 20A` | `20A` design cap | `12 AWG duplex` | `5 ft` | `2.65%` @ `12V` | Row `116` (`12 AWG + 14 AWG USB set`) | PASS (keep `<=5 ft` or upsize) |
 | `C-35` | 12V fuse panel | Galley USB PD station | `F-10 15A` | `8A` expected | `14 AWG duplex` | `8 ft` | `2.69%` @ `12V` | Row `116` (`12 AWG + 14 AWG USB set`) | PASS (near 3%; if sustained current rises, move to `12 AWG`) |
 | `C-36` | 12V fuse panel | Maxxair fan (Hiatus pre-installed) | `F-10 10A` | `4A` expected | `14 AWG duplex` | `8 ft` | `1.35%` @ `12V` | Row `32` (`14 AWG duplex`) | PASS |
+| `C-37` | 12V fuse panel | DC ambient/cabinet LED strips (planned Govee) | `F-10 5A` | `5A` design cap | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |
 
 ## Wire Rollup (No-Padding Purchase Baseline)
 | Gauge / cable family | Estimated total | Source circuits | BOM row |
@@ -399,7 +406,7 @@ Calculation basis for drop screening:
 | `4 AWG` black | `2.5 ft` | `C-19B` | `30` |
 | `10 AWG pair-equivalent` (PV) | `36 ft route` (`72 ft` conductor equivalent) | `C-27` (`3x8 ft` strings + `12 ft` combiner trunk, `ASSUMED`) | `31` |
 | `14 AWG duplex` | `52 ft` | `C-20`, `C-21`, `C-22`, `C-23`, `C-35`, `C-36` | `32` |
-| `18/2` | `18.5 ft` | `C-24`, `C-25`, `C-26` | `33` |
+| `18/2` | `26.5 ft` | `C-24`, `C-25`, `C-26`, `C-37` | `33` |
 | `12 AWG AC branch cable` | `35 ft` (`C-33` excluded in Phase 1) | `C-30` through `C-32` | `113` |
 | `10/3 shore + AC-in feed` | `11 ft` | `C-28`, `C-29` | `114` |
 | USB branch mix (`12 AWG` + `14 AWG`) | `5 ft` (`12 AWG`) + `8 ft` (`14 AWG`) | `C-34`, `C-35` | `116` |

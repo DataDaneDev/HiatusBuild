@@ -92,15 +92,16 @@ Notes:
 | `12V-03` | Diesel heater electrical | `15A` | `14 AWG duplex` | Startup surge expected; estimate pass flags tight margin at `~8 ft` |
 | `12V-04` | Water pump | `10A` | `14 AWG duplex` | Intermittent duty |
 | `12V-05` | CO + propane detector | `3A` | `18/2` | Always-on safety load |
-| `12V-06` | LED lights + dimmer (Hiatus pre-installed) | `5A` | `18/2` | Hiatus pre-installed branch; estimate pass flags voltage-drop warning at `~8 ft`; shorten run/load or upsize |
+| `12V-06` | Factory LED lights + dimmer (Hiatus pre-installed) | `5A` | `18/2` | Hiatus factory branch; separate from planned ambient/Govee strip branch |
 | `12V-07` | Cerbo GX power feed (assumed via `12V` panel) | `3A` | `18/2` | Assumption until final harness lock |
 | `12V-08` | USB PD station branch (office zone) | `20A` | `12 AWG duplex` | Keep `<=5 ft` (estimate-pass assumption) or upsize |
 | `12V-09` | USB PD station branch (galley zone) | `15A` | `14 AWG duplex` | Current estimate pass assumes `~8 ft` and `~8A` expected load; move to `12 AWG` if sustained current rises |
 | `12V-10` | Maxxair fan (Hiatus pre-installed) | `10A` | `14 AWG duplex` | Hiatus pre-installed roof fan branch; verify installed harness and branch labeling at audit |
+| `12V-11` | DC ambient/cabinet LED strips (planned Govee) | `5A` | `18/2` | Planned non-factory lighting branch; keep DC-fed to avoid inverter-on requirement for lighting-only use |
 
 ## F-11 Validation (2026-02-22)
 - Scope validated: `C-19A` (12V buffer battery positive path), including `F-11`, `SW-12V-BATT`, and planned `4 AWG` conductor.
-- Documented branch-fuse envelope from `12V-01` through `12V-10`: `106A` theoretical simultaneous maximum (`10+15+15+10+3+5+3+20+15+10`).
+- Documented branch-fuse envelope from `12V-01` through `12V-11`: `111A` theoretical simultaneous maximum (`10+15+15+10+3+5+3+20+15+10+5`).
 - Modeled practical load envelope from `bom/load_model_wh.csv` is materially lower (`~300W` average, about `25A @ 12V`), but branch-level surge/transient overlap remains possible.
 - Conductor check for `4 AWG`, `2.5 ft` one-way (`5 ft` loop) using this doc resistance basis (`0.0002485 ohm/ft`):
 1. `50A` -> `0.062V` drop (`0.52% @ 12V`)
@@ -114,7 +115,7 @@ Notes:
 - Down-select gate: if final battery/BMS continuous rating is below `100A`, reduce `F-11` to the nearest compliant class (typically `80A`) and synchronize spare stock row `105`.
 
 ## Length-Validation Sync (2026-02-18)
-- `docs/ELECTRICAL_overview_diagram.md` now carries one-way estimated lengths and voltage-drop screening for `C-01` through `C-36`.
+- `docs/ELECTRICAL_overview_diagram.md` now carries one-way estimated lengths and voltage-drop screening for `C-01` through `C-37`.
 - Lynx Orion-feeder branch fuse (`F-05`) is locked to `40A MEGA` for BOM sync in this pass.
 - USB branch baseline is synchronized across docs/BOM: office branch `12 AWG` (`C-34`), galley branch `14 AWG` (`C-35`).
 

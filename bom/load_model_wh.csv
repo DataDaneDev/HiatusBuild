@@ -5,7 +5,7 @@ row,scenario,category,bom_row,component,power_w,duty_hours_per_day,daily_watt_ho
 4,core_workday,Appliances,61,Fridge (35-50qt),20.25,24,486,Assume 45W compressor with 45 percent duty cycle
 5,core_workday,Appliances,79,Starlink Standard,75,10,750,Remote-office workday usage
 6,core_workday,Appliances,62,Diesel heater electrical,30,6,180,Fan plus pump electrical load
-7,core_workday,Interior,98,LED strips,18,4,72,Evening lighting profile
+7,core_workday,Interior,98,Govee ambient/cabinet LED strips (DC branch),18,4,72,Evening ambient lighting profile; separate from Hiatus factory LED+dimmer branch
 8,core_workday,Appliances,74,Water pump,60,0.25,15,Intermittent sink and shower usage
 9,core_workday,Appliances,67,Induction cooktop,1200,0.33,396,One short cooking cycle
 10,core_workday,Appliances,68,Microwave (compact 700W),700,0.1,70,One short reheat cycle
@@ -22,7 +22,7 @@ row,scenario,category,bom_row,component,power_w,duty_hours_per_day,daily_watt_ho
 21,winter_workday,Appliances,61,Fridge (35-50qt),18,24,432,Assume 45W compressor with 40 percent duty cycle in colder ambient conditions
 22,winter_workday,Appliances,79,Starlink Standard,75,10,750,Remote-office workday usage
 23,winter_workday,Appliances,62,Diesel heater electrical,30,12,360,Longer heater runtime in colder weather
-24,winter_workday,Interior,98,LED strips,18,6,108,Longer lighting window in winter
+24,winter_workday,Interior,98,Govee ambient/cabinet LED strips (DC branch),18,6,108,Longer ambient-lighting window in winter; separate from Hiatus factory LED+dimmer branch
 25,winter_workday,Appliances,74,Water pump,60,0.33,20,More frequent usage
 26,winter_workday,Appliances,67,Induction cooktop,1200,0.4,480,Longer cook cycle
 27,winter_workday,Appliances,68,Microwave (compact 700W),700,0.2,140,Two short reheat cycles
@@ -37,7 +37,7 @@ row,scenario,category,bom_row,component,power_w,duty_hours_per_day,daily_watt_ho
 36,minimal_idle_day,Power System,23,SmartShunt,1,24,24,Always-on shunt draw
 37,minimal_idle_day,Appliances,64,CO + Propane Detector,1,24,24,Detector powered continuously
 38,minimal_idle_day,Appliances,61,Fridge (35-50qt),18,24,432,Assume 45W compressor with 40 percent duty cycle
-39,minimal_idle_day,Interior,98,LED strips,18,2,36,Low-light minimal occupancy profile
+39,minimal_idle_day,Interior,98,Govee ambient/cabinet LED strips (DC branch),18,2,36,Low-light ambient profile; separate from Hiatus factory LED+dimmer branch
 40,minimal_idle_day,Appliances,74,Water pump,60,0.1,6,Minimal water use day
 41,minimal_idle_day,Power System,20,Conversion and distribution losses,0,0,30,5 percent adder on low-load DC profile
 42,minimal_idle_day,TOTAL,,TOTAL,0,0,624,Model v3 (BOM loads + owner-supplied office loads)

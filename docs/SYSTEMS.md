@@ -235,6 +235,7 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 ## HVAC and condensation
 - Heating approach in notes: diesel heater with possible branch to battery compartment
 - Ventilation: Maxxair fan included in current camper config
+- Lighting split: Hiatus factory overhead LED+dimmer is a separate circuit from planned ambient/cabinet LED strips (Govee)
 - Condensation controls and climate envelope limits: TBD
 
 ## Safety
@@ -278,6 +279,7 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 - Do not solder-splice high-current 12V source conductors; use crimped lugs on rated stud terminals.
 - Maintain branch-level fuse-to-conductor coordination per `docs/ELECTRICAL_fuse_schedule.md`.
 - Keep always-on detector branch (`12V-05`) protected but never switch-controlled.
+- Keep ambient/cabinet strip lighting on the dedicated DC branch (`12V-11`) so low-light use does not require inverter operation.
 - If sustained `12V` demand exceeds Orion headroom, treat additional `48V->12V` charger capacity (`BOM row 118`) as a safety action, not a convenience upgrade.
 
 ### 120VAC shore/inverter safety
