@@ -61,7 +61,7 @@
 | 48 | Victron Energy Orion-Tr Smart DC to DC Charger (Bluetooth) - 48/12-Volt 30 amp 360-Watt - Battery Charger for Dual Battery Systems - Isolated | - | 1 | $243.95 | $243.95 |
 | 49 | TEMCo 2/0 AWG Welding Cable, Red + Black, 25 ft each | Gauge: 2/0 AWG; Length: 25 ft red + 25 ft black | 1 | $237.75 | $237.75 |
 | 50 | TEMCo 2/0 AWG Welding Cable, Red + Black, 10 ft each | Gauge: 2/0 AWG; Length: 10 ft red + 10 ft black | 1 | $105.02 | $105.02 |
-| 51 | LM YN 100 Ohm 5% Wirewound Aluminum Shell Resistor (Pack of 2) | 100 Ohm; 5%; Pack of 2 | 1 | $7.49 | $7.49 |
+| 51 | LM YN 50 Watt 100 Ohm 5% Wirewound Resistor Electronic Aluminium Shell Resistors Gold (Pack of 2) | 50 Watt; 100 Ohm; 5%; Pack of 2 | 1 | $7.49 | $7.49 |
 
 ## BOM Row Mapping
 
