@@ -22,6 +22,7 @@
 3. Floor build (if included in shell phase)
 - Floor insulation and subfloor/finished floor substrate after under-floor penetrations are known.
 - Output: stable floor datum for cabinetry/module tie-down points.
+- Flooring stack-up, hardpoint method, and procurement status are tracked in `docs/FLOORING_subfloor_build_process.md`.
 
 4. Rough-in phase (electrical + plumbing + heating + comms)
 - Pull trunk wiring, branch runs, fuse/disconnect mounting backers, plumbing supply/drain lines, and heater duct/fuel routing.
@@ -147,3 +148,4 @@
 ## Next doc integration points
 - Update `docs/TRACKING.md` with sequence-related open risks after first dry-fit rehearsal.
 - If date windows change, update this file and `docs/PROJECT.md` together so milestone language stays aligned.
+- Keep `docs/FLOORING_subfloor_build_process.md` and `bom/bom_estimated_items.csv` in sync when flooring purchases or stack-up assumptions change.
