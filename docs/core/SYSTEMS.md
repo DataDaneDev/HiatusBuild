@@ -6,12 +6,12 @@
 - Keep wiring safe, labeled, and serviceable
 
 ### Electrical doc links
-- Implementation topology (components, fuses, holders, gauges): `docs/ELECTRICAL_overview_diagram.md`
-- Fuse IDs, locations, housing methods, spares, and BOM mapping: `docs/ELECTRICAL_fuse_schedule.md`
-- Voltage architecture trade study (`12V` vs `48V`): `docs/ELECTRICAL_12V_vs_48V_trade_study.md`
-- Alternator architecture trade study (Sterling vs Mechman `48V` secondary alternator): `docs/ELECTRICAL_48V_dual_alternator_trade_study.md`
-- Solar option screening matrix (stringing + MPPT fit flags): `docs/SOLAR_configuration_matrix.md`
-- Electrical decisions, risks, and unresolved items: `docs/TRACKING.md`
+- Implementation topology (components, fuses, holders, gauges): `docs/implementation/ELECTRICAL_overview_diagram.md`
+- Fuse IDs, locations, housing methods, spares, and BOM mapping: `docs/implementation/ELECTRICAL_fuse_schedule.md`
+- Voltage architecture trade study (`12V` vs `48V`): `docs/studies/ELECTRICAL_12V_vs_48V_trade_study.md`
+- Alternator architecture trade study (Sterling vs Mechman `48V` secondary alternator): `docs/studies/ELECTRICAL_48V_dual_alternator_trade_study.md`
+- Solar option screening matrix (stringing + MPPT fit flags): `docs/studies/SOLAR_configuration_matrix.md`
+- Electrical decisions, risks, and unresolved items: `docs/core/TRACKING.md`
 
 ### Planning snapshot (as-of `2026-02-18`)
 - Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).
@@ -32,7 +32,7 @@
 | Battery bank | `3x Dumfume 51.2V 100Ah` (`1S3P`; manual allows up to `1S4P`) | `bom/bom_estimated_items.csv` row 3 + `references/Dunfume_36V_48V_100Ah_Battery_-_User_Manual.pdf` |
 | Inverter/charger | MultiPlus-II `48/3000/35-50` | `bom/bom_estimated_items.csv` row 12 |
 | Alternator charging | Sterling `BB1248120` (`12V/24V -> 48V`, `~1500W` max, `~26A` at `57.6V`) + `BBR` remote | `bom/bom_estimated_items.csv` rows 18 and 26 |
-| Vehicle alternator assumption (current) | Factory `240A` (user-reported) with `65%` BBR limit option for extended idle sessions | `docs/TRACKING.md` |
+| Vehicle alternator assumption (current) | Factory `240A` (user-reported) with `65%` BBR limit option for extended idle sessions | `docs/core/TRACKING.md` |
 | Purchase-later alternator path | Mechman 370A alternator + Big 3 wiring estimate | `bom/bom_estimated_items.csv` rows 103 and 104 |
 | DC-DC charger | Orion-Tr Smart `48/12 30A` (`360W`) | `bom/bom_estimated_items.csv` row 20 |
 | 12V buffer battery | `12V 100Ah LiFePO4` on shared 12V junction (`F-11` + `SW-12V-BATT`) | `bom/bom_estimated_items.csv` rows 21, 124, and 125 |
@@ -134,7 +134,7 @@ Base planning factor for your target roof setup is now `68%` end-to-end harvest 
 - `https://www.diodeled.com/45-channel.html`
 
 ### Electrical overview diagram (implementation)
-- Full implementation-level topology diagram: `docs/ELECTRICAL_overview_diagram.md`
+- Full implementation-level topology diagram: `docs/implementation/ELECTRICAL_overview_diagram.md`
 - Scope includes fuse IDs, fuse-holder/housing methods, branch wire-gauge selections, and documented sizing assumptions.
 
 ### RF-003 Distribution Topology Decision (Lynx Locked)
@@ -164,7 +164,7 @@ Reference links:
 Objective: maintain a complete start-to-finish fuse schedule for the approved Lynx architecture.
 
 Current detailed schedule (active reference):
-- `docs/ELECTRICAL_fuse_schedule.md`
+- `docs/implementation/ELECTRICAL_fuse_schedule.md`
 
 Scope covered:
 1. Main battery protection (`Class T`) quantity, rating, and placement.
@@ -196,7 +196,7 @@ Method:
 2. Recalculate scenario daily Wh totals in this file from that CSV.
 3. Recalculate autonomy at the active reserve floor (`usable Wh / daily Wh`).
 4. Recalculate charging tables with latest charge source ratings and assumptions.
-5. Record what changed in `docs/TRACKING.md` (decision/risk/open questions) and `logs/LOG.md`.
+5. Record what changed in `docs/core/TRACKING.md` (decision/risk/open questions) and `logs/LOG.md`.
 6. Remove stale assumptions that are not backed by BOM rows or explicit owner-supplied load assumptions.
 - Formula quick reference:
 ```text
@@ -246,9 +246,9 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 
 ### System-wide controls
 - Keep one-line diagrams, fuse IDs, and conductor IDs synchronized across:
-- `docs/ELECTRICAL_overview_diagram.md`
-- `docs/ELECTRICAL_fuse_schedule.md`
-- `docs/TRACKING.md`
+- `docs/implementation/ELECTRICAL_overview_diagram.md`
+- `docs/implementation/ELECTRICAL_fuse_schedule.md`
+- `docs/core/TRACKING.md`
 - Ensure all protection and isolation devices are physically accessible without disassembling fixed furniture.
 - Keep gas components and AC/DC electrical components separated by design; no mixed service cavities without physical barriers and clear labeling.
 - Label every branch and shutoff point so an operator can isolate faults quickly under stress.
@@ -278,7 +278,7 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 - In normal closed operation, Orion supports both active 12V loads and buffer-battery maintenance through the shared junction path.
 - In this baseline, the 12V fuse block is the shared junction device (`main +` stud combine point plus integrated negative bus return point).
 - Do not solder-splice high-current 12V source conductors; use crimped lugs on rated stud terminals.
-- Maintain branch-level fuse-to-conductor coordination per `docs/ELECTRICAL_fuse_schedule.md`.
+- Maintain branch-level fuse-to-conductor coordination per `docs/implementation/ELECTRICAL_fuse_schedule.md`.
 - Keep always-on detector branch (`12V-05`) protected but never switch-controlled.
 - Keep ambient/cabinet strip lighting on the dedicated DC branch (`12V-11`) so low-light use does not require inverter operation.
 - If sustained `12V` demand exceeds Orion headroom, treat additional `48V->12V` charger capacity (`BOM row 118`) as a safety action, not a convenience upgrade.
@@ -327,9 +327,8 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 - Complete AC verification (polarity, GFCI/RCD trip tests, branch labeling, ground continuity).
 - Complete propane leak check and pressure-hold verification with all planned valves/fittings in final positions.
 - Complete detector placement and functional alarm tests.
-- Record evidence in `logs/LOG.md` and track unresolved items in `docs/TRACKING.md`.
+- Record evidence in `logs/LOG.md` and track unresolved items in `docs/core/TRACKING.md`.
 
 ## Source artifacts
-- `docs/SYSTEMS_workbook_build_notes.md`
-- `docs/SYSTEMS_workbook_electrical_notes.md`
+- `docs/legacy/SYSTEMS_workbook_build_notes_obsolete.md`
 - `bom/load_model_wh.csv`

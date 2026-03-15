@@ -8,7 +8,7 @@
 - Fixed install date: May 7, 2026.
 - Time remaining from baseline date: 80 days.
 - This plan assumes a Hiatus truck bed camper install with major module prep done before delivery.
-- Electrical architecture and BOM assumptions in `docs/SYSTEMS.md` remain the active baseline.
+- Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline.
 
 ## Typical full-build sequence (once camper shell is physically in hand)
 1. Layout freeze and service-map freeze
@@ -22,7 +22,7 @@
 3. Floor build (if included in shell phase)
 - Floor insulation and subfloor/finished floor substrate after under-floor penetrations are known.
 - Output: stable floor datum for cabinetry/module tie-down points.
-- Flooring stack-up, hardpoint method, and procurement status are tracked in `docs/FLOORING_subfloor_build_process.md`.
+- Flooring stack-up, hardpoint method, and procurement status are tracked in `docs/implementation/FLOORING_subfloor_build_process.md`.
 
 4. Rough-in phase (electrical + plumbing + heating + comms)
 - Pull trunk wiring, branch runs, fuse/disconnect mounting backers, plumbing supply/drain lines, and heater duct/fuel routing.
@@ -111,7 +111,7 @@
 - Confirm all required Batch `A+` to `E` items are delivered (not just ordered).
 - Confirm all modules bench-tested and labeled.
 - Confirm drawings/checklists exported and field-ready.
-- Confirm known risks logged in `docs/TRACKING.md`.
+- Confirm known risks logged in `docs/core/TRACKING.md`.
 
 7. May 7 (install day)
 - Execute shell-dependent scope and drop in prebuilt modules where possible.
@@ -146,6 +146,6 @@
 - https://www.thevansmith.com/post/how-long-does-a-van-conversion-take
 
 ## Next doc integration points
-- Update `docs/TRACKING.md` with sequence-related open risks after first dry-fit rehearsal.
-- If date windows change, update this file and `docs/PROJECT.md` together so milestone language stays aligned.
-- Keep `docs/FLOORING_subfloor_build_process.md` and `bom/bom_estimated_items.csv` in sync when flooring purchases or stack-up assumptions change.
+- Update `docs/core/TRACKING.md` with sequence-related open risks after first dry-fit rehearsal.
+- If date windows change, update this file and `docs/core/PROJECT.md` together so milestone language stays aligned.
+- Keep `docs/implementation/FLOORING_subfloor_build_process.md` and `bom/bom_estimated_items.csv` in sync when flooring purchases or stack-up assumptions change.

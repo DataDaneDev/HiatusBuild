@@ -5,8 +5,8 @@ As-of date: `2026-02-18`
 Purpose: document the decision-complete recalculation used to re-baseline battery branch fusing and major 48V trunk conductor sizing for the current `3x 48V 100Ah` architecture.
 
 Related docs:
-- `docs/ELECTRICAL_fuse_schedule.md`
-- `docs/ELECTRICAL_overview_diagram.md`
+- `docs/implementation/ELECTRICAL_fuse_schedule.md`
+- `docs/implementation/ELECTRICAL_overview_diagram.md`
 - `bom/bom_estimated_items.csv`
 
 ## Scope
@@ -120,7 +120,7 @@ Result: passes `<=2%` target in short/medium/long scenario bands.
 ## Acceptance Criteria
 - Selected battery fuse value satisfies: `I_fuse_min <= selected_fuse <= I_fuse_max`.
 - `C-01` through `C-15` satisfy voltage-drop target under chosen scenario band.
-- `docs/ELECTRICAL_fuse_schedule.md`, `docs/ELECTRICAL_overview_diagram.md`, and `bom/bom_estimated_items.csv` all show the same battery-fuse baseline and holder-family assumptions.
+- `docs/implementation/ELECTRICAL_fuse_schedule.md`, `docs/implementation/ELECTRICAL_overview_diagram.md`, and `bom/bom_estimated_items.csv` all show the same battery-fuse baseline and holder-family assumptions.
 
 ## Key Assumptions / Limits
 1. Battery current-limit input is provisional pending validated `51.2V` datasheet/manual.

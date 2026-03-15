@@ -58,8 +58,8 @@ Status date: 2026-02-13
 - Issue: fuse families and ratings are documented, but holder SKU standard is not fully frozen.
 - Why this matters: voltage-class or fitment mismatch at the holder level can create safety and rework risk.
 - Current references:
-- `docs/ELECTRICAL_fuse_schedule.md` (assumptions/open items)
-- `docs/TRACKING.md` (open question on final fuse-holder SKU standard)
+- `docs/implementation/ELECTRICAL_fuse_schedule.md` (assumptions/open items)
+- `docs/core/TRACKING.md` (open question on final fuse-holder SKU standard)
 - `bom/bom_estimated_items.csv` rows `11`, `105`, `106`
 - Clarification needed:
 - Final SKUs for inline holders covering `F-06`, `F-08`, `F-11`, plus the external Victron MEGA holder for `F-07` and PV combiner hardware standard.
@@ -72,7 +72,7 @@ Status date: 2026-02-13
 - Issue: shore/AC scope is now represented at BOM-family level, but final component SKU lock and physical fitment validation are still pending.
 - Why this matters: wrong enclosure/inlet/interface choices can still create rework risk at install time.
 - Current references:
-- `docs/ELECTRICAL_overview_diagram.md` (full AC hierarchy, AC segment table `C-28` through `C-34`)
+- `docs/implementation/ELECTRICAL_overview_diagram.md` (full AC hierarchy, AC segment table `C-28` through `C-34`)
 - `bom/bom_estimated_items.csv` rows `13`, `14`, `15`, `107-114`
 - Clarification needed:
 - Exact SKU/model lock for:
@@ -89,8 +89,8 @@ Status date: 2026-02-13
 - Issue: conductor/fuse assumptions depend on run-length expectations, but CAD routing artifacts are not populated.
 - Why this matters: final wire gauge, fuse choice margin, and cut-length ordering can be wrong if route lengths shift.
 - Current references:
-- `docs/ELECTRICAL_fuse_schedule.md` (run-length assumptions and Orion branch note)
-- `docs/ELECTRICAL_overview_diagram.md` (conductor schedule assumptions)
+- `docs/implementation/ELECTRICAL_fuse_schedule.md` (run-length assumptions and Orion branch note)
+- `docs/implementation/ELECTRICAL_overview_diagram.md` (conductor schedule assumptions)
 - `cad/` (no current Fusion/exports/drawings files)
 - Clarification needed:
 - Preliminary routing and one-way run lengths for major cabinet circuits.
@@ -100,11 +100,11 @@ Status date: 2026-02-13
 
 ## PRF-007 Project Next-Steps Section Is Stale Relative To Completed Electrical Work
 - Severity: Low
-- Issue: `docs/PROJECT.md` still lists fuse-schedule creation as an immediate next decision despite completion.
+- Issue: `docs/core/PROJECT.md` still lists fuse-schedule creation as an immediate next decision despite completion.
 - Why this matters: planning doc drift can waste review cycles and hide true remaining blockers.
 - Current references:
-- `docs/PROJECT.md` (`Immediate next decisions`)
-- `docs/ELECTRICAL_fuse_schedule.md`
+- `docs/core/PROJECT.md` (`Immediate next decisions`)
+- `docs/implementation/ELECTRICAL_fuse_schedule.md`
 - Clarification needed:
 - Preferred cadence for updating high-level “next decisions” after major subsystem closure.
 - Resolution target:

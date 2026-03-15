@@ -5,16 +5,16 @@ As-of date: `2026-02-24`
 Purpose: define each required fuse by circuit, protected conductor/device, holder/housing method, physical placement, and linked wire gauge assumptions for the approved Phase 1 Lynx architecture with a battery-backed 12V bus.
 
 Related docs:
-- Canonical electrical/system baseline: `docs/SYSTEMS.md`
-- Implementation topology and conductor map: `docs/ELECTRICAL_overview_diagram.md`
-- Battery and trunk recalculation record: `docs/ELECTRICAL_battery_fuse_wire_recalc_2026-02-18.md`
-- Decisions/open items tracker: `docs/TRACKING.md`
+- Canonical electrical/system baseline: `docs/core/SYSTEMS.md`
+- Implementation topology and conductor map: `docs/implementation/ELECTRICAL_overview_diagram.md`
+- Battery and trunk recalculation record: `docs/studies/ELECTRICAL_battery_fuse_wire_recalc_2026-02-18.md`
+- Decisions/open items tracker: `docs/core/TRACKING.md`
 - BOM source of truth: `bom/bom_estimated_items.csv`
 
 ## Sweep Findings (2026-02-12)
 | Finding ID | Finding | Impact | Resolution status |
 | --- | --- | --- | --- |
-| `FS-001` | `BB1248120` was modeled in planning docs as `120A` on the `48V` output. | Alternator-recovery math was materially overstated. | Corrected in `bom/bom_estimated_items.csv` row `18` and `docs/SYSTEMS.md` (`~1500W`, about `26A` at `57.6V`). |
+| `FS-001` | `BB1248120` was modeled in planning docs as `120A` on the `48V` output. | Alternator-recovery math was materially overstated. | Corrected in `bom/bom_estimated_items.csv` row `18` and `docs/core/SYSTEMS.md` (`~1500W`, about `26A` at `57.6V`). |
 | `FS-002` | Fuse schedule listed fuse values but not a complete housing/holder definition for every fuse family. | Install path and procurement freeze were ambiguous. | Resolved below with explicit holder/housing method and location per fuse ID. |
 | `FS-003` | Fuse schedule did not tie each fuse to a conductor gauge plan. | Hard to verify "fuse protects conductor" rule at install time. | Resolved below with gauge mapping and assumptions. |
 
@@ -32,7 +32,7 @@ Related docs:
 - Phase 1 complexity lock: no automatic low-voltage disconnect (`LVD`) layer in this revision.
 - SmartShunt control/power lead note: retain the Victron-supplied fused positive sense/power lead assembly (small-current harness), and avoid substituting lower-voltage automotive fuse components on the `48V` system.
 - Sterling rating basis used for this revision: `BB1248120` output ceiling about `1500W` (`~26A` at `57.6V`), with `150A` input fuse and `40A` output fuse guidance.
-- Inverter inrush-control baseline: use a manual pre-charge lead across the `48V` main disconnect studs during first energization with `F-02` installed; detailed procedure is in `docs/OPERATIONS.md` and procurement is tracked in BOM row `19`.
+- Inverter inrush-control baseline: use a manual pre-charge lead across the `48V` main disconnect studs during first energization with `F-02` installed; detailed procedure is in `docs/core/OPERATIONS.md` and procurement is tracked in BOM row `19`.
 
 ## Manufacturer References Used
 - Victron MultiPlus-II `120V` installation page (recommends `125A` DC fuse for `48/3000`; cable table includes `AWG 1` to `AWG 2/0` by length): `https://www.victronenergy.com/media/pg/MultiPlus-II_120V/en/installation.html`
@@ -48,7 +48,7 @@ Related docs:
 
 ## Battery Branch Re-Baseline (2026-02-18)
 - This schedule now uses a gated battery-branch baseline of `200A Class T` per battery (`F-01A/B/C`) as a provisional default.
-- Re-baseline method and calculations are documented in `docs/ELECTRICAL_battery_fuse_wire_recalc_2026-02-18.md`.
+- Re-baseline method and calculations are documented in `docs/studies/ELECTRICAL_battery_fuse_wire_recalc_2026-02-18.md`.
 - Final lock gate for `F-01A/B/C`: capture a true `51.2V` battery datasheet/manual with validated current and terminal limits before permanent fuse lock.
 - Holder-family constraint: battery branch values below `225A` require the `110A-200A` Class T holder family. Do not pair `<225A` fuse targets with `225A-400A` holder-only hardware.
 - If validated battery or terminal limits are lower than current provisional assumptions, move `F-01A/B/C` to `175A` and update BOM row `7` accordingly.
@@ -115,7 +115,7 @@ Notes:
 - Down-select gate: if final battery/BMS continuous rating is below `100A`, reduce `F-11` to the nearest compliant class (typically `80A`) and synchronize spare stock row `105`.
 
 ## Length-Validation Sync (2026-02-18)
-- `docs/ELECTRICAL_overview_diagram.md` now carries one-way estimated lengths and voltage-drop screening for `C-01` through `C-37`.
+- `docs/implementation/ELECTRICAL_overview_diagram.md` now carries one-way estimated lengths and voltage-drop screening for `C-01` through `C-37`.
 - Lynx Orion-feeder branch fuse (`F-05`) is locked to `40A MEGA` for BOM sync in this pass.
 - USB branch baseline is synchronized across docs/BOM: office branch `12 AWG` (`C-34`), galley branch `14 AWG` (`C-35`).
 
@@ -171,7 +171,7 @@ Related non-fuse accessory for energization safety:
 - Updated row `10` estimate should be kept synchronized with the final `40A x6` cart quantity.
 
 ## Assumptions and Open Items
-1. Wire sizing above assumes copper conductors, enclosed vehicle routing, and the one-way run-length estimate set in `docs/ELECTRICAL_overview_diagram.md` (`2026-02-18` pass).
+1. Wire sizing above assumes copper conductors, enclosed vehicle routing, and the one-way run-length estimate set in `docs/implementation/ELECTRICAL_overview_diagram.md` (`2026-02-18` pass).
 2. `F-09A/B/C` remains provisional at `15A` pending final solar module datasheet max-series-fuse confirmation.
 3. Final SKU lock is still required for inline holders used by `F-08` and `F-11`, plus the external Victron MEGA holder for `F-07` and `SW-12V-BATT`.
 4. If Orion run lengths exceed the short/medium assumption, keep `F-06`/`F-07` and upsize conductors before energizing.
@@ -179,6 +179,6 @@ Related non-fuse accessory for energization safety:
 6. Keep the SmartShunt fused lead as an OEM harness item unless an equivalent voltage-rated replacement is fully validated.
 7. `SW-12V-BATT` is manual-only in Phase 1; no automatic LVD behavior is assumed in this schedule.
 8. Battery listing data (`<=200A` current limit) is currently treated as provisional because the provided screenshot includes `14.6V/14.2V` values that are not a `51.2V` profile; final lock requires validated `51.2V` battery documentation.
-9. If final battery current or terminal limits are lower than current assumptions, down-select `F-01A/B/C` to `175A` and keep fuse-to-conductor coordination synchronized with `docs/ELECTRICAL_overview_diagram.md` and `bom/bom_estimated_items.csv`.
+9. If final battery current or terminal limits are lower than current assumptions, down-select `F-01A/B/C` to `175A` and keep fuse-to-conductor coordination synchronized with `docs/implementation/ELECTRICAL_overview_diagram.md` and `bom/bom_estimated_items.csv`.
 10. Orion fuse selection is side-voltage based per Victron table (`input or output`), not just converter model number. Keep `F-06` and `F-07` aligned to `48V` input / `12V` output sides.
 11. Final lock for `F-11` requires explicit 12V buffer battery/BMS continuous discharge-current confirmation; if `<100A`, down-select `F-11` and `SW-12V-BATT`/holder family accordingly.

@@ -18,7 +18,7 @@
 - Keep system serviceable and safe in multi-climate travel use
 
 ## Current pre-camper execution focus (electrical + flooring)
-- Use `docs/STARTER_PLAN_electrical_and_flooring_pre_camper.md` as the active day-to-day checklist while the camper shell is not yet in hand.
+- Use `docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md` as the active day-to-day checklist while the camper shell is not yet in hand.
 - Prioritize reversible progress: templating, mock layout boards, labeling, and cut planning.
 - Defer shell-dependent irreversible work (final penetrations, final route-length cuts, permanent finish-floor bonding).
 
@@ -41,7 +41,7 @@
 ## Scope clarifications from workbook
 - In scope for Phase 1 includes office-first electrical architecture, Starlink support, cabinetry/workstation, and core plumbing.
 - Truck mechanical upgrades listed as "skip for now" remain out of scope for Phase 1.
-- Several passthrough decisions (solar, shore power, diesel/propane routing) are still pending and tracked in `docs/TRACKING.md`.
+- Several passthrough decisions (solar, shore power, diesel/propane routing) are still pending and tracked in `docs/core/TRACKING.md`.
 
 ## Milestone plan (draft)
 - M0: requirements baseline frozen
@@ -58,7 +58,7 @@
 - Target install date remains fixed at May 7, 2026 (`80` days from this baseline date).
 - Accelerated procurement phase (`Batch A+`) is active in `bom/bom_estimated_items.csv` with core electrical plus bench-build wiring/consumables pulled into February 16 to February 21.
 - Detailed stage-by-stage order of operations, dependencies, and draft date windows:
-- `docs/PROJECT_build_order_of_operations.md`
+- `docs/plans/PROJECT_build_order_of_operations.md`
 
 ## Immediate next decisions
 - Execute `Batch A+` purchase wave and capture vendor/ETA status for rows `3`, `4`, `5`, `6`, `7`, `10`, `11`, `12`, `16`, `17`, `18`, `20`, `21`, `22`, `23`, `26`, `27`, `28` through `45`, `52`, `53`, `60`, `117`

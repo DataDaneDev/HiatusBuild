@@ -9,8 +9,8 @@ Status date: 2026-02-12
 - Why this matters: Autonomy and solar sufficiency were materially overstated.
 - Current references:
 - `bom/load_model_wh.csv` (`Owner-Supplied` rows)
-- `docs/SYSTEMS.md`
-- `docs/TRACKING.md`
+- `docs/core/SYSTEMS.md`
+- `docs/core/TRACKING.md`
 - Clarification captured:
 - Keep owner devices out of BOM cost tracking.
 - Include owner devices in Wh modeling and all dependent electrical calculations.
@@ -20,8 +20,8 @@ Status date: 2026-02-12
 - Tablet + keyboard/mouse charging allowance included.
 - Resolution target:
 - Add modeled rows in `bom/load_model_wh.csv`.
-- Recalculate `docs/SYSTEMS.md`.
-- Recalculate tracking baselines in `docs/TRACKING.md`.
+- Recalculate `docs/core/SYSTEMS.md`.
+- Recalculate tracking baselines in `docs/core/TRACKING.md`.
 - Status: Closed (`2026-02-11`) pending measured load validation
 
 ## RF-002 Alternator Charging Path Not Locked
@@ -30,11 +30,11 @@ Status date: 2026-02-12
 - Why this matters: Charge recovery math and procurement are now tied to one concrete hardware path.
 - Current references:
 - `bom/bom_estimated_items.csv` (rows `18` and `26`)
-- `docs/SYSTEMS.md`
-- `docs/TRACKING.md` (`D-008`)
+- `docs/core/SYSTEMS.md`
+- `docs/core/TRACKING.md` (`D-008`)
 - Resolution completed:
 - Component choice frozen in BOM.
-- Charge-rate assumptions and recovery-time math updated in `docs/SYSTEMS.md`.
+- Charge-rate assumptions and recovery-time math updated in `docs/core/SYSTEMS.md`.
 - Status: Closed (`2026-02-11`)
 
 ## RF-003 Power Distribution Topology Ambiguity (Lynx vs Discrete)
@@ -46,8 +46,8 @@ Status date: 2026-02-12
 - Next workstream explicitly defined: full start-to-finish fuse schedule for this locked topology.
 - Current references:
 - `bom/bom_estimated_items.csv:6`
-- `docs/SYSTEMS.md` (`RF-003 Distribution Topology Decision (Lynx Locked)`)
-- `docs/ELECTRICAL_overview_diagram.md`
+- `docs/core/SYSTEMS.md` (`RF-003 Distribution Topology Decision (Lynx Locked)`)
+- `docs/implementation/ELECTRICAL_overview_diagram.md`
 - Status: Closed (`2026-02-12`)
 
 ## RF-004 Battery Energy Convention Not Finalized (48V vs 51.2V)
@@ -55,12 +55,12 @@ Status date: 2026-02-12
 - Issue: Resolved.
 - Why this matters: Capacity/autonomy/charge-time outputs shift when nominal voltage basis changes.
 - Current references:
-- `docs/SYSTEMS.md`
-- `docs/TRACKING.md`
+- `docs/core/SYSTEMS.md`
+- `docs/core/TRACKING.md`
 - Resolution completed (`2026-02-12`):
 - Keep `48V` as architecture/system label.
 - Use `51.2V` nominal for battery Wh accounting in model tables.
-- Recalculate dependent capacity/autonomy values in `docs/SYSTEMS.md`.
+- Recalculate dependent capacity/autonomy values in `docs/core/SYSTEMS.md`.
 - Status: Closed (`2026-02-12`)
 
 ## RF-005 Fridge Row Semantics Could Be Misread
@@ -82,8 +82,8 @@ Status date: 2026-02-12
 - Issue: Historical entry still states baseline `3,790 Wh/day` was documented in SYSTEMS (even though superseded).
 - Why this matters: Quick readers may anchor on retired values.
 - Current references:
-- `docs/TRACKING.md:18`
-- `docs/TRACKING.md:19`
+- `docs/core/TRACKING.md:18`
+- `docs/core/TRACKING.md:19`
 - Clarification needed:
 - Whether to keep historical text verbatim or append an explicit superseded-value note format.
 - Resolution target:
@@ -96,8 +96,8 @@ Status date: 2026-02-12
 - Why this matters: Wrong fitment or incomplete vehicle-side wiring prep can create installation delays or charging/grounding faults.
 - Current references:
 - `bom/bom_estimated_items.csv` (rows `103` and `104`)
-- `docs/SYSTEMS.md` (alternator charging and safety baseline sections)
-- `docs/TRACKING.md` (`D-009`, `R-006`)
+- `docs/core/SYSTEMS.md` (alternator charging and safety baseline sections)
+- `docs/core/TRACKING.md` (`D-009`, `R-006`)
 - Clarification needed:
 - Truck-specific alternator fitment confirmation and shorter-belt part number.
 - Final Big 3 cable/fuse package and RVC-loop routing requirement for the truck.
@@ -111,11 +111,11 @@ Status date: 2026-02-12
 - Why this matters: Charge-recovery timelines and alternator strategy decisions were materially overstated.
 - Current references:
 - `bom/bom_estimated_items.csv` row `18`
-- `docs/SYSTEMS.md` (Alternator charging section)
-- `docs/TRACKING.md` (`D-012`)
+- `docs/core/SYSTEMS.md` (Alternator charging section)
+- `docs/core/TRACKING.md` (`D-012`)
 - Resolution completed (`2026-02-12`):
 - Corrected charger basis to `~1500W` max output (`~26A` at `57.6V` nominal output setting).
-- Recalculated alternator-recovery time assumptions in `docs/SYSTEMS.md`.
+- Recalculated alternator-recovery time assumptions in `docs/core/SYSTEMS.md`.
 - Updated electrical topology and fuse docs to implementation-level detail with holder and conductor mapping.
 - Status: Closed (`2026-02-12`)
 

@@ -5,10 +5,10 @@ As-of date: `2026-03-15`
 Purpose: give a phone-friendly, practical plan you can start immediately **without the camper shell in hand**, based on your current inventory and open decisions.
 
 Related references:
-- `docs/ELECTRICAL_overview_diagram.md`
-- `docs/ELECTRICAL_fuse_schedule.md`
-- `docs/ELECTRICAL_48V_dual_alternator_trade_study.md`
-- `docs/FLOORING_subfloor_build_process.md`
+- `docs/implementation/ELECTRICAL_overview_diagram.md`
+- `docs/implementation/ELECTRICAL_fuse_schedule.md`
+- `docs/studies/ELECTRICAL_48V_dual_alternator_trade_study.md`
+- `docs/implementation/FLOORING_subfloor_build_process.md`
 - `bom/bom_estimated_items.csv`
 
 ---
@@ -98,7 +98,7 @@ Exit criteria:
 
 ## 3.5 Wiring/harness preparation you can do now
 You can pre-build a lot now without the camper:
-- Print/label all fuse IDs from `docs/ELECTRICAL_fuse_schedule.md`.
+- Print/label all fuse IDs from `docs/implementation/ELECTRICAL_fuse_schedule.md`.
 - Build a wire label kit by circuit ID (`C-01`, etc.) and by endpoint.
 - Pre-stage lugs/heatshrink by gauge bins (`2/0`, `2 AWG`, `4 AWG`, etc.).
 - Build a termination checklist per branch (crimp, tug test, heatshrink, torque mark, continuity).
@@ -135,7 +135,7 @@ Mark every template with:
 - date/version (example: `FLOOR-TEMPLATE-v1`)
 
 ## 4.2 Hardpoint planning rule (critical)
-Before plywood arrives, pre-decide hardpoint pocket zones from `docs/FLOORING_subfloor_build_process.md`:
+Before plywood arrives, pre-decide hardpoint pocket zones from `docs/implementation/FLOORING_subfloor_build_process.md`:
 - At structural anchor points, EPS/EPDM are removed locally so plywood bears directly on steel.
 - Keep these zones clearly marked in templates to prevent accidental compressible stackups.
 

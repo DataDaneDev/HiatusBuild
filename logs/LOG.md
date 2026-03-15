@@ -16,9 +16,9 @@ Single running log for build progress and test evidence.
 - `references/Dunfume_36V_48V_100Ah_Battery_-_User_Manual.pdf`
 - Updated the battery row in `bom/bom_estimated_items.csv` to identify the Dumfume `51.2V 100Ah` battery and capture manual-backed charge/parallel specs.
 - Added a new supporting study:
-- `docs/ELECTRICAL_48V_dual_alternator_trade_study.md`
-- Added a cross-link from `docs/SYSTEMS.md` so the new study is discoverable from the canonical electrical doc map.
-- Added new open questions in `docs/TRACKING.md` focused on:
+- `docs/studies/ELECTRICAL_48V_dual_alternator_trade_study.md`
+- Added a cross-link from `docs/core/SYSTEMS.md` so the new study is discoverable from the canonical electrical doc map.
+- Added new open questions in `docs/core/TRACKING.md` focused on:
 - Wakespeed support status for the internal-BMS, non-CAN battery bank
 - required load-dump / avalanche-diode mitigation for a direct `48V` alternator path
 - whether the Mechman `48V` system can remain electrically isolated from chassis as desired
@@ -46,9 +46,9 @@ Single running log for build progress and test evidence.
 - `2026-02-21`: rows `42`, `43`, `44`, `45`
 - Restored missing BOM row `122` as a placeholder interior procurement line item for drawer-slide kits so canonical row references remain coherent.
 - Synchronized planning/governance docs:
-- `docs/PROJECT_build_order_of_operations.md` updated from `Batch A` to `Batch A+` and adjusted downstream batch scope.
-- `docs/PROJECT.md` sequencing baseline updated to `2026-02-16` with active `Batch A+` note.
-- `docs/TRACKING.md` updated with decisions `D-019` and `D-020`.
+- `docs/plans/PROJECT_build_order_of_operations.md` updated from `Batch A` to `Batch A+` and adjusted downstream batch scope.
+- `docs/core/PROJECT.md` sequencing baseline updated to `2026-02-16` with active `Batch A+` note.
+- `docs/core/TRACKING.md` updated with decisions `D-019` and `D-020`.
 - Measurements/data: none captured (documentation/procurement-plan update only).
 - Tests run: row-level verification of targeted BOM date updates (`37` checks, `0` mismatches).
 - Issues: initial BOM write attempt was blocked by a temporary file lock; write succeeded after lock release.
@@ -56,18 +56,18 @@ Single running log for build progress and test evidence.
 
 ## 2026-02-15
 - Performed integrated safety deep-dive for the current architecture with focus on the `48V 10.24kWh` system plus `12V`, `120VAC`, and propane paths.
-- Expanded `docs/SYSTEMS.md` `## Safety` from placeholder bullets to a build-ready baseline covering:
+- Expanded `docs/core/SYSTEMS.md` `## Safety` from placeholder bullets to a build-ready baseline covering:
 - system-wide controls and isolation/access principles
 - `48V` high-fault-current hazard controls and commissioning checks
 - `12V` distribution protections and Orion headroom safety trigger
 - `120VAC` protection-chain and commissioning test requirements
 - propane rear-mount/passthrough controls and indoor water-heater selection rule
 - emergency shutdown order and pre-close safety hold points
-- Updated governance in `docs/TRACKING.md`:
+- Updated governance in `docs/core/TRACKING.md`:
 - Added decision `D-015` (consolidated safety baseline adoption)
 - Added risks `R-007` (`48V` arc/thermal fault exposure), `R-008` (propane/CO exposure), and `R-009` (AC neutral-ground/GFCI protection risk)
 - Added open questions to lock propane heater listing/venting path, passthrough hardware rules, leak-test cadence, and detector/extinguisher layout.
-- Added operations-ready checklist content in `docs/OPERATIONS.md`:
+- Added operations-ready checklist content in `docs/core/OPERATIONS.md`:
 - pre-energization checks
 - propane-specific checks
 - incident-response quick actions
@@ -81,17 +81,17 @@ Single running log for build progress and test evidence.
 - Reviewed current project AC assumptions in:
 - `bom/bom_estimated_items.csv` (rows `13`, `14`, `15`, `67`, `68`)
 - `bom/load_model_wh.csv` (owner-supplied office AC-path assumptions)
-- `docs/ELECTRICAL_overview_diagram.md` (shore + inverter AC topology)
+- `docs/implementation/ELECTRICAL_overview_diagram.md` (shore + inverter AC topology)
 - Quantified modeled AC-related energy share at roughly `27.9%` (`core_workday`) to `30.7%` (`winter_workday`) for current assumptions.
-- Updated `docs/TEMP_procurement_red_flags.md` PRF-003 to:
+- Updated `docs/temp/TEMP_procurement_red_flags.md` PRF-003 to:
 - Separate "AC safety requirements" from "panel size/mounting method" assumptions.
 - Add confirmed Phase 1 AC load list and right-sized architecture options.
 - Document that DIN rail is optional pending final enclosure choice.
 - Keep PRF-003 open until AC topology lock and SKU lock are complete.
-- Expanded `docs/ELECTRICAL_overview_diagram.md` AC section from high-level path to full hierarchy:
+- Expanded `docs/implementation/ELECTRICAL_overview_diagram.md` AC section from high-level path to full hierarchy:
 - Shore-source path, MultiPlus transfer/charger behavior, AC-out branch strategy, optional AC-out-2 handling, and USB-C PD strategy.
 - Added AC operating-behavior notes, protection-chain requirements, procurement gap checklist, and detailed AC conductor-segment entries (`C-28` through `C-35`).
-- Added new tracking open questions in `docs/TRACKING.md` for shore-interface lock (`15A` vs `30A`) and USB charging path lock (DC USB-C PD vs AC USB receptacles).
+- Added new tracking open questions in `docs/core/TRACKING.md` for shore-interface lock (`15A` vs `30A`) and USB charging path lock (DC USB-C PD vs AC USB receptacles).
 - Locked Phase 1 AC/USB baseline for procurement:
 - AC-out-1 split into two branches (`20A` galley + `15A` office) with `4` total `120V` receptacle locations (`2` galley, `2` office).
 - USB charging baseline locked to `4` DC-fed USB-C PD points (`2` office + `2` galley) on dedicated `12V` branches.
@@ -99,25 +99,25 @@ Single running log for build progress and test evidence.
 - Refined rows `13`, `14`, `15`, and `17`.
 - Added rows `107-118` for shore interface, AC enclosure/protection, receptacle hardware, AC wire scope, USB-C PD hardware, and optional 12V-converter expansion path.
 - Set USB-C PD zone design intent to two `10A` fused `12V` branches (office + galley) to keep demand aligned with current Orion headroom assumptions.
-- Updated `docs/ELECTRICAL_overview_diagram.md` and `docs/ELECTRICAL_fuse_schedule.md` to map AC branches and USB-C PD branch circuits to the locked baseline.
-- Added decision `D-013` in `docs/TRACKING.md` and replaced prior AC architecture open questions with a SKU-lock follow-up item.
+- Updated `docs/implementation/ELECTRICAL_overview_diagram.md` and `docs/implementation/ELECTRICAL_fuse_schedule.md` to map AC branches and USB-C PD branch circuits to the locked baseline.
+- Added decision `D-013` in `docs/core/TRACKING.md` and replaced prior AC architecture open questions with a SKU-lock follow-up item.
 
 ## 2026-02-12
-- Built RF-003 decision support for power-distribution topology in `docs/SYSTEMS.md`:
+- Built RF-003 decision support for power-distribution topology in `docs/core/SYSTEMS.md`:
 - Compared `DIY discrete` vs `Lynx one-module` vs `Lynx two-module`.
 - Listed required component groupings for each topology.
 - Added planning-level cost deltas using current BOM rows plus explicit Lynx price assumptions.
 - Added clear decision rule for whether `1` Lynx is sufficient or when `2` is justified.
-- Updated `docs/TEMP_electrical_red_flags.md` RF-003 references and status to `Open (decision-ready)`.
-- Added high-level electrical architecture draft in `docs/ELECTRICAL_overview_diagram.md` using a topology-only Mermaid diagram.
-- Linked the new diagram from `docs/SYSTEMS.md` and indexed it in `docs/README.md`.
+- Updated `docs/temp/TEMP_electrical_red_flags.md` RF-003 references and status to `Open (decision-ready)`.
+- Added high-level electrical architecture draft in `docs/implementation/ELECTRICAL_overview_diagram.md` using a topology-only Mermaid diagram.
+- Linked the new diagram from `docs/core/SYSTEMS.md` and indexed it in `docs/README.md`.
 - Kept this revision intentionally free of fuse/disconnect/wire-gauge details pending final topology lock.
 - Performed full electrical-system sweep for fuse/holder/gauge consistency:
-- Corrected Sterling `BB1248120` spec basis from `120A @ 48V` assumption to `~1500W` max output (`~26A` at `57.6V`) in `bom/bom_estimated_items.csv` and `docs/SYSTEMS.md`.
-- Recalculated alternator charging replacement-time assumptions in `docs/SYSTEMS.md`.
-- Replaced `docs/ELECTRICAL_overview_diagram.md` with implementation-level topology including all major components, fuse holders, and conductor schedule.
-- Reworked `docs/ELECTRICAL_fuse_schedule.md` to include full fuse housing methods, branch gauge tie-ins, and sweep findings.
-- Added decision `D-012` in `docs/TRACKING.md` and closed new red flag `RF-008` in `docs/TEMP_electrical_red_flags.md`.
+- Corrected Sterling `BB1248120` spec basis from `120A @ 48V` assumption to `~1500W` max output (`~26A` at `57.6V`) in `bom/bom_estimated_items.csv` and `docs/core/SYSTEMS.md`.
+- Recalculated alternator charging replacement-time assumptions in `docs/core/SYSTEMS.md`.
+- Replaced `docs/implementation/ELECTRICAL_overview_diagram.md` with implementation-level topology including all major components, fuse holders, and conductor schedule.
+- Reworked `docs/implementation/ELECTRICAL_fuse_schedule.md` to include full fuse housing methods, branch gauge tie-ins, and sweep findings.
+- Added decision `D-012` in `docs/core/TRACKING.md` and closed new red flag `RF-008` in `docs/temp/TEMP_electrical_red_flags.md`.
 
 ## 2026-02-11
 - Workspace structure simplified and consolidated for lower documentation overhead.
@@ -137,50 +137,50 @@ Single running log for build progress and test evidence.
 - `media/inspiration/workbook_import/` (non-layout images)
 - `cad/drawings/workbook_import/` (layout-sheet images)
 - `media/inspiration/workbook_import/manifest.json` maps source sheet to extracted files.
-- Updated canonical docs (`docs/PROJECT.md`, `docs/SYSTEMS.md`, `docs/OPERATIONS.md`, `docs/TRACKING.md`) and `bom/BOM.md` with workbook-derived content.
-- Added maintained electrical capacity and charging reference to `docs/SYSTEMS.md` with:
+- Updated canonical docs (`docs/core/PROJECT.md`, `docs/core/SYSTEMS.md`, `docs/core/OPERATIONS.md`, `docs/core/TRACKING.md`) and `bom/BOM.md` with workbook-derived content.
+- Added maintained electrical capacity and charging reference to `docs/core/SYSTEMS.md` with:
 - Scenario-based usage models aligned to remote-office goals.
 - Battery autonomy math (`100%->0%` and `100%->20%` reserve floor).
 - Solar, alternator, and shore charging potential tables.
 - Formula block and update workflow for future recalculation.
-- Updated `docs/TRACKING.md` with:
+- Updated `docs/core/TRACKING.md` with:
 - Decision D-003 (canonical maintained electrical model).
 - Risk R-004 (inverter overload risk from simultaneous high-draw AC loads).
 - Performed full electrical model reset from BOM source of truth:
 - Temporary battery interpretation was set to `2x 51.2V 400Ah LiFePO4` (later corrected same day).
 - Replaced `bom/load_model_wh.csv` with BOM-derived model v2 (`core_workday`, `winter_workday`, `minimal_idle_day`).
-- Recalculated `docs/SYSTEMS.md` capacity, autonomy, and charging potential from BOM-derived values.
+- Recalculated `docs/core/SYSTEMS.md` capacity, autonomy, and charging potential from BOM-derived values.
 - Added tracking updates:
 - Decision D-004 (retire workbook WH model, BOM-only model).
 - Risk R-005 (later revised after battery capacity correction).
 - Corrected battery capacity interpretation after follow-up clarification:
 - Installed bank is `2x 48V 100Ah` (not `2x 400Ah`).
 - `400Ah` is treated as max 4-battery system capability, not installed capacity.
-- Updated `bom/bom_estimated_items.csv` battery row and recalculated `docs/SYSTEMS.md` capacity/autonomy/shore-recharge numbers.
-- Updated `docs/TRACKING.md` with Decision D-005 and revised Risk R-005 to reflect reduced no-charge autonomy.
+- Updated `bom/bom_estimated_items.csv` battery row and recalculated `docs/core/SYSTEMS.md` capacity/autonomy/shore-recharge numbers.
+- Updated `docs/core/TRACKING.md` with Decision D-005 and revised Risk R-005 to reflect reduced no-charge autonomy.
 - Reviewed electrical model for winter-fridge and solar-assumption accuracy:
 - Updated `bom/load_model_wh.csv` winter fridge from `55%` to `40%` duty-cycle assumption.
 - Recalculated winter conversion-loss row and total from `3,181 Wh/day` to `3,003 Wh/day`.
-- Updated `docs/SYSTEMS.md` with:
+- Updated `docs/core/SYSTEMS.md` with:
 - revised winter DoD/autonomy/charging replacement times,
 - a dedicated `20%` minimum SOC reserve-floor framing for autonomy,
 - and a `900W` flexible `3S3P` solar derate model (base `68%`, sensitivity `60%-75%`).
-- Updated `docs/TRACKING.md` with Decision D-006 and follow-up validation action for measured fridge/solar logs.
+- Updated `docs/core/TRACKING.md` with Decision D-006 and follow-up validation action for measured fridge/solar logs.
 - Resolved RF-001 policy mismatch for owner-supplied office electronics:
 - Kept owner devices out of BOM procurement cost tracking.
 - Added explicit owner-supplied load rows (laptop, 27 inch 1440p monitor, tablet/peripherals) to `bom/load_model_wh.csv` model v3.
-- Recalculated `docs/SYSTEMS.md` load totals, autonomy, and charging replacement times against model v3.
-- Updated `docs/TRACKING.md` with Decision D-007 and refreshed load/risk/open-question entries.
-- Marked `docs/TEMP_electrical_red_flags.md` RF-001 as closed pending measured validation.
+- Recalculated `docs/core/SYSTEMS.md` load totals, autonomy, and charging replacement times against model v3.
+- Updated `docs/core/TRACKING.md` with Decision D-007 and refreshed load/risk/open-question entries.
+- Marked `docs/temp/TEMP_electrical_red_flags.md` RF-001 as closed pending measured validation.
 - Swapped alternator charging architecture to Sterling:
 - Updated `bom/bom_estimated_items.csv` row `18` to Sterling `BB1248120` (`$807`) and added row `26` for Sterling `BBR` remote (`$108`).
 - Updated BOM rollups in `bom/BOM.md` and `bom/bom_summary.json` (current estimated total now `$45,879.64`; Power System subtotal `$5,041.00`).
-- Reworked alternator charging math in `docs/SYSTEMS.md` for Sterling nameplate, `65%` remote-limited output, and a practical `240A` alternator planning cap.
-- Added decision D-008 in `docs/TRACKING.md` and closed RF-002 in `docs/TEMP_electrical_red_flags.md`.
+- Reworked alternator charging math in `docs/core/SYSTEMS.md` for Sterling nameplate, `65%` remote-limited output, and a practical `240A` alternator planning cap.
+- Added decision D-008 in `docs/core/TRACKING.md` and closed RF-002 in `docs/temp/TEMP_electrical_red_flags.md`.
 - Added purchase-later vehicle charging upgrade path:
 - Added JS high-output alternator (`$548`) and Big 3 wiring estimate (`$225`) to `bom/bom_estimated_items.csv`.
 - Added Big 3 note to existing 2/0 cable row to indicate gauge compatibility and expected extra length when upgrade is activated.
 - Updated BOM rollups (`bom/BOM.md`, `bom/bom_summary.json`) to total `$46,652.64` with `102` estimated line items.
-- Updated planning docs (`docs/SYSTEMS.md`, `docs/PROJECT.md`, `docs/TRACKING.md`, `docs/TEMP_electrical_red_flags.md`) with staged stock-alternator-first strategy and purchase-later fitment/spec lock actions.
+- Updated planning docs (`docs/core/SYSTEMS.md`, `docs/core/PROJECT.md`, `docs/core/TRACKING.md`, `docs/temp/TEMP_electrical_red_flags.md`) with staged stock-alternator-first strategy and purchase-later fitment/spec lock actions.
 - Swapped purchase-later alternator candidate from JS to Mechman 370A (SKU `11532370`) at `$599`.
 - Re-synced BOM rollups after price/model swap (current CSV total `$46,703.64`; Power System subtotal `$5,640.00`; `102` estimated line items).

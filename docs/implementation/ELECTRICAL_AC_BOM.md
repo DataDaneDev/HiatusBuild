@@ -5,9 +5,9 @@ As-of date: `2026-02-19`
 Purpose: lock the compact split-panel AC architecture and procurement scope for Phase 1 with a `30A` shore-capable AC-in path, UL-listed DIN protection hardware, and reserve-only `AC-out-2`.
 
 Related docs:
-- `docs/ELECTRICAL_overview_diagram.md`
-- `docs/SYSTEMS.md`
-- `docs/TRACKING.md`
+- `docs/implementation/ELECTRICAL_overview_diagram.md`
+- `docs/core/SYSTEMS.md`
+- `docs/core/TRACKING.md`
 - `bom/bom_estimated_items.csv`
 
 ## Locked AC Architecture
@@ -83,10 +83,10 @@ Use this checklist as the acceptance gate before procurement freeze and before f
 
 ### 5) Documentation parity
 - Confirm AC assumptions match across:
-  - `docs/ELECTRICAL_AC_BOM.md`
-  - `docs/ELECTRICAL_overview_diagram.md`
-  - `docs/SYSTEMS.md`
-  - `docs/TRACKING.md`
+  - `docs/implementation/ELECTRICAL_AC_BOM.md`
+  - `docs/implementation/ELECTRICAL_overview_diagram.md`
+  - `docs/core/SYSTEMS.md`
+  - `docs/core/TRACKING.md`
   - `bom/bom_estimated_items.csv`
 
 ### 6) Operating scenarios

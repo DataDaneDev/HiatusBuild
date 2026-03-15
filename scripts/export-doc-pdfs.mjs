@@ -12,11 +12,11 @@ import {
 import path from "node:path";
 
 const DEFAULT_TARGETS = [
-  "docs/ELECTRICAL_AC_BOM.md",
-  "docs/ELECTRICAL_fuse_schedule.md",
-  "docs/ELECTRICAL_overview_diagram.md",
-  "docs/SYSTEMS.md",
-  "docs/PROJECT.md",
+  "docs/implementation/ELECTRICAL_AC_BOM.md",
+  "docs/implementation/ELECTRICAL_fuse_schedule.md",
+  "docs/implementation/ELECTRICAL_overview_diagram.md",
+  "docs/core/SYSTEMS.md",
+  "docs/core/PROJECT.md",
 ];
 
 const MERMAID_BLOCK_REGEX = /```mermaid[^\n]*\r?\n([\s\S]*?)```/g;

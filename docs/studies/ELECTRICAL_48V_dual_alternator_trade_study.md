@@ -291,11 +291,11 @@ This is a practical system-behavior difference, not just a feature preference.
 - The retained factory alternator fully preserves normal starter/vehicle charging independence after the swap
 
 ## Sources used in this pass
-- [Project BOM baseline](../bom/bom_estimated_items.csv)
-- [Current systems baseline](./SYSTEMS.md)
-- [Current project decision/risk log](./TRACKING.md)
-- [Dumfume battery manual added to project](../references/Dunfume_36V_48V_100Ah_Battery_-_User_Manual.pdf)
-- [2021 Super Duty Pick-Up Order Guide](../references/2021%20Super%20Duty%20Pick-Up%20Order%20Guide.pdf)
+- [Project BOM baseline](../../bom/bom_estimated_items.csv)
+- [Current systems baseline](../core/SYSTEMS.md)
+- [Current project decision/risk log](../core/TRACKING.md)
+- [Dumfume battery manual added to project](../../references/Dunfume_36V_48V_100Ah_Battery_-_User_Manual.pdf)
+- [2021 Super Duty Pick-Up Order Guide](../../references/2021%20Super%20Duty%20Pick-Up%20Order%20Guide.pdf)
 - [Mechman 48-Volt Dual Bracket Kit for 2020+ Ford 7.3L Gas Godzilla platform (LiFePO4) - Externally Regulated](https://mechman.com/48-volt-dual-bracket-kit-for-2020-ford-7-3l-gas-godzilla-platform-lifepo4-externally-regulated/)
 - [Mechman 48-Volt Elite, Externally Regulated (`B820648V-LFP`)](https://mechman.com/content/instructional-pdfs/B820648V-LFP.pdf)
 - [Mechman 370A alternator for Ford `5.0L` Coyote and Ford `7.3L` Godzilla (`11532370`)](https://mechman.com/370-amp-alternator-for-ford-5-0l-coyote-and-ford-7-3l-godzilla/)

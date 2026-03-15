@@ -5,9 +5,9 @@ As-of date: `2026-02-17`
 Purpose: re-evaluate the house electrical voltage architecture (`12V`, `24V`, or `48V` core) for a DIY truck bed camper remote-office build, and make explicit *exactly* what changes in BOM, wiring, and protection when switching.
 
 Related inputs:
-- `docs/SYSTEMS.md`
-- `docs/ELECTRICAL_overview_diagram.md`
-- `docs/ELECTRICAL_fuse_schedule.md`
+- `docs/core/SYSTEMS.md`
+- `docs/implementation/ELECTRICAL_overview_diagram.md`
+- `docs/implementation/ELECTRICAL_fuse_schedule.md`
 - `bom/bom_estimated_items.csv`
 - `bom/load_model_wh.csv`
 
@@ -142,7 +142,7 @@ Switching is not just “change battery voltage”; it cascades through charge s
 - You can still use a Lynx/busbar approach at any voltage, but fuse values and conductor gauges will change.
 
 7. Documentation/test re-baseline
-- `docs/SYSTEMS.md`, `docs/ELECTRICAL_overview_diagram.md`, and fuse schedule would need broad rewrite and re-validation after the architecture is chosen.
+- `docs/core/SYSTEMS.md`, `docs/implementation/ELECTRICAL_overview_diagram.md`, and fuse schedule would need broad rewrite and re-validation after the architecture is chosen.
 
 ### BOM Swap Matrix (Concrete “What Changes” By Row)
 This is intentionally “class of part,” not a final SKU lock.
@@ -183,8 +183,8 @@ Why this is still coherent with your goals:
 ## Next Steps (Given 48V Lock)
 1. Keep `48V` core components as the baseline in `bom/bom_estimated_items.csv` (rows `3`, `12`, `18`, `20`, `25` and fuse rows tied to them).
 2. If induction/microwave are dropped, update `bom/load_model_wh.csv` to a new Scope B profile while keeping the `48V` architecture.
-3. Recompute `docs/SYSTEMS.md` autonomy and charging tables from that revised load model.
-4. Keep `docs/ELECTRICAL_overview_diagram.md` and `docs/ELECTRICAL_fuse_schedule.md` on the current `48V` implementation path.
+3. Recompute `docs/core/SYSTEMS.md` autonomy and charging tables from that revised load model.
+4. Keep `docs/implementation/ELECTRICAL_overview_diagram.md` and `docs/implementation/ELECTRICAL_fuse_schedule.md` on the current `48V` implementation path.
 
 ## How To Choose (Rules Of Thumb)
 Use these as “quick filters” before you get lost in product selection.

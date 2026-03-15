@@ -1,16 +1,16 @@
 # Operations
 
 ## Build and deployment cadence
-- Weekly planning update in `docs/PROJECT.md`
+- Weekly planning update in `docs/core/PROJECT.md`
 - Continuous progress notes in `logs/LOG.md`
-- Weekly risk/decision review in `docs/TRACKING.md`
+- Weekly risk/decision review in `docs/core/TRACKING.md`
 - Reconcile workbook-derived CSV exports before major purchases (`bom/`)
 
 ## Pre-departure checklist (starter)
 - Battery SOC and charging paths verified
 - Communications primary and fallback validated
 - Critical spares onboard (fuses, terminals, core tools)
-- Fuse inventory verified against `docs/ELECTRICAL_fuse_schedule.md` (installed + spare counts)
+- Fuse inventory verified against `docs/implementation/ELECTRICAL_fuse_schedule.md` (installed + spare counts)
 - Workstation and data gear secured for travel
 
 ## Arrival/setup checklist (starter)
@@ -27,7 +27,7 @@
 
 ## Safety-critical checks (build + field)
 ### Pre-energization (after wiring changes)
-- Verify correct fuse values/voltage classes against `docs/ELECTRICAL_fuse_schedule.md`.
+- Verify correct fuse values/voltage classes against `docs/implementation/ELECTRICAL_fuse_schedule.md`.
 - Confirm terminal torque marks, busbar covers, and abrasion protection on all high-current runs.
 - Confirm `48V` disconnect operation and expected de-energization behavior.
 - Confirm `F-11` (`12V` buffer battery main fuse) is installed at source and matches planned amp class.
@@ -71,7 +71,7 @@ Bench-test intent: validate wiring correctness and basic device behavior (shunt,
 ### Incident response quick actions
 - If electrical burning odor/smoke: drop load, open `48V` disconnect, remove shore input, assess with extinguisher ready.
 - If propane alarm or gas odor: close tank valve, remove ignition sources, ventilate immediately, and do not restore gas flow until fault is found.
-- Log each incident or near-miss in `logs/LOG.md` and add unresolved hazards to `docs/TRACKING.md`.
+- Log each incident or near-miss in `logs/LOG.md` and add unresolved hazards to `docs/core/TRACKING.md`.
 
 ## Marketplace sourcing routine (from workbook)
 - Daily 5-minute scan: 80/20 extrusion, RV water tank, sink/faucet, office chair, monitor arm, cooktop, fridge, diesel heater, camper parts.
@@ -79,7 +79,6 @@ Bench-test intent: validate wiring correctness and basic device behavior (shunt,
 - Prioritize used-commercial office gear over consumer-tier furniture for daily work ergonomics.
 - Use strict safety screening for electrical components, especially used batteries and charging hardware.
 - Tool sourcing (Ryobi-first) and listing tracker:
-  - `docs/OPERATIONS_workbook_marketplace_tools.md`
   - `bom/tools_marketplace_tracker.csv`
 
 ## Used-parts target pricing anchors
@@ -96,4 +95,4 @@ Bench-test intent: validate wiring correctness and basic device behavior (shunt,
 - Carry-on vs checked equipment standard
 
 ## Source artifacts
-- `docs/OPERATIONS_workbook_marketplace_finds.md`
+- No standalone workbook extract is currently retained for this section.

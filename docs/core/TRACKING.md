@@ -15,7 +15,7 @@
 - Context: Legacy workbook had a complete daily Wh model; canonical docs had placeholders.
 - Options considered: Keep placeholder only or import model now.
 - Decision drivers: Better architecture sizing and faster procurement decisions.
-- Result: Baseline set to `3,790 Wh/day` and documented in `docs/SYSTEMS.md`.
+- Result: Baseline set to `3,790 Wh/day` and documented in `docs/core/SYSTEMS.md`.
 - Follow-up: Superseded by D-004 BOM-derived model reset.
 
 - ID: D-002
@@ -29,11 +29,11 @@
 
 - ID: D-003
 - Date: 2026-02-11
-- Decision: Maintain a single electrical capacity and charging reference in `docs/SYSTEMS.md`.
+- Decision: Maintain a single electrical capacity and charging reference in `docs/core/SYSTEMS.md`.
 - Context: Build decisions depend on fast re-calculation of load, autonomy, and charge-source coverage as components change.
 - Options considered: Keep analysis ad hoc in chat notes, create separate analysis docs, or keep one maintained canonical section.
 - Decision drivers: Traceability, low overhead updates, and consistency with canonical-doc workflow.
-- Result: Added maintained electrical model section with formulas, scenario table, and update workflow in `docs/SYSTEMS.md`.
+- Result: Added maintained electrical model section with formulas, scenario table, and update workflow in `docs/core/SYSTEMS.md`.
 - Follow-up: Recompute after any BOM power-component change or measured duty-cycle update.
 
 - ID: D-004
@@ -42,7 +42,7 @@
 - Context: Previous model inputs were stale and no longer represented the current build configuration.
 - Options considered: Patch old model values or perform a full model reset from BOM rows.
 - Decision drivers: Data integrity, repeatability, and alignment with BOM-as-source-of-truth workflow.
-- Result: `bom/load_model_wh.csv` replaced with BOM-derived model v2 scenarios and `docs/SYSTEMS.md` recalculated from those values.
+- Result: `bom/load_model_wh.csv` replaced with BOM-derived model v2 scenarios and `docs/core/SYSTEMS.md` recalculated from those values.
 - Follow-up: Superseded by D-007 owner-supplied office-load modeling policy.
 
 - ID: D-005
@@ -51,7 +51,7 @@
 - Context: A temporary documentation update incorrectly modeled installed capacity as `2x 400Ah`.
 - Options considered: Keep oversized model or correct to installed battery count and capacity.
 - Decision drivers: Accuracy of autonomy and charging predictions.
-- Result: BOM battery row and all capacity/autonomy calculations were corrected in `docs/SYSTEMS.md`.
+- Result: BOM battery row and all capacity/autonomy calculations were corrected in `docs/core/SYSTEMS.md`.
 - Follow-up: `2026-02-12` convention locked: keep `48V` as system label and use `51.2V` nominal for battery Wh accounting.
 
 - ID: D-006
@@ -60,7 +60,7 @@
 - Context: Prior `winter_workday` model set fridge duty higher than core profile without supporting evidence, and solar estimates used one generic efficiency factor.
 - Options considered: Keep prior assumptions, tweak only fridge duty, or update both fridge and solar methodology.
 - Decision drivers: Reduce avoidable model bias and align with expected flexible-panel real-world behavior.
-- Result: `winter_workday` load updated to `3,003 Wh/day`, and `docs/SYSTEMS.md` now uses a flexible-array planning base of `68%` efficiency with `60%-75%` sensitivity.
+- Result: `winter_workday` load updated to `3,003 Wh/day`, and `docs/core/SYSTEMS.md` now uses a flexible-array planning base of `68%` efficiency with `60%-75%` sensitivity.
 - Follow-up: Validate fridge duty cycle and daily solar harvest against Cerbo/SmartShunt logs after shakedown.
 
 - ID: D-007
@@ -69,7 +69,7 @@
 - Context: Laptop, monitor, tablet, keyboard, and mouse are already owned and should not inflate procurement BOM totals, but excluding them materially understates real daily energy demand.
 - Options considered: Add owner gear to BOM, keep excluding owner gear from the model, or model owner gear separately from BOM pricing.
 - Decision drivers: Accurate autonomy/charging analysis without polluting procurement cost accounting.
-- Result: Added owner-supplied office-load rows to `bom/load_model_wh.csv` model v3 and recalculated `docs/SYSTEMS.md` capacity/autonomy/charging tables.
+- Result: Added owner-supplied office-load rows to `bom/load_model_wh.csv` model v3 and recalculated `docs/core/SYSTEMS.md` capacity/autonomy/charging tables.
 - Follow-up: Replace planning assumptions with measured device-level energy data from real workdays.
 
 - ID: D-008
@@ -78,7 +78,7 @@
 - Context: Prior BOM/docs left alternator charging open between dual Orion and Sterling options, keeping recovery-time math ambiguous.
 - Options considered: `2x Orion-Tr 12/48` (legacy pre-Sterling option), Sterling `BB1248120` without remote control, Sterling `BB1248120` with `BBR` remote.
 - Decision drivers: Significantly higher charge-rate ceiling, adjustable output limiting from the remote, and simplified single-unit charging architecture.
-- Result: Updated BOM (`row 18` charger, `row 26` remote), recalculated alternator charging in `docs/SYSTEMS.md`, and replaced unresolved Orion references in canonical planning docs.
+- Result: Updated BOM (`row 18` charger, `row 26` remote), recalculated alternator charging in `docs/core/SYSTEMS.md`, and replaced unresolved Orion references in canonical planning docs.
 - Follow-up: Bench-test alternator and belt thermal behavior with staged BBR limits before locking continuous operating setpoint.
 
 - ID: D-009
@@ -105,7 +105,7 @@
 - Context: Fuse plan previously existed as mixed assumptions, not a single implementation schedule.
 - Options considered: Keep generic fuse notes, track fuse values in BOM only, or maintain a dedicated fuse schedule linked to BOM.
 - Decision drivers: Safety traceability, procurement clarity, and easier install-time validation.
-- Result: Added `docs/ELECTRICAL_fuse_schedule.md`, mapped fuse groups to BOM rows (`7`, `10`, `11`, `16`, `105`, `106`), and set baseline battery Class T quantity to `2x` for two battery-positive conductors.
+- Result: Added `docs/implementation/ELECTRICAL_fuse_schedule.md`, mapped fuse groups to BOM rows (`7`, `10`, `11`, `16`, `105`, `106`), and set baseline battery Class T quantity to `2x` for two battery-positive conductors.
 - Follow-up: Lock exact fuse-holder SKUs and finalize any holder ecosystem constraints before purchase.
 
 - ID: D-012
@@ -114,7 +114,7 @@
 - Context: Existing planning text treated `BB1248120` as `120A` on the `48V` output, which overstated alternator charging recovery, and the topology diagram still excluded holder/wire-gauge implementation detail.
 - Options considered: Keep existing assumptions, patch only charge-rate math, or patch charge-rate math and complete the fuse-holder + conductor topology together.
 - Decision drivers: Safety planning accuracy, implementation readiness, and removal of unresolved holder/gauge ambiguity.
-- Result: Updated `bom/bom_estimated_items.csv` row `18`, recalculated alternator charging section values in `docs/SYSTEMS.md`, and expanded `docs/ELECTRICAL_overview_diagram.md` + `docs/ELECTRICAL_fuse_schedule.md` to full implementation detail.
+- Result: Updated `bom/bom_estimated_items.csv` row `18`, recalculated alternator charging section values in `docs/core/SYSTEMS.md`, and expanded `docs/implementation/ELECTRICAL_overview_diagram.md` + `docs/implementation/ELECTRICAL_fuse_schedule.md` to full implementation detail.
 - Follow-up: Validate real-world Sterling output power/current with instrumented charge logs and finalize holder SKUs before purchase freeze.
 
 - ID: D-013
@@ -123,7 +123,7 @@
 - Context: Previous AC scope was concept-level and procurement rows were incomplete, creating uncertainty around receptacle count, USB strategy, and shore interface hardware.
 - Options considered: Single AC branch only, multi-branch panel with AC USB receptacles, or two AC branches with DC-fed USB-C PD outlets.
 - Decision drivers: Practical usability (galley + office), safety/protection clarity, and reduced inverter idle/conversion losses for device charging.
-- Result: Locked baseline to `4` total `120V` receptacle locations (`2` galley, `2` office), AC-out-1 branch split (`20A` galley + `15A` office), and an initial DC-fed USB-C PD baseline. Added corresponding BOM scope in rows `107-118` and aligned AC hierarchy in `docs/ELECTRICAL_overview_diagram.md`.
+- Result: Locked baseline to `4` total `120V` receptacle locations (`2` galley, `2` office), AC-out-1 branch split (`20A` galley + `15A` office), and an initial DC-fed USB-C PD baseline. Added corresponding BOM scope in rows `107-118` and aligned AC hierarchy in `docs/implementation/ELECTRICAL_overview_diagram.md`.
 - Follow-up: Superseded in part by D-022 (USB station packaging, branch sizing changes, and 12V buffer-battery integration details).
 
 - ID: D-014
@@ -132,16 +132,16 @@
 - Context: Install date is fixed (`2026-05-07`) and major build quality risks come from sequence errors (closing walls before rough-in validation, delayed module prep, and routing rework).
 - Options considered: Strict serial trade flow, ad hoc sequencing, or staged sequence with explicit hold points and parallel workstreams.
 - Decision drivers: Maintain install-date readiness, reduce rework risk, and keep system serviceability.
-- Result: Added `docs/PROJECT_build_order_of_operations.md` and linked it from `docs/PROJECT.md` as the active sequencing baseline.
+- Result: Added `docs/plans/PROJECT_build_order_of_operations.md` and linked it from `docs/core/PROJECT.md` as the active sequencing baseline.
 - Follow-up: Update date windows after first dry-fit rehearsal and add sequence-specific risks if schedule compression appears.
 
 - ID: D-015
 - Date: 2026-02-15
-- Decision: Adopt a consolidated multi-system safety baseline in `docs/SYSTEMS.md` covering `48V`, `12V`, `120VAC`, and propane architecture controls.
+- Decision: Adopt a consolidated multi-system safety baseline in `docs/core/SYSTEMS.md` covering `48V`, `12V`, `120VAC`, and propane architecture controls.
 - Context: Safety guidance existed across fuse/topology notes and placeholder sections, but there was no single integrated baseline for commissioning, emergency shutdown, and propane/CO risk controls.
 - Options considered: Keep safety details distributed only in implementation docs, create a separate standalone safety doc, or expand the canonical systems safety section with cross-links.
 - Decision drivers: High-consequence risk reduction, clearer pre-energization hold points, and faster install-time validation.
-- Result: Expanded `docs/SYSTEMS.md` `## Safety` with architecture-specific hazards, required controls, commissioning checks, emergency shutdown order, and pre-close inspection gates.
+- Result: Expanded `docs/core/SYSTEMS.md` `## Safety` with architecture-specific hazards, required controls, commissioning checks, emergency shutdown order, and pre-close inspection gates.
 - Follow-up: Lock propane appliance listing/venting path and convert safety hold points into dated test records in `logs/LOG.md` during commissioning.
 
 - ID: D-016
@@ -150,7 +150,7 @@
 - Context: Build intent requires flexible exterior/interior gear mounting (shovel/Maxtrax and interior hooks/baskets), and hardwall popup construction makes concealed in-wall solar routing impractical.
 - Options considered: Leave as informal notes only, add one generic placeholder line, or add explicit BOM + systems + sequencing entries.
 - Decision drivers: Procurement visibility, serviceable routing, and reduced install-day rework.
-- Result: Added BOM rows `119`, `120`, and `121`; updated `docs/SYSTEMS.md` (`## Solar`, `## Cabinetry and structure`) and `docs/PROJECT_build_order_of_operations.md` (Batches `B`, `C`, and `E`) to include the new scope.
+- Result: Added BOM rows `119`, `120`, and `121`; updated `docs/core/SYSTEMS.md` (`## Solar`, `## Cabinetry and structure`) and `docs/plans/PROJECT_build_order_of_operations.md` (Batches `B`, `C`, and `E`) to include the new scope.
 - Follow-up: Lock final rail profile/attachment ecosystem and finalize solar jumper connector/passthrough SKU choices before purchase freeze.
 
 - ID: D-017
@@ -159,7 +159,7 @@
 - Context: The electrical baseline assumed an AC-capable kitchen (induction + microwave) and a `3kVA` inverter class. The updated direction may be propane cooking + DC-first office (AC-light).
 - Options considered: Full `12V` core, `24V` core + `12V` distribution, keep `48V` core + `12V` distribution.
 - Decision drivers: Reduce space/complexity for a truck-bed camper, keep fast charging (alternator + solar), preserve a large bank (`10–15 kWh`), and avoid unnecessary high-current wiring or conversion layers.
-- Result: Updated `docs/ELECTRICAL_12V_vs_48V_trade_study.md` to reflect Scope A vs Scope B decision logic and to enumerate BOM/topology deltas by voltage. Final architecture selection is pending explicit AC policy + inverter approach lock.
+- Result: Updated `docs/studies/ELECTRICAL_12V_vs_48V_trade_study.md` to reflect Scope A vs Scope B decision logic and to enumerate BOM/topology deltas by voltage. Final architecture selection is pending explicit AC policy + inverter approach lock.
 - Follow-up: Superseded by D-018 architecture lock.
 
 - ID: D-018
@@ -168,8 +168,8 @@
 - Context: After reopening the voltage study under a possible AC-light/propane scope, the project direction is to keep the existing `48V` implementation path.
 - Options considered: Full `12V` core, `24V` core + `12V` distribution, keep `48V` core + `12V` distribution.
 - Decision drivers: Keep fast charging + large bank performance margin, retain lower main-path current, and avoid redesign churn across BOM/topology/fuse documentation.
-- Result: Updated `docs/ELECTRICAL_12V_vs_48V_trade_study.md` recommendation and bottom-line sections to reflect `48V` as the active architecture.
-- Follow-up: If AC load mix changes materially, update `bom/load_model_wh.csv` scenarios and recalculate `docs/SYSTEMS.md` while staying on `48V`.
+- Result: Updated `docs/studies/ELECTRICAL_12V_vs_48V_trade_study.md` recommendation and bottom-line sections to reflect `48V` as the active architecture.
+- Follow-up: If AC load mix changes materially, update `bom/load_model_wh.csv` scenarios and recalculate `docs/core/SYSTEMS.md` while staying on `48V`.
 
 - ID: D-019
 - Date: 2026-02-16
@@ -177,7 +177,7 @@
 - Context: Core electrical items alone would not enable practical bench assembly without pulled-forward wiring, lugs, fuse hardware, and basic electrical build tools.
 - Options considered: Keep original phased dates (`Batch A` core only then later cable/consumables), ad hoc manual pull-forward, or explicit `Batch A+` resequencing with synchronized docs.
 - Decision drivers: Reduce idle wait time between deliveries, remove bench-build blockers early, and keep one coherent source of truth across BOM, sequencing, and logs.
-- Result: Updated `bom/bom_estimated_items.csv` `est_purchase_date` values for rows `3`, `4`, `5`, `6`, `7`, `10`, `11`, `12`, `16`, `17`, `18`, `20`, `22`, `23`, `26`, `27`, `28` through `45`, `52`, `53`, and `60`; synchronized `docs/PROJECT_build_order_of_operations.md` and `docs/PROJECT.md` to reflect the accelerated wave.
+- Result: Updated `bom/bom_estimated_items.csv` `est_purchase_date` values for rows `3`, `4`, `5`, `6`, `7`, `10`, `11`, `12`, `16`, `17`, `18`, `20`, `22`, `23`, `26`, `27`, `28` through `45`, `52`, `53`, and `60`; synchronized `docs/plans/PROJECT_build_order_of_operations.md` and `docs/core/PROJECT.md` to reflect the accelerated wave.
 - Follow-up: Capture actual order date/vendor/ETA status for each `Batch A+` row and flag any substitutions before bench wiring starts.
 
 - ID: D-020
@@ -359,9 +359,8 @@
 - Pass/Fail:
 
 ## Source artifacts
-- `docs/SYSTEMS.md`
-- `docs/PROJECT_workbook_hiatus_consult.md`
-- `docs/SYSTEMS_workbook_build_notes.md`
-- `docs/SYSTEMS_workbook_electrical_notes.md`
-- `docs/ELECTRICAL_overview_diagram.md`
-- `docs/ELECTRICAL_fuse_schedule.md`
+- `docs/core/SYSTEMS.md`
+- `docs/legacy/PROJECT_workbook_hiatus_consult.md`
+- `docs/legacy/SYSTEMS_workbook_build_notes_obsolete.md`
+- `docs/implementation/ELECTRICAL_overview_diagram.md`
+- `docs/implementation/ELECTRICAL_fuse_schedule.md`

@@ -5,10 +5,10 @@ As-of date: `2026-02-24`
 Purpose: provide a complete, install-level electrical topology for the current build scope, including all major electrical components, fuse IDs, fuse housings, planned wire gauges, and estimated one-way run lengths for procurement planning.
 
 Related docs:
-- Canonical electrical/system baseline: `docs/SYSTEMS.md`
-- Detailed fuse matrix: `docs/ELECTRICAL_fuse_schedule.md`
-- Battery and trunk recalculation record: `docs/ELECTRICAL_battery_fuse_wire_recalc_2026-02-18.md`
-- Decisions and unresolved items: `docs/TRACKING.md`
+- Canonical electrical/system baseline: `docs/core/SYSTEMS.md`
+- Detailed fuse matrix: `docs/implementation/ELECTRICAL_fuse_schedule.md`
+- Battery and trunk recalculation record: `docs/studies/ELECTRICAL_battery_fuse_wire_recalc_2026-02-18.md`
+- Decisions and unresolved items: `docs/core/TRACKING.md`
 - Procurement source of truth: `bom/bom_estimated_items.csv`
 
 ## Sweep Outcomes Included In This Revision
