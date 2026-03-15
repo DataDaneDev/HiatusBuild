@@ -10,6 +10,27 @@ Single running log for build progress and test evidence.
 - Issues:
 - Next actions:
 
+## 2026-03-15
+- Researched a possible alternator-charging architecture change from the current Sterling `BB1248120` path to a Mechman/Wakespeed `48V` secondary-alternator system for the `2021` `F-350` `7.3L`.
+- Added a new supporting study:
+- `docs/ELECTRICAL_48V_dual_alternator_trade_study.md`
+- Added a cross-link from `docs/SYSTEMS.md` so the new study is discoverable from the canonical electrical doc map.
+- Added new open questions in `docs/TRACKING.md` focused on:
+- exact battery brand/model and charge acceptance limits
+- Wakespeed support status for the internal-BMS, non-CAN battery bank
+- required load-dump / avalanche-diode mitigation for a direct `48V` alternator path
+- whether the Mechman `48V` system can remain electrically isolated from chassis as desired
+- starter-battery maintenance strategy if Sterling hardware is removed
+- Key findings from this research pass:
+- Mechman publishes a real `2020+` `7.3L` Godzilla dual-alternator bracket path that retains the factory alternator and adds a second alternator.
+- The `48V` Mechman/Wakespeed architecture has real performance upside over the current Sterling `~1.5 kW` ceiling.
+- The main uncertainty is not bracket fitment; it is battery compatibility and protection strategy with an internal-BMS, non-CAN `48V` bank.
+- Current recommendation remains to keep Sterling as the active baseline and not return that hardware until the Mechman/Wakespeed battery-support and protection questions are explicitly closed.
+- Measurements/data: source review only; no bench or vehicle tests performed.
+- Tests run: document/source verification only.
+- Issues: exact battery brand/model is still not captured in the repo, preventing a definitive support determination against Wakespeed battery-programming support.
+- Next actions: collect the battery manufacturer/model information and send the targeted vendor questions captured in the new trade study to Mechman, Wakespeed, and the battery manufacturer.
+
 ## 2026-02-16
 - Updated procurement sequencing to an accelerated `Batch A+` phase so the electrical bench build can start without waiting for later cable/consumable waves.
 - Updated `bom/bom_estimated_items.csv` purchase windows:

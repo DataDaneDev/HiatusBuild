@@ -41,7 +41,7 @@ Related docs:
 - Victron Lynx Distributor manual (MEGA fuse carrier format): `https://www.victronenergy.com/media/pg/Lynx_Distributor/en/installation.html`
 - Victron Orion-Tr Smart isolated DC-DC installation page (external input fuse guidance): `https://www.victronenergy.com/media/pg/Orion-Tr_Smart_DC-DC_Charger_-_Isolated/en/installation.html`
 - Victron fuse datasheet (for `48V` systems use `58V`-class fuses): `https://www.victronenergy.com/upload/documents/Datasheet-Fuses-EN.pdf`
-- Sterling BB12V->48V charger references (model list includes `BB1248120`, fuse/cable guidance): `https://sterling-power.com/products/battery-to-battery-chargers-12v-to-48v`
+- Sterling BB12V->48V charger references (model list includes `BB1248120`, fuse/cable guidance): `https://sterling-power.com/products/12v-to-48v-1500w-battery-to-battery-charger-w-reverse-charging-feature`
 - Sterling BB12V->48V charger installation manual PDF (fuse/cable guidance): `https://sterling-power.com/cdn/shop/files/bb1230_1240_1260_12120_122430_241230_241240_241260_241280_242430_124810_1248120_241280_242430_b2b_installation_manual.pdf?v=1739450989`
 - Blue Sea Systems guidance (fuse close to source): `https://www.bluesea.com/resources/1437`
 - Blue Sea Class T holder-family compatibility (`110A-200A` vs `225A-400A`): `https://www.bluesea.com/support/articles/Fuse_Blocks/1438/Selecting_Class_T_Fuses`

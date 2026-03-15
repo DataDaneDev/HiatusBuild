@@ -313,6 +313,10 @@
 - Lock initial BBR current-limit setpoint for the assumed `240A` factory alternator after first instrumented charge tests
 - Confirm Mechman 370A (SKU `11532370`) fitment for the actual truck platform before purchase (VIN check)
 - Confirm required shorter belt length and final belt part number if the Mechman alternator is installed
+- Confirm exact installed `48V` battery brand/model, per-battery max charge-current limit, and charge-voltage guidance against any Wakespeed-supported battery list before considering a `WS500`-controlled alternator path
+- Confirm whether the Mechman `48V` secondary-alternator path can be safely supported with an internal-BMS, non-CAN battery bank, including any required load-dump / avalanche-diode / keeper-battery mitigation
+- Confirm whether the Mechman `48V` alternator negative/case can remain electrically isolated from chassis in the intended install, or whether the house `48V` system should be treated as engine/chassis referenced
+- Define the starter-battery maintenance strategy if Sterling alternator charging is removed (retain reverse-charge capability another way, add a dedicated `48V -> 12V` charger, or accept no automatic backfeed)
 - Lock Big 3 spec package (additional cable length, inline fuse type/rating, lug count, and RVC ground-loop routing requirement)
 - Confirm measured daily draw for owner-supplied laptop/monitor/tablet charging to replace planning assumptions
 - Validate Orion `48/12-30` charger headroom with the current 12V branch plan (including USB stations, `12V-10` Maxxair fan, `12V-06` Hiatus factory LED+dimmer, and planned `12V-11` ambient/Govee strips) and trigger row `118` only if sustained overload is observed
