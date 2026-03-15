@@ -11,10 +11,16 @@
 - Camper delivery/install readiness date is fixed: May 7, 2026
 
 ## Objectives
+
 - Support standard workdays without power anxiety
 - Maintain reliable internet for meetings and high-value workflow tasks
 - Provide ergonomic, repeatable workstation setup
 - Keep system serviceable and safe in multi-climate travel use
+
+## Current pre-camper execution focus (electrical + flooring)
+- Use `docs/STARTER_PLAN_electrical_and_flooring_pre_camper.md` as the active day-to-day checklist while the camper shell is not yet in hand.
+- Prioritize reversible progress: templating, mock layout boards, labeling, and cut planning.
+- Defer shell-dependent irreversible work (final penetrations, final route-length cuts, permanent finish-floor bonding).
 
 ## Scope
 - In scope: electrical, charging, solar, communications, interior structure/cabinetry, operations process, maintenance tracking
