@@ -23,6 +23,7 @@ Use this table first whenever you are deciding where to put information.
 | Electrical load modeling assumptions (Wh) | `bom/load_model_wh.csv` |
 | Electrical implementation topology details | `docs/ELECTRICAL_overview_diagram.md` |
 | Fuse IDs, values, holders, spare policy | `docs/ELECTRICAL_fuse_schedule.md` |
+| Pre-camper starter execution plan (electrical + flooring) | `docs/STARTER_PLAN_electrical_and_flooring_pre_camper.md` |
 
 ## Canonical docs rule
 - Update existing canonical files before creating new docs.
