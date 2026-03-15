@@ -9,6 +9,7 @@ Purpose: determine whether replacing the current Sterling `12V -> 48V` DC-DC alt
 - The Mechman `48V` secondary-alternator concept is **real and technically plausible** for the `2021` `F-350` `7.3L` platform. Mechman publishes a `2020+` `7.3L` Godzilla dual-alternator bracket kit that retains the factory alternator and adds a second T-mount alternator.
 - It is **not** a drop-in substitute for the current Sterling path. For this build, it becomes a different charging architecture with different controls, failure modes, and validation work.
 - The biggest issue for your exact setup is **battery behavior**, not bracket fitment. Your bank is now confirmed to be **internal-BMS, non-CAN**. Wakespeed's own guidance treats that as a materially higher-risk integration case than a CAN-managed lithium bank.
+- The newly documented Dumfume battery specs materially improve one part of the picture: the manual allows up to `1S4P`, sets a `58.4V` charge target, and recommends `20-50A` charge current per battery. On a `3x 100Ah` bank, the Mechman current curve looks much more compatible on raw charge-current magnitude than it did when the battery data was unknown.
 - A `370A` `12V` alternator upgrade alone is still the weakest value path. It adds vehicle-side headroom, but the Sterling charger remains capped at about `1.5 kW`, so house charging does not scale with alternator size the way many people assume.
 - Current recommendation for this pass: **do not return the Sterling hardware yet**. The dual-`48V` path should stay in research/validation until battery support, load-dump mitigation, grounding/isolation, and starter-battery-maintenance strategy are explicitly closed.
 
@@ -16,7 +17,7 @@ Purpose: determine whether replacing the current Sterling `12V -> 48V` DC-DC alt
 
 | Item | Current project state | Why it matters |
 | --- | --- | --- |
-| House bank | `3x 48V 100Ah` LiFePO4 in parallel (`15.36 kWh` nominal) | Plenty of energy, but exact battery brand/model and charge spec are not yet documented in the repo |
+| House bank | `3x Dumfume 51.2V 100Ah` LiFePO4 in parallel (`15.36 kWh` nominal) | Exact battery is now documented; this improves charge-profile and parallel-bank analysis materially |
 | Alternator charging | Sterling `BB1248120` + `BBR` remote | Already purchased; charger output is the current bottleneck |
 | Sterling output ceiling | About `1,500 W` max, about `26A` at `57.6V` | This is the real cap on house charging with the current architecture |
 | Truck alternator basis | Current docs assume factory `240A` | Relevant for input-side thermal margin, not for raising house-side power above Sterling's limit |
@@ -25,6 +26,41 @@ Purpose: determine whether replacing the current Sterling `12V -> 48V` DC-DC alt
 ### Practical implication
 - Keeping the current Sterling path means all vehicle-side upgrades are still filtered through a charger capped near `1.5 kW`.
 - Moving to a dedicated `48V` secondary alternator is the first option that could materially exceed the current alternator-to-house charge power.
+
+## What the Dumfume manual now clarifies
+
+Manual/source basis for this section:
+- `references/Dunfume_36V_48V_100Ah_Battery_-_User_Manual.pdf`
+- User-supplied product/manual data in this research pass
+
+| Battery parameter | Dumfume manual / supplied data | Immediate implication |
+| --- | --- | --- |
+| Nominal voltage | `51.2V` | Matches current project energy modeling basis |
+| Capacity | `100Ah` per battery | Current bank is `3x` batteries in parallel |
+| Charge voltage | `58.4V` | Any WS500 profile should be checked against this, not a generic `58.8V` assumption |
+| Recommended charge current | `20-50A` per battery | Useful benchmark for whether Mechman output is a good fit |
+| Max continuous charge current | `200A` per battery | Raw current ceiling is not the primary bottleneck here |
+| Max expansion | Up to `1S4P` | Current `1S3P` bank is inside the manual's stated parallel-expansion limit |
+| Charge temperature | `32°F - 149°F` (`0°C - 65°C`) | No-charge-below-freezing rule still matters for alternator charging logic |
+| BMS | Internal `200A` BMS, non-CAN | Current-support and disconnect behavior are still the hard part |
+
+### New battery-side conclusions
+- The current battery bank is no longer a generic unknown. It is a defined `1S3P` bank using batteries whose manual allows up to `1S4P`.
+- Inference from the manual's per-battery current guidance:
+  - recommended aggregate bank charge current is likely about `60-150A` if current shares normally across `3` parallel batteries
+  - absolute aggregate continuous charge capability is likely much higher than that, but "recommended" is the better planning number for alternator charging
+- Inference from the provided Mechman curve against the documented `3x` battery bank:
+  - `44.5A` total charge current is about `14.8A` per battery
+  - `90.7A` total charge current is about `30.2A` per battery
+  - `111.7A` total charge current is about `37.2A` per battery
+  - `145.7A` total charge current is about `48.6A` per battery
+- That means the Mechman current curve shown so far sits **inside or very near** the Dumfume manual's recommended per-battery charge-current range when divided across the current `3`-battery bank.
+- The current Sterling path remains very gentle by comparison: about `26A` total is only about `8.7A` per battery.
+- The unresolved battery risk is now less about "can the bank absorb this current?" and more about:
+  - exact `WS500` programming
+  - BMS disconnect behavior under charge
+  - supported/non-supported battery status with Wakespeed
+  - load-dump mitigation if the internal BMS opens
 
 ## What Ford and Mechman currently support
 
@@ -64,7 +100,8 @@ From the Mechman `B820648V-LFP` regulator/programming sheet reviewed in this pas
 
 ### Why that matters for your build
 - Your bank is not `1x 48V 100Ah`. It is `3x 48V 100Ah` in parallel.
-- Even before battery-brand support is addressed, the out-of-box generic regulator setup shown in Mechman's literature is not obviously matched to your actual bank.
+- The out-of-box generic regulator setup shown in Mechman's literature is still not obviously matched to your actual bank.
+- Your documented battery charge target is `58.4V`, so a generic `58.8V` profile should not be accepted without checking the manual and vendor guidance first.
 - This means you should treat "pre-programmed for LiFePO4" as a starting point, not proof of compatibility.
 
 ## Why the dual-`48V` idea is attractive
@@ -107,6 +144,7 @@ This is the key issue that makes the Mechman/Wakespeed path materially riskier t
 
 ### Why that matters here
 - Your current bank is internal-BMS and **no CANbus**.
+- The bank is now identified as Dumfume `51.2V 100Ah`, and current magnitude itself looks workable on a `3`-battery parallel bank.
 - If a battery or bank BMS disconnects during charge because of over-voltage, low temperature, or internal fault logic, the alternator/regulator path has to survive that event safely.
 - A Sterling DC-DC charger is far more naturally buffered/limited in that scenario than a direct `48V` alternator architecture.
 - With the Mechman/Wakespeed path, safe operation depends much more heavily on:
@@ -118,7 +156,8 @@ This is the key issue that makes the Mechman/Wakespeed path materially riskier t
 ### Warranty/support consequence
 - Mechman's `48V` installation literature says they will provide regulator-programming support only for battery models officially supported by Wakespeed.
 - The same literature says unsupported battery-programming modifications can void warranty support.
-- Since the exact installed battery brand/model is still not documented in this repo, you currently **cannot** prove that your actual batteries land inside the supported path.
+- The battery family is now documented, but in this research pass I did **not** find any public official Wakespeed reference to Dumfume on `wakespeed.com`.
+- That is not proof of non-support. It means official vendor confirmation is still required before treating this as a supported battery/regulator combination.
 
 ## Isolation and grounding: do not assume full electrical isolation yet
 
@@ -193,9 +232,10 @@ This is a practical system-behavior difference, not just a feature preference.
 ## Required validation before considering the Mechman swap
 
 ### Battery support
-- Document the exact installed battery brand/model.
-- Get the battery maker's exact charge-voltage, float, temperature, and max-charge-current guidance.
-- Confirm with Wakespeed whether that battery is inside or outside their supported-programming path.
+- Exact battery family is now documented as Dumfume `51.2V 100Ah`; keep the manual in the repo as the local source of truth.
+- Confirm with Wakespeed whether this battery is inside or outside their supported-programming path.
+- Confirm whether the manual's recommended `20-50A` charge current is intended to scale across the current `1S3P` bank for alternator charging.
+- Confirm whether `58.4V` should be treated as the hard alternator charge ceiling and whether any float stage should be reduced or disabled.
 
 ### Regulator and protection
 - Confirm whether your battery chemistry/BMS behavior requires avalanche-diode protection, a battery-protection device, keeper battery strategy, or another specific mitigation.
@@ -224,23 +264,23 @@ This is a practical system-behavior difference, not just a feature preference.
 2. What output should I expect from this kit at hot idle, fast idle, and normal driving RPM on the `7.3L` Godzilla?
 3. Is the alternator negative isolated from the case, or should the `48V` system be treated as engine/chassis referenced?
 4. Does this `48V` alternator include or require avalanche-diode/load-dump protection for internal-BMS lithium banks that can self-disconnect?
-5. Can you pre-program the `WS500` for `3x 48V 100Ah` parallel batteries with internal BMS and no CAN, and does that remain inside warranty support?
+5. Can you pre-program the `WS500` for `3x Dumfume 51.2V 100Ah` parallel batteries with internal BMS and no CAN, using a `58.4V` charge target, and does that remain inside warranty support?
 6. Exactly which Wakespeed accessories are included in the kit, and which Cerbo-integration pieces are extra?
 
 ### To Wakespeed
-1. Is my exact battery model on your supported list?
+1. Is the Dumfume `51.2V 100Ah` battery on your supported list?
 2. If not, what mitigation is mandatory for safe charging with an internal-BMS, non-CAN `48V` lithium bank?
 3. Does DVCC/Cerbo provide any meaningful substitute for missing battery-CAN lockout in this case, or is it monitoring-only?
 4. What is the recommended fault-handling strategy if the battery BMS disconnects under charge?
 
 ### To the battery manufacturer
-1. What is the max continuous charge current per battery?
-2. What are the exact bulk/absorption/float targets and temperature limits?
+1. Is the recommended `20-50A` charge-current range intended per battery, and does it scale linearly in `1S3P` / `1S4P` parallel banks?
+2. For alternator charging, should `58.4V` be treated as the hard charge ceiling, and should float be disabled or reduced?
 3. Does the BMS open on over-voltage, under-temperature, over-current, or cell imbalance while charging?
-4. Are three batteries in parallel approved, and is the charge-current limit additive across the bank?
+4. Are three batteries in parallel approved for alternator charging specifically, and is the charge-current limit additive across the bank?
 
 ## What would change my recommendation
-- Exact battery model is confirmed and Wakespeed supports it
+- Wakespeed explicitly supports the documented Dumfume battery or gives a safe approved configuration for it
 - Mechman confirms safe mitigation for internal-BMS/non-CAN behavior
 - Mechman confirms the grounding/isolation behavior you want
 - Mechman provides realistic idle/fast-idle output numbers that materially outperform the current Sterling path in the RPM range you actually care about
@@ -250,6 +290,7 @@ This is a practical system-behavior difference, not just a feature preference.
 - [Project BOM baseline](../bom/bom_estimated_items.csv)
 - [Current systems baseline](./SYSTEMS.md)
 - [Current project decision/risk log](./TRACKING.md)
+- [Dumfume battery manual added to project](../references/Dunfume_36V_48V_100Ah_Battery_-_User_Manual.pdf)
 - [2021 Super Duty Pick-Up Order Guide](../references/2021%20Super%20Duty%20Pick-Up%20Order%20Guide.pdf)
 - [Mechman 48-Volt Dual Bracket Kit for 2020+ Ford 7.3L Gas Godzilla platform (LiFePO4) - Externally Regulated](https://mechman.com/48-volt-dual-bracket-kit-for-2020-ford-7-3l-gas-godzilla-platform-lifepo4-externally-regulated/)
 - [Mechman 48-Volt Elite, Externally Regulated (`B820648V-LFP`)](https://mechman.com/content/instructional-pdfs/B820648V-LFP.pdf)

@@ -29,7 +29,7 @@
 ### Input reference (maintained)
 | Input | Current value | Source |
 | --- | --- | --- |
-| Battery bank | `3x 48V 100Ah` | `bom/bom_estimated_items.csv` row 3 |
+| Battery bank | `3x Dumfume 51.2V 100Ah` (`1S3P`; manual allows up to `1S4P`) | `bom/bom_estimated_items.csv` row 3 + `references/Dunfume_36V_48V_100Ah_Battery_-_User_Manual.pdf` |
 | Inverter/charger | MultiPlus-II `48/3000/35-50` | `bom/bom_estimated_items.csv` row 12 |
 | Alternator charging | Sterling `BB1248120` (`12V/24V -> 48V`, `~1500W` max, `~26A` at `57.6V`) + `BBR` remote | `bom/bom_estimated_items.csv` rows 18 and 26 |
 | Vehicle alternator assumption (current) | Factory `240A` (user-reported) with `65%` BBR limit option for extended idle sessions | `docs/TRACKING.md` |

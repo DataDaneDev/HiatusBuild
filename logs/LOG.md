@@ -12,11 +12,13 @@ Single running log for build progress and test evidence.
 
 ## 2026-03-15
 - Researched a possible alternator-charging architecture change from the current Sterling `BB1248120` path to a Mechman/Wakespeed `48V` secondary-alternator system for the `2021` `F-350` `7.3L`.
+- Added the battery manual and exact battery data for the current house bank:
+- `references/Dunfume_36V_48V_100Ah_Battery_-_User_Manual.pdf`
+- Updated the battery row in `bom/bom_estimated_items.csv` to identify the Dumfume `51.2V 100Ah` battery and capture manual-backed charge/parallel specs.
 - Added a new supporting study:
 - `docs/ELECTRICAL_48V_dual_alternator_trade_study.md`
 - Added a cross-link from `docs/SYSTEMS.md` so the new study is discoverable from the canonical electrical doc map.
 - Added new open questions in `docs/TRACKING.md` focused on:
-- exact battery brand/model and charge acceptance limits
 - Wakespeed support status for the internal-BMS, non-CAN battery bank
 - required load-dump / avalanche-diode mitigation for a direct `48V` alternator path
 - whether the Mechman `48V` system can remain electrically isolated from chassis as desired
@@ -24,12 +26,13 @@ Single running log for build progress and test evidence.
 - Key findings from this research pass:
 - Mechman publishes a real `2020+` `7.3L` Godzilla dual-alternator bracket path that retains the factory alternator and adds a second alternator.
 - The `48V` Mechman/Wakespeed architecture has real performance upside over the current Sterling `~1.5 kW` ceiling.
-- The main uncertainty is not bracket fitment; it is battery compatibility and protection strategy with an internal-BMS, non-CAN `48V` bank.
+- The Dumfume manual materially improved battery-side clarity: `58.4V` charge voltage, `20-50A` recommended charge current per battery, and `1S4P` max expansion mean the current `1S3P` bank looks current-compatible with the Mechman output curve on paper.
+- The main remaining uncertainty is not raw charge-current acceptance; it is battery support and protection strategy with an internal-BMS, non-CAN `48V` bank.
 - Current recommendation remains to keep Sterling as the active baseline and not return that hardware until the Mechman/Wakespeed battery-support and protection questions are explicitly closed.
 - Measurements/data: source review only; no bench or vehicle tests performed.
 - Tests run: document/source verification only.
-- Issues: exact battery brand/model is still not captured in the repo, preventing a definitive support determination against Wakespeed battery-programming support.
-- Next actions: collect the battery manufacturer/model information and send the targeted vendor questions captured in the new trade study to Mechman, Wakespeed, and the battery manufacturer.
+- Issues: official Wakespeed support status for the documented Dumfume battery is still unresolved.
+- Next actions: send the updated targeted vendor questions captured in the trade study to Mechman, Wakespeed, and the battery manufacturer.
 
 ## 2026-02-16
 - Updated procurement sequencing to an accelerated `Batch A+` phase so the electrical bench build can start without waiting for later cable/consumable waves.

@@ -3,7 +3,7 @@ row,category,component,est_price,price_flag,description_notes,est_purchase_date,
 18,Power System,Alternator Charging,807,ai_set,"Sterling Power BB1248120 battery-to-battery charger (12V or 24V input to 48V output, ~1500W max, ~26A at 57.6V). Requires fused input/output paths per fuse schedule.",2/16/2026,Purchased
 22,Power System,Monitoring,240,user_filled,Victron Cerbo GX,2/16/2026,Purchased
 23,Power System,Battery Monitor,93,user_filled,Victron SmartShunt 300A,2/16/2026,Purchased
-3,Power System,Batteries,1617,user_filled,"48V 100Ah LiFePO4 Golf Cart Lithium Battery (3x), 200A BMS low-temp protection, max 4 batteries = 400Ah system. Price basis: ~$539 each.",2/17/2026,Purchased
+3,Power System,Batteries,1617,user_filled,"Dumfume 48V 100Ah LiFePO4 battery (3x). Manual added at references/Dunfume_36V_48V_100Ah_Battery_-_User_Manual.pdf. 51.2V nominal, 200A built-in BMS, 58.4V charge voltage, recommended charge current 20-50A per battery, max continuous charge/discharge 200A, max expansion 1S4P. Price basis: ~$539 each.",2/17/2026,Purchased
 4,Power System,Battery Temp Sensor,0,user_filled,"Temperature Sensor for Victron Energy Quattro, MultiPlus and GX Device (comes with multiplus)",2/17/2026,Included (with MultiPlus purchased)
 5,Power System,48v disconnect,34.85,user_filled,Victron Energy Battery Switch ON/Off 275 amp,2/17/2026,Purchased
 6,Power System,Lynx Distributor,192.47,ai_set,Victron Lynx Distributor M10 (LYN060102010),2/17/2026,Purchased
