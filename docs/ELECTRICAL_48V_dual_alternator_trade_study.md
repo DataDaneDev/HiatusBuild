@@ -10,8 +10,9 @@ Purpose: determine whether replacing the current Sterling `12V -> 48V` DC-DC alt
 - It is **not** a drop-in substitute for the current Sterling path. For this build, it becomes a different charging architecture with different controls, failure modes, and validation work.
 - The biggest issue for your exact setup is **battery behavior**, not bracket fitment. Your bank is now confirmed to be **internal-BMS, non-CAN**. Wakespeed's own guidance treats that as a materially higher-risk integration case than a CAN-managed lithium bank.
 - The newly documented Dumfume battery specs materially improve one part of the picture: the manual allows up to `1S4P`, sets a `58.4V` charge target, and recommends `20-50A` charge current per battery. On a `3x 100Ah` bank, the Mechman current curve looks much more compatible on raw charge-current magnitude than it did when the battery data was unknown.
+- User-confirmed assumption for this study: losing automatic house-to-starting-battery support is acceptable.
 - A `370A` `12V` alternator upgrade alone is still the weakest value path. It adds vehicle-side headroom, but the Sterling charger remains capped at about `1.5 kW`, so house charging does not scale with alternator size the way many people assume.
-- Current recommendation for this pass: **do not return the Sterling hardware yet**. The dual-`48V` path should stay in research/validation until battery support, load-dump mitigation, grounding/isolation, and starter-battery-maintenance strategy are explicitly closed.
+- Current recommendation for this pass: **do not return the Sterling hardware yet**. The dual-`48V` path should stay in research/validation until battery support, load-dump mitigation, grounding/isolation, and retained factory-alternator independence are explicitly closed.
 
 ## Current project baseline
 
@@ -187,9 +188,12 @@ This is a practical system-behavior difference, not just a feature preference.
 
 ### Mechman `48V` secondary-alternator path
 - No reviewed Mechman/Wakespeed material suggests automatic starter-battery maintenance is built in.
-- If you replace Sterling completely, you should assume starter-battery trickle/maintenance becomes a **separate design problem** unless proven otherwise.
+- If you replace Sterling completely, you should assume starter-battery trickle/maintenance is simply absent unless you later choose to add it back.
 
-### Likely replacement paths if you want that feature back
+### Current project stance
+- Loss of automatic house-to-starting-battery support is acceptable for this project.
+
+### Optional replacement paths only if you later want that feature back
 - Keep a dedicated small `48V -> 12V` charger for the starter battery
 - Keep a service/maintenance charging strategy separate from the main alternator-charging architecture
 - Accept no automatic house-to-starting-battery backfeed
@@ -213,9 +217,9 @@ This is a practical system-behavior difference, not just a feature preference.
 
 | Option | House charge ceiling | Integration complexity | Battery/BMS risk | Starter-battery support | Schedule risk | Current recommendation |
 | --- | --- | --- | --- | --- | --- | --- |
-| Keep Sterling as-is | `~1.0-1.5 kW` depending `BBR` setting | Low | Low-Medium | Possible, but verify exact SKU behavior | Low | Best short-term path |
+| Keep Sterling as-is | `~1.0-1.5 kW` depending `BBR` setting | Low | Low-Medium | Possible, but no longer required | Low | Best short-term path |
 | Add `370A` `12V` alternator and keep Sterling | Still `~1.0-1.5 kW` | Medium | Low-Medium | Same as Sterling path | Medium | Only if truck-side headroom is the problem |
-| Move to Mechman `48V` secondary alternator | Potentially `>2.5 kW` and much higher at usable shaft speed | High | High for non-CAN/internal-BMS bank | Not inherent | High | Promising, but not yet de-risked enough to replace Sterling |
+| Move to Mechman `48V` secondary alternator | Potentially `>2.5 kW` and much higher at usable shaft speed | High | High for non-CAN/internal-BMS bank | Not inherent, but acceptable | High | Promising, but not yet de-risked enough to replace Sterling |
 
 ## Decision for this pass
 
@@ -254,8 +258,8 @@ This is a practical system-behavior difference, not just a feature preference.
 - Do not accept shaft-speed curve alone as your idle-output answer.
 
 ### Operational behavior
-- Define how the starter battery will be maintained if Sterling is removed.
-- Decide whether losing automatic house-to-starting-battery support is acceptable.
+- Starter-battery auto-maintenance is not required for this project.
+- If desired later, add a separate maintenance path as a convenience feature rather than as a swap blocker.
 
 ## Questions to send vendors
 
@@ -284,7 +288,7 @@ This is a practical system-behavior difference, not just a feature preference.
 - Mechman confirms safe mitigation for internal-BMS/non-CAN behavior
 - Mechman confirms the grounding/isolation behavior you want
 - Mechman provides realistic idle/fast-idle output numbers that materially outperform the current Sterling path in the RPM range you actually care about
-- A clean starter-battery-maintenance plan exists after Sterling removal
+- The retained factory alternator fully preserves normal starter/vehicle charging independence after the swap
 
 ## Sources used in this pass
 - [Project BOM baseline](../bom/bom_estimated_items.csv)

@@ -317,7 +317,8 @@
 - Confirm the Dumfume manual's `20-50A` recommended charge current is intended to scale across the current `1S3P` bank for alternator-charging use, not just single-battery charging
 - Confirm whether the Mechman `48V` secondary-alternator path can be safely supported with an internal-BMS, non-CAN battery bank, including any required load-dump / avalanche-diode / keeper-battery mitigation
 - Confirm whether the Mechman `48V` alternator negative/case can remain electrically isolated from chassis in the intended install, or whether the house `48V` system should be treated as engine/chassis referenced
-- Define the starter-battery maintenance strategy if Sterling alternator charging is removed (retain reverse-charge capability another way, add a dedicated `48V -> 12V` charger, or accept no automatic backfeed)
+- User-confirmed assumption: losing automatic house-to-starting-battery support is acceptable
+- Confirm only that the retained factory alternator continues to handle normal starter/vehicle charging independently if the Mechman `48V` path is adopted
 - Lock Big 3 spec package (additional cable length, inline fuse type/rating, lug count, and RVC ground-loop routing requirement)
 - Confirm measured daily draw for owner-supplied laptop/monitor/tablet charging to replace planning assumptions
 - Validate Orion `48/12-30` charger headroom with the current 12V branch plan (including USB stations, `12V-10` Maxxair fan, `12V-06` Hiatus factory LED+dimmer, and planned `12V-11` ambient/Govee strips) and trigger row `118` only if sustained overload is observed

@@ -22,12 +22,13 @@ Single running log for build progress and test evidence.
 - Wakespeed support status for the internal-BMS, non-CAN battery bank
 - required load-dump / avalanche-diode mitigation for a direct `48V` alternator path
 - whether the Mechman `48V` system can remain electrically isolated from chassis as desired
-- starter-battery maintenance strategy if Sterling hardware is removed
+- whether the retained factory alternator continues to handle starter/vehicle charging independently if Sterling hardware is removed
 - Key findings from this research pass:
 - Mechman publishes a real `2020+` `7.3L` Godzilla dual-alternator bracket path that retains the factory alternator and adds a second alternator.
 - The `48V` Mechman/Wakespeed architecture has real performance upside over the current Sterling `~1.5 kW` ceiling.
 - The Dumfume manual materially improved battery-side clarity: `58.4V` charge voltage, `20-50A` recommended charge current per battery, and `1S4P` max expansion mean the current `1S3P` bank looks current-compatible with the Mechman output curve on paper.
 - The main remaining uncertainty is not raw charge-current acceptance; it is battery support and protection strategy with an internal-BMS, non-CAN `48V` bank.
+- User confirmed that losing automatic house-to-starting-battery support is acceptable, so that feature is no longer a decision blocker in the alternator trade study.
 - Current recommendation remains to keep Sterling as the active baseline and not return that hardware until the Mechman/Wakespeed battery-support and protection questions are explicitly closed.
 - Measurements/data: source review only; no bench or vehicle tests performed.
 - Tests run: document/source verification only.
