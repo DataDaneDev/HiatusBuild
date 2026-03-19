@@ -12,7 +12,7 @@
 
 ## Explicitly De-Scoped Layer
 - Full-bed `EPDM/RPDB` thermal-break sheet above EPS and below plywood is no longer in the active floor stack-up.
-- Previously purchased EPDM remains documented as sunk/backup material, not active install material.
+- EPDM order was canceled before shipment and refunded; no EPDM material is on hand for this build.
 
 ## Hardpoint Rule (Structural Anchors)
 - At structural hardpoints, remove EPS locally so plywood bears directly on steel.
@@ -26,8 +26,8 @@
 - TotalBoat Halcyon Water-Based Marine Varnish, clear gloss, pint (`$22.99`) - Amazon.
 - `3/4 in` birch plywood, `4x8`, qty `2` (`$88` each, `$176` total).
 
-### Purchased but de-scoped from active floor stack
-- Rubber-Cal EPDM closed-cell sponge rubber, qty `2` (`$47.22`) - Home Depot.
+### Canceled / refunded (not in hand)
+- Rubber-Cal EPDM closed-cell sponge rubber, qty `2` (`$47.22`) - Home Depot order canceled before shipment; refunded.
 
 ### Related purchase (not floor stack, but same workstream)
 - `1/2 in` plywood, `4x8`, qty `1` (`$68`) for electrical backer/closet module.
@@ -40,7 +40,6 @@
 - Active flooring package purchased to date: `$275.85`.
 - Active flooring package remaining expected spend: `$429.08`.
 - Active flooring package estimated total: `$704.93`.
-- If including de-scoped EPDM as sunk spend, documented flooring outlay-to-date is `$323.07`.
 
 ## Installation Sequence
 ### Phase 1 - Prep

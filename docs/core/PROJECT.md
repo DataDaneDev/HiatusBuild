@@ -1,7 +1,7 @@
 # Project
 
 ## Snapshot
-- As-of date: March 18, 2026
+- As-of date: March 19, 2026
 - Install milestone: May 7, 2026
 - Mission: build a reliable off-grid camper workspace suitable for full-time professional use
 
@@ -67,7 +67,7 @@
 - Validate shared 12V junction behavior (`Orion + buffer battery`) including `F-11` and `SW-12V-BATT` under office/galley USB station loads.
 - Reserve solar passthrough/routing space now, but defer final flexible-panel procurement and string lock deeper into the build sequence.
 - Confirm passthrough locations (solar, shore, fuel/heater routing) with Hiatus before production lock.
-- Validate Sterling `BB1248120` + `BBR` current-limit envelope on the factory `240A` alternator; keep Mechman 370A + Big 3 as purchase-later path pending fitment confirmation.
+- Confirm Mechman dual-48V kit fitment/content details, then execute Sterling return workflow (`rows 18/26`) and continue with the locked alternator migration fuse/wire baseline.
 - Lock interior/exterior T-slot or strut mounting ecosystem and bracket/accessory interface standard.
 
 ## Unblock sprint (next 72 hours)

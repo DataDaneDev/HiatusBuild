@@ -233,7 +233,7 @@
 - Context: Floor work advanced physically and stack-up priorities shifted toward simpler, stiffer execution.
 - Options considered: keep EPDM thermal break, substitute alternate rubber layer, or remove thermal-break layer above EPS.
 - Decision drivers: execution simplicity, available materials, and immediate progress against schedule.
-- Result: Flooring baseline changed to bedliner -> EPS between ribs -> `3/4 in` birch subfloor -> finish vinyl; EPDM now documented as purchased but de-scoped.
+- Result: Flooring baseline changed to bedliner -> EPS between ribs -> `3/4 in` birch subfloor -> finish vinyl; EPDM order was canceled before shipment and refunded, so no EPDM stock is on hand.
 - Follow-up: confirm acoustic/thermal tradeoff is acceptable after initial in-use evaluation.
 
 - ID: D-026
@@ -253,6 +253,24 @@
 - Decision drivers: cleaner final install capacity and preserving a separate prototype bench panel.
 - Result: `+$50` installer scope change accepted; no conflict with prior owner-purchased `12-circuit` panel use case.
 - Follow-up: map final installer panel branch assignments to the canonical fuse schedule during commissioning docs pass.
+
+- ID: D-028
+- Date: 2026-03-19
+- Decision: Assume migration from Sterling alternator charging to dedicated `48V` secondary alternator architecture and plan Sterling return.
+- Context: Current alternator trade study now carries a simple `A1` migration baseline (`Mechman + WS500 + APM-48`) and the project requested an exact procurement delta under that assumption.
+- Options considered: keep Sterling baseline active, stage Sterling/Mechman in parallel, or commit planning/procurement to Mechman migration assumption.
+- Decision drivers: faster alternator-to-house charging, simplified architecture direction, and explicit procurement execution planning.
+- Result: Migration delta is now assimilated into canonical docs (`SYSTEMS`, `TRACKING`, starter plan, fuse schedule, and BOM). BOM rows updated for return/deprecation/new migration purchases (`18`, `26`, `103`, `104`, `168-173`) and standalone conditionals (`172`, `173`) removed from scope.
+- Follow-up: complete Mechman fitment/content confirmation first, then execute physical Sterling return.
+
+- ID: D-029
+- Date: 2026-03-19
+- Decision: Finalize alternator migration fuse and wire baseline now.
+- Context: Migration execution required immediate closure of fuse sizing and cable strategy before cable cuts or new contingency buys.
+- Options considered: keep fuse/wire pending, downsize to new smaller cable now, or lock reuse-first with measured validation.
+- Decision drivers: avoid unnecessary new wire spend, keep installation momentum, and close alternator branch protection ambiguity.
+- Result: locked `F-04` at `150A` (`58V/80V` MEGA), added explicit WS500 low-current fuse set (`10A/3A/5A` class), and locked reuse of existing uncut `2/0` inventory for the `~20 ft` alternator run baseline. Updated `docs/implementation/ELECTRICAL_fuse_schedule.md` and BOM rows `170-173` accordingly.
+- Follow-up: if measured route reality materially differs, re-run drop/ampacity screen before any gauge downsize.
 
 ## Risk register
 - ID: R-001
@@ -356,16 +374,13 @@
 
 ## Open questions
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)
-- Lock initial BBR current-limit setpoint for the assumed `240A` factory alternator after first instrumented charge tests
-- Confirm Mechman 370A (SKU `11532370`) fitment for the actual truck platform before purchase (VIN check)
-- Confirm required shorter belt length and final belt part number if the Mechman alternator is installed
+- Confirm exact Mechman dual-48V kit fitment/content for the truck (`2021 F-350 7.3L`) before shipping Sterling returns
 - Confirm Wakespeed support status for the documented `Dumfume 51.2V 100Ah` battery manual (`58.4V` charge voltage, `20-50A` recommended charge current per battery, `1S4P` max expansion) before considering a `WS500`-controlled alternator path
 - Confirm the Dumfume manual's `20-50A` recommended charge current is intended to scale across the current `1S3P` bank for alternator-charging use, not just single-battery charging
 - Confirm whether the Mechman `48V` secondary-alternator path can be safely supported with an internal-BMS, non-CAN battery bank, including any required load-dump / avalanche-diode / keeper-battery mitigation
 - Confirm whether the Mechman `48V` alternator negative/case can remain electrically isolated from chassis in the intended install, or whether the house `48V` system should be treated as engine/chassis referenced
 - User-confirmed assumption: losing automatic house-to-starting-battery support is acceptable
 - Confirm only that the retained factory alternator continues to handle normal starter/vehicle charging independently if the Mechman `48V` path is adopted
-- Lock Big 3 spec package (additional cable length, inline fuse type/rating, lug count, and RVC ground-loop routing requirement)
 - Confirm measured daily draw for owner-supplied laptop/monitor/tablet charging to replace planning assumptions
 - Validate Orion `48/12-30` charger headroom with the current 12V branch plan (including USB stations, `12V-10` Maxxair fan, `12V-06` Hiatus factory LED+dimmer, and planned `12V-11` ambient/Govee strips) and trigger row `118` only if sustained overload is observed
 - Final AC receptacle count and distribution target (`3` vs `4` locations; target `6` vs `8` practical plug points)
@@ -378,11 +393,10 @@
 - Battery compartment heating and control implementation details (sensor, relay, setpoints)
 - Storage/security SOP for flight windows
 - Measured fridge compressor duty cycle by ambient band (cold, mild, hot) to replace modeled assumptions
-- Final fuse-holder SKU standard for Orion input/output, Sterling input, and PV string fusing hardware
+- Final fuse-holder SKU standard for Orion input/output, WS500 low-current fuses, and PV string fusing hardware
 - Final SKU lock for `F-11` holder family and `SW-12V-BATT` switch model/location
 - Validate the chosen `F-05 + F-06` split-protection Orion branch against final measured run lengths and voltage drop
 - Confirm acceptable monitoring expectation that Orion is not a direct GX telemetry node in current architecture
-- Confirm measured Sterling `BB1248120` output current/power at idle and driving RPM bands for charge-time planning
 - Confirm final location/format for measured run-length recordkeeping in implementation docs before final cable closeout
 - Lock final propane water-heater path: outdoor-use-only portable workflow vs listed indoor/RV unit with compliant venting/clearance package
 - Lock propane passthrough hardware standard and no-concealed-joints rule for final routing

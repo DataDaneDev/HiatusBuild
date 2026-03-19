@@ -10,6 +10,7 @@
 - Flooring prep advanced from planning into physical execution:
   - EPS was cut and installed between truck bed ribs.
   - Thermal-break layer decision changed: `EPDM/RPDB` layer above ribs is no longer in scope.
+  - EPDM order status update: canceled before shipment and refunded (no EPDM inventory on hand).
   - Subfloor baseline changed to `3/4 in` plywood directly over EPS + rib structure.
 - Flooring materials purchased:
   - `2x` `4x8` `3/4 in` birch plywood at `$88` each (`$176` total).

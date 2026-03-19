@@ -1,8 +1,12 @@
 # Electrical Topology Diagram (Implementation v5)
 
-As-of date: `2026-02-24`
+As-of date: `2026-03-19`
 
 Purpose: provide a complete, install-level electrical topology for the current build scope, including all major electrical components, fuse IDs, fuse housings, planned wire gauges, and estimated one-way run lengths for procurement planning.
+
+Status note (`2026-03-19`):
+- The detailed alternator section in this diagram is still the pre-migration Sterling rendering and requires a full v6 redraw.
+- For active migration execution (`Mechman/WS500/APM-48`, `F-04 150A` lock, `F-08` retired), use `docs/implementation/ELECTRICAL_fuse_schedule.md` and `docs/core/SYSTEMS.md` as canonical until this diagram is refreshed.
 
 Related docs:
 - Canonical electrical/system baseline: `docs/core/SYSTEMS.md`

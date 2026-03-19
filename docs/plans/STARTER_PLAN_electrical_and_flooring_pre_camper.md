@@ -1,6 +1,6 @@
 # Starter Plan: Electrical + Flooring (Pre-Camper)
 
-As-of date: `2026-03-18`
+As-of date: `2026-03-19`
 
 Purpose: give a phone-friendly, practical plan you can execute immediately **without the camper shell in hand**, using current field progress and updated decisions.
 
@@ -27,7 +27,7 @@ Related references:
 ### Not finalized / not in hand yet
 - Camper shell not yet installed.
 - Solar panels and final PV wiring/fusing path are not yet locked for final procurement.
-- Alternator charging path decision still in progress (`Sterling` retained for now while dual-alternator path is validated).
+- Alternator architecture direction is now dedicated `48V` secondary alternator (`Mechman + WS500 + APM-48`) with Sterling return pending vendor confirmation.
 - Final AC branch/receptacle count and final shore-hardware SKU lock remain open.
 - Finish vinyl and adhesive are not yet purchased.
 
@@ -109,13 +109,12 @@ Do not finalize these yet:
 - Final shell route-length cuts.
 - Roof/solar run terminations.
 
-## 3.6 Alternator path while still undecided
-Until the alternator strategy is fully locked:
-- Keep Sterling-based path as current working baseline.
-- Reserve physical board/cable space for either:
-  - staying Sterling-only, or
-  - future dual-alternator controller/harness integration.
-- Avoid permanently consuming all service space around the starter-battery charge-input branch.
+## 3.6 Alternator path execution baseline (now locked)
+- Build around the dedicated `48V` secondary alternator path (`A1` baseline) and retire Sterling-path layout dependencies.
+- Keep Lynx Slot 3 reserved for the alternator branch (`F-04` now re-baselined in the fuse schedule).
+- Reserve mounting space for WS500 harness fusing and APM-48 placement/service access.
+- Use existing uncut `2/0` stock for the alternator `+` and dedicated negative run until measured field routing proves otherwise.
+- Do not initiate physical Sterling return shipment until Mechman fitment and kit-content details are confirmed.
 
 ---
 
@@ -200,7 +199,7 @@ This keeps progress steady without waiting on missing materials.
 
 - Solar panel model/stringing not yet locked.
 - Final PV fusing/wire lengths not yet locked.
-- Alternator strategy still in validation; Sterling retained as baseline for now.
+- Alternator path is re-baselined to dedicated `48V` secondary alternator; Sterling return is pending Mechman confirmation.
 - Final AC outlet/branch count lock still pending (two branches retained as working baseline).
 - Final closet envelope dimensions may shift after camper is physically in hand.
 
