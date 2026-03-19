@@ -1,7 +1,7 @@
 # Project
 
 ## Snapshot
-- As-of date: February 19, 2026
+- As-of date: March 18, 2026
 - Install milestone: May 7, 2026
 - Mission: build a reliable off-grid camper workspace suitable for full-time professional use
 
@@ -19,8 +19,8 @@
 
 ## Current pre-camper execution focus (electrical + flooring)
 - Use `docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md` as the active day-to-day checklist while the camper shell is not yet in hand.
-- Prioritize reversible progress: templating, mock layout boards, labeling, and cut planning.
-- Defer shell-dependent irreversible work (final penetrations, final route-length cuts, permanent finish-floor bonding).
+- Active work now includes both reversible and truck-only irreversible tasks (EPS install, subfloor prep, bench board drilling/layout).
+- Defer shell-dependent irreversible work (final penetrations, shell-run final cut lengths, permanent finish-floor bonding).
 
 ## Scope
 - In scope: electrical, charging, solar, communications, interior structure/cabinetry, operations process, maintenance tracking
@@ -47,44 +47,43 @@
 - M0: requirements baseline frozen
 - M1: system architecture selected (electrical + comms + thermal)
 - M2: BOM v1 complete and procurement started
-- M3: CAD fit checks and wiring route plan complete
+- M3: physical fit checks and measured wiring route plan complete (CAD optional/reference-only)
 - M4: subsystem bench validation complete
 - M5: install-readiness checklist complete
 - M6: install date (May 7, 2026)
 - M7: shakedown and punch-list closure
 
-## Build sequencing baseline (as-of 2026-02-16)
-- Build sequencing is now tracked as an overlapping phase plan (not strict serial trades).
-- Target install date remains fixed at May 7, 2026 (`80` days from this baseline date).
-- Accelerated procurement phase (`Batch A+`) is active in `bom/bom_estimated_items.csv` with core electrical plus bench-build wiring/consumables pulled into February 16 to February 21.
+## Build sequencing baseline (as-of 2026-03-18)
+- Build sequencing is tracked as an overlapping phase plan (not strict serial trades).
+- Target install date remains fixed at May 7, 2026 (`50` days from this baseline date).
+- Accelerated procurement (`Batch A+`) is now historical context; current sequencing focus is AC closure, measured harness planning, and module completion.
 - Detailed stage-by-stage order of operations, dependencies, and draft date windows:
 - `docs/plans/PROJECT_build_order_of_operations.md`
 
 ## Immediate next decisions
-- Execute `Batch A+` purchase wave and capture vendor/ETA status for rows `3`, `4`, `5`, `6`, `7`, `10`, `11`, `12`, `16`, `17`, `18`, `20`, `21`, `22`, `23`, `26`, `27`, `28` through `45`, `52`, `53`, `60`, `117`
-- Validate the full fuse schedule against final holder/SKU selections and cart contents for the locked Lynx architecture
-- Validate shared 12V junction behavior (`Orion + buffer battery`) including `F-11` and `SW-12V-BATT` service isolation behavior under office/galley USB station loads
-- Freeze autonomy policy using modeled profiles (BOM + owner-supplied office loads) with a `20%` minimum SOC reserve floor
-- Confirm passthrough locations (solar, shore, fuel/heater routing) with Hiatus before production lock
-- Lock hardwall-popup solar jumper approach details (connector family, passthrough hardware SKU, and service-loop length for roof travel)
-- Validate Sterling `BB1248120` + `BBR` current-limit operating envelope on the factory `240A` alternator; keep Mechman 370A alternator + Big 3 as purchase-later path pending fitment confirmation and install timing
-- Choose final solar panel type (flex vs rigid)
-- Lock interior/exterior T-slot or strut mounting ecosystem and bracket/accessory interface standard
+- Finalize AC scope and hardware lock: shore-power chain plus final branch/receptacle count (`2` branches with final location count pending).
+- Complete AC SKU-level lock and fitment validation for rows `13`, `107`, `108`, `109`, `110`, `111`, `112`, and `123`.
+- Execute bench-build electrical closet layout and document measured run lengths; CAD lengths are reference-only for material planning.
+- Validate shared 12V junction behavior (`Orion + buffer battery`) including `F-11` and `SW-12V-BATT` under office/galley USB station loads.
+- Reserve solar passthrough/routing space now, but defer final flexible-panel procurement and string lock deeper into the build sequence.
+- Confirm passthrough locations (solar, shore, fuel/heater routing) with Hiatus before production lock.
+- Validate Sterling `BB1248120` + `BBR` current-limit envelope on the factory `240A` alternator; keep Mechman 370A + Big 3 as purchase-later path pending fitment confirmation.
+- Lock interior/exterior T-slot or strut mounting ecosystem and bracket/accessory interface standard.
 
 ## Unblock sprint (next 72 hours)
-Purpose: convert “planning certainty” into a buildable, orderable physical layout (especially the electrical cabinet), without CAD’ing every bend radius.
+Purpose: convert planning certainty into a buildable, orderable physical layout (especially the electrical cabinet), without CAD-ing every bend radius.
 
 ### Outcome targets (definition of done)
-By end of the sprint, you can point to a single “electrical module footprint” and say it is real:
+By end of the sprint, you can point to a single electrical module footprint and say it is real:
 1. Electrical cabinet envelope is locked (W x H x D), plus required service-access clearance.
 2. All major electrical components fit on a 1:1 backer board mockup with cable exits accounted for.
 3. A cabinet strategy is selected that matches build skills (Phase 1 = simple, serviceable; Phase 2 = pretty skins/lighting).
-4. A purchase gate is cleared: you either place `Batch A+` orders confidently or you have a specific list of what must change first.
+4. A purchase gate is cleared: you either place remaining critical-path orders confidently or you have a specific list of what must change first.
 
 ### Day-by-day plan
 #### Day 1 (today)
-1. Pick the cabinet zone and commit to a *bounding box* (not final cabinetry): “electrical lives here”.
-2. Write 10 “non-negotiables” for the electrical cabinet:
+1. Pick the cabinet zone and commit to a *bounding box* (not final cabinetry): "electrical lives here".
+2. Write 10 "non-negotiables" for the electrical cabinet:
    - example set: short high-current runs, no buried fuses, strain relief at every entry, AC and DC separation, ventilation path, battery restraint, drip-loop mindset.
 3. Decide the Phase 1 aesthetics rule:
    - Recommended: **no sliding doors** in Phase 1 (hinged or fully removable panels only). Plan for frosted polycarbonate + LEDs later by reserving space and a wire path.
@@ -92,9 +91,9 @@ By end of the sprint, you can point to a single “electrical module footprint�
 #### Day 2
 1. Do a 1:1 physical layout of the electrical stack:
    - On a scrap plywood/foam board backer, place full-size paper/cardboard templates for batteries, MultiPlus, Lynx, shunt, DC-DC, breakers, cable glands.
-   - Add “keep-out” zones for cable bend room and service tool access.
+   - Add "keep-out" zones for cable bend room and service tool access.
 2. Choose entry/exit points and routing corridors (don’t over-precision this):
-   - define: “48V trunk exits left”, “12V exits down/toe-kick chase”, “AC exits up/right”, etc.
+   - define: "48V trunk exits left", "12V exits down/toe-kick chase", "AC exits up/right", etc.
 3. If anything doesn’t fit cleanly, resize the cabinet envelope now (this is cheaper than re-buying).
 
 #### Day 3

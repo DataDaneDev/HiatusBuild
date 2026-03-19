@@ -1,7 +1,7 @@
 # Temporary Procurement Red Flags
 
 Purpose: track procurement-readiness gaps before purchase freeze, with emphasis on electrical cabinet kickoff dependencies.
-Status date: 2026-02-13
+Status date: 2026-03-18
 
 ## PRF-001 BOM Source Of Truth Is Split Across Multiple Files
 - Severity: High
@@ -20,7 +20,7 @@ Status date: 2026-02-13
 
 ## PRF-003 Electrical Cabinet BOM Has Unlocked Core Line Items
 - Severity: Medium
-- Issue: cabinet-critical architecture was previously unresolved; AC architecture is now locked at BOM-family level, but final SKU lock is still pending for some rows.
+- Issue: cabinet-critical architecture is mostly locked, but AC utilization scope was reopened for final receptacle-count closure and some final SKU locks are still pending.
 - Why this matters: unresolved SKU-level lock can still delay procurement, even after architecture-level decisions are complete.
 - Current references:
 - `bom/bom_estimated_items.csv` row `13` (`AC input breaker/disconnect`)
@@ -28,7 +28,8 @@ Status date: 2026-02-13
 - `bom/bom_estimated_items.csv` row `17` (`DEPRECATED (12V): separate negative busbar`)
 - `bom/bom_estimated_items.csv` row `19` (`Pre-charge Resistor`)
 - Clarification needed:
-- Final SKU choices for newly locked AC/DC rows (breaker enclosure family, branch breaker models, receptacle family, USB-C PD module family).
+- Final SKU choices for active AC/DC rows (breaker enclosure family, branch breaker models, receptacle family, USB-C PD module family).
+- Final receptacle-count closure (`3` vs `4` locations) on the retained two-branch AC baseline.
 - Final pre-charge resistor strategy/SKU for row `19`.
 - Confirmed AC load list for Phase 1:
 - `Appliances`: induction cooktop (`bom` row `67`), compact microwave (`bom` row `68`)
@@ -86,16 +87,17 @@ Status date: 2026-02-13
 
 ## PRF-006 CAD-Dependent Electrical Assumptions Are Not Yet Validated
 - Severity: Medium
-- Issue: conductor/fuse assumptions depend on run-length expectations, but CAD routing artifacts are not populated.
+- Issue: original CAD-gated run-length workflow is no longer the active method; measured bench-layout lengths now need to be captured cleanly as the source of truth.
 - Why this matters: final wire gauge, fuse choice margin, and cut-length ordering can be wrong if route lengths shift.
 - Current references:
 - `docs/implementation/ELECTRICAL_fuse_schedule.md` (run-length assumptions and Orion branch note)
 - `docs/implementation/ELECTRICAL_overview_diagram.md` (conductor schedule assumptions)
-- `cad/` (no current Fusion/exports/drawings files)
+- `docs/core/TRACKING.md` (`D-024`)
 - Clarification needed:
-- Preliminary routing and one-way run lengths for major cabinet circuits.
+- Measured one-way run lengths for major cabinet circuits from physical board layout.
+- Canonical storage location for measured run-length records.
 - Resolution target:
-- Validate major run lengths in CAD before freezing cable/fuse purchases and cut-to-length material orders.
+- Validate major run lengths from bench layout before freezing cable/fuse purchases and cut-to-length material orders.
 - Status: Open
 
 ## PRF-007 Project Next-Steps Section Is Stale Relative To Completed Electrical Work
@@ -109,11 +111,10 @@ Status date: 2026-02-13
 - Preferred cadence for updating high-level “next decisions” after major subsystem closure.
 - Resolution target:
 - Replace completed items with current procurement blockers and validation tasks.
-- Status: Open
+- Status: Closed (`2026-03-18`) after project-doc maintenance pass
 
 ## Suggested Resolution Order
 1. PRF-003 cabinet-critical SKU lock completion
 2. PRF-004 fuse-holder SKU lock
 3. PRF-005 shore AC procurement completeness
-4. PRF-006 CAD run-length validation
-5. PRF-007 project next-steps cleanup
+4. PRF-006 measured run-length record lock

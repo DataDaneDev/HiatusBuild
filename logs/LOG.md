@@ -10,6 +10,31 @@ Single running log for build progress and test evidence.
 - Issues:
 - Next actions:
 
+## 2026-03-18
+- Ran a full project-maintenance documentation pass and synchronized health/planning/tracking/procurement docs with current field progress.
+- Captured completed vehicle electronics integration:
+- Garmin Tread 2 hardwired and mounted (`$50` Garmin motorcycle mount/hardwire kit + `$20` RAM arm + `$75` BuiltRight dash mount; Garmin unit already owned).
+- Captured flooring execution progress and stack revision:
+- EPS cut and installed between truck bed ribs.
+- Removed EPDM/RPDB thermal-break layer from active stack.
+- Locked active floor path to bedliner -> EPS between ribs -> `3/4 in` birch subfloor -> marine sheet vinyl.
+- Captured new material purchases:
+- `2x` `4x8` `3/4 in` birch plywood (`$88` each, `$176` total).
+- `1x` `4x8` `1/2 in` plywood (`$68`) for electrical backer/closet module.
+- Captured major Harbor Freight tooling purchase and related additions (total noted from provided line items: `$1,622`):
+- Tool cart, Apex/Badlands winch, Bauer 6-tool combo, orbital sander, router, jigsaw, jigsaw blades, extra `20V 5Ah` battery, router bit kit, sanding discs, kneeling pad, super glue pack, step bits, epoxy, `2-yr` HF membership, Ryobi `10 in` sliding miter saw, and lifetime table.
+- Captured installer scope change:
+- Added `$50` upcharge for installer-provided `12-circuit` Blue Sea fuse panel (instead of `6-circuit`), while retaining owner-purchased budget `12-circuit` panel for bench/prototype use.
+- Captured electrical workflow change:
+- Retired CAD-gated run-length expectation and moved to bench-layout-first measured cut-length process.
+- Captured planning posture updates:
+- AC protection chain baseline retained, but final branch utilization/receptacle count is reopened for closure.
+- Solar procurement/final sizing intentionally deferred deeper in build; flexible path remains active direction under `75 lb` cap.
+- Measurements/data: no new electrical performance testing in this pass (documentation and procurement-state synchronization only).
+- Tests run: consistency pass across updated docs and BOM row checks for updated/new rows.
+- Issues: AC scope finalization and measured run-length record location still open.
+- Next actions: close AC count/SKU lock, complete measured run-length capture from bench layout, then execute cable closeout procurement.
+
 ## 2026-03-15
 - Researched a possible alternator-charging architecture change from the current Sterling `BB1248120` path to a Mechman/Wakespeed `48V` secondary-alternator system for the `2021` `F-350` `7.3L`.
 - Added the battery manual and exact battery data for the current house bank:

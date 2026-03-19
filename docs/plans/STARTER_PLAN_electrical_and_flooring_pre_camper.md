@@ -1,8 +1,8 @@
 # Starter Plan: Electrical + Flooring (Pre-Camper)
 
-As-of date: `2026-03-15`
+As-of date: `2026-03-18`
 
-Purpose: give a phone-friendly, practical plan you can start immediately **without the camper shell in hand**, based on your current inventory and open decisions.
+Purpose: give a phone-friendly, practical plan you can execute immediately **without the camper shell in hand**, using current field progress and updated decisions.
 
 Related references:
 - `docs/implementation/ELECTRICAL_overview_diagram.md`
@@ -19,17 +19,21 @@ Related references:
 - Truck in hand: `2021 F-350 long bed`.
 - Most core electrical components are already purchased.
 - Electrical architecture remains `48V core + 12V distribution`.
-- You can start by templating and bench-layout work now.
+- Garmin Tread 2 navigation is hardwired and mounted in-cab.
+- Flooring workstream is active: EPS between ribs is already cut/installed.
+- Flooring materials now in hand include `2x` `3/4 in` birch sheets (subfloor) and `1x` `1/2 in` sheet (electrical backer/closet use).
+- Tooling readiness increased (major Bauer/Harbor Freight purchase completed).
 
 ### Not finalized / not in hand yet
 - Camper shell not yet installed.
-- Solar panels and final PV wiring/fusing path not yet purchased/locked.
+- Solar panels and final PV wiring/fusing path are not yet locked for final procurement.
 - Alternator charging path decision still in progress (`Sterling` retained for now while dual-alternator path is validated).
-- Flooring plywood and final finish vinyl are not yet purchased.
+- Final AC branch/receptacle count and final shore-hardware SKU lock remain open.
+- Finish vinyl and adhesive are not yet purchased.
 
 ### Practical rule
-- **Do all reversible work now** (templates, layout boards, labeling, harness planning, drill guides, mock mounting).
-- **Do not do irreversible shell-dependent work yet** (final penetrations, final cable cut lengths for shell runs, permanent flooring glue-down).
+- **Continue reversible and truck-only irreversible work now** (bench layout, board drilling, floor panel fit/seal, labeling, harness prep).
+- **Do not do irreversible shell-dependent work yet** (final shell penetrations, final shell-run cable cuts, permanent finish-floor glue-down).
 
 ---
 
@@ -38,17 +42,15 @@ Related references:
 Use this as your “open phone and go” sequence.
 
 ## Week 1 goal
-- Build full-size electrical closet templates on construction paper.
-- Build a 2-panel mockup (`90°` plywood corner concept) out of cardboard/foam board first.
-- Produce a first-pass floor template set for bed geometry and hardpoints.
+- Lock electrical closet envelope and measured component layout on real backer material.
+- Finalize floor panel seam map and hardpoint pocket map using installed EPS baseline.
 
 ## Week 2 goal
-- Transfer electrical mockup to real plywood once purchased.
-- Pre-drill and test-fit electrical hardware spacing.
-- Pre-plan floor panel seams/cuts and hardpoint pockets.
+- Bench-build closet boards (pilot holes, test fit, staged full-size drilling).
+- Start measured wire-route planning from physical layout (not CAD-derived cuts).
 
 ## Week 3 goal
-- Build labeled install kits and checklists so install day is mostly execution.
+- Build labeled install kits, AC decision pack, and shell-day execution checklists.
 
 ---
 
@@ -81,18 +83,18 @@ Design rule:
 Exit criteria:
 - One “build candidate” layout with no blocked terminals and no impossible cable bends.
 
-## 3.3 Convert to a cardboard prototype before plywood
-- Use cheap cardboard or foam board to mock the two-board `90°` corner.
-- Transfer hole centers from the paper templates.
+## 3.3 Cardboard prototype (optional checkpoint)
+- If any layout is still uncertain, use cardboard/foam board to mock the two-board `90°` corner before committing hole patterns.
+- Transfer hole centers from templates.
 - Dry-place actual components (or weight/size placeholders).
-- Verify you can physically terminate the largest lugs and close the imagined cabinet envelope.
+- Verify terminal access and service loops before full drilling.
 
 Exit criteria:
-- Confirmed “human serviceable” geometry.
+- Confirmed "human serviceable" geometry.
 
-## 3.4 When plywood arrives: first irreversible step
-- Transfer the validated template to plywood.
-- Drill pilot holes only first.
+## 3.4 Plywood execution (current phase)
+- Transfer validated layout to plywood.
+- Drill pilot holes first.
 - Mount a subset (critical components) and confirm fit before drilling all holes full-size.
 - Seal plywood faces/edges after hole layout is validated.
 
@@ -117,9 +119,9 @@ Until the alternator strategy is fully locked:
 
 ---
 
-## 4) Flooring: pre-camper start plan (template-first, no plywood yet)
+## 4) Flooring: active pre-camper execution plan
 
-You can get meaningful work done now with your construction paper templates.
+The flooring workstream is now in active execution (EPS installed and subfloor plywood purchased).
 
 ## 4.1 Template package to create now
 Create these full-size templates for the truck bed:
@@ -135,17 +137,17 @@ Mark every template with:
 - date/version (example: `FLOOR-TEMPLATE-v1`)
 
 ## 4.2 Hardpoint planning rule (critical)
-Before plywood arrives, pre-decide hardpoint pocket zones from `docs/implementation/FLOORING_subfloor_build_process.md`:
-- At structural anchor points, EPS/EPDM are removed locally so plywood bears directly on steel.
-- Keep these zones clearly marked in templates to prevent accidental compressible stackups.
+Use hardpoint pocket zones from `docs/implementation/FLOORING_subfloor_build_process.md`:
+- At structural anchor points, EPS is removed locally so plywood bears directly on steel.
+- Keep these zones clearly marked to prevent accidental compressible stackups.
 
-## 4.3 Plywood cut planning before purchase
-Even without purchasing plywood yet, you can:
-- Choose panel seam direction for easiest install/removal.
-- Confirm each panel can be inserted/rotated into place without binding.
-- Mark a “service pull path” if a panel might need removal later.
+## 4.3 Plywood cut planning and fit checks (now)
+With plywood now purchased, complete:
+- Panel seam direction for easiest install/removal.
+- Test-fit each panel for insertion/rotation clearance.
+- A service pull path so a panel can be removed later if needed.
 
-## 4.4 Once plywood is purchased
+## 4.4 Active execution sequence
 Execution order:
 1. Transfer template lines to plywood and rough-cut oversized.
 2. Test-fit and trim in small increments.
@@ -176,13 +178,13 @@ This keeps progress steady without waiting on missing materials.
 
 ## 6) Build gates (what must be true before moving on)
 
-## Gate E1: Electrical layout freeze (before full plywood drilling)
+## Gate E1: Electrical layout freeze (before full board drilling)
 - Paper + cardboard mockup approved.
 - Terminal access verified for all high-current points.
 - Fuse/service access verified.
 - Future alternator-path reserve space confirmed.
 
-## Gate F1: Floor template freeze (before plywood purchase/cutting)
+## Gate F1: Floor layout freeze (before final drilling/sealing)
 - Bed perimeter + wheel wells + hardpoint overlays verified in truck.
 - Panel seam strategy verified for install/removal.
 - Anchor-hole strategy marked.
@@ -199,6 +201,7 @@ This keeps progress steady without waiting on missing materials.
 - Solar panel model/stringing not yet locked.
 - Final PV fusing/wire lengths not yet locked.
 - Alternator strategy still in validation; Sterling retained as baseline for now.
+- Final AC outlet/branch count lock still pending (two branches retained as working baseline).
 - Final closet envelope dimensions may shift after camper is physically in hand.
 
 ---

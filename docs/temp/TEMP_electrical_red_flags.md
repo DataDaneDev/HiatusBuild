@@ -1,7 +1,7 @@
 # Temporary Electrical Red Flags
 
 Purpose: hold unresolved electrical documentation issues so they can be closed one by one.
-Status date: 2026-02-12
+Status date: 2026-03-18
 
 ## RF-001 Non-BOM Work Loads Excluded From Canonical Model
 - Severity: High
@@ -119,7 +119,22 @@ Status date: 2026-02-12
 - Updated electrical topology and fuse docs to implementation-level detail with holder and conductor mapping.
 - Status: Closed (`2026-02-12`)
 
+## RF-009 Run-Length Governance Shift (CAD Gate Retired) Needs Canonical Capture
+- Severity: Medium
+- Issue: Run-length validation method changed from CAD-gated assumptions to bench-layout-first measured lengths, but implementation docs still need one explicit canonical location for measured values.
+- Why this matters: Without one measured-length source of truth, cable/fuse closeout can drift across docs and cut lists.
+- Current references:
+- `docs/core/TRACKING.md` (`D-024`)
+- `docs/implementation/ELECTRICAL_fuse_schedule.md`
+- `docs/implementation/ELECTRICAL_overview_diagram.md`
+- Clarification needed:
+- Where measured one-way run lengths will be maintained as the canonical dataset during build.
+- Resolution target:
+- Define canonical measured-length location and keep it in sync before final cable closeout procurement.
+- Status: Open
+
 ## Suggested Resolution Order
-1. RF-007 Purchase-later alternator integration
-2. RF-005 Load model column semantics
-3. RF-006 Historical wording cleanup
+1. RF-009 Run-length governance capture
+2. RF-007 Purchase-later alternator integration
+3. RF-005 Load model column semantics
+4. RF-006 Historical wording cleanup

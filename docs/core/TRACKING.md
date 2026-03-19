@@ -3,6 +3,7 @@
 ## Assumptions and constraints
 - Constraints: truck/camper/dates are fixed constants
 - Assumptions to validate: autonomy target, climate profile, load profile, travel cadence impacts
+- Electrical run-length policy: physical bench-layout measurements are the primary cut-length source; CAD values are reference-only.
 - Working load baseline assumption from load model v3 (BOM + owner-supplied office loads):
 - `core_workday`: `3,530 Wh/day`
 - `winter_workday`: `4,202 Wh/day`
@@ -215,7 +216,43 @@
 - Options considered: keep compact load-center baseline, split DIN `20A` AC-in baseline, or split DIN with `30A` AC-in plus source-limited current settings.
 - Decision drivers: compactness, service clarity, lower-complexity branch layout, and complete purchasable-component traceability.
 - Result: updated AC topology and procurement docs to one architecture (`TT-30 -> EMS -> AC-in DIN 30A breaker -> MultiPlus AC-in`, plus AC-out DIN branch panel), updated BOM row meanings for AC rows (`13`, `14`, `109`, `110`, `113`, `114`) and added hardwired EMS row `123`, and adopted a manual AC validation checklist as the acceptance gate.
-- Follow-up: verify locked AC hardware fitment in the cabinet mockup and record checklist pass evidence in `logs/LOG.md`.
+- Follow-up: partially reopened by D-026 for final branch utilization/receptacle count lock while retaining the protection-chain architecture baseline.
+
+- ID: D-024
+- Date: 2026-03-18
+- Decision: Replace CAD-gated run-length validation with bench-layout-first measured cut lengths for electrical harness work.
+- Context: CAD-derived route-length artifacts are not being produced in time for current build pacing.
+- Options considered: wait for CAD completion, cut from assumptions only, or lock physical-layout-first measurement workflow.
+- Decision drivers: schedule realism, cut-length accuracy from real hardware placement, and reduced late-stage rework.
+- Result: Project planning baseline now treats CAD lengths as rough planning input only; measured physical routes are the cut-length source of truth.
+- Follow-up: record measured run lengths in implementation docs before final cable closeout orders.
+
+- ID: D-025
+- Date: 2026-03-18
+- Decision: Remove the full-bed EPDM/RPDB thermal-break layer from the floor stack and run `3/4 in` birch directly over EPS/ribs.
+- Context: Floor work advanced physically and stack-up priorities shifted toward simpler, stiffer execution.
+- Options considered: keep EPDM thermal break, substitute alternate rubber layer, or remove thermal-break layer above EPS.
+- Decision drivers: execution simplicity, available materials, and immediate progress against schedule.
+- Result: Flooring baseline changed to bedliner -> EPS between ribs -> `3/4 in` birch subfloor -> finish vinyl; EPDM now documented as purchased but de-scoped.
+- Follow-up: confirm acoustic/thermal tradeoff is acceptable after initial in-use evaluation.
+
+- ID: D-026
+- Date: 2026-03-18
+- Decision: Reopen final AC utilization scope (branch/receptacle count) while keeping the `30A` shore + split-DIN protection architecture baseline.
+- Context: Phase-1 AC layout remains close to lock, but final receptacle quantity is still being evaluated (`3` vs `4` locations) against real-use needs.
+- Options considered: freeze current `4`-location plan, reduce to `3` locations, or defer decision until late install.
+- Decision drivers: practical outlet usability, wiring simplicity, and avoiding unnecessary hardware sprawl.
+- Result: AC architecture/protection chain remains locked; final branch utilization and receptacle count are now explicit open items.
+- Follow-up: close AC count/SKU lock in one pass before AC procurement freeze.
+
+- ID: D-027
+- Date: 2026-03-18
+- Decision: Pay installer upcharge for `12-circuit` Blue Sea fuse panel (vs installer `6-circuit`) while retaining purchased budget `12-circuit` panel for bench prototyping.
+- Context: Installation-day branch capacity and bench-development flexibility both matter.
+- Options considered: keep installer `6-circuit`, switch installer to `12-circuit`, or rely only on owner-supplied panel.
+- Decision drivers: cleaner final install capacity and preserving a separate prototype bench panel.
+- Result: `+$50` installer scope change accepted; no conflict with prior owner-purchased `12-circuit` panel use case.
+- Follow-up: map final installer panel branch assignments to the canonical fuse schedule during commissioning docs pass.
 
 ## Risk register
 - ID: R-001
@@ -308,6 +345,15 @@
 - Owner: Sunny
 - Status: Open
 
+- ID: R-011
+- Risk: AC scope churn (final receptacle count and branch utilization not fully closed) can delay SKU lock and cabinet fit validation.
+- Impact (1-5): 4
+- Likelihood (1-5): 3
+- Mitigation: Close AC decision gate with one explicit branch/receptacle map and then freeze matching SKUs.
+- Trigger: AC procurement freeze and cabinet mockup fit check.
+- Owner: Sunny
+- Status: Open
+
 ## Open questions
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)
 - Lock initial BBR current-limit setpoint for the assumed `240A` factory alternator after first instrumented charge tests
@@ -322,10 +368,11 @@
 - Lock Big 3 spec package (additional cable length, inline fuse type/rating, lug count, and RVC ground-loop routing requirement)
 - Confirm measured daily draw for owner-supplied laptop/monitor/tablet charging to replace planning assumptions
 - Validate Orion `48/12-30` charger headroom with the current 12V branch plan (including USB stations, `12V-10` Maxxair fan, `12V-06` Hiatus factory LED+dimmer, and planned `12V-11` ambient/Govee strips) and trigger row `118` only if sustained overload is observed
-- Verify physical fitment and service-access clearances for the locked split-DIN AC hardware set (`rows 13`, `14`, `15`, `107`, `108`, `109`, `110`, `111`, `112`, `113`, `114`, `123`) during cabinet mockup
+- Final AC receptacle count and distribution target (`3` vs `4` locations; target `6` vs `8` practical plug points)
+- Verify physical fitment and service-access clearances for the split-DIN AC hardware set (`rows 13`, `15`, `107`, `108`, `109`, `110`, `111`, `112`, `113`, `114`, `123`) during cabinet mockup
 - Final passthrough locations for solar, shore power, and fuel/heater paths
 - Lock roof-to-shell solar jumper connector strategy and exact service-loop length for full popup travel
-- Rigid vs flexible solar strategy under roof weight constraints
+- Flexible solar model/stringing strategy under roof `75 lb` cap and deferred-procurement timing
 - Lock interior/exterior mounting rail ecosystem (rail profile, nut/hardware standard, bracket interfaces) and final linear-foot allowances
 - Secondary internet strategy and minimum acceptable fallback performance
 - Battery compartment heating and control implementation details (sensor, relay, setpoints)
@@ -336,6 +383,7 @@
 - Validate the chosen `F-05 + F-06` split-protection Orion branch against final measured run lengths and voltage drop
 - Confirm acceptable monitoring expectation that Orion is not a direct GX telemetry node in current architecture
 - Confirm measured Sterling `BB1248120` output current/power at idle and driving RPM bands for charge-time planning
+- Confirm final location/format for measured run-length recordkeeping in implementation docs before final cable closeout
 - Lock final propane water-heater path: outdoor-use-only portable workflow vs listed indoor/RV unit with compliant venting/clearance package
 - Lock propane passthrough hardware standard and no-concealed-joints rule for final routing
 - Define and document recurring leak-test cadence (post-service, pre-trip, and periodic maintenance interval)

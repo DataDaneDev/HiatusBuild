@@ -26,12 +26,35 @@ Because of that, the list below is a practical **starting shortlist** based on c
 | SetPower `PT35` dual-zone | about `37qt` | `$320-$500` | Mid-size dual-zone option in the sweet spot for under-bed or drawer slide setups | Confirm divider/zone behavior at low ambient temps |
 | BougeRV dual-zone class (40-45qt variants) | about `42-45qt` | `$400-$650` | Often available with app control and dual-zone layouts under your budget cap | Check exact model dimensions because body width varies by variant |
 
-## How I would rank them for your use case
+## Additional smaller / lower-cost options to replace the `$799`-class pick
 
-1. **ICECO `VL45ProD`** if you want the "buy once, cry once" pick near your budget ceiling.
-2. **SetPower `PT35`** if you want a balanced cost/reliability bet in a smaller footprint.
-3. **BougeRV 40-45qt dual-zone** if you find a sale and want stronger feature-per-dollar.
-4. **BODEGACOOLER `TWW45`** if minimizing purchase price is the priority.
+If the prior ICECO recommendation at `$799` feels too expensive and larger than needed, these options are typically easier on both budget and footprint:
+
+| Model | Claimed class capacity | Typical street-price band (USD) | Why it may be a better fit now | Caveats to verify before purchase |
+| --- | --- | ---: | --- | --- |
+| SetPower `PT35` dual-zone | about `37qt` | `$320-$500` | Smaller form factor than ~45qt units, usually much cheaper than premium ICECO trims | Confirm dimensions and real usable freezer-side volume |
+| Alpicool dual-zone class (`T36/T50` family) | about `38-53qt` | `$280-$500` | Budget-focused pricing, common availability, and multiple sizes including smaller variants | Model naming is inconsistent across sellers—verify exact zone layout and compressor type |
+| BODEGACOOLER `TWW35`/`TWW45` dual-zone | about `35-45qt` | `$280-$450` | Frequently one of the least expensive dual-zone options, including smaller ~35qt size | Verify warranty path, replacement parts access, and latch durability |
+| BougeRV `E40`/similar dual-zone variants | about `40qt` | `$350-$550` | Typically mid-pack price with useful features (app, low-voltage settings) at smaller-than-45qt size | Dimensions vary by revision; confirm lid-open clearance and compressor-side vent space |
+| EUHOMY dual-zone class (`CFX`/`TWW`-style variants by seller) | about `32-42qt` | `$260-$450` | Usually among the cheapest entry points if you want to test a semi-permanent install first | Ensure it is true dual-zone (independent temps) and not single-zone with removable basket |
+
+## How I would rank them for your use case (smaller + lower-cost priority)
+
+1. **SetPower `PT35`** for the best balance of smaller footprint and sub-`$500` pricing.
+2. **BODEGACOOLER `TWW35/TWW45`** if lowest price is the top objective.
+3. **BougeRV ~40qt dual-zone** if you can catch a sale and want better fit/finish than ultra-budget picks.
+4. **Alpicool ~36-40qt dual-zone variant** as a value fallback when dimensions line up.
+5. **ICECO `VL45ProD`** only if you decide to spend more for perceived build quality and support.
+
+## Practical size target (to avoid over-buying)
+
+Given your update, a **`35-40qt` dual-zone** unit is the most likely sweet spot:
+
+- big enough for daily fridge use plus a small freezer section
+- easier to fit on narrower slides
+- typically `20-40%` less expensive than premium ~45qt units
+
+If you're undecided, shortlist one `~35qt` and one `~40qt` model, then choose based on measured tray dimensions and lid-clearance envelope.
 
 ## Slide-install checklist (the part that matters most for non-removable setups)
 

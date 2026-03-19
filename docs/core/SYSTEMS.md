@@ -13,18 +13,20 @@
 - Solar option screening matrix (stringing + MPPT fit flags): `docs/studies/SOLAR_configuration_matrix.md`
 - Electrical decisions, risks, and unresolved items: `docs/core/TRACKING.md`
 
-### Planning snapshot (as-of `2026-02-18`)
+### Planning snapshot (as-of `2026-03-18`)
 - Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).
 - House architecture: `48V` core with Orion-Tr Smart `48V->12V` charging/step-down feeding a shared battery-backed `12V` junction.
 - Inverter/charger candidate: Victron MultiPlus-II `48/3000/35-50`.
 - Charge sources in current BOM: solar MPPT, Sterling alternator B2B path (factory alternator now, high-output alternator as purchase-later option), shore AC charger path.
 - Monitoring and protection: Cerbo GX, SmartShunt, battery temp sensing, Class T primary fuse + branch fusing.
+- AC protection chain remains locked (`TT-30 -> EMS -> AC-in breaker -> MultiPlus -> AC-out branch panel`), with final receptacle-count/utilization closure still open.
 
 ### Modeling rules (procurement-first plus full-load)
 - Primary procurement source of truth is `bom/bom_estimated_items.csv`.
 - Load model is maintained in `bom/load_model_wh.csv` (model v3) and includes BOM-sourced installed loads plus owner-supplied work electronics (kept out of BOM cost totals).
 - Legacy workbook WH model assumptions are retired and not used.
 - Voltage convention: use `48V` as architecture label, but use `51.2V` nominal for battery Wh accounting.
+- Run-length convention: measured physical layout lengths are cut-length source-of-truth; CAD values are planning references only.
 
 ### Input reference (maintained)
 | Input | Current value | Source |
@@ -36,7 +38,7 @@
 | Purchase-later alternator path | Mechman 370A alternator + Big 3 wiring estimate | `bom/bom_estimated_items.csv` rows 103 and 104 |
 | DC-DC charger | Orion-Tr Smart `48/12 30A` (`360W`) | `bom/bom_estimated_items.csv` row 20 |
 | 12V buffer battery | `12V 100Ah LiFePO4` on shared 12V junction (`F-11` + `SW-12V-BATT`) | `bom/bom_estimated_items.csv` rows 21, 124, and 125 |
-| Solar array candidate | `900W` flexible (`9x100W`, 3S3P) | `bom/bom_estimated_items.csv` row 24 |
+| Solar array candidate | Flexible-first placeholder (`~800-1000W` class; prior `9x100W`/`3S3P` concept retained for modeling basis) | `bom/bom_estimated_items.csv` row 24 |
 | Solar controller | SmartSolar `MPPT 150/45` | `bom/bom_estimated_items.csv` row 25 |
 | Load profiles (BOM + owner-supplied office loads) | `core_workday`, `winter_workday`, `minimal_idle_day` | `bom/load_model_wh.csv` |
 | Owner-supplied office assumptions | Laptop + 27 inch 1440p monitor + tablet/peripheral charging | `bom/load_model_wh.csv` rows marked `Owner-Supplied` |
@@ -179,12 +181,12 @@ Method:
 4. Build final fuse matrix with part numbers, quantities, and BOM row mapping.
 
 ## Solar
-- Current target options captured: flexible array around `900W` (`9x100W`) or rigid array around `600-800W`.
-- Constraint to validate: added roof load from solar plus Starlink plus fan/struts.
+- Current direction: flexible-first design path due roof `75 lb` hard panel-weight cap.
+- Near-term project policy: keep solar final procurement/string lock deferred deeper into build while preserving routing/passthrough reservations now.
 - Hardwall popup wiring baseline for planning: no hidden in-wall solar run; use exterior-rated coiled jumper cable(s) from roof solar exit to a lower-shell weatherproof passthrough.
 - BOM scope for that routing method is tracked in `bom/bom_estimated_items.csv` row `121`.
-- Open points: exact passthrough location and connector standard (`MC4` direct vs bulkhead adapter strategy) before SKU lock.
-- Energy takeaway from the current modeled load: moving from `600W` to `900W` improves expected harvest by about `720-900 Wh/day` at `4` PSH, depending on realized system efficiency, but still does not close the office-workday deficit by itself.
+- Open points: exact passthrough location, connector standard (`MC4` direct vs bulkhead adapter strategy), and final flexible module/string configuration before SKU lock.
+- Energy takeaway from current modeled load: moving from sub-`600W` class toward `~800-1000W` flexible can materially reduce daily deficit, but modeled office-workday profiles still require charging strategy integration (solar + alternator + shore).
 
 ### Electrical reference maintenance workflow
 - Update trigger conditions:

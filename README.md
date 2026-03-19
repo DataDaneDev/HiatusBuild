@@ -71,5 +71,6 @@ Use this table first whenever you are deciding where to put information.
 1. `docs/implementation/ELECTRICAL_AC_BOM.md`
 2. `docs/implementation/ELECTRICAL_fuse_schedule.md`
 3. `docs/implementation/ELECTRICAL_overview_diagram.md`
-4. `docs/core/SYSTEMS.md`
-5. `docs/core/PROJECT.md`
+4. `docs/implementation/FLOORING_subfloor_build_process.md`
+5. `docs/core/SYSTEMS.md`
+6. `docs/core/PROJECT.md`

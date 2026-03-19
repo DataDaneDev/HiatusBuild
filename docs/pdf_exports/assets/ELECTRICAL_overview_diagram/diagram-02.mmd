@@ -11,10 +11,12 @@ flowchart LR
     HEATER["12V-03 Diesel heater\n15A / 14 AWG"]
     PUMP["12V-04 Water pump\n10A / 14 AWG"]
     DET["12V-05 CO+Propane detector\n3A / 18/2"]
-    LED["12V-06 LED strips\n5A / 18/2"]
+    LED["12V-06 LED lights + dimmer\n5A / 18/2 (Hiatus pre-installed)"]
     CERBO_PWR["12V-07 Cerbo GX feed\n3A / 18/2 (assumed)"]
     USB_OFFICE["12V-08 Office USB PD station\n20A / 12 AWG"]
     USB_GALLEY["12V-09 Galley USB PD station\n15A / 14 AWG"]
+    MAXXAIR["12V-10 Maxxair fan\n10A / 14 AWG (Hiatus pre-installed)"]
+    LED_AMBIENT["12V-11 DC ambient/cabinet LED strips\n5A / 18/2 (planned Govee)"]
 
     ORION -- "6 AWG, ~2.5 ft to main + stud" --> F07 --> PANEL
     ORION -- "6 AWG, ~2.5 ft to main - / neg bus" --> PANEL
@@ -31,6 +33,8 @@ flowchart LR
     PANEL -- "18/2, ~2.5 ft (ASSUMED)" --> CERBO_PWR
     PANEL -- "12 AWG duplex, ~5 ft (ASSUMED short run)" --> USB_OFFICE
     PANEL -- "14 AWG duplex, ~8 ft (ASSUMED)" --> USB_GALLEY
+    PANEL -- "14 AWG duplex, ~8 ft (ASSUMED)" --> MAXXAIR
+    PANEL -- "18/2, ~8 ft (ASSUMED)" --> LED_AMBIENT
 
     STAR -- "return in duplex, ~8 ft" --> PANEL
     FRIDGE -- "return in duplex, ~12 ft" --> PANEL
@@ -41,3 +45,5 @@ flowchart LR
     CERBO_PWR -- "return in 18/2, ~2.5 ft" --> PANEL
     USB_OFFICE -- "return in duplex, ~5 ft" --> PANEL
     USB_GALLEY -- "return in duplex, ~8 ft" --> PANEL
+    MAXXAIR -- "return in duplex, ~8 ft" --> PANEL
+    LED_AMBIENT -- "return in 18/2, ~8 ft" --> PANEL

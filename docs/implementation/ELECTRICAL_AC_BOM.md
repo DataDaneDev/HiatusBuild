@@ -1,8 +1,8 @@
 # Electrical AC BOM (Phase 1)
 
-As-of date: `2026-02-19`
+As-of date: `2026-03-18`
 
-Purpose: lock the compact split-panel AC architecture and procurement scope for Phase 1 with a `30A` shore-capable AC-in path, UL-listed DIN protection hardware, and reserve-only `AC-out-2`.
+Purpose: maintain the compact split-panel AC architecture baseline and procurement scope for Phase 1 with a `30A` shore-capable AC-in path, UL-listed DIN protection hardware, and reserve-only `AC-out-2`, while final receptacle count is closed.
 
 Related docs:
 - `docs/implementation/ELECTRICAL_overview_diagram.md`
@@ -19,7 +19,7 @@ Related docs:
 
 ### AC-out chain (inverter-backed branch distribution)
 - `MultiPlus AC-out-1 -> AC-out DIN enclosure -> 20A branch + 15A branch -> first GFCI receptacle per branch -> downstream standard receptacle`
-- Receptacle plan remains `4` locations total (`2` galley, `2` office).
+- Receptacle plan is pending final lock at `3-4` locations total (working baseline remains `4`: `2` galley, `2` office).
 
 ### Neutral and ground handling
 - AC-in and AC-out neutral termination paths remain isolated.
@@ -44,8 +44,8 @@ Related docs:
 | AC-out branch breaker set | `2` active + `1` spare position plan | DIN-mount `UL 489` (or ETL/NRTL equivalent): `20A` + `15A` | `110` | Required |
 | DIN accessory kit | `1` kit | Input/output neutral bars, input/output ground bars, hot feed distribution block, DIN end-stops, blank fillers, labels | `14` | Required |
 | GFCI receptacles (first outlet each branch) | `2` | `120VAC` GFCI receptacles for first outlet on each branch | `15` | Required |
-| Standard downstream receptacles | `2` duplex | `120VAC` duplex receptacles for GFCI load-side downstream points | `111` | Required |
-| Outlet boxes + covers/faceplates + clamps | `4` sets | Boxes and covers sized for branch cable method | `112` | Required |
+| Standard downstream receptacles | `1-2` duplex | `120VAC` duplex receptacles for GFCI load-side downstream points | `111` | Required (final count pending) |
+| Outlet boxes + covers/faceplates + clamps | `3-4` sets | Boxes and covers sized for branch cable method | `112` | Required (final count pending) |
 | AC branch cable | `35 ft` baseline | `12 AWG` stranded AC branch cable (`C-30/C-31/C-32`) | `113` | Required |
 | Shore + AC-in feed cable | `11 ft` baseline | `10/3` stranded cable for `C-28/C-29` (`30A` path) | `114` | Required |
 | Strain relief/cable glands | per enclosure entries | Entry hardware sized to `10/3` and branch cable ODs | `44` | Required |
@@ -64,6 +64,7 @@ Use this checklist as the acceptance gate before procurement freeze and before f
 - Confirm one unique AC-in chain exists: `shore -> EMS -> AC-in breaker -> MultiPlus AC-in`.
 - Confirm one unique AC-out-1 chain exists: `MultiPlus AC-out-1 -> branch breakers -> receptacle chains`.
 - Confirm `AC-out-2` is documented as reserve-only and not active in Phase 1 procurement.
+- Confirm final receptacle count is explicitly locked (`3` or `4`) before cart freeze.
 
 ### 2) Protection coordination
 - Confirm AC-in breaker is `30A` and AC-in conductors are `10 AWG`.
@@ -99,3 +100,4 @@ Use this checklist as the acceptance gate before procurement freeze and before f
 - DIN rail is a mounting method; breaker listing and rating remain the controlling requirement.
 - Lowest-cost listed policy is acceptable only if each selected device has verifiable NRTL listing (`UL` or `ETL`) for intended use.
 - Final SKU lock should be recorded in `bom/bom_estimated_items.csv` for rows `13`, `14`, `15`, `107`, `108`, `109`, `110`, `111`, `112`, `113`, `114`, and `123`.
+- Reopened utilization note (`2026-03-18`): branch protection chain is locked; final receptacle-count/utilization map still requires final closure.
