@@ -2,6 +2,8 @@
 
 As-of date: `2026-02-18`
 
+Maintenance note (`2026-03-19`): this recalculation remains valid for battery-branch/trunk methodology, but alternator-branch assumptions in this historical pass are superseded by the dedicated `48V` secondary-alternator migration baseline (`F-04` now locked at `150A` in current implementation docs).
+
 Purpose: document the decision-complete recalculation used to re-baseline battery branch fusing and major 48V trunk conductor sizing for the current `3x 48V 100Ah` architecture.
 
 Related docs:
@@ -21,7 +23,7 @@ Related docs:
 | Battery current limit | `<=200A` per battery (provisional) | Product listing text provided by owner |
 | Battery-side conductors | `2/0 AWG` copper | Current build baseline |
 | Lynx discharge-active branch limits | `F-02=125A`, `F-05=40A` | Current branch architecture |
-| MPPT/charger branch limits | `F-03=60A`, `F-04=40A` | Current branch architecture |
+| MPPT/charger branch limits | `F-03=60A`, `F-04=40A` (historical snapshot) | Value captured for this `2026-02-18` pass; superseded in active docs by alternator-branch `F-04=150A` migration lock |
 | Sharing factor `K_share` | `1.5` | Conservative parallel-imbalance factor |
 | Continuous margin `K_cont` | `1.25` | Conservative continuous-load margin |
 | Voltage-drop target (48V trunks) | `<=2%` | Existing electrical design target |

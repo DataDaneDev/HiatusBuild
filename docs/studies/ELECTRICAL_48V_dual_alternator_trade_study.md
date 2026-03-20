@@ -7,6 +7,8 @@ Purpose: determine whether replacing the current Sterling `12V -> 48V` DC-DC alt
 
 This pass explicitly assimilates newly added local references for Mechman `48V` installation and WS500 setup/operation documents.
 
+Maintenance note (`2026-03-19`): canonical project docs now carry D-028/D-029 migration decisions, so active architecture is the dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) with Sterling hardware return-pending (contact Mechman first, then execute physical return). Sections comparing Sterling as the active baseline are retained as decision-history context.
+
 ## Bottom line
 - The Mechman `48V` secondary-alternator concept is **real and technically plausible** for the `2021` `F-350` `7.3L` platform. Mechman publishes a `2020+` `7.3L` Godzilla dual-alternator bracket kit that retains the factory alternator and adds a second T-mount alternator.
 - It is **not** a drop-in substitute for the current Sterling path. For this build, it becomes a different charging architecture with different controls, failure modes, and validation work.
@@ -16,21 +18,21 @@ This pass explicitly assimilates newly added local references for Mechman `48V` 
 - The new WS500 quick-start/manual docs confirm this is not just "alternator + regulator": harness polarity (`WS500-PH` vs `WS500-NH`), fused sense/power leads (`10-15A`, `3A`, and `5A` cases), default `500A/50mV` shunt assumptions, and charge-profile/capacity configuration are all explicit integration gates.
 - User-confirmed assumption for this study: losing automatic house-to-starting-battery support is acceptable.
 - A `370A` `12V` alternator upgrade alone is still the weakest value path. It adds vehicle-side headroom, but the Sterling charger remains capped at about `1.5 kW`, so house charging does not scale with alternator size the way many people assume.
-- Current recommendation for this pass: **do not return the Sterling hardware yet**. The dual-`48V` path should stay in research/validation until battery support, load-dump mitigation, grounding/isolation, and retained factory-alternator independence are explicitly closed.
+- Current recommendation for execution: keep the dedicated `48V` secondary-alternator path as the active baseline, close the validation gates in this document, then execute Sterling return in the locked sequence (contact Mechman first, then return shipment).
 
 ## Current project baseline
 
 | Item | Current project state | Why it matters |
 | --- | --- | --- |
 | House bank | `3x Dumfume 51.2V 100Ah` LiFePO4 in parallel (`15.36 kWh` nominal) | Exact battery is now documented; this improves charge-profile and parallel-bank analysis materially |
-| Alternator charging | Sterling `BB1248120` + `BBR` remote | Already purchased; charger output is the current bottleneck |
-| Sterling output ceiling | About `1,500 W` max, about `26A` at `57.6V` | This is the real cap on house charging with the current architecture |
+| Alternator charging | Dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) is the active baseline; Sterling `BB1248120` + `BBR` are return-pending | Active architecture now targets higher `48V` alternator charge potential with explicit validation gates |
+| Sterling output ceiling | About `1,500 W` max, about `26A` at `57.6V` | Legacy comparison reference only (former active architecture) |
 | Truck alternator basis | Current docs assume factory `240A` | Relevant for input-side thermal margin, not for raising house-side power above Sterling's limit |
 | Purchase-later option | Mechman `370A` `12V` alternator | Helps margin/headroom, but not the `48V` house-side ceiling |
 
 ### Practical implication
-- Keeping the current Sterling path means all vehicle-side upgrades are still filtered through a charger capped near `1.5 kW`.
-- Moving to a dedicated `48V` secondary alternator is the first option that could materially exceed the current alternator-to-house charge power.
+- Sterling now functions as legacy comparison hardware only and is no longer the planning baseline.
+- Dedicated `48V` secondary alternator path remains the only active architecture in this project that can materially exceed the old `~1.5 kW` alternator-to-house ceiling.
 
 ## What the Dumfume manual now clarifies
 
@@ -274,24 +276,24 @@ This is a practical system-behavior difference, not just a feature preference.
 
 ## Comparison matrix
 
-| Option | House charge ceiling | Integration complexity | Battery/BMS risk | Starter-battery support | Schedule risk | Current recommendation |
+| Option | House charge ceiling | Integration complexity | Battery/BMS risk | Starter-battery support | Schedule risk | Current position (`2026-03-19`) |
 | --- | --- | --- | --- | --- | --- | --- |
-| Keep Sterling as-is | `~1.0-1.5 kW` depending `BBR` setting | Low | Low-Medium | Possible, but no longer required | Low | Best short-term path |
-| Add `370A` `12V` alternator and keep Sterling | Still `~1.0-1.5 kW` | Medium | Low-Medium | Same as Sterling path | Medium | Only if truck-side headroom is the problem |
-| Move to Mechman `48V` secondary alternator | Potentially `>2.5 kW` and much higher at usable shaft speed | High | High for non-CAN/internal-BMS bank | Not inherent, but acceptable | High | Promising, but not yet de-risked enough to replace Sterling |
+| Keep Sterling as-is | `~1.0-1.5 kW` depending `BBR` setting | Low | Low-Medium | Possible, but no longer required | Low | Legacy fallback only (return-pending hardware) |
+| Add `370A` `12V` alternator and keep Sterling | Still `~1.0-1.5 kW` | Medium | Low-Medium | Same as Sterling path | Medium | Deprecated path (BOM rows `103`/`104`) |
+| Move to Mechman `48V` secondary alternator | Potentially `>2.5 kW` and much higher at usable shaft speed | High | High for non-CAN/internal-BMS bank | Not inherent, but acceptable | High | Active planning baseline with validation gates still required |
 
 ## Decision for this pass
 
 ### Recommended position now
-- Keep the current Sterling architecture as the active baseline for Phase `1`.
-- Do **not** return the Sterling charger/remote until the questions below are closed.
-- Treat the Mechman `48V` path as a serious future upgrade candidate, not as an already-proven replacement.
-- When/if you proceed with Mechman, use a **simple A1-first implementation** as the default project direction.
+- Keep dedicated `48V` secondary alternator architecture as the active baseline for Phase `1`.
+- Keep Sterling charger/remote in return-pending status and execute return only after Mechman fitment/content confirmation.
+- Treat the validation checklist below as mandatory pre-commissioning gates for the active Mechman path.
+- Use the simple `A1` implementation as the default project direction unless testing proves extra control layers are required.
 
 ### Why
 - Fitment looks credible.
 - Performance upside is real.
-- But your battery/regulator/support risk is still too open for a confident swap decision.
+- Battery/regulator/support risk remains the main commissioning constraint, so execution must stay gated by the validation items below.
 
 ## Simplified architecture baseline (project direction)
 
@@ -312,7 +314,7 @@ The project preference is to keep the `48V` alternator path simple unless commis
 - No CAN/DVCC dependency as a prerequisite for basic alternator charging.
 - No added architecture complexity unless fault testing or thermal behavior proves it is needed.
 
-## Required validation before considering the Mechman swap
+## Required validation before commissioning the Mechman path
 
 ### Battery support
 - Exact battery family is now documented as Dumfume `51.2V 100Ah`; keep the manual in the repo as the local source of truth.

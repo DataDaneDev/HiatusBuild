@@ -4,7 +4,7 @@
 - Define a practical order of operations that still supports parallel workstreams.
 - Prioritize "build modules now, drop in later" for the fixed camper install date on May 7, 2026.
 
-## Planning assumptions (as-of 2026-03-18)
+## Planning assumptions (as-of 2026-03-19)
 - Fixed install date: May 7, 2026.
 - Time remaining from baseline date: 50 days.
 - This plan assumes a Hiatus truck bed camper install with major module prep done before delivery.
@@ -61,7 +61,7 @@
 - Stream D: shell execution
 - Once shell is available, execute penetrations -> rough-in -> close-up using prepared modules and harnesses.
 
-## Date-window draft plan (baseline date: March 18, 2026)
+## Date-window draft plan (baseline date: March 19, 2026)
 1. March 18 to March 31 (layout lock + AC decision closure)
 - Freeze electrical closet envelope and service map from physical mock layout.
 - Measure and document real run lengths from bench layout (no CAD gating requirement).
@@ -92,7 +92,7 @@
 - Run commissioning tests and first shakedown cycle.
 
 ## Deferred / purchase-later rows (keep out of current critical path unless triggered)
-- Optional 12V expansion and alternator-upgrade path: rows `103`, `104`, `118`.
+- Optional 12V expansion path: row `118`.
 
 ## Critical hold points (do not skip)
 - Hold 1: No penetrations until layout + service map is frozen.

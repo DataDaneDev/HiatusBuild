@@ -26,7 +26,7 @@
 - Options considered: Full 12V architecture, mixed architecture, 48V core with DC step-down.
 - Decision drivers: Efficiency, inverter support, and existing BOM momentum.
 - Result: 48V remains default architecture pending final component lock.
-- Follow-up: Validate alternator charging thermal behavior in bench test at selected BBR current limits.
+- Follow-up: Superseded by D-028/D-029 alternator-migration baseline and WS500 commissioning validation gates.
 
 - ID: D-003
 - Date: 2026-02-11
@@ -80,7 +80,7 @@
 - Options considered: `2x Orion-Tr 12/48` (legacy pre-Sterling option), Sterling `BB1248120` without remote control, Sterling `BB1248120` with `BBR` remote.
 - Decision drivers: Significantly higher charge-rate ceiling, adjustable output limiting from the remote, and simplified single-unit charging architecture.
 - Result: Updated BOM (`row 18` charger, `row 26` remote), recalculated alternator charging in `docs/core/SYSTEMS.md`, and replaced unresolved Orion references in canonical planning docs.
-- Follow-up: Bench-test alternator and belt thermal behavior with staged BBR limits before locking continuous operating setpoint.
+- Follow-up: Superseded by D-028 migration decision; retained for historical traceability only.
 
 - ID: D-009
 - Date: 2026-02-11
@@ -89,7 +89,7 @@
 - Options considered: Keep no-upgrade path only, add alternator only, add alternator plus Big 3 wiring scope.
 - Decision drivers: Planning transparency, safer high-current upgrade path, and clearer future procurement sequencing.
 - Result: Added purchase-later lines in BOM (`row 103` Mechman 370A alternator, `row 104` Big 3 estimate), added Big 3 wire notes to existing cable rows, and updated systems documentation with the staged strategy.
-- Follow-up: Confirm exact fitment and belt length for the truck platform, then lock final Big 3 cable/fuse spec before purchase.
+- Follow-up: Superseded by D-028; single-12V alternator + Big 3 path is now deprecated in BOM rows `103`/`104`.
 
 - ID: D-010
 - Date: 2026-02-12
@@ -319,11 +319,11 @@
 - Status: Open
 
 - ID: R-006
-- Risk: Purchase-later high-output alternator integration could still require fitment confirmation, belt-length change, and RVC-aware Big 3 routing updates.
+- Risk: Dedicated `48V` secondary-alternator integration could still fail on fitment/support details (kit content, `PH`/`NH` harness polarity, grounding/isolation behavior, and load-dump mitigation closure).
 - Impact (1-5): 4
 - Likelihood (1-5): 2
-- Mitigation: Confirm truck-specific part fitment/SKU, lock belt part number during install plan, and validate Big 3 routing/fusing before energizing.
-- Trigger: Alternator-upgrade procurement kickoff.
+- Mitigation: Confirm truck-specific Mechman kit fitment/content, lock harness polarity/accessory set, and close grounding/load-dump validation gates before commissioning.
+- Trigger: Mechman confirmation closeout and pre-commissioning gate.
 - Owner: Sunny
 - Status: Open
 
@@ -375,7 +375,7 @@
 ## Open questions
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)
 - Confirm exact Mechman dual-48V kit fitment/content for the truck (`2021 F-350 7.3L`) before shipping Sterling returns
-- Confirm Wakespeed support status for the documented `Dumfume 51.2V 100Ah` battery manual (`58.4V` charge voltage, `20-50A` recommended charge current per battery, `1S4P` max expansion) before considering a `WS500`-controlled alternator path
+- Confirm Wakespeed support status for the documented `Dumfume 51.2V 100Ah` battery manual (`58.4V` charge voltage, `20-50A` recommended charge current per battery, `1S4P` max expansion) before final commissioning of the `WS500`-controlled alternator path
 - Confirm the Dumfume manual's `20-50A` recommended charge current is intended to scale across the current `1S3P` bank for alternator-charging use, not just single-battery charging
 - Confirm whether the Mechman `48V` secondary-alternator path can be safely supported with an internal-BMS, non-CAN battery bank, including any required load-dump / avalanche-diode / keeper-battery mitigation
 - Confirm whether the Mechman `48V` alternator negative/case can remain electrically isolated from chassis in the intended install, or whether the house `48V` system should be treated as engine/chassis referenced

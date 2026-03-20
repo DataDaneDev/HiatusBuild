@@ -2,6 +2,8 @@
 
 As-of date: `2026-02-17`
 
+Maintenance note (`2026-03-19`): alternator-path references in this study reflect the architecture snapshot at the time of analysis. Current canonical architecture is now the dedicated `48V` secondary-alternator path (`Mechman + WS500 + APM-48`) with Sterling hardware return-pending after Mechman confirmation.
+
 Purpose: re-evaluate the house electrical voltage architecture (`12V`, `24V`, or `48V` core) for a DIY truck bed camper remote-office build, and make explicit *exactly* what changes in BOM, wiring, and protection when switching.
 
 Related inputs:
@@ -41,7 +43,7 @@ These are derived deltas from the existing rows; they should be locked by editin
 - Battery bank: `3x 48V 100Ah` LiFePO4 (`15.36 kWh` nominal).
 - Inverter/charger: Victron MultiPlus-II `48/3000/35-50`.
 - Solar: `900W` array with MPPT `150/45`.
-- Alternator charging: Sterling `BB1248120` (`~1500W` max output, ~`26A` at ~`57V` battery voltage).
+- Alternator charging: dedicated `48V` secondary-alternator path is now the active baseline; prior Sterling `BB1248120` (`~1500W` max output, ~`26A` at ~`57V`) remains in this study as historical comparison context.
 - 12V loads via Orion `48/12-30` plus branch fuse panel.
 
 ## First Principles: Voltage Does Not Change Energy Need
