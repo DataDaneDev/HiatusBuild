@@ -1,7 +1,7 @@
 # Temporary Electrical Red Flags
 
 Purpose: hold unresolved electrical documentation issues so they can be closed one by one.
-Status date: 2026-03-18
+Status date: 2026-03-20
 
 ## RF-001 Non-BOM Work Loads Excluded From Canonical Model
 - Severity: High
@@ -26,16 +26,18 @@ Status date: 2026-03-18
 
 ## RF-002 Alternator Charging Path Not Locked
 - Severity: Medium
-- Issue: Resolved. Alternator charging architecture is now frozen to Sterling `BB1248120` + `BBR`.
-- Why this matters: Charge recovery math and procurement are now tied to one concrete hardware path.
+- Issue: Resolved. Alternator charging architecture is now frozen to the dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) with Ford `Upfitter #3` as the manual WS500 enable/disable control.
+- Why this matters: Charge recovery math, shutdown order, wiring, and procurement are now tied to one concrete hardware path.
 - Current references:
-- `bom/bom_estimated_items.csv` (rows `18` and `26`)
+- `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`
+- `bom/bom_estimated_items.csv` (rows `168-171`, `176`)
 - `docs/core/SYSTEMS.md`
-- `docs/core/TRACKING.md` (`D-008`)
+- `docs/core/TRACKING.md` (`D-028`, `D-029`, `D-030`, `D-031`)
 - Resolution completed:
 - Component choice frozen in BOM.
-- Charge-rate assumptions and recovery-time math updated in `docs/core/SYSTEMS.md`.
-- Status: Closed (`2026-02-11`)
+- Manual control path frozen to `Upfitter #3 -> F-15 -> WS500 brown ignition`.
+- Canonical `48V` design file added and linked from core docs.
+- Status: Closed (`2026-03-20`)
 
 ## RF-003 Power Distribution Topology Ambiguity (Lynx vs Discrete)
 - Severity: Medium
@@ -90,19 +92,21 @@ Status date: 2026-03-18
 - Apply consistent "superseded" annotation style to historical decisions.
 - Status: Open
 
-## RF-007 Purchase-Later Alternator Upgrade Integration Not Fully Locked
+## RF-007 Dedicated `48V` Secondary Alternator Integration Still Needs Vendor Closure
 - Severity: Medium
-- Issue: Mechman 370A alternator and Big 3 are now tracked as purchase-later, but fitment, belt spec, and final Big 3 fuse/routing details are not yet locked.
-- Why this matters: Wrong fitment or incomplete vehicle-side wiring prep can create installation delays or charging/grounding faults.
+- Issue: The project has moved off the old single-12V upgrade path, but the dedicated `48V` secondary alternator still has vendor-confirmation gates open.
+- Why this matters: Wrong kit content, incorrect harness polarity, or unsupported battery/BMS behavior can create commissioning risk and possible charging faults.
 - Current references:
-- `bom/bom_estimated_items.csv` (rows `103` and `104`)
-- `docs/core/SYSTEMS.md` (alternator charging and safety baseline sections)
-- `docs/core/TRACKING.md` (`D-009`, `R-006`)
+- `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`
+- `bom/bom_estimated_items.csv` (rows `168-171`, `176`)
+- `docs/core/SYSTEMS.md`
+- `docs/core/TRACKING.md` (`R-006`)
 - Clarification needed:
-- Truck-specific alternator fitment confirmation and shorter-belt part number.
-- Final Big 3 cable/fuse package and RVC-loop routing requirement for the truck.
+- Truck-specific Mechman fitment/content confirmation and harness polarity (`PH`/`NH`).
+- Official Wakespeed support status for the documented Dumfume battery/BMS behavior.
+- Confirmed alternator negative/case isolation behavior and any mandatory extra mitigation.
 - Resolution target:
-- Lock alternator SKU + belt + Big 3 spec in BOM notes before purchase.
+- Close the remaining Mechman/Wakespeed vendor gates before commissioning.
 - Status: Open
 
 ## RF-008 Sterling BB1248120 Output Rating Assumption Was Incorrect In Planning Math

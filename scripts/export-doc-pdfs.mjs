@@ -16,6 +16,7 @@ const DEFAULT_TARGETS = [
   "docs/implementation/ELECTRICAL_fuse_schedule.md",
   "docs/implementation/ELECTRICAL_overview_diagram.md",
   "docs/implementation/FLOORING_subfloor_build_process.md",
+  "docs/core/ELECTRICAL_48V_ARCHITECTURE.md",
   "docs/core/SYSTEMS.md",
   "docs/core/PROJECT.md",
 ];

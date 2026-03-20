@@ -10,6 +10,43 @@ Single running log for build progress and test evidence.
 - Issues:
 - Next actions:
 
+## 2026-03-20
+- Consolidated the finalized `48V` architecture into one canonical file:
+- Added `docs/core/ELECTRICAL_48V_ARCHITECTURE.md` to hold the locked house-bank, alternator, shutdown, and control-path decisions.
+- Locked the manual alternator-control baseline:
+- Ford `Upfitter Switch #3 -> F-15 3A inline fuse -> WS500 brown ignition/enable wire`
+- `WS500` white `Feature-In` left reserved for future automatic interlock work.
+- Updated implementation docs to carry the same control path and fuse:
+- `docs/implementation/ELECTRICAL_overview_diagram.md`
+- `docs/implementation/ELECTRICAL_fuse_schedule.md`
+- Updated repo entry points and canonical references:
+- `README.md`
+- `docs/README.md`
+- `docs/core/SYSTEMS.md`
+- `docs/core/PROJECT.md`
+- `docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md`
+- Updated operations/tracking to reflect the new shutdown order and consolidation:
+- `docs/core/OPERATIONS.md`
+- `docs/core/TRACKING.md`
+- Updated temporary/history docs so they no longer present the old Sterling path as current:
+- `docs/temp/TEMP_electrical_red_flags.md`
+- `docs/studies/ELECTRICAL_48V_dual_alternator_trade_study.md`
+- Updated BOM for the finalized alternator-control baseline:
+- corrected active cable-note references in rows `28` and `29`
+- clarified row `168` kit assumptions
+- clarified row `171` scope
+- added row `176` for the `WS500` Upfitter `#3` enable wiring kit
+- Regenerated the updated PDF exports:
+- `docs/pdf_exports/ELECTRICAL_48V_ARCHITECTURE.pdf`
+- `docs/pdf_exports/ELECTRICAL_overview_diagram.pdf`
+- `docs/pdf_exports/ELECTRICAL_fuse_schedule.pdf`
+- `docs/pdf_exports/SYSTEMS.pdf`
+- `docs/pdf_exports/PROJECT.pdf`
+- Measurements/data: no physical measurements added in this pass; `C-41` control-wire length remains an install-time measured value.
+- Tests run: documentation consistency pass across core docs, implementation docs, and BOM row mapping.
+- Issues: vendor confirmation gates remain open for exact Mechman kit content, `PH/NH` harness polarity, supported Dumfume battery behavior, and alternator isolation details.
+- Next actions: confirm vendor gates, measure and record the final `C-41` upfitter-to-WS500 control-wire run, and close measured-length updates in the implementation docs during install layout.
+
 ## 2026-03-18
 - Ran a full project-maintenance documentation pass and synchronized health/planning/tracking/procurement docs with current field progress.
 - Captured completed vehicle electronics integration:

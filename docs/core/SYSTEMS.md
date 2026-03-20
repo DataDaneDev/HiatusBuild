@@ -6,14 +6,15 @@
 - Keep wiring safe, labeled, and serviceable
 
 ### Electrical doc links
+- Canonical `48V` architecture and alternator-control baseline: `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`
 - Implementation topology (components, fuses, holders, gauges): `docs/implementation/ELECTRICAL_overview_diagram.md`
 - Fuse IDs, locations, housing methods, spares, and BOM mapping: `docs/implementation/ELECTRICAL_fuse_schedule.md`
 - Voltage architecture trade study (`12V` vs `48V`): `docs/studies/ELECTRICAL_12V_vs_48V_trade_study.md`
-- Alternator architecture trade study (Sterling vs Mechman `48V` secondary alternator): `docs/studies/ELECTRICAL_48V_dual_alternator_trade_study.md`
+- Alternator architecture trade study history (research archive only; final decisions moved to the canonical `48V` architecture doc): `docs/studies/ELECTRICAL_48V_dual_alternator_trade_study.md`
 - Solar option screening matrix (stringing + MPPT fit flags): `docs/studies/SOLAR_configuration_matrix.md`
 - Electrical decisions, risks, and unresolved items: `docs/core/TRACKING.md`
 
-### Planning snapshot (as-of `2026-03-19`)
+### Planning snapshot (as-of `2026-03-20`)
 - Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).
 - House architecture: `48V` core with Orion-Tr Smart `48V->12V` charging/step-down feeding a shared battery-backed `12V` junction.
 - Inverter/charger candidate: Victron MultiPlus-II `48/3000/35-50`.
@@ -33,7 +34,7 @@
 | --- | --- | --- |
 | Battery bank | `3x Dumfume 51.2V 100Ah` (`1S3P`; manual allows up to `1S4P`) | `bom/bom_estimated_items.csv` row 3 + `references/Dunfume_36V_48V_100Ah_Battery_-_User_Manual.pdf` |
 | Inverter/charger | MultiPlus-II `48/3000/35-50` | `bom/bom_estimated_items.csv` row 12 |
-| Alternator charging | Dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) with Lynx Slot 3 alternator branch fuse lock | `bom/bom_estimated_items.csv` rows `168-171` + `docs/implementation/ELECTRICAL_fuse_schedule.md` |
+| Alternator charging | Dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) with `Upfitter #3 -> WS500 brown ignition` manual control and Lynx Slot 3 alternator branch fuse lock | `bom/bom_estimated_items.csv` rows `168-171`, `176` + `docs/core/ELECTRICAL_48V_ARCHITECTURE.md` |
 | Sterling legacy items | `BB1248120` + `BBR` retained physically only until Mechman confirmation, then returned | `bom/bom_estimated_items.csv` rows `18` and `26` |
 | Legacy single-12V upgrade path | Mechman `370A` + Big 3 path is deprecated under the dual-`48V` migration baseline | `bom/bom_estimated_items.csv` rows `103` and `104` |
 | DC-DC charger | Orion-Tr Smart `48/12 30A` (`360W`) | `bom/bom_estimated_items.csv` row 20 |
@@ -98,6 +99,8 @@ Base planning factor for your target roof setup is now `68%` end-to-end harvest 
 - Active migration baseline: Mechman dual-alternator kit + WS500 regulator + APM-48 protection module.
 - `Lynx Slot 3` alternator branch fuse (`F-04`) is now locked at `150A` (`58V/80V MEGA` class).
 - WS500 low-current fuse set is now explicitly part of the design baseline (`10A` power lead baseline, `3A` sense, `5A` current-sense where required).
+- Manual charge-enable/disable path is now locked to Ford `Upfitter Switch #3` feeding the WS500 brown ignition/enable wire through local inline fuse `F-15`.
+- `WS500` white `Feature-In` is reserved for future automatic fault-interlock work and is not required in Phase 1.
 - Cable decision lock for this pass: reuse existing uncut `2/0` inventory for the alternator charge path (`~20 ft` one-way assumed), with dedicated equal-size negative run.
 - Sterling `BB1248120`/`BBR` remain physically on hand only as return-pending hardware until Mechman fitment/content confirmation closes.
 - Open execution gate: contact Mechman first, then complete Sterling physical return workflow.
@@ -258,6 +261,7 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 - Battery negative path stays: battery -> SmartShunt -> Lynx negative bus (all returns on load side of shunt).
 - Use only voltage-appropriate overcurrent devices on house DC branches (`58V`/`80V` class on `48V` paths); do not substitute `32V` automotive-only fuses on `48V` circuits.
 - Keep all busbars/studs covered and insulated; use boot covers, strain relief, and abrasion protection on all near-bus runs.
+- Manual alternator shutdown order stays: `Upfitter #3 OFF` first to disable the `WS500`, then open the main `48V` disconnect only after alternator charging is no longer active.
 - Commissioning controls (first energization and after major rework):
 1. Verify polarity and expected voltage at each segment before inserting branch fuses.
 2. Confirm torque marks on all high-current terminals and re-check after initial thermal cycles.

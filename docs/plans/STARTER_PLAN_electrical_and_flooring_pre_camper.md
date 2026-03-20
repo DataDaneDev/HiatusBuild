@@ -1,10 +1,11 @@
 # Starter Plan: Electrical + Flooring (Pre-Camper)
 
-As-of date: `2026-03-19`
+As-of date: `2026-03-20`
 
 Purpose: give a phone-friendly, practical plan you can execute immediately **without the camper shell in hand**, using current field progress and updated decisions.
 
 Related references:
+- `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`
 - `docs/implementation/ELECTRICAL_overview_diagram.md`
 - `docs/implementation/ELECTRICAL_fuse_schedule.md`
 - `docs/studies/ELECTRICAL_48V_dual_alternator_trade_study.md`
@@ -113,6 +114,7 @@ Do not finalize these yet:
 - Build around the dedicated `48V` secondary alternator path (`A1` baseline) and retire Sterling-path layout dependencies.
 - Keep Lynx Slot 3 reserved for the alternator branch (`F-04` now re-baselined in the fuse schedule).
 - Reserve mounting space for WS500 harness fusing and APM-48 placement/service access.
+- Reserve a small protected control-wire path from Ford `Upfitter #3` to the WS500 brown ignition/enable lead (`F-15` local inline fuse at the upfitter-to-WS500 handoff).
 - Use existing uncut `2/0` stock for the alternator `+` and dedicated negative run until measured field routing proves otherwise.
 - Do not initiate physical Sterling return shipment until Mechman fitment and kit-content details are confirmed.
 

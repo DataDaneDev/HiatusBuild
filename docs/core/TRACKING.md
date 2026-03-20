@@ -272,6 +272,24 @@
 - Result: locked `F-04` at `150A` (`58V/80V` MEGA), added explicit WS500 low-current fuse set (`10A/3A/5A` class), and locked reuse of existing uncut `2/0` inventory for the `~20 ft` alternator run baseline. Updated `docs/implementation/ELECTRICAL_fuse_schedule.md` and BOM rows `170-173` accordingly.
 - Follow-up: if measured route reality materially differs, re-run drop/ampacity screen before any gauge downsize.
 
+- ID: D-030
+- Date: 2026-03-20
+- Decision: Use Ford `Upfitter Switch #3` as the manual `WS500` enable/disable control path.
+- Context: The finalized `48V` alternator architecture needed one simple operator shutdown method that disables the regulator before the main `48V` disconnect is used.
+- Options considered: separate aftermarket dash switch, direct always-hot ignition feed, Ford upfitter switch direct to WS500 brown wire, or a more complex relay/interlock-only first implementation.
+- Decision drivers: simple cab control, low added hardware count, cleaner operator procedure, and alignment with the `WS500` ignition/enable concept.
+- Result: locked manual control path to `Ford Upfitter #3 -> F-15 3A inline fuse -> WS500 brown ignition/enable wire`; `WS500` white `Feature-In` remains reserved for future automatic fault-interlock work. Updated canonical `48V` doc, implementation docs, operations guidance, and BOM row `176`.
+- Follow-up: if commissioning shows need for automatic fault shutdown, add relay/interlock logic on top of this manual baseline rather than replacing it.
+
+- ID: D-031
+- Date: 2026-03-20
+- Decision: Consolidate finalized `48V` architecture into one canonical file.
+- Context: The `48V` story had spread across trade studies, implementation docs, BOM notes, and tracking entries, making it harder to read the actual final design quickly.
+- Options considered: keep the study as the de facto architecture source, collapse implementation detail into SYSTEMS only, or create one concise canonical `48V` architecture doc and point the rest of the repo at it.
+- Decision drivers: clarity, lower maintenance overhead, and easier install-time reference for wiring and shutdown behavior.
+- Result: added `docs/core/ELECTRICAL_48V_ARCHITECTURE.md` as the canonical `48V` design file; supporting docs now reference it instead of treating the alternator trade study as the final design source.
+- Follow-up: keep implementation detail in the wiring/fuse docs and reserve the alternator study for research history only.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -376,6 +394,7 @@
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)
 - Confirm exact Mechman dual-48V kit fitment/content for the truck (`2021 F-350 7.3L`) before shipping Sterling returns
 - Confirm Wakespeed support status for the documented `Dumfume 51.2V 100Ah` battery manual (`58.4V` charge voltage, `20-50A` recommended charge current per battery, `1S4P` max expansion) before final commissioning of the `WS500`-controlled alternator path
+- Confirm the exact Ford upfitter blunt-cut wire/color/location used for `Upfitter #3` at install time and record the measured control-wire run length for `C-41`
 - Confirm the Dumfume manual's `20-50A` recommended charge current is intended to scale across the current `1S3P` bank for alternator-charging use, not just single-battery charging
 - Confirm whether the Mechman `48V` secondary-alternator path can be safely supported with an internal-BMS, non-CAN battery bank, including any required load-dump / avalanche-diode / keeper-battery mitigation
 - Confirm whether the Mechman `48V` alternator negative/case can remain electrically isolated from chassis in the intended install, or whether the house `48V` system should be treated as engine/chassis referenced
@@ -393,7 +412,7 @@
 - Battery compartment heating and control implementation details (sensor, relay, setpoints)
 - Storage/security SOP for flight windows
 - Measured fridge compressor duty cycle by ambient band (cold, mild, hot) to replace modeled assumptions
-- Final fuse-holder SKU standard for Orion input/output, WS500 low-current fuses, and PV string fusing hardware
+- Final fuse-holder SKU standard for Orion input/output, WS500 low-current fuses, `F-15` upfitter control fuse, and PV string fusing hardware
 - Final SKU lock for `F-11` holder family and `SW-12V-BATT` switch model/location
 - Validate the chosen `F-05 + F-06` split-protection Orion branch against final measured run lengths and voltage drop
 - Confirm acceptable monitoring expectation that Orion is not a direct GX telemetry node in current architecture

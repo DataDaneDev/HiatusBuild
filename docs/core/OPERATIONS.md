@@ -34,6 +34,7 @@
 - Confirm `SW-12V-BATT` switching behavior and labeling (closed = NORMAL operation, open = SERVICE battery isolation).
 - Confirm 12V fuse-block main `+`/`-` stud terminations are tight, protected, and not over-stacked beyond hardware guidance.
 - Confirm no solder-spliced high-current source joins are present in the 12V source-combine path.
+- Confirm Ford `Upfitter #3` is labeled as the manual `WS500` alternator-charge enable/disable control.
 - Validate AC branch polarity and GFCI/RCD trip on each outlet branch before normal use.
 - Confirm detector status (LP/CO/smoke powered, test function passes, expiration date in range).
 
@@ -55,11 +56,13 @@ Bench-test intent: validate wiring correctness and basic device behavior (shunt,
 7. Remove pre-charge lead: remove battery-side clip first, then load-side clip.
 8. Do not use bare wire "touch" methods for pre-charge bypass.
 - Functional checks: verify SmartShunt reads voltage correctly, Orion outputs stable `12V` under load, MultiPlus inverts correctly into a small known load, and MultiPlus charges correctly when AC-in is applied.
+- Alternator-control check (when the secondary alternator path is installed): confirm `Upfitter #3 ON` enables the WS500 brown ignition/enable wire and `Upfitter #3 OFF` disables regulator output before using the main `48V` disconnect as a service step.
 - 12V mode checks:
 1. Orion-only mode (service validation): open `SW-12V-BATT`, keep Orion active, and verify 12V panel remains stable under expected baseline load.
 2. Battery-backed mode (normal operation): close `SW-12V-BATT` and verify shared-junction stability under office + galley USB station loads.
 3. Service isolation mode: open `SW-12V-BATT` and verify 12V battery branch is fully isolated while Orion path remains testable.
 - Shutdown check: open `48V` disconnect and confirm the system de-energizes as expected; verify no unintended return paths bypass shunt measurement.
+- Alternator-fault shutdown rule: if a battery pack trips or alternator charging fault is suspected while the engine is running, switch `Upfitter #3 OFF` first, wait for alternator charge current to collapse, then open the main `48V` disconnect only if full house shutdown is still required.
 
 ### Propane-specific checks
 - Tank bracket tight, valve accessible, and hose routing clear of heat/chafe zones.
@@ -70,6 +73,7 @@ Bench-test intent: validate wiring correctness and basic device behavior (shunt,
 
 ### Incident response quick actions
 - If electrical burning odor/smoke: drop load, open `48V` disconnect, remove shore input, assess with extinguisher ready.
+- If alternator charging fault or battery-trip event occurs while driving/testing: switch `Upfitter #3 OFF` first to disable the `WS500`, then isolate the house system only after charging output has collapsed.
 - If propane alarm or gas odor: close tank valve, remove ignition sources, ventilate immediately, and do not restore gas flow until fault is found.
 - Log each incident or near-miss in `logs/LOG.md` and add unresolved hazards to `docs/core/TRACKING.md`.
 

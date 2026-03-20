@@ -14,6 +14,7 @@ Use this table first whenever you are deciding where to put information.
 | If you are updating... | Update here first |
 | --- | --- |
 | Project scope, milestones, constraints, sequencing status | `docs/core/PROJECT.md` |
+| Final `48V` house/alternator architecture, shutdown path, and wiring intent | `docs/core/ELECTRICAL_48V_ARCHITECTURE.md` |
 | Electrical/solar/plumbing/comms/system architecture | `docs/core/SYSTEMS.md` |
 | Checklists, maintenance cadence, travel handoff process | `docs/core/OPERATIONS.md` |
 | Decisions, risks, assumptions, open questions | `docs/core/TRACKING.md` |
@@ -45,9 +46,10 @@ Use this table first whenever you are deciding where to put information.
 ## Docs scope
 - Canonical planning docs:
 1. `docs/core/PROJECT.md`
-2. `docs/core/SYSTEMS.md`
-3. `docs/core/OPERATIONS.md`
-4. `docs/core/TRACKING.md`
+2. `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`
+3. `docs/core/SYSTEMS.md`
+4. `docs/core/OPERATIONS.md`
+5. `docs/core/TRACKING.md`
 - Supporting implementation artifacts:
 1. `docs/implementation/ELECTRICAL_overview_diagram.md`
 2. `docs/implementation/ELECTRICAL_fuse_schedule.md`
@@ -74,3 +76,4 @@ Use this table first whenever you are deciding where to put information.
 4. `docs/implementation/FLOORING_subfloor_build_process.md`
 5. `docs/core/SYSTEMS.md`
 6. `docs/core/PROJECT.md`
+7. `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`

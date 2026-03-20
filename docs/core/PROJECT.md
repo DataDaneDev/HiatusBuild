@@ -1,7 +1,7 @@
 # Project
 
 ## Snapshot
-- As-of date: March 19, 2026
+- As-of date: March 20, 2026
 - Install milestone: May 7, 2026
 - Mission: build a reliable off-grid camper workspace suitable for full-time professional use
 
@@ -19,6 +19,7 @@
 
 ## Current pre-camper execution focus (electrical + flooring)
 - Use `docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md` as the active day-to-day checklist while the camper shell is not yet in hand.
+- Use `docs/core/ELECTRICAL_48V_ARCHITECTURE.md` as the canonical `48V` design reference while laying out the electrical module and alternator-control path.
 - Active work now includes both reversible and truck-only irreversible tasks (EPS install, subfloor prep, bench board drilling/layout).
 - Defer shell-dependent irreversible work (final penetrations, shell-run final cut lengths, permanent finish-floor bonding).
 
@@ -64,6 +65,7 @@
 - Finalize AC scope and hardware lock: shore-power chain plus final branch/receptacle count (`2` branches with final location count pending).
 - Complete AC SKU-level lock and fitment validation for rows `13`, `107`, `108`, `109`, `110`, `111`, `112`, and `123`.
 - Execute bench-build electrical closet layout and document measured run lengths; CAD lengths are reference-only for material planning.
+- Keep the manual alternator shutdown path simple: Ford `Upfitter #3` will be the `WS500` enable/disable control in the finalized `48V` design.
 - Validate shared 12V junction behavior (`Orion + buffer battery`) including `F-11` and `SW-12V-BATT` under office/galley USB station loads.
 - Reserve solar passthrough/routing space now, but defer final flexible-panel procurement and string lock deeper into the build sequence.
 - Confirm passthrough locations (solar, shore, fuel/heater routing) with Hiatus before production lock.

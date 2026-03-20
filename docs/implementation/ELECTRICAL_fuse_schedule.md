@@ -1,6 +1,6 @@
 # Electrical Fuse Schedule (Implementation - Lynx Topology)
 
-As-of date: `2026-03-19`
+As-of date: `2026-03-20`
 
 Purpose: define each required fuse by circuit, protected conductor/device, holder/housing method, physical placement, and linked wire-gauge assumptions for the approved Phase 1 Lynx architecture with a battery-backed 12V bus and dedicated 48V secondary alternator branch.
 
@@ -24,6 +24,7 @@ Related docs:
 1. `F-04` is re-baselined to `150A` MEGA (`58V/80V`) in Lynx Slot 3.
 2. Legacy Sterling engine-bay input fuse path (`F-08`) is retired from active architecture.
 3. WS500 support fuses are included as explicit install items (`F-12/F-13/F-14`).
+4. Ford `Upfitter Switch #3` is locked as the manual `WS500` enable source through `F-15`.
 
 ## Alternator Branch Fuse + Wire Finalization (`2026-03-19`)
 Assumptions for this pass:
@@ -64,6 +65,7 @@ Lock for this build pass:
 | `F-12` | WS500 regulator power lead | WS500 power feed lead | Inline ATC/ATO (`32V` class acceptable on 12V-origin lead) | `10A` baseline (`15A` allowed if required by alternator case) | Sealed inline holder (WS500 kit) | Near source end of WS500 power lead | Harness lead |
 | `F-13` | WS500 battery positive sense lead | WS500 battery sense lead | Inline ATC/ATO | `3A` | Sealed inline holder (WS500 kit) | Near battery-positive sense takeoff | Harness lead |
 | `F-14` | WS500 current-sense lead protection (when required by selected shunt layout) | WS500 current-sense wiring | Inline ATC/ATO | `5A` | Sealed inline holder (WS500 kit) | Near shunt/sense tap per WS500 guidance | Harness lead |
+| `F-15` | Ford Upfitter `#3` -> WS500 brown ignition/enable wire | Low-current regulator enable/control wire | Inline ATC/ATO (`32V` class, local wire protection) | `3A` | Sealed inline holder near the Ford upfitter blunt-cut source / splice handoff | Engine bay or control-wire handoff point before small-gauge run to WS500 | `16 AWG` TXL/GXL |
 | `OEM-SHUNT` | Lynx positive tap -> SmartShunt positive sense/power lead | SmartShunt electronics lead | Victron OEM inline low-current fuse (factory harness) | OEM value | Integrated inline holder in supplied harness | Electrical cabinet near Lynx positive tap | OEM harness lead |
 
 ## Retired Fuse IDs (Migration Cleanup)
@@ -82,6 +84,7 @@ Lock for this build pass:
 | Orion input fuse (`30A` MIDI, `58V`) | `1` | `3` | BOM row `133` lock is `x4` total (`1` installed + `3` spares) |
 | 12V buffer battery main fuse (`100A` class) | `1` | `3` | Spare pack basis is BOM row `105` |
 | WS500 low-current fuses | `3` active positions | `2` each used value | Carry `10A`, `15A`, `5A`, and `3A` spares |
+| WS500 ignition/enable fuse (`F-15`) | `1` active position | `2` | Carry spare `3A` mini/ATO fuse and one spare sealed holder if using a potted inline kit |
 | PV string fuse `15A gPV` | `3` | `3` | One spare per string |
 | SmartShunt OEM harness fuse | `1` | `1` | Keep OEM-equivalent spare if field-replaceable |
 | ATO/ATC branch fuses | variable | `2` each used value | Keep mixed kit onboard |
@@ -94,6 +97,7 @@ Lock for this build pass:
 | Orion installed fuse-holder hardware (`F-06`, `F-07`) | `bom/bom_estimated_items.csv` row `11` |
 | Orion input fuses (`F-06`) | `bom/bom_estimated_items.csv` row `133` |
 | WS500 low-current fuse/holder kit (`F-12`, `F-13`, `F-14`) | `bom/bom_estimated_items.csv` row `171` |
+| WS500 Upfitter `#3` enable/control path (`F-15`) | `bom/bom_estimated_items.csv` row `176` |
 | 12V buffer battery (`B12`) | `bom/bom_estimated_items.csv` row `21` |
 | 12V buffer battery main fuse + holder (`F-11`) | `bom/bom_estimated_items.csv` row `125` |
 | 12V battery disconnect (`SW-12V-BATT`) | `bom/bom_estimated_items.csv` row `124` |
@@ -107,3 +111,4 @@ Lock for this build pass:
 3. Confirm Mechman kit content/polarity (`PH`/`NH`) before physically returning Sterling hardware.
 4. `SW-12V-BATT` remains manual-only in Phase 1; no automatic LVD behavior is assumed.
 5. Final lock for `F-11` still requires explicit 12V buffer battery/BMS continuous discharge-current confirmation.
+6. `F-15` exists to protect the smaller-gauge control wire between Ford `Upfitter #3` and the WS500 brown ignition/enable wire; the factory `25A` upfitter circuit protection is not the final wire-protection device for that branch.

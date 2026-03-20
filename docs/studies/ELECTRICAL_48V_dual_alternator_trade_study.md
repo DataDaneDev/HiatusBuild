@@ -3,6 +3,8 @@
 Status: pass `2` research draft (local-reference assimilation)  
 Status date: `2026-03-19`
 
+Historical-use note: this file is now a research archive. Final architecture decisions, wiring intent, and shutdown behavior live in `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`.
+
 Purpose: determine whether replacing the current Sterling `12V -> 48V` DC-DC alternator-charging path with a Mechman/Wakespeed `48V` secondary alternator architecture is actually a better fit for this project, or whether it creates more integration risk than it removes.
 
 This pass explicitly assimilates newly added local references for Mechman `48V` installation and WS500 setup/operation documents.

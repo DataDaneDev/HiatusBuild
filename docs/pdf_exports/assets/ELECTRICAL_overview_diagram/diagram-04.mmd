@@ -6,6 +6,10 @@ flowchart LR
     ORION["Orion-Tr Smart 48/12-30 charger"]
     BTEMP["Battery temp sensor"]
     SHUNT_PWR["SmartShunt fused + lead\n(factory harness)"]
+    UP3["Ford Upfitter Switch #3"]
+    F15["F-15 3A inline fuse"]
+    WS500["WS500 regulator"]
+    FEAT["WS500 white Feature-In\nreserved for future fault interlock"]
 
     CERBO -. "VE.Bus" .- MULTI
     CERBO -. "VE.Direct" .- MPPT
@@ -13,3 +17,5 @@ flowchart LR
     ORION -. "VictronConnect/BLE\n(no direct GX link in this baseline)" .- CERBO
     BTEMP -. "temp input" .- MULTI
     SHUNT_PWR -. "power/sense harness" .- SHUNT
+    UP3 -. "factory switched 12V" .-> F15 -. "brown ignition/enable" .-> WS500
+    FEAT -. "future-only reserve" .- WS500

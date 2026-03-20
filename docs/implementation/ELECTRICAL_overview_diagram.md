@@ -1,6 +1,6 @@
 # Electrical Topology Diagram (Implementation v6)
 
-As-of date: `2026-03-19`
+As-of date: `2026-03-20`
 
 Purpose: provide a complete, install-level electrical topology for the current build scope, including all major electrical components, fuse IDs, fuse housings, planned wire gauges, and estimated one-way run lengths for procurement planning.
 
@@ -16,6 +16,7 @@ Related docs:
 - Re-based Lynx Slot 3 branch to alternator input with `F-04 150A` (`58V/80V` MEGA).
 - Retired legacy Sterling engine-bay path (`F-08`, `C-16`, `C-17`) from active architecture.
 - Added WS500 low-current fused-lead visibility (`F-12/F-13/F-14`) in topology and conductor schedule.
+- Added Ford `Upfitter #3 -> F-15 -> WS500 brown ignition` manual alternator-control path.
 - Added explicit fuse-holder/housing definitions for every fuse family (`Class T`, Lynx `MEGA`, inline `MIDI/ANL/AMI`, PV `gPV`, and `ATO/ATC`).
 - Added conductor schedule across `48V`, `12V`, PV, and AC segments with explicit assumptions.
 - Updated 12V topology to a shared 12V junction fed by an Orion-Tr Smart `48/12-30` charger and a `12V 100Ah` buffer battery branch, with `F-11` source fuse plus `SW-12V-BATT` manual isolation.
@@ -49,8 +50,11 @@ flowchart LR
         ALT48["Secondary 48V alternator\n(Mechman kit class)"]
         WS500["Wakespeed WS500\nfield regulator"]
         APM48["Balmar APM-48\nload-dump clamp module"]
+        UP3["Ford Upfitter Switch #3\n(factory relay output)"]
+        F15["F-15 3A inline fuse\nWS500 ignition/enable control"]
         ALT48 -. "field/stator/sense harness" .- WS500
         WS500 -. "F-12/F-13/F-14 fused leads" .- ALT48
+        UP3 -. "12V control feed" .-> F15 -. "brown ignition/enable wire" .-> WS500
     end
 
     subgraph PV_PATH["Solar Path (900W, 3S3P)"]
@@ -273,6 +277,10 @@ flowchart LR
     ORION["Orion-Tr Smart 48/12-30 charger"]
     BTEMP["Battery temp sensor"]
     SHUNT_PWR["SmartShunt fused + lead\n(factory harness)"]
+    UP3["Ford Upfitter Switch #3"]
+    F15["F-15 3A inline fuse"]
+    WS500["WS500 regulator"]
+    FEAT["WS500 white Feature-In\nreserved for future fault interlock"]
 
     CERBO -. "VE.Bus" .- MULTI
     CERBO -. "VE.Direct" .- MPPT
@@ -280,6 +288,8 @@ flowchart LR
     ORION -. "VictronConnect/BLE\n(no direct GX link in this baseline)" .- CERBO
     BTEMP -. "temp input" .- MULTI
     SHUNT_PWR -. "power/sense harness" .- SHUNT
+    UP3 -. "factory switched 12V" .-> F15 -. "brown ignition/enable" .-> WS500
+    FEAT -. "future-only reserve" .- WS500
 ```
 
 ## Fuse and Switch Housing Map (Where Each Item Is Physically Housed)
@@ -300,6 +310,7 @@ flowchart LR
 | `F-12` | `10A/15A` WS500 power lead fuse | Sealed inline ATC/ATO holder | Near WS500 power lead source |
 | `F-13` | `3A` WS500 battery-sense fuse | Sealed inline ATC/ATO holder | Near WS500 battery-sense source |
 | `F-14` | `5A` WS500 current-sense fuse (as required) | Sealed inline ATC/ATO holder | Near shunt/sense source point |
+| `F-15` | `3A` WS500 ignition/enable control fuse | Sealed inline ATC/ATO holder | Near Ford upfitter blunt-cut wire / WS500 control-wire handoff |
 | `SW-12V-BATT` | Manual battery disconnect switch | Sealed rotary DC switch body | Electrical cabinet near 12V fuse-block main `+` stud for service access |
 | `OEM-SHUNT` | Factory low-current inline fuse (SmartShunt harness) | Integrated inline holder in Victron harness lead | Electrical cabinet near Lynx positive tap |
 
@@ -353,6 +364,7 @@ Retired from active architecture:
 | `C-38` | WS500 power lead source -> WS500 regulator input | `12V` origin lead | Regulator electronics feed | `F-12` (`10A` baseline) | Harness lead | `8 ft` (`ASSUMED`) |
 | `C-39` | WS500 battery positive-sense lead -> WS500 | `48V` sense lead | Regulator voltage sense | `F-13` (`3A`) | Harness lead | `8 ft` (`ASSUMED`) |
 | `C-40` | WS500 current-sense lead path (if required by selected shunt layout) | low-current sense | Regulator current feedback | `F-14` (`5A` as required) | Harness lead | `8 ft` (`ASSUMED`) |
+| `C-41` | Ford Upfitter `#3` output -> `F-15` -> WS500 brown ignition/enable wire | `12V` control lead | Manual alternator-enable signal only | `F-15` (`3A`) | `16 AWG` TXL/GXL | `6 ft` (`ASSUMED`) |
 
 ## Wiring Validation Worksheet (Estimate Pass, 2026-02-18)
 Calculation basis for drop screening:
@@ -407,6 +419,7 @@ Calculation basis for drop screening:
 | `C-38` | WS500 power lead source | WS500 regulator input | `F-12 10A` | low-current electronics feed | Harness lead | `8 ft` | N/A (harness-limited) | Row `171` (fuse kit) | PASS |
 | `C-39` | WS500 battery sense source | WS500 voltage-sense input | `F-13 3A` | low-current electronics sense | Harness lead | `8 ft` | N/A (harness-limited) | Row `171` (fuse kit) | PASS |
 | `C-40` | WS500 current-sense source | WS500 current-sense input | `F-14 5A` (if required) | low-current electronics sense | Harness lead | `8 ft` | N/A (harness-limited) | Row `171` (fuse kit) | PASS |
+| `C-41` | Ford Upfitter `#3` output | WS500 brown ignition/enable input via `F-15` | `F-15 3A` | manual low-current control only | `16 AWG` TXL/GXL | `6 ft` | N/A (control circuit) | Row `176` (upfitter control kit) | PASS |
 
 ## Wire Rollup (No-Padding Purchase Baseline)
 | Gauge / cable family | Estimated total | Source circuits | BOM row |
@@ -424,6 +437,7 @@ Calculation basis for drop screening:
 | `10/3 shore + AC-in feed` | `11 ft` | `C-28`, `C-29` | `114` |
 | USB branch mix (`12 AWG` + `14 AWG`) | `5 ft` (`12 AWG`) + `8 ft` (`14 AWG`) | `C-34`, `C-35` | `116` |
 | WS500 harness/sense leads | Included in selected kit/harness set | `C-38`, `C-39`, `C-40` | `168`, `171` |
+| `16 AWG` TXL/GXL control wire | `6 ft` | `C-41` | `176` |
 
 Notes:
 1. This table is a base estimate only; it intentionally excludes order padding and termination waste.
@@ -477,6 +491,7 @@ Torque reference (verify against your exact manuals/hardware):
 - USB PD station branch hardware (`2` stations: office + galley)
 - Battery temperature sensor wiring to inverter/monitoring path
 - SmartShunt fused positive sense/power lead (factory harness)
+- Ford `Upfitter #3` control lead and local `F-15` inline fuse for the WS500 brown ignition/enable wire
 
 ## Assumptions (Explicit)
 1. Cable sizing assumes fine-strand copper conductors (OFC welding-cable baseline for high-current DC paths), enclosed vehicle routing, and the estimated one-way lengths listed in this document.
@@ -488,6 +503,7 @@ Torque reference (verify against your exact manuals/hardware):
 7. Alternator architecture lock is dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) with `F-04 150A`; legacy Sterling engine-bay path is retired.
 8. `F-01A/B/C` are provisionally set to `200A` pending final `51.2V` battery datasheet/manual confirmation; if validated limits are lower, shift to `175A`.
 9. `2/0` cable quantity planning baseline in this pass is `77.5 ft` total no-padding (`42.5 ft` red + `35.0 ft` black); user-applied order padding is intentionally deferred to checkout.
+10. Manual alternator shutdown baseline is Ford `Upfitter #3` feeding the WS500 brown ignition/enable wire through `F-15`; `WS500` white `Feature-In` remains a future-only reserve for automatic interlock work.
 
 ## Completion Status
 - DC/PV topology is complete for current BOM scope and load model scope.

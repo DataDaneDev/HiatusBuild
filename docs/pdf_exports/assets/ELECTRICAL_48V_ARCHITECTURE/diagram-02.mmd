@@ -1,0 +1,6 @@
+flowchart LR
+    UP3["Ford Upfitter Switch #3\n(factory relay output)"] --> F15["F-15 3A inline fuse"]
+    F15 --> BROWN["WS500 brown ignition/enable wire"]
+    WHITE["WS500 white Feature-In"] -. "reserved for future automatic fault interlock" .- WS500["WS500 regulator"]
+    BROWN --> WS500
+    WS500 -. "field/stator/sense harness" .- ALT48["Secondary 48V alternator"]
