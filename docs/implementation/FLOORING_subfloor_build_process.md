@@ -7,7 +7,7 @@
 ## Final Subfloor Structure (Bottom to Top)
 1. Existing spray-in bedliner.
 2. `5/8 in` SilveRboard Graphite EPS between ribs only.
-3. `3/4 in` birch plywood directly over EPS + rib structure (sealed both faces and edges).
+3. `3/4 in` birch plywood directly over EPS + rib structure (bottom face, edges, and drilled holes sealed; top bond face left untreated for Lonseal adhesive).
 4. Lonseal Lonwood Madera marine sheet vinyl, glue-down finish layer.
 
 ## Explicitly De-Scoped Layer
@@ -55,11 +55,12 @@
 
 ### Phase 3 - Subfloor (`3/4 in` birch)
 1. Cut plywood panels and drill anchor-hole layout.
-2. Remove panels and seal all faces and edges with polyurethane.
+2. Remove panels and seal the bottom face and all edges with polyurethane; leave the top face untreated because it is the Lonseal adhesive bond surface.
 3. Allow full cure.
 4. Install rivnuts in steel at hardpoint locations.
 5. Clear EPS at hardpoint pockets so plywood sits directly on steel there.
-6. Reinstall plywood and bolt structural hardpoints.
+6. After final drilling, seal the inside of all plywood holes.
+7. Reinstall plywood and bolt structural hardpoints.
 
 ### Phase 4 - Finish Flooring
 1. Dry-fit Lonseal sheet and align grain/pattern.
@@ -78,6 +79,6 @@ Confirm final door and tank clearances against this stack-up before permanent in
 ## Engineering Notes
 - Thermal performance: moderate floor thermal decoupling from EPS; less top-side thermal break than prior EPDM-inclusive concept.
 - Structural behavior: stiffer walking surface and higher point-load robustness with `3/4 in` birch.
-- Moisture durability: sealed plywood remains required because wood is now directly above rib cavities.
+- Moisture durability: sealed bottom face, edges, and drilled holes remain required because wood is directly above rib cavities; the top face stays untreated to remain compatible with the Lonseal vehicle-install substrate requirement for untreated plywood.
 - Acoustic behavior: no dedicated EPDM damping layer in active stack; expect more direct structure-borne vibration vs prior concept.
 - Serviceability: finish vinyl remains the only permanent bond layer; subfloor remains mechanically serviceable.
