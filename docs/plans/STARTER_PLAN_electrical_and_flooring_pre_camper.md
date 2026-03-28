@@ -8,6 +8,7 @@ Related references:
 - `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`
 - `docs/implementation/ELECTRICAL_overview_diagram.md`
 - `docs/implementation/ELECTRICAL_fuse_schedule.md`
+- `docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md`
 - `docs/studies/ELECTRICAL_48V_dual_alternator_trade_study.md`
 - `docs/implementation/FLOORING_subfloor_build_process.md`
 - `bom/bom_estimated_items.csv`
@@ -56,6 +57,9 @@ Use this as your “open phone and go” sequence.
 ---
 
 ## 3) Electrical: pre-camper build plan (vertical closet on two plywood planes)
+
+Garage execution note:
+- Use `docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md` as the step-by-step bench-build and staged-test checklist.
 
 ## 3.1 Lock the board concept before drilling
 Target build concept (as you described): two plywood panels at `90°` in a vertical closet.

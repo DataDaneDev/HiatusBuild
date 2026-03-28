@@ -24,6 +24,7 @@ Use this table first whenever you are deciding where to put information.
 | Electrical load modeling assumptions (Wh) | `bom/load_model_wh.csv` |
 | Electrical implementation topology details | `docs/implementation/ELECTRICAL_overview_diagram.md` |
 | Fuse IDs, values, holders, spare policy | `docs/implementation/ELECTRICAL_fuse_schedule.md` |
+| Bench-build electrical layout and staged test checklist | `docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md` |
 | Pre-camper starter execution plan (electrical + flooring) | `docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md` |
 
 ## Canonical docs rule
@@ -55,6 +56,7 @@ Use this table first whenever you are deciding where to put information.
 2. `docs/implementation/ELECTRICAL_fuse_schedule.md`
 3. `docs/plans/PROJECT_build_order_of_operations.md`
 4. `docs/implementation/ELECTRICAL_AC_BOM.md`
+5. `docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md`
 - Workbook extracts kept for traceability (non-canonical):
 1. `docs/legacy/PROJECT_workbook_hiatus_consult.md`
 2. `docs/legacy/SYSTEMS_workbook_build_notes_obsolete.md`
@@ -73,7 +75,8 @@ Use this table first whenever you are deciding where to put information.
 1. `docs/implementation/ELECTRICAL_AC_BOM.md`
 2. `docs/implementation/ELECTRICAL_fuse_schedule.md`
 3. `docs/implementation/ELECTRICAL_overview_diagram.md`
-4. `docs/implementation/FLOORING_subfloor_build_process.md`
-5. `docs/core/SYSTEMS.md`
-6. `docs/core/PROJECT.md`
-7. `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`
+4. `docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md`
+5. `docs/implementation/FLOORING_subfloor_build_process.md`
+6. `docs/core/SYSTEMS.md`
+7. `docs/core/PROJECT.md`
+8. `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`
