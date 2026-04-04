@@ -1,5 +1,12 @@
 # 48V Electrical Architecture
 
+## Document role
+- This file owns the final `48V` electrical architecture for the active build baseline.
+- Use it for house-bank structure, alternator-path direction, shutdown logic, and manual control-path intent.
+- Keep full conductor schedules, fuse matrices, and layout-level implementation detail in `docs/implementation/`.
+- Keep unresolved vendor gates, risk state, and follow-up closure items in `docs/core/TRACKING.md`.
+- Keep broad project sequencing and day-to-day execution framing in `docs/core/PROJECT.md` or the active plan docs.
+
 As-of date: `2026-03-20`
 
 Purpose: hold the finalized, concise `48V` house and alternator architecture in one place so wiring, protection, shutdown behavior, and BOM references are easy to understand without re-reading the historical trade studies.

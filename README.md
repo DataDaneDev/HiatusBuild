@@ -27,12 +27,35 @@ Use this table first whenever you are deciding where to put information.
 | Bench-build electrical layout and staged test checklist | `docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md` |
 | Pre-camper starter execution plan (electrical + flooring) | `docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md` |
 
+## Document relationship rules
+- One topic should have one owning file. Related files may summarize or point to it, but should not compete with it.
+- `docs/core/` owns the current project truth.
+- `docs/implementation/` owns exact build detail that supports the active core baseline.
+- `docs/plans/` owns execution sequence and short-horizon action framing, not architecture truth.
+- `docs/studies/` owns option analysis and historical reasoning, not the active baseline once a decision is locked.
+- `docs/temp/` and `docs/legacy/` are non-canonical support layers and must not silently override core docs.
+- Structured inputs own structured facts:
+  - `bom/bom_estimated_items.csv` owns current line items and purchase status.
+  - `bom/load_model_wh.csv` owns load-model inputs and scenario math.
+- `docs/core/TRACKING.md` owns decision, risk, assumption, and open-question status.
+- `logs/LOG.md` owns dated work evidence, measured outcomes, and test history.
+
 ## Canonical docs rule
 - Update existing canonical files before creating new docs.
 - If a topic seems to belong in more than one place, keep detail in one file and link to it from the others.
 - When in doubt:
 1. Put active decision/risk/question status in `docs/core/TRACKING.md`.
 2. Put execution notes and evidence in `logs/LOG.md`.
+
+## Maintenance order
+Use this order whenever the same change touches multiple files:
+
+1. Update the structured source first if the change affects line items, component selections, prices, load assumptions, or measured model inputs.
+2. Update the owning canonical doc from the first-stop map.
+3. Update dependent docs only where the reader needs a summary, pointer, or changed downstream instruction.
+4. Update `docs/core/TRACKING.md` if the change affects decision state, risk state, assumptions, or open questions.
+5. Update `logs/LOG.md` if physical work was performed, measurements were taken, or a test/verification step occurred.
+6. Regenerate PDF exports only after the source markdown files are current.
 
 ## Workspace structure
 - `docs/`: organized doc sets; see `docs/README.md` for the folder map.
@@ -63,6 +86,16 @@ Use this table first whenever you are deciding where to put information.
 - Temporary issue trackers still present for compatibility:
 1. `docs/temp/TEMP_electrical_red_flags.md`
 2. `docs/temp/TEMP_procurement_red_flags.md`
+
+## Relationship quick guide
+- `docs/core/PROJECT.md`: scope, milestones, sequencing posture, and near-term priorities.
+- `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`: final `48V` electrical architecture and shutdown/control logic.
+- `docs/core/SYSTEMS.md`: active subsystem baselines and cross-system modeling context.
+- `docs/core/OPERATIONS.md`: checklists, commissioning/inspection routines, and repeatable operating procedures.
+- `docs/core/TRACKING.md`: what changed in decision status, what is risky, and what is still unresolved.
+- `docs/implementation/*`: exact layouts, schedules, and install/test detail that must agree with the active core baseline.
+- `docs/plans/*`: time-ordered execution guidance for the current phase.
+- `docs/studies/*`: analysis history and option screening that inform, but do not replace, the active baseline.
 
 ## Folder usage details
 - `cad/`: place Fusion files in `cad/fusion360/`, exports in `cad/exports/`, annotated drawings in `cad/drawings/`.

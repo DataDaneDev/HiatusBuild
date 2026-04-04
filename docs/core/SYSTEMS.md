@@ -1,5 +1,12 @@
 # Systems Design
 
+## Document role
+- This file owns the active subsystem baseline and cross-system modeling context for the build.
+- Use this file to describe what the current system is, how the major subsystems fit together, and which assumptions are still active.
+- Keep the final `48V` house/alternator architecture, shutdown order, and control-path lock in `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`.
+- Keep exact conductor, fuse, layout, and install-level detail in `docs/implementation/`.
+- Keep decision/risk/open-question state in `docs/core/TRACKING.md` rather than letting this file become the live issue tracker.
+
 ## Electrical and energy
 ### Goals
 - Deliver workday reliability with reserve margin

@@ -1,5 +1,11 @@
 # Tracking
 
+## Document role
+- This file owns decision status, risk status, assumptions, and open questions across the project.
+- Update the owning canonical doc first when a design or process changes, then record the status change here.
+- Do not use this file as the full architecture source or the full procedure source; point back to the owner docs for that detail.
+- Use `logs/LOG.md` for dated execution evidence and measured outcomes; use this file for the durable interpretation of what remains open, risky, or decided.
+
 ## Assumptions and constraints
 - Constraints: truck/camper/dates are fixed constants
 - Assumptions to validate: autonomy target, climate profile, load profile, travel cadence impacts

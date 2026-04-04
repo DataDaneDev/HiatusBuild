@@ -1,5 +1,11 @@
 # Project
 
+## Document role
+- This file owns project scope, fixed constraints, milestone framing, sequencing posture, and near-term priority calls.
+- Keep detailed subsystem design in `docs/core/SYSTEMS.md` and final `48V` electrical architecture in `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`.
+- Keep decision/risk/open-question state in `docs/core/TRACKING.md`, not as a second decision log here.
+- Keep exact topology, fuse, conductor, and bench procedure detail in `docs/implementation/`.
+
 ## Snapshot
 - As-of date: March 20, 2026
 - Install milestone: May 7, 2026

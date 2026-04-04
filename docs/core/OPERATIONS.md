@@ -1,5 +1,12 @@
 # Operations
 
+## Document role
+- This file owns repeatable operating procedures, inspections, commissioning checks, and field-use checklists.
+- Keep architecture rationale and hardware-baseline decisions in the core design docs, not here.
+- Keep exact install topology and device-specific build detail in `docs/implementation/`.
+- Keep dated work results, measurements, incidents, and test evidence in `logs/LOG.md`.
+- Keep decision/risk/open-question state in `docs/core/TRACKING.md`.
+
 ## Build and deployment cadence
 - Weekly planning update in `docs/core/PROJECT.md`
 - Continuous progress notes in `logs/LOG.md`
