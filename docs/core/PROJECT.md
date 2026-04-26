@@ -7,8 +7,8 @@
 - Keep exact topology, fuse, conductor, and bench procedure detail in `docs/implementation/`.
 
 ## Snapshot
-- As-of date: March 20, 2026
-- Install milestone: May 7, 2026
+- As-of date: April 25, 2026
+- Install milestone: May 7, 2026 (`12` days from April 25)
 - Mission: build a reliable off-grid camper workspace suitable for full-time professional use
 
 ## Fixed constraints
@@ -68,14 +68,18 @@
 - `docs/plans/PROJECT_build_order_of_operations.md`
 
 ## Immediate next decisions
+- **Priority 1: shore-power / initial-charge readiness.** SKU-lock and order the shore input path so the `3x 48V` battery bank can be initially charged from shore through the MultiPlus before alternator commissioning.
+- Use `docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md` for the compressed pre-Washington readiness plan.
 - Finalize AC scope and hardware lock: shore-power chain plus final branch/receptacle count (`2` branches with final location count pending).
-- Complete AC SKU-level lock and fitment validation for rows `13`, `107`, `108`, `109`, `110`, `111`, `112`, and `123`.
+- Complete AC SKU-level lock and fitment validation for rows `13`, `107`, `108`, `109`, `110`, `111`, `112`, `114`, and `123`.
+- Order enough aluminum extrusion and connector hardware to begin rough furniture/module frames immediately after camper pickup; defer cosmetic panel and drawer-front lock until real shell measurements are captured.
 - Execute bench-build electrical closet layout and document measured run lengths; CAD lengths are reference-only for material planning.
 - Keep the manual alternator shutdown path simple: Ford `Upfitter #3` will be the `WS500` enable/disable control in the finalized `48V` design.
+- Defer Mechman alternator installation until batteries are present and shore charging/monitoring is ready; the Mechman kit and `APM-48` are now received.
 - Validate shared 12V junction behavior (`Orion + buffer battery`) including `F-11` and `SW-12V-BATT` under office/galley USB station loads.
 - Reserve solar passthrough/routing space now, but defer final flexible-panel procurement and string lock deeper into the build sequence.
 - Confirm passthrough locations (solar, shore, fuel/heater routing) with Hiatus before production lock.
-- Confirm received Mechman dual-48V kit fitment/content details, then execute Sterling return workflow (`rows 18/26`) and continue with the locked alternator migration fuse/wire baseline.
+- Execute Sterling return workflow (`rows 18/26`) when comfortable that the received Mechman path is the committed route.
 - Lock interior/exterior T-slot or strut mounting ecosystem and bracket/accessory interface standard.
 
 ## Unblock sprint (next 72 hours)

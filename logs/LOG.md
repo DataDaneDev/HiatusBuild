@@ -14,6 +14,10 @@ Single running log for build progress and test evidence.
 - Status correction from owner: Mechman `48V` alternator has been purchased.
 - Interpretation: dedicated `48V` secondary-alternator architecture remains the active baseline; remaining alternator blockers should be narrowed to received-kit fitment/content, support details, harness polarity, isolation/grounding behavior, load-dump mitigation, and commissioning validation rather than pre-purchase architecture selection.
 - Updated `docs/core/PROJECT.md`, `docs/core/TRACKING.md`, and `docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md` to reflect purchase status while preserving Sterling return as gated on received-kit/fitment/support confirmation.
+- Follow-up owner status: Mechman kit appears fit-compatible and has been received; Balmar `APM-48` has been received.
+- Sequencing correction: defer alternator installation until the `3x 48V` battery bank exists and shore charging/monitoring is ready.
+- Near-term priority: solve shore power because it is the intended initial charge path for the three house batteries.
+- Added `docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md` to focus the 12-day pre-Washington window on shore-charge readiness and extrusion/furniture-start procurement.
 
 ## 2026-03-20
 - Consolidated the finalized `48V` architecture into one canonical file:

@@ -113,3 +113,4 @@ Use this order whenever the same change touches multiple files:
 6. `docs/core/SYSTEMS.md`
 7. `docs/core/PROJECT.md`
 8. `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`
+9. `docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md`
