@@ -75,7 +75,7 @@
 - Validate shared 12V junction behavior (`Orion + buffer battery`) including `F-11` and `SW-12V-BATT` under office/galley USB station loads.
 - Reserve solar passthrough/routing space now, but defer final flexible-panel procurement and string lock deeper into the build sequence.
 - Confirm passthrough locations (solar, shore, fuel/heater routing) with Hiatus before production lock.
-- Confirm Mechman dual-48V kit fitment/content details, then execute Sterling return workflow (`rows 18/26`) and continue with the locked alternator migration fuse/wire baseline.
+- Confirm received Mechman dual-48V kit fitment/content details, then execute Sterling return workflow (`rows 18/26`) and continue with the locked alternator migration fuse/wire baseline.
 - Lock interior/exterior T-slot or strut mounting ecosystem and bracket/accessory interface standard.
 
 ## Unblock sprint (next 72 hours)

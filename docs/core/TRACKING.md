@@ -398,7 +398,7 @@
 
 ## Open questions
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)
-- Confirm exact Mechman dual-48V kit fitment/content for the truck (`2021 F-350 7.3L`) before shipping Sterling returns
+- Confirm received Mechman dual-48V kit fitment/content for the truck (`2021 F-350 7.3L`) before shipping Sterling returns
 - Confirm Wakespeed support status for the documented `Dumfume 51.2V 100Ah` battery manual (`58.4V` charge voltage, `20-50A` recommended charge current per battery, `1S4P` max expansion) before final commissioning of the `WS500`-controlled alternator path
 - Confirm the exact Ford upfitter blunt-cut wire/color/location used for `Upfitter #3` at install time and record the measured control-wire run length for `C-41`
 - Confirm the Dumfume manual's `20-50A` recommended charge current is intended to scale across the current `1S3P` bank for alternator-charging use, not just single-battery charging

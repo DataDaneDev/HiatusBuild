@@ -29,7 +29,7 @@ Related references:
 ### Not finalized / not in hand yet
 - Camper shell not yet installed.
 - Solar panels and final PV wiring/fusing path are not yet locked for final procurement.
-- Alternator architecture direction is now dedicated `48V` secondary alternator (`Mechman + WS500 + APM-48`) with Sterling return pending vendor confirmation.
+- Alternator architecture direction is now dedicated `48V` secondary alternator (`Mechman + WS500 + APM-48`); the Mechman `48V` alternator has been purchased, with Sterling return still pending received-kit/fitment/support confirmation.
 - Final AC branch/receptacle count and final shore-hardware SKU lock remain open.
 - Finish vinyl and adhesive are not yet purchased.
 
@@ -205,7 +205,7 @@ This keeps progress steady without waiting on missing materials.
 
 - Solar panel model/stringing not yet locked.
 - Final PV fusing/wire lengths not yet locked.
-- Alternator path is re-baselined to dedicated `48V` secondary alternator; Sterling return is pending Mechman confirmation.
+- Alternator path is re-baselined to dedicated `48V` secondary alternator; Mechman alternator has been purchased, and Sterling return is pending received-kit/fitment/support confirmation.
 - Final AC outlet/branch count lock still pending (two branches retained as working baseline).
 - Final closet envelope dimensions may shift after camper is physically in hand.
 

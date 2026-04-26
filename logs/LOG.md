@@ -10,6 +10,11 @@ Single running log for build progress and test evidence.
 - Issues:
 - Next actions:
 
+## 2026-04-25
+- Status correction from owner: Mechman `48V` alternator has been purchased.
+- Interpretation: dedicated `48V` secondary-alternator architecture remains the active baseline; remaining alternator blockers should be narrowed to received-kit fitment/content, support details, harness polarity, isolation/grounding behavior, load-dump mitigation, and commissioning validation rather than pre-purchase architecture selection.
+- Updated `docs/core/PROJECT.md`, `docs/core/TRACKING.md`, and `docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md` to reflect purchase status while preserving Sterling return as gated on received-kit/fitment/support confirmation.
+
 ## 2026-03-20
 - Consolidated the finalized `48V` architecture into one canonical file:
 - Added `docs/core/ELECTRICAL_48V_ARCHITECTURE.md` to hold the locked house-bank, alternator, shutdown, and control-path decisions.
