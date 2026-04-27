@@ -7,6 +7,7 @@
 ## Planning assumptions (as-of 2026-04-27)
 - Fixed install appointment: May 7, 2026 at `9:00 AM` in Bellingham, Washington.
 - Travel constraint: truck starts in Park City, Utah; stage near Bellingham by the evening of May 6.
+- Work constraint: normal workdays remain `9-5` Monday-Friday until PTO starts on May 7, so weekday prep must stay light and next-weekend work carries the heavy physical tasks.
 - This plan assumes a Hiatus truck bed camper install with only reversible/module-first prep before delivery.
 - Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline.
 
@@ -62,32 +63,29 @@
 - Once shell is available, execute penetrations -> rough-in -> close-up using prepared modules and harnesses.
 
 ## Date-window execution plan (baseline date: April 27, 2026)
-1. April 27 to April 28 (plan reset + shore AC-in lock)
+1. April 27 to May 1 (weekday evenings: light work only)
 - Use `docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md` as the integrated Apr 27-May 11 plan.
-- Confirm travel and install logistics for a May 7 `9:00 AM` Bellingham appointment.
+- Keep worknight blocks to ordering, calls, labels, checklist writing, small inspections, and staging.
 - SKU-lock/order AC-in initial-charge hardware first: rows `107`, `108`, `123`, `13`, `109`, `14`, and `114`; do not let final AC-out receptacle count block this path.
+- Confirm travel and install logistics for a May 7 `9:00 AM` Bellingham appointment, including the conflict with normal `9-5` work before PTO starts.
 
-2. April 29 to May 1 (electrical closet + floor/truck interface gates)
-- Validate electrical Board A/B layout on physical plywood, including service access, fuse-holder matching, labels, and cable corridors.
-- Trim EPS, verify three-piece plywood fit, preserve hardpoint pockets, and keep Lonseal glue-down gated.
-- Remove/inspect bed rail caps, confirm old `2 in x 3 in` rail holes are not needed by Hiatus, and seal dust/weather intrusion points with low-profile flexible/serviceable methods.
-
-3. May 2 to May 3 (layout/extrusion/plumbing decisions)
+2. May 2 to May 3 (heavy weekend execution)
+- Do truck-heavy work: bed rail cap inspection/sealing, old rail-hole closure if confirmed unused, EPS trim, and subfloor fit/serviceability checks.
+- Do physical electrical layout: Board A/B mockup, service access, fuse-holder matching, labels, and cable corridors.
 - Treat current furniture CAD as reference-only after the Iceco/water tank dry-fit conflict; rework block envelopes first.
-- Place a stock-length starter extrusion/hardware order for rough frames, not final cut lengths or drawers.
-- Add faucet/sink/drain procurement to the cold-water baseline; keep water-heater choice decoupled and propane outdoor-only unless listed otherwise.
+- Place stock-length starter extrusion/hardware order and faucet/sink/drain decisions; do not buy final cut lengths, drawer slides, or panel skins from unverified dimensions.
 
-4. May 4 to May 6 (final pre-install readiness + travel/staging)
-- Confirm delivered vs ordered critical-path items.
-- Pack measurement, tailgate, seal/weather, electrical labeling, fuse, and fastener kits.
+3. May 4 to May 6 (weekday logistics + travel/staging)
+- Do only final triage, packing, appointment confirmation, delivery checks, and travel/staging.
+- Resolve the real travel plan: additional PTO, early departure, work-remote travel day, or explicitly accepted alternate staging plan.
 - Stage the truck near Bellingham by the evening of May 6. Do not start work that can leave the truck half-disassembled.
 
-5. May 7 (install day)
+4. May 7 (install day)
 - Confirm tailgate handling, bed rail/interface sealing, attachment method, and weather/dust expectations with Hiatus before work starts.
 - Capture before/during/after photos and a full shell measurement set before leaving.
 - Do not leave with undocumented attachment, clearance, or weather-critical issues.
 
-6. May 8 to May 11 (local shakedown + service-map freeze)
+5. May 8 to May 11 (local shakedown + service-map freeze)
 - Stay local enough to return to Hiatus for early issues; run low-speed/highway shakedown and reinspect attachment/seals/doors/windows/fan.
 - Freeze service map from real shell dimensions before penetrations, final cable cuts, Lonseal glue-down, or permanent module skins.
 - Place top-off orders based on real measurements and update logs/tracking.

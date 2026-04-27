@@ -341,6 +341,15 @@
 - Result: Build toward cold-water tank/pump/faucet/sink/drain baseline with capped future hot tie-in; treat portable propane as outdoor-only provisional and defer electric tanked/listed indoor propane until service-map freeze.
 - Follow-up: add discrete BOM rows for faucet/sink/drain/propane support classes and lock graywater/winterization details.
 
+- ID: D-037
+- Date: 2026-04-27
+- Decision: Rebalance the pre-install plan around normal `9-5` workdays and a heavier May 2-3 weekend.
+- Context: PTO is May 7-11, but the prep week before that still has normal Monday-Friday work hours. The prior day-by-day plan put too much physical work on worknights.
+- Options considered: keep daily equal workload, push everything to the weekend, or reserve worknights for light tasks while using the weekend for truck-heavy work.
+- Decision drivers: reduce burnout, avoid half-disassembled truck risk, and preserve realistic execution before travel.
+- Result: weekday evenings are limited to calls, ordering, labeling, small inspections, and packing; bed rail sealing, EPS trim, electrical layout, extrusion decisions, and plumbing layout move mainly to May 2-3.
+- Follow-up: resolve the May 6 Bellingham staging plan because normal `9-5` work before PTO conflicts with a safe 9 AM May 7 install arrival.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -444,9 +453,9 @@
 - ID: R-012
 - Risk: Travel/logistics compression could put the truck too far from Bellingham for the May 7 `9:00 AM` install.
 - Impact (1-5): 5
-- Likelihood (1-5): 2
-- Mitigation: Stage the truck near Bellingham by the evening of May 6 and avoid late half-disassembly work.
-- Trigger: Departure delay, weather, parts delay, or unresolved tailgate/tonneau handling.
+- Likelihood (1-5): 3
+- Mitigation: Stage the truck near Bellingham by the evening of May 6 and avoid late half-disassembly work; because normal work continues `9-5` until May 7 PTO starts, resolve additional PTO, early departure, work-remote travel, or alternate staging explicitly.
+- Trigger: Departure delay, weather, parts delay, unresolved tailgate/tonneau handling, or assuming May 6 staging is possible after a normal workday.
 - Owner: Sunny
 - Status: Open
 

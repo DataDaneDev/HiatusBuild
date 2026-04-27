@@ -48,6 +48,12 @@ Install appointment:
 
 ## Priority triage
 
+### Workload rule
+
+Normal workdays are still `9-5` Monday-Friday until PTO starts on May 7. Treat weekday evenings as light blocks for calls, ordering, labeling, checklist updates, and small clean tasks. Push messy, multi-hour, truck-disassembly, adhesive, or layout-heavy work to the weekend of May 2-3 unless it is truly blocking.
+
+This creates one hard logistics conflict: staging the truck near Bellingham by the evening of May 6 is not compatible with a normal full workday in Park City immediately beforehand unless an additional travel/work-remote/early-departure plan exists. Resolve that travel gate before assuming May 6 staging is safe.
+
 ### Must complete before install / departure
 
 1. **Travel and logistics gate**: stage the truck near Bellingham by the evening of May 6; do not plan to drive from Park City the morning of the 9 AM install.
@@ -249,88 +255,111 @@ Immediate BOM/procurement gaps:
 
 ## Day-by-day schedule
 
-### Mon Apr 27 — reset plan and logistics gate
+### Mon Apr 27 — light worknight: reset plan and logistics gate
+
+Target load: `30-60 min`, no messy truck work.
 
 - Replace the narrow May 7 plan with this integrated plan.
 - Confirm install appointment, arrival expectations, and whether Hiatus can remove/store tailgate onsite.
-- Confirm route/travel plan so the truck is in Bellingham by May 6 evening.
+- Identify the travel conflict created by normal `9-5` work before May 7 PTO.
 - Start the single working checklist across electrical, floor, bed sealing, layout, plumbing, and travel.
 
-Gate L0: travel/staging plan is real, not assumed.
+Gate L0: travel/staging risk is recognized, not assumed away.
 
-### Tue Apr 28 — shore power / initial charge lock
+### Tue Apr 28 — light worknight: shore power purchase lock
+
+Target load: `45-90 min`, desk/order task.
 
 - Lock/order rows `107`, `108`, `123`, `13`, `109`, `14`, `114`.
 - Confirm accessories for strain relief, ferrules, labels, neutral/ground bars, and enclosure entries.
-- Draft first-charge checklist.
-- Decide whether final AC receptacle count is still open, but do not let that block AC-in charging hardware.
+- Draft the first-charge checklist as a phone note or printed one-pager.
+- Do not try to solve final AC-out receptacle layout tonight unless energy is high.
 
 Gate S1: AC-in charge path is ordered/SKU-locked and first-charge checklist exists.
 
-### Wed Apr 29 — electrical closet layout + fuse matching
+### Wed Apr 29 — light worknight: fuse map and labels
 
-- Complete one real Board A/B layout iteration.
-- Match fuse IDs/values/holders to devices.
-- Label board zones and cable corridors.
+Target load: `45-90 min`, clean garage/desk work only.
+
+- Match fuse IDs/values/holders to devices on paper or with labels.
+- Label major board zones and cable corridors without drilling.
+- Pull together the parts/tools needed for Saturday electrical layout.
 - Keep alternator branch inactive and shell-dependent cuts deferred.
 
-Gate E1: service access and fuse/device matching pass.
+Gate E0: Saturday electrical layout has a labeled parts/fuse map to work from.
 
-### Thu Apr 30 — subfloor / EPS / Lonseal prep
+### Thu Apr 30 — light worknight: Home Depot / floor prep staging
 
-- Trim EPS.
-- Verify three plywood slices sit flat and can be removed intentionally.
-- Confirm hardpoint pockets have no compressible stack.
-- Confirm Lonseal trowel/roller and adhesive conditions.
-- Do not glue unless the glue-down gate passes.
+Target load: `30-75 min`, no adhesive unless every gate already passes.
 
-Gate F1: subfloor fit and serviceability pass.
+- Buy or confirm the exact-notch Lonseal trowel and roller.
+- Inspect EPS/subfloor fit and mark trim spots; defer real trimming to the weekend if tired.
+- Confirm hardpoint pocket questions to check on Saturday.
+- Do not glue Lonseal on a worknight.
 
-### Fri May 1 — truck interface / dust / weather
+Gate F0: floor tools are in hand and weekend trim/seal work is staged.
+
+### Fri May 1 — light worknight: calls, weather, and weekend setup
+
+Target load: `30-60 min`, stop early.
 
 - Contact Hiatus about tailgate, tonneau, bed rail caps, rail holes, and install interface expectations.
-- Stage bed rail sealing kit and weather kit.
-- Decide whether to keep tonneau on until Bellingham based on forecast and cure state.
+- Stage bed rail sealing kit, weather kit, PPE, blades, drill bits, sealants, and cleanup supplies.
+- Decide whether bed rail sealing can cure before travel and weather exposure.
+- Do not start rail-cap removal if it can leave the truck exposed overnight.
 
-Gate W1: tailgate/tonneau/sealing plan is known.
+Gate W1: weekend work list is staged and tailgate/tonneau/sealing questions are known.
 
-### Sat May 2 — extrusion and rough modules
+### Sat May 2 — heavy build day: truck bed sealing, EPS, and physical layout
 
-- Rework fridge/tank/electrical/galley block envelopes.
-- Place starter stock extrusion and connector order.
-- Do not buy final panels/drawer slides from unverified dimensions.
+Target load: primary heavy work block.
 
-Gate X1: enough low-regret extrusion/connectors are ordered to build rough frames after measured install dimensions.
+- Remove/lift bed rail caps as planned, inspect/photograph holes, rust-protect, and seal unused `2 in x 3 in` rail holes if confirmed safe.
+- Trim EPS and verify all three plywood slices sit flat and can be intentionally removed.
+- Confirm hardpoint pockets have no compressible stack.
+- Dry-fit Lonseal only if useful; keep glue-down gated.
+- Run the first serious Board A/B physical electrical layout iteration on the `1/2 in` plywood.
 
-### Sun May 3 — plumbing / propane / faucet path
+Gate HWD1: dirty/truck-heavy prep is complete or reduced to a clear punch list.
 
-- Add faucet/sink/drain procurement decisions.
-- Pick provisional fridge/tank/faucet/pump zones.
+### Sun May 3 — heavy design/order day: electrical layout, extrusion, plumbing
+
+Target load: second heavy work block, with cleaner work late in the day.
+
+- Finish electrical Board A/B layout review: access, bend radius, fuse replacement, labels, and cable corridors.
+- Rework fridge/tank/electrical/galley block envelopes from dry-fit reality.
+- Place starter stock extrusion and connector order; do not buy final panels/drawer slides from unverified dimensions.
+- Add faucet/sink/drain procurement decisions and provisional plumbing zones.
 - Treat water heater as provisional outdoor propane or deferred; do not cut indoor propane/vent paths.
-- Add install-day measurement prompts for plumbing and propane.
 
-Gate P0: cold-water baseline can proceed without locking final water heater.
+Gate HWD2: the weekend produces orders, labels, measured envelopes, and a post-weekend punch list.
 
-### Mon May 4 — final pre-install readiness check
+### Mon May 4 — light worknight: final readiness triage
+
+Target load: `30-60 min`, no new disassembly.
 
 - Verify what is delivered versus merely ordered.
 - Pack tools, labels, sealants, fuses, measurement kit, tailgate kit, and weather kit.
 - Save install-day measurement list on phone.
-- Reconfirm appointment.
+- Reconfirm appointment and arrival expectations.
 
 Gate R1: blockers are classified as install-blocking, post-install-blocking, or deferrable.
 
-### Tue May 5 — travel / catch-up buffer
+### Tue May 5 — light workday / travel decision gate
 
-- Use as travel or recovery buffer.
-- Only finish reversible tasks if still local.
+Target load: logistics only unless additional time off is secured.
+
+- Resolve the real travel plan: additional PTO, early departure, work-remote travel day, or revised staging plan.
+- Only finish reversible tasks if still local and they do not create cleanup risk.
 - Do not start anything that can leave the truck half-disassembled.
 
-Gate T1: truck and tools are committed to Bellingham staging.
+Gate T0: the truck-to-Bellingham plan is executable with the actual work schedule.
 
-### Wed May 6 — arrive and stage in Bellingham
+### Wed May 6 — staging day, not a build day
 
-- Be in/near Bellingham by evening.
+Target load: travel/staging only.
+
+- Be in/near Bellingham by evening, or have an explicitly accepted alternate plan.
 - Check truck bed, tonneau/tailgate state, subfloor state, and install kit access.
 - Reconfirm morning arrival instructions.
 
