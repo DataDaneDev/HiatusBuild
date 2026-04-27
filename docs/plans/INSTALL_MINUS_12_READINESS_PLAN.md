@@ -9,7 +9,7 @@ Install appointment:
 - Date/time: Thursday, May 7, 2026 at `9:00 AM`
 - Location: `3171 Mercer Ave, Suite 101, Bellingham, WA 98225`
 - Starting point: Park City, Utah
-- Work time off: May `7-11`
+- Work time off: May `6-11`
 
 ## Current owner-confirmed state
 
@@ -50,9 +50,9 @@ Install appointment:
 
 ### Workload rule
 
-Normal workdays are still `9-5` Monday-Friday until PTO starts on May 7. Treat weekday evenings as light blocks for calls, ordering, labeling, checklist updates, and small clean tasks. Push messy, multi-hour, truck-disassembly, adhesive, or layout-heavy work to the weekend of May 2-3 unless it is truly blocking.
+Normal workdays are still `9-5` Monday-Friday through May 5, then PTO runs May 6-11. Treat weekday evenings before PTO as light blocks for calls, ordering, labeling, checklist updates, and small clean tasks. Push messy, multi-hour, truck-disassembly, adhesive, or layout-heavy work to the weekend of May 2-3 unless it is truly blocking.
 
-This creates one hard logistics conflict: staging the truck near Bellingham by the evening of May 6 is not compatible with a normal full workday in Park City immediately beforehand unless an additional travel/work-remote/early-departure plan exists. Resolve that travel gate before assuming May 6 staging is safe.
+May 6 is now a dedicated PTO travel/staging day, which removes the prior workday-vs-staging conflict. Still treat it as a logistics gate, not a build day: stage the truck near Bellingham by evening, preserve weather protection, and do not start work that can leave the truck half-disassembled.
 
 ### Must complete before install / departure
 
@@ -261,7 +261,7 @@ Target load: `30-60 min`, no messy truck work.
 
 - Replace the narrow May 7 plan with this integrated plan.
 - Confirm install appointment, arrival expectations, and whether Hiatus can remove/store tailgate onsite.
-- Identify the travel conflict created by normal `9-5` work before May 7 PTO.
+- Record the corrected PTO window: May 6-11, with May 6 reserved for travel/staging rather than build work.
 - Start the single working checklist across electrical, floor, bed sealing, layout, plumbing, and travel.
 
 Gate L0: travel/staging risk is recognized, not assumed away.
@@ -345,21 +345,21 @@ Target load: `30-60 min`, no new disassembly.
 
 Gate R1: blockers are classified as install-blocking, post-install-blocking, or deferrable.
 
-### Tue May 5 — light workday / travel decision gate
+### Tue May 5 — light workday / final travel prep
 
-Target load: logistics only unless additional time off is secured.
+Target load: logistics only; no messy work.
 
-- Resolve the real travel plan: additional PTO, early departure, work-remote travel day, or revised staging plan.
+- Confirm May 6 route, departure target, lodging/staging location, weather, tonneau/tailgate plan, and install kit access.
 - Only finish reversible tasks if still local and they do not create cleanup risk.
 - Do not start anything that can leave the truck half-disassembled.
 
-Gate T0: the truck-to-Bellingham plan is executable with the actual work schedule.
+Gate T0: the truck-to-Bellingham plan is executable with May 6 PTO reserved for travel/staging.
 
-### Wed May 6 — staging day, not a build day
+### Wed May 6 — PTO staging/travel day, not a build day
 
 Target load: travel/staging only.
 
-- Be in/near Bellingham by evening, or have an explicitly accepted alternate plan.
+- Use the PTO day to travel/stage; be in/near Bellingham by evening, or have an explicitly accepted alternate plan.
 - Check truck bed, tonneau/tailgate state, subfloor state, and install kit access.
 - Reconfirm morning arrival instructions.
 

@@ -7,7 +7,7 @@
 ## Planning assumptions (as-of 2026-04-27)
 - Fixed install appointment: May 7, 2026 at `9:00 AM` in Bellingham, Washington.
 - Travel constraint: truck starts in Park City, Utah; stage near Bellingham by the evening of May 6.
-- Work constraint: normal workdays remain `9-5` Monday-Friday until PTO starts on May 7, so weekday prep must stay light and next-weekend work carries the heavy physical tasks.
+- Work constraint: normal workdays remain `9-5` through May 5; PTO is May 6-11, so weekday prep before PTO stays light, May 2-3 carries the heavy physical tasks, and May 6 is reserved for travel/staging.
 - This plan assumes a Hiatus truck bed camper install with only reversible/module-first prep before delivery.
 - Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline.
 
@@ -67,7 +67,7 @@
 - Use `docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md` as the integrated Apr 27-May 11 plan.
 - Keep worknight blocks to ordering, calls, labels, checklist writing, small inspections, and staging.
 - SKU-lock/order AC-in initial-charge hardware first: rows `107`, `108`, `123`, `13`, `109`, `14`, and `114`; do not let final AC-out receptacle count block this path.
-- Confirm travel and install logistics for a May 7 `9:00 AM` Bellingham appointment, including the conflict with normal `9-5` work before PTO starts.
+- Confirm travel and install logistics for a May 7 `9:00 AM` Bellingham appointment, using May 6 PTO as the staging/travel day.
 
 2. May 2 to May 3 (heavy weekend execution)
 - Do truck-heavy work: bed rail cap inspection/sealing, old rail-hole closure if confirmed unused, EPS trim, and subfloor fit/serviceability checks.
@@ -75,9 +75,9 @@
 - Treat current furniture CAD as reference-only after the Iceco/water tank dry-fit conflict; rework block envelopes first.
 - Place stock-length starter extrusion/hardware order and faucet/sink/drain decisions; do not buy final cut lengths, drawer slides, or panel skins from unverified dimensions.
 
-3. May 4 to May 6 (weekday logistics + travel/staging)
-- Do only final triage, packing, appointment confirmation, delivery checks, and travel/staging.
-- Resolve the real travel plan: additional PTO, early departure, work-remote travel day, or explicitly accepted alternate staging plan.
+3. May 4 to May 6 (weekday logistics + PTO travel/staging)
+- Use May 4-5 for final triage, packing, appointment confirmation, delivery checks, and route/lodging/weather confirmation.
+- Use May 6 PTO for travel/staging near Bellingham; do not treat it as a build catch-up day.
 - Stage the truck near Bellingham by the evening of May 6. Do not start work that can leave the truck half-disassembled.
 
 4. May 7 (install day)

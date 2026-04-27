@@ -299,7 +299,7 @@
 - ID: D-032
 - Date: 2026-04-27
 - Decision: Replace the narrow install-minus-12 plan with an integrated Apr 27-May 11 install readiness and post-install plan.
-- Context: Install is fixed for May 7 at 9:00 AM in Bellingham, with travel from Park City and May 7-11 off work. Current blockers span shore charging, electrical layout, floor/bed sealing, extrusion, plumbing, and logistics.
+- Context: Install is fixed for May 7 at 9:00 AM in Bellingham, with travel from Park City and May 6-11 off work. Current blockers span shore charging, electrical layout, floor/bed sealing, extrusion, plumbing, and logistics.
 - Options considered: keep the shore/extrusion-only plan, create multiple new docs, or replace the existing plan with one integrated plan.
 - Decision drivers: avoid document creep while making the install window executable.
 - Result: `docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md` now owns the integrated install-window plan.
@@ -344,11 +344,11 @@
 - ID: D-037
 - Date: 2026-04-27
 - Decision: Rebalance the pre-install plan around normal `9-5` workdays and a heavier May 2-3 weekend.
-- Context: PTO is May 7-11, but the prep week before that still has normal Monday-Friday work hours. The prior day-by-day plan put too much physical work on worknights.
+- Context: PTO is May 6-11, but weekday evenings through May 5 still have normal `9-5` work before them. The prior day-by-day plan put too much physical work on worknights.
 - Options considered: keep daily equal workload, push everything to the weekend, or reserve worknights for light tasks while using the weekend for truck-heavy work.
 - Decision drivers: reduce burnout, avoid half-disassembled truck risk, and preserve realistic execution before travel.
 - Result: weekday evenings are limited to calls, ordering, labeling, small inspections, and packing; bed rail sealing, EPS trim, electrical layout, extrusion decisions, and plumbing layout move mainly to May 2-3.
-- Follow-up: resolve the May 6 Bellingham staging plan because normal `9-5` work before PTO conflicts with a safe 9 AM May 7 install arrival.
+- Follow-up: use May 6 PTO as the Bellingham travel/staging day; keep it logistics-only rather than build catch-up.
 
 ## Risk register
 - ID: R-001
@@ -453,9 +453,9 @@
 - ID: R-012
 - Risk: Travel/logistics compression could put the truck too far from Bellingham for the May 7 `9:00 AM` install.
 - Impact (1-5): 5
-- Likelihood (1-5): 3
-- Mitigation: Stage the truck near Bellingham by the evening of May 6 and avoid late half-disassembly work; because normal work continues `9-5` until May 7 PTO starts, resolve additional PTO, early departure, work-remote travel, or alternate staging explicitly.
-- Trigger: Departure delay, weather, parts delay, unresolved tailgate/tonneau handling, or assuming May 6 staging is possible after a normal workday.
+- Likelihood (1-5): 2
+- Mitigation: Stage the truck near Bellingham by the evening of May 6 and avoid late half-disassembly work; May 6 is PTO and should remain travel/staging-only, with route, lodging, weather, tonneau, and tailgate handling confirmed by May 5.
+- Trigger: Departure delay, weather, parts delay, unresolved tailgate/tonneau handling, or treating May 6 as a build catch-up day instead of a staging day.
 - Owner: Sunny
 - Status: Open
 
@@ -496,7 +496,7 @@
 - Status: Open
 
 ## Open questions
-- Confirm travel/staging plan so the truck is in/near Bellingham before the May 7 `9:00 AM` install.
+- Confirm May 6 PTO travel/staging details so the truck is in/near Bellingham before the May 7 `9:00 AM` install.
 - Confirm with Hiatus whether tailgate can be removed onsite and where it will be stored/transported afterward.
 - Confirm tonneau cover removal timing relative to weather, rail-cap sealing, and install interference.
 - Confirm whether prior-owner `2 in x 3 in` bed rail holes are unused by Hiatus and can be sealed before/at install.
