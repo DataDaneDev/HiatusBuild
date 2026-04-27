@@ -21,13 +21,13 @@
 - Solar option screening matrix (stringing + MPPT fit flags): `docs/studies/SOLAR_configuration_matrix.md`
 - Electrical decisions, risks, and unresolved items: `docs/core/TRACKING.md`
 
-### Planning snapshot (as-of `2026-03-20`)
+### Planning snapshot (as-of `2026-04-27`)
 - Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).
 - House architecture: `48V` core with Orion-Tr Smart `48V->12V` charging/step-down feeding a shared battery-backed `12V` junction.
 - Inverter/charger candidate: Victron MultiPlus-II `48/3000/35-50`.
 - Charge sources in current BOM: solar MPPT, dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48` migration baseline), shore AC charger path.
 - Monitoring and protection: Cerbo GX, SmartShunt, battery temp sensing, Class T primary fuse + branch fusing.
-- AC protection chain remains locked (`TT-30 -> EMS -> AC-in breaker -> MultiPlus -> AC-out branch panel`), with final receptacle-count/utilization closure still open.
+- AC protection chain remains locked (`shore source -> cord/adapter -> TT-30 inlet -> EMS -> AC-in breaker -> MultiPlus -> separate AC-out branch panel`), with AC-in-only initial charging prioritized ahead of final receptacle-count/utilization closure.
 
 ### Modeling rules (procurement-first plus full-load)
 - Primary procurement source of truth is `bom/bom_estimated_items.csv`.
@@ -114,12 +114,14 @@ Base planning factor for your target roof setup is now `68%` end-to-end harvest 
 
 #### Shore charging (MultiPlus-II charger path)
 - Charger limit from model string: `35A`.
-- At `56.8V` absorption target, charger power is about `1,988W`.
-- Ideal bulk-only recharge times:
+- Existing planning math uses `56.8V` absorption target (`~1,988W`), while the battery manual/BOM basis references `58.4V` (`~2,044W` at `35A`). Reconcile and document the actual MultiPlus LiFePO4 charge profile before first energization.
+- Initial garage workflow: use AC-in-only MultiPlus charging and connect/charge one `48V` battery at a time before paralleling the `1S3P` bank.
+- Ideal bulk-only recharge times at `56.8V` planning basis:
 - Replace one `core_workday`: `1.78h`.
 - Replace one `winter_workday`: `2.11h`.
-- Recharge from `20%` to `100%`: `6.18h`.
-- Real-world times are longer due to absorption taper near full charge.
+- Recharge full `3x` bank from `20%` to `100%`: `6.18h`.
+- Recharge one `48V 100Ah` battery from `20%` to `100%`: about `2.06h` ideal bulk-only.
+- Real-world times are longer due to absorption taper near full charge, lower input-current limits on `15A` household sources, and any configured charge-current derate.
 
 ### Operational implications and constraints
 - Battery capacity now supports roughly `2.9-3.5` office-workdays without charging depending on season and reserve policy.
@@ -228,15 +230,18 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 - Placement constraint: routing and passthrough location unresolved
 
 ## Plumbing (if included in phase 1)
-- Water capacity candidates captured: `10 gal` compact concept and `~25 gal` tank option
-- Pump candidate captured: Shurflo 3.0 GPM class
-- Water heating candidate captured: portable propane tankless model
-- Freeze and winterization strategy: TBD
+- Near-term baseline: decouple cold-water galley build from final hot-water selection. Build around tank, pump, faucet/sink, drain/graywater path, service shutoffs, and a capped future hot-water tie-in.
+- Water capacity candidates captured: `10 gal` compact concept and `~25 gal` tank option. A full `25 gal` tank weighs about `208 lb` before tank/hardware and needs real restraint/anchor planning.
+- Pump candidate captured: Shurflo 3.0 GPM class.
+- Faucet is now an explicit missing purchase class and should be tracked separately from generic cabinetry.
+- Hot-water decision posture: electric tankless is out of scale for the current `48/3000` inverter; small tanked electric is plausible later but adds AC load-management complexity; portable propane tankless remains provisional outdoor-use only; listed indoor/RV propane is deferred until venting/combustion-air/clearance package is locked.
+- Freeze and winterization strategy: TBD.
 
 ## Cabinetry and structure
-- Aluminum extrusion strategy: 10-series and 15-series mix, with service chase/toe-kick concept for wiring
+- Aluminum extrusion strategy: 15-series biased for heavy/dynamic modules (fridge, tank, electrical cabinet) and 10-series for light desk/accessory/panel work; use stock-length starter ordering until real envelopes are measured.
+- Current furniture CAD is reference-only after Iceco/water tank dry fit; fridge/cooler likely moves to the front-left corner, so re-CAD block envelopes before final cut lists.
 - Modular mounting baseline now includes T-slot/strut rails both exterior (recovery/tool mounts like shovel/Maxtrax) and interior (baskets/hooks/tie-down points); BOM rows `119` and `120`.
-- Drawer hardware baseline includes `4x` soft-close undermount slide kits for primary cabinetry drawers; BOM row `122`.
+- Drawer hardware baseline includes `4x` soft-close undermount slide kits for primary cabinetry drawers; BOM row `122`, but final lengths are deferred until fridge/tank/electrical module envelopes are verified.
 - Desk concepts captured: Lagun-style fold-in options and pneumatic pedestal concepts
 - Material ideas captured: phenolic/richlite top, sound treatment, panel anti-rattle tape
 - Monitor travel strategy concept: stow-low assisted deployment with structural bracing
@@ -295,16 +300,17 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 ### 120VAC shore/inverter safety
 - Main hazards: shock from miswired neutral/ground, ground-fault exposure at outlets, and overcurrent heating from undersized branch protection.
 - Required controls:
-- Keep shore path order: shore inlet (`TT-30`) -> hardwired EMS/surge protection -> AC-in DIN enclosure (`30A` UL489 breaker/disconnect) -> MultiPlus AC-in.
+- Keep shore path order: shore source -> shore cord/adapter -> shore inlet (`TT-30`) -> hardwired EMS/surge protection -> AC-in DIN enclosure (`30A` UL489 breaker/disconnect) -> MultiPlus AC-in.
 - Keep AC-out path order: MultiPlus AC-out-1 -> AC-out DIN enclosure (`20A` galley + `15A` office branch breakers) -> first-outlet GFCI strategy with downstream protected receptacles.
 - Keep AC-in hardware on a `30A` / `10 AWG` basis, and set MultiPlus input current limit to the actual source (`15A`, `20A`, or `30A`) whenever adapters are used.
 - Keep AC-out-2 as reserve-only in Phase 1 (labeled capped route; no energized branch hardware yet).
 - Preserve continuous equipment grounding and chassis bond through all AC paths.
 - Do not add a fixed downstream neutral-ground bond in branch wiring; neutral/ground behavior must follow MultiPlus transfer/bonding design.
 - Commissioning checks:
-1. Receptacle polarity test on each outlet location.
-2. GFCI/RCD trip test at each protected branch.
-3. Verify AC-out-2 remains de-energized as a reserve-only capped route in Phase 1.
+1. AC-in-only charger validation with AC-out loads disconnected for first battery charge.
+2. Receptacle polarity test on each outlet location.
+3. GFCI/RCD trip test at each protected branch.
+4. Verify AC-out-2 remains de-energized as a reserve-only capped route in Phase 1.
 
 ### Propane safety (rear-mounted tank plus passthrough and hot-water path)
 - Main hazards: leak accumulation, ignition near electrical equipment, CO exposure, and using outdoor-only appliances in enclosed space.

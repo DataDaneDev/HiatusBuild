@@ -1,6 +1,6 @@
 # Electrical Bench Layout + Test Guide (Garage Use)
 
-As-of date: `2026-03-27`
+As-of date: `2026-04-27`
 
 Purpose: provide a practical, print-friendly game plan for building and validating the electrical closet module on the ground before final install.
 
@@ -136,6 +136,18 @@ Pass when:
 Pass when:
 - Stable voltage and normal behavior at all checkpoints.
 
+### T2.5: Shore / MultiPlus initial charge validation
+- Build the AC-in-only path first: shore source -> cord/adapter -> inlet -> EMS -> AC-in breaker/disconnect -> MultiPlus AC-in.
+- Keep AC-out branch breakers/loads disconnected for the first charge test.
+- Connect and charge one `48V` battery at a time through the final-style protected DC path.
+- Confirm MultiPlus LiFePO4 charge profile and source current limit before energizing.
+- Use the pre-charge procedure before closing the `48V` disconnect into MultiPlus capacitance.
+- Leave alternator branch inactive and `F-04` out during shore-charge validation.
+- Log starting/resting voltage, charge current, temperature, SOC/monitor readings, abnormal heat/noise/smell, and stop conditions for each battery.
+
+Pass when:
+- Each battery charges normally with no unexplained BMS trips, abnormal heat, polarity issues, or AC faults, and the three batteries are close enough to parallel per battery/manual procedure.
+
 ### T3: 12V distribution validation
 - Validate Orion-fed `12V` junction behavior and branch fusing.
 - Test representative `12V` loads one at a time, then combined.
@@ -180,6 +192,7 @@ Use one card per session:
 ## 7) Hold points (do not cross yet)
 
 - Do not finalize shell-dependent cable cuts.
+- Do not parallel the three `48V` batteries until each has been individually charged/tested and voltage/SOC matching is documented.
 - Do not lock roof/solar final terminations.
 - Do not permanently close access panels before all staged tests pass.
 - Do not use main `48V` disconnect as first alternator shutdown method while charging is active; use `Upfitter #3` (`WS500` disable path) first.

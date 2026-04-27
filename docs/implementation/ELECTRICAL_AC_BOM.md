@@ -1,8 +1,8 @@
 # Electrical AC BOM (Phase 1)
 
-As-of date: `2026-03-18`
+As-of date: `2026-04-27`
 
-Purpose: maintain the compact split-panel AC architecture baseline and procurement scope for Phase 1 with a `30A` shore-capable AC-in path, UL-listed DIN protection hardware, and reserve-only `AC-out-2`, while final receptacle count is closed.
+Purpose: maintain the compact split-panel AC architecture baseline and procurement scope for Phase 1, with immediate emphasis on an AC-in-only MultiPlus shore-charge path for initial `48V` battery charging and later AC-out branch distribution.
 
 Related docs:
 - `docs/implementation/ELECTRICAL_overview_diagram.md`
@@ -13,13 +13,14 @@ Related docs:
 ## Locked AC Architecture
 
 ### AC-in chain (shore to inverter)
-- `TT-30 inlet -> hardwired EMS -> AC-in DIN enclosure -> 30A UL489 breaker/disconnect -> MultiPlus AC-in (L/N/PE)`
+- `shore source -> shore cord/adapter -> TT-30 inlet -> hardwired EMS -> AC-in DIN enclosure -> 30A UL489 breaker/disconnect -> MultiPlus AC-in (L/N/PE)`
 - AC-in conductors are `10 AWG` on the protected AC-in path (`30A` hardware basis).
 - MultiPlus input current limit is set to actual source (`15A`, `20A`, or `30A`) when adapters are used.
 
 ### AC-out chain (inverter-backed branch distribution)
 - `MultiPlus AC-out-1 -> AC-out DIN enclosure -> 20A branch + 15A branch -> first GFCI receptacle per branch -> downstream standard receptacle`
-- Receptacle plan is pending final lock at `3-4` locations total (working baseline remains `4`: `2` galley, `2` office).
+- Receptacle plan is pending final physical layout lock at `3-4` locations total (working baseline remains `4`: `2` galley, `2` office).
+- AC-out branch hardware is not required to perform the initial AC-in-only battery charging test.
 
 ### Neutral and ground handling
 - AC-in and AC-out neutral termination paths remain isolated.
@@ -33,6 +34,22 @@ Related docs:
 - Keep labeled panel space and capped route only; no energized branch hardware is procured for this path in Phase 1.
 
 ## Required Purchasable Components (Phase 1)
+
+### Immediate AC-in-only initial charge path
+
+These rows unblock safe MultiPlus shore charging and should not wait on final receptacle count:
+
+| Component class | Qty | Rating/listing requirement | BOM row(s) | Phase 1 status |
+| --- | --- | --- | --- | --- |
+| TT-30 shore inlet + weatherproof hatch | `1` | RV `30A` shore interface, weatherproof exterior hardware | `107` | Required now |
+| Shore cord + adapters (`TT-30` to `15A/20A`) | `1` kit | `30A` shore cord plus adapter set for mixed-source hookups | `108` | Required now |
+| Hardwired EMS/surge protector | `1` | Hardwired `120VAC` EMS in shore path with open-neutral/polarity/voltage fault protection | `123` | Required now |
+| AC-in breaker/disconnect | `1` | DIN-mount `UL 489` (or ETL/NRTL equivalent) `1-pole 30A 120VAC` | `13` | Required now |
+| AC-in DIN enclosure and accessory hardware | `1` enclosure + accessories | DIN enclosure, rail, cover, neutral/ground bars, end stops, blanks, labels | `109`, `14` | Required now |
+| Shore + AC-in feed cable | `11 ft` baseline | `10/3` stranded cable for `C-28/C-29` (`30A` path) | `114` | Required now |
+| Strain relief/grommets/clamps/labels/ferrules | per entries | Sized for selected cable/enclosure terminals | `38`, `41`, `43`, `44`, `45` | Confirm on hand |
+
+### Full AC-out distribution / final Phase 1 branch hardware
 
 | Component class | Qty | Rating/listing requirement | BOM row(s) | Phase 1 status |
 | --- | --- | --- | --- | --- |
@@ -58,13 +75,20 @@ Related docs:
 
 ## Manual AC Validation Checklist
 
+### 0) AC-in-only initial charger validation
+- Confirm AC-in physical order: `shore source -> cord/adapter -> inlet -> EMS -> AC-in breaker/disconnect -> MultiPlus AC-in`.
+- Confirm AC-out breakers/loads are disconnected or not yet installed for the first battery-charge test.
+- Confirm MultiPlus input current limit is set to actual source (`15A`, `20A`, or `30A`).
+- Confirm battery charge profile is intentionally set for the selected LiFePO4 voltage basis before energization.
+- Confirm AC-in and AC-out neutral paths are not mixed.
+
 Use this checklist as the acceptance gate before procurement freeze and before first live AC commissioning.
 
 ### 1) Topology integrity
-- Confirm one unique AC-in chain exists: `shore -> EMS -> AC-in breaker -> MultiPlus AC-in`.
+- Confirm one unique AC-in chain exists: `shore source -> cord/adapter -> inlet -> EMS -> AC-in breaker -> MultiPlus AC-in`.
 - Confirm one unique AC-out-1 chain exists: `MultiPlus AC-out-1 -> branch breakers -> receptacle chains`.
 - Confirm `AC-out-2` is documented as reserve-only and not active in Phase 1 procurement.
-- Confirm final receptacle count is explicitly locked (`3` or `4`) before cart freeze.
+- Confirm final receptacle count is explicitly locked (`3` or `4`) before AC-out branch cart freeze; this is not allowed to block AC-in initial-charge procurement.
 
 ### 2) Protection coordination
 - Confirm AC-in breaker is `30A` and AC-in conductors are `10 AWG`.
@@ -91,6 +115,7 @@ Use this checklist as the acceptance gate before procurement freeze and before f
   - `bom/bom_estimated_items.csv`
 
 ### 6) Operating scenarios
+- AC-in-only initial charge: no AC-out loads connected, MultiPlus charger behavior documented.
 - Shore present (`30A` source): pass-through + charging behavior documented.
 - Shore present via `15A/20A` adapter: current-limit setting policy documented.
 - Shore absent: inverter-backed `AC-out-1` behavior documented.

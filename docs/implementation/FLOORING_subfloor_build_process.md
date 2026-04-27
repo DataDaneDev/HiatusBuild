@@ -2,13 +2,13 @@
 
 ## Scope
 - Define the locked floor stack-up, hardpoint strategy, procurement state, and install workflow for the truck bed floor.
-- Baseline date for this revision: March 18, 2026.
+- Baseline date for this revision: April 27, 2026.
 
 ## Final Subfloor Structure (Bottom to Top)
 1. Existing spray-in bedliner.
-2. `5/8 in` SilveRboard Graphite EPS between ribs only.
-3. `3/4 in` birch plywood directly over EPS + rib structure (bottom face, edges, and drilled holes sealed; top bond face left untreated for Lonseal adhesive).
-4. Lonseal Lonwood Madera marine sheet vinyl, glue-down finish layer.
+2. `5/8 in` SilveRboard Graphite EPS between ribs only. Current state: installed, with some trim cleanup still required.
+3. `3/4 in` birch plywood directly over EPS + rib structure. Current state: installed in three slices; bottom/edges are sealed and the top bond face remains untreated for Lonseal adhesive.
+4. Lonseal Lonwood Madera marine sheet vinyl, glue-down finish layer. Current state: sheet vinyl and adhesive are in hand; glue-down is gated because it reduces subfloor serviceability.
 
 ## Explicitly De-Scoped Layer
 - Full-bed `EPDM/RPDB` thermal-break sheet above EPS and below plywood is no longer in the active floor stack-up.
@@ -20,11 +20,13 @@
 - Do not place compressible insulation in bolt clamp stacks.
 
 ## Procurement Snapshot (Updated)
-### Purchased (active flooring path)
+### Purchased / in hand (active flooring path)
 - SilveRboard Graphite EPS kit (`$71.38`) - Home Depot.
 - Loctite PL 300 foamboard adhesive (`$5.48`) - Home Depot.
 - TotalBoat Halcyon Water-Based Marine Varnish, clear gloss, pint (`$22.99`) - Amazon.
 - `3/4 in` birch plywood, `4x8`, qty `2` (`$88` each, `$176` total).
+- Lonseal Lonwood Madera Topseal marine sheet vinyl.
+- Lonseal adhesive.
 
 ### Canceled / refunded (not in hand)
 - Rubber-Cal EPDM closed-cell sponge rubber, qty `2` (`$47.22`) - Home Depot order canceled before shipment; refunded.
@@ -32,9 +34,10 @@
 ### Related purchase (not floor stack, but same workstream)
 - `1/2 in` plywood, `4x8`, qty `1` (`$68`) for electrical backer/closet module.
 
-### Not Yet Purchased (flooring)
-- Lonseal Lonwood Madera marine sheet vinyl (`$374.08` expected).
-- Sheet-vinyl adhesive/sealant (`~$55` planning basis).
+### Not Yet Purchased / confirm before glue-down
+- Exact-notch sheet-vinyl adhesive trowel (`1/16 x 1/32 x 1/32 in U-notch`; BOM row `174`).
+- Compact segmented roller or equivalent if not already in hand (`row 175`).
+- Fresh utility blades, masking tape, gloves, rags/cleaner, and disposable adhesive cleanup supplies as needed.
 
 ### Totals
 - Active flooring package purchased to date: `$275.85`.
@@ -42,29 +45,42 @@
 - Active flooring package estimated total: `$704.93`.
 
 ## Installation Sequence
-### Phase 1 - Prep
+### Phase 0 - Bed rail dust/weather closeout before finish floor
+1. Remove or lift bed rail caps as needed and photograph all old camper-install holes.
+2. Confirm with Hiatus that the old roughly `2 in x 3 in` top-rail holes are not needed for the new camper interface.
+3. Clean/degrease rail surfaces and rust-protect bare cut edges.
+4. Close holes as dust/weather intrusion points using low-profile, serviceable cover patches where possible: thin aluminum/ABS/HDPE or similar non-absorbent patch/backer bedded in butyl tape, automotive seam sealer, MS polymer, or polyurethane sealant.
+5. Reinstall rail caps with targeted sealing/gasketing while preserving drainage paths and avoiding camper-fit interference.
+
+### Phase 1 - Prep / current-state correction
 1. Clean bed thoroughly.
-2. Measure rib depth.
-3. Mark structural hardpoints (tank frame anchors and other fixed anchors).
+2. Trim EPS so it is not proud, buckled, or interfering with plywood seating.
+3. Re-check structural hardpoints: remove EPS locally anywhere plywood must bear directly on steel.
+4. Confirm the three plywood slices sit flat and can still be removed intentionally.
 
-### Phase 2 - Between-Rib Insulation
-1. Cut EPS to snug fit between ribs.
-2. Apply PL 300 in light dabs only (`3-5` dabs per cavity).
-3. Press foam into place; avoid full-surface bonding.
-4. Confirm EPS does not interfere with hardpoint clearance zones.
+### Phase 2 - Between-Rib Insulation (mostly complete)
+1. EPS remains between ribs only.
+2. Maintain light tack-only adhesion where used; avoid full-surface bonding.
+3. Confirm EPS does not interfere with hardpoint clearance zones.
 
-### Phase 3 - Subfloor (`3/4 in` birch)
-1. Cut plywood panels and drill anchor-hole layout.
-2. Remove panels and seal the bottom face and all edges with polyurethane; leave the top face untreated because it is the Lonseal adhesive bond surface.
-3. Allow full cure.
-4. Install rivnuts in steel at hardpoint locations.
-5. Clear EPS at hardpoint pockets so plywood sits directly on steel there.
-6. After final drilling, seal the inside of all plywood holes.
-7. Reinstall plywood and bolt structural hardpoints.
+### Phase 3 - Subfloor (`3/4 in` birch, three-slice state)
+1. Verify panel seam strategy and removal path before finish flooring.
+2. Confirm sealed bottom/edges/holes and untreated clean top bond face.
+3. If new anchor holes are drilled, seal the inside of all plywood holes before final install.
+4. Reinstall plywood and bolt structural hardpoints only after hardpoint pockets are clear.
 
-### Phase 4 - Finish Flooring
+### Phase 4 - Lonseal glue-down gate
+Do not proceed until:
+- bed rail/hole sealing is complete or explicitly deferred;
+- EPS trim and plywood seating pass;
+- no floor-through penetrations, drains, heater routes, anchor holes, or hidden hardpoints need access under the finish sheet;
+- top plywood face is clean, dry, untreated, and adhesive-compatible;
+- correct trowel and roller are on hand;
+- dry cure window is available.
+
+### Phase 5 - Finish Flooring
 1. Dry-fit Lonseal sheet and align grain/pattern.
-2. Apply adhesive per Lonseal adhesive manufacturer specification.
+2. Apply adhesive per Lonseal adhesive manufacturer specification using the exact required trowel.
 3. Lay vinyl and roll thoroughly.
 4. Trim edges and allow cure before loading furniture.
 
@@ -81,4 +97,4 @@ Confirm final door and tank clearances against this stack-up before permanent in
 - Structural behavior: stiffer walking surface and higher point-load robustness with `3/4 in` birch.
 - Moisture durability: sealed bottom face, edges, and drilled holes remain required because wood is directly above rib cavities; the top face stays untreated to remain compatible with the Lonseal vehicle-install substrate requirement for untreated plywood.
 - Acoustic behavior: no dedicated EPDM damping layer in active stack; expect more direct structure-borne vibration vs prior concept.
-- Serviceability: finish vinyl remains the only permanent bond layer; subfloor remains mechanically serviceable.
+- Serviceability: finish vinyl remains the only permanent bond layer, but one-piece Lonseal glued over three plywood slices will make subfloor removal materially harder. Treat glue-down as an explicit gate, not casual finish work.

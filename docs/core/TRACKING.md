@@ -296,6 +296,51 @@
 - Result: added `docs/core/ELECTRICAL_48V_ARCHITECTURE.md` as the canonical `48V` design file; supporting docs now reference it instead of treating the alternator trade study as the final design source.
 - Follow-up: keep implementation detail in the wiring/fuse docs and reserve the alternator study for research history only.
 
+- ID: D-032
+- Date: 2026-04-27
+- Decision: Replace the narrow install-minus-12 plan with an integrated Apr 27-May 11 install readiness and post-install plan.
+- Context: Install is fixed for May 7 at 9:00 AM in Bellingham, with travel from Park City and May 7-11 off work. Current blockers span shore charging, electrical layout, floor/bed sealing, extrusion, plumbing, and logistics.
+- Options considered: keep the shore/extrusion-only plan, create multiple new docs, or replace the existing plan with one integrated plan.
+- Decision drivers: avoid document creep while making the install window executable.
+- Result: `docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md` now owns the integrated install-window plan.
+- Follow-up: update logs and this tracking file after install-day measurements and shakedown evidence.
+
+- ID: D-033
+- Date: 2026-04-27
+- Decision: Prioritize an AC-in-only MultiPlus shore-charge path before final AC-out receptacle closure.
+- Context: Initial battery charging and bench testing are blocked by shore-power uncertainty, while AC-out branch/receptacle layout can wait.
+- Options considered: wait for complete AC branch layout, buy a combined breaker box, or keep split AC-in/AC-out architecture and build AC-in first.
+- Decision drivers: safety, reduced decision coupling, and faster path to first battery charge.
+- Result: AC-in path rows `107`, `108`, `123`, `13`, `109`, `14`, and `114` are the immediate purchase/SKU-lock focus; AC-out branch rows can defer if not needed for initial charge.
+- Follow-up: reconcile actual MultiPlus LiFePO4 charge profile before first energization.
+
+- ID: D-034
+- Date: 2026-04-27
+- Decision: Treat Lonseal glue-down as gated finish work, not immediate routine flooring.
+- Context: EPS and three-piece plywood subfloor are installed, and Lonseal/glue are in hand, but glued finish flooring reduces subfloor serviceability. Bed rail cap sealing and old rail holes remain open.
+- Options considered: glue now, delay all flooring, or complete trim/seal/inspection gates before glue-down.
+- Decision drivers: preserve access until rail/hole sealing, hardpoint, and penetration questions are closed.
+- Result: Lonseal glue-down waits until bed rail/hole sealing or explicit deferral, EPS trim, hardpoint pockets, and cure/tool readiness pass.
+- Follow-up: update `logs/LOG.md` with gate evidence before glue-down.
+
+- ID: D-035
+- Date: 2026-04-27
+- Decision: Treat current furniture CAD as reference-only and order only low-regret stock extrusion/hardware until fridge/tank envelopes are revalidated.
+- Context: Iceco/water tank dry fit showed the cooler/fridge does not open in the planned location and likely moves to the front-left corner.
+- Options considered: order exact cut lengths from stale CAD, wait on all extrusion, or buy stock-length starter extrusion and connector hardware.
+- Decision drivers: avoid waiting later while limiting waste from a known CAD mismatch.
+- Result: 15-series-biased stock starter order is acceptable; final drawer slides, panels, skins, and exact cut lists are deferred.
+- Follow-up: measure real fridge/tank envelopes and update module CAD after camper install measurements.
+
+- ID: D-036
+- Date: 2026-04-27
+- Decision: Decouple cold-water galley progress from final water-heater selection.
+- Context: Faucet is missing, and water heater decision fatigue risks blocking pump/tank/sink progress.
+- Options considered: electric tankless, small tanked electric, portable outdoor propane, listed indoor/RV propane, or cold-water-first with future hot tie-in.
+- Decision drivers: current inverter scale, safety, and schedule.
+- Result: Build toward cold-water tank/pump/faucet/sink/drain baseline with capped future hot tie-in; treat portable propane as outdoor-only provisional and defer electric tanked/listed indoor propane until service-map freeze.
+- Follow-up: add discrete BOM rows for faucet/sink/drain/propane support classes and lock graywater/winterization details.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -396,7 +441,62 @@
 - Owner: Sunny
 - Status: Open
 
+- ID: R-012
+- Risk: Travel/logistics compression could put the truck too far from Bellingham for the May 7 `9:00 AM` install.
+- Impact (1-5): 5
+- Likelihood (1-5): 2
+- Mitigation: Stage the truck near Bellingham by the evening of May 6 and avoid late half-disassembly work.
+- Trigger: Departure delay, weather, parts delay, or unresolved tailgate/tonneau handling.
+- Owner: Sunny
+- Status: Open
+
+- ID: R-013
+- Risk: Old bed rail holes and rail-cap gaps can remain dust/water intrusion paths after the airtight barn-door camper upgrade.
+- Impact (1-5): 4
+- Likelihood (1-5): 3
+- Mitigation: Confirm holes are not needed by Hiatus, rust-protect cut edges, and seal with low-profile serviceable patches/flexible sealant while preserving drainage.
+- Trigger: Bed rail cap removal/inspection and first dusty or wet drive after camper install.
+- Owner: Sunny
+- Status: Open
+
+- ID: R-014
+- Risk: Premature Lonseal glue-down can trap unresolved floor penetrations/hardpoints and make three-piece subfloor removal difficult.
+- Impact (1-5): 4
+- Likelihood (1-5): 3
+- Mitigation: Require glue-down gate: rail/hole sealing decision, EPS trim, hardpoint pocket verification, no pending floor penetrations, correct tools, and dry cure window.
+- Trigger: Decision to apply Lonseal adhesive.
+- Owner: Sunny
+- Status: Open
+
+- ID: R-015
+- Risk: Ordering final furniture extrusion, drawer slides, or panels from stale CAD creates rework because fridge/tank dry fit invalidated the layout.
+- Impact (1-5): 4
+- Likelihood (1-5): 4
+- Mitigation: Order stock-length starter extrusion/hardware only; re-CAD block envelopes from physical fridge/tank measurements and real camper dimensions before final cut lists.
+- Trigger: Any exact-cut extrusion, drawer slide, panel, or skin purchase.
+- Owner: Sunny
+- Status: Open
+
+- ID: R-016
+- Risk: Battery first-charge or paralleling error can create BMS trips, high-current faults, or mismatched parallel-bank behavior.
+- Impact (1-5): 5
+- Likelihood (1-5): 2
+- Mitigation: Configure MultiPlus LiFePO4 profile, set source current limit, charge/test one battery at a time, log voltage/SOC/temp, and parallel only after matching is documented.
+- Trigger: First shore charge and first parallel tie of the `3x 48V` bank.
+- Owner: Sunny
+- Status: Open
+
 ## Open questions
+- Confirm travel/staging plan so the truck is in/near Bellingham before the May 7 `9:00 AM` install.
+- Confirm with Hiatus whether tailgate can be removed onsite and where it will be stored/transported afterward.
+- Confirm tonneau cover removal timing relative to weather, rail-cap sealing, and install interference.
+- Confirm whether prior-owner `2 in x 3 in` bed rail holes are unused by Hiatus and can be sealed before/at install.
+- Reconcile MultiPlus charge profile value before first charge (`56.8V` planning basis vs `58.4V` battery/manual basis).
+- Confirm one-battery-at-a-time first-charge procedure and acceptable voltage/SOC matching threshold before paralleling.
+- Measure Iceco lid-open/vent/power-cord envelope and validate front-left fridge/cooler location.
+- Measure water tank/fitting envelope and decide tank restraint/access orientation.
+- Lock faucet, sink, drain/graywater, pump service-valve, and winterization details as discrete procurement rows.
+- Lock whether hot water is outdoor shower-only provisional or must feed the sink; defer indoor/RV propane or electric tanked path until service-map freeze.
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)
 - Confirm received Mechman dual-48V kit fitment/content for the truck (`2021 F-350 7.3L`) before shipping Sterling returns
 - Confirm Wakespeed support status for the documented `Dumfume 51.2V 100Ah` battery manual (`58.4V` charge voltage, `20-50A` recommended charge current per battery, `1S4P` max expansion) before final commissioning of the `WS500`-controlled alternator path

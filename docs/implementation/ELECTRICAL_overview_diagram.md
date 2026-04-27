@@ -186,13 +186,13 @@ flowchart LR
 ```mermaid
 flowchart LR
     subgraph SHORE_SRC["Shore Source Path"]
-        INLET["Shore inlet (120VAC)"]
         CORD["Shore cord + adapters\n(service-limited by pedestal/source)"]
+        INLET["Shore inlet (120VAC)"]
         EMS["Hardwired EMS/surge protection\n(required in Phase 1)"]
         INPANEL["AC-in DIN enclosure\n(input neutral bar + input ground bar)"]
         ACINBRK["AC input breaker/disconnect\n30A UL489 target"]
-        INLET -- "10/3 shore, ~3 ft (ASSUMED)" --> CORD
-        CORD -- "10/3 shore, ~2 ft (ASSUMED)" --> EMS
+        CORD -- "10/3 shore to camper inlet" --> INLET
+        INLET -- "10/3 shore, ~3 ft (ASSUMED)" --> EMS
         EMS -- "10/3 shore, ~3 ft (ASSUMED)" --> INPANEL
         INPANEL --> ACINBRK
     end
@@ -246,10 +246,11 @@ flowchart LR
 ### AC Operating Behavior (Expected)
 - Shore present: MultiPlus transfer relay closes, AC-in is passed to AC-out paths, and charger stage charges the `48V` bank.
 - Shore absent: MultiPlus transfers to inverter mode and powers `AC-out-1` from battery; `AC-out-2` drops by design.
-- AC-in hardware is `30A` (`TT-30` + hardwired EMS + `30A` breaker + `10 AWG` AC-in conductors); set MultiPlus input current limit to actual source (`15A`, `20A`, or `30A`) to avoid pedestal/source breaker trips.
+- AC-in hardware is `30A` (`shore cord/adapters -> TT-30 inlet -> hardwired EMS -> 30A breaker -> 10 AWG AC-in conductors`); set MultiPlus input current limit to actual source (`15A`, `20A`, or `30A`) to avoid pedestal/source breaker trips.
+- Initial battery charging may use AC-in-only mode with AC-out branch loads disconnected.
 
 ### AC Safety/Protection Chain (What Must Exist)
-- Upstream shore protection chain before MultiPlus AC-in: shore inlet -> hardwired EMS -> `30A` AC input breaker/disconnect.
+- Upstream shore protection chain before MultiPlus AC-in: shore source -> cord/adapter -> shore inlet -> hardwired EMS -> `30A` AC input breaker/disconnect.
 - AC-out branch protection including UL943-class residual-current protection and overcurrent protection sized to branch wiring and expected load.
 - Split-panel architecture with dedicated neutral/ground bars per AC enclosure and no AC-in/AC-out neutral mixing.
 - Continuous equipment grounding path from shore inlet through MultiPlus and branch circuits, plus chassis bond in mobile install context.
@@ -263,7 +264,7 @@ flowchart LR
 - Shore interface: `30A` RV-style inlet baseline with adapter kit for `15A`/`20A` hookups.
 - AC input protection: dedicated hardwired-EMS + AC-in DIN enclosure + `30A` AC input breaker/disconnect upstream of MultiPlus AC-in.
 - AC-out-1 distribution: two protected branches (`20A` galley, `15A` office) with GFCI-at-first-outlet strategy.
-- Receptacle plan: `4` total `120V` receptacle locations (`2` galley, `2` office).
+- Receptacle plan: working baseline remains `4` total `120V` receptacle locations (`2` galley, `2` office), but final physical layout can still reduce to `3` before AC-out branch cart freeze.
 - USB charging plan: `2` DC-fed USB PD station assemblies on `12V` branches (`1` office, `1` galley) with branch baselines of `20A` (office) and `15A` (galley).
 - AC-out-2 remains reserve-only in Phase 1 (labeled capped route; no energized branch hardware procured).
 
@@ -351,7 +352,7 @@ Retired from active architecture:
 | `C-25` | 12V panel -> LED lights + dimmer (Hiatus pre-installed) | `12V` | Branch load | `F-10` `5A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-26` | 12V panel -> Cerbo GX power feed | `12V` | Branch load (`~3W`) | `F-10` `3A` (assumed) | `18/2` | `2.5 ft` (`ASSUMED`, cabinet internal) |
 | `C-27` | PV strings -> `F-09` combiner -> MPPT PV input | PV string voltage (`3S`) | String current + combiner output current | `F-09A/B/C` `15A` each | `10 AWG` PV wire | `12 ft` trunk + `3x8 ft` string legs (`ASSUMED`) |
-| `C-28` | Shore inlet -> shore cord/adapter -> hardwired EMS -> AC-in DIN enclosure / AC input breaker | `120VAC` | Source-limited shore current (adapter-constrained at source) | `30A` AC input breaker/disconnect baseline with source-current-limit settings policy | `10/3` shore feed to inlet/EMS/AC-in area | `8 ft` (`ASSUMED`) |
+| `C-28` | Shore source -> shore cord/adapter -> shore inlet -> hardwired EMS -> AC-in DIN enclosure / AC input breaker | `120VAC` | Source-limited shore current (adapter-constrained at source) | `30A` AC input breaker/disconnect baseline with source-current-limit settings policy | `10/3` shore feed to inlet/EMS/AC-in area | `8 ft` (`ASSUMED`) |
 | `C-29` | AC input breaker/disconnect -> MultiPlus AC-in | `120VAC` | MultiPlus AC input current (`30A` hardware basis) | Upstream `30A` AC breaker/disconnect (`C-28`) | `10 AWG` stranded AC conductors | `2.5 ft` (`ASSUMED`, cabinet internal) |
 | `C-30` | MultiPlus AC-out-1 -> branch RCD/GFCI + breaker assembly | `120VAC` | Inverter-backed branch distribution current | UL943-class RCD/GFCI + branch breakers (`20A` galley, `15A` office) | `12 AWG` stranded AC conductors | `2.5 ft` (`ASSUMED`, cabinet internal) |
 | `C-31` | Branch A -> galley receptacle locations (`2`) | `120VAC` | Branch load (induction, microwave, galley outlets) | `C-30` branch protection stack | `12 AWG` stranded AC conductors | `15 ft` (`ASSUMED`, branch leg default) |
@@ -486,7 +487,7 @@ Torque reference (verify against your exact manuals/hardware):
 - Hardwired EMS in shore path before AC-in breaker/disconnect
 - Split AC-in and AC-out DIN enclosures with dedicated neutral/ground bars per enclosure
 - AC branch RCD/GFCI + breaker hardware
-- Receptacle boxes + `120V` outlets (`4` planned locations: `2` galley, `2` office)
+- Receptacle boxes + `120V` outlets (working baseline `4` locations: `2` galley, `2` office; final physical layout may reduce to `3` before AC-out cart freeze)
 - AC-out-2 reserve-only capped route (no energized Phase 1 branch hardware)
 - USB PD station branch hardware (`2` stations: office + galley)
 - Battery temperature sensor wiring to inverter/monitoring path

@@ -7,8 +7,9 @@
 - Keep exact topology, fuse, conductor, and bench procedure detail in `docs/implementation/`.
 
 ## Snapshot
-- As-of date: April 25, 2026
-- Install milestone: May 7, 2026 (`12` days from April 25)
+- As-of date: April 27, 2026
+- Install milestone: May 7, 2026, `9:00 AM`, at `3171 Mercer Ave, Suite 101, Bellingham, WA 98225`
+- Travel constraint: truck starts in Park City, Utah and should be staged near Bellingham by the evening of May 6
 - Mission: build a reliable off-grid camper workspace suitable for full-time professional use
 
 ## Fixed constraints
@@ -24,10 +25,10 @@
 - Keep system serviceable and safe in multi-climate travel use
 
 ## Current pre-camper execution focus (electrical + flooring)
-- Use `docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md` as the active day-to-day checklist while the camper shell is not yet in hand.
+- Use `docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md` as the active Apr 27-May 11 install-window plan. Use `docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md` only for detailed pre-camper electrical/flooring execution references.
 - Use `docs/core/ELECTRICAL_48V_ARCHITECTURE.md` as the canonical `48V` design reference while laying out the electrical module and alternator-control path.
-- Active work now includes both reversible and truck-only irreversible tasks (EPS install, subfloor prep, bench board drilling/layout).
-- Defer shell-dependent irreversible work (final penetrations, shell-run final cut lengths, permanent finish-floor bonding).
+- Active work now includes shore AC-in ordering, electrical closet layout/fuse matching, bed-rail dust/weather sealing, EPS trim/subfloor verification, and low-regret extrusion ordering.
+- Defer shell-dependent irreversible work (final penetrations, shell-run final cut lengths, permanent finish-floor bonding) until the real camper is installed and service-map checks pass.
 
 ## Scope
 - In scope: electrical, charging, solar, communications, interior structure/cabinetry, operations process, maintenance tracking
@@ -68,19 +69,17 @@
 - `docs/plans/PROJECT_build_order_of_operations.md`
 
 ## Immediate next decisions
-- **Priority 1: shore-power / initial-charge readiness.** SKU-lock and order the shore input path so the `3x 48V` battery bank can be initially charged from shore through the MultiPlus before alternator commissioning.
-- Use `docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md` for the compressed pre-Washington readiness plan.
-- Finalize AC scope and hardware lock: shore-power chain plus final branch/receptacle count (`2` branches with final location count pending).
-- Complete AC SKU-level lock and fitment validation for rows `13`, `107`, `108`, `109`, `110`, `111`, `112`, `114`, and `123`.
-- Order enough aluminum extrusion and connector hardware to begin rough furniture/module frames immediately after camper pickup; defer cosmetic panel and drawer-front lock until real shell measurements are captured.
-- Execute bench-build electrical closet layout and document measured run lengths; CAD lengths are reference-only for material planning.
-- Keep the manual alternator shutdown path simple: Ford `Upfitter #3` will be the `WS500` enable/disable control in the finalized `48V` design.
-- Defer Mechman alternator installation until batteries are present and shore charging/monitoring is ready; the Mechman kit and `APM-48` are now received.
-- Validate shared 12V junction behavior (`Orion + buffer battery`) including `F-11` and `SW-12V-BATT` under office/galley USB station loads.
-- Reserve solar passthrough/routing space now, but defer final flexible-panel procurement and string lock deeper into the build sequence.
-- Confirm passthrough locations (solar, shore, fuel/heater routing) with Hiatus before production lock.
-- Execute Sterling return workflow (`rows 18/26`) when comfortable that the received Mechman path is the committed route.
-- Lock interior/exterior T-slot or strut mounting ecosystem and bracket/accessory interface standard.
+- **Priority 1: shore-power / initial-charge readiness.** Build the AC-in-only MultiPlus charge path first: `shore source -> cord/adapter -> TT-30 inlet -> hardwired EMS -> AC-in breaker/disconnect -> MultiPlus AC-in`. Order/SKU-lock BOM rows `107`, `108`, `123`, `13`, `109`, `14`, and `114` plus glands/grommets/labels/ferrules.
+- Keep AC-in and AC-out protection in separate enclosures. Do not let final AC receptacle-count churn block the AC-in charge path.
+- Before first charge, reconcile the MultiPlus LiFePO4 charge profile (`56.8V` planning basis vs `58.4V` battery/manual basis), set source current limits, and charge/test one `48V` battery at a time before paralleling.
+- Complete electrical closet Board A/B layout on the `1/2 in` plywood with real service access, bend radius, fuse-holder matching, and labels before wire cutting.
+- **Truck bed dust/weather closeout:** remove/inspect bed rail caps, confirm old `2 in x 3 in` rail holes are not needed by Hiatus, and seal them with low-profile serviceable patches/flexible sealant without trapping water.
+- **Flooring gate:** trim EPS and verify three-piece plywood fit/serviceability. Do not glue Lonseal until rail/hole sealing, hardpoint pockets, and floor penetration/routing questions are cleared or explicitly deferred.
+- Keep tailgate on for the Bellingham drive unless Hiatus says otherwise; confirm removal/storage plan before departure. Keep tonneau on as long as practical for weather protection.
+- Treat current furniture CAD as reference-only because the Iceco/water tank dry fit invalidated the fridge location. Re-CAD block envelopes first, likely with fridge/cooler in the front-left corner.
+- Order a low-regret starter extrusion/hardware package from stock lengths under `92 in`; defer drawer slides, final panels, and exact cut lengths until real shell/fridge/tank envelopes are measured.
+- Add faucet/sink/drain procurement as discrete plumbing work. Decouple cold-water plumbing from final hot-water choice; treat portable propane tankless as outdoor-use-only and defer electric tanked or listed indoor/RV propane decisions until service-map freeze.
+- Defer Mechman alternator installation until batteries are present, shore charging/monitoring are proven, and alternator vendor/support gates are closed.
 
 ## Unblock sprint (next 72 hours)
 Purpose: convert planning certainty into a buildable, orderable physical layout (especially the electrical cabinet), without CAD-ing every bend radius.

@@ -4,10 +4,10 @@
 - Define a practical order of operations that still supports parallel workstreams.
 - Prioritize "build modules now, drop in later" for the fixed camper install date on May 7, 2026.
 
-## Planning assumptions (as-of 2026-03-19)
-- Fixed install date: May 7, 2026.
-- Time remaining from baseline date: 50 days.
-- This plan assumes a Hiatus truck bed camper install with major module prep done before delivery.
+## Planning assumptions (as-of 2026-04-27)
+- Fixed install appointment: May 7, 2026 at `9:00 AM` in Bellingham, Washington.
+- Travel constraint: truck starts in Park City, Utah; stage near Bellingham by the evening of May 6.
+- This plan assumes a Hiatus truck bed camper install with only reversible/module-first prep before delivery.
 - Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline.
 
 ## Typical full-build sequence (once camper shell is physically in hand)
@@ -61,43 +61,44 @@
 - Stream D: shell execution
 - Once shell is available, execute penetrations -> rough-in -> close-up using prepared modules and harnesses.
 
-## Date-window draft plan (baseline date: March 19, 2026)
-1. March 18 to March 31 (layout lock + AC decision closure)
-- Freeze electrical closet envelope and service map from physical mock layout.
-- Measure and document real run lengths from bench layout (no CAD gating requirement).
-- Close AC policy in one pass: shore chain, final branch count, and receptacle count (`3` vs `4` location lock).
-- Complete missing AC SKU lock for rows `13`, `107`, `108`, `109`, `110`, `111`, `112`, `123`.
+## Date-window execution plan (baseline date: April 27, 2026)
+1. April 27 to April 28 (plan reset + shore AC-in lock)
+- Use `docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md` as the integrated Apr 27-May 11 plan.
+- Confirm travel and install logistics for a May 7 `9:00 AM` Bellingham appointment.
+- SKU-lock/order AC-in initial-charge hardware first: rows `107`, `108`, `123`, `13`, `109`, `14`, and `114`; do not let final AC-out receptacle count block this path.
 
-2. April 1 to April 20 (module build + measured harness wave)
-- Build electrical module boards and sub-panels to frozen layout.
-- Execute measured cable/termination orders and cut plans (`113`, `114`, `116` plus any top-off from rows `46` through `51`).
-- Continue plumbing/heating appliance wave ordering/build prep (rows `62` through `85` as required by installation sequence).
+2. April 29 to May 1 (electrical closet + floor/truck interface gates)
+- Validate electrical Board A/B layout on physical plywood, including service access, fuse-holder matching, labels, and cable corridors.
+- Trim EPS, verify three-piece plywood fit, preserve hardpoint pockets, and keep Lonseal glue-down gated.
+- Remove/inspect bed rail caps, confirm old `2 in x 3 in` rail holes are not needed by Hiatus, and seal dust/weather intrusion points with low-profile flexible/serviceable methods.
 
-3. April 21 to May 3 (interior closeout + deferred-solar prep)
-- Complete interior/module procurement and dry-fit for rows `87` through `101`, plus `120` and `122`.
-- Keep solar procurement intentionally deferred if needed, but lock routing reservations and passthrough allowance (`121`) before install.
-- Finalize install kits by stage: penetrations, rough-in, closure, commissioning.
+3. May 2 to May 3 (layout/extrusion/plumbing decisions)
+- Treat current furniture CAD as reference-only after the Iceco/water tank dry-fit conflict; rework block envelopes first.
+- Place a stock-length starter extrusion/hardware order for rough frames, not final cut lengths or drawers.
+- Add faucet/sink/drain procurement to the cold-water baseline; keep water-heater choice decoupled and propane outdoor-only unless listed otherwise.
 
-4. May 4 to May 6 (final pre-install readiness gate)
-- Confirm all required critical-path items are delivered (not just ordered).
-- Confirm modules are bench-tested, labeled, and staged.
-- Confirm field-ready checklists and unresolved-risk log are current.
+4. May 4 to May 6 (final pre-install readiness + travel/staging)
+- Confirm delivered vs ordered critical-path items.
+- Pack measurement, tailgate, seal/weather, electrical labeling, fuse, and fastener kits.
+- Stage the truck near Bellingham by the evening of May 6. Do not start work that can leave the truck half-disassembled.
 
 5. May 7 (install day)
-- Execute shell-dependent scope and drop in prebuilt modules where possible.
-- Capture any routing/dimension deviations immediately in logs and tracking docs.
+- Confirm tailgate handling, bed rail/interface sealing, attachment method, and weather/dust expectations with Hiatus before work starts.
+- Capture before/during/after photos and a full shell measurement set before leaving.
+- Do not leave with undocumented attachment, clearance, or weather-critical issues.
 
-6. May 8 to May 24 (finish + commissioning)
-- Complete any remaining rough-in/termination tasks.
-- Run commissioning tests and first shakedown cycle.
+6. May 8 to May 11 (local shakedown + service-map freeze)
+- Stay local enough to return to Hiatus for early issues; run low-speed/highway shakedown and reinspect attachment/seals/doors/windows/fan.
+- Freeze service map from real shell dimensions before penetrations, final cable cuts, Lonseal glue-down, or permanent module skins.
+- Place top-off orders based on real measurements and update logs/tracking.
 
 ## Deferred / purchase-later rows (keep out of current critical path unless triggered)
 - Optional 12V expansion path: row `118`.
 
 ## Critical hold points (do not skip)
-- Hold 1: No penetrations until layout + service map is frozen.
-- Hold 2: No insulation/panel closure until rough-in test gate passes.
-- Hold 3: No final cabinetry close-out until service access is verified.
+- Hold 1: No penetrations until layout + service map is frozen from real installed camper measurements.
+- Hold 2: No Lonseal glue-down, insulation, or panel closure until floor/rough-in/service-access gates pass.
+- Hold 3: No final cabinetry close-out, drawer-slide lengths, or cosmetic skins until fridge/tank/electrical envelopes are verified.
 - Hold 4: No field deployment until shakedown defects are triaged.
 
 ## Truck-bed-camper adaptations vs typical van guides

@@ -1,6 +1,6 @@
 # Starter Plan: Electrical + Flooring (Pre-Camper)
 
-As-of date: `2026-03-20`
+As-of date: `2026-04-27`
 
 Purpose: give a phone-friendly, practical plan you can execute immediately **without the camper shell in hand**, using current field progress and updated decisions.
 
@@ -22,20 +22,21 @@ Related references:
 - Most core electrical components are already purchased.
 - Electrical architecture remains `48V core + 12V distribution`.
 - Garmin Tread 2 navigation is hardwired and mounted in-cab.
-- Flooring workstream is active: EPS between ribs is already cut/installed.
-- Flooring materials now in hand include `2x` `3/4 in` birch sheets (subfloor) and `1x` `1/2 in` sheet (electrical backer/closet use).
+- Flooring workstream is active: EPS is installed and needs final trim cleanup; the `3/4 in` birch subfloor is installed in three slices with the top left untreated for Lonseal adhesive.
+- Flooring materials now in hand include Lonseal sheet vinyl and adhesive; remaining immediate tool need is the exact-notch trowel (`row 174`) and roller confirmation (`row 175`).
+- `1x` `1/2 in` plywood sheet remains the electrical backer/closet material, currently uncut with components laid out on/near it.
 - Tooling readiness increased (major Bauer/Harbor Freight purchase completed).
 
 ### Not finalized / not in hand yet
 - Camper shell not yet installed.
 - Solar panels and final PV wiring/fusing path are not yet locked for final procurement.
-- Alternator architecture direction is now dedicated `48V` secondary alternator (`Mechman + WS500 + APM-48`); the Mechman `48V` alternator has been purchased, with Sterling return still pending received-kit/fitment/support confirmation.
-- Final AC branch/receptacle count and final shore-hardware SKU lock remain open.
-- Finish vinyl and adhesive are not yet purchased.
+- Alternator architecture direction is dedicated `48V` secondary alternator (`Mechman + WS500 + APM-48`); Mechman kit and APM-48 are received, but install remains deferred until batteries/shore charging/monitoring are proven.
+- Final AC branch/receptacle count is secondary; the AC-in-only shore charge path must be SKU-locked first.
+- Bed rail caps and old roughly `2 in x 3 in` rail holes need dust/weather sealing before the camper interface is finalized.
 
 ### Practical rule
-- **Continue reversible and truck-only irreversible work now** (bench layout, board drilling, floor panel fit/seal, labeling, harness prep).
-- **Do not do irreversible shell-dependent work yet** (final shell penetrations, final shell-run cable cuts, permanent finish-floor glue-down).
+- **Continue reversible and truck-only prep now** (bench layout, fuse/device matching, labels, rail-cap inspection/sealing, EPS trim, subfloor verification).
+- **Do not do irreversible shell-dependent work yet** (final shell penetrations, final shell-run cable cuts, permanent finish-floor glue-down, final module skins).
 
 ---
 
@@ -124,41 +125,38 @@ Do not finalize these yet:
 
 ---
 
-## 4) Flooring: active pre-camper execution plan
+## 4) Flooring + truck-bed sealing: active pre-camper execution plan
 
-The flooring workstream is now in active execution (EPS installed and subfloor plywood purchased).
+The flooring workstream is now beyond templating: EPS is installed, three plywood slices are installed, Lonseal and adhesive are in hand, and the next risk is crossing the glue-down point too early.
 
-## 4.1 Template package to create now
-Create these full-size templates for the truck bed:
-1. Bed perimeter outline.
-2. Wheel-well profile captures.
-3. Rib valley map (depth and width by rib segment).
-4. Structural hardpoint map (where compressible layers must be removed).
-5. Proposed plywood seam map.
-6. Proposed insulation-piece numbering map.
-
-Mark every template with:
-- orientation arrow (`FRONT`, `TAILGATE`, `DRIVER`, `PASSENGER`)
-- date/version (example: `FLOOR-TEMPLATE-v1`)
+## 4.1 Bed rail dust/weather closeout
+Before finish-floor glue-down if practical:
+1. Remove or lift bed rail caps as needed.
+2. Photograph and measure the old roughly `2 in x 3 in` camper-install holes.
+3. Confirm with Hiatus that those holes are not needed for the new install.
+4. Rust-protect bare cut edges.
+5. Seal as dust/weather openings using low-profile serviceable patches and flexible automotive/weather-rated sealant or butyl.
+6. Reinstall caps without trapping water or creating proud interference under the camper.
 
 ## 4.2 Hardpoint planning rule (critical)
 Use hardpoint pocket zones from `docs/implementation/FLOORING_subfloor_build_process.md`:
 - At structural anchor points, EPS is removed locally so plywood bears directly on steel.
 - Keep these zones clearly marked to prevent accidental compressible stackups.
 
-## 4.3 Plywood cut planning and fit checks (now)
-With plywood now purchased, complete:
-- Panel seam direction for easiest install/removal.
-- Test-fit each panel for insertion/rotation clearance.
-- A service pull path so a panel can be removed later if needed.
+## 4.3 Current subfloor correction
+Complete now:
+- Trim EPS cleaner where needed.
+- Confirm all three plywood slices sit flat.
+- Confirm panel seam/removal strategy remains possible.
+- Confirm the top face is clean, dry, untreated, and adhesive-compatible.
 
-## 4.4 Active execution sequence
-Execution order:
-1. Transfer template lines to plywood and rough-cut oversized.
-2. Test-fit and trim in small increments.
-3. Pre-drill anchor holes to hardpoint map.
-4. Remove and seal all faces/edges.
-5. Refit and confirm hole alignment before finish flooring stage.
+## 4.4 Lonseal glue-down gate
+Do not glue until:
+- rail/hole sealing is complete or deliberately deferred;
+- no floor penetrations, hidden anchors, drains, heater routes, or hardpoints need under-floor access;
+- exact trowel and roller are available;
+- cure window is dry and within adhesive requirements;
+- reduced serviceability from gluing over three plywood slices is accepted.
 
 ---
 
@@ -206,8 +204,11 @@ This keeps progress steady without waiting on missing materials.
 - Solar panel model/stringing not yet locked.
 - Final PV fusing/wire lengths not yet locked.
 - Alternator path is re-baselined to dedicated `48V` secondary alternator; Mechman alternator has been purchased, and Sterling return is pending received-kit/fitment/support confirmation.
-- Final AC outlet/branch count lock still pending (two branches retained as working baseline).
+- AC-in-only shore charge path SKU lock is the priority; final AC outlet/branch count remains secondary.
 - Final closet envelope dimensions may shift after camper is physically in hand.
+- Bed rail cap sealing, old rail-hole closure, tailgate removal/storage, and tonneau/weather timing need Hiatus confirmation.
+- Fridge/water-tank dry fit invalidated current CAD location; front-left fridge/cooler envelope is now the working redesign candidate.
+- Faucet is missing as a discrete plumbing purchase; hot-water decision should not block cold-water sink/pump/tank progress.
 
 ---
 
