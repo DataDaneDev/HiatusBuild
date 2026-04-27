@@ -1,2 +1,14 @@
-# Local Obsidian vault settings
-.obsidian/
+# Obsidian vault settings
+# Track shared navigation/appearance settings, but keep personal workspace/cache state local.
+.obsidian/*
+!.obsidian/
+!.obsidian/app.json
+!.obsidian/appearance.json
+!.obsidian/core-plugins.json
+!.obsidian/graph.json
+!.obsidian/bookmarks.json
+!.obsidian/snippets/
+!.obsidian/snippets/hiatus-vault.css
+.obsidian/workspace*.json
+.obsidian/cache/
+.obsidian/plugins/

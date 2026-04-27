@@ -1,3 +1,15 @@
+---
+aliases:
+  - 48V alternator trade study
+tags:
+  - hiatus/study
+  - hiatus/electrical
+status: historical
+related:
+  - "[[ELECTRICAL_48V_ARCHITECTURE]]"
+  - "[[SYSTEMS]]"
+---
+
 # Electrical Trade Study: Sterling `BB1248120` vs Mechman `48V` Secondary Alternator
 
 Status: pass `2` research draft (local-reference assimilation)  

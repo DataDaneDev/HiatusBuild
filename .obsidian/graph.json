@@ -1,0 +1,65 @@
+{
+  "collapse-filter": true,
+  "search": "-path:docs/pdf_exports -path:.git -path:.obsidian",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": true,
+  "showOrphans": true,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "path:docs/core",
+      "color": {
+        "a": 1,
+        "rgb": 2576720
+      }
+    },
+    {
+      "query": "path:docs/implementation",
+      "color": {
+        "a": 1,
+        "rgb": 5266762
+      }
+    },
+    {
+      "query": "path:docs/plans",
+      "color": {
+        "a": 1,
+        "rgb": 10309436
+      }
+    },
+    {
+      "query": "path:docs/studies",
+      "color": {
+        "a": 1,
+        "rgb": 5683561
+      }
+    },
+    {
+      "query": "path:bom",
+      "color": {
+        "a": 1,
+        "rgb": 12815936
+      }
+    },
+    {
+      "query": "path:logs",
+      "color": {
+        "a": 1,
+        "rgb": 11164176
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": true,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 1,
+  "close": false
+}

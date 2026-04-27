@@ -1,3 +1,15 @@
+---
+aliases:
+  - Dual-zone fridge shortlist
+tags:
+  - hiatus/study
+  - hiatus/appliance
+status: historical
+related:
+  - "[[SYSTEMS]]"
+  - "[[PROJECT]]"
+---
+
 # 12V Fridge Research: Dual-Zone, 30-48qt, Under $750 (No Built-in Battery Required)
 
 Status: draft `1` (offline-first shortlist)

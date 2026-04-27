@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "type": "file",
+      "ctime": 1777284000000,
+      "path": "00 Home.md",
+      "title": "Home"
+    },
+    {
+      "type": "file",
+      "ctime": 1777284000000,
+      "path": "docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md",
+      "title": "Install Readiness"
+    },
+    {
+      "type": "file",
+      "ctime": 1777284000000,
+      "path": "docs/core/PROJECT.md",
+      "title": "Project"
+    },
+    {
+      "type": "file",
+      "ctime": 1777284000000,
+      "path": "docs/core/SYSTEMS.md",
+      "title": "Systems"
+    },
+    {
+      "type": "file",
+      "ctime": 1777284000000,
+      "path": "docs/core/TRACKING.md",
+      "title": "Tracking"
+    },
+    {
+      "type": "file",
+      "ctime": 1777284000000,
+      "path": "logs/LOG.md",
+      "title": "Log"
+    }
+  ]
+}

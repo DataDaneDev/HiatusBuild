@@ -1,3 +1,16 @@
+---
+aliases:
+  - Electrical AC BOM
+tags:
+  - hiatus/implementation
+  - hiatus/electrical
+status: active
+related:
+  - "[[SYSTEMS]]"
+  - "[[ELECTRICAL_48V_ARCHITECTURE]]"
+  - "[[INSTALL_MINUS_12_READINESS_PLAN]]"
+---
+
 # Electrical AC BOM (Phase 1)
 
 As-of date: `2026-04-27`

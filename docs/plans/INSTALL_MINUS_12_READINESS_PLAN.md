@@ -1,3 +1,16 @@
+---
+aliases:
+  - May 7 install readiness plan
+tags:
+  - hiatus/plan
+  - hiatus/install
+status: active
+related:
+  - "[[PROJECT]]"
+  - "[[PROJECT_build_order_of_operations]]"
+  - "[[TRACKING]]"
+---
+
 # May 7 Install Readiness and Immediate Post-Install Plan
 
 As-of date: `2026-04-27`

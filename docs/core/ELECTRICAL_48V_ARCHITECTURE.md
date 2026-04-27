@@ -1,3 +1,18 @@
+---
+aliases:
+  - 48V electrical architecture
+  - Hiatus 48V baseline
+tags:
+  - hiatus/core
+  - hiatus/electrical
+status: active
+related:
+  - "[[SYSTEMS]]"
+  - "[[ELECTRICAL_overview_diagram]]"
+  - "[[ELECTRICAL_fuse_schedule]]"
+  - "[[TRACKING]]"
+---
+
 # 48V Electrical Architecture
 
 ## Document role
@@ -12,11 +27,11 @@ As-of date: `2026-03-20`
 Purpose: hold the finalized, concise `48V` house and alternator architecture in one place so wiring, protection, shutdown behavior, and BOM references are easy to understand without re-reading the historical trade studies.
 
 Related docs:
-- `docs/implementation/ELECTRICAL_overview_diagram.md`
-- `docs/implementation/ELECTRICAL_fuse_schedule.md`
-- `docs/core/SYSTEMS.md`
-- `docs/core/TRACKING.md`
-- `bom/bom_estimated_items.csv`
+- [Electrical topology diagram](../implementation/ELECTRICAL_overview_diagram.md)
+- [Electrical fuse schedule](../implementation/ELECTRICAL_fuse_schedule.md)
+- [Systems](SYSTEMS.md)
+- [Tracking](TRACKING.md)
+- [Estimated BOM](../../bom/bom_estimated_items.csv)
 
 ## Final direction
 - House architecture stays `48V` core with `3x 51.2V 100Ah` batteries in parallel.

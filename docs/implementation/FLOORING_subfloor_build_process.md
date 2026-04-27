@@ -1,3 +1,16 @@
+---
+aliases:
+  - Flooring subfloor build process
+tags:
+  - hiatus/implementation
+  - hiatus/flooring
+status: active
+related:
+  - "[[INSTALL_MINUS_12_READINESS_PLAN]]"
+  - "[[STARTER_PLAN_electrical_and_flooring_pre_camper]]"
+  - "[[PROJECT_build_order_of_operations]]"
+---
+
 # Flooring Subfloor Build Process
 
 ## Scope

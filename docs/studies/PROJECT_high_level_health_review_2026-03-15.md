@@ -1,3 +1,15 @@
+---
+aliases:
+  - Project health review 2026-03-15
+tags:
+  - hiatus/study
+  - hiatus/project
+status: historical
+related:
+  - "[[PROJECT]]"
+  - "[[TRACKING]]"
+---
+
 # Project High-Level Health Review (2026-03-15)
 
 ## Overall assessment

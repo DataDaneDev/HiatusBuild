@@ -1,3 +1,16 @@
+---
+aliases:
+  - Electrical bench layout guide
+tags:
+  - hiatus/implementation
+  - hiatus/electrical
+status: active
+related:
+  - "[[ELECTRICAL_48V_ARCHITECTURE]]"
+  - "[[ELECTRICAL_fuse_schedule]]"
+  - "[[OPERATIONS]]"
+---
+
 # Electrical Bench Layout + Test Guide (Garage Use)
 
 As-of date: `2026-04-27`

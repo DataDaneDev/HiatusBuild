@@ -1,3 +1,15 @@
+---
+aliases:
+  - 48V battery fuse and wire recalc
+tags:
+  - hiatus/study
+  - hiatus/electrical
+status: historical
+related:
+  - "[[ELECTRICAL_48V_ARCHITECTURE]]"
+  - "[[ELECTRICAL_fuse_schedule]]"
+---
+
 # 48V Battery Fuse + Wire Recalculation (Battery and 48V Trunks)
 
 As-of date: `2026-02-18`

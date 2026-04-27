@@ -1,0 +1,8 @@
+{
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "media/attachments",
+  "newFileLocation": "current",
+  "showInlineTitle": true,
+  "readableLineLength": true,
+  "propertiesInDocument": "source"
+}

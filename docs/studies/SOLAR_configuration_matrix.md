@@ -1,3 +1,15 @@
+---
+aliases:
+  - Solar configuration matrix
+tags:
+  - hiatus/study
+  - hiatus/solar
+status: historical
+related:
+  - "[[SYSTEMS]]"
+  - "[[ELECTRICAL_48V_ARCHITECTURE]]"
+---
+
 # Solar Configuration Matrix (48V House Baseline)
 
 As-of date: `2026-03-20`

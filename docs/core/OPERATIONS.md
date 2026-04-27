@@ -1,3 +1,17 @@
+---
+aliases:
+  - Hiatus operations
+tags:
+  - hiatus/core
+  - hiatus/operations
+status: active
+related:
+  - "[[PROJECT]]"
+  - "[[SYSTEMS]]"
+  - "[[TRACKING]]"
+  - "[[LOG]]"
+---
+
 # Operations
 
 ## Document role
@@ -17,7 +31,7 @@
 - Battery SOC and charging paths verified
 - Communications primary and fallback validated
 - Critical spares onboard (fuses, terminals, core tools)
-- Fuse inventory verified against `docs/implementation/ELECTRICAL_fuse_schedule.md` (installed + spare counts)
+- Fuse inventory verified against [ELECTRICAL_fuse_schedule](../implementation/ELECTRICAL_fuse_schedule.md) (installed + spare counts)
 - Workstation and data gear secured for travel
 
 ## Arrival/setup checklist (starter)
@@ -34,7 +48,7 @@
 
 ## Safety-critical checks (build + field)
 ### Pre-energization (after wiring changes)
-- Verify correct fuse values/voltage classes against `docs/implementation/ELECTRICAL_fuse_schedule.md`.
+- Verify correct fuse values/voltage classes against [ELECTRICAL_fuse_schedule](../implementation/ELECTRICAL_fuse_schedule.md).
 - Confirm terminal torque marks, busbar covers, and abrasion protection on all high-current runs.
 - Confirm `48V` disconnect operation and expected de-energization behavior.
 - Confirm `F-11` (`12V` buffer battery main fuse) is installed at source and matches planned amp class.

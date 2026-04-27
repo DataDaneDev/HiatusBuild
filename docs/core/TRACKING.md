@@ -1,3 +1,17 @@
+---
+aliases:
+  - Hiatus tracking
+tags:
+  - hiatus/core
+  - hiatus/tracking
+status: active
+related:
+  - "[[PROJECT]]"
+  - "[[SYSTEMS]]"
+  - "[[OPERATIONS]]"
+  - "[[LOG]]"
+---
+
 # Tracking
 
 ## Document role

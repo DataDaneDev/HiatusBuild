@@ -1,3 +1,15 @@
+---
+aliases:
+  - Electrical red flags
+tags:
+  - hiatus/temp
+  - hiatus/electrical
+status: temporary
+related:
+  - "[[TRACKING]]"
+  - "[[ELECTRICAL_48V_ARCHITECTURE]]"
+---
+
 # Temporary Electrical Red Flags
 
 Purpose: hold unresolved electrical documentation issues so they can be closed one by one.

@@ -1,3 +1,14 @@
+---
+aliases:
+  - Hiatus project log
+tags:
+  - hiatus/log
+status: active
+related:
+  - "[[PROJECT]]"
+  - "[[TRACKING]]"
+---
+
 # Project Log
 
 Single running log for build progress and test evidence.

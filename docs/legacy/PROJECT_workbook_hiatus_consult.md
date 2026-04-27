@@ -1,3 +1,13 @@
+---
+aliases:
+  - Hiatus workbook consult
+tags:
+  - hiatus/legacy
+status: legacy
+related:
+  - "[[PROJECT]]"
+---
+
 # Hiatus Consult
 
 | A | B | D | E | F | G | J | K |

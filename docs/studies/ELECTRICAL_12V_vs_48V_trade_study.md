@@ -1,3 +1,15 @@
+---
+aliases:
+  - 12V vs 48V trade study
+tags:
+  - hiatus/study
+  - hiatus/electrical
+status: historical
+related:
+  - "[[ELECTRICAL_48V_ARCHITECTURE]]"
+  - "[[SYSTEMS]]"
+---
+
 # Electrical Trade Study: 12V vs 24V vs 48V Core
 
 As-of date: `2026-02-17`

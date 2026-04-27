@@ -1,3 +1,16 @@
+---
+aliases:
+  - Hiatus systems baseline
+tags:
+  - hiatus/core
+  - hiatus/systems
+status: active
+related:
+  - "[[PROJECT]]"
+  - "[[ELECTRICAL_48V_ARCHITECTURE]]"
+  - "[[TRACKING]]"
+---
+
 # Systems Design
 
 ## Document role
@@ -13,13 +26,13 @@
 - Keep wiring safe, labeled, and serviceable
 
 ### Electrical doc links
-- Canonical `48V` architecture and alternator-control baseline: `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`
-- Implementation topology (components, fuses, holders, gauges): `docs/implementation/ELECTRICAL_overview_diagram.md`
-- Fuse IDs, locations, housing methods, spares, and BOM mapping: `docs/implementation/ELECTRICAL_fuse_schedule.md`
-- Voltage architecture trade study (`12V` vs `48V`): `docs/studies/ELECTRICAL_12V_vs_48V_trade_study.md`
-- Alternator architecture trade study history (research archive only; final decisions moved to the canonical `48V` architecture doc): `docs/studies/ELECTRICAL_48V_dual_alternator_trade_study.md`
-- Solar option screening matrix (stringing + MPPT fit flags): `docs/studies/SOLAR_configuration_matrix.md`
-- Electrical decisions, risks, and unresolved items: `docs/core/TRACKING.md`
+- Canonical `48V` architecture and alternator-control baseline: [ELECTRICAL_48V_ARCHITECTURE](ELECTRICAL_48V_ARCHITECTURE.md)
+- Implementation topology (components, fuses, holders, gauges): [ELECTRICAL_overview_diagram](../implementation/ELECTRICAL_overview_diagram.md)
+- Fuse IDs, locations, housing methods, spares, and BOM mapping: [ELECTRICAL_fuse_schedule](../implementation/ELECTRICAL_fuse_schedule.md)
+- Voltage architecture trade study (`12V` vs `48V`): [ELECTRICAL_12V_vs_48V_trade_study](../studies/ELECTRICAL_12V_vs_48V_trade_study.md)
+- Alternator architecture trade study history (research archive only; final decisions moved to the canonical `48V` architecture doc): [ELECTRICAL_48V_dual_alternator_trade_study](../studies/ELECTRICAL_48V_dual_alternator_trade_study.md)
+- Solar option screening matrix (stringing + MPPT fit flags): [SOLAR_configuration_matrix](../studies/SOLAR_configuration_matrix.md)
+- Electrical decisions, risks, and unresolved items: [TRACKING](TRACKING.md)
 
 ### Planning snapshot (as-of `2026-04-27`)
 - Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).

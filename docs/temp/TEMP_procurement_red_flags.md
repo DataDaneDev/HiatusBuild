@@ -1,3 +1,14 @@
+---
+aliases:
+  - Procurement red flags
+tags:
+  - hiatus/temp
+  - hiatus/procurement
+status: temporary
+related:
+  - "[[TRACKING]]"
+---
+
 # Temporary Procurement Red Flags
 
 Purpose: track procurement-readiness gaps before purchase freeze, with emphasis on electrical cabinet kickoff dependencies.

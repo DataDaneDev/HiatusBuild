@@ -1,3 +1,16 @@
+---
+aliases:
+  - Hiatus build order
+tags:
+  - hiatus/plan
+  - hiatus/build-order
+status: active
+related:
+  - "[[PROJECT]]"
+  - "[[INSTALL_MINUS_12_READINESS_PLAN]]"
+  - "[[SYSTEMS]]"
+---
+
 # Build Order of Operations (Truck Bed Camper)
 
 ## Purpose

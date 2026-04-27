@@ -1,3 +1,16 @@
+---
+aliases:
+  - Electrical topology diagram
+tags:
+  - hiatus/implementation
+  - hiatus/electrical
+status: active
+related:
+  - "[[ELECTRICAL_48V_ARCHITECTURE]]"
+  - "[[ELECTRICAL_fuse_schedule]]"
+  - "[[SYSTEMS]]"
+---
+
 # Electrical Topology Diagram (Implementation v6)
 
 As-of date: `2026-03-20`

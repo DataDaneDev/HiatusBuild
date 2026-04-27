@@ -1,3 +1,16 @@
+---
+aliases:
+  - Hiatus project baseline
+tags:
+  - hiatus/core
+  - hiatus/project
+status: active
+related:
+  - "[[SYSTEMS]]"
+  - "[[ELECTRICAL_48V_ARCHITECTURE]]"
+  - "[[TRACKING]]"
+---
+
 # Project
 
 ## Document role
@@ -25,8 +38,8 @@
 - Keep system serviceable and safe in multi-climate travel use
 
 ## Current pre-camper execution focus (electrical + flooring)
-- Use `docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md` as the active Apr 27-May 11 install-window plan. Use `docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md` only for detailed pre-camper electrical/flooring execution references.
-- Use `docs/core/ELECTRICAL_48V_ARCHITECTURE.md` as the canonical `48V` design reference while laying out the electrical module and alternator-control path.
+- Use [INSTALL_MINUS_12_READINESS_PLAN](../plans/INSTALL_MINUS_12_READINESS_PLAN.md) as the active Apr 27-May 11 install-window plan. Use [STARTER_PLAN_electrical_and_flooring_pre_camper](../plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md) only for detailed pre-camper electrical/flooring execution references.
+- Use [ELECTRICAL_48V_ARCHITECTURE](ELECTRICAL_48V_ARCHITECTURE.md) as the canonical `48V` design reference while laying out the electrical module and alternator-control path.
 - Active work now includes shore AC-in ordering, electrical closet layout/fuse matching, bed-rail dust/weather sealing, EPS trim/subfloor verification, and low-regret extrusion ordering.
 - Defer shell-dependent irreversible work (final penetrations, shell-run final cut lengths, permanent finish-floor bonding) until the real camper is installed and service-map checks pass.
 
@@ -66,7 +79,7 @@
 - Target install date remains fixed at May 7, 2026 (`50` days from this baseline date).
 - Accelerated procurement (`Batch A+`) is now historical context; current sequencing focus is AC closure, measured harness planning, and module completion.
 - Detailed stage-by-stage order of operations, dependencies, and draft date windows:
-- `docs/plans/PROJECT_build_order_of_operations.md`
+- [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md)
 
 ## Immediate next decisions
 - **Priority 1: shore-power / initial-charge readiness.** Build the AC-in-only MultiPlus charge path first: `shore source -> cord/adapter -> TT-30 inlet -> hardwired EMS -> AC-in breaker/disconnect -> MultiPlus AC-in`. Order/SKU-lock BOM rows `107`, `108`, `123`, `13`, `109`, `14`, and `114` plus glands/grommets/labels/ferrules.

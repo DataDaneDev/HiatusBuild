@@ -1,3 +1,13 @@
+---
+aliases:
+  - Obsolete workbook build notes
+tags:
+  - hiatus/legacy
+status: legacy
+related:
+  - "[[SYSTEMS]]"
+---
+
 # Build Notes
 
 Note: this is a raw workbook extract for traceability. Active implementation baseline is maintained in `docs/core/SYSTEMS.md`, `docs/implementation/ELECTRICAL_overview_diagram.md`, and `docs/implementation/ELECTRICAL_fuse_schedule.md`. Legacy standalone busbar wording below is superseded by the locked Lynx topology.

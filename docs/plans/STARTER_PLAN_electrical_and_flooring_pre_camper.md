@@ -1,3 +1,17 @@
+---
+aliases:
+  - Electrical and flooring starter plan
+tags:
+  - hiatus/plan
+  - hiatus/electrical
+  - hiatus/flooring
+status: reference
+related:
+  - "[[INSTALL_MINUS_12_READINESS_PLAN]]"
+  - "[[ELECTRICAL_48V_ARCHITECTURE]]"
+  - "[[FLOORING_subfloor_build_process]]"
+---
+
 # Starter Plan: Electrical + Flooring (Pre-Camper)
 
 As-of date: `2026-04-27`

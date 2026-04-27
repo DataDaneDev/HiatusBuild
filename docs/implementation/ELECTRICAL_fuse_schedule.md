@@ -1,3 +1,16 @@
+---
+aliases:
+  - Fuse schedule
+tags:
+  - hiatus/implementation
+  - hiatus/electrical
+status: active
+related:
+  - "[[ELECTRICAL_48V_ARCHITECTURE]]"
+  - "[[ELECTRICAL_overview_diagram]]"
+  - "[[OPERATIONS]]"
+---
+
 # Electrical Fuse Schedule (Implementation - Lynx Topology)
 
 As-of date: `2026-03-20`
