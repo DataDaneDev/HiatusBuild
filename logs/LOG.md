@@ -22,9 +22,9 @@ Single running log for build progress and test evidence.
 - Next actions:
 
 ## 2026-05-01
-- Owner weekend execution update: bed will be emptied for the washing/sealing trip; existing removable flooring will be removed before departure and does not need to be brought along.
+- Owner correction: this is the Washington trip, not a washing trip. Bed will be emptied before departure; existing removable flooring will be removed before departure and does not need to be brought along.
 - Tailgate removal is optional for access/drying, with wiring/camera protection if removed.
-- Updated weekend order-of-operations and flooring implementation notes to keep flooring out of the wash/seal work zone and wait for sealant cure/tack timing before reinstalling or handling surfaces.
+- Updated weekend order-of-operations and flooring implementation notes to keep flooring out of the wet/adhesive rail-seal work zone and wait for sealant cure/tack timing before reinstalling or handling surfaces.
 
 ## 2026-04-25
 - Status correction from owner: Mechman `48V` alternator has been purchased.

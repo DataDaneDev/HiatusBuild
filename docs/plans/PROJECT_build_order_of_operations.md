@@ -83,8 +83,8 @@ related:
 - Confirm travel and install logistics for a May 7 `9:00 AM` Bellingham appointment, using May 6 PTO as the staging/travel day.
 
 2. May 2 to May 3 (heavy weekend execution)
-- Do truck-heavy work: empty bed, remove existing flooring before the washing trip, wash/clean bed, optionally remove/store tailgate if it simplifies access, then perform bed rail cap inspection/sealing and old rail-hole closure if confirmed unused.
-- Do not bring the flooring on the washing/sealing trip; keep it removable and out of the wet/adhesive work zone until rail prep is complete.
+- Do truck-heavy work before the Washington trip: empty bed, remove existing flooring before departure, clean the bed/rails, optionally remove/store tailgate if it simplifies access, then perform bed rail cap inspection/sealing and old rail-hole closure if confirmed unused.
+- Do not bring the flooring on the Washington trip; keep it removable and out of the wet/adhesive work zone until rail prep is complete.
 - After rail sealing, finish EPS trim and subfloor fit/serviceability checks only once sealant cure/tack timing allows clean handling.
 - Do physical electrical layout: Board A/B mockup, service access, fuse-holder matching, labels, and cable corridors.
 - Treat current furniture CAD as reference-only after the Iceco/water tank dry-fit conflict; rework block envelopes first.

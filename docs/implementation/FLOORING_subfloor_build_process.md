@@ -59,7 +59,7 @@ related:
 
 ## Installation Sequence
 ### Phase 0 - Bed rail dust/weather closeout before finish floor
-1. Empty the bed and remove the existing removable flooring before the washing/sealing trip; do not transport flooring through the wash/seal workstream.
+1. Empty the bed and remove the existing removable flooring before the Washington trip; do not transport flooring through the wet/adhesive rail-seal workstream.
 2. Remove or lift bed rail caps as needed and photograph all old camper-install holes.
 3. Consider tailgate removal only if it improves access or drying; store it safely and protect wiring/camera connections.
 4. Confirm with Hiatus that the old roughly `2 in x 3 in` top-rail holes are not needed for the new camper interface.
