@@ -59,11 +59,14 @@ related:
 
 ## Installation Sequence
 ### Phase 0 - Bed rail dust/weather closeout before finish floor
-1. Remove or lift bed rail caps as needed and photograph all old camper-install holes.
-2. Confirm with Hiatus that the old roughly `2 in x 3 in` top-rail holes are not needed for the new camper interface.
-3. Clean/degrease rail surfaces and rust-protect bare cut edges.
-4. Close holes as dust/weather intrusion points using low-profile, serviceable cover patches where possible: thin aluminum/ABS/HDPE or similar non-absorbent patch/backer bedded in butyl tape, automotive seam sealer, MS polymer, or polyurethane sealant.
-5. Reinstall rail caps with targeted sealing/gasketing while preserving drainage paths and avoiding camper-fit interference.
+1. Empty the bed and remove the existing removable flooring before the washing/sealing trip; do not transport flooring through the wash/seal workstream.
+2. Remove or lift bed rail caps as needed and photograph all old camper-install holes.
+3. Consider tailgate removal only if it improves access or drying; store it safely and protect wiring/camera connections.
+4. Confirm with Hiatus that the old roughly `2 in x 3 in` top-rail holes are not needed for the new camper interface.
+5. Clean/degrease rail surfaces and rust-protect bare cut edges.
+6. Close holes as dust/weather intrusion points using low-profile, serviceable cover patches where possible: thin aluminum/ABS/HDPE or similar non-absorbent patch/backer bedded in butyl tape, automotive seam sealer, MS polymer, or polyurethane sealant.
+7. Reinstall rail caps with targeted sealing/gasketing while preserving drainage paths and avoiding camper-fit interference.
+8. Let sealant skin/cure per product conditions before reinstalling flooring or handling surfaces.
 
 ### Phase 1 - Prep / current-state correction
 1. Clean bed thoroughly.

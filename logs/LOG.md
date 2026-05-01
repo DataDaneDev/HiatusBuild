@@ -21,6 +21,11 @@ Single running log for build progress and test evidence.
 - Issues:
 - Next actions:
 
+## 2026-05-01
+- Owner weekend execution update: bed will be emptied for the washing/sealing trip; existing removable flooring will be removed before departure and does not need to be brought along.
+- Tailgate removal is optional for access/drying, with wiring/camera protection if removed.
+- Updated weekend order-of-operations and flooring implementation notes to keep flooring out of the wash/seal work zone and wait for sealant cure/tack timing before reinstalling or handling surfaces.
+
 ## 2026-04-25
 - Status correction from owner: Mechman `48V` alternator has been purchased.
 - Interpretation: dedicated `48V` secondary-alternator architecture remains the active baseline; remaining alternator blockers should be narrowed to received-kit fitment/content, support details, harness polarity, isolation/grounding behavior, load-dump mitigation, and commissioning validation rather than pre-purchase architecture selection.
