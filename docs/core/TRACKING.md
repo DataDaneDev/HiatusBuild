@@ -343,8 +343,8 @@ related:
 - Context: Iceco/water tank dry fit showed the cooler/fridge does not open in the planned location and likely moves to the front-left corner.
 - Options considered: order exact cut lengths from stale CAD, wait on all extrusion, or buy stock-length starter extrusion and connector hardware.
 - Decision drivers: avoid waiting later while limiting waste from a known CAD mismatch.
-- Result: 15-series-biased stock starter order is acceptable; final drawer slides, panels, skins, and exact cut lists are deferred.
-- Follow-up: measure real fridge/tank envelopes and update module CAD after camper install measurements.
+- Result: superseded by D-038 for tank restraint: do not treat a `15-series`-biased starter order as acceptable solely for the water tank; final drawer slides, panels, skins, and exact cut lists remain deferred.
+- Follow-up: measure real fridge/purchased wheel-well tank envelopes and update module CAD after camper install measurements.
 
 - ID: D-036
 - Date: 2026-04-27
@@ -363,6 +363,15 @@ related:
 - Decision drivers: reduce burnout, avoid half-disassembled truck risk, and preserve realistic execution before travel.
 - Result: weekday evenings are limited to calls, ordering, labeling, small inspections, and packing; bed rail sealing, EPS trim, electrical layout, extrusion decisions, and plumbing layout move mainly to May 2-3.
 - Follow-up: use May 6 PTO as the Bellingham travel/staging day; keep it logistics-only rather than build catch-up.
+
+- ID: D-038
+- Date: 2026-05-01
+- Decision: Supersede the broad `15-series` water-tank exoskeleton plan after purchasing a `36 gal` wheel-well water tank.
+- Context: The earlier `15-series` extrusion need was driven by a tall/skinny vertical `36 gal` tank concept. The purchased wheel-well tank is lower, wider, bracketed, and intended to plusnut into bed walls, reducing overturning leverage and removing the main reason for a heavy extrusion cage.
+- Options considered: buy the prior `8x 92 in` `15-series` starter order, cancel all extrusion thinking, or downscope to targeted extrusion only where a remaining module proves it needs structure.
+- Decision drivers: lower center of gravity, lower off-road moment load, reduced cost/weight/complexity, and avoiding stockpiling bulky material before post-install envelopes are verified.
+- Result: do not buy `15-series` for tank restraint unless physical dry fit proves the wheel-well tank still needs a separate frame; use targeted `15-series` only for electrical/fridge/desk modules that cannot mount directly or with simpler brackets.
+- Follow-up: dry-fit the tank, verify bracket/plusnut and any secondary floor/tie-down load path, then update final extrusion count after install measurements.
 
 ## Risk register
 - ID: R-001
@@ -517,7 +526,7 @@ related:
 - Reconcile MultiPlus charge profile value before first charge (`56.8V` planning basis vs `58.4V` battery/manual basis).
 - Confirm one-battery-at-a-time first-charge procedure and acceptable voltage/SOC matching threshold before paralleling.
 - Measure Iceco lid-open/vent/power-cord envelope and validate front-left fridge/cooler location.
-- Measure water tank/fitting envelope and decide tank restraint/access orientation.
+- Dry-fit purchased `36 gal` wheel-well tank; verify body/fitting envelope, bracket orientation, plusnut locations, and whether a secondary floor/tie-down restraint path is needed.
 - Lock faucet, sink, drain/graywater, pump service-valve, and winterization details as discrete procurement rows.
 - Lock whether hot water is outdoor shower-only provisional or must feed the sink; defer indoor/RV propane or electric tanked path until service-map freeze.
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)

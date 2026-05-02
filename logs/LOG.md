@@ -25,6 +25,8 @@ Single running log for build progress and test evidence.
 - Owner correction: this is the Washington trip, not a washing trip. Bed will be emptied before departure; existing removable flooring will be removed before departure and does not need to be brought along.
 - Tailgate removal is optional for access/drying, with wiring/camera protection if removed.
 - Updated weekend order-of-operations and flooring implementation notes to keep flooring out of the wet/adhesive rail-seal work zone and wait for sealant cure/tack timing before reinstalling or handling surfaces.
+- Owner update: purchased a `36 gal` wheel-well water tank instead of the prior tall/skinny vertical tank concept.
+- Planning impact: the broad `15-series` extrusion exoskeleton/starter order is no longer justified by tank restraint alone; downscope extrusion to targeted module needs after physical dry fit, while verifying tank bracket/plusnut and any secondary restraint load path.
 
 ## 2026-04-25
 - Status correction from owner: Mechman `48V` alternator has been purchased.

@@ -88,7 +88,7 @@ related:
 - After rail sealing, finish EPS trim and subfloor fit/serviceability checks only once sealant cure/tack timing allows clean handling.
 - Do physical electrical layout: Board A/B mockup, service access, fuse-holder matching, labels, and cable corridors.
 - Treat current furniture CAD as reference-only after the Iceco/water tank dry-fit conflict; rework block envelopes first.
-- Place stock-length starter extrusion/hardware order and faucet/sink/drain decisions; do not buy final cut lengths, drawer slides, or panel skins from unverified dimensions.
+- Do not buy the previous broad `15-series` starter extrusion package unless a remaining module has a real freestanding structural need; the purchased wheel-well tank should drive a smaller targeted hardware/extrusion order.
 
 3. May 4 to May 6 (weekday logistics + PTO travel/staging)
 - Use May 4-5 for final triage, packing, appointment confirmation, delivery checks, and route/lodging/weather confirmation.

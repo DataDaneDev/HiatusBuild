@@ -244,14 +244,15 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 
 ## Plumbing (if included in phase 1)
 - Near-term baseline: decouple cold-water galley build from final hot-water selection. Build around tank, pump, faucet/sink, drain/graywater path, service shutoffs, and a capped future hot-water tie-in.
-- Water capacity candidates captured: `10 gal` compact concept and `~25 gal` tank option. A full `25 gal` tank weighs about `208 lb` before tank/hardware and needs real restraint/anchor planning.
+- Water capacity: purchased `36 gal` wheel-well tank. Full water mass is about `300 lb` before tank/brackets/plumbing; plan around roughly `320+ lb` installed when full.
+- Tank restraint posture: the wheel-well form factor is materially better than a tall/skinny vertical tank because it lowers center of gravity and reduces overturning moment, but plusnut wall brackets should be verified as part of the restraint system rather than assumed as the only crash/off-road load path.
 - Pump candidate captured: Shurflo 3.0 GPM class.
 - Faucet is now an explicit missing purchase class and should be tracked separately from generic cabinetry.
 - Hot-water decision posture: electric tankless is out of scale for the current `48/3000` inverter; small tanked electric is plausible later but adds AC load-management complexity; portable propane tankless remains provisional outdoor-use only; listed indoor/RV propane is deferred until venting/combustion-air/clearance package is locked.
 - Freeze and winterization strategy: TBD.
 
 ## Cabinetry and structure
-- Aluminum extrusion strategy: 15-series biased for heavy/dynamic modules (fridge, tank, electrical cabinet) and 10-series for light desk/accessory/panel work; use stock-length starter ordering until real envelopes are measured.
+- Aluminum extrusion strategy: the prior broad `15-series` starter order is superseded by the purchased `36 gal` wheel-well tank. Do not buy `15-series` for a tank exoskeleton unless dry fit proves a separate structural frame is still needed; use `15-series` only for actual heavy freestanding modules and `10-series`/lighter rail for accessory/panel work.
 - Current furniture CAD is reference-only after Iceco/water tank dry fit; fridge/cooler likely moves to the front-left corner, so re-CAD block envelopes before final cut lists.
 - Modular mounting baseline now includes T-slot/strut rails both exterior (recovery/tool mounts like shovel/Maxtrax) and interior (baskets/hooks/tie-down points); BOM rows `119` and `120`.
 - Drawer hardware baseline includes `4x` soft-close undermount slide kits for primary cabinetry drawers; BOM row `122`, but final lengths are deferred until fridge/tank/electrical module envelopes are verified.

@@ -53,9 +53,10 @@ Install appointment:
 
 ### Layout / cabinetry / plumbing
 
-- Iceco fridge and water tank dry fit invalidated the prior CAD location: the cooler/fridge did not open where planned.
+- Iceco fridge and the earlier water-tank assumptions invalidated the prior CAD location: the cooler/fridge did not open where planned.
 - Current working assumption: fridge/cooler likely moves to the front-left corner, which makes existing furniture CAD reference-only.
-- Aluminum extrusion needs to be ordered soon, but exact cut lengths should not be ordered from stale CAD.
+- Water-tank plan has changed from a tall/skinny vertical tank needing a heavy exoskeleton to a purchased `36 gal` wheel-well tank: lower, wider, bracketed, and intended to plusnut into bed walls.
+- Aluminum extrusion should be downscoped: do not buy the prior broad `15-series` starter order just to restrain the old vertical tank concept.
 - A faucet is now a missing discrete purchase item.
 - Hot water remains unresolved: electric tanked may be viable later, electric tankless is not realistic on the current inverter scale, and portable propane should be treated as outdoor-use-only unless a specific unit is listed for enclosed/RV use.
 
@@ -78,8 +79,8 @@ May 6 is now a dedicated PTO travel/staging day, which removes the prior workday
 
 ### Should complete before install
 
-1. Place a low-regret extrusion + connector starter order for rough module frames.
-2. Redo CAD as block envelopes for fridge/tank/electrical/galley, not final furniture.
+1. Reassess whether any aluminum extrusion is needed before install; the purchased `36 gal` wheel-well tank removes the old vertical-tank `15-series` exoskeleton need.
+2. Redo CAD as block envelopes for fridge, purchased wheel-well tank, electrical, and galley, not final furniture.
 3. Split faucet/cold-water plumbing from the final water-heater decision so sink/pump/tank work can progress.
 4. Stage travel/install kits: sealant/weather kit, tailgate removal kit, labels, measurement tools, fuse/fastener spares.
 
@@ -201,30 +202,25 @@ Do not glue until all are true:
 
 ### Key decision
 
-Treat current furniture CAD as stale/reference-only until the fridge and water tank envelopes are reworked from physical dry fit.
+Treat current furniture CAD as stale/reference-only until the fridge and purchased wheel-well tank envelopes are reworked from physical dry fit.
 
 ### Starter order strategy
 
-Buy stock-length extrusion and universal hardware, not final cut-to-length furniture.
+Do not buy the previous broad `15-series` starter package unless a remaining module has a real freestanding structural need. The purchased `36 gal` wheel-well tank removes the old vertical-tank exoskeleton requirement.
 
-- Favor `15-series` for heavy/dynamic modules: fridge, water tank, electrical/workstation cabinet.
-- Use `10-series` for lighter desk/accessory/panel-retainer work.
-- If simplifying, buy `15-series` first and defer most `10-series` until layout is clearer.
-- Keep stock sticks under the BOM row `89` shipping threshold (`under 92 in`) where useful.
+Current order posture:
 
-Ready-to-order starter kit, if budget/storage allow:
+- Favor **no extrusion order yet** if the only use case was the old tall/skinny water-tank cage.
+- Use `15-series` only for remaining heavy/dynamic freestanding modules that actually need it after dry fit: electrical cabinet, fridge slide/base, or workstation/desk structure.
+- Use `10-series` or lighter rail/hardware for accessory panels, desk trim, basket/hook mounts, service retainers, and light cabinetry.
+- Keep any bought stock sticks under the BOM row `89` shipping threshold (`under 92 in`) where useful.
+- Preserve hardware flexibility: universal brackets, roll-in/economy T-nuts, button-head bolts, gussets, flat plates, anti-rattle tape, VHB, spacers/shims.
 
-| Item | Quantity | Gross length | Planning usable length |
-| --- | ---: | ---: | ---: |
-| `15-series` stock sticks, under `92 in` shipping threshold | `8x 92 in` | `736 in` / `61.3 ft` | `~52 ft` after `15%` cut/waste allowance |
-| `10-series` stock sticks, under `92 in` shipping threshold | `6x 92 in` | `552 in` / `46.0 ft` | `~39 ft` after `15%` cut/waste allowance |
-| **Total extrusion** | `14 sticks` | `1,288 in` / `107.3 ft` | `~91 ft` usable starter stock |
+Decision rule:
 
-Matching hardware:
-
-- `300-400` total economy/roll-in T-nuts and matching button-head bolts, split roughly `60/40` toward `15-series` unless the desk/accessory plan grows.
-- Order hardware in the thread standard matched to the chosen supplier/series; do not mix `15-series` and `10-series` assumptions blindly.
-- Add generous corner brackets, gussets, flat plates, 90-flat brackets, end caps, anti-rattle tape, VHB, and spacers/shims.
+- If the wheel-well tank can be restrained by its brackets plus verified bed-wall/floor load paths, buy **zero** `15-series` for the tank.
+- If the electrical/fridge/desk block still needs a structural frame, buy a much smaller targeted `15-series` allowance after taped/cardboard envelope validation, not the previous `8x 92 in` default.
+- Do not mix `15-series` and `10-series` thread/hardware assumptions blindly; match the supplier/series standard before ordering nuts and bolts.
 
 Defer:
 
@@ -237,11 +233,11 @@ Defer:
 ### Layout sequence
 
 1. Measure actual Iceco body, handles, hinge/lid sweep, compressor vent side, and cord exit.
-2. Measure actual water tank body and fitting protrusions.
-3. Tape/cardboard floor envelopes for front-left fridge/tank candidates.
+2. Dry-fit the purchased `36 gal` wheel-well tank: body envelope, fitting protrusions, bracket locations, plusnut access, service clearance, drain/fill/vent routing, and whether a secondary floor/tie-down load path is needed.
+3. Tape/cardboard floor envelopes for front-left fridge/tank/electrical candidates.
 4. Verify lid opening, slide extension if used, aisle/door clearance, ventilation, tie-downs, and service loops.
 5. Re-CAD block envelopes first.
-6. Count extrusion by axis only after envelopes pass.
+6. Count extrusion by axis only after envelopes pass and only for modules that cannot mount directly or with simpler brackets.
 
 ## Plumbing / hot water / propane plan
 
