@@ -212,12 +212,19 @@ Buy stock-length extrusion and universal hardware, not final cut-to-length furni
 - If simplifying, buy `15-series` first and defer most `10-series` until layout is clearer.
 - Keep stock sticks under the BOM row `89` shipping threshold (`under 92 in`) where useful.
 
-Reasonable starter order, if budget/storage allow:
+Ready-to-order starter kit, if budget/storage allow:
 
-- `8x` 15-series sticks at roughly `92 in` (`~61 ft` total)
-- `6x` 10-series sticks at roughly `92 in` (`~46 ft` total)
-- `300-400` T-nuts and matching button-head bolts split by series
-- generous corner brackets, gussets, flat plates, 90-flat brackets, end caps, anti-rattle tape, VHB, spacers/shims
+| Item | Quantity | Gross length | Planning usable length |
+| --- | ---: | ---: | ---: |
+| `15-series` stock sticks, under `92 in` shipping threshold | `8x 92 in` | `736 in` / `61.3 ft` | `~52 ft` after `15%` cut/waste allowance |
+| `10-series` stock sticks, under `92 in` shipping threshold | `6x 92 in` | `552 in` / `46.0 ft` | `~39 ft` after `15%` cut/waste allowance |
+| **Total extrusion** | `14 sticks` | `1,288 in` / `107.3 ft` | `~91 ft` usable starter stock |
+
+Matching hardware:
+
+- `300-400` total economy/roll-in T-nuts and matching button-head bolts, split roughly `60/40` toward `15-series` unless the desk/accessory plan grows.
+- Order hardware in the thread standard matched to the chosen supplier/series; do not mix `15-series` and `10-series` assumptions blindly.
+- Add generous corner brackets, gussets, flat plates, 90-flat brackets, end caps, anti-rattle tape, VHB, and spacers/shims.
 
 Defer:
 
