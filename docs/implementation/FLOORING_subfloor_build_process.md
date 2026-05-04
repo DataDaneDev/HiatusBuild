@@ -17,11 +17,12 @@ related:
 - Define the locked floor stack-up, hardpoint strategy, procurement state, and install workflow for the truck bed floor.
 - Baseline date for this revision: April 27, 2026.
 - Moisture-control premise updated May 3, 2026: the Hiatus is effectively a sealed capper with barn doors; the inside of the truck bed remains the build substrate, so water must not be allowed under the subfloor.
+- Field progress updated May 4, 2026: bed rail caps were re-bonded/sealed with polyurethane; small drill holes and corner gaps were patched/sealed; trowel is purchased.
 
 ## Final Subfloor Structure (Bottom to Top)
 1. Existing spray-in bedliner.
-2. `5/8 in` SilveRboard Graphite EPS between ribs only. Current state: installed, with some trim cleanup still required.
-3. `3/4 in` birch plywood directly over EPS + rib structure. Current state: installed in three slices; bottom/edges are sealed and the top bond face remains untreated for Lonseal adhesive.
+2. `5/8 in` SilveRboard Graphite EPS between ribs only. Current state: previously cut/installed; cleanup still required so pieces sit evenly in the bed ribs.
+3. `3/4 in` birch plywood directly over EPS + rib structure. Current state: cut in three slices with bottom/edges sealed and top bond face untreated for Lonseal adhesive; final reinstall waits for EPS cleanup and sealing/leak-check gates.
 4. Lonseal Lonwood Madera marine sheet vinyl, glue-down finish layer. Current state: sheet vinyl and adhesive are in hand; glue-down is gated because it reduces subfloor serviceability.
 
 ## Explicitly De-Scoped Layer
@@ -41,6 +42,11 @@ related:
 - `3/4 in` birch plywood, `4x8`, qty `2` (`$88` each, `$176` total).
 - Lonseal Lonwood Madera Topseal marine sheet vinyl.
 - Lonseal adhesive.
+- Sheet-vinyl adhesive trowel: Roberts `10-181-16` exact-notch trowel (`$4.40`; BOM row `174`).
+
+### Purchased / partially used (bed sealing workstream)
+- Loctite polyurethane window/door/siding sealant, `10 oz`, qty `2` at `$9` each (`$18`; BOM row `177`), used under bed rail caps and at selected corner gaps.
+- Gorilla Waterproof Patch & Seal Tape, `8 ft` roll (`$14`; BOM row `178`), roughly half used on small drill holes and other minor bed openings.
 
 ### Canceled / refunded (not in hand)
 - Rubber-Cal EPDM closed-cell sponge rubber, qty `2` (`$47.22`) - Home Depot order canceled before shipment; refunded.
@@ -49,32 +55,37 @@ related:
 - `1/2 in` plywood, `4x8`, qty `1` (`$68`) for electrical backer/closet module.
 
 ### Not Yet Purchased / confirm before glue-down
-- Exact-notch sheet-vinyl adhesive trowel (`1/16 x 1/32 x 1/32 in U-notch`; BOM row `174`).
 - Compact segmented roller or equivalent if not already in hand (`row 175`).
 - Fresh utility blades, masking tape, gloves, rags/cleaner, and disposable adhesive cleanup supplies as needed.
 
 ### Totals
-- Active flooring package purchased to date: `$275.85`.
-- Active flooring package remaining expected spend: `$429.08`.
+- Active flooring package purchased to date: `$280.25` (adds purchased trowel row `174`).
+- Active flooring package remaining expected spend: `$424.68`.
 - Active flooring package estimated total: `$704.93`.
+- Bed sealing consumables added outside the prior flooring package total: `$32` (`rows 177-178`).
 
 ## Installation Sequence
 ### Phase 0 - Bed rail dust/weather closeout before finish floor
-1. Empty the bed and remove the existing removable flooring before the Washington trip; do not transport flooring through the wet/adhesive rail-seal workstream.
-2. Remove or lift bed rail caps as needed and photograph all old camper-install holes.
+Status: mostly complete as of May 4; cure/inspection still required.
+
+1. Empty the bed and remove the existing removable flooring before the Washington trip; do not transport flooring through the wet/adhesive rail-seal workstream. **Completed.**
+2. Remove or lift bed rail caps as needed and photograph all old camper-install holes. **Caps removed; most clips broke.**
 3. Consider tailgate removal only if it improves access or drying; store it safely and protect wiring/camera connections.
-4. Confirm with Hiatus that the old roughly `2 in x 3 in` top-rail holes are not needed for the new camper interface.
+4. Confirm with Hiatus that the old roughly `2 in x 3 in` top-rail holes are not needed for the new camper interface if still relevant to the final attachment method.
 5. Clean/degrease rail surfaces and rust-protect bare cut edges.
 6. Close holes as dust/weather intrusion points using low-profile, serviceable cover patches where possible: thin aluminum/ABS/HDPE or similar non-absorbent patch/backer bedded in butyl tape, automotive seam sealer, MS polymer, or polyurethane sealant.
-7. Reinstall rail caps with targeted sealing/gasketing while avoiding camper-fit interference and avoiding hidden pockets that can hold water against metal.
-8. Let sealant skin/cure per product conditions before reinstalling flooring or handling surfaces.
+7. Reinstall rail caps with targeted sealing/gasketing while avoiding camper-fit interference and avoiding hidden pockets that can hold water against metal. **Completed with large Loctite polyurethane bead under caps.**
+8. Let sealant skin/cure per product conditions before reinstalling flooring or handling surfaces. **Pending cure/inspection.**
 
 ### Phase 0A - Bed-floor drain/corner sealing before subfloor closeout
+Status: partially complete as of May 4; leak-check still required.
+
 1. Treat factory drain holes, unused bed-floor penetrations, and small corner gaps under/near the subfloor as water-ingress defects, not intentional drains for this build.
-2. Seal them before final subfloor/Lonseal closeout using reversible or serviceable automotive/marine methods where practical: OEM-style rubber plugs, butyl-bedded aluminum/ABS/HDPE patches, automotive seam sealer, MS polymer, or polyurethane sealant.
+2. Seal them before final subfloor/Lonseal closeout using reversible or serviceable automotive/marine methods where practical: OEM-style rubber plugs, butyl-bedded aluminum/ABS/HDPE patches, automotive seam sealer, MS polymer, polyurethane sealant, or patch/seal tape for small drill holes where adhesion is clean and protected.
 3. Do not rely on household silicone as the primary sealant.
 4. Do not seal unrelated exterior body drains or create trapped metal cavities; the target is zero upward water path into the EPS/plywood cavity, while still allowing inspection/service before the finish floor is glued.
-5. After sealant cure, hose-test or controlled-water-test the bed floor/corners from below/outside and inspect inside the bed before reinstalling EPS/plywood.
+5. Field status: small drill holes and several other minor bed openings were sealed with Gorilla Waterproof Patch & Seal Tape; selected corner air gaps received small polyurethane beads.
+6. After sealant cure and camper install, hose-test or controlled-water-test the bed floor/corners from below/outside and inspect inside the bed before reinstalling EPS/plywood.
 
 ### Phase 1 - Prep / current-state correction
 1. Clean bed thoroughly.
@@ -99,7 +110,7 @@ Do not proceed until:
 - EPS trim and plywood seating pass;
 - no floor-through penetrations, drains, heater routes, anchor holes, or hidden hardpoints need access under the finish sheet;
 - top plywood face is clean, dry, untreated, and adhesive-compatible;
-- correct trowel and roller are on hand;
+- exact trowel is purchased and roller/rolling method is confirmed;
 - dry cure window is available.
 
 ### Phase 5 - Finish Flooring

@@ -373,6 +373,15 @@ related:
 - Result: do not buy `15-series` for tank restraint unless physical dry fit proves the wheel-well tank still needs a separate frame; use targeted `15-series` only for electrical/fridge/desk modules that cannot mount directly or with simpler brackets.
 - Follow-up: dry-fit the tank, verify bracket/plusnut and any secondary floor/tie-down load path, then update final extrusion count after install measurements.
 
+- ID: D-039
+- Date: 2026-05-04
+- Decision: Treat the Washington trip as empty-bed install/shakedown mode, not a full electrical/interior-build deployment.
+- Context: Bed rail caps have been removed/rebonded with polyurethane, small drill holes patched with Gorilla tape, corner air gaps sealed, trowel purchased, and the flooring/subfloor is out or not ready for final closeout. Owner expects not to bring batteries/electrical on the trip.
+- Options considered: rush flooring/electrical before departure, bring batteries and build parts for remote work, or keep the truck mostly empty and use the trip for install, shakedown, and measurement.
+- Decision drivers: avoid half-finished adhesive/flooring work, reduce travel weight/risk, preserve access for post-install leak/dust checks, and avoid exact cabinetry/extrusion decisions before real camper measurements.
+- Result: keep batteries/electrical parts home, let sealing cure, travel empty-bed, capture measurements/photos at Hiatus, then resume EPS/plywood/Lonseal, extrusion, and electrical bench work after return.
+- Follow-up: log post-install leak/dust check evidence and measured camper dimensions before final floor glue-down or exact extrusion orders.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -485,17 +494,17 @@ related:
 - ID: R-013
 - Risk: Old bed rail holes, rail-cap gaps, bed-floor drain holes, unused penetrations, and small bed-corner gaps can remain dust/water intrusion paths after the sealed barn-door camper upgrade. Water under the EPS/plywood subfloor is unacceptable because it can rot the floor.
 - Impact (1-5): 5
-- Likelihood (1-5): 3
-- Mitigation: Confirm rail holes are not needed by Hiatus, rust-protect cut edges, seal rail holes and bed-floor/corner paths with low-profile serviceable patches/flexible sealant, then leak-check before final flooring closeout.
-- Trigger: Bed rail cap removal/inspection, subfloor reinstall, Lonseal glue-down decision, or first dusty/wet drive after camper install.
+- Likelihood (1-5): 2
+- Mitigation: Bed rail caps were re-bonded with polyurethane, small drill holes were patched with Gorilla Patch & Seal tape, and selected corner air gaps received polyurethane beads. Let cure, inspect for lifted edges/proud interference, and leak/dust check before final flooring closeout.
+- Trigger: Pre-departure inspection, post-install leak/dust check, subfloor reinstall, Lonseal glue-down decision, or first dusty/wet drive after camper install.
 - Owner: Sunny
-- Status: Open
+- Status: Partially mitigated; leak-check pending
 
 - ID: R-014
 - Risk: Premature Lonseal glue-down can trap unresolved floor penetrations/hardpoints and make three-piece subfloor removal difficult.
 - Impact (1-5): 4
 - Likelihood (1-5): 3
-- Mitigation: Require glue-down gate: rail/bed-floor/corner sealing complete and leak-checked, EPS trim, hardpoint pocket verification, no pending floor penetrations, correct tools, and dry cure window.
+- Mitigation: Require glue-down gate: rail/bed-floor/corner sealing complete and leak-checked, EPS trim, hardpoint pocket verification, no pending floor penetrations, exact trowel purchased, roller/rolling method confirmed, and dry cure window.
 - Trigger: Decision to apply Lonseal adhesive.
 - Owner: Sunny
 - Status: Open
@@ -504,7 +513,7 @@ related:
 - Risk: Ordering final furniture extrusion, drawer slides, or panels from stale CAD creates rework because fridge/tank dry fit invalidated the layout.
 - Impact (1-5): 4
 - Likelihood (1-5): 4
-- Mitigation: Order stock-length starter extrusion/hardware only; re-CAD block envelopes from physical fridge/tank measurements and real camper dimensions before final cut lists.
+- Mitigation: Do not place exact-cut extrusion orders before post-install measurement and taped/cardboard block envelopes. Buy only targeted stock/hardware after real camper/fridge/tank/electrical envelopes show what needs framing.
 - Trigger: Any exact-cut extrusion, drawer slide, panel, or skin purchase.
 - Owner: Sunny
 - Status: Open
@@ -519,10 +528,10 @@ related:
 - Status: Open
 
 ## Open questions
-- Confirm May 6 PTO travel/staging details so the truck is in/near Bellingham before the May 7 `9:00 AM` install.
+- Confirm Tuesday/Wednesday Washington travel/staging details, route/weather, and arrival buffer before the May 7 `9:00 AM` install.
 - Confirm with Hiatus whether tailgate can be removed onsite and where it will be stored/transported afterward.
-- Confirm tonneau cover removal timing relative to weather, rail-cap sealing, and install interference.
-- Confirm whether prior-owner `2 in x 3 in` bed rail holes are unused by Hiatus and can be sealed before/at install.
+- Confirm tonneau cover removal timing relative to weather, re-bonded rail caps, and install interference.
+- Verify the re-bonded bed rail caps and prior-owner rail-hole areas do not interfere with the Hiatus attachment/seal interface.
 - Reconcile MultiPlus charge profile value before first charge (`56.8V` planning basis vs `58.4V` battery/manual basis).
 - Confirm one-battery-at-a-time first-charge procedure and acceptable voltage/SOC matching threshold before paralleling.
 - Measure Iceco lid-open/vent/power-cord envelope and validate front-left fridge/cooler location.

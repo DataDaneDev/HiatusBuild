@@ -82,51 +82,35 @@ related:
 - [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md)
 
 ## Immediate next decisions
-- **Priority 1: shore-power / initial-charge readiness.** Build the AC-in-only MultiPlus charge path first: `shore source -> cord/adapter -> TT-30 inlet -> hardwired EMS -> AC-in breaker/disconnect -> MultiPlus AC-in`. Order/SKU-lock BOM rows `107`, `108`, `123`, `13`, `109`, `14`, and `114` plus glands/grommets/labels/ferrules.
+- **Washington/install mode is now the priority.** Keep the truck bed mostly empty; leave the `3x 48V` batteries, electrical cabinet parts, and loose build materials home unless Hiatus specifically needs them.
+- **Truck bed dust/weather closeout:** bed rail caps have been re-bonded with Loctite polyurethane, small drill holes were sealed with Gorilla Patch & Seal tape, and visible corner air gaps received polyurethane beads. Next gate is cure/inspection and later leak/dust check after camper install.
+- **Flooring gate:** trim EPS and verify three-piece plywood fit/serviceability after the trip. Do not glue Lonseal until rail/bed-floor/corner sealing is leak-checked, post-install floor penetrations are ruled out, and the roller/rolling method is confirmed. The exact trowel is now purchased.
+- **Install-day data capture:** photograph attachment points, bed rail/cap interface, barn-door seals, clearances, hardpoints, passthrough candidates, and all dimensions before leaving Hiatus.
+- **Extrusion/furniture:** watch design videos and collect ideas during/after the trip, but do not place exact-cut aluminum extrusion orders until real camper/fridge/tank/electrical block envelopes are measured. Targeted stock/hardware orders are acceptable after the post-install measurement pass.
+- **Electrical:** shore-power / initial-charge remains the post-trip priority before any alternator work. Build the AC-in-only MultiPlus charge path first: `shore source -> cord/adapter -> TT-30 inlet -> hardwired EMS -> AC-in breaker/disconnect -> MultiPlus AC-in`. Order/SKU-lock BOM rows `107`, `108`, `123`, `13`, `109`, `14`, and `114` plus glands/grommets/labels/ferrules.
 - Keep AC-in and AC-out protection in separate enclosures. Do not let final AC receptacle-count churn block the AC-in charge path.
 - Before first charge, reconcile the MultiPlus LiFePO4 charge profile (`56.8V` planning basis vs `58.4V` battery/manual basis), set source current limits, and charge/test one `48V` battery at a time before paralleling.
-- Complete electrical closet Board A/B layout on the `1/2 in` plywood with real service access, bend radius, fuse-holder matching, and labels before wire cutting.
-- **Truck bed dust/weather closeout:** remove/inspect bed rail caps, confirm old `2 in x 3 in` rail holes are not needed by Hiatus, and seal them with low-profile serviceable patches/flexible sealant without trapping water. Also seal and leak-check bed-floor drain holes, unused floor penetrations, and small corner gaps that could admit water under the subfloor.
-- **Flooring gate:** trim EPS and verify three-piece plywood fit/serviceability. Do not glue Lonseal until rail/bed-floor/corner sealing is complete and leak-checked, and hardpoint/floor penetration/routing questions are cleared.
-- Keep tailgate on for the Bellingham drive unless Hiatus says otherwise; confirm removal/storage plan before departure. Keep tonneau on as long as practical for weather protection.
-- Treat current furniture CAD as reference-only because the Iceco/water tank dry fit invalidated the fridge location. Re-CAD block envelopes first, likely with fridge/cooler in the front-left corner.
-- Order a low-regret starter extrusion/hardware package from stock lengths under `92 in`; defer drawer slides, final panels, and exact cut lengths until real shell/fridge/tank envelopes are measured.
-- Add faucet/sink/drain procurement as discrete plumbing work. Decouple cold-water plumbing from final hot-water choice; treat portable propane tankless as outdoor-use-only and defer electric tanked or listed indoor/RV propane decisions until service-map freeze.
 - Defer Mechman alternator installation until batteries are present, shore charging/monitoring are proven, and alternator vendor/support gates are closed.
 
-## Unblock sprint (next 72 hours)
-Purpose: convert planning certainty into a buildable, orderable physical layout (especially the electrical cabinet), without CAD-ing every bend radius.
+## Post-install build restart sequence
+Purpose: turn the installed camper shell into measured block envelopes before buying hard-to-return interior structure.
 
-### Outcome targets (definition of done)
-By end of the sprint, you can point to a single electrical module footprint and say it is real:
-1. Electrical cabinet envelope is locked (W x H x D), plus required service-access clearance.
-2. All major electrical components fit on a 1:1 backer board mockup with cable exits accounted for.
-3. A cabinet strategy is selected that matches build skills (Phase 1 = simple, serviceable; Phase 2 = pretty skins/lighting).
-4. A purchase gate is cleared: you either place remaining critical-path orders confidently or you have a specific list of what must change first.
-
-### Day-by-day plan
-#### Day 1 (today)
-1. Pick the cabinet zone and commit to a *bounding box* (not final cabinetry): "electrical lives here".
-2. Write 10 "non-negotiables" for the electrical cabinet:
-   - example set: short high-current runs, no buried fuses, strain relief at every entry, AC and DC separation, ventilation path, battery restraint, drip-loop mindset.
-3. Decide the Phase 1 aesthetics rule:
-   - Recommended: **no sliding doors** in Phase 1 (hinged or fully removable panels only). Plan for frosted polycarbonate + LEDs later by reserving space and a wire path.
-
-#### Day 2
-1. Do a 1:1 physical layout of the electrical stack:
-   - On a scrap plywood/foam board backer, place full-size paper/cardboard templates for batteries, MultiPlus, Lynx, shunt, DC-DC, breakers, cable glands.
-   - Add "keep-out" zones for cable bend room and service tool access.
-2. Choose entry/exit points and routing corridors (don’t over-precision this):
-   - define: "48V trunk exits left", "12V exits down/toe-kick chase", "AC exits up/right", etc.
-3. If anything doesn’t fit cleanly, resize the cabinet envelope now (this is cheaper than re-buying).
-
-#### Day 3
-1. Build a tiny prototype of your intended cabinetry method:
-   - a short 80/20 frame segment + one panel/door attachment method (hinge OR magnets OR quarter-turn fasteners).
-   - goal: confirm you can build something rigid, square, and non-rattly without woodworking-level joinery.
-2. Update carts using a simple gate:
-   - Buy now: items that are layout-insensitive and/or needed for bench-testing (core protection, bus covers, terminals/lugs, wire management, disconnects, mounting backer materials).
-   - Buy after footprint lock: the expensive “hard-to-return” items whose exact mounting orientation/clearance matters most.
+1. **Shakedown / inspect**
+   - Stay local enough to address early Hiatus issues if practical.
+   - Check barn doors, cap seals, bed rail caps, windows/fan, dust paths, rattles, and water paths.
+2. **Measure / map**
+   - Capture interior dimensions, hardpoints, bed rail interface, floor clearances, door swing, window/fan locations, and candidate pass-through zones.
+   - Mark no-drill/no-load zones and likely service chases.
+3. **Floor closeout**
+   - Controlled-water/leak-check the sealed bed paths.
+   - Trim EPS flat in ribs, verify plywood flushness, and keep hardpoint pockets non-compressible.
+   - Glue Lonseal only after the gate passes.
+4. **Block envelopes before extrusion**
+   - Tape/cardboard the fridge, purchased `36 gal` wheel-well tank, electrical cabinet, galley, and desk zones.
+   - Decide which modules truly need `15-series`, which can use `10-series`, and which should mount with simpler brackets/plywood.
+5. **Electrical bench path**
+   - Layout Board A/B with real service access and cable corridors.
+   - SKU-lock AC-in charging hardware, write first-charge checklist, then charge/test one battery at a time.
 
 ### Cabinetry approach (recommended)
 - Treat 80/20 as the *structure* and simple panels as the *skins*.

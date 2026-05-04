@@ -36,8 +36,8 @@ Related references:
 - Most core electrical components are already purchased.
 - Electrical architecture remains `48V core + 12V distribution`.
 - Garmin Tread 2 navigation is hardwired and mounted in-cab.
-- Flooring workstream is active: EPS is installed and needs final trim cleanup; the `3/4 in` birch subfloor is installed in three slices with the top left untreated for Lonseal adhesive.
-- Flooring materials now in hand include Lonseal sheet vinyl and adhesive; remaining immediate tool need is the exact-notch trowel (`row 174`) and roller confirmation (`row 175`).
+- Flooring workstream is active: EPS needs final trim/level cleanup in the truck bed ribs; the `3/4 in` birch subfloor is cut in three slices with the top left untreated for Lonseal adhesive.
+- Flooring materials now in hand include Lonseal sheet vinyl and adhesive; exact-notch trowel (`row 174`) is purchased and roller confirmation (`row 175`) remains open.
 - `1x` `1/2 in` plywood sheet remains the electrical backer/closet material, currently uncut with components laid out on/near it.
 - Tooling readiness increased (major Bauer/Harbor Freight purchase completed).
 
@@ -46,11 +46,12 @@ Related references:
 - Solar panels and final PV wiring/fusing path are not yet locked for final procurement.
 - Alternator architecture direction is dedicated `48V` secondary alternator (`Mechman + WS500 + APM-48`); Mechman kit and APM-48 are received, but install remains deferred until batteries/shore charging/monitoring are proven.
 - Final AC branch/receptacle count is secondary; the AC-in-only shore charge path must be SKU-locked first.
-- Bed rail caps and old roughly `2 in x 3 in` rail holes need dust/weather sealing before the camper interface is finalized.
+- Bed rail caps have been re-bonded/sealed with polyurethane; small drill holes were patched with Gorilla Patch & Seal tape, and selected corner air gaps received polyurethane beads. Cure/inspection and post-install leak/dust check remain open before final floor closeout.
 
 ### Practical rule
-- **Continue reversible and truck-only prep now** (bench layout, fuse/device matching, labels, rail-cap inspection/sealing, EPS trim, subfloor verification).
-- **Do not do irreversible shell-dependent work yet** (final shell penetrations, final shell-run cable cuts, permanent finish-floor glue-down, final module skins).
+- **Install-trip mode now:** travel empty-bed, let sealants cure, capture real camper measurements, and do not bring batteries/electrical unless Hiatus asks.
+- **Resume reversible truck-only prep after return** (EPS trim, subfloor verification, leak/dust check, block envelopes, bench layout, fuse/device matching, labels).
+- **Do not do irreversible shell-dependent work yet** (final shell penetrations, final shell-run cable cuts, permanent finish-floor glue-down, final module skins, exact-cut extrusion).
 
 ---
 

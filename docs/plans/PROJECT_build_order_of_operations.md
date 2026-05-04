@@ -75,35 +75,36 @@ related:
 - Stream D: shell execution
 - Once shell is available, execute penetrations -> rough-in -> close-up using prepared modules and harnesses.
 
-## Date-window execution plan (baseline date: April 27, 2026)
-1. April 27 to May 1 (weekday evenings: light work only)
-- Use `docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md` as the integrated Apr 27-May 11 plan.
-- Keep worknight blocks to ordering, calls, labels, checklist writing, small inspections, and staging.
-- SKU-lock/order AC-in initial-charge hardware first: rows `107`, `108`, `123`, `13`, `109`, `14`, and `114`; do not let final AC-out receptacle count block this path.
-- Confirm travel and install logistics for a May 7 `9:00 AM` Bellingham appointment, using May 6 PTO as the staging/travel day.
+## Date-window execution plan (baseline date: May 4, 2026)
+1. May 2 to May 4 (completed heavy truck prep)
+- Bed/flooring removed from travel/build path; Washington trip should remain mostly empty-bed.
+- Bed rail caps were removed; most clips broke; caps were reinstalled with a large Loctite polyurethane bead underneath.
+- Small drill holes and minor bed openings were sealed with Gorilla Waterproof Patch & Seal Tape; selected corner air gaps received small polyurethane beads.
+- Exact-notch Lonseal trowel was purchased; roller/rolling method still needs confirmation before glue-down.
+- Do not reinstall final floor or glue Lonseal before post-install leak/dust check.
 
-2. May 2 to May 3 (heavy weekend execution)
-- Do truck-heavy work before the Washington trip: empty bed, remove existing flooring before departure, clean the bed/rails, optionally remove/store tailgate if it simplifies access, then perform bed rail cap inspection/sealing and old rail-hole closure if confirmed unused.
-- Do not bring the flooring on the Washington trip; keep it removable and out of the wet/adhesive work zone until rail prep is complete.
-- After rail sealing, finish EPS trim and subfloor fit/serviceability checks only once sealant cure/tack timing allows clean handling.
-- Do physical electrical layout: Board A/B mockup, service access, fuse-holder matching, labels, and cable corridors.
-- Treat current furniture CAD as reference-only after the Iceco/water tank dry-fit conflict; rework block envelopes first.
-- Do not buy the previous broad `15-series` starter extrusion package unless a remaining module has a real freestanding structural need; the purchased wheel-well tank should drive a smaller targeted hardware/extrusion order.
+2. May 5 to May 6 (Washington travel/staging)
+- Use May 5-6 for travel, route/weather/lodging confirmation, cure inspection, packing, and appointment confirmation.
+- Keep batteries/electrical cabinet parts home unless Hiatus explicitly requests them.
+- Stage near Bellingham by the evening before the May 7 appointment; do not start work that can leave the truck half-disassembled.
 
-3. May 4 to May 6 (weekday logistics + PTO travel/staging)
-- Use May 4-5 for final triage, packing, appointment confirmation, delivery checks, and route/lodging/weather confirmation.
-- Use May 6 PTO for travel/staging near Bellingham; do not treat it as a build catch-up day.
-- Stage the truck near Bellingham by the evening of May 6. Do not start work that can leave the truck half-disassembled.
-
-4. May 7 (install day)
-- Confirm tailgate handling, bed rail/interface sealing, attachment method, and weather/dust expectations with Hiatus before work starts.
+3. May 7 (install day)
+- Confirm tailgate handling, tonneau timing, bed rail/interface sealing, attachment method, and weather/dust expectations with Hiatus before work starts.
+- Have Hiatus inspect/accept the re-bonded rail caps and any prior rail-hole areas that interact with the camper interface.
 - Capture before/during/after photos and a full shell measurement set before leaving.
 - Do not leave with undocumented attachment, clearance, or weather-critical issues.
 
-5. May 8 to May 11 (local shakedown + service-map freeze)
-- Stay local enough to return to Hiatus for early issues; run low-speed/highway shakedown and reinspect attachment/seals/doors/windows/fan.
+4. May 8 to May 11 (local shakedown + service-map freeze)
+- Stay local enough to return to Hiatus for early issues if practical; run low-speed/highway shakedown and reinspect attachment/seals/doors/windows/fan.
+- Observe dust/water paths, rattles, condensation behavior, barn-door seal behavior, and any bed rail cap movement.
 - Freeze service map from real shell dimensions before penetrations, final cable cuts, Lonseal glue-down, or permanent module skins.
 - Place top-off orders based on real measurements and update logs/tracking.
+
+5. After Utah return (build restart)
+- Controlled-water/leak-check sealed bed paths.
+- Trim EPS so it sits even in the bed ribs; verify plywood sits flush and hardpoint pockets are non-compressible.
+- Dry-fit and then glue Lonseal only after the gate passes.
+- Tape/cardboard block envelopes for fridge, `36 gal` wheel-well tank, electrical cabinet, galley, and desk before ordering exact extrusion cuts.
 
 ## Deferred / purchase-later rows (keep out of current critical path unless triggered)
 - Optional 12V expansion path: row `118`.

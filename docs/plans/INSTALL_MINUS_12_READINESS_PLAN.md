@@ -13,7 +13,7 @@ related:
 
 # May 7 Install Readiness and Immediate Post-Install Plan
 
-As-of date: `2026-04-27`
+As-of date: `2026-05-04`
 
 Purpose: one practical planning document for the remaining days before the Hiatus install, the May 7 install day, and the first post-install actions. This replaces the narrower install-minus-12 plan.
 
@@ -28,20 +28,25 @@ Install appointment:
 
 ### Truck bed / flooring
 
-- EPS is installed against the truck bed under the subfloor, but some foam still needs cleaner trimming.
-- `3/4 in` sealed plywood subfloor is installed in three slices over the EPS/rib structure.
+- Bed/flooring is intentionally out of build mode for the Washington trip: the truck bed will travel mostly empty and house batteries/electrical components should stay home.
+- EPS was previously installed against the truck bed under the subfloor, but it still needs cleanup so the foam sits more evenly in the bed ribs.
+- `3/4 in` sealed plywood subfloor exists in three slices; final reinstall waits until EPS cleanup and sealing/leak-check gates pass.
 - Plywood top face remains unsealed so the Lonseal adhesive can bond correctly.
 - Lonseal sheet flooring and adhesive are in hand.
-- Immediate missing flooring tool: exact-notch sheet-vinyl adhesive trowel, BOM row `174`.
+- Exact-notch sheet-vinyl adhesive trowel (`row 174`) is now purchased; compact roller confirmation (`row 175`) remains the main flooring tool check.
 - Once Lonseal is glued down, subfloor removal becomes materially harder, especially if the sheet bridges all three plywood slices.
 
 ### Truck bed sealing / install interface
 
-- Bed rail caps still need to be removed and sealed under/around as appropriate.
+- Bed rail caps were removed; most retaining clips broke, but the plan is to re-bond/seal the caps rather than rely on the original clips.
+- User applied a large bead of Loctite polyurethane window/door/siding sealant under the bed rail caps and reinstalled them.
+- User sealed small bed drill holes and other small spots with Gorilla Waterproof Patch & Seal Tape; roughly half of an `8 ft` roll was used.
+- User applied small polyurethane beads in truck-bed corner air gaps to reduce dust/water ingress under the future subfloor.
+- New sealing consumables were added to the BOM: Loctite polyurethane sealant rows `177` and Gorilla patch/seal tape row `178`.
 - Prior owner cut roughly `2 in x 3 in` square holes in the top of the bed rails for a previous camper install.
-- Those holes are now dust/water intrusion risks because the barn-door camper upgrade makes the rear enclosure much tighter.
+- Those holes are dust/water intrusion risks because the barn-door camper upgrade makes the rear enclosure much tighter.
 - User-confirmed May 3 premise: the Hiatus is effectively a sealed capper with sealed barn doors and no expected tailgate water ingress; water under the EPS/plywood subfloor is unacceptable because it can rot the floor.
-- Bed-floor drain holes, unused penetrations, and small corner gaps that can admit water into the subfloor cavity should be sealed and leak-checked before final flooring closeout.
+- Remaining gate before final floor closeout: let polyurethane cure, then inspect/leak-check the bed rail caps, bed-floor patches, and corner beads.
 - Tailgate must remain removable for barn-door camper use; working plan is to keep it on for the drive to Bellingham, then remove at/near Hiatus if required.
 - Tonneau cover should stay on as long as practical for weather protection, then be removed if it interferes with the install.
 
@@ -66,33 +71,38 @@ Install appointment:
 
 ### Workload rule
 
-Normal workdays are still `9-5` Monday-Friday through May 5, then PTO runs May 6-11. Treat weekday evenings before PTO as light blocks for calls, ordering, labeling, checklist updates, and small clean tasks. Push messy, multi-hour, truck-disassembly, adhesive, or layout-heavy work to the weekend of May 2-3 unless it is truly blocking.
+Pre-install physical build work is now essentially closed. Use May 4-6 for cure checks, packing, route/weather/lodging confirmation, appointment confirmation, and measurement-kit staging. Do not restart messy flooring, electrical, adhesive, or cabinetry work before departure unless it is safety-critical.
 
-May 6 is now a dedicated PTO travel/staging day, which removes the prior workday-vs-staging conflict. Still treat it as a logistics gate, not a build day: stage the truck near Bellingham by evening, preserve weather protection, and do not start work that can leave the truck half-disassembled.
+Travel/install window from owner update:
+
+- Tuesday May 5: start Washington travel / staging sequence.
+- Wednesday May 6: continue drive and stage near Bellingham.
+- Thursday May 7: pick up / install the camper at Hiatus.
+- May 7-11: local Washington camping/family shakedown window; stay close enough to address early camper issues if practical.
+- Return to Utah Sunday/Monday so work can resume Tuesday May 12.
 
 ### Must complete before install / departure
 
-1. **Travel and logistics gate**: stage the truck near Bellingham by the evening of May 6; do not plan to drive from Park City the morning of the 9 AM install.
-2. **Shore AC-in / initial-charge path**: SKU-lock or order enough AC-in hardware to safely power the MultiPlus charger.
-3. **Electrical safety prep**: lay out the electrical closet, match fuses to devices, label circuits, and write the first-charge checklist before energizing anything.
-4. **Truck bed weather/dust prep**: inspect/seal bed rail caps, old `2 in x 3 in` rail holes, bed-floor drain holes, and corner gaps that could admit water under the subfloor.
-5. **Flooring gate**: trim EPS and verify subfloor fit; do not glue Lonseal until subfloor-cavity water paths are sealed/leak-checked and all access/penetration/hardpoint questions are cleared.
-6. **Install-day measurement kit**: have a phone/print checklist for dimensions, hardpoints, passthrough candidates, and module envelopes.
+1. **Travel and logistics gate**: stage the truck near Bellingham by the evening before the May 7 appointment; do not plan to drive from Park City the morning of install.
+2. **Sealing cure/inspection gate**: let the polyurethane cure, then check bed rail caps, drill-hole tape patches, and corner beads for lifted edges, gaps, or proud interference.
+3. **Install-day measurement kit**: have a phone/print checklist for dimensions, hardpoints, passthrough candidates, barn-door clearances, seal interface photos, and module envelopes.
+4. **Empty-bed travel mode**: keep batteries, electrical cabinet parts, and loose build materials home unless a specific install/travel need exists.
+5. **Flooring hold**: leave EPS cleanup, plywood reinstall, and Lonseal glue-down until after the camper is installed and the post-install leak/dust check is complete.
 
 ### Should complete before install
 
-1. Reassess whether any aluminum extrusion is needed before install; the purchased `36 gal` wheel-well tank removes the old vertical-tank `15-series` exoskeleton need.
-2. Redo CAD as block envelopes for fridge, purchased wheel-well tank, electrical, and galley, not final furniture.
-3. Split faucet/cold-water plumbing from the final water-heater decision so sink/pump/tank work can progress.
-4. Stage travel/install kits: sealant/weather kit, tailgate removal kit, labels, measurement tools, fuse/fastener spares.
+1. Draft interior inspiration notes only: watch extrusion/cabinet build videos, but do not lock exact cuts before real camper measurements.
+2. Stage travel/install kits: sealant/weather kit, tailgate/removal tools if needed, labels, measurement tools, fuse/fastener spares, tape, and camera/phone charger.
+3. Reconfirm with Hiatus any install-surface concern created by the bed rail cap re-bonding before the camper is clamped/attached.
 
 ### Defer
 
 1. Mechman alternator installation and live engine charging.
-2. Final solar panel/string procurement; preserve passthrough routing only.
-3. Final drawer fronts, finished panels, cosmetic skins, and exact drawer-slide lengths.
-4. Indoor propane water-heater path unless listed unit, venting, combustion air, and clearances are locked.
-5. Permanent Lonseal glue-down if any floor penetrations, underfloor routing, or hardpoints are unresolved.
+2. Bringing the `3x 48V` batteries or electrical cabinet parts on the Washington trip unless a specific install need appears.
+3. Final solar panel/string procurement; preserve passthrough routing only.
+4. Aluminum extrusion exact-cut order, drawer fronts, finished panels, cosmetic skins, and drawer-slide lengths until real camper/fridge/tank/electrical block envelopes are measured.
+5. Permanent Lonseal glue-down until post-install leak/dust check passes and no floor penetrations, underfloor routing, or hardpoints are unresolved.
+6. Indoor propane water-heater path unless listed unit, venting, combustion air, and clearances are locked.
 
 ## Shore power / initial charge plan
 
@@ -173,26 +183,22 @@ Gate E1 passes when:
 
 ## Flooring and truck-bed sealing plan
 
-### Recommended order
+### Current status and recommended order
 
-1. Remove or partially lift bed rail caps and inspect old camper holes.
-2. Confirm with Hiatus that the old `2 in x 3 in` rail holes are not needed for the new camper interface.
-3. Clean/degrease rail surfaces and rust-protect bare cut edges.
-4. Close holes as dust/weather intrusion points using low-profile, serviceable cover patches where possible:
-   - aluminum/ABS/HDPE or similar non-absorbent patch/backer;
-   - butyl tape, automotive seam sealer, MS polymer, or polyurethane sealant;
-   - avoid expanding foam, brittle household caulk, or proud patches that can interfere with camper fit.
-5. Reinstall rail caps with targeted sealing/gasketing while avoiding proud interference and hidden pockets that can hold water against metal.
-6. Seal bed-floor drain holes, unused bed-floor penetrations, and small corner gaps that could admit water under the subfloor:
-   - OEM-style rubber plugs where the hole geometry supports them;
-   - butyl-bedded aluminum/ABS/HDPE patches for larger/awkward openings;
-   - automotive seam sealer, MS polymer, or polyurethane sealant for seams and corners;
-   - avoid household silicone, expanding foam, brittle caulk, or proud patches that can interfere with camper/floor fit.
-7. Let sealants cure, then controlled-water-test/hose-test likely ingress paths and inspect the bed interior before reinstalling EPS/plywood.
-8. Trim EPS so no foam is proud, buckled, or in structural clamp stacks.
-9. Verify plywood panels sit flat and can still be removed intentionally.
-10. Dry-fit Lonseal and confirm adhesive/trowel/roller/workspace conditions.
-11. Glue Lonseal only after the glue-down gate passes.
+Completed May 4:
+1. Bed rail caps removed; most clips broke, but caps were reinstalled with a large Loctite polyurethane bead underneath.
+2. Small drill holes and other minor bed openings were patched with Gorilla Waterproof Patch & Seal Tape.
+3. Small polyurethane beads were applied at visible truck-bed corner air gaps.
+4. Exact-notch Lonseal trowel (`row 174`) is purchased.
+
+Next order:
+1. Let the polyurethane cure before hard handling or long water exposure.
+2. Inspect rail caps and tape patches before departure; add pressure/tape support only where a cap edge or patch edge wants to lift.
+3. After the camper is installed, controlled-water-test/hose-test likely ingress paths and inspect the bed interior before reinstalling EPS/plywood.
+4. Trim EPS so no foam is proud, buckled, or in structural clamp stacks; make the plywood sit flush on the rib/EPS structure.
+5. Verify plywood panels sit flat and can still be removed intentionally.
+6. Dry-fit Lonseal and confirm adhesive/trowel/roller/workspace conditions.
+7. Glue Lonseal only after the glue-down gate passes.
 
 ### Lonseal glue-down gate
 
@@ -202,7 +208,7 @@ Do not glue until all are true:
 - EPS trim and subfloor seating are verified;
 - no floor-through penetrations, anchors, drains, heater routes, or hardpoints need to be added under the finish sheet;
 - top plywood face is clean, dry, untreated, and adhesive-compatible;
-- correct trowel and roller are on hand;
+- exact trowel is purchased and roller/rolling method is confirmed;
 - cure window is dry and within adhesive requirements;
 - reduced serviceability from a one-piece glued sheet is accepted.
 
@@ -218,6 +224,8 @@ Do not buy the previous broad `15-series` starter package unless a remaining mod
 
 Current order posture:
 
+- Use the Washington trip for design scouting and real measurement, not exact-cut ordering.
+- Order soon after install only after taped/cardboard block envelopes show what actually needs framing.
 - Favor **no extrusion order yet** if the only use case was the old tall/skinny water-tank cage.
 - Use `15-series` only for remaining heavy/dynamic freestanding modules that actually need it after dry fit: electrical cabinet, fridge slide/base, or workstation/desk structure.
 - Use `10-series` or lighter rail/hardware for accessory panels, desk trim, basket/hook mounts, service retainers, and light cabinetry.
