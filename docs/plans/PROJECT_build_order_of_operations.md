@@ -81,7 +81,7 @@ related:
 - Bed rail caps were removed; most clips broke; caps were reinstalled with a large Loctite polyurethane bead underneath.
 - Small drill holes and minor bed openings were sealed with Gorilla Waterproof Patch & Seal Tape; selected corner air gaps received small polyurethane beads.
 - Exact-notch Lonseal trowel was purchased; roller/rolling method still needs confirmation before glue-down.
-- Do not reinstall final floor or glue Lonseal before post-install leak/dust check.
+- Do not reinstall final floor or glue Lonseal before post-install ordinary inspection.
 
 2. May 5 to May 6 (Washington travel/staging)
 - Use May 5-6 for travel, route/weather/lodging confirmation, cure inspection, packing, and appointment confirmation.
@@ -101,7 +101,7 @@ related:
 - Place top-off orders based on real measurements and update logs/tracking.
 
 5. After Utah return (build restart)
-- Controlled-water/leak-check sealed bed paths.
+- Visually inspect sealed bed paths after cure and normal travel/shakedown; look for lifted tape, cracked beads, dust trails, or dampness.
 - Trim EPS so it sits even in the bed ribs; verify plywood sits flush and hardpoint pockets are non-compressible.
 - Dry-fit and then glue Lonseal only after the gate passes.
 - Tape/cardboard block envelopes for fridge, `36 gal` wheel-well tank, electrical cabinet, galley, and desk before ordering exact extrusion cuts.

@@ -22,7 +22,7 @@ related:
 ## Final Subfloor Structure (Bottom to Top)
 1. Existing spray-in bedliner.
 2. `5/8 in` SilveRboard Graphite EPS between ribs only. Current state: previously cut/installed; cleanup still required so pieces sit evenly in the bed ribs.
-3. `3/4 in` birch plywood directly over EPS + rib structure. Current state: cut in three slices with bottom/edges sealed and top bond face untreated for Lonseal adhesive; final reinstall waits for EPS cleanup and sealing/leak-check gates.
+3. `3/4 in` birch plywood directly over EPS + rib structure. Current state: cut in three slices with bottom/edges sealed and top bond face untreated for Lonseal adhesive; final reinstall waits for EPS cleanup and sealing cure/inspection gates.
 4. Lonseal Lonwood Madera marine sheet vinyl, glue-down finish layer. Current state: sheet vinyl and adhesive are in hand; glue-down is gated because it reduces subfloor serviceability.
 
 ## Explicitly De-Scoped Layer
@@ -78,14 +78,14 @@ Status: mostly complete as of May 4; cure/inspection still required.
 8. Let sealant skin/cure per product conditions before reinstalling flooring or handling surfaces. **Pending cure/inspection.**
 
 ### Phase 0A - Bed-floor drain/corner sealing before subfloor closeout
-Status: partially complete as of May 4; leak-check still required.
+Status: partially complete as of May 4; cure/post-drive inspection still required.
 
 1. Treat factory drain holes, unused bed-floor penetrations, and small corner gaps under/near the subfloor as water-ingress defects, not intentional drains for this build.
 2. Seal them before final subfloor/Lonseal closeout using reversible or serviceable automotive/marine methods where practical: OEM-style rubber plugs, butyl-bedded aluminum/ABS/HDPE patches, automotive seam sealer, MS polymer, polyurethane sealant, or patch/seal tape for small drill holes where adhesion is clean and protected.
 3. Do not rely on household silicone as the primary sealant.
 4. Do not seal unrelated exterior body drains or create trapped metal cavities; the target is zero upward water path into the EPS/plywood cavity, while still allowing inspection/service before the finish floor is glued.
 5. Field status: small drill holes and several other minor bed openings were sealed with Gorilla Waterproof Patch & Seal Tape; selected corner air gaps received small polyurethane beads.
-6. After sealant cure and camper install, hose-test or controlled-water-test the bed floor/corners from below/outside and inspect inside the bed before reinstalling EPS/plywood.
+6. After sealant cure, camper install, and normal travel/shakedown, inspect the bed floor/corners and inside of the bed before reinstalling EPS/plywood. No dedicated hose/leak test is required for this under-subfloor path; the concern is ordinary underside spray/dust, not submersion.
 
 ### Phase 1 - Prep / current-state correction
 1. Clean bed thoroughly.
@@ -106,7 +106,7 @@ Status: partially complete as of May 4; leak-check still required.
 
 ### Phase 4 - Lonseal glue-down gate
 Do not proceed until:
-- bed rail, bed-floor drain-hole, and corner-gap sealing is complete and leak-checked, not merely deferred;
+- bed rail, bed-floor drain-hole, and corner-gap sealing is complete and visually inspected after cure/normal use, not merely deferred;
 - EPS trim and plywood seating pass;
 - no floor-through penetrations, drains, heater routes, anchor holes, or hidden hardpoints need access under the finish sheet;
 - top plywood face is clean, dry, untreated, and adhesive-compatible;
@@ -131,6 +131,6 @@ Confirm final door and tank clearances against this stack-up before permanent in
 - Thermal performance: moderate floor thermal decoupling from EPS; less top-side thermal break than prior EPDM-inclusive concept.
 - Structural behavior: stiffer walking surface and higher point-load robustness with `3/4 in` birch.
 - Moisture durability: sealed bottom face, edges, and drilled holes remain required because wood is directly above rib cavities; the top face stays untreated to remain compatible with the Lonseal vehicle-install substrate requirement for untreated plywood.
-- Bed-floor water policy: the subfloor cavity is not a drained cavity in this build. Because the camper has sealed barn doors and the bed floor remains the build substrate, factory drain holes and small corner gaps that can admit water under the subfloor should be sealed and leak-checked before finish-floor glue-down.
+- Bed-floor water policy: the subfloor cavity is not a drained cavity in this build. Because the camper has sealed barn doors and the bed floor remains the build substrate, factory drain holes and small corner gaps that can admit water under the subfloor should be sealed and visually inspected before finish-floor glue-down; no dedicated hose/leak test is required for ordinary underside-spray risk.
 - Acoustic behavior: no dedicated EPDM damping layer in active stack; expect more direct structure-borne vibration vs prior concept.
 - Serviceability: finish vinyl remains the only permanent bond layer, but one-piece Lonseal glued over three plywood slices will make subfloor removal materially harder. Treat glue-down as an explicit gate, not casual finish work.

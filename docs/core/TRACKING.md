@@ -332,9 +332,9 @@ related:
 - Date: 2026-04-27
 - Decision: Treat Lonseal glue-down as gated finish work, not immediate routine flooring.
 - Context: EPS and three-piece plywood subfloor are installed, and Lonseal/glue are in hand, but glued finish flooring reduces subfloor serviceability. Bed rail cap sealing, old rail holes, bed-floor drain holes, and small corner gaps remain open moisture-control items.
-- Options considered: glue now, delay all flooring, or complete trim/seal/leak-check/inspection gates before glue-down.
+- Options considered: glue now, delay all flooring, or complete trim/seal/cure-inspection gates before glue-down.
 - Decision drivers: preserve access until rail/bed-floor/corner sealing, hardpoint, and penetration questions are closed.
-- Result: Lonseal glue-down waits until bed rail/bed-floor/corner sealing is complete and leak-checked, EPS trim passes, hardpoint pockets are verified, and cure/tool readiness passes.
+- Result: Lonseal glue-down waits until bed rail/bed-floor/corner sealing is complete and visually inspected after cure/normal use, EPS trim passes, hardpoint pockets are verified, and cure/tool readiness passes.
 - Follow-up: update `logs/LOG.md` with gate evidence before glue-down.
 
 - ID: D-035
@@ -378,9 +378,9 @@ related:
 - Decision: Treat the Washington trip as empty-bed install/shakedown mode, not a full electrical/interior-build deployment.
 - Context: Bed rail caps have been removed/rebonded with polyurethane, small drill holes patched with Gorilla tape, corner air gaps sealed, trowel purchased, and the flooring/subfloor is out or not ready for final closeout. Owner expects not to bring batteries/electrical on the trip.
 - Options considered: rush flooring/electrical before departure, bring batteries and build parts for remote work, or keep the truck mostly empty and use the trip for install, shakedown, and measurement.
-- Decision drivers: avoid half-finished adhesive/flooring work, reduce travel weight/risk, preserve access for post-install leak/dust checks, and avoid exact cabinetry/extrusion decisions before real camper measurements.
+- Decision drivers: avoid half-finished adhesive/flooring work, reduce travel weight/risk, preserve access for post-install ordinary inspection, and avoid exact cabinetry/extrusion decisions before real camper measurements.
 - Result: keep batteries/electrical parts home, let sealing cure, travel empty-bed, capture measurements/photos at Hiatus, then resume EPS/plywood/Lonseal, extrusion, and electrical bench work after return.
-- Follow-up: log post-install leak/dust check evidence and measured camper dimensions before final floor glue-down or exact extrusion orders.
+- Follow-up: log post-install inspection observations and measured camper dimensions before final floor glue-down or exact extrusion orders.
 
 ## Risk register
 - ID: R-001
@@ -495,16 +495,16 @@ related:
 - Risk: Old bed rail holes, rail-cap gaps, bed-floor drain holes, unused penetrations, and small bed-corner gaps can remain dust/water intrusion paths after the sealed barn-door camper upgrade. Water under the EPS/plywood subfloor is unacceptable because it can rot the floor.
 - Impact (1-5): 5
 - Likelihood (1-5): 2
-- Mitigation: Bed rail caps were re-bonded with polyurethane, small drill holes were patched with Gorilla Patch & Seal tape, and selected corner air gaps received polyurethane beads. Let cure, inspect for lifted edges/proud interference, and leak/dust check before final flooring closeout.
-- Trigger: Pre-departure inspection, post-install leak/dust check, subfloor reinstall, Lonseal glue-down decision, or first dusty/wet drive after camper install.
+- Mitigation: Bed rail caps were re-bonded with polyurethane, small drill holes were patched with Gorilla Patch & Seal tape, and selected corner air gaps received polyurethane beads. Let cure, then inspect for lifted edges, proud interference, dust trails, or dampness after normal travel/shakedown before final flooring closeout.
+- Trigger: Pre-departure inspection, post-install ordinary inspection, subfloor reinstall, Lonseal glue-down decision, or first dusty/wet drive after camper install.
 - Owner: Sunny
-- Status: Partially mitigated; leak-check pending
+- Status: Partially mitigated; cure/post-drive inspection pending
 
 - ID: R-014
 - Risk: Premature Lonseal glue-down can trap unresolved floor penetrations/hardpoints and make three-piece subfloor removal difficult.
 - Impact (1-5): 4
 - Likelihood (1-5): 3
-- Mitigation: Require glue-down gate: rail/bed-floor/corner sealing complete and leak-checked, EPS trim, hardpoint pocket verification, no pending floor penetrations, exact trowel purchased, roller/rolling method confirmed, and dry cure window.
+- Mitigation: Require glue-down gate: rail/bed-floor/corner sealing complete and visually inspected after cure/normal use, EPS trim, hardpoint pocket verification, no pending floor penetrations, exact trowel purchased, roller/rolling method confirmed, and dry cure window.
 - Trigger: Decision to apply Lonseal adhesive.
 - Owner: Sunny
 - Status: Open

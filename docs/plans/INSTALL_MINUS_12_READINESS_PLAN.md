@@ -30,7 +30,7 @@ Install appointment:
 
 - Bed/flooring is intentionally out of build mode for the Washington trip: the truck bed will travel mostly empty and house batteries/electrical components should stay home.
 - EPS was previously installed against the truck bed under the subfloor, but it still needs cleanup so the foam sits more evenly in the bed ribs.
-- `3/4 in` sealed plywood subfloor exists in three slices; final reinstall waits until EPS cleanup and sealing/leak-check gates pass.
+- `3/4 in` sealed plywood subfloor exists in three slices; final reinstall waits until EPS cleanup and sealing cure/inspection gates pass.
 - Plywood top face remains unsealed so the Lonseal adhesive can bond correctly.
 - Lonseal sheet flooring and adhesive are in hand.
 - Exact-notch sheet-vinyl adhesive trowel (`row 174`) is now purchased; compact roller confirmation (`row 175`) remains the main flooring tool check.
@@ -46,7 +46,7 @@ Install appointment:
 - Prior owner cut roughly `2 in x 3 in` square holes in the top of the bed rails for a previous camper install.
 - Those holes are dust/water intrusion risks because the barn-door camper upgrade makes the rear enclosure much tighter.
 - User-confirmed May 3 premise: the Hiatus is effectively a sealed capper with sealed barn doors and no expected tailgate water ingress; water under the EPS/plywood subfloor is unacceptable because it can rot the floor.
-- Remaining gate before final floor closeout: let polyurethane cure, then inspect/leak-check the bed rail caps, bed-floor patches, and corner beads.
+- Remaining gate before final floor closeout: let polyurethane cure, then visually inspect the bed rail caps, bed-floor patches, and corner beads.
 - Tailgate must remain removable for barn-door camper use; working plan is to keep it on for the drive to Bellingham, then remove at/near Hiatus if required.
 - Tonneau cover should stay on as long as practical for weather protection, then be removed if it interferes with the install.
 
@@ -87,7 +87,7 @@ Travel/install window from owner update:
 2. **Sealing cure/inspection gate**: let the polyurethane cure, then check bed rail caps, drill-hole tape patches, and corner beads for lifted edges, gaps, or proud interference.
 3. **Install-day measurement kit**: have a phone/print checklist for dimensions, hardpoints, passthrough candidates, barn-door clearances, seal interface photos, and module envelopes.
 4. **Empty-bed travel mode**: keep batteries, electrical cabinet parts, and loose build materials home unless a specific install/travel need exists.
-5. **Flooring hold**: leave EPS cleanup, plywood reinstall, and Lonseal glue-down until after the camper is installed and the post-install leak/dust check is complete.
+5. **Flooring hold**: leave EPS cleanup, plywood reinstall, and Lonseal glue-down until after the camper is installed and normal post-drive inspection is complete.
 
 ### Should complete before install
 
@@ -101,7 +101,7 @@ Travel/install window from owner update:
 2. Bringing the `3x 48V` batteries or electrical cabinet parts on the Washington trip unless a specific install need appears.
 3. Final solar panel/string procurement; preserve passthrough routing only.
 4. Aluminum extrusion exact-cut order, drawer fronts, finished panels, cosmetic skins, and drawer-slide lengths until real camper/fridge/tank/electrical block envelopes are measured.
-5. Permanent Lonseal glue-down until post-install leak/dust check passes and no floor penetrations, underfloor routing, or hardpoints are unresolved.
+5. Permanent Lonseal glue-down until post-install ordinary inspection passes and no floor penetrations, underfloor routing, or hardpoints are unresolved.
 6. Indoor propane water-heater path unless listed unit, venting, combustion air, and clearances are locked.
 
 ## Shore power / initial charge plan
@@ -194,7 +194,7 @@ Completed May 4:
 Next order:
 1. Let the polyurethane cure before hard handling or long water exposure.
 2. Inspect rail caps and tape patches before departure; add pressure/tape support only where a cap edge or patch edge wants to lift.
-3. After the camper is installed, controlled-water-test/hose-test likely ingress paths and inspect the bed interior before reinstalling EPS/plywood.
+3. After the camper is installed and the truck has seen normal travel/shakedown conditions, inspect likely ingress paths and the bed interior before reinstalling EPS/plywood.
 4. Trim EPS so no foam is proud, buckled, or in structural clamp stacks; make the plywood sit flush on the rib/EPS structure.
 5. Verify plywood panels sit flat and can still be removed intentionally.
 6. Dry-fit Lonseal and confirm adhesive/trowel/roller/workspace conditions.
@@ -204,7 +204,7 @@ Next order:
 
 Do not glue until all are true:
 
-- rail, bed-floor drain-hole, unused penetration, and corner-gap sealing is complete and leak-checked;
+- rail, bed-floor drain-hole, unused penetration, and corner-gap sealing is complete and visually inspected after cure/normal use;
 - EPS trim and subfloor seating are verified;
 - no floor-through penetrations, anchors, drains, heater routes, or hardpoints need to be added under the finish sheet;
 - top plywood face is clean, dry, untreated, and adhesive-compatible;

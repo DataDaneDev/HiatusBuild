@@ -83,8 +83,8 @@ related:
 
 ## Immediate next decisions
 - **Washington/install mode is now the priority.** Keep the truck bed mostly empty; leave the `3x 48V` batteries, electrical cabinet parts, and loose build materials home unless Hiatus specifically needs them.
-- **Truck bed dust/weather closeout:** bed rail caps have been re-bonded with Loctite polyurethane, small drill holes were sealed with Gorilla Patch & Seal tape, and visible corner air gaps received polyurethane beads. Next gate is cure/inspection and later leak/dust check after camper install.
-- **Flooring gate:** trim EPS and verify three-piece plywood fit/serviceability after the trip. Do not glue Lonseal until rail/bed-floor/corner sealing is leak-checked, post-install floor penetrations are ruled out, and the roller/rolling method is confirmed. The exact trowel is now purchased.
+- **Truck bed dust/weather closeout:** bed rail caps have been re-bonded with Loctite polyurethane, small drill holes were sealed with Gorilla Patch & Seal tape, and visible corner air gaps received polyurethane beads. Next gate is cure/inspection and later ordinary post-drive inspection after camper install.
+- **Flooring gate:** trim EPS and verify three-piece plywood fit/serviceability after the trip. Do not glue Lonseal until rail/bed-floor/corner sealing is cured and inspected, post-install floor penetrations are ruled out, and the roller/rolling method is confirmed. The exact trowel is now purchased.
 - **Install-day data capture:** photograph attachment points, bed rail/cap interface, barn-door seals, clearances, hardpoints, passthrough candidates, and all dimensions before leaving Hiatus.
 - **Extrusion/furniture:** watch design videos and collect ideas during/after the trip, but do not place exact-cut aluminum extrusion orders until real camper/fridge/tank/electrical block envelopes are measured. Targeted stock/hardware orders are acceptable after the post-install measurement pass.
 - **Electrical:** shore-power / initial-charge remains the post-trip priority before any alternator work. Build the AC-in-only MultiPlus charge path first: `shore source -> cord/adapter -> TT-30 inlet -> hardwired EMS -> AC-in breaker/disconnect -> MultiPlus AC-in`. Order/SKU-lock BOM rows `107`, `108`, `123`, `13`, `109`, `14`, and `114` plus glands/grommets/labels/ferrules.
@@ -102,7 +102,7 @@ Purpose: turn the installed camper shell into measured block envelopes before bu
    - Capture interior dimensions, hardpoints, bed rail interface, floor clearances, door swing, window/fan locations, and candidate pass-through zones.
    - Mark no-drill/no-load zones and likely service chases.
 3. **Floor closeout**
-   - Controlled-water/leak-check the sealed bed paths.
+   - Visually inspect sealed bed paths after cure and normal travel/shakedown; look for lifted tape, cracked beads, dust trails, or dampness.
    - Trim EPS flat in ribs, verify plywood flushness, and keep hardpoint pockets non-compressible.
    - Glue Lonseal only after the gate passes.
 4. **Block envelopes before extrusion**

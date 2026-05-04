@@ -46,11 +46,11 @@ Related references:
 - Solar panels and final PV wiring/fusing path are not yet locked for final procurement.
 - Alternator architecture direction is dedicated `48V` secondary alternator (`Mechman + WS500 + APM-48`); Mechman kit and APM-48 are received, but install remains deferred until batteries/shore charging/monitoring are proven.
 - Final AC branch/receptacle count is secondary; the AC-in-only shore charge path must be SKU-locked first.
-- Bed rail caps have been re-bonded/sealed with polyurethane; small drill holes were patched with Gorilla Patch & Seal tape, and selected corner air gaps received polyurethane beads. Cure/inspection and post-install leak/dust check remain open before final floor closeout.
+- Bed rail caps have been re-bonded/sealed with polyurethane; small drill holes were patched with Gorilla Patch & Seal tape, and selected corner air gaps received polyurethane beads. Cure/inspection and ordinary post-drive inspection remain open before final floor closeout.
 
 ### Practical rule
 - **Install-trip mode now:** travel empty-bed, let sealants cure, capture real camper measurements, and do not bring batteries/electrical unless Hiatus asks.
-- **Resume reversible truck-only prep after return** (EPS trim, subfloor verification, leak/dust check, block envelopes, bench layout, fuse/device matching, labels).
+- **Resume reversible truck-only prep after return** (EPS trim, subfloor verification, post-drive dust/water-path inspection, block envelopes, bench layout, fuse/device matching, labels).
 - **Do not do irreversible shell-dependent work yet** (final shell penetrations, final shell-run cable cuts, permanent finish-floor glue-down, final module skins, exact-cut extrusion).
 
 ---
@@ -167,7 +167,7 @@ Complete now:
 
 ## 4.4 Lonseal glue-down gate
 Do not glue until:
-- rail, bed-floor drain-hole, unused penetration, and corner-gap sealing is complete and leak-checked;
+- rail, bed-floor drain-hole, unused penetration, and corner-gap sealing is complete and visually inspected after cure/normal use;
 - no floor penetrations, hidden anchors, drains, heater routes, or hardpoints need under-floor access;
 - exact trowel and roller are available;
 - cure window is dry and within adhesive requirements;
