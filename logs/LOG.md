@@ -21,6 +21,15 @@ Single running log for build progress and test evidence.
 - Issues:
 - Next actions:
 
+## 2026-05-04
+- Designed the driver/left-side workstation mechanism package for full-time work use while preserving pop-down roof clearance.
+- Added `docs/implementation/INTERIOR_driver_side_workstation.md` as the draft implementation owner for the service-spine desk, stow-low/rising VESA monitor mechanism, Iceco/fridge tower storage, toe-kick false bottom, shallow cubbies, travel locks, cable drag-chain/service loops, heat/noise/venting, and acceptance tests.
+- Updated `docs/core/SYSTEMS.md`, `docs/core/TRACKING.md`, and `docs/README.md` so the new workstation implementation is discoverable and tracked without treating stale CAD as final.
+- Measurements/data: no new physical camper measurements; calculated reference envelope for a `27 in` 16:9 monitor as about `23.5 in W x 13.2 in H` and used `27-40 in` as a practical viewing-distance target range.
+- Tests run: documentation cross-link and markdown consistency pass; no physical roof-cycle or travel test performed yet.
+- Issues: final monitor mechanism, desk dimensions, Iceco slide need, latch hardware, and roof-safe line remain measurement-gated after camper install.
+- Next actions: perform roof-down sweep map, Iceco lid/vent/cord envelope, seated work mockup, then bench-test the selected monitor mechanism before exact extrusion cuts.
+
 ## 2026-05-01
 - Owner correction: this is the Washington trip, not a washing trip. Bed will be emptied before departure; existing removable flooring will be removed before departure and does not need to be brought along.
 - Tailgate removal is optional for access/drying, with wiring/camera protection if removed.

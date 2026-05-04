@@ -527,6 +527,15 @@ related:
 - Owner: Sunny
 - Status: Open
 
+- ID: R-017
+- Risk: Workstation/monitor/fridge mechanisms can collide with the pop-down roof or become vibration projectiles if stow height, cable loops, slides, or latches are validated from assumptions instead of real shell measurements.
+- Impact (1-5): 4
+- Likelihood (1-5): 3
+- Mitigation: Use the driver-side workstation implementation gates: roof-down sweep map, stowed monitor block test, positive travel locks on monitor/fridge/leaf/drawers, cable drag-chain/service-loop checks, and post-drive re-torque/witness-mark inspection.
+- Trigger: Building the driver-side desk, monitor mount, Iceco slide/tower, or any storage above the marked roof-safe line.
+- Owner: Sunny
+- Status: Open
+
 ## Open questions
 - Confirm Tuesday/Wednesday Washington travel/staging details, route/weather, and arrival buffer before the May 7 `9:00 AM` install.
 - Confirm with Hiatus whether tailgate can be removed onsite and where it will be stored/transported afterward.
@@ -535,6 +544,9 @@ related:
 - Reconcile MultiPlus charge profile value before first charge (`56.8V` planning basis vs `58.4V` battery/manual basis).
 - Confirm one-battery-at-a-time first-charge procedure and acceptable voltage/SOC matching threshold before paralleling.
 - Measure Iceco lid-open/vent/power-cord envelope and validate front-left fridge/cooler location.
+- Measure the driver-side desk/monitor roof-down sweep envelope, choose the primary monitor mechanism (`rising VESA spine` vs under-desk flip-up vs quick-release sleeve), and validate that the stowed face-down cradle supports bezel/back-shell/VESA structure rather than loading the LCD panel.
+- Lock workstation travel restraints: monitor mast/carriage latch, monitor arm hard stop, fridge slide secondary latch/strap, desk leaf latch, storage-door latch standard, and cable-chain/service-loop path below the roof-safe line.
+- Confirm actual seated work envelope: chair/stool height, desk height/depth, monitor viewing distance, knee clearance, footrest need, and reachable AC/DC/USB-C station locations.
 - Dry-fit purchased `36 gal` wheel-well tank; verify body/fitting envelope, bracket orientation, plusnut locations, and whether a secondary floor/tie-down restraint path is needed.
 - Lock faucet, sink, drain/graywater, pump service-valve, and winterization details as discrete procurement rows.
 - Lock whether hot water is outdoor shower-only provisional or must feed the sink; defer indoor/RV propane or electric tanked path until service-map freeze.
@@ -590,5 +602,6 @@ related:
 - `docs/core/SYSTEMS.md`
 - `docs/legacy/PROJECT_workbook_hiatus_consult.md`
 - `docs/legacy/SYSTEMS_workbook_build_notes_obsolete.md`
+- `docs/implementation/INTERIOR_driver_side_workstation.md`
 - `docs/implementation/ELECTRICAL_overview_diagram.md`
 - `docs/implementation/ELECTRICAL_fuse_schedule.md`

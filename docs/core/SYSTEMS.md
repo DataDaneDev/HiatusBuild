@@ -252,13 +252,14 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 - Freeze and winterization strategy: TBD.
 
 ## Cabinetry and structure
+- Driver-side workstation implementation draft: [INTERIOR_driver_side_workstation](../implementation/INTERIOR_driver_side_workstation.md). It captures the current best direction for a service-spine desk, stow-low monitor cassette/rising VESA spine, Iceco/fridge tower, shallow storage, travel locks, cable management, heat/noise control, and roof-close acceptance tests.
 - Aluminum extrusion strategy: the prior broad `15-series` starter order is superseded by the purchased `36 gal` wheel-well tank. Do not buy `15-series` for a tank exoskeleton unless dry fit proves a separate structural frame is still needed; use `15-series` only for actual heavy freestanding modules and `10-series`/lighter rail for accessory/panel work.
 - Current furniture CAD is reference-only after Iceco/water tank dry fit; fridge/cooler likely moves to the front-left corner, so re-CAD block envelopes before final cut lists.
 - Modular mounting baseline now includes T-slot/strut rails both exterior (recovery/tool mounts like shovel/Maxtrax) and interior (baskets/hooks/tie-down points); BOM rows `119` and `120`.
 - Drawer hardware baseline includes `4x` soft-close undermount slide kits for primary cabinetry drawers; BOM row `122`, but final lengths are deferred until fridge/tank/electrical module envelopes are verified.
-- Desk concepts captured: Lagun-style fold-in options and pneumatic pedestal concepts
-- Material ideas captured: phenolic/richlite top, sound treatment, panel anti-rattle tape
-- Monitor travel strategy concept: stow-low assisted deployment with structural bracing
+- Desk concepts captured: fixed full-time work surface with possible auxiliary fold leaf; Lagun-style or pneumatic concepts should remain secondary unless the measured work envelope proves they are stable enough.
+- Material ideas captured: phenolic/richlite top, sound treatment, panel anti-rattle tape, frosted/angled LED strips, smoke-grey acrylic shallow cubby covers.
+- Monitor travel strategy concept: stow-low/face-down assisted deployment with structural bracing, hard stops, positive travel locks, cable drag chain, and a visible roof-safe state before pop-down.
 
 ## HVAC and condensation
 - Heating approach in notes: diesel heater with possible branch to battery compartment

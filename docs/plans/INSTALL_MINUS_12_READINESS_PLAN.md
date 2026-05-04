@@ -249,11 +249,13 @@ Defer:
 ### Layout sequence
 
 1. Measure actual Iceco body, handles, hinge/lid sweep, compressor vent side, and cord exit.
-2. Dry-fit the purchased `36 gal` wheel-well tank: body envelope, fitting protrusions, bracket locations, plusnut access, service clearance, drain/fill/vent routing, and whether a secondary floor/tie-down load path is needed.
-3. Tape/cardboard floor envelopes for front-left fridge/tank/electrical candidates.
-4. Verify lid opening, slide extension if used, aisle/door clearance, ventilation, tie-downs, and service loops.
-5. Re-CAD block envelopes first.
-6. Count extrusion by axis only after envelopes pass and only for modules that cannot mount directly or with simpler brackets.
+2. Measure driver-side desk/monitor roof-down sweep envelope and mock the stow-low monitor block before committing to rising mast, under-desk flip-up, or quick-release sleeve geometry.
+3. Mock seated workstation ergonomics: chair/stool height, desk height/depth, knee/foot clearance, monitor viewing distance, cable/outlet reach, and whether storage intrudes on the workday posture.
+4. Dry-fit the purchased `36 gal` wheel-well tank: body envelope, fitting protrusions, bracket locations, plusnut access, service clearance, drain/fill/vent routing, and whether a secondary floor/tie-down load path is needed.
+5. Tape/cardboard floor envelopes for front-left fridge/tank/electrical/workstation candidates.
+6. Verify lid opening, slide extension if used, aisle/door clearance, ventilation, tie-downs, travel locks, cable service loops, and service access.
+7. Re-CAD block envelopes first.
+8. Count extrusion by axis only after envelopes pass and only for modules that cannot mount directly or with simpler brackets.
 
 ## Plumbing / hot water / propane plan
 
