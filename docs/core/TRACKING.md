@@ -331,10 +331,10 @@ related:
 - ID: D-034
 - Date: 2026-04-27
 - Decision: Treat Lonseal glue-down as gated finish work, not immediate routine flooring.
-- Context: EPS and three-piece plywood subfloor are installed, and Lonseal/glue are in hand, but glued finish flooring reduces subfloor serviceability. Bed rail cap sealing and old rail holes remain open.
-- Options considered: glue now, delay all flooring, or complete trim/seal/inspection gates before glue-down.
-- Decision drivers: preserve access until rail/hole sealing, hardpoint, and penetration questions are closed.
-- Result: Lonseal glue-down waits until bed rail/hole sealing or explicit deferral, EPS trim, hardpoint pockets, and cure/tool readiness pass.
+- Context: EPS and three-piece plywood subfloor are installed, and Lonseal/glue are in hand, but glued finish flooring reduces subfloor serviceability. Bed rail cap sealing, old rail holes, bed-floor drain holes, and small corner gaps remain open moisture-control items.
+- Options considered: glue now, delay all flooring, or complete trim/seal/leak-check/inspection gates before glue-down.
+- Decision drivers: preserve access until rail/bed-floor/corner sealing, hardpoint, and penetration questions are closed.
+- Result: Lonseal glue-down waits until bed rail/bed-floor/corner sealing is complete and leak-checked, EPS trim passes, hardpoint pockets are verified, and cure/tool readiness passes.
 - Follow-up: update `logs/LOG.md` with gate evidence before glue-down.
 
 - ID: D-035
@@ -483,11 +483,11 @@ related:
 - Status: Open
 
 - ID: R-013
-- Risk: Old bed rail holes and rail-cap gaps can remain dust/water intrusion paths after the airtight barn-door camper upgrade.
-- Impact (1-5): 4
+- Risk: Old bed rail holes, rail-cap gaps, bed-floor drain holes, unused penetrations, and small bed-corner gaps can remain dust/water intrusion paths after the sealed barn-door camper upgrade. Water under the EPS/plywood subfloor is unacceptable because it can rot the floor.
+- Impact (1-5): 5
 - Likelihood (1-5): 3
-- Mitigation: Confirm holes are not needed by Hiatus, rust-protect cut edges, and seal with low-profile serviceable patches/flexible sealant while preserving drainage.
-- Trigger: Bed rail cap removal/inspection and first dusty or wet drive after camper install.
+- Mitigation: Confirm rail holes are not needed by Hiatus, rust-protect cut edges, seal rail holes and bed-floor/corner paths with low-profile serviceable patches/flexible sealant, then leak-check before final flooring closeout.
+- Trigger: Bed rail cap removal/inspection, subfloor reinstall, Lonseal glue-down decision, or first dusty/wet drive after camper install.
 - Owner: Sunny
 - Status: Open
 
@@ -495,7 +495,7 @@ related:
 - Risk: Premature Lonseal glue-down can trap unresolved floor penetrations/hardpoints and make three-piece subfloor removal difficult.
 - Impact (1-5): 4
 - Likelihood (1-5): 3
-- Mitigation: Require glue-down gate: rail/hole sealing decision, EPS trim, hardpoint pocket verification, no pending floor penetrations, correct tools, and dry cure window.
+- Mitigation: Require glue-down gate: rail/bed-floor/corner sealing complete and leak-checked, EPS trim, hardpoint pocket verification, no pending floor penetrations, correct tools, and dry cure window.
 - Trigger: Decision to apply Lonseal adhesive.
 - Owner: Sunny
 - Status: Open

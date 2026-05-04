@@ -166,7 +166,7 @@ Complete now:
 
 ## 4.4 Lonseal glue-down gate
 Do not glue until:
-- rail/hole sealing is complete or deliberately deferred;
+- rail, bed-floor drain-hole, unused penetration, and corner-gap sealing is complete and leak-checked;
 - no floor penetrations, hidden anchors, drains, heater routes, or hardpoints need under-floor access;
 - exact trowel and roller are available;
 - cure window is dry and within adhesive requirements;

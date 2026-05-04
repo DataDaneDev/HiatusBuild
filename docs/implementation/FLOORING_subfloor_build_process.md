@@ -16,6 +16,7 @@ related:
 ## Scope
 - Define the locked floor stack-up, hardpoint strategy, procurement state, and install workflow for the truck bed floor.
 - Baseline date for this revision: April 27, 2026.
+- Moisture-control premise updated May 3, 2026: the Hiatus is effectively a sealed capper with barn doors; the inside of the truck bed remains the build substrate, so water must not be allowed under the subfloor.
 
 ## Final Subfloor Structure (Bottom to Top)
 1. Existing spray-in bedliner.
@@ -65,8 +66,15 @@ related:
 4. Confirm with Hiatus that the old roughly `2 in x 3 in` top-rail holes are not needed for the new camper interface.
 5. Clean/degrease rail surfaces and rust-protect bare cut edges.
 6. Close holes as dust/weather intrusion points using low-profile, serviceable cover patches where possible: thin aluminum/ABS/HDPE or similar non-absorbent patch/backer bedded in butyl tape, automotive seam sealer, MS polymer, or polyurethane sealant.
-7. Reinstall rail caps with targeted sealing/gasketing while preserving drainage paths and avoiding camper-fit interference.
+7. Reinstall rail caps with targeted sealing/gasketing while avoiding camper-fit interference and avoiding hidden pockets that can hold water against metal.
 8. Let sealant skin/cure per product conditions before reinstalling flooring or handling surfaces.
+
+### Phase 0A - Bed-floor drain/corner sealing before subfloor closeout
+1. Treat factory drain holes, unused bed-floor penetrations, and small corner gaps under/near the subfloor as water-ingress defects, not intentional drains for this build.
+2. Seal them before final subfloor/Lonseal closeout using reversible or serviceable automotive/marine methods where practical: OEM-style rubber plugs, butyl-bedded aluminum/ABS/HDPE patches, automotive seam sealer, MS polymer, or polyurethane sealant.
+3. Do not rely on household silicone as the primary sealant.
+4. Do not seal unrelated exterior body drains or create trapped metal cavities; the target is zero upward water path into the EPS/plywood cavity, while still allowing inspection/service before the finish floor is glued.
+5. After sealant cure, hose-test or controlled-water-test the bed floor/corners from below/outside and inspect inside the bed before reinstalling EPS/plywood.
 
 ### Phase 1 - Prep / current-state correction
 1. Clean bed thoroughly.
@@ -87,7 +95,7 @@ related:
 
 ### Phase 4 - Lonseal glue-down gate
 Do not proceed until:
-- bed rail/hole sealing is complete or explicitly deferred;
+- bed rail, bed-floor drain-hole, and corner-gap sealing is complete and leak-checked, not merely deferred;
 - EPS trim and plywood seating pass;
 - no floor-through penetrations, drains, heater routes, anchor holes, or hidden hardpoints need access under the finish sheet;
 - top plywood face is clean, dry, untreated, and adhesive-compatible;
@@ -112,5 +120,6 @@ Confirm final door and tank clearances against this stack-up before permanent in
 - Thermal performance: moderate floor thermal decoupling from EPS; less top-side thermal break than prior EPDM-inclusive concept.
 - Structural behavior: stiffer walking surface and higher point-load robustness with `3/4 in` birch.
 - Moisture durability: sealed bottom face, edges, and drilled holes remain required because wood is directly above rib cavities; the top face stays untreated to remain compatible with the Lonseal vehicle-install substrate requirement for untreated plywood.
+- Bed-floor water policy: the subfloor cavity is not a drained cavity in this build. Because the camper has sealed barn doors and the bed floor remains the build substrate, factory drain holes and small corner gaps that can admit water under the subfloor should be sealed and leak-checked before finish-floor glue-down.
 - Acoustic behavior: no dedicated EPDM damping layer in active stack; expect more direct structure-borne vibration vs prior concept.
 - Serviceability: finish vinyl remains the only permanent bond layer, but one-piece Lonseal glued over three plywood slices will make subfloor removal materially harder. Treat glue-down as an explicit gate, not casual finish work.

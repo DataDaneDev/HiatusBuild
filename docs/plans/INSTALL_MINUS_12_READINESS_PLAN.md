@@ -40,6 +40,8 @@ Install appointment:
 - Bed rail caps still need to be removed and sealed under/around as appropriate.
 - Prior owner cut roughly `2 in x 3 in` square holes in the top of the bed rails for a previous camper install.
 - Those holes are now dust/water intrusion risks because the barn-door camper upgrade makes the rear enclosure much tighter.
+- User-confirmed May 3 premise: the Hiatus is effectively a sealed capper with sealed barn doors and no expected tailgate water ingress; water under the EPS/plywood subfloor is unacceptable because it can rot the floor.
+- Bed-floor drain holes, unused penetrations, and small corner gaps that can admit water into the subfloor cavity should be sealed and leak-checked before final flooring closeout.
 - Tailgate must remain removable for barn-door camper use; working plan is to keep it on for the drive to Bellingham, then remove at/near Hiatus if required.
 - Tonneau cover should stay on as long as practical for weather protection, then be removed if it interferes with the install.
 
@@ -73,8 +75,8 @@ May 6 is now a dedicated PTO travel/staging day, which removes the prior workday
 1. **Travel and logistics gate**: stage the truck near Bellingham by the evening of May 6; do not plan to drive from Park City the morning of the 9 AM install.
 2. **Shore AC-in / initial-charge path**: SKU-lock or order enough AC-in hardware to safely power the MultiPlus charger.
 3. **Electrical safety prep**: lay out the electrical closet, match fuses to devices, label circuits, and write the first-charge checklist before energizing anything.
-4. **Truck bed weather/dust prep**: inspect/seal bed rail caps and old `2 in x 3 in` holes without interfering with Hiatus install surfaces.
-5. **Flooring gate**: trim EPS and verify subfloor fit; do not glue Lonseal until all access/penetration/hardpoint questions are cleared or explicitly deferred.
+4. **Truck bed weather/dust prep**: inspect/seal bed rail caps, old `2 in x 3 in` rail holes, bed-floor drain holes, and corner gaps that could admit water under the subfloor.
+5. **Flooring gate**: trim EPS and verify subfloor fit; do not glue Lonseal until subfloor-cavity water paths are sealed/leak-checked and all access/penetration/hardpoint questions are cleared.
 6. **Install-day measurement kit**: have a phone/print checklist for dimensions, hardpoints, passthrough candidates, and module envelopes.
 
 ### Should complete before install
@@ -180,17 +182,23 @@ Gate E1 passes when:
    - aluminum/ABS/HDPE or similar non-absorbent patch/backer;
    - butyl tape, automotive seam sealer, MS polymer, or polyurethane sealant;
    - avoid expanding foam, brittle household caulk, or proud patches that can interfere with camper fit.
-5. Reinstall rail caps with targeted sealing/gasketing while preserving drainage paths.
-6. Trim EPS so no foam is proud, buckled, or in structural clamp stacks.
-7. Verify plywood panels sit flat and can still be removed intentionally.
-8. Dry-fit Lonseal and confirm adhesive/trowel/roller/workspace conditions.
-9. Glue Lonseal only after the glue-down gate passes.
+5. Reinstall rail caps with targeted sealing/gasketing while avoiding proud interference and hidden pockets that can hold water against metal.
+6. Seal bed-floor drain holes, unused bed-floor penetrations, and small corner gaps that could admit water under the subfloor:
+   - OEM-style rubber plugs where the hole geometry supports them;
+   - butyl-bedded aluminum/ABS/HDPE patches for larger/awkward openings;
+   - automotive seam sealer, MS polymer, or polyurethane sealant for seams and corners;
+   - avoid household silicone, expanding foam, brittle caulk, or proud patches that can interfere with camper/floor fit.
+7. Let sealants cure, then controlled-water-test/hose-test likely ingress paths and inspect the bed interior before reinstalling EPS/plywood.
+8. Trim EPS so no foam is proud, buckled, or in structural clamp stacks.
+9. Verify plywood panels sit flat and can still be removed intentionally.
+10. Dry-fit Lonseal and confirm adhesive/trowel/roller/workspace conditions.
+11. Glue Lonseal only after the glue-down gate passes.
 
 ### Lonseal glue-down gate
 
 Do not glue until all are true:
 
-- rail/hole sealing is complete or explicitly deferred;
+- rail, bed-floor drain-hole, unused penetration, and corner-gap sealing is complete and leak-checked;
 - EPS trim and subfloor seating are verified;
 - no floor-through penetrations, anchors, drains, heater routes, or hardpoints need to be added under the finish sheet;
 - top plywood face is clean, dry, untreated, and adhesive-compatible;

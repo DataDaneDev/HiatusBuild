@@ -86,8 +86,8 @@ related:
 - Keep AC-in and AC-out protection in separate enclosures. Do not let final AC receptacle-count churn block the AC-in charge path.
 - Before first charge, reconcile the MultiPlus LiFePO4 charge profile (`56.8V` planning basis vs `58.4V` battery/manual basis), set source current limits, and charge/test one `48V` battery at a time before paralleling.
 - Complete electrical closet Board A/B layout on the `1/2 in` plywood with real service access, bend radius, fuse-holder matching, and labels before wire cutting.
-- **Truck bed dust/weather closeout:** remove/inspect bed rail caps, confirm old `2 in x 3 in` rail holes are not needed by Hiatus, and seal them with low-profile serviceable patches/flexible sealant without trapping water.
-- **Flooring gate:** trim EPS and verify three-piece plywood fit/serviceability. Do not glue Lonseal until rail/hole sealing, hardpoint pockets, and floor penetration/routing questions are cleared or explicitly deferred.
+- **Truck bed dust/weather closeout:** remove/inspect bed rail caps, confirm old `2 in x 3 in` rail holes are not needed by Hiatus, and seal them with low-profile serviceable patches/flexible sealant without trapping water. Also seal and leak-check bed-floor drain holes, unused floor penetrations, and small corner gaps that could admit water under the subfloor.
+- **Flooring gate:** trim EPS and verify three-piece plywood fit/serviceability. Do not glue Lonseal until rail/bed-floor/corner sealing is complete and leak-checked, and hardpoint/floor penetration/routing questions are cleared.
 - Keep tailgate on for the Bellingham drive unless Hiatus says otherwise; confirm removal/storage plan before departure. Keep tonneau on as long as practical for weather protection.
 - Treat current furniture CAD as reference-only because the Iceco/water tank dry fit invalidated the fridge location. Re-CAD block envelopes first, likely with fridge/cooler in the front-left corner.
 - Order a low-regret starter extrusion/hardware package from stock lengths under `92 in`; defer drawer slides, final panels, and exact cut lengths until real shell/fridge/tank envelopes are measured.
