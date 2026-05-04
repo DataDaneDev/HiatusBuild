@@ -222,7 +222,7 @@ This keeps progress steady without waiting on missing materials.
 - AC-in-only shore charge path SKU lock is the priority; final AC outlet/branch count remains secondary.
 - Final closet envelope dimensions may shift after camper is physically in hand.
 - Bed rail cap sealing, old rail-hole closure, tailgate removal/storage, and tonneau/weather timing need Hiatus confirmation.
-- Fridge/water-tank dry fit invalidated current CAD location; front-left fridge/cooler envelope is now the working redesign candidate.
+- Fridge/water-tank dry fit invalidated current CAD location; rear-left fridge/cooler envelope is now the working redesign candidate per the current office-first interior layout baseline.
 - Faucet is missing as a discrete plumbing purchase; hot-water decision should not block cold-water sink/pump/tank progress.
 
 ---

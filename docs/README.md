@@ -42,6 +42,7 @@ Use this folder map when deciding where a document belongs.
 
 ## Implementation
 - [implementation](implementation/): build-ready reference docs that support the active baseline.
+- [INTERIOR_furniture_layout_and_galley](implementation/INTERIOR_furniture_layout_and_galley.md): draft office-first interior layout, power stair bench, soft storage bench, passenger-side galley/wet-spine, and generated concept diagrams.
 - [INTERIOR_driver_side_workstation](implementation/INTERIOR_driver_side_workstation.md): draft driver-side desk, stow-low monitor, Iceco/fridge tower, and storage mechanism design.
 - Rule: implementation docs may expand the core baseline, but they should not silently redefine it.
 

@@ -54,6 +54,7 @@ related:
 
 7. Cabinetry/module installation
 - Install bench/electrical cabinet, galley, tank mounts, and structural anchoring.
+- Use `docs/implementation/INTERIOR_furniture_layout_and_galley.md` as the current furniture/galley concept checkpoint; keep the generated diagrams conceptual until post-install measurements prove the envelopes.
 - Keep final wire and plumbing terminations deferred until modules are fixed in final position.
 - Output: all major modules mounted and restrained.
 
@@ -105,6 +106,7 @@ related:
 - Trim EPS so it sits even in the bed ribs; verify plywood sits flush and hardpoint pockets are non-compressible.
 - Dry-fit and then glue Lonseal only after the gate passes.
 - Tape/cardboard block envelopes for fridge, `36 gal` wheel-well tank, electrical cabinet, galley, and desk before ordering exact extrusion cuts.
+- Validate the office-first interior concept against real dimensions: top-left power stair battery bench, top-right soft storage/landing bench, driver-side workstation and rear-left Iceco utility block, passenger-side galley/wet-spine, rear shower/fill/vent hatch, and center-aisle/cabover-step movement.
 
 ## Deferred / purchase-later rows (keep out of current critical path unless triggered)
 - Optional 12V expansion path: row `118`.
@@ -134,3 +136,4 @@ related:
 - Update `docs/core/TRACKING.md` with sequence-related open risks after first dry-fit rehearsal.
 - If date windows change, update this file and `docs/core/PROJECT.md` together so milestone language stays aligned.
 - Keep `docs/implementation/FLOORING_subfloor_build_process.md` and `bom/bom_estimated_items.csv` in sync when flooring purchases or stack-up assumptions change.
+- Keep `docs/implementation/INTERIOR_furniture_layout_and_galley.md`, `docs/implementation/INTERIOR_driver_side_workstation.md`, and `docs/core/SYSTEMS.md` synchronized when the shell measurements change furniture, plumbing, or roof-safe monitor assumptions.

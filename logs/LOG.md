@@ -30,6 +30,15 @@ Single running log for build progress and test evidence.
 - Issues: final monitor mechanism, desk dimensions, Iceco slide need, latch hardware, and roof-safe line remain measurement-gated after camper install.
 - Next actions: perform roof-down sweep map, Iceco lid/vent/cord envelope, seated work mockup, then bench-test the selected monitor mechanism before exact extrusion cuts.
 
+- Added the office-first interior furniture and galley concept baseline.
+- Added `docs/implementation/INTERIOR_furniture_layout_and_galley.md` as the draft owner for the top-left power stair battery bench, top-right soft storage/cabover landing bench, driver-side desk/rear-left Iceco utility block, passenger-side galley wet spine over the `36 gal` tank, rear service hatch, cold-first plumbing, and future hot-water readiness.
+- Added generated concept diagrams under `media/diagrams/interior-furniture-2026-05-04/` and linked the preferred diagrams from the implementation docs.
+- Updated `docs/core/PROJECT.md`, `docs/core/SYSTEMS.md`, `docs/core/TRACKING.md`, `docs/plans/PROJECT_build_order_of_operations.md`, `docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md`, `docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md`, and `docs/README.md` so the furniture/galley concept is discoverable without treating generated art or stale fridge CAD as fabrication geometry.
+- Measurements/data: no new physical camper measurements; preserved planning references that `36 gal` water is about `300 lb` before tank/brackets/plumbing and should be treated as `320+ lb` installed when full.
+- Tests run: generated diagram review, documentation cross-link review, and git diff review; no physical roof-cycle, tank dry-fit, plumbing pressure test, or seated workday mockup performed yet.
+- Issues: generated diagrams are concept aids only; galley/fill/vent/drain routing, hot-water choice, fridge envelope, monitor kinematics, and roof-safe line remain measurement-gated.
+- Next actions: measure the installed camper, dry-fit the tank/fridge/electrical/desk blocks, validate the wet-spine service cassette, then lock only the extrusion and slide lengths proven by the mockup.
+
 ## 2026-05-01
 - Owner correction: this is the Washington trip, not a washing trip. Bed will be emptied before departure; existing removable flooring will be removed before departure and does not need to be brought along.
 - Tailgate removal is optional for access/drying, with wiring/camera protection if removed.

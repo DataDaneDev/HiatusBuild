@@ -340,7 +340,7 @@ related:
 - ID: D-035
 - Date: 2026-04-27
 - Decision: Treat current furniture CAD as reference-only and order only low-regret stock extrusion/hardware until fridge/tank envelopes are revalidated.
-- Context: Iceco/water tank dry fit showed the cooler/fridge does not open in the planned location and likely moves to the front-left corner.
+- Context: Iceco/water tank dry fit showed the cooler/fridge does not open in the planned location; later D-040 sets the working baseline as rear-left / bottom-left.
 - Options considered: order exact cut lengths from stale CAD, wait on all extrusion, or buy stock-length starter extrusion and connector hardware.
 - Decision drivers: avoid waiting later while limiting waste from a known CAD mismatch.
 - Result: superseded by D-038 for tank restraint: do not treat a `15-series`-biased starter order as acceptable solely for the water tank; final drawer slides, panels, skins, and exact cut lists remain deferred.
@@ -381,6 +381,15 @@ related:
 - Decision drivers: avoid half-finished adhesive/flooring work, reduce travel weight/risk, preserve access for post-install ordinary inspection, and avoid exact cabinetry/extrusion decisions before real camper measurements.
 - Result: keep batteries/electrical parts home, let sealing cure, travel empty-bed, capture measurements/photos at Hiatus, then resume EPS/plywood/Lonseal, extrusion, and electrical bench work after return.
 - Follow-up: log post-install inspection observations and measured camper dimensions before final floor glue-down or exact extrusion orders.
+
+- ID: D-040
+- Date: 2026-05-04
+- Decision: Use the office-first hybrid interior layout as the draft furniture baseline.
+- Context: The top-left electrical closet and `3x 48V` batteries spill into the center, the top-right fridge location failed fit, the driver side must support full-time monitor-based work, and the passenger side must absorb the `36 gal` wheel-well tank plus galley plumbing in a compact space.
+- Options considered: keep a simple truck-camper layout, prioritize a rear utility threshold, or adopt a van-style high-density interior adapted to truck-camper roof/weight/service constraints.
+- Decision drivers: full-time work ergonomics, low/forward heavy-mass placement, center-aisle movement, cabover step function, roof-down clearance, and plumbing/electrical serviceability.
+- Result: draft baseline is top-left power stair battery bench, top-right soft-storage/cabover-landing bench, driver-side desk with stow-low monitor and rear-left Iceco utility block, passenger-side galley wet spine over the `36 gal` tank, rear shower/fill/vent service hatch, cold-water-first plumbing, and capped future hot-water stubs. Owner doc: `docs/implementation/INTERIOR_furniture_layout_and_galley.md` with generated concept diagrams under `media/diagrams/interior-furniture-2026-05-04/`.
+- Follow-up: validate with real installed-shell measurements, roof-down sweep map, tank/fridge dry fit, wet-spine service mockup, seated workday test, and load sequencing before exact extrusion cuts or permanent penetrations.
 
 ## Risk register
 - ID: R-001
@@ -536,6 +545,15 @@ related:
 - Owner: Sunny
 - Status: Open
 
+- ID: R-018
+- Risk: Passenger-side galley plumbing can become unserviceable or freeze-prone if the `36 gal` tank fittings, pump, accumulator, manifold, graywater cassette, fill/vent lines, low-point drains, or future hot-water stubs are buried behind fixed cabinetry.
+- Impact (1-5): 4
+- Likelihood (1-5): 3
+- Mitigation: Build around a removable/swing-out wet-spine service cassette, visible tank shutoff, flex shock/load loops, strainer access, pressure gauge, winterization pickup, blowout Schrader, low-point drains, leak tray/sensor, quick-disconnect unions, and rear/aisle service access before final skins.
+- Trigger: Building passenger-side galley cabinetry, tank restraint, pump board, graywater cassette, or rear shower/fill/vent hatch.
+- Owner: Sunny
+- Status: Open
+
 ## Open questions
 - Confirm Tuesday/Wednesday Washington travel/staging details, route/weather, and arrival buffer before the May 7 `9:00 AM` install.
 - Confirm with Hiatus whether tailgate can be removed onsite and where it will be stored/transported afterward.
@@ -543,7 +561,7 @@ related:
 - Verify the re-bonded bed rail caps and prior-owner rail-hole areas do not interfere with the Hiatus attachment/seal interface.
 - Reconcile MultiPlus charge profile value before first charge (`56.8V` planning basis vs `58.4V` battery/manual basis).
 - Confirm one-battery-at-a-time first-charge procedure and acceptable voltage/SOC matching threshold before paralleling.
-- Measure Iceco lid-open/vent/power-cord envelope and validate front-left fridge/cooler location.
+- Measure Iceco lid-open/vent/power-cord envelope and validate rear-left fridge/cooler location.
 - Measure the driver-side desk/monitor roof-down sweep envelope, choose the primary monitor mechanism (`rising VESA spine` vs under-desk flip-up vs quick-release sleeve), and validate that the stowed face-down cradle supports bezel/back-shell/VESA structure rather than loading the LCD panel.
 - Lock workstation travel restraints: monitor mast/carriage latch, monitor arm hard stop, fridge slide secondary latch/strap, desk leaf latch, storage-door latch standard, and cable-chain/service-loop path below the roof-safe line.
 - Confirm actual seated work envelope: chair/stool height, desk height/depth, monitor viewing distance, knee clearance, footrest need, and reachable AC/DC/USB-C station locations.
@@ -603,5 +621,7 @@ related:
 - `docs/legacy/PROJECT_workbook_hiatus_consult.md`
 - `docs/legacy/SYSTEMS_workbook_build_notes_obsolete.md`
 - `docs/implementation/INTERIOR_driver_side_workstation.md`
+- `docs/implementation/INTERIOR_furniture_layout_and_galley.md`
+- `media/diagrams/interior-furniture-2026-05-04/`
 - `docs/implementation/ELECTRICAL_overview_diagram.md`
 - `docs/implementation/ELECTRICAL_fuse_schedule.md`

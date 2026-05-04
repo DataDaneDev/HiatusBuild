@@ -24,13 +24,22 @@ Status: **draft implementation baseline**. Do not convert this into exact extrus
 Related docs:
 - `docs/core/SYSTEMS.md`
 - `docs/core/TRACKING.md`
+- `docs/implementation/INTERIOR_furniture_layout_and_galley.md`
 - `docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md`
+
+Generated concept diagram:
+
+- ![Driver workstation monitor mechanism](../../media/diagrams/interior-furniture-2026-05-04/02-driver-workstation-monitor-mechanism.png)
+
+Diagram caveat: this image is a mechanism concept, not a fabrication drawing. The monitor stow/deploy geometry, roof-safe line, Iceco slide, cable chain, and latch positions must be validated with the real installed shell.
 
 ---
 
 ## 1) Design thesis
 
 Use the driver wall as a **service spine**, not as a deep drawer wall.
+
+Overall interior layout owner: [INTERIOR_furniture_layout_and_galley](INTERIOR_furniture_layout_and_galley.md). This workstation doc owns the driver-side mechanism details inside that office-first layout.
 
 Recommended primary architecture:
 

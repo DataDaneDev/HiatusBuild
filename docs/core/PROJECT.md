@@ -87,6 +87,7 @@ related:
 - **Flooring gate:** trim EPS and verify three-piece plywood fit/serviceability after the trip. Do not glue Lonseal until rail/bed-floor/corner sealing is cured and inspected, post-install floor penetrations are ruled out, and the roller/rolling method is confirmed. The exact trowel is now purchased.
 - **Install-day data capture:** photograph attachment points, bed rail/cap interface, barn-door seals, clearances, hardpoints, passthrough candidates, and all dimensions before leaving Hiatus.
 - **Extrusion/furniture:** watch design videos and collect ideas during/after the trip, but do not place exact-cut aluminum extrusion orders until real camper/fridge/tank/electrical block envelopes are measured. Targeted stock/hardware orders are acceptable after the post-install measurement pass.
+- **Interior layout baseline:** use [INTERIOR_furniture_layout_and_galley](../implementation/INTERIOR_furniture_layout_and_galley.md) as the draft owner for the office-first hybrid interior: top-left power stair battery bench, top-right soft storage/cabover landing, driver-side desk + rear-left Iceco utility block, and passenger-side galley/wet-spine over the `36 gal` tank. Generated concept diagrams live in `media/diagrams/interior-furniture-2026-05-04/` and are concept aids, not cut drawings.
 - **Electrical:** shore-power / initial-charge remains the post-trip priority before any alternator work. Build the AC-in-only MultiPlus charge path first: `shore source -> cord/adapter -> TT-30 inlet -> hardwired EMS -> AC-in breaker/disconnect -> MultiPlus AC-in`. Order/SKU-lock BOM rows `107`, `108`, `123`, `13`, `109`, `14`, and `114` plus glands/grommets/labels/ferrules.
 - Keep AC-in and AC-out protection in separate enclosures. Do not let final AC receptacle-count churn block the AC-in charge path.
 - Before first charge, reconcile the MultiPlus LiFePO4 charge profile (`56.8V` planning basis vs `58.4V` battery/manual basis), set source current limits, and charge/test one `48V` battery at a time before paralleling.
@@ -107,6 +108,7 @@ Purpose: turn the installed camper shell into measured block envelopes before bu
    - Glue Lonseal only after the gate passes.
 4. **Block envelopes before extrusion**
    - Tape/cardboard the fridge, purchased `36 gal` wheel-well tank, electrical cabinet, galley, and desk zones.
+   - Use the interior furniture/galley concept doc as the layout checkpoint, then verify against real roof-down sweep, cabover step path, fridge lid/vent/cord envelope, tank fitting orientation, and wet-spine service access.
    - Decide which modules truly need `15-series`, which can use `10-series`, and which should mount with simpler brackets/plywood.
 5. **Electrical bench path**
    - Layout Board A/B with real service access and cable corridors.
