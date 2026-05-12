@@ -21,6 +21,14 @@ Single running log for build progress and test evidence.
 - Issues:
 - Next actions:
 
+## 2026-05-11
+- Owner update: general interior layout is physically blocked in. Gravity fill passthrough, `36 gal` wheel-well water tank, cooler/fridge, likely butcher-block desk, pump/accumulator, PEX routing, `3x 48V` batteries, `1x 12V` battery, diesel heater, and diesel tank all appear to fit the expected zones.
+- Owner update: subfloor is done; sheet vinyl/Lonseal will remain unglued for now to avoid damage and preserve rough-in/floor-access flexibility.
+- Planning impact: broad `15-series` extrusion is further downscoped because the water tank bolts/restraints should use the truck-bed/camper structure directly if dry-fit validates the load path. Default extrusion posture is now `10-series`/light rail/plywood/direct mount unless a measured heavy/dynamic module proves `15-series` is needed.
+- Electrical status: components are laid out on plywood but not connected, drilled, or energized. Next electrical action is labeled mechanical layout/backer-board templating, not final wiring.
+- Diesel status: larger diesel tank is a want, not a blocker; carry-extra-fuel remains acceptable until the final tank/service envelope is validated.
+- Next actions: finish electrical backer-board template pass, validate `10-series` prototype/module needs from taped block envelopes, keep vinyl glue-down gated, and bench-build/pressure-test wet-spine plumbing as a removable service cassette before final cabinetry.
+
 ## 2026-05-04
 - Designed the driver/left-side workstation mechanism package for full-time work use while preserving pop-down roof clearance.
 - Added `docs/implementation/INTERIOR_driver_side_workstation.md` as the draft implementation owner for the service-spine desk, stow-low/rising VESA monitor mechanism, Iceco/fridge tower storage, toe-kick false bottom, shallow cubbies, travel locks, cable drag-chain/service loops, heat/noise/venting, and acceptance tests.

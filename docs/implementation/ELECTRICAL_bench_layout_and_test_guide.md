@@ -39,6 +39,15 @@ Related docs:
 
 ## 2) Recommended sequence (ground build -> test fit -> hard mount)
 
+Current owner status (`2026-05-11`): major electrical components are physically laid out on plywood but not connected, drilled, or energized. The next step is mechanical layout discipline, not live wiring.
+
+Immediate priority:
+1. Photograph the current floor layout and label each major component/fuse path.
+2. Make 1:1 paper or cardboard templates with terminal sides, cable bend-radius keep-outs, fuse-service access, and wrench access marked.
+3. Build/brace the two-plane plywood mockup and move templates onto it.
+4. Only after the template layout passes access checks, pilot-drill a small subset of non-energized components.
+5. Do not crimp final high-current cables or parallel/energize the `3x 48V` bank until the staged test ladder below is ready.
+
 ### Phase L1: Build the two backer boards on the ground
 1. Rip the `1/2"` sheet into Board A + Board B to your target envelope.
 2. Mark orientation on both boards: `TOP`, `BOTTOM`, `FRONT`, `REAR`, `BED WALL`, `BULKHEAD`.

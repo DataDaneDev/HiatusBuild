@@ -101,11 +101,13 @@ related:
 - Freeze service map from real shell dimensions before penetrations, final cable cuts, Lonseal glue-down, or permanent module skins.
 - Place top-off orders based on real measurements and update logs/tracking.
 
-5. After Utah return (build restart)
-- Visually inspect sealed bed paths after cure and normal travel/shakedown; look for lifted tape, cracked beads, dust trails, or dampness.
-- Trim EPS so it sits even in the bed ribs; verify plywood sits flush and hardpoint pockets are non-compressible.
-- Dry-fit and then glue Lonseal only after the gate passes.
-- Tape/cardboard block envelopes for fridge, `36 gal` wheel-well tank, electrical cabinet, galley, and desk before ordering exact extrusion cuts.
+5. After Utah return (build restart; updated `2026-05-11`)
+- Owner status: the subfloor is now complete; sheet vinyl/Lonseal remains intentionally unglued to avoid damage and preserve access while rough-in decisions are still open.
+- Visually inspect sealed bed paths after cure and normal travel/shakedown; look for lifted tape, cracked beads, dust trails, or dampness before any flooring closeout.
+- Hold glue-down until the floor/rough-in gate passes: no pending floor penetrations, hardpoint pockets verified, EPS/subfloor sitting flush, and adhesive/roller method confirmed.
+- Tape/cardboard block envelopes for fridge, `36 gal` wheel-well tank, electrical cabinet, galley, desk, and diesel-heater/fuel-tank service envelope before ordering exact extrusion cuts.
+- Treat broad `15-series` as downscoped. Default to `10-series`, plywood, light rail, or direct mounting unless a measured heavy/dynamic module proves it needs `15-series` stiffness.
+- Next practical workstream: convert the electrical pile-on-plywood into labeled two-plane backer-board mockups and paper component templates before drilling, crimping, or energizing anything.
 - Validate the office-first interior concept against real dimensions: top-left power stair battery bench, top-right soft storage/landing bench, driver-side workstation and rear-left Iceco utility block, passenger-side galley/wet-spine, rear shower/fill/vent hatch, and center-aisle/cabover-step movement.
 
 ## Deferred / purchase-later rows (keep out of current critical path unless triggered)

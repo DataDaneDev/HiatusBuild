@@ -450,8 +450,8 @@ Travel-retention standards:
 
 Recommended material logic:
 
-- **15-series T-slot:** only for heavy/dynamic modules: electrical cabinet frame, fridge slide/base if needed, monitor mast/spine, maybe desk frame.
-- **10-series / light rail / L-track / strut:** accessory rails, panels, baskets, hooks, removable dividers, and soft-storage retention.
+- **10-series / light rail / L-track / strut:** default for interior module framing, accessory rails, panels, baskets, hooks, removable dividers, wet-spine retainers, and soft-storage retention when the load is not clearly structural/dynamic.
+- **15-series T-slot:** no longer a broad starter-stock default after the `36 gal` wheel-well tank downscope. Use only for measured heavy/dynamic modules that prove they need the stiffness: possibly the electrical cabinet frame, fridge slide/base, monitor mast/spine, or desk frame.
 - **Plywood:** main carcasses, L-shaped electrical backer, lids, service panels.
 - **Phenolic/Richlite/laminated birch:** desk and galley top candidates if budget/weight tolerates it.
 - **HDPE/ABS/aluminum panels:** wet-service access panels, shower hatch backing, removable scuff/kick plates.
@@ -531,14 +531,14 @@ Buy/commit later, after mockup:
 Reasonable low-regret prep:
 
 - Cardboard/foam mockup materials.
-- A small assortment of T-slot/rail connector samples.
+- A small assortment of `10-series` T-slot/rail connector samples plus a few representative `15-series` samples for stiffness comparison only.
 - Latches/draw-latch samples.
 - Anti-rattle tape samples.
 - Cable-chain sample sized to monitor/fridge wiring.
 - Service-panel fastener samples.
 - Soft cube/bin samples for the top-right bench.
 
-Do not buy broad `15-series` because “camper furniture needs extrusion.” Buy it only where a measured module actually needs that stiffness.
+Do not buy broad `15-series` because “camper furniture needs extrusion.” Buy it only where a measured module actually needs that stiffness. Exact-cut `10-series` should also wait until the taped/cardboard envelope proves the module; stock-length/sacrificial prototype pieces are lower risk than final cut lists.
 
 ---
 
