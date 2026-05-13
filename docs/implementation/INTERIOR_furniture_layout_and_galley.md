@@ -329,6 +329,17 @@ Mount the service-intensive plumbing on one removable or swing-out board/tray:
 
 Service rule: one hatch or one lift-out bin should expose the whole pump/strainer/accumulator/manifold cluster. If you need to remove drawers, unload pantry, or pull the tank to change a pump strainer, the furniture is wrong.
 
+### Gravity-fill vent hose sizing
+
+Owner measurement on `2026-05-12`: the gravity-fill vent nipple measures about `10 mm` OD on the main land and about `11 mm` OD at the largest barb/ridge. Correct vent hose sizing is therefore based on hose **ID**, not hose OD:
+
+- Preferred spec: `10 mm ID` food-grade/potable flexible tube.
+- Common inch fallback: `3/8 in ID` food-grade/potable tube (`9.5 mm` ID), warmed if needed for installation over the `11 mm` barb.
+- Do **not** use the previously ordered `1/2 in ID x 5/8 in OD` tube for this nipple; `1/2 in ID` is about `12.7 mm` and is oversized for an `11 mm` barb.
+- If an inch-size hose must slide on without heat/stretch, `7/16 in ID` (`11.1 mm`) is the next size up, but treat it as a looser fit and use a proper clamp plus leak/vent-flow check.
+
+Use a stainless clamp, avoid kinking the vent line, and re-check after the first fill/drive cycle.
+
 ### Tank-specific notes
 
 Water mass planning values:

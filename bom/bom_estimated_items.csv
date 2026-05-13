@@ -75,7 +75,7 @@
 "75","Appliances","Water Inlet Hose","23","user_filled","Camco EvoFlex2 25-ft","3/31/2026","planned"
 "76","Appliances","Water Filter (hose)","21","user_filled","Camco TastePure","3/31/2026","planned"
 "77","Appliances","Water Filter (cabinet)","","blank","","3/31/2026","planned"
-"78","Appliances","Water Inlet","29","user_filled","All Metal RV City Water Inlet with Check Valve","3/31/2026","planned"
+"78","Appliances","Water Inlet","29","user_filled","All Metal RV City Water Inlet with Check Valve. Gravity-fill vent nipple measured 2026-05-12: 10 mm OD main land, 11 mm OD largest barb/ridge. Vent tube correction: use 10 mm ID food-grade/potable tube, or common 3/8 in ID fallback warmed for install; do not use previously ordered 1/2 in ID x 5/8 in OD tube. If using 7/16 in ID, clamp and leak/vent-flow check because it is looser.","3/31/2026","planned"
 "79","Appliances","Starlink","349","user_filled","Standard","3/27/2026","planned"
 "80","Plumbing Misc","Tee","","blank","PEX, sink to water heater","4/4/2026","planned"
 "81","Plumbing Misc","Ball Valve","","blank","Sink to water heater","4/4/2026","planned"

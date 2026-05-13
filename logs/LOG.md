@@ -21,6 +21,12 @@ Single running log for build progress and test evidence.
 - Issues:
 - Next actions:
 
+## 2026-05-12
+- Owner measurement correction: the water inlet gravity-fill vent nipple measures about `10 mm` OD on the main land and about `11 mm` OD at the largest barb/ridge.
+- Planning/procurement impact: the previously ordered `1/2 in ID x 5/8 in OD` food-grade tube is oversized for this nipple. Correct replacement target is `10 mm ID` food-grade/potable tube, with `3/8 in ID` as the common inch fallback and `7/16 in ID` only as a looser clamp-required fallback.
+- Docs updated: `docs/implementation/INTERIOR_furniture_layout_and_galley.md`, `docs/core/SYSTEMS.md`, `docs/core/TRACKING.md`, and `bom/bom_estimated_items.csv`.
+- Next action: dry-fit replacement vent hose with clamp, check for kinks/vent restriction, then re-check after first fill/drive cycle.
+
 ## 2026-05-11
 - Owner update: general interior layout is physically blocked in. Gravity fill passthrough, `36 gal` wheel-well water tank, cooler/fridge, likely butcher-block desk, pump/accumulator, PEX routing, `3x 48V` batteries, `1x 12V` battery, diesel heater, and diesel tank all appear to fit the expected zones.
 - Owner update: subfloor is done; sheet vinyl/Lonseal will remain unglued for now to avoid damage and preserve rough-in/floor-access flexibility.

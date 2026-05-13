@@ -251,6 +251,7 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 - Faucet is now an explicit missing purchase class and should be tracked separately from generic cabinetry.
 - Hot-water decision posture: electric tankless is out of scale for the current `48/3000` inverter; small tanked electric is plausible later but adds AC load-management complexity; portable propane tankless remains provisional outdoor-use only; listed indoor/RV propane is deferred until venting/combustion-air/clearance package is locked.
 - Freeze and winterization strategy: draft around visible service controls, low-point drains, blowout port, winterization pickup, capped future heater bypass/stubs, no hidden low loops, and rear/aisle service access; final details remain measurement-gated.
+- Gravity-fill vent hose correction: owner-measured vent nipple is about `10 mm` OD on the main land and `11 mm` OD at the largest barb/ridge. Specify `10 mm ID` food-grade/potable tube, or `3/8 in ID` as the common inch fallback; the previously ordered `1/2 in ID x 5/8 in OD` tube is oversized.
 
 ## Cabinetry and structure
 - Interior furniture/layout draft owner: [INTERIOR_furniture_layout_and_galley](../implementation/INTERIOR_furniture_layout_and_galley.md). Recommended planning direction is the office-first hybrid: top-left power stair bench over `3x 48V` batteries, top-right soft storage/cabover landing bench, driver-side desk + rear-left Iceco utility block, and passenger-side galley wet spine over the `36 gal` wheel-well tank.

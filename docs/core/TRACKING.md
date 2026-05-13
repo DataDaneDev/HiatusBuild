@@ -391,6 +391,15 @@ related:
 - Result: draft baseline is top-left power stair battery bench, top-right soft-storage/cabover-landing bench, driver-side desk with stow-low monitor and rear-left Iceco utility block, passenger-side galley wet spine over the `36 gal` tank, rear shower/fill/vent service hatch, cold-water-first plumbing, and capped future hot-water stubs. Owner doc: `docs/implementation/INTERIOR_furniture_layout_and_galley.md` with generated concept diagrams under `media/diagrams/interior-furniture-2026-05-04/`.
 - Follow-up: validate with real installed-shell measurements, roof-down sweep map, tank/fridge dry fit, wet-spine service mockup, seated workday test, and load sequencing before exact extrusion cuts or permanent penetrations.
 
+- ID: D-041
+- Date: 2026-05-12
+- Decision: Correct gravity-fill vent tube sizing to `10 mm ID` / common `3/8 in ID` food-grade tube, not `1/2 in ID x 5/8 in OD` tube.
+- Context: Owner dry-fit showed the ordered `1/2 in ID x 5/8 in OD` food-grade tube is too large for the water inlet gravity-feed vent nipple.
+- Options considered: keep `1/2 in ID`, use `7/16 in ID`, or size the hose to the measured nipple land/barb.
+- Decision drivers: measured nipple dimensions (`10 mm` OD main land, `11 mm` OD largest barb/ridge), clamp reliability, and avoiding a loose vent-line seal.
+- Result: documentation now specifies `10 mm ID` preferred, `3/8 in ID` common inch fallback, and `7/16 in ID` only as a looser clamp-required fallback.
+- Follow-up: dry-fit the replacement hose, clamp it, verify no kink/flow restriction, and re-check after the first fill/drive cycle.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -565,7 +574,7 @@ related:
 - Measure the driver-side desk/monitor roof-down sweep envelope, choose the primary monitor mechanism (`rising VESA spine` vs under-desk flip-up vs quick-release sleeve), and validate that the stowed face-down cradle supports bezel/back-shell/VESA structure rather than loading the LCD panel.
 - Lock workstation travel restraints: monitor mast/carriage latch, monitor arm hard stop, fridge slide secondary latch/strap, desk leaf latch, storage-door latch standard, and cable-chain/service-loop path below the roof-safe line.
 - Confirm actual seated work envelope: chair/stool height, desk height/depth, monitor viewing distance, knee clearance, footrest need, and reachable AC/DC/USB-C station locations.
-- Dry-fit purchased `36 gal` wheel-well tank; verify body/fitting envelope, bracket orientation, plusnut locations, and whether a secondary floor/tie-down restraint path is needed.
+- Dry-fit purchased `36 gal` wheel-well tank; verify body/fitting envelope, bracket orientation, plusnut locations, and whether a secondary floor/tie-down restraint path is needed. Gravity-fill vent nipple measurement is captured (`10 mm` OD main land, `11 mm` OD largest barb); replacement vent tube dry-fit remains open.
 - Lock faucet, sink, drain/graywater, pump service-valve, and winterization details as discrete procurement rows.
 - Lock whether hot water is outdoor shower-only provisional or must feed the sink; defer indoor/RV propane or electric tanked path until service-map freeze.
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)
