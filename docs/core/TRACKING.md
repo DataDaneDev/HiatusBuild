@@ -400,6 +400,15 @@ related:
 - Result: documentation now specifies `10 mm ID` preferred, `3/8 in ID` common inch fallback, and `7/16 in ID` only as a looser clamp-required fallback.
 - Follow-up: dry-fit the replacement hose, clamp it, verify no kink/flow restriction, and re-check after the first fill/drive cycle.
 
+- ID: D-042
+- Date: 2026-05-14
+- Decision: Use overlay/removable panels over `10-series` 80/20 for finished living-facing furniture surfaces, while keeping service zones exposed or quick-removable.
+- Context: Owner prefers clean/homey finished surfaces and noted overlay panels are likely easier than inset panels because the 80/20 exoskeleton can be built first, then panels can be added without disassembling the frame or forcing thin `1/4 in` slot-fit panels.
+- Options considered: exposed industrial 80/20, inset panels captured in extrusion slots, or overlay panels mechanically fastened to the frame.
+- Decision drivers: finished appearance, easier iterative prototyping, better panel thickness flexibility, better shear-skin potential, and serviceability if access panels remain removable.
+- Result: baseline is mechanically fastened overlay panels on visible cabin faces; exposed 80/20 or quick-removable covers in electrical, plumbing, rear utility, and wet-spine areas. Magnetic service panels are a promising non-structural cover pattern when backed by steel brackets/plates, anti-rattle tape, and secondary/captive retention where panel loss matters.
+- Follow-up: test magnet size/spacing, steel landing plates, routed magnet pockets, anti-rattle tape, and secondary latch/tether options on a sample service panel before using magnets for real travel panels.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.

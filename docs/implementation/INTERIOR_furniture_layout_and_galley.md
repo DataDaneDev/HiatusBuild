@@ -20,11 +20,11 @@ related:
 
 # Interior Furniture Layout and Galley Design Concepts
 
-As-of date: `2026-05-04`
+As-of date: `2026-05-14`
 
-Purpose: capture a serious furniture/layout direction for the Hiatus/F-350 camper before anything is built. This document owns the interior **layout concept**, bench/storage strategy, galley/wet-spine direction, and high-density furniture ideas. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`.
+Purpose: capture a serious furniture/layout direction for the Hiatus/F-350 camper before anything is built. This document owns the interior **layout concept**, bench/storage strategy, galley/wet-spine direction, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`.
 
-Status: **draft implementation baseline for mockup and design development**. This is not a final cut list. Do not convert these concepts into exact extrusion cuts, drawer-slide lengths, panels, penetrations, or water/propane routing until the installed shell, roof sweep, tank, fridge, and electrical envelopes are physically measured.
+Status: **draft implementation baseline for mockup and design development**. This is not a final cut list. Do not convert these concepts into exact extrusion cuts, drawer-slide lengths, panels, penetrations, or water/propane routing until the installed shell, roof sweep, tank, fridge, and electrical envelopes are physically measured. Current construction direction: prototype the `10-series` exoskeleton first, then add mechanically removable overlay panels over living-facing surfaces after the frame geometry is proven.
 
 Orientation convention throughout:
 
@@ -469,6 +469,17 @@ Recommended material logic:
 - **Frosted acrylic/smoke-grey covers:** shallow cubby covers where visibility + retention matters.
 - **Anti-rattle tape/felt/neoprene:** panel interfaces, drawers, lid perimeters.
 - **Cable drag chain:** monitor mast, slide-out powered surfaces, fridge slide power if required.
+
+Panel mounting direction:
+
+- **Baseline finished look:** use overlay panels on living-facing/front/aisle surfaces so the finished camper reads as clean cabinetry rather than an exposed industrial frame.
+- **Prototype logic:** overlay panels can be easier than inset panels because the `10-series` frame can be built and adjusted first; panels can then be scribed, trimmed, and bolted on without disassembling the extrusion to slide them into slots.
+- **Strength logic:** mechanically fastened overlay panels can act as shear skins and reduce racking better than thin inset panels. Use bolts into T-nuts, threaded inserts, or accessible panel fasteners as the primary retention.
+- **Panel thickness:** do not force `1/4 in` inset skins just because the extrusion slot invites it. Use thickness by function: thin for cosmetic/low-load covers, thicker plywood/composite where the panel is part of stiffness, service protection, or a step/load surface.
+- **Service zones:** keep 80/20 visible or use quick-removable panels in electrical, plumbing, rear utility, and wet-spine areas. Do not hide fuses, disconnects, pump/strainer, valves, winterization points, or frequent fasteners behind permanent skins.
+- **Magnetic panels:** acceptable as a promising option for light, non-structural service covers. Preferred pattern is routed/counterbored magnets in the back of the panel landing on steel brackets/plates attached to the 80/20, with felt/neoprene tape for anti-rattle.
+- **Magnet limits:** magnets are not the primary retention for heavy panels, step faces, drawer/counter structure, or anything that could become cargo on rough roads. Use a captive tether, hidden screw, quarter-turn, latch, or positive stop where panel loss would matter.
+- **Adhesive/tape:** use foam tape/VHB/felt mainly for anti-rattle, bedding, or light bonding after surface prep. Do not rely on adhesive alone for structural or service-critical panels.
 
 Mechanism rules:
 
