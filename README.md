@@ -15,7 +15,7 @@ This is the single workspace map and update guide for the Hiatus/F-350 camper bu
 
 ## Current project posture — 2026-05-14
 - Current focus: turn the real camper shell into measured block envelopes before final extrusion cuts, permanent skins, final wiring, or finish-floor glue-down.
-- Interior baseline: office-first hybrid layout with driver-side electrical/power-stair bench, driver workstation/fridge utility block, passenger-side cold-first wet-spine/galley, and clear center aisle.
+- Interior baseline: office-first hybrid layout with a passenger-side lofted Iceco/fridge + wet-spine exoskeleton over/near the `36 gal` wheel-well tank, pump/accumulator below the fridge, adjacent separated battery bench, driver-side electrical closet/workstation/DC shelf, and clear center aisle.
 - Furniture construction direction: prototype with `10-series` 80/20 where practical; use overlay/removable panels on living-facing surfaces; keep service zones exposed or quick-removable.
 - Electrical posture: dead mechanical layout first. Do not final-crimp, parallel, or energize the `3x 48V` battery bank until access, cable routing, fusing, and staged first-charge checks pass.
 - Flooring posture: keep Lonseal/final closure gated until EPS/subfloor fit, hardpoints, penetrations, moisture paths, and service access are verified in the installed camper.

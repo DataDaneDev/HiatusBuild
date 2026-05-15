@@ -104,11 +104,11 @@ related:
 - Owner status: the subfloor is now complete; sheet vinyl/Lonseal remains intentionally unglued to avoid damage and preserve access while rough-in decisions are still open.
 - Visually inspect sealed bed paths after cure and normal travel/shakedown; look for lifted tape, cracked beads, dust trails, or dampness before any flooring closeout.
 - Hold glue-down until the floor/rough-in gate passes: no pending floor penetrations, hardpoint pockets verified, EPS/subfloor sitting flush, and adhesive/roller method confirmed.
-- Tape/cardboard block envelopes for fridge, `36 gal` wheel-well tank, electrical cabinet, galley, desk, and diesel-heater/fuel-tank service envelope before ordering exact extrusion cuts.
-- Treat broad `15-series` as downscoped. Default to `10-series`, plywood, light rail, or direct mounting unless a measured heavy/dynamic module proves it needs larger extrusion stiffness.
-- Next practical workstream: convert the electrical pile-on-plywood into labeled two-plane backer-board mockups and paper component templates before drilling, crimping, or energizing anything.
-- Validate the office-first interior concept against real dimensions: top-left power stair battery bench, top-right soft storage/landing bench, driver-side workstation and rear-left Iceco utility block, passenger-side galley/wet-spine, rear shower/fill/vent hatch, and center-aisle/cabover-step movement.
-- Build the 80/20/furniture list from physical module envelopes first: classify each member as structural, panel support, or locator/anti-rattle, then buy prototype stock/hardware before final vendor-cut lengths.
+- Tape/cardboard block envelopes for the passenger-side lofted fridge/wet-spine skeleton, `36 gal` wheel-well tank overlap, pump/accumulator board, separated battery bench, driver-side electrical closet/DC shelf, desk, diesel heater, and external diesel-tank/fuel-line service envelope before ordering exact extrusion cuts.
+- Treat broad `15-series` as downscoped. Default to `10-series`, plywood, light rail, or direct mounting unless a measured heavy/dynamic module proves it needs larger extrusion stiffness. The lofted fridge exoskeleton may justify targeted stock/prototype extrusion before exact final cuts because the electrical/plumbing/battery geometry is genuinely three-dimensional.
+- Next practical workstream: convert the electrical pile-on-plywood into labeled two-plane backer-board mockups and paper component templates, while roughing the adjacent 80/20 skeleton enough to prove component faces, service reach, and interference before drilling, crimping, or energizing anything.
+- Validate the office-first interior concept against real dimensions: passenger-side lofted fridge over/near the wheel-well tank, under-fridge pump/accumulator service bay, separated battery bench with flat divider board and cushion/lid access, driver-side `46 in` electrical closet/workstation/DC shelf, diesel heater base zone, and center-aisle/cabover-step movement.
+- Build the 80/20/furniture list from physical module envelopes first: classify each member as structural, panel support, service-access edge, or locator/anti-rattle, then buy prototype stock/hardware before final vendor-cut lengths.
 
 ## Deferred / purchase-later rows (keep out of current critical path unless triggered)
 - Optional 12V expansion path: row `118`.

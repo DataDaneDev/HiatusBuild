@@ -22,9 +22,9 @@ related:
 
 As-of date: `2026-05-14`
 
-Purpose: capture a serious furniture/layout direction for the Hiatus/F-350 camper before anything is built. This document owns the interior **layout concept**, bench/storage strategy, galley/wet-spine direction, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`.
+Purpose: capture the active furniture/layout direction for the Hiatus/F-350 camper before final cuts. This document owns the interior **layout concept**, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, galley/plumbing service strategy, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`.
 
-Status: **draft implementation baseline for mockup and design development**. This is not a final cut list. Do not convert these concepts into exact extrusion cuts, drawer-slide lengths, panels, penetrations, or water/propane routing until the installed shell, roof sweep, tank, fridge, and electrical envelopes are physically measured. Current construction direction: prototype the `10-series` exoskeleton first, then add mechanically removable overlay panels over living-facing surfaces after the frame geometry is proven.
+Status: **draft implementation baseline for mockup and design development**, updated after installed-camper layout work on `2026-05-14`. This is not a final cut list. Do not convert these concepts into exact extrusion cuts, drawer-slide lengths, panels, penetrations, or water/fuel routing until the installed shell, roof sweep, tank, fridge, pump, battery, diesel-heater, and electrical envelopes are physically measured. Current construction direction: prototype the `10-series`/targeted 80/20 exoskeleton first, then add mechanically removable overlay panels over living-facing surfaces after frame geometry and service access are proven.
 
 Orientation convention throughout:
 
@@ -54,81 +54,80 @@ Iteration archive:
 
 Image verification notes:
 
-- `01` correctly shows the requested plan orientation and primary zones. Minor caveat: it shows a water fill/vent chase callout on both sides; the actual fill/vent chase should remain passenger/wet-side unless physical routing proves otherwise.
-- `02` correctly captures the stow-low monitor, rising VESA/Ergotron-style work mode, roof-safe state, Iceco/fridge slide, venting concept, drag chain, toe-kick storage, and travel locks. Geometry remains conceptual.
-- `05` is the preferred galley/wet-spine image. It avoids city-water wording, shows active cold water now, future hot stubs capped, fresh tank fill/vent/outlet/drain, graywater cassette, removable service cassette, and rear shower/winterization/fill-vent hatch.
+- These `2026-05-04` images are retained as concept/iteration artifacts, not current fabrication geometry.
+- `01` still shows useful plan orientation and early office-first reasoning, but its rear-left Iceco/top-right storage layout is superseded by the active passenger-side lofted fridge/wet-spine baseline.
+- `02` still captures the stow-low monitor, rising VESA/Ergotron-style work mode, roof-safe state, drag chain, toe-kick storage, and travel locks. Its Iceco/fridge tower portion is superseded.
+- `05` remains useful for cold-first/future-hot plumbing logic, but the pump/accumulator board now belongs below the lofted passenger-side fridge next to the wheel-well tank, not as a generic hidden galley cassette.
 - `04` is a creative feature montage; it is useful for concept direction, not construction geometry.
 
 ---
 
 ## 2) Design thesis
 
-Build the camper as two serviceable side spines around a clear center aisle:
+Build the camper as a serviceable, separated wet/dry systems cluster around a clear center aisle:
 
-1. **Driver side = electrical / work / fridge spine.**
-   - Heavy batteries and electrical low/front.
-   - Full-time work desk mid-left.
-   - Iceco fridge/cooler rear-left because the old top-right location does not physically fit.
-   - Shallow storage only where it does not steal knee room or roof-down clearance.
-2. **Passenger side = storage / galley / wet spine.**
-   - Top-right soft storage bench instead of a hanging closet.
-   - `36 gal` wheel-well tank low on passenger side.
-   - Compact sink/induction/graywater/appliance bay above and around tank.
-   - Pump/manifold/winterization/shower service gathered into a removable wet-spine service cassette.
-3. **Front cross-camper = cabover landing and battery step.**
-   - The battery bench is not just storage; it is the step/landing system into the cabover bed.
-   - Top-right storage bench continues the landing so cabover access is less awkward.
-4. **Rear threshold = utility handoff.**
-   - Rear-left fridge top/slide becomes grocery/camp handoff space.
-   - Passenger-rear service hatch handles shower, winterization, fill/vent inspection, and future hot tie-in.
+1. **Passenger side = lofted fridge / wet spine / water-tank module.**
+   - Iceco/fridge returns to the passenger side, raised about `16 in` on an extrusion exoskeleton.
+   - The fridge slightly overlaps the `36 gal` wheel-well water tank envelope, so the frame must be mocked in 3D before exact cuts.
+   - Pump and accumulator sit below the fridge, next to the water tank, with direct service access instead of being buried behind drawers.
+   - Sink/graywater/fill/vent/winterization remain cold-first and hot-ready.
+2. **Battery bench = separated energy mass adjacent to wet spine, not mixed plumbing storage.**
+   - Batteries sit in separated enclosures inside an approximately `30 in` tall bench.
+   - A flat board above the batteries separates bench storage/cushion use from battery service volume below.
+   - The lid opens for battery/service access, and Hiatus bed cushions can cover the bench when the bed is not in use.
+3. **Driver side = electrical closet / workstation / diesel heater zone.**
+   - Electrical panel/closet extends up to the `46 in` maximum interior build height.
+   - A shelf/box can project toward the computer desk/camper entry doors for DC electronics, laptop plugs, and office power access.
+   - Diesel heater stays low in the driver-side utility zone, physically separated from battery and wet-service cavities.
+4. **Exterior diesel preference = keep fuel outside the cabin.**
+   - Investigate a narrow truck-bed-wall diesel tank, ideally around `8 gal` and roughly `3 in x 17 in` if a product exists.
+   - Preferred fill/spill/pump exposure is outside, with only a protected fuel line passing through a grommet or sealed bulkhead to the heater.
 
-Bottom line: use the van-build trick of making every cubic inch multi-role, but keep truck-camper constraints stricter: lower weight, lower center of gravity, fewer hidden systems, better travel locking, and pop-down roof clearance.
+Bottom line: the new layout is better because the fridge, tank, pump, batteries, electrical closet, and heater now form a real serviceable 3D systems package instead of a flat garage-floor mockup. The tradeoff is that rough 80/20 skeleton work becomes part of layout validation, not just final cabinetry.
 
 ---
 
 ## 3) Recommended baseline: Office-first hybrid layout
 
-This is the recommended direction because the mission is full-time off-grid professional work, not just weekend camping.
+This remains the recommended direction because the mission is full-time off-grid professional work, but the active layout now moves the fridge/wet-spine mass back to the passenger side.
 
 ```text
 CAB / BULKHEAD / CABOVER
 ┌──────────────────────────────┬──────────────────────────────┐
 │ DRIVER FRONT                 │ PASSENGER FRONT              │
-│ Electrical closet            │ Soft storage bench           │
-│ 3x 48V batteries low         │ Clothes cubes / bedding      │
-│ Power stair bench            │ Cabover landing continuation │
-│ 48V bulkhead board           │ No hanging closet            │
-│ 12V wall-side board          │                              │
+│ Electrical closet / panel    │ Lofted Iceco/fridge skeleton │
+│ Up to 46 in build height     │ ~16 in raised over service   │
+│ DC electronics shelf/box     │ Slight tank overlap          │
+│ Laptop plugs / office power  │ 36 gal wheel-well tank       │
 ├──────────────────────────────┼──────────────────────────────┤
 │ DRIVER MID                   │ PASSENGER MID                │
-│ 12V battery low              │ Galley wet spine             │
-│ Diesel heater                │ 36 gal wheel-well tank       │
-│ Fixed desk                   │ Sink + induction + storage   │
-│ Monitor stow-low cassette    │ Pump/manifold service board  │
+│ Fixed computer desk          │ Pump + accumulator below     │
+│ Monitor stow-low cassette    │ Strainer / manifold service  │
+│ Electrical/service access    │ Battery bench adjacent       │
+│ Diesel heater low            │ Separated enclosures         │
 ├──────────────────────────────┼──────────────────────────────┤
-│ DRIVER REAR                  │ PASSENGER REAR               │
-│ Iceco fridge/cooler          │ Rear wet service hatch       │
-│ Locking slide                │ Shower QD / winterize        │
-│ Vent tower + landing shelf   │ Fill/vent access             │
+│ DRIVER REAR / ENTRY          │ PASSENGER REAR               │
+│ Entry-side desk/DC access    │ Wet service / fill / shower  │
+│ Heater service path          │ Graywater / winterization    │
+│ Clear aisle preserved        │ Cushion-covered bench top    │
 └──────────────────────────────┴──────────────────────────────┘
 REAR BARN DOORS
 ```
 
 Why this wins:
 
-- Keeps the desk as a real work bay instead of a camp table.
-- Keeps wet systems and electrical/office systems on opposite sides.
-- Puts the densest masses low: `3x 48V` batteries, `12V` battery, water tank, fridge, canned goods, tools.
-- Gives a straight center aisle from rear doors toward cabover.
-- Lets the top-right “closet” become useful storage/landing instead of a hanging-clothes dead zone.
-- Lets plumbing service concentrate near passenger/rear, where shower and winterization actually happen.
+- Puts the fridge directly with the wet side and water tank instead of forcing a driver-side fridge tower.
+- Uses the under-fridge volume for pump/accumulator/service hardware, which is exactly the kind of awkward space that should become mechanical volume.
+- Keeps batteries in their own bench/enclosures with a real divider between electrical service and ordinary bench storage.
+- Keeps the driver side focused on work ergonomics, electrical access, DC electronics, and the diesel heater.
+- Preserves the clear center aisle while letting the 80/20 skeleton solve real 3D interference rather than pretending this can be fully drafted on the garage floor.
 
 Tradeoffs:
 
-- Rear-left fridge can crowd entry if slide/lid geometry is sloppy.
-- Driver side storage must stay shallow to preserve work comfort.
-- Passenger galley can become service-hostile if drawers/skins bury pump and tank fittings.
-- AC appliance choices need strict load sequencing.
+- Passenger side becomes a dense systems stack; service hatches and removable panels are mandatory, not aesthetic options.
+- The lofted fridge skeleton must be mocked with real component envelopes before exact cuts because it overlaps the tank and sits above plumbing.
+- Wet/dry separation between pump plumbing and the adjacent battery bench needs hard partitions, drip paths, and service discipline.
+- Driver-side electrical closet height and projecting DC shelf must be checked against entry movement, desk ergonomics, and roof-down clearance.
 
 ---
 
@@ -169,62 +168,58 @@ Best hybrid: keep the **office-first interior spine** but borrow the **rear wet-
 
 ---
 
-## 5) Front driver electrical / power stair bench
+## 5) Driver-side electrical closet and battery-adjacent bench
 
 ### Required functions
 
-The top-left electrical/battery zone has to do four jobs at once:
+The driver-side electrical/desk zone and adjacent battery bench have to solve these jobs together without mixing incompatible service cavities:
 
-1. House `3x 48V` batteries low and restrained.
-2. Carry the L-shaped electrical closet/backer above them.
-3. Provide a cushioned bench / lounge surface.
-4. Serve as a real step and landing into the cabover bed.
+1. House the `3x 48V` batteries in separated, restrained enclosures inside an approximately `30 in` tall bench.
+2. Keep a flat divider board above the batteries so ordinary bench storage/cushion use cannot intrude into battery service volume.
+3. Carry the driver-side electrical closet/panel up to the `46 in` maximum interior build height.
+4. Provide a projecting shelf/box toward the computer desk/camper entry for DC electronics, laptop plugs, chargers, and office power access.
+5. Preserve a cushioned bench/lid surface that can be covered by Hiatus bed cushions when the bed is not in use.
 
 ### Recommended construction concept
 
-- **Battery well:** low, vented/warmed as required, and sized so batteries can be extracted without dismantling the whole interior.
-- **Lift-out center bridge:** because the `3x 48V` batteries spill toward center, make the center-spill portion a removable bridge panel, not a fixed carcass.
-- **Split lids:** avoid one giant cushion/lid. Use separate access panels for:
-  - battery handle/cable inspection;
-  - disconnect/Class T/fuse visual inspection;
-  - center bridge removal;
-  - soft storage that is allowed to be buried under cushions.
-- **Aisle-facing service slit:** a narrow vertical access door for emergency disconnect/fuse inspection without pulling cushions or unloading the cabover.
+- **Battery well:** low, restrained, partitioned from wet-service volume, and sized so batteries can be extracted without dismantling the whole interior.
+- **Flat divider board:** separates battery bay below from bench storage/cushion use above; treat this as a protective service boundary, not just a shelf.
+- **Lift/hinged lid:** lid must open for battery access and include mechanical stays or controlled support; loose lift-off panels become projectiles.
+- **Electrical closet:** use a vertical backer/closet face for serviceable fuses, disconnects, Lynx/Shunt/12V hardware, and labels, with dead-front protection where daily furniture users can touch it.
+- **DC shelf/box:** acceptable toward the desk/entry if it remains shallow, ventilated, spill-protected, and does not block entry movement.
+- **Service slit/access door:** keep emergency disconnect/fuse inspection reachable without pulling cushions or unloading the cabover.
 - **Hard edge protection:** every positive stud, Class T terminal, bus, and high-current cable path needs covered/booted dead-front treatment before the bench becomes daily furniture.
-- **Thermal branch:** if diesel heat is used for battery compartment support, duct it as a small controllable warm-air branch with sensor verification; do not blast warm air directly at inverter/fuse hardware.
 
 Non-obvious details:
 
 - Add a tactile/visible **“48V isolated”** indicator flag near the aisle service slit.
 - Use cushion seams that reveal service panel divisions instead of hiding them.
-- Make the cabover step top a slightly different texture/color so it reads as a foot target in low light.
-- Put a removable sacrificial scuff plate on the front edge of the power stair; this edge will get kicked constantly.
-- Do not use the battery bay for random storage. Use adjacent bench voids for soft goods; keep battery air/service volume disciplined.
+- Put a removable sacrificial scuff plate on any step/bench edge that will be kicked constantly.
+- Do not use the battery bay for random storage. Use only the separated bench storage volume above/adjacent to the protected battery bay.
 
 ---
 
-## 6) Top-right storage bench instead of hanging closet
+## 6) Passenger-side lofted fridge, wet-spine skeleton, and battery bench
 
-Hanging clothes storage is poor in this camper because it consumes height, blocks window/shoulder space, and creates an awkward single-use volume. Use a bench/cube system instead.
+The old top-right soft-storage idea is superseded. The passenger side now carries the lofted fridge/wet-spine/water-tank cluster plus the adjacent separated battery bench.
 
 Recommended roles:
 
-- Cabover landing continuation.
-- Soft clothes cubes.
-- Bedding/towels.
-- Camera/office bags.
-- Seasonal layers.
-- Shower towel and dry bag storage near the wet-side but not inside the wet bay.
+- Lofted Iceco/fridge about `16 in` above the floor/tank service zone.
+- `10-series` or targeted 80/20 exoskeleton to support the fridge and define service-panel edges.
+- Under-fridge pump/accumulator/strainer/manifold bay next to the `36 gal` wheel-well tank.
+- Battery bench adjacent to the plumbing bay, with hard separation between wet service and battery/electrical cavities.
+- Cushion-compatible bench top/lid when the Hiatus bed cushions are not deployed as the bed.
 
 Build direction:
 
-- Low bench base with removable cushion.
-- Top access for low-frequency soft goods.
-- A vertical soft-cube wall only if it stays below roof-down and window-clearance constraints.
-- Compression nets or fabric doors instead of heavy cabinet fronts.
-- A few standardized cube sizes, not one-off irregular boxes.
+- Mock the fridge, tank, pump, accumulator, battery boxes, and bench lid as one 3D package before buying exact-cut extrusion.
+- Keep the pump strainer, accumulator, pressure gauge, shutoff, winterization pickup, and electrical connector visible through one service opening.
+- Use drip trays, leak sensor, and physical partitions so a plumbing leak cannot run into the battery enclosure.
+- Use overlay/removable panels for finished faces only after the skeleton passes access and interference checks.
+- Keep the fridge vent path open: lower cool-air intake, upper warm-air exhaust, and no tight skin around compressor vents.
 
-Advanced detail: use a **soft-bin manifest** instead of built-in compartments. Example: one cube for work gear, one for socks/base layers, one for toiletries, one for bedding, one empty overflow. This lets the furniture stay simple while the packing system carries the organization.
+Advanced detail: treat this as a **systems exoskeleton**, not cabinetry. Every extrusion member should have a job: structural support, service-panel edge, pump-board mount, fridge restraint, battery-bench boundary, or anti-rattle locator.
 
 ---
 
@@ -259,28 +254,28 @@ Hard rule: the desk side can gain storage, but not by sacrificing seated work ge
 
 ---
 
-## 8) Rear-left Iceco fridge/cooler module
+## 8) Passenger-side lofted Iceco/fridge module
 
-The Iceco has moved to the bottom-left / rear-left because the old top-right location does not physically fit. Treat this as a utility block, not just an appliance bay.
+The Iceco/fridge has moved back to the passenger side. Current baseline: raise it about `16 in` on an extrusion exoskeleton so pump/accumulator hardware can live below it next to the wheel-well water tank. Treat this as a service module, not just an appliance bay.
 
 Recommended roles:
 
-- Locking fridge slide or lift-access bay.
-- Rear-door grocery handoff surface.
-- Coffee/tool landing shelf.
-- Vent chimney / warm-air escape path.
-- Shallow vertical storage above/around it.
+- Fridge support tray or fixed lofted shelf with positive travel restraint.
+- Under-fridge plumbing/service bay for pump, accumulator, strainer, shutoff, manifold, and winterization hardware.
+- Vent chimney / warm-air escape path that does not heat the battery bench or desk electronics.
+- Shallow landing surface or rail only where it does not interfere with lid opening, venting, or service access.
+- Structural/service boundary between wet hardware and adjacent battery enclosures.
 
 Design requirements:
 
-- Measure body envelope including handles, hinges, lid sweep, cord bend radius, and compressor vent sides.
-- Confirm whether lid access requires a full slide, partial slide, or top clearance only.
-- Use positive slide lock plus secondary strap/draw latch.
+- Measure body envelope including handles, hinges, lid sweep, cord bend radius, compressor vent sides, and required hand clearance at the raised height.
+- Confirm whether lid access works fixed in place or needs a partial/full slide at the lofted height.
+- Use positive travel lock plus secondary strap/draw latch if any slide is used.
 - Add hard stops so the fridge cannot overextend into the aisle/rear entry or pull its cord.
 - Provide lower cool-air intake and upper warm-air exhaust path. If boxed, use a small thermostatic `12V` fan and washable dust screen.
-- Keep the top of the fridge module useful but not clutter-prone: add shallow rails/lip and a travel-cleared landing pad.
+- Keep plumbing service possible with the fridge installed; if the fridge must be removed to clean the pump strainer, the exoskeleton is wrong.
 
-Non-obvious feature: build a narrow **fridge chimney tower** that also stores vertical items: cutting mat, laptop sleeve, Starlink/router panel, paper towel, bottle, trash slot, or shower sandals. Keep it shallow so it does not become a shoulder obstacle.
+Non-obvious feature: make the fridge skeleton do double duty as the wet-spine service-panel frame. The same 80/20 that supports the fridge can define removable panels, leak-tray edges, cable clips, and anti-rattle landings.
 
 ---
 
@@ -431,7 +426,7 @@ Do not just add cabinets. Assign storage by access frequency and travel mass.
 ### Daily access
 
 - Desk: laptop, headset, keyboard, cables, notepad, USB-C station.
-- Rear-left: fridge, groceries, coffee, shoes, wet tray.
+- Passenger-side lofted fridge/wet-spine: fridge, groceries, pump-service checks, wet tray, fill/winterization access.
 - Galley top: sink cover, induction, cutting board, dish kit.
 - Rear service hatch: shower hose, fill hose, winterization adapter.
 
@@ -439,7 +434,7 @@ Do not just add cabinets. Assign storage by access frequency and travel mass.
 
 - Top-right soft cubes: clothes, towel, toiletries, bedding.
 - Galley vertical slots: cookware, cutting board, collapsible dish rack.
-- Fridge tower: paper towel, bottle, small trash, Starlink/router gear.
+- Fridge/wet-spine exoskeleton: paper towel, bottle, small trash, service labels, lightweight wet-side accessories only where venting/service access remain clear.
 
 ### Infrequent / heavy / dirty
 
@@ -462,7 +457,7 @@ Travel-retention standards:
 Recommended material logic:
 
 - **10-series / light rail / L-track / strut:** default for interior module framing, accessory rails, panels, baskets, hooks, removable dividers, wet-spine retainers, and soft-storage retention when the load is not clearly structural/dynamic.
-- **15-series T-slot:** no longer a broad starter-stock default after the `36 gal` wheel-well tank downscope. Use only for measured heavy/dynamic modules that prove they need the stiffness: possibly the electrical cabinet frame, fridge slide/base, monitor mast/spine, or desk frame.
+- **15-series T-slot:** no longer a broad starter-stock default after the `36 gal` wheel-well tank downscope. Use only for measured heavy/dynamic modules that prove they need the stiffness: possibly the lofted fridge support, electrical closet frame, battery bench structure, monitor mast/spine, or desk frame.
 - **Plywood:** main carcasses, L-shaped electrical backer, lids, service panels.
 - **Phenolic/Richlite/laminated birch:** desk and galley top candidates if budget/weight tolerates it.
 - **HDPE/ABS/aluminum panels:** wet-service access panels, shower hatch backing, removable scuff/kick plates.
@@ -494,23 +489,23 @@ Mechanism rules:
 
 ## 13) Mockup and validation gates
 
-### Gate I1: roof-down and cabover-step sweep
+### Gate I1: roof-down, bench, and cabover-step sweep
 
-- Tape full-size power stair bench height.
-- Tape top-right bench/cube height.
-- Tape monitor stow height and cable loop.
+- Tape full-size battery bench height, lid swing, cushion stack, and divider-board elevation.
+- Tape passenger-side lofted fridge height, wet-spine service opening, and battery-bench partition.
+- Tape monitor stow height, DC shelf projection, and cable loop.
 - Cycle or simulate roof-down envelope.
 - Confirm cabover entry path with cushions installed.
 
-Pass when: roof closes with margin and cabover entry does not require stepping on fragile service panels.
+Pass when: roof closes with margin, bench/cushion use is plausible, and cabover entry does not require stepping on fragile service panels.
 
-### Gate I2: rear-left fridge envelope
+### Gate I2: passenger-side lofted fridge / wet-spine envelope
 
-- Measure Iceco body, handles, hinge/lid sweep, cord exit, vent sides, and slide extension.
-- Open rear doors and simulate entry while fridge is extended.
-- Confirm no door/aisle conflict.
+- Measure Iceco body, handles, hinge/lid sweep, cord exit, vent sides, and service clearance at the raised `~16 in` height.
+- Mock the water tank overlap, under-fridge pump/accumulator board, battery bench wall, vent path, and any slide extension if used.
+- Confirm the fridge opens, ventilates, locks, and still allows pump/strainer/accumulator service without removing major furniture.
 
-Pass when: fridge opens, ventilates, locks, and does not dominate the rear threshold.
+Pass when: the fridge, tank, plumbing service bay, battery separation, vent path, and aisle/entry clearance all work together.
 
 ### Gate I3: seated workday mockup
 
@@ -521,7 +516,7 @@ Pass when: the desk is plausible for a full workday, not just a five-minute lapt
 
 ### Gate I4: wet-spine service test
 
-- Mock tank, pump board, graywater cassette, fill/vent chase, and rear service hatch.
+- Mock tank, under-fridge pump board, accumulator, graywater cassette, fill/vent chase, leak tray, battery separation wall, and rear/aisle service hatch.
 - Simulate cleaning pump strainer, winterizing, dumping graywater, and connecting shower hose.
 
 Pass when: all service actions can be done without unloading the whole galley.
@@ -560,7 +555,7 @@ Reasonable low-regret prep:
 - Anti-rattle tape samples.
 - Cable-chain sample sized to monitor/fridge wiring.
 - Service-panel fastener samples.
-- Soft cube/bin samples for the top-right bench.
+- Cushion/lid hardware, service-panel latch, and divider-board samples for the separated battery bench.
 
 Do not buy broad `15-series` because “camper furniture needs extrusion.” Buy it only where a measured module actually needs that stiffness. Exact-cut `10-series` should also wait until the taped/cardboard envelope proves the module; stock-length/sacrificial prototype pieces are lower risk than final cut lists.
 
@@ -572,11 +567,11 @@ Do not buy broad `15-series` because “camper furniture needs extrusion.” Buy
 - Final power stair bench height and lid segmentation.
 - Battery extraction path with the center-spill bench bridge removed.
 - Whether top-right vertical cube storage clears roof/window/shoulder geometry.
-- Exact Iceco model, lid/vent/cord/slide envelope, and rear-entry collision.
+- Exact Iceco model, raised passenger-side lid/vent/cord/slide envelope, tank overlap, and service-panel clearance.
 - Final driver-side desk height/depth after real seated mockup.
 - Monitor mechanism choice: rising VESA spine vs under-desk flip-up vs quick-release sleeve.
 - Wheel-well tank fitting orientation, fill/vent bend radius, drain access, and restraint path.
-- Pump board location: aisle-facing, rear-facing, or hybrid removable cassette.
+- Pump board location below the lofted fridge: aisle-facing, rear-facing, swing-out, or hybrid removable cassette.
 - Graywater strategy: jug/cassette size, waterless trap, vent, dump path, overflow behavior.
 - Hot-water scope: cold-only phase 1, outdoor propane shower only, sink hot water, or small electric tanked later.
 - Shower deployment: rear barn doors, passenger access window, or both.
@@ -590,9 +585,9 @@ Recommended baseline:
 
 - **Use the office-first hybrid.** The full-time workstation is the mission-critical feature.
 - **Turn the top-left battery mass into a power stair bench.** Make it serviceable, removable in sections, and safe to step on.
-- **Make top-right a soft storage / clothes cube bench, not a closet.** Low, light, flexible, and cabover-useful.
-- **Keep the driver desk shallow but serious.** Preserve knee room; store vertically and in toe-kick voids only where it does not hurt ergonomics.
-- **Move Iceco rear-left and make it a utility block.** Slide/vent/landing surface/storage tower.
-- **Build the passenger galley as a wet spine, not a hidden plumbing nest.** Removable pump/manifold cassette, graywater cassette, service hatch.
+- **Build the passenger side as a lofted fridge/wet-spine exoskeleton.** Raise the Iceco/fridge about `16 in`, put pump/accumulator below it, and prove the tank overlap/service access physically.
+- **Make the battery bench separated and cushion-compatible.** Batteries low in their own enclosures, flat divider board above, lid access, storage/cushion use kept out of battery volume.
+- **Keep the driver desk shallow but serious.** Preserve knee room; use the driver-side electrical closet/DC shelf for office power without blocking entry or roof closure.
+- **Build plumbing as a service bay, not a hidden nest.** Under-fridge pump/manifold access, graywater cassette, service hatch, leak tray, and wet/dry separation are mandatory.
 - **Cold-first, hot-ready.** Add capped future hot stubs; do not commit to propane/electric hot water until service-map freeze.
 - **Treat every moving panel like cargo.** Latches, hard stops, anti-rattle, and roof-safe checks are not optional.

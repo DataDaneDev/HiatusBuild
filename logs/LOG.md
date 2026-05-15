@@ -21,6 +21,15 @@ Single running log for build progress and test evidence.
 - Issues:
 - Next actions:
 
+## 2026-05-14
+- Owner layout update: the Iceco/fridge is back on the passenger side, raised about `16 in` on an extrusion exoskeleton and slightly overlapping the `36 gal` wheel-well water tank envelope.
+- Plumbing update: pump and accumulator move below the fridge in that exoskeleton, next to the water tank, as a separated service bay rather than hidden galley plumbing.
+- Battery/bench update: batteries sit adjacent to the pump area in separated enclosures inside an approximately `30 in` tall bench, with a flat divider board above the batteries separating battery space from bench storage; a lid opens the bench and Hiatus bed cushions can cover it when the bed is stowed.
+- Driver-side update: electrical panel/closet moves/extends on the driver side up to the `46 in` maximum interior build height, with a shelf/box extending toward the computer desk/camper entry for DC electronics and laptop plugs; diesel heater stays low in this driver-side utility zone.
+- Diesel update: investigate an exterior truck-bed-wall diesel tank, ideally around `8 gal` and roughly `3 in x 17 in` envelope if available, with exterior fill/spill exposure, exterior pump, and protected fuel-line pass-through to the heater.
+- Docs updated: active layout, systems, tracking, build-order, workstation, and diagram caveats now supersede the rear-left/driver-side fridge references.
+- Next actions: physically mock the passenger-side fridge/wet-spine skeleton and battery bench before exact cut lengths; search for an external narrow diesel tank; keep wet/dry and electrical/fuel separation explicit in the service map.
+
 ## 2026-05-12
 - Owner measurement correction: the water inlet gravity-fill vent nipple measures about `10 mm` OD on the main land and about `11 mm` OD at the largest barb/ridge.
 - Planning/procurement impact: the previously ordered `1/2 in ID x 5/8 in OD` food-grade tube is oversized for this nipple. Correct replacement target is `10 mm ID` food-grade/potable tube, with `3/8 in ID` as the common inch fallback and `7/16 in ID` only as a looser clamp-required fallback.

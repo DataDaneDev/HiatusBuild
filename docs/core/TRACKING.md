@@ -340,7 +340,7 @@ related:
 - ID: D-035
 - Date: 2026-04-27
 - Decision: Treat current furniture CAD as reference-only and order only low-regret stock extrusion/hardware until fridge/tank envelopes are revalidated.
-- Context: Iceco/water tank dry fit showed the cooler/fridge does not open in the planned location; later D-040 sets the working baseline as rear-left / bottom-left.
+- Context: Iceco/water tank dry fit showed the cooler/fridge does not open in the planned location. D-040 temporarily set the working baseline as rear-left / bottom-left; D-043 later supersedes that with the passenger-side lofted fridge/wet-spine baseline.
 - Options considered: order exact cut lengths from stale CAD, wait on all extrusion, or buy stock-length starter extrusion and connector hardware.
 - Decision drivers: avoid waiting later while limiting waste from a known CAD mismatch.
 - Result: superseded by D-038 for tank restraint: do not treat a `15-series`-biased starter order as acceptable solely for the water tank; final drawer slides, panels, skins, and exact cut lists remain deferred.
@@ -388,7 +388,7 @@ related:
 - Context: The top-left electrical closet and `3x 48V` batteries spill into the center, the top-right fridge location failed fit, the driver side must support full-time monitor-based work, and the passenger side must absorb the `36 gal` wheel-well tank plus galley plumbing in a compact space.
 - Options considered: keep a simple truck-camper layout, prioritize a rear utility threshold, or adopt a van-style high-density interior adapted to truck-camper roof/weight/service constraints.
 - Decision drivers: full-time work ergonomics, low/forward heavy-mass placement, center-aisle movement, cabover step function, roof-down clearance, and plumbing/electrical serviceability.
-- Result: draft baseline is top-left power stair battery bench, top-right soft-storage/cabover-landing bench, driver-side desk with stow-low monitor and rear-left Iceco utility block, passenger-side galley wet spine over the `36 gal` tank, rear shower/fill/vent service hatch, cold-water-first plumbing, and capped future hot-water stubs. Owner doc: `docs/implementation/INTERIOR_furniture_layout_and_galley.md` with generated concept diagrams under `media/diagrams/interior-furniture-2026-05-04/`.
+- Result: this May 4 draft baseline used top-left power stair battery bench, top-right soft-storage/cabover-landing bench, driver-side desk with stow-low monitor and rear-left Iceco utility block, passenger-side galley wet spine over the `36 gal` tank, rear shower/fill/vent service hatch, cold-water-first plumbing, and capped future hot-water stubs. D-043 supersedes the fridge/bench/wet-spine placement with the passenger-side lofted fridge/wet-spine/battery-bench layout. Owner doc: `docs/implementation/INTERIOR_furniture_layout_and_galley.md` with generated concept diagrams under `media/diagrams/interior-furniture-2026-05-04/`.
 - Follow-up: validate with real installed-shell measurements, roof-down sweep map, tank/fridge dry fit, wet-spine service mockup, seated workday test, and load sequencing before exact extrusion cuts or permanent penetrations.
 
 - ID: D-041
@@ -408,6 +408,15 @@ related:
 - Decision drivers: finished appearance, easier iterative prototyping, better panel thickness flexibility, better shear-skin potential, and serviceability if access panels remain removable.
 - Result: baseline is mechanically fastened overlay panels on visible cabin faces; exposed 80/20 or quick-removable covers in electrical, plumbing, rear utility, and wet-spine areas. Magnetic service panels are a promising non-structural cover pattern when backed by steel brackets/plates, anti-rattle tape, and secondary/captive retention where panel loss matters.
 - Follow-up: test magnet size/spacing, steel landing plates, routed magnet pockets, anti-rattle tape, and secondary latch/tether options on a sample service panel before using magnets for real travel panels.
+
+- ID: D-043
+- Date: 2026-05-14
+- Decision: Supersede the rear-left/driver-side fridge concept with a passenger-side lofted fridge/wet-spine/battery-bench layout.
+- Context: After working with the actual camper, paneling and systems interference made the electrical/plumbing/fridge enclosure a three-dimensional layout problem. Owner found a better fit by moving the Iceco/fridge back to the passenger side, raised about `16 in` on an extrusion exoskeleton, slightly overlapping the `36 gal` wheel-well tank, with pump/accumulator below it next to the tank and batteries in adjacent separated bench enclosures.
+- Options considered: continue with driver-side/rear-left fridge utility block; wait for perfect CAD before buying/cutting extrusion; or prototype a targeted 80/20 exoskeleton to prove the real component geometry.
+- Decision drivers: serviceability, physical fit in the installed camper, better wet-side clustering, less driver-side office interference, ability to mount/enclose components from multiple faces, and reduced risk from trying to validate this only on the garage floor.
+- Result: active baseline is passenger-side lofted fridge/wet-spine exoskeleton, under-fridge pump/accumulator service bay, adjacent separated `30 in` battery bench with flat divider board and cushion/lid use, driver-side `46 in` electrical closet/DC shelf/workstation zone, diesel heater low on driver side, and investigation of an exterior truck-bed-wall diesel tank/fill/pump path.
+- Follow-up: physically mock the lofted fridge/wet-spine/battery bench in the camper, classify each 80/20 member by structural/service/panel role, search for a narrow exterior diesel tank around `8 gal` / `3 in x 17 in`, and update final cut lists only after access/interference checks pass.
 
 ## Risk register
 - ID: R-001
@@ -537,11 +546,11 @@ related:
 - Status: Open
 
 - ID: R-015
-- Risk: Ordering final furniture extrusion, drawer slides, or panels from stale CAD creates rework because fridge/tank dry fit invalidated the layout.
+- Risk: Ordering final furniture extrusion, drawer slides, or panels from stale CAD creates rework because the active passenger-side lofted fridge/wet-spine/battery-bench layout is a real three-dimensional interference problem.
 - Impact (1-5): 4
 - Likelihood (1-5): 4
-- Mitigation: Do not place exact-cut extrusion orders before post-install measurement and taped/cardboard block envelopes. Buy only targeted stock/hardware after real camper/fridge/tank/electrical envelopes show what needs framing.
-- Trigger: Any exact-cut extrusion, drawer slide, panel, or skin purchase.
+- Mitigation: Do not place exact-cut extrusion orders before taped/cardboard block envelopes and rough skeleton validation in the installed camper. Targeted prototype stock/hardware is acceptable when it is used to prove the lofted fridge, pump/accumulator, tank overlap, battery bench, electrical closet, and desk service geometry.
+- Trigger: Any exact-cut extrusion, drawer slide, panel, skin, fridge support, battery bench, or pump-board purchase.
 - Owner: Sunny
 - Status: Open
 
@@ -555,20 +564,20 @@ related:
 - Status: Open
 
 - ID: R-017
-- Risk: Workstation/monitor/fridge mechanisms can collide with the pop-down roof or become vibration projectiles if stow height, cable loops, slides, or latches are validated from assumptions instead of real shell measurements.
+- Risk: Workstation/monitor/electrical-shelf mechanisms can collide with the pop-down roof or become vibration projectiles if stow height, cable loops, shelves, panels, or latches are validated from assumptions instead of real shell measurements.
 - Impact (1-5): 4
 - Likelihood (1-5): 3
-- Mitigation: Use the driver-side workstation implementation gates: roof-down sweep map, stowed monitor block test, positive travel locks on monitor/fridge/leaf/drawers, cable drag-chain/service-loop checks, and post-drive re-torque/witness-mark inspection.
-- Trigger: Building the driver-side desk, monitor mount, Iceco slide/tower, or any storage above the marked roof-safe line.
+- Mitigation: Use the driver-side workstation implementation gates: roof-down sweep map, stowed monitor block test, DC shelf/box interference check, positive travel locks on monitor/leaf/drawers/panels, cable drag-chain/service-loop checks, and post-drive re-torque/witness-mark inspection.
+- Trigger: Building the driver-side desk, monitor mount, electrical closet/DC shelf, diesel-heater service panels, or any storage above the marked roof-safe line.
 - Owner: Sunny
 - Status: Open
 
 - ID: R-018
-- Risk: Passenger-side galley plumbing can become unserviceable or freeze-prone if the `36 gal` tank fittings, pump, accumulator, manifold, graywater cassette, fill/vent lines, low-point drains, or future hot-water stubs are buried behind fixed cabinetry.
-- Impact (1-5): 4
+- Risk: Passenger-side lofted fridge/wet-spine plumbing can become unserviceable, freeze-prone, or hazardous to adjacent batteries if the `36 gal` tank fittings, pump, accumulator, manifold, graywater cassette, fill/vent lines, low-point drains, future hot-water stubs, or leak paths are buried behind fixed cabinetry.
+- Impact (1-5): 5
 - Likelihood (1-5): 3
-- Mitigation: Build around a removable/swing-out wet-spine service cassette, visible tank shutoff, flex shock/load loops, strainer access, pressure gauge, winterization pickup, blowout Schrader, low-point drains, leak tray/sensor, quick-disconnect unions, and rear/aisle service access before final skins.
-- Trigger: Building passenger-side galley cabinetry, tank restraint, pump board, graywater cassette, or rear shower/fill/vent hatch.
+- Mitigation: Build around an under-fridge removable/swing-out service board, visible tank shutoff, flex shock/load loops, strainer access, pressure gauge, winterization pickup, blowout Schrader, low-point drains, leak tray/sensor, quick-disconnect unions, rear/aisle service access, and physical wet/dry separation from battery enclosures before final skins.
+- Trigger: Building passenger-side lofted fridge skeleton, galley cabinetry, tank restraint, pump board, battery bench partition, graywater cassette, or rear shower/fill/vent hatch.
 - Owner: Sunny
 - Status: Open
 
@@ -579,11 +588,11 @@ related:
 - Verify the re-bonded bed rail caps and prior-owner rail-hole areas do not interfere with the Hiatus attachment/seal interface.
 - Reconcile MultiPlus charge profile value before first charge (`56.8V` planning basis vs `58.4V` battery/manual basis).
 - Confirm one-battery-at-a-time first-charge procedure and acceptable voltage/SOC matching threshold before paralleling.
-- Measure Iceco lid-open/vent/power-cord envelope and validate rear-left fridge/cooler location.
-- Measure the driver-side desk/monitor roof-down sweep envelope, choose the primary monitor mechanism (`rising VESA spine` vs under-desk flip-up vs quick-release sleeve), and validate that the stowed face-down cradle supports bezel/back-shell/VESA structure rather than loading the LCD panel.
-- Lock workstation travel restraints: monitor mast/carriage latch, monitor arm hard stop, fridge slide secondary latch/strap, desk leaf latch, storage-door latch standard, and cable-chain/service-loop path below the roof-safe line.
+- Measure Iceco lid-open/vent/power-cord envelope at the raised passenger-side `~16 in` lofted height and validate tank overlap, pump-service access, and aisle/entry clearance.
+- Measure the driver-side desk/monitor/electrical-shelf roof-down sweep envelope, choose the primary monitor mechanism (`rising VESA spine` vs under-desk flip-up vs quick-release sleeve), and validate that the stowed face-down cradle supports bezel/back-shell/VESA structure rather than loading the LCD panel.
+- Lock workstation travel restraints: monitor mast/carriage latch, monitor arm hard stop, desk leaf latch, storage-door/service-panel latch standard, and cable-chain/service-loop path below the roof-safe line.
 - Confirm actual seated work envelope: chair/stool height, desk height/depth, monitor viewing distance, knee clearance, footrest need, and reachable AC/DC/USB-C station locations.
-- Dry-fit purchased `36 gal` wheel-well tank; verify body/fitting envelope, bracket orientation, plusnut locations, and whether a secondary floor/tie-down restraint path is needed. Gravity-fill vent nipple measurement is captured (`10 mm` OD main land, `11 mm` OD largest barb); replacement vent tube dry-fit remains open.
+- Dry-fit purchased `36 gal` wheel-well tank with the passenger-side lofted fridge/wet-spine skeleton; verify body/fitting envelope, bracket orientation, plusnut locations, tank/fridge overlap, pump-board access, leak path, and whether a secondary floor/tie-down restraint path is needed. Gravity-fill vent nipple measurement is captured (`10 mm` OD main land, `11 mm` OD largest barb); replacement vent tube dry-fit remains open.
 - Lock faucet, sink, drain/graywater, pump service-valve, and winterization details as discrete procurement rows.
 - Lock whether hot water is outdoor shower-only provisional or must feed the sink; defer indoor/RV propane or electric tanked path until service-map freeze.
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)
@@ -599,7 +608,7 @@ related:
 - Validate Orion `48/12-30` charger headroom with the current 12V branch plan (including USB stations, `12V-10` Maxxair fan, `12V-06` Hiatus factory LED+dimmer, and planned `12V-11` ambient/Govee strips) and trigger row `118` only if sustained overload is observed
 - Final AC receptacle count and distribution target (`3` vs `4` locations; target `6` vs `8` practical plug points)
 - Verify physical fitment and service-access clearances for the split-DIN AC hardware set (`rows 13`, `15`, `107`, `108`, `109`, `110`, `111`, `112`, `113`, `114`, `123`) during cabinet mockup
-- Final passthrough locations for solar, shore power, and fuel/heater paths
+- Final passthrough locations for solar, shore power, and fuel/heater paths, including whether an exterior truck-bed-wall diesel tank/fill/pump can route through a protected grommet/bulkhead to the heater
 - Lock roof-to-shell solar jumper connector strategy and exact service-loop length for full popup travel
 - Flexible solar model/stringing strategy under roof `75 lb` cap and deferred-procurement timing
 - Lock interior/exterior mounting rail ecosystem (rail profile, nut/hardware standard, bracket interfaces) and final linear-foot allowances

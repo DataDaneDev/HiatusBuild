@@ -11,8 +11,8 @@ Orientation convention for plan-view diagrams:
 
 Primary diagrams:
 
-- `01-office-first-top-down-layout.png` — office-first top-down layout with power stair bench, top-right storage bench, driver workstation, rear-left Iceco, and passenger-side galley/wet spine.
-- `02-driver-workstation-monitor-mechanism.png` — driver-side desk/monitor/fridge side-elevation mechanism concept.
+- `01-office-first-top-down-layout.png` — superseded office-first top-down concept with power stair bench, top-right storage bench, driver workstation, rear-left Iceco, and passenger-side galley/wet spine. Use only for orientation and earlier design reasoning; the active baseline moves the Iceco/fridge to a passenger-side lofted wet-spine exoskeleton.
+- `02-driver-workstation-monitor-mechanism.png` — driver-side desk/monitor/fridge side-elevation mechanism concept. The monitor/desk mechanism remains useful, but the fridge/tower portion is superseded by the passenger-side lofted fridge baseline.
 - `04-furniture-feature-montage.png` — creative furniture feature montage: power stair bench, soft storage cubes, rear utility threshold, and convertible galley surface.
 - `05-galley-wet-spine-corrected.png` — preferred passenger-side wet-spine/plumbing concept with cold-first/future-hot routing.
 

@@ -14,7 +14,7 @@ Start here when opening the project in Obsidian.
 ## Active Now
 - [Project](docs/core/PROJECT.md) - scope, milestones, fixed constraints, near-term priorities.
 - [Build order of operations](docs/plans/PROJECT_build_order_of_operations.md) - post-install sequence from measured envelopes through rough-in, module build, and commissioning.
-- [Interior furniture and galley](docs/implementation/INTERIOR_furniture_layout_and_galley.md) - current office-first 10-series/overlay-panel furniture direction.
+- [Interior furniture and galley](docs/implementation/INTERIOR_furniture_layout_and_galley.md) - current office-first passenger-side lofted fridge/wet-spine, separated battery bench, and 10-series/overlay-panel furniture direction.
 - [Electrical bench layout and test guide](docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md) - dead mechanical electrical layout and staged test discipline.
 - [Tracking](docs/core/TRACKING.md) - decisions, risks, assumptions, open questions.
 - [Project Log](logs/LOG.md) - dated work evidence, measurements, tests, and follow-ups.

@@ -13,13 +13,13 @@ related:
   - "[[TRACKING]]"
 ---
 
-# Driver-Side Workstation, Monitor, Fridge, and Storage Mechanisms
+# Driver-Side Workstation, Monitor, Electrical Shelf, and Storage Mechanisms
 
-As-of date: `2026-05-04`
+As-of date: `2026-05-14`
 
-Purpose: capture a buildable design direction for the driver/left-side workstation zone so the camper can support full-time work, preserve pop-down roof clearance, and gain storage without ruining ergonomics.
+Purpose: capture a buildable design direction for the driver/left-side workstation and electrical-closet interface so the camper can support full-time work, preserve pop-down roof clearance, keep DC electronics/laptop plugs accessible, and gain storage without ruining ergonomics.
 
-Status: **draft implementation baseline**. Do not convert this into exact extrusion cuts, drawer-slide lengths, panel skins, or final penetrations until post-install shell measurements, Iceco envelope checks, and roof-popdown sweep tests pass.
+Status: **draft implementation baseline**, updated after the passenger-side fridge/wet-spine change. Do not convert this into exact extrusion cuts, drawer-slide lengths, panel skins, or final penetrations until post-install shell measurements, driver-side electrical closet/DC shelf checks, diesel-heater service checks, and roof-popdown sweep tests pass.
 
 Related docs:
 - `docs/core/SYSTEMS.md`
@@ -31,25 +31,26 @@ Generated concept diagram:
 
 - ![Driver workstation monitor mechanism](../../media/diagrams/interior-furniture-2026-05-04/02-driver-workstation-monitor-mechanism.png)
 
-Diagram caveat: this image is a mechanism concept, not a fabrication drawing. The monitor stow/deploy geometry, roof-safe line, Iceco slide, cable chain, and latch positions must be validated with the real installed shell.
+Diagram caveat: this image is a mechanism concept, not a fabrication drawing. The monitor stow/deploy geometry, roof-safe line, cable chain, and latch positions must be validated with the real installed shell. The Iceco/fridge portion of the `2026-05-04` diagram is superseded by the passenger-side lofted fridge/wet-spine baseline.
 
 ---
 
 ## 1) Design thesis
 
-Use the driver wall as a **service spine**, not as a deep drawer wall.
+Use the driver wall as a **work/electrical service spine**, not as a deep drawer wall or fridge tower.
 
-Overall interior layout owner: [INTERIOR_furniture_layout_and_galley](INTERIOR_furniture_layout_and_galley.md). This workstation doc owns the driver-side mechanism details inside that office-first layout.
+Overall interior layout owner: [INTERIOR_furniture_layout_and_galley](INTERIOR_furniture_layout_and_galley.md). This workstation doc owns the driver-side mechanism details inside that office-first layout. The Iceco/fridge is now passenger-side and is no longer part of this driver-side module.
 
 Recommended primary architecture:
 
-1. **Fixed lower structure:** desk/fridge/electrical modules tie into a low, rigid driver-wall frame that stays below the roof-down envelope.
+1. **Fixed lower desk/utility structure:** desk, diesel-heater base zone, and electrical-closet service paths tie into a low, rigid driver-wall frame below the roof-down envelope.
 2. **Stow-low monitor cassette:** monitor stores face-down or low in a padded cradle at/near the desk surface, with no travel load carried by the adjustable arm.
 3. **Deployable mast/hinge:** only after the roof is popped, a short 80/20 mast or hinged VESA carriage raises/rotates the monitor into working position.
-4. **Shallow storage wall:** use shallow cubbies, vertical sleeves, mesh pockets, and toe-kick storage around the desk/Iceco zone rather than filling knee space with drawers.
-5. **Positive travel locks:** every moving element gets a mechanical latch/pin; magnets/friction are secondary only.
+4. **Electrical closet / DC shelf interface:** the vertical electrical panel/closet can extend up to the `46 in` interior build height, with a shallow shelf/box projecting toward the desk/entry for DC electronics, laptop plugs, chargers, and office power.
+5. **Shallow storage wall:** use shallow cubbies, vertical sleeves, mesh pockets, and toe-kick storage around the desk/electrical shelf rather than filling knee space with drawers.
+6. **Positive travel locks:** every moving element gets a mechanical latch/pin; magnets/friction are secondary only.
 
-Bottom line: the monitor can feel Ergotron-sturdy while working, but it must become a **latched cargo item** while driving or lowering the roof.
+Bottom line: the monitor can feel Ergotron-sturdy while working, but it must become a **latched cargo item** while driving or lowering the roof. The driver side should now stay focused on work ergonomics, electrical service access, and heater serviceability.
 
 ---
 
@@ -58,13 +59,14 @@ Bottom line: the monitor can feel Ergotron-sturdy while working, but it must bec
 ### Layout constraints
 
 - Driver/left wall sequence currently includes:
-  - top/front-left electrical closet + `3x 48V` batteries / bench step into cabover;
-  - `12V` buffer battery / ground and service paths;
-  - diesel heater zone;
-  - middle-left computer desk;
-  - bottom/rear-left Iceco fridge/cooler because the old top-right location will not fit/open.
-- Current furniture CAD is reference-only after the Iceco/water-tank dry fit mismatch.
-- `15-series` extrusion should be reserved for actual dynamic/heavy modules: electrical cabinet, fridge slide/base, or workstation/monitor spine. Use `10-series`/lighter rail for accessories, panels, cubbies, and trim.
+  - vertical electrical closet/panel up to the `46 in` maximum interior build height;
+  - projecting DC electronics / laptop-plug shelf or box toward the computer desk and camper entry doors;
+  - low diesel heater zone with service access;
+  - middle/entry-side computer desk and stow-low monitor mechanism;
+  - shallow storage only where it does not steal knee room, entry clearance, or service access.
+- The Iceco/fridge is now passenger-side in the lofted wet-spine module; do not size the driver-side desk around a fridge tower.
+- Current furniture CAD and `2026-05-04` generated diagrams are reference-only after the installed-shell layout change.
+- `15-series` extrusion should be reserved for actual dynamic/heavy modules: electrical cabinet frame, monitor spine, or desk frame if measured loads demand it. Use `10-series`/lighter rail for accessories, panels, cubbies, and trim.
 
 ### Roof clearance constraints
 
@@ -93,25 +95,25 @@ Complete these before final cutting or ordering exact-length extrusion.
    - electrical closet / cabover step;
    - desk top;
    - monitor stow cradle;
-   - Iceco/fridge tower;
+   - electrical closet / DC shelf projection;
    - door-side aisle edge.
 4. Add a physical margin before finalizing any stowed hardware height.
 5. Create a simple go/no-go template or marked batten for future checks.
 
 Pass when: roof can close with the monitor stowed, cable loop controlled, and no hard contact or fabric pinch.
 
-### Gate W2: Iceco envelope
+### Gate W2: electrical closet / DC shelf / heater envelope
 
 Measure and record:
 
-- body length/width/height including handles;
-- hinge/lid sweep and required hand clearance;
-- compressor vent side(s), intake/exhaust grille locations, and minimum open-air path;
-- cord exit and bend radius;
-- whether a slide is required for lid access;
-- aisle/door interference at full slide extension.
+- electrical closet height/depth/width up to the `46 in` maximum build height;
+- service reach to fuses, disconnects, shunt/Lynx/12V hardware, labels, and cover fasteners;
+- DC shelf/box projection toward the desk/entry doors, including hip/shoulder/door interference;
+- laptop plug/USB-C/AC/DC station reach from seated position;
+- diesel heater body, duct, intake/exhaust/fuel-line, and service-panel access;
+- cable bend radius, service loops, and AC/DC/data separation.
 
-Pass when: the fridge opens, ventilates, and locks in both travel and parked modes.
+Pass when: electrical service, office power access, heater service, desk ergonomics, and entry movement all work without hidden service points or roof-down conflicts.
 
 ### Gate W3: seated work envelope
 
@@ -245,32 +247,35 @@ Use if travel robustness matters more than one-motion deployment.
 
 ---
 
-## 7) Iceco fridge/cooler module and vertical storage
+## 7) Electrical closet / DC shelf / shallow storage module
 
-### Fridge tray
+The driver side no longer owns the Iceco/fridge. Use the freed driver-side volume for a disciplined electrical/workstation interface, not random deep storage.
 
-- Put the Iceco on a dedicated tray/slide with positive travel lock and secondary strap or draw latch.
-- The slide/base is a valid `15-series` use case if the fridge mass, extension moment, or rough-road loads demand it.
-- Add hard stops so the fridge cannot overextend into the aisle/door or yank the power cord.
-- Maintain an accessible drain/cleaning path if the unit has one.
+### Electrical closet and DC shelf
 
-### Venting
+- Electrical closet/panel can extend vertically up to the `46 in` maximum interior build height, subject to roof/window/entry clearance.
+- A shallow shelf/box may project toward the computer desk/camper entry for DC electronics, laptop plugs, chargers, USB-C/PD, router/Starlink power, and labeled office circuits.
+- Keep AC, DC, and data paths separated or physically partitioned; label any mixed-adjacent service cavity clearly.
+- Keep power bricks and receptacles out of spill paths from the desk front edge.
+- Ventilate power electronics; do not trap laptop docks, USB-C PD supplies, or Starlink DC conversion hardware in sealed acrylic boxes without airflow.
 
-- Do not skin the compressor side tightly.
-- Prefer a lower cool-air intake and upper warm-air exhaust/chimney path around the fridge tower.
-- If the compartment is boxed, add a small thermostatic `12V` fan and washable dust screen.
-- Keep sound treatment out of the direct vent path and away from heater/fire-risk zones.
+### Diesel-heater base zone
 
-### Storage around the fridge
+- Keep the diesel heater low in the driver-side utility zone.
+- Preserve access to heater body, duct clamps, intake/exhaust, fuel-line pass-through, filter/pump interface if inside, and serviceable joints.
+- Preferred fuel direction is exterior tank/fill/pump with only a protected line passing through a grommet/bulkhead to the heater.
+- Keep heater hot surfaces, ducts, and combustion/fuel paths separated from desk electronics and storage cavities.
 
-Use the otherwise dead vertical volume as shallow/tall storage:
+### Shallow storage around the desk
 
-- **Above-fridge shelf:** soft bins for food, office supplies, headset, cables, paper notebooks.
-- **Narrow side tower:** vertical laptop/tablet sleeve, router/Starlink power cubby, file slot, bottle slot, small trash slot.
-- **Fridge-front panel:** bungee grid or MOLLE-style panel for light items only.
-- **Rear service strip:** removable panel for fridge power, vent fan, and any heater/fuel routing inspection.
+Use otherwise dead vertical/shallow volume without hurting ergonomics:
 
-Do not add deep drawers directly over/around the fridge if they block lid opening, vent flow, or service access.
+- **Above/behind desk shelf:** laptop dock, router/Starlink power, chargers, headset, cables, paper notebooks.
+- **Narrow side cubbies:** vertical laptop/tablet sleeve, file slot, bottle slot, small trash slot.
+- **Desk-front/side panel:** light bungee grid or mesh pocket only where it cannot snag knees or entry movement.
+- **Service strip:** removable panel for office power, data leads, monitor cables, and heater/electrical inspection.
+
+Do not add deep drawers directly over/around the desk if they block leg movement, service access, ventilation, or roof-safe monitor stowage.
 
 ---
 
@@ -287,10 +292,10 @@ When the monitor is stowed, it can act as a protective face/shield for shallow c
 
 ### Toe-kick false bottom
 
-Use a raised lower rail/deck under the desk/fridge zone:
+Use a raised lower rail/deck under the desk/electrical shelf zone:
 
 - storage for seldom-used cables, spare parts, tie-downs, tools, or flat items;
-- cable chase for desk/fridge low-voltage runs;
+- cable chase for desk/monitor/DC-electronics low-voltage runs;
 - removable panels with finger holes or quarter-turn fasteners;
 - recessed toe space at the desk bay so feet do not hit a vertical cabinet face.
 
@@ -317,12 +322,11 @@ At shoulder/hip/knee zones, prefer soft pockets, mesh, elastic, or rounded shall
 - Preserve access to the heater body, pump, filter, fuel line, exhaust/intake clamps, and serviceable joints.
 - If using a warm-air branch toward batteries or desk comfort, include a damper or removable duct section and avoid direct hot air on the monitor/laptop.
 
-### Fridge and work noise
+### Work noise and vibration
 
-- Isolate fridge tray with thin neoprene/rubber pads where mechanically appropriate.
 - Add anti-rattle tape to T-slot/panel contact points.
 - Use hex/sound panels or fabric-wrapped absorption on large reflective wall/desk surfaces, but do not block ventilation.
-- Keep pump/fridge/fan wiring and mounts serviceable so noise problems can be fixed after shakedown.
+- Keep monitor, fan, electronics, heater-adjacent panels, and service wiring accessible so noise problems can be fixed after shakedown.
 
 ### Electronics heat
 
@@ -339,7 +343,6 @@ Every moving workstation element needs a primary mechanical restraint:
 - monitor carriage/mast: captive pin or locking slide stop;
 - monitor face-down cradle: over-center latch or compression latch;
 - monitor arm: strapped or clamped against a padded hard stop;
-- fridge slide: locking slide plus secondary strap/latch;
 - desk fold leaf: latch open and latch closed;
 - drawers/bins: positive marine/RV latch, not just soft-close slides;
 - service panels: quarter-turn/captive fasteners;
@@ -349,11 +352,10 @@ Add a visible “drive/roof-down checklist” near the door:
 
 1. Monitor down + pin engaged.
 2. Cable chain flat / no proud loop.
-3. Fridge slide locked + strap engaged.
-4. Desk leaf latched.
-5. Storage doors latched.
-6. Heater/service panels closed.
-7. No item above marked roof-safe line.
+3. Desk leaf latched.
+4. Storage doors latched.
+5. Electrical/heater service panels closed.
+6. No item above marked roof-safe line.
 
 Optional upgrade: a simple microswitch/reed-switch indicator on the monitor stow latch that lights a small green LED when the monitor is in the roof-safe position. Treat it as an aid, not the only safeguard.
 
@@ -361,8 +363,8 @@ Optional upgrade: a simple microswitch/reed-switch indicator on the monitor stow
 
 ## 11) Service access rules
 
-- No fuse, disconnect, shunt, heater service joint, fridge vent fan, or power-conversion module should require removing the entire desk to inspect.
-- Use removable side panels around the desk/fridge tower.
+- No fuse, disconnect, shunt, heater service joint, DC power-conversion module, or office power distribution point should require removing the entire desk to inspect.
+- Use removable side panels around the desk/electrical shelf/heater-service zone.
 - Use service loops and labeled quick disconnects for monitor/data/power leads.
 - Keep AC and DC/data paths separated or physically partitioned; label mixed-adjacent service cavities clearly.
 - Preserve a tool path for tightening T-slot bolts, VESA bolts, and slide hardware after vibration shakedown.
@@ -372,10 +374,10 @@ Optional upgrade: a simple microswitch/reed-switch indicator on the monitor stow
 
 ## 12) Build sequence
 
-1. **Mock envelopes first:** cardboard/tape the electrical closet, desk, monitor stow block, Iceco, fridge slide, and storage tower inside the installed camper.
-2. **Pass roof sweep:** prove the stowed monitor and all cubbies stay below the roof-down envelope.
+1. **Mock envelopes first:** cardboard/tape the electrical closet, DC shelf/box, desk, monitor stow block, diesel-heater service zone, and storage tower inside the installed camper.
+2. **Pass roof sweep:** prove the stowed monitor, DC shelf, and all cubbies stay below the roof-down envelope.
 3. **Pass chair/desk test:** sit and work at the mockup for at least one real session before committing storage below/around knees.
-4. **Build lower frame:** desk/fridge/electrical service spine first; keep skins/removable panels temporary.
+4. **Build lower frame:** desk/electrical/heater service spine first; keep skins/removable panels temporary.
 5. **Build monitor mechanism on bench:** prove stow/deploy/latch/cable path outside the camper.
 6. **Install monitor mechanism:** attach to structural spine, not just desktop; add hard stops and travel latch.
 7. **Add storage skins:** shallow cubbies, acrylic/mesh retainers, toe-kick panels, and LED strips after mechanisms pass.
@@ -400,14 +402,14 @@ Optional upgrade: a simple microswitch/reed-switch indicator on the monitor stow
 
 ### Travel test
 
-- Drive mixed surfaces with monitor stowed and fridge loaded.
-- Inspect latches, VESA fasteners, T-slot joints, slide locks, storage doors, and anti-rattle surfaces.
+- Drive mixed surfaces with monitor stowed and driver-side service panels loaded/latched.
+- Inspect latches, VESA fasteners, T-slot joints, service-panel fasteners, storage doors, and anti-rattle surfaces.
 - Re-torque/witness-mark after the first drive cycle.
 
 ### Thermal/noise test
 
-- Run fridge, laptop/dock, monitor, USB-C PD, Starlink/router, and heater/ventilation in realistic combinations.
-- Check fridge exhaust temperature, tech cubby temperature, fan noise, and whether heat is trapped around power bricks.
+- Run laptop/dock, monitor, USB-C PD, Starlink/router, DC shelf electronics, and heater/ventilation in realistic combinations.
+- Check tech cubby temperature, heater-adjacent panel temperature, fan noise, and whether heat is trapped around power bricks.
 
 ---
 
@@ -415,7 +417,6 @@ Optional upgrade: a simple microswitch/reed-switch indicator on the monitor stow
 
 - Exact monitor mechanism: rising mast vs under-desk flip-up vs quick-release sleeve.
 - Exact desk length/depth/height after chair and roof-envelope measurement.
-- Whether the Iceco needs a full slide or can remain fixed with a lid-clearance cutout.
 - Whether the monitor uses AC brick, DC-native power, or USB-C display/power through a dock.
 - Final storage split between shallow cubbies, soft pockets, toe-kick, and bench-step storage.
 - Final hardware ecosystem for latches, slides, and T-slot standard.

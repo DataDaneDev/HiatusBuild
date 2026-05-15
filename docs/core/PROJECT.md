@@ -39,7 +39,7 @@ related:
 
 ## Current execution focus (post-install interior buildout)
 - Use [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md) as the active phase sequence. Use [INSTALL_MINUS_12_READINESS_PLAN](../plans/INSTALL_MINUS_12_READINESS_PLAN.md) and [STARTER_PLAN_electrical_and_flooring_pre_camper](../plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md) as historical install-window/pre-camper references unless they are explicitly refreshed.
-- Use [INTERIOR_furniture_layout_and_galley](../implementation/INTERIOR_furniture_layout_and_galley.md) as the current owner for the office-first furniture/galley/wet-spine concept and `10-series` 80/20 overlay-panel direction.
+- Use [INTERIOR_furniture_layout_and_galley](../implementation/INTERIOR_furniture_layout_and_galley.md) as the current owner for the office-first passenger-side lofted fridge/wet-spine concept, separated battery bench, and `10-series` 80/20 overlay-panel direction.
 - Use [ELECTRICAL_48V_ARCHITECTURE](ELECTRICAL_48V_ARCHITECTURE.md) as the canonical `48V` design reference while mechanically laying out the electrical module and alternator-control path.
 - Active work now includes measured camper block envelopes, dead-mechanical electrical layout, fuse/device access checks, 80/20 prototype stock/hardware planning, floor/subfloor gates, and payload/weight tracking.
 - Defer irreversible work (final penetrations, final cable cuts/crimps, final extrusion vendor cuts, permanent skins, and finish-floor glue-down) until physical measurement, service-map, and access checks pass.
@@ -83,7 +83,7 @@ related:
 - [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md)
 
 ## Immediate next decisions
-- **Measured envelopes:** physically tape/cardboard the electrical bench, galley/wet-spine, fridge/utility, water tank, and workstation zones in the installed camper before final cut lists.
+- **Measured envelopes:** physically tape/cardboard the passenger-side lofted fridge/wet-spine skeleton, pump/accumulator board, water tank overlap, separated battery bench, driver-side electrical closet/DC shelf, diesel heater zone, and workstation before final cut lists.
 - **Extrusion/furniture:** order/use 80/20 as controlled prototype stock/hardware, not a final vendor-cut enclosure. Default toward `10-series` unless real point loads or restraint needs prove otherwise.
 - **Panel strategy:** use overlay/removable panels on living-facing surfaces, keep service zones exposed or quick-removable, and use magnets only for light service covers with locator/backup retention where panel loss matters.
 - **Electrical:** shore-power / initial-charge remains a priority before any alternator work. Build the AC-in-only MultiPlus charge path first: `shore source -> cord/adapter -> TT-30 inlet -> hardwired EMS -> AC-in breaker/disconnect -> MultiPlus AC-in`. Order/SKU-lock BOM rows `107`, `108`, `123`, `13`, `109`, `14`, and `114` plus glands/grommets/labels/ferrules.
@@ -107,8 +107,8 @@ Purpose: turn the installed camper shell into measured block envelopes before bu
    - Trim EPS flat in ribs, verify plywood flushness, and keep hardpoint pockets non-compressible.
    - Glue Lonseal only after the gate passes.
 4. **Block envelopes before extrusion**
-   - Tape/cardboard the fridge, purchased `36 gal` wheel-well tank, electrical cabinet, galley, and desk zones.
-   - Use the interior furniture/galley concept doc as the layout checkpoint, then verify against real roof-down sweep, cabover step path, fridge lid/vent/cord envelope, tank fitting orientation, and wet-spine service access.
+   - Tape/cardboard the passenger-side lofted fridge/wet-spine skeleton, purchased `36 gal` wheel-well tank, under-fridge pump/accumulator board, separated battery bench, driver-side electrical closet/DC shelf, diesel heater base zone, and desk.
+   - Use the interior furniture/galley concept doc as the layout checkpoint, then verify against real roof-down sweep, cabover/bench cushion use, fridge lid/vent/cord envelope, tank overlap/fitting orientation, pump service access, battery extraction, and wet/dry separation.
    - Default to `10-series` 80/20, plywood, panels, brackets, and light rail unless measured heavy/dynamic modules prove they need larger extrusion.
 5. **Electrical bench path**
    - Layout Board A/B with real service access and cable corridors.
