@@ -83,7 +83,7 @@ related:
 - [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md)
 
 ## Immediate next decisions
-- **Measured envelopes:** physically tape/cardboard the passenger-side lofted fridge/wet-spine skeleton, pump/accumulator board, water tank overlap, separated battery bench, driver-side electrical closet/DC shelf, diesel heater zone, and workstation before final cut lists.
+- **Measured envelopes:** physically tape/cardboard the passenger-side lofted fridge/wet-spine skeleton, pump/accumulator board, water tank overlap, separated battery bench, driver-side electrical box/step box, `24 in x 48 in` wheel-well desk, DC shelf, diesel heater zone, and workstation before final cut lists.
 - **Extrusion/furniture:** order/use 80/20 as controlled prototype stock/hardware, not a final vendor-cut enclosure. Default toward `10-series` unless real point loads or restraint needs prove otherwise.
 - **Panel strategy:** use overlay/removable panels on living-facing surfaces, keep service zones exposed or quick-removable, and use magnets only for light service covers with locator/backup retention where panel loss matters.
 - **Electrical:** shore-power / initial-charge remains a priority before any alternator work. Build the AC-in-only MultiPlus charge path first: `shore source -> cord/adapter -> TT-30 inlet -> hardwired EMS -> AC-in breaker/disconnect -> MultiPlus AC-in`. Order/SKU-lock BOM rows `107`, `108`, `123`, `13`, `109`, `14`, and `114` plus glands/grommets/labels/ferrules.

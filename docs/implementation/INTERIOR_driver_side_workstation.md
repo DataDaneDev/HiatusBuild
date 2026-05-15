@@ -60,10 +60,11 @@ Bottom line: the monitor can feel Ergotron-sturdy while working, but it must bec
 
 - Driver/left wall sequence currently includes:
   - vertical electrical closet/panel up to the `46 in` maximum interior build height;
+  - cardboard-mocked electrical box plus a step box projecting from/integrating with it;
   - projecting DC electronics / laptop-plug shelf or box toward the computer desk and camper entry doors;
   - low diesel heater zone with service access;
-  - middle/entry-side computer desk and stow-low monitor mechanism;
-  - shallow storage only where it does not steal knee room, entry clearance, or service access.
+  - `24 in x 48 in` desk around the wheel-well area, integrated with the electrical step box;
+  - stow-low monitor mechanism and shallow storage only where they do not steal knee room, entry clearance, or service access.
 - The Iceco/fridge is now passenger-side in the lofted wet-spine module; do not size the driver-side desk around a fridge tower.
 - Current furniture CAD and `2026-05-04` generated diagrams are reference-only after the installed-shell layout change.
 - `15-series` extrusion should be reserved for actual dynamic/heavy modules: electrical cabinet frame, monitor spine, or desk frame if measured loads demand it. Use `10-series`/lighter rail for accessories, panels, cubbies, and trim.
@@ -120,8 +121,8 @@ Pass when: electrical service, office power access, heater service, desk ergonom
 Mock with cardboard/plywood:
 
 - chair/stool position;
-- desk height/depth;
-- knee width/depth;
+- desk height/depth, including the current `24 in x 48 in` wheel-well desk target;
+- knee width/depth around the wheel-well notch and electrical step-box projection;
 - footrest/toe-kick clearance;
 - monitor eye line and viewing distance;
 - mouse/keyboard reach;
@@ -374,7 +375,7 @@ Optional upgrade: a simple microswitch/reed-switch indicator on the monitor stow
 
 ## 12) Build sequence
 
-1. **Mock envelopes first:** cardboard/tape the electrical closet, DC shelf/box, desk, monitor stow block, diesel-heater service zone, and storage tower inside the installed camper.
+1. **Mock envelopes first:** cardboard/tape the electrical closet, electrical step box, DC shelf/box, `24 in x 48 in` wheel-well desk, monitor stow block, diesel-heater service zone, and storage tower inside the installed camper.
 2. **Pass roof sweep:** prove the stowed monitor, DC shelf, and all cubbies stay below the roof-down envelope.
 3. **Pass chair/desk test:** sit and work at the mockup for at least one real session before committing storage below/around knees.
 4. **Build lower frame:** desk/electrical/heater service spine first; keep skins/removable panels temporary.

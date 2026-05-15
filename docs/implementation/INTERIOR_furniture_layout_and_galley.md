@@ -85,6 +85,18 @@ Build the camper as a serviceable, separated wet/dry systems cluster around a cl
 
 Bottom line: the new layout is better because the fridge, tank, pump, batteries, electrical closet, and heater now form a real serviceable 3D systems package instead of a flat garage-floor mockup. The tradeoff is that rough 80/20 skeleton work becomes part of layout validation, not just final cabinetry.
 
+### Physical mockup update — 2026-05-15
+
+Owner-provided installed-camper photo/mockup confirms these current physical envelopes:
+
+- Blue tape on the floor marks the current module footprints; use it as layout evidence, not final cut geometry.
+- The taped battery bench area sits near the bulkhead/front wall and currently holds the `3x 51.2V 100Ah` batteries as a mass/extraction check.
+- Cardboard represents the driver-side electrical box plus the step box projecting from/integrating with it.
+- The desk is around the wheel-well area, planned at about `24 in x 48 in`, and integrates with the electrical step box.
+- The fridge remains at the same raised height but should slide deeper into the passenger-side corner.
+
+Practical implication: the next design artifact should be a measured block-envelope sketch from this taped mockup: datum, battery extraction path, step-box projection, desk/wheel-well notch, fridge slide/vent/lid sweep, and pump-service access. Do not treat the photo as sufficient for exact extrusion lengths.
+
 ---
 
 ## 3) Recommended baseline: Office-first hybrid layout
@@ -213,7 +225,7 @@ Recommended roles:
 
 Build direction:
 
-- Mock the fridge, tank, pump, accumulator, battery boxes, and bench lid as one 3D package before buying exact-cut extrusion.
+- Mock the fridge, tank, pump, accumulator, battery boxes, bench lid, electrical step box, and `24 in x 48 in` wheel-well desk as one 3D package before buying exact-cut extrusion.
 - Keep the pump strainer, accumulator, pressure gauge, shutoff, winterization pickup, and electrical connector visible through one service opening.
 - Use drip trays, leak sensor, and physical partitions so a plumbing leak cannot run into the battery enclosure.
 - Use overlay/removable panels for finished faces only after the skeleton passes access and interference checks.
@@ -553,7 +565,7 @@ Reasonable low-regret prep:
 - A small assortment of `10-series` T-slot/rail connector samples plus a few representative `15-series` samples for stiffness comparison only.
 - Latches/draw-latch samples.
 - Anti-rattle tape samples.
-- Cable-chain sample sized to monitor/fridge wiring.
+- Cable-chain/sample loom sized to monitor, desk/DC shelf, and fridge wiring where motion/service loops are needed.
 - Service-panel fastener samples.
 - Cushion/lid hardware, service-panel latch, and divider-board samples for the separated battery bench.
 
@@ -564,10 +576,10 @@ Do not buy broad `15-series` because “camper furniture needs extrusion.” Buy
 ## 15) Current open questions owned by this design
 
 - Exact installed camper interior dimensions and roof-down sweep line.
-- Final power stair bench height and lid segmentation.
-- Battery extraction path with the center-spill bench bridge removed.
-- Whether top-right vertical cube storage clears roof/window/shoulder geometry.
-- Exact Iceco model, raised passenger-side lid/vent/cord/slide envelope, tank overlap, and service-panel clearance.
+- Final electrical step-box and battery-bench height/lid segmentation.
+- Battery extraction path with the step/bench bridge removed.
+- Whether any fridge-adjacent or desk-adjacent vertical storage clears roof/window/shoulder geometry.
+- Exact Iceco model, raised passenger-side lid/vent/cord/slide envelope, deeper-corner slide position, tank overlap, and service-panel clearance.
 - Final driver-side desk height/depth after real seated mockup.
 - Monitor mechanism choice: rising VESA spine vs under-desk flip-up vs quick-release sleeve.
 - Wheel-well tank fitting orientation, fill/vent bend radius, drain access, and restraint path.
@@ -584,7 +596,7 @@ Do not buy broad `15-series` because “camper furniture needs extrusion.” Buy
 Recommended baseline:
 
 - **Use the office-first hybrid.** The full-time workstation is the mission-critical feature.
-- **Turn the top-left battery mass into a power stair bench.** Make it serviceable, removable in sections, and safe to step on.
+- **Turn the driver-side electrical/step-box and adjacent battery bench into a serviceable step/bench system.** Make it removable in sections, safe to step on where intended, and clear about which volume is electrical service versus ordinary storage.
 - **Build the passenger side as a lofted fridge/wet-spine exoskeleton.** Raise the Iceco/fridge about `16 in`, put pump/accumulator below it, and prove the tank overlap/service access physically.
 - **Make the battery bench separated and cushion-compatible.** Batteries low in their own enclosures, flat divider board above, lid access, storage/cushion use kept out of battery volume.
 - **Keep the driver desk shallow but serious.** Preserve knee room; use the driver-side electrical closet/DC shelf for office power without blocking entry or roof closure.

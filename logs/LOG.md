@@ -21,6 +21,13 @@ Single running log for build progress and test evidence.
 - Issues:
 - Next actions:
 
+## 2026-05-15
+- Physical layout photo/mockup received: blue-tape floor envelopes show current installed-camper module layout; cardboard represents the driver-side electrical box and integrated step box; the battery bench area is taped near the bulkhead/front wall; the desk is around the wheel well at about `24 in x 48 in` and integrates with the electrical step box.
+- Fridge clarification: fridge remains at the same raised height but should slide deeper into the passenger-side corner.
+- Documentation update: added the photo-derived mockup facts as text only; the photo itself was not committed/published.
+- Issues: convert this into a measured block-envelope sketch before exact extrusion lengths.
+- Next actions: measure datum-to-tape lines, battery extraction path, desk/wheel-well notch, step-box projection, fridge slide/lid/vent sweep, and pump-service opening.
+
 ## 2026-05-14
 - Owner layout update: the Iceco/fridge is back on the passenger side, raised about `16 in` on an extrusion exoskeleton and slightly overlapping the `36 gal` wheel-well water tank envelope.
 - Plumbing update: pump and accumulator move below the fridge in that exoskeleton, next to the water tank, as a separated service bay rather than hidden galley plumbing.
