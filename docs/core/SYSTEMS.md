@@ -34,13 +34,14 @@ related:
 - Solar option screening matrix (stringing + MPPT fit flags): [SOLAR_configuration_matrix](../studies/SOLAR_configuration_matrix.md)
 - Electrical decisions, risks, and unresolved items: [TRACKING](TRACKING.md)
 
-### Planning snapshot (as-of `2026-04-27`)
+### Planning snapshot (as-of `2026-05-14`)
 - Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).
 - House architecture: `48V` core with Orion-Tr Smart `48V->12V` charging/step-down feeding a shared battery-backed `12V` junction.
 - Inverter/charger candidate: Victron MultiPlus-II `48/3000/35-50`.
 - Charge sources in current BOM: solar MPPT, dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48` migration baseline), shore AC charger path.
 - Monitoring and protection: Cerbo GX, SmartShunt, battery temp sensing, Class T primary fuse + branch fusing.
 - AC protection chain remains locked (`shore source -> cord/adapter -> TT-30 inlet -> EMS -> AC-in breaker -> MultiPlus -> separate AC-out branch panel`), with AC-in-only initial charging prioritized ahead of final receptacle-count/utilization closure.
+- Current build phase: use the installed camper shell for dead-mechanical electrical layout, measured block envelopes, and service-map validation before final cable cuts, energization, extrusion vendor cuts, skins, or finish-floor glue-down.
 
 ### Modeling rules (procurement-first plus full-load)
 - Primary procurement source of truth is `bom/bom_estimated_items.csv`.
@@ -254,9 +255,10 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 - Gravity-fill vent hose correction: owner-measured vent nipple is about `10 mm` OD on the main land and `11 mm` OD at the largest barb/ridge. Specify `10 mm ID` food-grade/potable tube, or `3/8 in ID` as the common inch fallback; the previously ordered `1/2 in ID x 5/8 in OD` tube is oversized.
 
 ## Cabinetry and structure
-- Interior furniture/layout draft owner: [INTERIOR_furniture_layout_and_galley](../implementation/INTERIOR_furniture_layout_and_galley.md). Recommended planning direction is the office-first hybrid: top-left power stair bench over `3x 48V` batteries, top-right soft storage/cabover landing bench, driver-side desk + rear-left Iceco utility block, and passenger-side galley wet spine over the `36 gal` wheel-well tank.
+- Interior furniture/layout draft owner: [INTERIOR_furniture_layout_and_galley](../implementation/INTERIOR_furniture_layout_and_galley.md). Recommended planning direction is the office-first hybrid: driver-side electrical/power-stair bench over/around the `3x 48V` batteries, driver-side workstation + rear-left Iceco utility block, passenger-side cold-first galley/wet spine over the `36 gal` wheel-well tank, and clear center aisle/cabover movement.
 - Driver-side workstation implementation draft: [INTERIOR_driver_side_workstation](../implementation/INTERIOR_driver_side_workstation.md). It captures the current best direction for a service-spine desk, stow-low monitor cassette/rising VESA spine, Iceco/fridge tower, shallow storage, travel locks, cable management, heat/noise control, and roof-close acceptance tests.
-- Aluminum extrusion strategy: the prior broad `15-series` starter order is superseded by the purchased `36 gal` wheel-well tank. Do not buy `15-series` for a tank exoskeleton unless dry fit proves a separate structural frame is still needed; use `15-series` only for actual heavy freestanding modules and `10-series`/lighter rail for accessory/panel work.
+- Aluminum extrusion strategy: the broad `15-series` starter order is superseded. Default to `10-series` prototype stock/hardware for furniture where practical; reserve larger extrusion for measured heavy/dynamic freestanding modules that prove they need the stiffness.
+- Panel strategy: living-facing furniture surfaces should use mechanically removable overlay panels over the frame; service zones stay exposed or quick-removable. Magnetic service covers are acceptable only for light non-structural panels and need locator/anti-shear features plus backup retention where loss would matter.
 - Current furniture CAD is reference-only after Iceco/water tank dry fit; fridge/cooler likely moves to the rear-left / bottom-left corner, so re-CAD block envelopes before final cut lists.
 - Modular mounting baseline now includes T-slot/strut rails both exterior (recovery/tool mounts like shovel/Maxtrax) and interior (baskets/hooks/tie-down points); BOM rows `119` and `120`.
 - Drawer hardware baseline includes `4x` soft-close undermount slide kits for primary cabinetry drawers; BOM row `122`, but final lengths are deferred until fridge/tank/electrical module envelopes are verified.
@@ -266,6 +268,7 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 
 ## HVAC and condensation
 - Heating approach in notes: diesel heater with possible branch to battery compartment
+- Diesel fuel planning: `8 gal` diesel reserve is roughly `50-60 hr` of continuous full-output runtime for a typical `5 kW` heater; use `~48 hr` as a conservative full-blast planning number.
 - Ventilation: Maxxair fan included in current camper config
 - Lighting split: Hiatus factory overhead LED+dimmer is a separate circuit from planned ambient/cabinet LED strips (Govee)
 - Condensation controls and climate envelope limits: TBD

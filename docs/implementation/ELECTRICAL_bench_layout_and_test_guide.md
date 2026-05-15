@@ -11,17 +11,17 @@ related:
   - "[[OPERATIONS]]"
 ---
 
-# Electrical Bench Layout + Test Guide (Garage Use)
+# Electrical Bench Layout + Test Guide
 
-As-of date: `2026-04-27`
+As-of date: `2026-05-14`
 
-Purpose: provide a practical, print-friendly game plan for building and validating the electrical closet module on the ground before final install.
+Purpose: provide a practical, print-friendly game plan for building and validating the electrical module mechanically before final wiring, energization, or permanent enclosure/panel closeout.
 
 Related docs:
 - `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`
 - `docs/implementation/ELECTRICAL_overview_diagram.md`
 - `docs/implementation/ELECTRICAL_fuse_schedule.md`
-- `docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md`
+- `docs/plans/PROJECT_build_order_of_operations.md`
 
 ---
 
@@ -34,6 +34,7 @@ Related docs:
   - **Board B**: against bulkhead (controls, `12V`, AC support hardware).
 - Closet sits above battery zone.
 - Structural mounting intent is through-bolts with washers and lock nuts (no wood screws for permanent component mounting).
+- The installed camper shell owns final outer dimensions and service-access geometry; garage/floor layouts are templates only until the two-plane mockup passes in-camper insertion, removal, cable-bend, fuse-access, and panel-access checks.
 
 ---
 

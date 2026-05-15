@@ -1,6 +1,6 @@
 # Hiatus Truck Bed Camper Project
 
-This is the single workspace map and update guide for the project.
+This is the single workspace map and update guide for the Hiatus/F-350 camper build. The repo is now in the **post-install interior buildout** phase: use it to keep the measured camper layout, electrical module, wet-spine/galley, flooring, payload, and 80/20/panel decisions aligned without creating parallel notes.
 
 ## Open in Obsidian
 - Start at [00 Home](00%20Home.md) for the shortest navigation path.
@@ -10,8 +10,16 @@ This is the single workspace map and update guide for the project.
 ## Fixed project constants
 - Truck: 2021 Ford F-350 Regular Cab Long Bed
 - Truck mods: 2.5 inch lift, 37 inch tires, 4.88 differential regear
-- Camper milestone: ready for install on May 7, 2026
+- Camper status: Hiatus shell is in hand/installed; May 7, 2026 install readiness is now historical context
 - Primary use: Financial Analyst remote work (typical 9-5, Monday-Friday) with occasional subsidiary flights
+
+## Current project posture — 2026-05-14
+- Current focus: turn the real camper shell into measured block envelopes before final extrusion cuts, permanent skins, final wiring, or finish-floor glue-down.
+- Interior baseline: office-first hybrid layout with driver-side electrical/power-stair bench, driver workstation/fridge utility block, passenger-side cold-first wet-spine/galley, and clear center aisle.
+- Furniture construction direction: prototype with `10-series` 80/20 where practical; use overlay/removable panels on living-facing surfaces; keep service zones exposed or quick-removable.
+- Electrical posture: dead mechanical layout first. Do not final-crimp, parallel, or energize the `3x 48V` battery bank until access, cable routing, fusing, and staged first-charge checks pass.
+- Flooring posture: keep Lonseal/final closure gated until EPS/subfloor fit, hardpoints, penetrations, moisture paths, and service access are verified in the installed camper.
+- Payload posture: legal payload still depends on the door sticker/scale tickets; current planning assumes a narrow payload margin and treats water, batteries, bumpers, spare, 80/20, panels, tools, and tech as active weight risks.
 
 ## First-stop update map
 Use this table first whenever you are deciding where to put information.
@@ -30,7 +38,8 @@ Use this table first whenever you are deciding where to put information.
 | Electrical implementation topology details | [ELECTRICAL_overview_diagram](docs/implementation/ELECTRICAL_overview_diagram.md) |
 | Fuse IDs, values, holders, spare policy | [ELECTRICAL_fuse_schedule](docs/implementation/ELECTRICAL_fuse_schedule.md) |
 | Bench-build electrical layout and staged test checklist | [ELECTRICAL_bench_layout_and_test_guide](docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md) |
-| Pre-camper starter execution plan (electrical + flooring) | [STARTER_PLAN_electrical_and_flooring_pre_camper](docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md) |
+| Active post-install order of operations | [PROJECT_build_order_of_operations](docs/plans/PROJECT_build_order_of_operations.md) |
+| Historical install-window / pre-camper references | [INSTALL_MINUS_12_READINESS_PLAN](docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md), [STARTER_PLAN_electrical_and_flooring_pre_camper](docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md) |
 
 ## Document relationship rules
 - One topic should have one owning file. Related files may summarize or point to it, but should not compete with it.

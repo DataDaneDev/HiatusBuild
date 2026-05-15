@@ -15,14 +15,15 @@ related:
 
 ## Scope
 - Define the locked floor stack-up, hardpoint strategy, procurement state, and install workflow for the truck bed floor.
-- Baseline date for this revision: April 27, 2026.
+- Baseline date for this revision: May 14, 2026.
 - Moisture-control premise updated May 3, 2026: the Hiatus is effectively a sealed capper with barn doors; the inside of the truck bed remains the build substrate, so water must not be allowed under the subfloor.
 - Field progress updated May 4, 2026: bed rail caps were re-bonded/sealed with polyurethane; small drill holes and corner gaps were patched/sealed; trowel is purchased.
+- Field progress updated May 14, 2026: the subfloor is complete enough to serve as the current working datum, while Lonseal remains intentionally unglued until rough-in, hardpoints, and service-access decisions are validated in the installed camper.
 
 ## Final Subfloor Structure (Bottom to Top)
 1. Existing spray-in bedliner.
-2. `5/8 in` SilveRboard Graphite EPS between ribs only. Current state: previously cut/installed; cleanup still required so pieces sit evenly in the bed ribs.
-3. `3/4 in` birch plywood directly over EPS + rib structure. Current state: cut in three slices with bottom/edges sealed and top bond face untreated for Lonseal adhesive; final reinstall waits for EPS cleanup and sealing cure/inspection gates.
+2. `5/8 in` SilveRboard Graphite EPS between ribs only. Current state: installed/trimmed enough for the current subfloor datum; inspect for proud spots, rocking, moisture paths, or hardpoint conflicts before finish-floor closure.
+3. `3/4 in` birch plywood directly over EPS + rib structure. Current state: complete in three slices with bottom/edges sealed and top bond face untreated for Lonseal adhesive; keep removable/serviceable until rough-in and hardpoint gates pass.
 4. Lonseal Lonwood Madera marine sheet vinyl, glue-down finish layer. Current state: sheet vinyl and adhesive are in hand; glue-down is gated because it reduces subfloor serviceability.
 
 ## Explicitly De-Scoped Layer
@@ -66,7 +67,7 @@ related:
 
 ## Installation Sequence
 ### Phase 0 - Bed rail dust/weather closeout before finish floor
-Status: mostly complete as of May 4; cure/inspection still required.
+Status: historical install-window workstream; inspect after normal travel/shakedown before any finish-floor closure.
 
 1. Empty the bed and remove the existing removable flooring before the Washington trip; do not transport flooring through the wet/adhesive rail-seal workstream. **Completed.**
 2. Remove or lift bed rail caps as needed and photograph all old camper-install holes. **Caps removed; most clips broke.**
@@ -75,7 +76,7 @@ Status: mostly complete as of May 4; cure/inspection still required.
 5. Clean/degrease rail surfaces and rust-protect bare cut edges.
 6. Close holes as dust/weather intrusion points using low-profile, serviceable cover patches where possible: thin aluminum/ABS/HDPE or similar non-absorbent patch/backer bedded in butyl tape, automotive seam sealer, MS polymer, or polyurethane sealant.
 7. Reinstall rail caps with targeted sealing/gasketing while avoiding camper-fit interference and avoiding hidden pockets that can hold water against metal. **Completed with large Loctite polyurethane bead under caps.**
-8. Let sealant skin/cure per product conditions before reinstalling flooring or handling surfaces. **Pending cure/inspection.**
+8. Let sealant skin/cure per product conditions before reinstalling flooring or handling surfaces. **Historical gate; perform post-travel inspection before closeout.**
 
 ### Phase 0A - Bed-floor drain/corner sealing before subfloor closeout
 Status: partially complete as of May 4; cure/post-drive inspection still required.

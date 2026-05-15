@@ -15,14 +15,13 @@ related:
 
 ## Purpose
 - Define a practical order of operations that still supports parallel workstreams.
-- Prioritize "build modules now, drop in later" for the fixed camper install date on May 7, 2026.
+- Prioritize measured, reversible post-install module work: validate real camper envelopes first, then build systems and furniture modules without burying service access.
 
-## Planning assumptions (as-of 2026-04-27)
-- Fixed install appointment: May 7, 2026 at `9:00 AM` in Bellingham, Washington.
-- Travel constraint: truck starts in Park City, Utah; stage near Bellingham by the evening of May 6.
-- Work constraint: normal workdays remain `9-5` through May 5; PTO is May 6-11, so weekday prep before PTO stays light, May 2-3 carries the heavy physical tasks, and May 6 is reserved for travel/staging.
-- This plan assumes a Hiatus truck bed camper install with only reversible/module-first prep before delivery.
+## Planning assumptions (as-of 2026-05-14)
+- Hiatus install readiness/travel planning is historical; the real camper shell is available for physical measurements and mockups.
+- This plan assumes a post-install interior buildout with only reversible/module-first prep until service maps, penetrations, and access gates pass.
 - Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline.
+- Interior/furniture assumptions in `docs/implementation/INTERIOR_furniture_layout_and_galley.md` remain the current draft baseline.
 
 ## Typical full-build sequence (once camper shell is physically in hand)
 1. Layout freeze and service-map freeze
@@ -76,7 +75,7 @@ related:
 - Stream D: shell execution
 - Once shell is available, execute penetrations -> rough-in -> close-up using prepared modules and harnesses.
 
-## Date-window execution plan (baseline date: May 4, 2026)
+## Date-window execution plan (install window history + current restart)
 1. May 2 to May 4 (completed heavy truck prep)
 - Bed/flooring removed from travel/build path; Washington trip should remain mostly empty-bed.
 - Bed rail caps were removed; most clips broke; caps were reinstalled with a large Loctite polyurethane bead underneath.
@@ -101,14 +100,15 @@ related:
 - Freeze service map from real shell dimensions before penetrations, final cable cuts, Lonseal glue-down, or permanent module skins.
 - Place top-off orders based on real measurements and update logs/tracking.
 
-5. After Utah return (build restart; updated `2026-05-11`)
+5. Current restart phase (updated `2026-05-14`)
 - Owner status: the subfloor is now complete; sheet vinyl/Lonseal remains intentionally unglued to avoid damage and preserve access while rough-in decisions are still open.
 - Visually inspect sealed bed paths after cure and normal travel/shakedown; look for lifted tape, cracked beads, dust trails, or dampness before any flooring closeout.
 - Hold glue-down until the floor/rough-in gate passes: no pending floor penetrations, hardpoint pockets verified, EPS/subfloor sitting flush, and adhesive/roller method confirmed.
 - Tape/cardboard block envelopes for fridge, `36 gal` wheel-well tank, electrical cabinet, galley, desk, and diesel-heater/fuel-tank service envelope before ordering exact extrusion cuts.
-- Treat broad `15-series` as downscoped. Default to `10-series`, plywood, light rail, or direct mounting unless a measured heavy/dynamic module proves it needs `15-series` stiffness.
+- Treat broad `15-series` as downscoped. Default to `10-series`, plywood, light rail, or direct mounting unless a measured heavy/dynamic module proves it needs larger extrusion stiffness.
 - Next practical workstream: convert the electrical pile-on-plywood into labeled two-plane backer-board mockups and paper component templates before drilling, crimping, or energizing anything.
 - Validate the office-first interior concept against real dimensions: top-left power stair battery bench, top-right soft storage/landing bench, driver-side workstation and rear-left Iceco utility block, passenger-side galley/wet-spine, rear shower/fill/vent hatch, and center-aisle/cabover-step movement.
+- Build the 80/20/furniture list from physical module envelopes first: classify each member as structural, panel support, or locator/anti-rattle, then buy prototype stock/hardware before final vendor-cut lengths.
 
 ## Deferred / purchase-later rows (keep out of current critical path unless triggered)
 - Optional 12V expansion path: row `118`.

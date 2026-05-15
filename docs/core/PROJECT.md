@@ -20,15 +20,15 @@ related:
 - Keep exact topology, fuse, conductor, and bench procedure detail in `docs/implementation/`.
 
 ## Snapshot
-- As-of date: April 27, 2026
-- Install milestone: May 7, 2026, `9:00 AM`, at `3171 Mercer Ave, Suite 101, Bellingham, WA 98225`
-- Travel constraint: truck starts in Park City, Utah and should be staged near Bellingham by the evening of May 6
+- As-of date: 2026-05-14
+- Phase: post-install interior buildout and measured systems-layout validation
+- Install milestone: May 7, 2026 Hiatus install is now historical context; the real camper shell is available for physical mockups and measurements
 - Mission: build a reliable off-grid camper workspace suitable for full-time professional use
 
 ## Fixed constraints
 - Truck platform is fixed: 2021 F-350 Regular Cab Long Bed
 - Existing truck modifications are fixed: 2.5" lift, 37" tires, 4.88 regear
-- Camper delivery/install readiness date is fixed: May 7, 2026
+- Camper platform is fixed: installed/in-hand Hiatus shell on the F-350 long bed
 
 ## Objectives
 
@@ -37,11 +37,12 @@ related:
 - Provide ergonomic, repeatable workstation setup
 - Keep system serviceable and safe in multi-climate travel use
 
-## Current pre-camper execution focus (electrical + flooring)
-- Use [INSTALL_MINUS_12_READINESS_PLAN](../plans/INSTALL_MINUS_12_READINESS_PLAN.md) as the active Apr 27-May 11 install-window plan. Use [STARTER_PLAN_electrical_and_flooring_pre_camper](../plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md) only for detailed pre-camper electrical/flooring execution references.
-- Use [ELECTRICAL_48V_ARCHITECTURE](ELECTRICAL_48V_ARCHITECTURE.md) as the canonical `48V` design reference while laying out the electrical module and alternator-control path.
-- Active work now includes shore AC-in ordering, electrical closet layout/fuse matching, bed-rail dust/weather sealing, EPS trim/subfloor verification, and low-regret extrusion ordering.
-- Defer shell-dependent irreversible work (final penetrations, shell-run final cut lengths, permanent finish-floor bonding) until the real camper is installed and service-map checks pass.
+## Current execution focus (post-install interior buildout)
+- Use [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md) as the active phase sequence. Use [INSTALL_MINUS_12_READINESS_PLAN](../plans/INSTALL_MINUS_12_READINESS_PLAN.md) and [STARTER_PLAN_electrical_and_flooring_pre_camper](../plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md) as historical install-window/pre-camper references unless they are explicitly refreshed.
+- Use [INTERIOR_furniture_layout_and_galley](../implementation/INTERIOR_furniture_layout_and_galley.md) as the current owner for the office-first furniture/galley/wet-spine concept and `10-series` 80/20 overlay-panel direction.
+- Use [ELECTRICAL_48V_ARCHITECTURE](ELECTRICAL_48V_ARCHITECTURE.md) as the canonical `48V` design reference while mechanically laying out the electrical module and alternator-control path.
+- Active work now includes measured camper block envelopes, dead-mechanical electrical layout, fuse/device access checks, 80/20 prototype stock/hardware planning, floor/subfloor gates, and payload/weight tracking.
+- Defer irreversible work (final penetrations, final cable cuts/crimps, final extrusion vendor cuts, permanent skins, and finish-floor glue-down) until physical measurement, service-map, and access checks pass.
 
 ## Scope
 - In scope: electrical, charging, solar, communications, interior structure/cabinetry, operations process, maintenance tracking
@@ -68,30 +69,29 @@ related:
 - M0: requirements baseline frozen
 - M1: system architecture selected (electrical + comms + thermal)
 - M2: BOM v1 complete and procurement started
-- M3: physical fit checks and measured wiring route plan complete (CAD optional/reference-only)
+- M3: camper installed / physical shell available for real measurements
 - M4: subsystem bench validation complete
-- M5: install-readiness checklist complete
-- M6: install date (May 7, 2026)
+- M5: measured interior block envelopes and service map complete
+- M6: electrical module dead-mechanical layout and first-charge plan ready
 - M7: shakedown and punch-list closure
 
-## Build sequencing baseline (as-of 2026-03-18)
+## Build sequencing baseline (as-of 2026-05-14)
 - Build sequencing is tracked as an overlapping phase plan (not strict serial trades).
-- Target install date remains fixed at May 7, 2026 (`50` days from this baseline date).
-- Accelerated procurement (`Batch A+`) is now historical context; current sequencing focus is AC closure, measured harness planning, and module completion.
+- May 7 install readiness is historical context; current sequencing focus is measured interior envelopes, dead mechanical systems layout, targeted prototype extrusion/hardware ordering, and staged electrical first-charge preparation.
+- CAD and AI-generated diagrams are planning references only; real camper measurements and physical mockups own final dimensions.
 - Detailed stage-by-stage order of operations, dependencies, and draft date windows:
 - [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md)
 
 ## Immediate next decisions
-- **Washington/install mode is now the priority.** Keep the truck bed mostly empty; leave the `3x 48V` batteries, electrical cabinet parts, and loose build materials home unless Hiatus specifically needs them.
-- **Truck bed dust/weather closeout:** bed rail caps have been re-bonded with Loctite polyurethane, small drill holes were sealed with Gorilla Patch & Seal tape, and visible corner air gaps received polyurethane beads. Next gate is cure/inspection and later ordinary post-drive inspection after camper install.
-- **Flooring gate:** trim EPS and verify three-piece plywood fit/serviceability after the trip. Do not glue Lonseal until rail/bed-floor/corner sealing is cured and inspected, post-install floor penetrations are ruled out, and the roller/rolling method is confirmed. The exact trowel is now purchased.
-- **Install-day data capture:** photograph attachment points, bed rail/cap interface, barn-door seals, clearances, hardpoints, passthrough candidates, and all dimensions before leaving Hiatus.
-- **Extrusion/furniture:** watch design videos and collect ideas during/after the trip, but do not place exact-cut aluminum extrusion orders until real camper/fridge/tank/electrical block envelopes are measured. Targeted stock/hardware orders are acceptable after the post-install measurement pass.
-- **Interior layout baseline:** use [INTERIOR_furniture_layout_and_galley](../implementation/INTERIOR_furniture_layout_and_galley.md) as the draft owner for the office-first hybrid interior: top-left power stair battery bench, top-right soft storage/cabover landing, driver-side desk + rear-left Iceco utility block, and passenger-side galley/wet-spine over the `36 gal` tank. Generated concept diagrams live in `media/diagrams/interior-furniture-2026-05-04/` and are concept aids, not cut drawings.
-- **Electrical:** shore-power / initial-charge remains the post-trip priority before any alternator work. Build the AC-in-only MultiPlus charge path first: `shore source -> cord/adapter -> TT-30 inlet -> hardwired EMS -> AC-in breaker/disconnect -> MultiPlus AC-in`. Order/SKU-lock BOM rows `107`, `108`, `123`, `13`, `109`, `14`, and `114` plus glands/grommets/labels/ferrules.
+- **Measured envelopes:** physically tape/cardboard the electrical bench, galley/wet-spine, fridge/utility, water tank, and workstation zones in the installed camper before final cut lists.
+- **Extrusion/furniture:** order/use 80/20 as controlled prototype stock/hardware, not a final vendor-cut enclosure. Default toward `10-series` unless real point loads or restraint needs prove otherwise.
+- **Panel strategy:** use overlay/removable panels on living-facing surfaces, keep service zones exposed or quick-removable, and use magnets only for light service covers with locator/backup retention where panel loss matters.
+- **Electrical:** shore-power / initial-charge remains a priority before any alternator work. Build the AC-in-only MultiPlus charge path first: `shore source -> cord/adapter -> TT-30 inlet -> hardwired EMS -> AC-in breaker/disconnect -> MultiPlus AC-in`. Order/SKU-lock BOM rows `107`, `108`, `123`, `13`, `109`, `14`, and `114` plus glands/grommets/labels/ferrules.
 - Keep AC-in and AC-out protection in separate enclosures. Do not let final AC receptacle-count churn block the AC-in charge path.
 - Before first charge, reconcile the MultiPlus LiFePO4 charge profile (`56.8V` planning basis vs `58.4V` battery/manual basis), set source current limits, and charge/test one `48V` battery at a time before paralleling.
 - Defer Mechman alternator installation until batteries are present, shore charging/monitoring are proven, and alternator vendor/support gates are closed.
+- **Flooring gate:** do not glue Lonseal or permanently close the floor until EPS/subfloor fit, moisture path, hardpoint, and penetration/service-access checks pass in the installed camper.
+- **Payload gate:** capture door-sticker payload and staged scale weights. Treat total payload, rear axle load, rear tire load, and left/right balance as active constraints.
 
 ## Post-install build restart sequence
 Purpose: turn the installed camper shell into measured block envelopes before buying hard-to-return interior structure.
@@ -109,7 +109,7 @@ Purpose: turn the installed camper shell into measured block envelopes before bu
 4. **Block envelopes before extrusion**
    - Tape/cardboard the fridge, purchased `36 gal` wheel-well tank, electrical cabinet, galley, and desk zones.
    - Use the interior furniture/galley concept doc as the layout checkpoint, then verify against real roof-down sweep, cabover step path, fridge lid/vent/cord envelope, tank fitting orientation, and wet-spine service access.
-   - Decide which modules truly need `15-series`, which can use `10-series`, and which should mount with simpler brackets/plywood.
+   - Default to `10-series` 80/20, plywood, panels, brackets, and light rail unless measured heavy/dynamic modules prove they need larger extrusion.
 5. **Electrical bench path**
    - Layout Board A/B with real service access and cable corridors.
    - SKU-lock AC-in charging hardware, write first-charge checklist, then charge/test one battery at a time.

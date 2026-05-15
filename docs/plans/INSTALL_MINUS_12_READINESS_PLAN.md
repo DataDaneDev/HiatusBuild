@@ -4,7 +4,7 @@ aliases:
 tags:
   - hiatus/plan
   - hiatus/install
-status: active
+status: reference
 related:
   - "[[PROJECT]]"
   - "[[PROJECT_build_order_of_operations]]"
@@ -14,6 +14,8 @@ related:
 # May 7 Install Readiness and Immediate Post-Install Plan
 
 As-of date: `2026-05-04`
+
+Freshness note `2026-05-14`: this file is now a **historical install-window and early shakedown reference**, not the active project landing page. Current post-install sequencing lives in [PROJECT_build_order_of_operations](PROJECT_build_order_of_operations.md), with active project posture in [PROJECT](../core/PROJECT.md).
 
 Purpose: one practical planning document for the remaining days before the Hiatus install, the May 7 install day, and the first post-install actions. This replaces the narrower install-minus-12 plan.
 

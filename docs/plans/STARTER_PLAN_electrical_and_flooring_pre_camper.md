@@ -16,7 +16,9 @@ related:
 
 As-of date: `2026-04-27`
 
-Purpose: give a phone-friendly, practical plan you can execute immediately **without the camper shell in hand**, using current field progress and updated decisions.
+Freshness note `2026-05-14`: this file is now a **historical pre-camper execution reference**. Use it for provenance on electrical/flooring decisions made before the shell was in hand; use [PROJECT_build_order_of_operations](PROJECT_build_order_of_operations.md), [PROJECT](../core/PROJECT.md), [INTERIOR_furniture_layout_and_galley](../implementation/INTERIOR_furniture_layout_and_galley.md), and [ELECTRICAL_bench_layout_and_test_guide](../implementation/ELECTRICAL_bench_layout_and_test_guide.md) for current post-install work.
+
+Purpose: preserve the phone-friendly, practical pre-camper plan that was executable **before the camper shell was in hand**, using field progress and decisions known at that time.
 
 Related references:
 - `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`

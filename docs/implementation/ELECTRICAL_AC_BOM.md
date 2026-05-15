@@ -13,9 +13,9 @@ related:
 
 # Electrical AC BOM (Phase 1)
 
-As-of date: `2026-04-27`
+As-of date: `2026-05-14`
 
-Purpose: maintain the compact split-panel AC architecture baseline and procurement scope for Phase 1, with immediate emphasis on an AC-in-only MultiPlus shore-charge path for initial `48V` battery charging and later AC-out branch distribution.
+Purpose: maintain the compact split-panel AC architecture baseline and procurement scope for Phase 1, with immediate emphasis on an AC-in-only MultiPlus shore-charge path for initial `48V` battery charging and later AC-out branch distribution. Final receptacle locations and enclosure access remain measurement-gated in the installed camper.
 
 Related docs:
 - `docs/implementation/ELECTRICAL_overview_diagram.md`

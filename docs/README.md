@@ -9,7 +9,7 @@ status: active
 
 # Docs Map
 
-Use this folder map when deciding where a document belongs.
+Use this folder map when deciding where a document belongs. Current repo posture is **post-install interior buildout**: keep active truth in the owner docs below, and treat pre-install/readiness plans as historical references unless they are explicitly refreshed.
 
 ## Obsidian navigation
 - Start with [00 Home](../00%20Home.md) for daily navigation.
@@ -42,12 +42,16 @@ Use this folder map when deciding where a document belongs.
 
 ## Implementation
 - [implementation](implementation/): build-ready reference docs that support the active baseline.
-- [INTERIOR_furniture_layout_and_galley](implementation/INTERIOR_furniture_layout_and_galley.md): draft office-first interior layout, power stair bench, soft storage bench, passenger-side galley/wet-spine, and generated concept diagrams.
+- [INTERIOR_furniture_layout_and_galley](implementation/INTERIOR_furniture_layout_and_galley.md): current draft office-first interior layout, 10-series 80/20/overlay-panel direction, power stair bench, passenger-side galley/wet-spine, service-panel rules, and generated concept diagrams.
 - [INTERIOR_driver_side_workstation](implementation/INTERIOR_driver_side_workstation.md): draft driver-side desk, stow-low monitor, Iceco/fridge tower, and storage mechanism design.
+- [ELECTRICAL_bench_layout_and_test_guide](implementation/ELECTRICAL_bench_layout_and_test_guide.md): dead mechanical electrical board layout, access checks, and staged non-live-to-live validation.
+- [FLOORING_subfloor_build_process](implementation/FLOORING_subfloor_build_process.md): subfloor/EPS/Lonseal gates and finish-floor hold conditions.
 - Rule: implementation docs may expand the core baseline, but they should not silently redefine it.
 
 ## Plans
 - [plans](plans/): active execution plans and order-of-operations docs.
+- [PROJECT_build_order_of_operations](plans/PROJECT_build_order_of_operations.md): active post-install build sequence.
+- [INSTALL_MINUS_12_READINESS_PLAN](plans/INSTALL_MINUS_12_READINESS_PLAN.md) and [STARTER_PLAN_electrical_and_flooring_pre_camper](plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md): historical install-window/pre-camper references unless updated at the top with a newer as-of date.
 - Rule: plans may sequence work and call out current focus, but they should point back to canonical design docs for the actual baseline.
 
 ## Studies

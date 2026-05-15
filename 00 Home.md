@@ -12,8 +12,10 @@ status: active
 Start here when opening the project in Obsidian.
 
 ## Active Now
-- [Install readiness plan](docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md) - Apr 27-May 11 execution plan, install travel, first shakedown.
 - [Project](docs/core/PROJECT.md) - scope, milestones, fixed constraints, near-term priorities.
+- [Build order of operations](docs/plans/PROJECT_build_order_of_operations.md) - post-install sequence from measured envelopes through rough-in, module build, and commissioning.
+- [Interior furniture and galley](docs/implementation/INTERIOR_furniture_layout_and_galley.md) - current office-first 10-series/overlay-panel furniture direction.
+- [Electrical bench layout and test guide](docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md) - dead mechanical electrical layout and staged test discipline.
 - [Tracking](docs/core/TRACKING.md) - decisions, risks, assumptions, open questions.
 - [Project Log](logs/LOG.md) - dated work evidence, measurements, tests, and follow-ups.
 
@@ -31,8 +33,8 @@ Start here when opening the project in Obsidian.
 - [Flooring subfloor build process](docs/implementation/FLOORING_subfloor_build_process.md)
 
 ## Plans And History
-- [Build order of operations](docs/plans/PROJECT_build_order_of_operations.md)
-- [Starter electrical and flooring plan](docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md)
+- [May 7 install readiness plan](docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md) - historical install-window and early shakedown reference.
+- [Starter electrical and flooring plan](docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md) - historical pre-camper execution reference.
 - [Studies](docs/studies/) - option analysis and historical reasoning.
 - [Legacy extracts](docs/legacy/) - workbook history only, not current-state maintenance.
 - [Temporary trackers](docs/temp/) - retire or absorb into canonical docs as items close.
