@@ -109,12 +109,12 @@ Measure and record:
 
 - electrical closet height/depth/width up to the `46 in` maximum build height;
 - service reach to fuses, disconnects, shunt/Lynx/12V hardware, labels, and cover fasteners;
-- DC shelf/box projection toward the desk/entry doors, including hip/shoulder/door interference;
+- electrical step-box and DC shelf/box projection toward the desk/entry doors, including hip/shoulder/door interference and finished-panel/handle allowance;
 - laptop plug/USB-C/AC/DC station reach from seated position;
 - diesel heater body, duct, intake/exhaust/fuel-line, and service-panel access;
 - cable bend radius, service loops, and AC/DC/data separation.
 
-Pass when: electrical service, office power access, heater service, desk ergonomics, and entry movement all work without hidden service points or roof-down conflicts.
+Pass when: electrical service, office power access, heater service, desk ergonomics, and entry/aisle movement all work without hidden service points, sharp hip/knee conflicts, or roof-down conflicts.
 
 ### Gate W3: seated work envelope
 

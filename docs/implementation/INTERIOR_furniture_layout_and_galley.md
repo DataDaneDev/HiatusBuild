@@ -94,8 +94,11 @@ Owner-provided installed-camper photo/mockup confirms these current physical env
 - Cardboard represents the driver-side electrical box plus the step box projecting from/integrating with it.
 - The desk is around the wheel-well area, planned at about `24 in x 48 in`, and integrates with the electrical step box.
 - The fridge remains at the same raised height but should slide deeper into the passenger-side corner.
+- Additional rear-entry/top-down photos show the Iceco/fridge physically mocked on top of the passenger-side wheel-well water tank, with the pump/accumulator staged low nearby in the wet-side footprint.
+- The rear-entry view confirms a clear center aisle is still plausible with the fridge/tank stack on passenger side and the cardboard electrical/step/desk mass on driver side, but finished skins and handles could easily steal this margin.
+- The side/top photo with the tape measure shows the driver-side cardboard electrical/step-box projection being checked against aisle/desk space; treat the visible roughly `18 in` tape span as a photo scale cue only, not a canonical measurement.
 
-Practical implication: the next design artifact should be a measured block-envelope sketch from this taped mockup: datum, battery extraction path, step-box projection, desk/wheel-well notch, fridge slide/vent/lid sweep, and pump-service access. Do not treat the photo as sufficient for exact extrusion lengths.
+Practical implication: the next design artifact should be a measured block-envelope sketch from this taped mockup: datum, battery extraction path, step-box projection, desk/wheel-well notch, fridge slide/vent/lid sweep, pump-service access, and final aisle width after panel/handle allowances. Do not treat the photos as sufficient for exact extrusion lengths.
 
 ---
 
@@ -272,9 +275,9 @@ The Iceco/fridge has moved back to the passenger side. Current baseline: raise i
 
 Recommended roles:
 
-- Fridge support tray or fixed lofted shelf with positive travel restraint.
+- Fridge support tray or fixed lofted shelf with positive travel restraint; if visually sitting on the tank in mockup, final support should transfer load into the 80/20/floor/frame, not into the plastic tank body.
 - Under-fridge plumbing/service bay for pump, accumulator, strainer, shutoff, manifold, and winterization hardware.
-- Vent chimney / warm-air escape path that does not heat the battery bench or desk electronics.
+- Vent chimney / warm-air escape path that does not heat the battery bench, tank bay, or desk electronics.
 - Shallow landing surface or rail only where it does not interfere with lid opening, venting, or service access.
 - Structural/service boundary between wet hardware and adjacent battery enclosures.
 
@@ -285,7 +288,7 @@ Design requirements:
 - Use positive travel lock plus secondary strap/draw latch if any slide is used.
 - Add hard stops so the fridge cannot overextend into the aisle/rear entry or pull its cord.
 - Provide lower cool-air intake and upper warm-air exhaust path. If boxed, use a small thermostatic `12V` fan and washable dust screen.
-- Keep plumbing service possible with the fridge installed; if the fridge must be removed to clean the pump strainer, the exoskeleton is wrong.
+- Keep plumbing service possible with the fridge installed; if the fridge must be removed to clean the pump strainer, inspect a leak tray, or reach winterization fittings, the exoskeleton is wrong.
 
 Non-obvious feature: make the fridge skeleton do double duty as the wet-spine service-panel frame. The same 80/20 that supports the fridge can define removable panels, leak-tray edges, cable clips, and anti-rattle landings.
 
