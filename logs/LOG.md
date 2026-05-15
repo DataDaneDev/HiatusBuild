@@ -26,7 +26,7 @@ Single running log for build progress and test evidence.
 - Fridge clarification: fridge remains at the same raised height but should slide deeper into the passenger-side corner.
 - Documentation update: added the photo-derived mockup facts as text only; the photo itself was not committed/published.
 - Additional photos received: top-down/rear-entry views confirm the Iceco/fridge is being mocked on the passenger-side wheel-well water tank at raised height, pump/accumulator are staged low in the wet-side footprint, the driver-side cardboard electrical/step/desk mass is being checked with a tape measure, and the center aisle remains plausible but margin-sensitive.
-- Issues: convert this into a measured block-envelope sketch before exact extrusion lengths; final fridge support must not rely on the plastic water tank as a structural support.
+- Issues: convert this into a measured block-envelope sketch before exact extrusion lengths; prior photo-read red flags are treated as resolved/non-issues except for keeping a standard wet-tray note in the plumbing plan.
 - Next actions: measure datum-to-tape lines, battery extraction path, desk/wheel-well notch, step-box projection, fridge slide/lid/vent sweep, and pump-service opening.
 
 ## 2026-05-14

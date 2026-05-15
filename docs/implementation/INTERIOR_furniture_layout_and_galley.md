@@ -275,7 +275,7 @@ The Iceco/fridge has moved back to the passenger side. Current baseline: raise i
 
 Recommended roles:
 
-- Fridge support tray or fixed lofted shelf with positive travel restraint; if visually sitting on the tank in mockup, final support should transfer load into the 80/20/floor/frame, not into the plastic tank body.
+- Fridge support tray or fixed lofted shelf with positive travel restraint.
 - Under-fridge plumbing/service bay for pump, accumulator, strainer, shutoff, manifold, and winterization hardware.
 - Vent chimney / warm-air escape path that does not heat the battery bench, tank bay, or desk electronics.
 - Shallow landing surface or rail only where it does not interfere with lid opening, venting, or service access.
@@ -336,6 +336,8 @@ Mount the service-intensive plumbing on one removable or swing-out board/tray:
 - Low-point drains.
 - Leak tray/sensor.
 - Quick-disconnect unions and pump electrical connector.
+
+Stock wet-tray footnote: any pump/accumulator/strainer area below the lofted fridge should have a shallow removable wet tray or pan with small upturned edges, a visible inspection/leak-sensor point, and a path to lift/wipe/dry it without disassembling the fridge frame. Treat it as early warning and cleanup management, not as primary containment; plumbing joints still need proper unions, clamps, strain relief, and post-drive leak checks.
 
 Service rule: one hatch or one lift-out bin should expose the whole pump/strainer/accumulator/manifold cluster. If you need to remove drawers, unload pantry, or pull the tank to change a pump strainer, the furniture is wrong.
 
