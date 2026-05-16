@@ -40,7 +40,7 @@ related:
 - Inverter/charger candidate: Victron MultiPlus-II `48/3000/35-50`.
 - Charge sources in current BOM: solar MPPT, dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48` migration baseline), shore AC charger path.
 - Monitoring and protection: Cerbo GX, SmartShunt, battery temp sensing, Class T primary fuse + branch fusing.
-- AC protection chain remains locked (`shore source -> cord/adapter -> TT-30 inlet -> EMS -> AC-in breaker -> MultiPlus -> separate AC-out branch panel`), with AC-in-only initial charging prioritized ahead of final receptacle-count/utilization closure.
+- AC protection chain is now purchased/locked for Phase 1 (`shore source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> single 6-way AC DIN enclosure -> 30A AC-in breaker -> MultiPlus -> 30A AC-out main -> two 20A GFCI branches`), with AC-in-only initial charging still used as the first live validation step.
 - Current build phase: use the installed camper shell for dead-mechanical electrical layout, measured block envelopes, and service-map validation before final cable cuts, energization, extrusion vendor cuts, skins, or finish-floor glue-down.
 
 ### Modeling rules (procurement-first plus full-load)
@@ -321,8 +321,8 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 ### 120VAC shore/inverter safety
 - Main hazards: shock from miswired neutral/ground, ground-fault exposure at outlets, and overcurrent heating from undersized branch protection.
 - Required controls:
-- Keep shore path order: shore source -> shore cord/adapter -> shore inlet (`TT-30`) -> hardwired EMS/surge protection -> AC-in DIN enclosure (`30A` UL489 breaker/disconnect) -> MultiPlus AC-in.
-- Keep AC-out path order: MultiPlus AC-out-1 -> AC-out DIN enclosure (`20A` galley + `15A` office branch breakers) -> first-outlet GFCI strategy with downstream protected receptacles.
+- Keep shore path order: shore source/adapters -> portable EMS/surge protection -> shore cord -> shore inlet (`L5-30`) -> combined AC DIN enclosure (`30A` UL489 AC-in breaker/disconnect) -> MultiPlus AC-in.
+- Keep AC-out path order: MultiPlus AC-out-1 -> `10/3` feeder -> combined AC DIN enclosure (`30A` AC-out main + `20A`/`20A` branch breakers) -> GFCI receptacle on each active branch.
 - Keep AC-in hardware on a `30A` / `10 AWG` basis, and set MultiPlus input current limit to the actual source (`15A`, `20A`, or `30A`) whenever adapters are used.
 - Keep AC-out-2 as reserve-only in Phase 1 (labeled capped route; no energized branch hardware yet).
 - Preserve continuous equipment grounding and chassis bond through all AC paths.

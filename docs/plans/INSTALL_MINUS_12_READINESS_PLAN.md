@@ -110,19 +110,19 @@ Travel/install window from owner update:
 
 ### Locked architecture
 
-Keep the split AC architecture:
+Keep the purchased single-enclosure AC architecture:
 
 ```text
-shore source -> cord/adapter -> TT-30 inlet -> hardwired EMS -> AC-in breaker/disconnect -> MultiPlus-II AC-in
-MultiPlus-II AC-out-1 -> separate AC-out branch enclosure -> galley/office branch protection
+shore source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> combined 6-way AC DIN enclosure -> 30A AC-in breaker/disconnect -> MultiPlus-II AC-in
+MultiPlus-II AC-out-1 -> 10/3 feeder -> same combined AC DIN enclosure -> 30A AC-out main -> 20A branch 1 + 20A branch 2 -> GFCI receptacles
 ```
 
 Rules:
 
-- Do not combine AC-in and AC-out protection in the same undifferentiated breaker box.
+- AC-in and AC-out may share the purchased `6-way` enclosure only with clear labeling and isolated neutral paths.
 - AC-in breaker/disconnect is required before MultiPlus AC-in.
-- AC-out branch breakers/receptacles are not required to charge batteries.
-- Keep AC-in and AC-out neutrals isolated in their respective enclosures.
+- AC-out branch breakers/receptacles are not required for the first battery-charge test even though they are now purchased.
+- Keep AC-in and AC-out neutrals isolated inside the enclosure.
 - Do not add a fixed downstream neutral-ground bond in branch wiring.
 
 ### Near-term deliverable: AC-in-only charging mode
@@ -130,23 +130,27 @@ Rules:
 For the immediate garage path, build and test only the safe minimum path required to charge batteries through the MultiPlus:
 
 ```text
-shore source -> cord/adapter -> inlet -> EMS -> AC-in breaker/disconnect -> MultiPlus AC-in -> MultiPlus DC -> one 48V battery at a time
+shore source/adapters -> portable EMS -> shore cord -> inlet -> AC-in breaker/disconnect -> MultiPlus AC-in -> MultiPlus DC -> one 48V battery at a time
 ```
 
-Must-buy / lock now:
+Purchased / locked 2026-05-16:
 
-- BOM `107`: shore inlet + weatherproof hatch
-- BOM `108`: shore cord + adapter kit
-- BOM `123`: hardwired EMS/surge protector
-- BOM `13`: AC input breaker/disconnect
-- BOM `109`: split DIN enclosures, at least AC-in enclosure needed immediately
-- BOM `14`: AC DIN accessory kit: neutral/ground bars, end stops, blanks, labels
-- BOM `114`: `10/3` shore + AC-in feed cable
+- BOM `107`: L5-30 shore inlet
+- BOM `108`: shore cord + 15A dogbone adapter
+- BOM `123`: portable EMS/surge protector
+- BOM `13`: `2x` 30A DIN breakers for AC-in and AC-out main
+- BOM `109`: single `6-way` DIN enclosure
+- BOM `14`: AC DIN bus/accessory hardware
+- BOM `15`: `2x` 20A GFCI receptacles
+- BOM `110`: `2x` 20A AC-out branch breakers
+- BOM `113`: `12/3` AC branch cable
+- BOM `114`: `10/3` shore + AC-in/AC-out feed cable
+- BOM `179` and `180`: shore-inlet sealant/butyl consumables
 - Confirm enough rows `43-45`, `38`, `41`, and relevant terminals/labels for strain relief, grommets, P-clamps, heat shrink, ferrules, and enclosure entries.
 
-Can defer if only charging batteries:
+Can still defer during first live charge even though purchased:
 
-- BOM `110`: AC-out branch breaker set
+- AC-out branch energization and receptacle load testing
 - BOM `15`, `111`, `112`: GFCI/downstream receptacles and boxes
 - BOM `113`: AC branch cable
 

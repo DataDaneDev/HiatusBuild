@@ -21,6 +21,15 @@ Single running log for build progress and test evidence.
 - Issues:
 - Next actions:
 
+## 2026-05-16
+- AC purchase lock completed after owner purchased the Amazon AC cart. Active Phase 1 AC baseline is now portable `30A` EMS, Camco `TT-30P` to `L5-30R` shore cord, `L5-30` inlet, one combined `6-way` DIN enclosure, `30A` AC-in breaker, `30A` AC-out main breaker, two `20A` AC-out branch breakers, two `20A` GFCI receptacles, `10/3` feeder cable, and `12/3` branch cable.
+- BOM updated: rows `13`, `14`, `15`, `41`, `107`, `108`, `109`, `110`, `113`, `114`, and `123` now record the purchased SKUs/prices/status; row `111` is marked obsolete; row `112` remains planned/confirm-on-hand for outlet boxes/covers; new rows `179-181` capture Sikaflex-221, butyl tape, and tire deflators.
+- Docs updated: `docs/implementation/ELECTRICAL_AC_BOM.md`, `docs/implementation/ELECTRICAL_overview_diagram.md`, `docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md`, `docs/core/SYSTEMS.md`, `docs/core/PROJECT.md`, `docs/core/TRACKING.md`, and `docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md`.
+- PDF exports regenerated for `ELECTRICAL_AC_BOM`, `ELECTRICAL_overview_diagram`, `SYSTEMS`, and `PROJECT`.
+- Tests run: CSV parse of `bom/bom_estimated_items.csv`; targeted AC row verification; stale AC-language search excluding historical decision text and regenerated PDF assets; targeted PDF export/mermaid render.
+- Issues: outlet boxes/covers are not confirmed in the purchase cart and remain row `112` planned/confirm-on-hand; verify delivered `10/3` jacket markings/listing and physical DIN neutral isolation before drilling/wiring.
+- Next actions: receive/inspect parts, update row statuses to `Received`, label the single enclosure layout, and perform AC-in-only MultiPlus charge validation before AC-out branch energization.
+
 ## 2026-05-15
 - Physical layout photo/mockup received: blue-tape floor envelopes show current installed-camper module layout; cardboard represents the driver-side electrical box and integrated step box; the battery bench area is taped near the bulkhead/front wall; the desk is around the wheel well at about `24 in x 48 in` and integrates with the electrical step box.
 - Fridge clarification: fridge remains at the same raised height but should slide deeper into the passenger-side corner.

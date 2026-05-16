@@ -236,7 +236,7 @@ related:
 - Options considered: keep compact load-center baseline, split DIN `20A` AC-in baseline, or split DIN with `30A` AC-in plus source-limited current settings.
 - Decision drivers: compactness, service clarity, lower-complexity branch layout, and complete purchasable-component traceability.
 - Result: updated AC topology and procurement docs to one architecture (`TT-30 -> EMS -> AC-in DIN 30A breaker -> MultiPlus AC-in`, plus AC-out DIN branch panel), updated BOM row meanings for AC rows (`13`, `14`, `109`, `110`, `113`, `114`) and added hardwired EMS row `123`, and adopted a manual AC validation checklist as the acceptance gate.
-- Follow-up: partially reopened by D-026 for final branch utilization/receptacle count lock while retaining the protection-chain architecture baseline.
+- Follow-up: partially reopened by D-026 for final branch utilization/receptacle count lock; superseded for procurement by D-044, which replaces hardwired EMS/split enclosures with portable EMS plus one combined `6-way` AC DIN enclosure.
 
 - ID: D-024
 - Date: 2026-03-18
@@ -326,7 +326,7 @@ related:
 - Options considered: wait for complete AC branch layout, buy a combined breaker box, or keep split AC-in/AC-out architecture and build AC-in first.
 - Decision drivers: safety, reduced decision coupling, and faster path to first battery charge.
 - Result: AC-in path rows `107`, `108`, `123`, `13`, `109`, `14`, and `114` are the immediate purchase/SKU-lock focus; AC-out branch rows can defer if not needed for initial charge.
-- Follow-up: reconcile actual MultiPlus LiFePO4 charge profile before first energization.
+- Follow-up: superseded for procurement by D-044; still reconcile actual MultiPlus LiFePO4 charge profile before first energization.
 
 - ID: D-034
 - Date: 2026-04-27
@@ -418,6 +418,15 @@ related:
 - Result: active baseline is passenger-side lofted fridge/wet-spine exoskeleton, under-fridge pump/accumulator service bay, adjacent separated `30 in` battery bench with flat divider board and cushion/lid use, driver-side `46 in` electrical closet/DC shelf/workstation zone, diesel heater low on driver side, and investigation of an exterior truck-bed-wall diesel tank/fill/pump path.
 - Follow-up: physically mock the lofted fridge/wet-spine/battery bench in the camper, classify each 80/20 member by structural/service/panel role, search for a narrow exterior diesel tank around `8 gal` / `3 in x 17 in`, and update final cut lists only after access/interference checks pass.
 
+- ID: D-044
+- Date: 2026-05-16
+- Decision: Lock and purchase the Phase 1 AC system as portable-EMS, single-enclosure `30A` shore/inverter AC.
+- Context: AC procurement was reopened to avoid overbuilding and to fit the limited cabinet space near the MultiPlus while still preserving normal RV/camper protection.
+- Options considered: two separate AC-in/AC-out enclosures, one combined DIN enclosure without AC-out main, one combined DIN enclosure with `30A` AC-out main, or upsizing feeder/panel for `40A+` output.
+- Decision drivers: compactness, clear `30A` system cap, standard `10/3` feeder use, service labeling, and avoiding a full `40A/50A/75A` output build.
+- Result: purchased Progressive Industries EMS-PT30X portable `30A` EMS; Camco TT-30P-to-L5-30R shore cord plus 15A dogbone; Nilight L5-30 inlet; Mollom `6-way` DIN enclosure; ControlGear `30A` breakers qty `2` for AC-in and AC-out main; ControlGear `20A` breakers qty `2`; ELEGRP `20A` GFCI receptacles qty `2`; `10/3` and `12/3` triplex wire; bus bars; ferrule crimper kit; butyl tape; Sikaflex-221. Row `111` downstream non-GFCI receptacles is obsolete; row `112` remains planned/confirm-on-hand for physical outlet boxes/covers.
+- Follow-up: verify delivered wire jacket markings/listings, confirm DIN enclosure fit/neutral isolation before drilling, source/confirm outlet boxes if not already on hand, then perform AC-in-only charge validation before AC-out branch energization.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -495,7 +504,7 @@ related:
 - Risk: AC shock/fire risk from neutral-ground misconfiguration or incomplete GFCI/RCD protection on branch circuits.
 - Impact (1-5): 5
 - Likelihood (1-5): 2
-- Mitigation: Preserve AC protection chain (`shore inlet -> hardwired EMS -> AC-in breaker -> MultiPlus -> branch protection`), validate outlet polarity and GFCI/RCD operation at commissioning, and verify ground continuity/chassis bonding.
+- Mitigation: Preserve AC protection chain (`source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> AC-in breaker -> MultiPlus -> 30A AC-out main -> 20A branch breakers -> GFCI receptacles`), validate outlet polarity and GFCI/RCD operation at commissioning, keep AC-in and AC-out neutrals isolated, and verify ground continuity/chassis bonding.
 - Trigger: AC branch wiring completion and first shore/inverter live test.
 - Owner: Sunny
 - Status: Open
@@ -513,10 +522,10 @@ related:
 - Risk: AC scope churn (final receptacle count and branch utilization not fully closed) can delay SKU lock and cabinet fit validation.
 - Impact (1-5): 4
 - Likelihood (1-5): 3
-- Mitigation: Close AC decision gate with one explicit branch/receptacle map and then freeze matching SKUs.
-- Trigger: AC procurement freeze and cabinet mockup fit check.
+- Mitigation: D-044 closed the purchase gate with one explicit branch/receptacle map: two active `20A` GFCI branches behind a `30A` AC-out main in one `6-way` DIN enclosure. Do not add a third active AC branch without revisiting feed/protection/enclosure scope.
+- Trigger: Any attempt to add AC receptacles/branches beyond the purchased `2x` GFCI baseline.
 - Owner: Sunny
-- Status: Open
+- Status: Mitigated by D-044; monitor install fit
 
 - ID: R-012
 - Risk: Travel/logistics compression could put the truck too far from Bellingham for the May 7 `9:00 AM` install.

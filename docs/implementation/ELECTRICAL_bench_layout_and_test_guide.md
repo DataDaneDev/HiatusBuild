@@ -160,7 +160,7 @@ Pass when:
 - Stable voltage and normal behavior at all checkpoints.
 
 ### T2.5: Shore / MultiPlus initial charge validation
-- Build the AC-in-only path first: shore source -> cord/adapter -> inlet -> EMS -> AC-in breaker/disconnect -> MultiPlus AC-in.
+- Build the AC-in-only path first: shore source/adapters -> portable EMS -> shore cord -> inlet -> AC-in breaker/disconnect -> MultiPlus AC-in.
 - Keep AC-out branch breakers/loads disconnected for the first charge test.
 - Connect and charge one `48V` battery at a time through the final-style protected DC path.
 - Confirm MultiPlus LiFePO4 charge profile and source current limit before energizing.

@@ -1,14 +1,14 @@
 flowchart LR
     subgraph SHORE_SRC["Shore Source Path"]
-        INLET["Shore inlet (120VAC)"]
+        EMS["Portable EMS/surge protection\n30A source-side"]
         CORD["Shore cord + adapters\n(service-limited by pedestal/source)"]
-        EMS["Hardwired EMS/surge protection\n(required in Phase 1)"]
-        INPANEL["AC-in DIN enclosure\n(input neutral bar + input ground bar)"]
-        ACINBRK["AC input breaker/disconnect\n30A UL489 target"]
-        INLET -- "10/3 shore, ~3 ft (ASSUMED)" --> CORD
-        CORD -- "10/3 shore, ~2 ft (ASSUMED)" --> EMS
-        EMS -- "10/3 shore, ~3 ft (ASSUMED)" --> INPANEL
-        INPANEL --> ACINBRK
+        INLET["Shore inlet (120VAC)"]
+        ACBOXIN["Combined 6-way AC DIN enclosure\nAC-in neutral isolated from AC-out neutral"]
+        ACINBRK["AC input breaker/disconnect\n30A UL489"]
+        EMS -- "30A shore cord" --> CORD
+        CORD -- "10/3 shore to camper inlet" --> INLET
+        INLET -- "10/3 shore, ~8 ft total path (ASSUMED)" --> ACBOXIN
+        ACBOXIN --> ACINBRK
     end
 
     subgraph MULTI_AC["MultiPlus-II AC Conversion + Transfer"]
@@ -21,12 +21,13 @@ flowchart LR
     end
 
     subgraph AC_DIST["AC Distribution and Protection"]
-        OUTPANEL["AC-out DIN enclosure\n(output neutral bar + output ground bar)"]
-        OUT1PROT["Branch protection for AC-out-1\n20A galley + 15A office; GFCI at first outlet"]
+        ACBOXOUT["Same combined 6-way AC DIN enclosure\noutput neutral isolated from input neutral"]
+        OUTMAIN["AC-out main breaker\n30A UL489"]
+        OUT1PROT["Branch protection for AC-out-1\n20A + 20A; GFCI at first outlet"]
         BR_A["Branch A: galley outlets"]
         BR_B["Branch B: office outlets"]
         OUT2PROT["AC-out-2 reserve path only\n(capped route, no energized Phase 1 hardware)"]
-        OUTPANEL --> OUT1PROT
+        ACBOXOUT --> OUTMAIN --> OUT1PROT
         OUT1PROT -- "12 AWG branch cable, ~15 ft (ASSUMED)" --> BR_A
         OUT1PROT -- "12 AWG branch cable, ~15 ft (ASSUMED)" --> BR_B
     end
@@ -35,7 +36,7 @@ flowchart LR
         IND["Induction cooktop"]
         MW["Microwave"]
         MON["External monitor + office chargers"]
-        GENOUT["General 120V receptacles\n4 total locations (2 galley, 2 office)"]
+        GENOUT["General 120V GFCI receptacles\n2 total locations"]
         SHORE_ONLY["Future shore-only load (optional)\nA/C or electric water heat"]
     end
 
@@ -45,7 +46,7 @@ flowchart LR
     end
 
     ACINBRK -- "10 AWG AC conductors, ~2.5 ft" --> ACIN
-    OUT1 -- "12 AWG AC conductors, ~2.5 ft" --> OUT1PROT
+    OUT1 -- "10/3 AC feeder, ~2.5 ft" --> ACBOXOUT
     OUT2 -. "12 AWG capped reserve route, ~15 ft (ASSUMED optional)" .-> OUT2PROT
 
     BR_A --> IND
