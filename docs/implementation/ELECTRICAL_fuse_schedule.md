@@ -76,8 +76,8 @@ Lock for this build pass:
 | `F-10` | `12V` fuse block branch circuits -> each `12V` load | Individual `12V` branch conductors and load circuits | ATO/ATC blade fuses (`32V` class) | Per-circuit | Integrated sockets in marine `12V` fuse block | `12V` fuse block in electrical cabinet | Per branch |
 | `F-11` | 12V buffer battery `+` -> 12V fuse block main `+` stud via `SW-12V-BATT` | Buffer battery source cable and downstream junction fault exposure | Inline MIDI/AMI/ANL family rated `>=32VDC` | `100A` class baseline | Sealed inline holder mounted close to battery positive | Within ~`7"` of 12V buffer battery positive post | `4 AWG` planned |
 | `F-12` | WS500 regulator power lead | WS500 power feed lead | Inline ATC/ATO (`32V` class acceptable on 12V-origin lead) | `10A` baseline (`15A` allowed if required by alternator case) | Sealed inline holder (WS500 kit) | Near source end of WS500 power lead | Harness lead |
-| `F-13` | WS500 battery positive sense lead | WS500 battery sense lead | Inline ATC/ATO | `3A` | Sealed inline holder (WS500 kit) | Near battery-positive sense takeoff | Harness lead |
-| `F-14` | WS500 current-sense lead protection (when required by selected shunt layout) | WS500 current-sense wiring | Inline ATC/ATO | `5A` | Sealed inline holder (WS500 kit) | Near shunt/sense tap per WS500 guidance | Harness lead |
+| `F-13` | WS500 battery positive sense lead | WS500 battery sense lead | Fuse/holder rated for actual `48V` bank maximum voltage unless WS500-supplied harness documentation proves otherwise | `3A` | Holder per WS500 manual/kit, voltage class verified before install | Near battery-positive sense takeoff | Harness lead |
+| `F-14` | WS500 current-sense lead protection (when required by selected shunt layout) | WS500 current-sense wiring | Voltage class/reference to be confirmed from WS500 documentation before hardware lock | `5A` | Holder per WS500 manual/kit if required | Near shunt/sense tap per WS500 guidance | Harness lead |
 | `F-15` | Ford Upfitter `#3` -> WS500 brown ignition/enable wire | Low-current regulator enable/control wire | Inline ATC/ATO (`32V` class, local wire protection) | `3A` | Sealed inline holder near the Ford upfitter blunt-cut source / splice handoff | Engine bay or control-wire handoff point before small-gauge run to WS500 | `16 AWG` TXL/GXL |
 | `OEM-SHUNT` | Lynx positive tap -> SmartShunt positive sense/power lead | SmartShunt electronics lead | Victron OEM inline low-current fuse (factory harness) | OEM value | Integrated inline holder in supplied harness | Electrical cabinet near Lynx positive tap | OEM harness lead |
 
@@ -89,7 +89,7 @@ Lock for this build pass:
 ## Spare Fuse Inventory (Updated)
 | Fuse type | Installed qty | Spare qty to carry | Notes |
 | --- | --- | --- | --- |
-| Class T `200A` (provisional installed) | `3` | `3` | One spare per installed battery fuse while `200A` baseline is active |
+| Class T `200A` (provisional installed) | `3` | `1` on hand | Owner confirmed `3` holders and `4` slow-blow Class T fuses total (`3` installed + `1` spare); add more only if the one-spare-per-installed policy is later desired |
 | `MEGA 150A` (`58V/80V`) | `1` | `2` | Alternator branch (`F-04`) installed + spare set (row `170`) |
 | `MEGA 125A` (`58V/80V`) | `1` | `4` | MultiPlus branch |
 | `MEGA 60A` (`58V/80V`) | `2` | `4` | Shared pool for MPPT (`F-03`) + Orion output (`F-07`) |
@@ -120,7 +120,7 @@ Lock for this build pass:
 
 ## Assumptions and Open Items
 1. Wire sizing above assumes copper conductors and enclosed vehicle routing.
-2. `F-09A/B/C` remains provisional at `15A` pending final solar module datasheet max-series-fuse confirmation.
+2. `F-09A/B/C` and the old `3S3P` fuse count are modeling placeholders only; final PV fusing waits until solar modules/stringing are selected after shore and alternator charging are working.
 3. Confirm Mechman kit content/polarity (`PH`/`NH`) before physically returning Sterling hardware.
 4. `SW-12V-BATT` remains manual-only in Phase 1; no automatic LVD behavior is assumed.
 5. Final lock for `F-11` still requires explicit 12V buffer battery/BMS continuous discharge-current confirmation.

@@ -146,12 +146,12 @@ Purchased / locked 2026-05-16:
 - BOM `113`: `12/3` AC branch cable
 - BOM `114`: `10/3` shore + AC-in/AC-out feed cable
 - BOM `179` and `180`: shore-inlet sealant/butyl consumables
-- Confirm enough rows `43-45`, `38`, `41`, and relevant terminals/labels for strain relief, grommets, P-clamps, heat shrink, ferrules, and enclosure entries.
+- Use on-hand rows `43-45`, `38`, `41`, and relevant terminals/labels for strain relief, grommets, P-clamps, heat shrink, ferrules, and enclosure entries; final fit is solved hands-on during layout, with no unsupported or abraded AC cable entries allowed.
 
 Can still defer during first live charge even though purchased:
 
 - AC-out branch energization and receptacle load testing
-- BOM `15`, `111`, `112`: GFCI/downstream receptacles and boxes
+- BOM `15`: the two GFCI receptacles/covers; row `111` is obsolete and row `112` is only install-fit box/cover detail, not a first-charge blocker
 - BOM `113`: AC branch cable
 
 ### Battery first-charge hold points

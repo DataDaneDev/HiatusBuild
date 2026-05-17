@@ -31,7 +31,7 @@ Status date: 2026-03-18
 
 ## PRF-003 Electrical Cabinet BOM Has Unlocked Core Line Items
 - Severity: Medium
-- Issue: cabinet-critical architecture is mostly locked, but AC utilization scope was reopened for final receptacle-count closure and some final SKU locks are still pending.
+- Issue: Historical/superseded. D-044 closed the AC purchase lock to one `6-way` enclosure, two active `20A` GFCI branches, and AC-in-first validation.
 - Why this matters: unresolved SKU-level lock can still delay procurement, even after architecture-level decisions are complete.
 - Current references:
 - `bom/bom_estimated_items.csv` row `13` (`AC input breaker/disconnect`)
@@ -62,8 +62,8 @@ Status date: 2026-03-18
 - Locked USB charging baseline to DC-fed USB-C PD modules on `12V` branch circuits (`2` office + `2` galley points).
 - Populated related BOM rows for shore interface, AC enclosure/protection, receptacle hardware, AC cable, USB-C PD branch hardware, and optional converter-expansion path (`rows 107-118`).
 - Resolution target:
-- Complete SKU-level lock and pricing validation for AC/USB rows and pre-charge resistor row before purchase freeze.
-- Status: Open
+- Historical reference only; current AC work is owned by `docs/implementation/ELECTRICAL_AC_BOM.md`, `docs/core/TRACKING.md` D-044, and the bench validation checklist.
+- Status: Closed / superseded by D-044 (`2026-05-17` owner-confirmed cleanup)
 
 ## PRF-004 Fuse And Holder SKU Lock Is Incomplete For Active Architecture
 - Severity: High
@@ -81,7 +81,7 @@ Status date: 2026-03-18
 
 ## PRF-005 Shore AC Feed Path Is Under-Specified In Procurement Data
 - Severity: Medium
-- Issue: shore/AC scope is now represented at BOM-family level, but final component SKU lock and physical fitment validation are still pending.
+- Issue: Historical/superseded. Shore/AC SKU lock is complete for Phase 1; remaining box/clamp/grommet details are hands-on install fitment, not procurement blockers.
 - Why this matters: wrong enclosure/inlet/interface choices can still create rework risk at install time.
 - Current references:
 - `docs/implementation/ELECTRICAL_overview_diagram.md` (full AC hierarchy, AC segment table `C-28` through `C-34`)
@@ -93,8 +93,8 @@ Status date: 2026-03-18
 - GFCI + downstream receptacle family and box style.
 - AC cable type and final cut lengths after layout confirmation.
 - Resolution target:
-- Complete SKU lock and remove remaining install-fitment ambiguity.
-- Status: Open
+- Historical reference only; do not use this temp note to reopen AC procurement/receptacle-count churn.
+- Status: Closed / superseded by D-044 (`2026-05-17` owner-confirmed cleanup)
 
 ## PRF-006 CAD-Dependent Electrical Assumptions Are Not Yet Validated
 - Severity: Medium
@@ -125,7 +125,6 @@ Status date: 2026-03-18
 - Status: Closed (`2026-03-18`) after project-doc maintenance pass
 
 ## Suggested Resolution Order
-1. PRF-003 cabinet-critical SKU lock completion
-2. PRF-004 fuse-holder SKU lock
-3. PRF-005 shore AC procurement completeness
-4. PRF-006 measured run-length record lock
+1. PRF-004 fuse-holder SKU lock
+2. PRF-006 measured run-length record lock
+3. Keep PRF-003 and PRF-005 as historical/superseded AC procurement notes only

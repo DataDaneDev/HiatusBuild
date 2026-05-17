@@ -1,3 +1,12 @@
+
+## 2026-05-17 — Pre-install audit triage and cleanup
+- Owner triaged `docs/studies/PREINSTALL_FULL_REPO_AUDIT_LIVE_2026-05-16.md` findings F-001 through F-018.
+- Closed May 7 travel/tailgate/tonneau logistics as historical; install happened and those items are not active blockers.
+- AC baseline confirmed: one purchased `6-way` AC enclosure, two active GFCI outlets/covers, row `111` obsolete, pop-up multipurpose outlet deferred until details are provided, and cable-gland/strain-relief hardware treated as on-hand install-fit stock rather than a design blocker.
+- Rechecked battery-branch math: `(125A + 40A) / 3 * 1.5 = 82.5A`; worksheet stale `77.5A` values were updated while PASS voltage-drop result remains materially unchanged.
+- Owner confirmed storage placement is too hands-on for prescriptive docs, excess `2/0` cable is on hand for alternator use, a good roll of `14 AWG` duplex marine wire is on hand, and Class T inventory is `3` holders plus `4` slow-blow fuses total.
+- Real follow-ups retained: AC dead-checks before energization, WS500 `48V` battery-sense fuse/holder voltage-class validation, final measured run lengths, and solar design deferred until shore and alternator charging are proven.
+
 ---
 aliases:
   - Hiatus project log

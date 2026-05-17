@@ -438,26 +438,7 @@ If electric tanked hot water is added:
 
 ## 11) Storage system by access frequency
 
-Do not just add cabinets. Assign storage by access frequency and travel mass.
-
-### Daily access
-
-- Desk: laptop, headset, keyboard, cables, notepad, USB-C station.
-- Passenger-side lofted fridge/wet-spine: fridge, groceries, pump-service checks, wet tray, fill/winterization access.
-- Galley top: sink cover, induction, cutting board, dish kit.
-- Rear service hatch: shower hose, fill hose, winterization adapter.
-
-### Frequent but not constant
-
-- Top-right soft cubes: clothes, towel, toiletries, bedding.
-- Galley vertical slots: cookware, cutting board, collapsible dish rack.
-- Fridge/wet-spine exoskeleton: paper towel, bottle, small trash, service labels, lightweight wet-side accessories only where venting/service access remain clear.
-
-### Infrequent / heavy / dirty
-
-- Under-bench non-electrical voids: tools, recovery soft gear, spare parts.
-- Rear threshold: leveling blocks, hose gear, shower sandals, wet gear.
-- Toe-kick false bottoms: flat items, cable chase, lightweight spares only.
+Storage locations are owner-fit decisions to make in the actual camper, not prescriptive layout geometry in this doc. Keep only the travel-retention rules below when adding bins, drawers, shelves, or soft goods.
 
 Travel-retention standards:
 

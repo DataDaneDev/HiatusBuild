@@ -12,6 +12,8 @@ related:
 
 # Project High-Level Health Review (2026-03-15)
 
+Maintenance caveat (`2026-05-17`): this is historical. The AC scope/procurement comments below were superseded by D-044 and the current AC owner docs; keep this file only as a March risk snapshot.
+
 ## Overall assessment
 - The project remains risk-aware and execution-capable.
 - Maintenance updates (`2026-03-18` and `2026-03-19`) show meaningful build progress and procurement closure.

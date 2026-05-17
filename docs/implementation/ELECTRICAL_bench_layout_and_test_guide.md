@@ -140,6 +140,7 @@ Use a stop/go ladder; do not skip steps.
 - Verify polarity labels and continuity on every cable.
 - Verify torque marks applied to all completed terminations.
 - Verify fuse IDs/ratings match `docs/implementation/ELECTRICAL_fuse_schedule.md`.
+- Before any AC energization, meter the AC system dead: AC-in and AC-out neutrals are isolated, PE/equipment ground is continuous through inlet/enclosure/MultiPlus/receptacle paths, and no fixed downstream neutral-ground bond exists.
 
 Pass when:
 - No polarity/continuity mistakes and all terminations documented.
@@ -162,6 +163,7 @@ Pass when:
 ### T2.5: Shore / MultiPlus initial charge validation
 - Build the AC-in-only path first: shore source/adapters -> portable EMS -> shore cord -> inlet -> AC-in breaker/disconnect -> MultiPlus AC-in.
 - Keep AC-out branch breakers/loads disconnected for the first charge test.
+- Confirm the T0 AC dead-checks are complete before shore energization.
 - Connect and charge one `48V` battery at a time through the final-style protected DC path.
 - Confirm MultiPlus LiFePO4 charge profile and source current limit before energizing.
 - Use the pre-charge procedure before closing the `48V` disconnect into MultiPlus capacitance.
@@ -180,10 +182,11 @@ Pass when:
 
 ### T4: AC path validation
 - Validate AC-in and AC-out paths in staged order with small known loads first.
-- Confirm branch protection behavior and outlet polarity/GFCI behavior.
+- Reconfirm neutral isolation, PE continuity, no downstream neutral-ground bond, and correct outlet polarity before applying known loads.
+- Confirm branch protection behavior and test each GFCI receptacle in its installed branch context.
 
 Pass when:
-- AC paths behave correctly in shore and inverter modes.
+- AC paths behave correctly in shore and inverter modes, with GFCI behavior verified and no neutral/ground faults found.
 
 ### T5: Alternator path readiness (pre-engine integration)
 - Confirm alternator branch hardware is present/labeled/serviceable.

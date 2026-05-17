@@ -70,19 +70,11 @@ flowchart LR
         UP3 -. "12V control feed" .-> F15 -. "brown ignition/enable wire" .-> WS500
     end
 
-    subgraph PV_PATH["Solar Path (900W, 3S3P)"]
-        PVA["PV String A\n3x100W"]
-        PVB["PV String B\n3x100W"]
-        PVC["PV String C\n3x100W"]
-        F09A["F-09A 15A gPV"]
-        F09B["F-09B 15A gPV"]
-        F09C["F-09C 15A gPV"]
-        COMB["PV combiner enclosure\n3x 10x38 fuse holders"]
+    subgraph PV_PATH["Solar Path (placeholder / modeling-only)"]
+        PVFINAL["Final solar module/string set\n(not locked; shore then alternator first)"]
+        F09X["gPV string fusing/combiner\nas required by final datasheets"]
         MPPT["Victron SmartSolar\nMPPT 150/45"]
-        PVA -- "10 AWG PV, ~8 ft (ASSUMED)" --> F09A --> COMB
-        PVB -- "10 AWG PV, ~8 ft (ASSUMED)" --> F09B --> COMB
-        PVC -- "10 AWG PV, ~8 ft (ASSUMED)" --> F09C --> COMB
-        COMB -- "10 AWG PV +/-, ~12 ft (ASSUMED)" --> MPPT
+        PVFINAL -- "PV wire and roof-entry layout TBD" --> F09X --> MPPT
     end
 
     subgraph HOUSE_48V["House 48V Core"]
@@ -323,8 +315,8 @@ flowchart LR
 | `F-10` | Per branch (`ATO/ATC`) | Integrated blade sockets in generic 12V fuse block | Electrical cabinet |
 | `F-11` | `100A` class (12V buffer battery main) | Sealed inline MIDI/AMI/ANL holder | Within ~`7"` of 12V buffer battery positive post |
 | `F-12` | `10A/15A` WS500 power lead fuse | Sealed inline ATC/ATO holder | Near WS500 power lead source |
-| `F-13` | `3A` WS500 battery-sense fuse | Sealed inline ATC/ATO holder | Near WS500 battery-sense source |
-| `F-14` | `5A` WS500 current-sense fuse (as required) | Sealed inline ATC/ATO holder | Near shunt/sense source point |
+| `F-13` | `3A` WS500 battery-sense fuse | Fuse/holder must be rated for actual `48V` bank max voltage unless the WS500 harness rating proves otherwise | Near WS500 battery-sense source |
+| `F-14` | `5A` WS500 current-sense fuse (as required) | Confirm actual circuit reference/voltage class from WS500 documentation before choosing holder | Near shunt/sense source point |
 | `F-15` | `3A` WS500 ignition/enable control fuse | Sealed inline ATC/ATO holder | Near Ford upfitter blunt-cut wire / WS500 control-wire handoff |
 | `SW-12V-BATT` | Manual battery disconnect switch | Sealed rotary DC switch body | Electrical cabinet near 12V fuse-block main `+` stud for service access |
 | `OEM-SHUNT` | Factory low-current inline fuse (SmartShunt harness) | Integrated inline holder in Victron harness lead | Electrical cabinet near Lynx positive tap |
@@ -390,10 +382,10 @@ Calculation basis for drop screening:
 
 | Circuit ID | From | To | Fuse | Current basis | Gauge | Estimated one-way length | Voltage drop % | BOM gauge bucket | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `C-01` | Battery A `+` | `F-01A` | `F-01A 200A` | `77.5A` design branch share | `2/0 AWG` | `2.5 ft` | `0.06%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
-| `C-02` | Battery B `+` | `F-01B` | `F-01B 200A` | `77.5A` design branch share | `2/0 AWG` | `2.5 ft` | `0.06%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
-| `C-02C` | Battery C `+` | `F-01C` | `F-01C 200A` | `77.5A` design branch share | `2/0 AWG` | `2.5 ft` | `0.06%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
-| `C-03` | Class T load studs | `48V +` bus / disconnect input | `F-01A/B/C` | `77.5A` per branch | `2/0 AWG` | `2.5 ft` each (`x4` conductors) | `0.06%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
+| `C-01` | Battery A `+` | `F-01A` | `F-01A 200A` | `82.5A` design branch share | `2/0 AWG` | `2.5 ft` | `0.063%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
+| `C-02` | Battery B `+` | `F-01B` | `F-01B 200A` | `82.5A` design branch share | `2/0 AWG` | `2.5 ft` | `0.063%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
+| `C-02C` | Battery C `+` | `F-01C` | `F-01C 200A` | `82.5A` design branch share | `2/0 AWG` | `2.5 ft` | `0.063%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
+| `C-03` | Class T load studs | `48V +` bus / disconnect input | `F-01A/B/C` | `82.5A` per branch | `2/0 AWG` | `2.5 ft` each (`x4` conductors) | `0.063%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
 | `C-04` | Disconnect output | Lynx `+` bus | Upstream Class T | `165A` aggregate | `2/0 AWG` | `2.5 ft` | `0.13%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
 | `C-05` | Battery `-` branches | SmartShunt battery side via `48V -` bus | N/A | `82.5A` per battery-negative branch; row rollup also includes one `165A` trunk (`NEGBUS_TO_SHUNT`) | `2/0 AWG` | `2.5 ft` each (`x4` conductors) | `0.13%` @ `51.2V` (worst-case rollup) | Row `28` (`2/0 black`) | PASS |
 | `C-06` | SmartShunt load side | Lynx `-` bus | N/A | `165A` aggregate return | `2/0 AWG` | `2.5 ft` | `0.13%` @ `51.2V` | Row `28` (`2/0 black`) | PASS |
@@ -432,8 +424,8 @@ Calculation basis for drop screening:
 | `C-36` | 12V fuse panel | Maxxair fan (Hiatus pre-installed) | `F-10 10A` | `4A` expected | `14 AWG duplex` | `8 ft` | `1.35%` @ `12V` | Row `32` (`14 AWG duplex`) | PASS |
 | `C-37` | 12V fuse panel | DC ambient/cabinet LED strips (planned Govee) | `F-10 5A` | `5A` design cap | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |
 | `C-38` | WS500 power lead source | WS500 regulator input | `F-12 10A` | low-current electronics feed | Harness lead | `8 ft` | N/A (harness-limited) | Row `171` (fuse kit) | PASS |
-| `C-39` | WS500 battery sense source | WS500 voltage-sense input | `F-13 3A` | low-current electronics sense | Harness lead | `8 ft` | N/A (harness-limited) | Row `171` (fuse kit) | PASS |
-| `C-40` | WS500 current-sense source | WS500 current-sense input | `F-14 5A` (if required) | low-current electronics sense | Harness lead | `8 ft` | N/A (harness-limited) | Row `171` (fuse kit) | PASS |
+| `C-39` | WS500 battery sense source | WS500 voltage-sense input | `F-13 3A` | low-current `48V` battery-sense lead; fuse/holder voltage class must be verified | Harness lead | `8 ft` | N/A (harness-limited) | Row `171` (fuse kit) | VERIFY WS500/manual voltage rating |
+| `C-40` | WS500 current-sense source | WS500 current-sense input | `F-14 5A` (if required) | low-current sense; confirm actual reference/voltage class | Harness lead | `8 ft` | N/A (harness-limited) | Row `171` (fuse kit) | VERIFY WS500/manual requirement |
 | `C-41` | Ford Upfitter `#3` output | WS500 brown ignition/enable input via `F-15` | `F-15 3A` | manual low-current control only | `16 AWG` TXL/GXL | `6 ft` | N/A (control circuit) | Row `176` (upfitter control kit) | PASS |
 
 ## Wire Rollup (No-Padding Purchase Baseline)
@@ -445,7 +437,7 @@ Calculation basis for drop screening:
 | `6 AWG` black | `7.5 ft` | `C-10`, `C-15`, `C-19` | `29` |
 | `4 AWG` red | `2.5 ft` | `C-19A` | `30` |
 | `4 AWG` black | `2.5 ft` | `C-19B` | `30` |
-| `10 AWG pair-equivalent` (PV) | `36 ft route` (`72 ft` conductor equivalent) | `C-27` (`3x8 ft` strings + `12 ft` combiner trunk, `ASSUMED`) | `31` |
+| `10 AWG pair-equivalent` (PV) | placeholder only | `C-27` final module/string topology deferred until solar workstream; do not buy combiner/fuse count or cut roof entries from the old `3S3P` model | `31` |
 | `14 AWG duplex` | `52 ft` | `C-20`, `C-21`, `C-22`, `C-23`, `C-35`, `C-36` | `32` |
 | `18/2` | `26.5 ft` | `C-24`, `C-25`, `C-26`, `C-37` | `33` |
 | `12 AWG AC branch cable` | `30 ft` (`C-33` excluded in Phase 1) | `C-31`, `C-32` | `113` |

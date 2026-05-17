@@ -63,7 +63,7 @@ related:
 ## Scope clarifications from workbook
 - In scope for Phase 1 includes office-first electrical architecture, Starlink support, cabinetry/workstation, and core plumbing.
 - Truck mechanical upgrades listed as "skip for now" remain out of scope for Phase 1.
-- Several passthrough decisions (solar, shore power, diesel/propane routing) are still pending and tracked in `docs/core/TRACKING.md`.
+- Several passthrough decisions (solar and diesel/propane routing) are still pending and tracked in `docs/core/TRACKING.md`; shore hardware is selected, with inlet/cable-support details handled during physical install.
 
 ## Milestone plan (draft)
 - M0: requirements baseline frozen
@@ -86,8 +86,8 @@ related:
 - **Measured envelopes:** physically tape/cardboard the passenger-side lofted fridge/wet-spine skeleton, pump/accumulator board, water tank overlap, separated battery bench, driver-side electrical box/step box, `24 in x 48 in` wheel-well desk, DC shelf, diesel heater zone, and workstation before final cut lists.
 - **Extrusion/furniture:** order/use 80/20 as controlled prototype stock/hardware, not a final vendor-cut enclosure. Default toward `10-series` unless real point loads or restraint needs prove otherwise.
 - **Panel strategy:** use overlay/removable panels on living-facing surfaces, keep service zones exposed or quick-removable, and use magnets only for light service covers with locator/backup retention where panel loss matters.
-- **Electrical:** shore-power / initial-charge remains a priority before any alternator work. Purchased Phase 1 AC baseline is now `shore source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> single 6-way AC DIN enclosure -> 30A AC-in breaker/disconnect -> MultiPlus AC-in`, with `30A` AC-out main plus two `20A` GFCI branches for later AC-out validation. SKU lock is recorded in BOM rows `13`, `14`, `15`, `41`, `107`, `108`, `109`, `110`, `113`, `114`, `123`, `179`, and `180`; cable glands remain existing stock in row `44`.
-- Keep AC-in and AC-out protection in separate enclosures. Do not let final AC receptacle-count churn block the AC-in charge path.
+- **Electrical:** shore-power / initial-charge remains a priority before any alternator work. Purchased Phase 1 AC baseline is now `shore source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> single 6-way AC DIN enclosure -> 30A AC-in breaker/disconnect -> MultiPlus AC-in`, with `30A` AC-out main plus two `20A` GFCI branches for later AC-out validation. SKU lock is recorded in BOM rows `13`, `14`, `15`, `41`, `107`, `108`, `109`, `110`, `113`, `114`, `123`, `179`, and `180`; cable glands/clamps/grommets are on-hand fitment stock, not a design blocker.
+- AC-in and AC-out may share the purchased single `6-way` enclosure only if neutral paths remain isolated, PE/equipment grounding is continuous, no fixed downstream neutral-ground bond is added, and labeling/barriers/strain relief are verified during install. Do not let receptacle-count churn or the later pop-up outlet idea block the AC-in charge path.
 - Before first charge, reconcile the MultiPlus LiFePO4 charge profile (`56.8V` planning basis vs `58.4V` battery/manual basis), set source current limits, and charge/test one `48V` battery at a time before paralleling.
 - Defer Mechman alternator installation until batteries are present, shore charging/monitoring are proven, and alternator vendor/support gates are closed.
 - **Flooring gate:** do not glue Lonseal or permanently close the floor until EPS/subfloor fit, moisture path, hardpoint, and penetration/service-access checks pass in the installed camper.

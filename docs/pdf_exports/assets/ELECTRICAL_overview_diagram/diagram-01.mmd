@@ -10,19 +10,11 @@ flowchart LR
         UP3 -. "12V control feed" .-> F15 -. "brown ignition/enable wire" .-> WS500
     end
 
-    subgraph PV_PATH["Solar Path (900W, 3S3P)"]
-        PVA["PV String A\n3x100W"]
-        PVB["PV String B\n3x100W"]
-        PVC["PV String C\n3x100W"]
-        F09A["F-09A 15A gPV"]
-        F09B["F-09B 15A gPV"]
-        F09C["F-09C 15A gPV"]
-        COMB["PV combiner enclosure\n3x 10x38 fuse holders"]
+    subgraph PV_PATH["Solar Path (placeholder / modeling-only)"]
+        PVFINAL["Final solar module/string set\n(not locked; shore then alternator first)"]
+        F09X["gPV string fusing/combiner\nas required by final datasheets"]
         MPPT["Victron SmartSolar\nMPPT 150/45"]
-        PVA -- "10 AWG PV, ~8 ft (ASSUMED)" --> F09A --> COMB
-        PVB -- "10 AWG PV, ~8 ft (ASSUMED)" --> F09B --> COMB
-        PVC -- "10 AWG PV, ~8 ft (ASSUMED)" --> F09C --> COMB
-        COMB -- "10 AWG PV +/-, ~12 ft (ASSUMED)" --> MPPT
+        PVFINAL -- "PV wire and roof-entry layout TBD" --> F09X --> MPPT
     end
 
     subgraph HOUSE_48V["House 48V Core"]

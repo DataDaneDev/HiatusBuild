@@ -55,6 +55,13 @@ function main() {
   mkdirSync(assetsRoot, { recursive: true });
   mkdirSync(tempRoot, { recursive: true });
 
+  const puppeteerNoSandboxConfigPath = path.join(tempRoot, "puppeteer-no-sandbox.json");
+  writeFileSync(
+    puppeteerNoSandboxConfigPath,
+    `${JSON.stringify({ args: ["--no-sandbox", "--disable-setuid-sandbox"] }, null, 2)}\n`,
+    "utf8",
+  );
+
   const summaries = [];
 
   for (const relPath of targets) {
@@ -78,8 +85,8 @@ function main() {
       const pdfPath = path.join(assetDir, `diagram-${idx}.pdf`);
 
       writeFileSync(mmdPath, `${String(blockText).trim()}\n`, "utf8");
-      runNpx(["--yes", "@mermaid-js/mermaid-cli", "-i", mmdPath, "-o", svgPath]);
-      runNpx(["--yes", "@mermaid-js/mermaid-cli", "-i", mmdPath, "-o", pdfPath]);
+      runNpx(["--yes", "@mermaid-js/mermaid-cli", "-p", puppeteerNoSandboxConfigPath, "-i", mmdPath, "-o", svgPath]);
+      runNpx(["--yes", "@mermaid-js/mermaid-cli", "-p", puppeteerNoSandboxConfigPath, "-i", mmdPath, "-o", pdfPath]);
 
       const relSvg = toPosixPath(path.join("..", "assets", baseName, `diagram-${idx}.svg`));
       return `![${baseName} diagram ${idx}](${relSvg})`;
@@ -96,6 +103,8 @@ function main() {
       repoRoot,
       "--pdf-options",
       '{"format":"Letter","printBackground":true}',
+      "--launch-options",
+      '{"args":["--no-sandbox","--disable-setuid-sandbox"]}',
     ]);
 
     const generatedPdfPath = tempMarkdownPath.replace(/\.md$/i, ".pdf");

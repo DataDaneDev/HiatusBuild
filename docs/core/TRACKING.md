@@ -258,12 +258,12 @@ related:
 
 - ID: D-026
 - Date: 2026-03-18
-- Decision: Reopen final AC utilization scope (branch/receptacle count) while keeping the `30A` shore + split-DIN protection architecture baseline.
-- Context: Phase-1 AC layout remains close to lock, but final receptacle quantity is still being evaluated (`3` vs `4` locations) against real-use needs.
+- Decision: Reopen final AC utilization scope (branch/receptacle count) while keeping the then-current `30A` shore + split-DIN protection architecture baseline.
+- Context: Historical/superseded by D-044. At this point Phase-1 AC layout was close to lock, but final receptacle quantity was still being evaluated (`3` vs `4` locations) against real-use needs.
 - Options considered: freeze current `4`-location plan, reduce to `3` locations, or defer decision until late install.
 - Decision drivers: practical outlet usability, wiring simplicity, and avoiding unnecessary hardware sprawl.
-- Result: AC architecture/protection chain remains locked; final branch utilization and receptacle count are now explicit open items.
-- Follow-up: close AC count/SKU lock in one pass before AC procurement freeze.
+- Result: Superseded by D-044: active AC purchase lock is one `6-way` enclosure with two `20A` GFCI branches; row `111` is obsolete and pop-up outlet details are deferred until provided.
+- Follow-up: Closed/historical; use D-044 and current AC implementation docs for active AC work.
 
 - ID: D-027
 - Date: 2026-03-18
@@ -424,8 +424,8 @@ related:
 - Context: AC procurement was reopened to avoid overbuilding and to fit the limited cabinet space near the MultiPlus while still preserving normal RV/camper protection.
 - Options considered: two separate AC-in/AC-out enclosures, one combined DIN enclosure without AC-out main, one combined DIN enclosure with `30A` AC-out main, or upsizing feeder/panel for `40A+` output.
 - Decision drivers: compactness, clear `30A` system cap, standard `10/3` feeder use, service labeling, and avoiding a full `40A/50A/75A` output build.
-- Result: purchased Progressive Industries EMS-PT30X portable `30A` EMS; Camco TT-30P-to-L5-30R shore cord plus 15A dogbone; Nilight L5-30 inlet; Mollom `6-way` DIN enclosure; ControlGear `30A` breakers qty `2` for AC-in and AC-out main; ControlGear `20A` breakers qty `2`; ELEGRP `20A` GFCI receptacles qty `2`; `10/3` and `12/3` triplex wire; bus bars; ferrule crimper kit; butyl tape; Sikaflex-221. Row `111` downstream non-GFCI receptacles is obsolete; row `112` remains planned/confirm-on-hand for physical outlet boxes/covers.
-- Follow-up: verify delivered wire jacket markings/listings, confirm DIN enclosure fit/neutral isolation before drilling, source/confirm outlet boxes if not already on hand, then perform AC-in-only charge validation before AC-out branch energization.
+- Result: purchased Progressive Industries EMS-PT30X portable `30A` EMS; Camco TT-30P-to-L5-30R shore cord plus 15A dogbone; Nilight L5-30 inlet; Mollom `6-way` DIN enclosure; ControlGear `30A` breakers qty `2` for AC-in and AC-out main; ControlGear `20A` breakers qty `2`; ELEGRP `20A` GFCI receptacles qty `2` with covers/plates, `10/3` and `12/3` triplex wire, bus bars, ferrule crimper kit, butyl tape, and Sikaflex-221. Row `111` downstream non-GFCI receptacles is obsolete; row `112` is no longer a design blocker because outlet box/cover details are handled as installation fitment around the two active GFCIs. A user-provided pop-up multipurpose outlet remains deferred/outside active baseline until details are supplied.
+- Follow-up: confirm single-enclosure neutral isolation/PE continuity/no fixed downstream neutral-ground bond with dead checks, then perform AC-in-only charge validation before AC-out branch energization. Do not reopen receptacle-count churn unless a later pop-up outlet SKU/layout decision requires it.
 
 ## Risk register
 - ID: R-001
@@ -531,10 +531,10 @@ related:
 - Risk: Travel/logistics compression could put the truck too far from Bellingham for the May 7 `9:00 AM` install.
 - Impact (1-5): 5
 - Likelihood (1-5): 2
-- Mitigation: Stage the truck near Bellingham by the evening of May 6 and avoid late half-disassembly work; May 6 is PTO and should remain travel/staging-only, with route, lodging, weather, tonneau, and tailgate handling confirmed by May 5.
-- Trigger: Departure delay, weather, parts delay, unresolved tailgate/tonneau handling, or treating May 6 as a build catch-up day instead of a staging day.
+- Mitigation: Historical only. Owner confirmed the May 7 install happened; travel, tailgate, tonneau, and arrival-buffer logistics are no longer active build risks.
+- Trigger: Historical May 2026 shell-install logistics.
 - Owner: Sunny
-- Status: Open
+- Status: Closed / historical (owner confirmed 2026-05-17)
 
 - ID: R-013
 - Risk: Old bed rail holes, rail-cap gaps, bed-floor drain holes, unused penetrations, and small bed-corner gaps can remain dust/water intrusion paths after the sealed barn-door camper upgrade. Water under the EPS/plywood subfloor is unacceptable because it can rot the floor.
@@ -591,10 +591,6 @@ related:
 - Status: Open
 
 ## Open questions
-- Confirm Tuesday/Wednesday Washington travel/staging details, route/weather, and arrival buffer before the May 7 `9:00 AM` install.
-- Confirm with Hiatus whether tailgate can be removed onsite and where it will be stored/transported afterward.
-- Confirm tonneau cover removal timing relative to weather, re-bonded rail caps, and install interference.
-- Verify the re-bonded bed rail caps and prior-owner rail-hole areas do not interfere with the Hiatus attachment/seal interface.
 - Reconcile MultiPlus charge profile value before first charge (`56.8V` planning basis vs `58.4V` battery/manual basis).
 - Confirm one-battery-at-a-time first-charge procedure and acceptable voltage/SOC matching threshold before paralleling.
 - Measure Iceco lid-open/vent/power-cord envelope at the raised passenger-side `~16 in` lofted height and validate tank overlap, pump-service access, and aisle/entry clearance.
@@ -615,9 +611,8 @@ related:
 - Confirm only that the retained factory alternator continues to handle normal starter/vehicle charging independently if the Mechman `48V` path is adopted
 - Confirm measured daily draw for owner-supplied laptop/monitor/tablet charging to replace planning assumptions
 - Validate Orion `48/12-30` charger headroom with the current 12V branch plan (including USB stations, `12V-10` Maxxair fan, `12V-06` Hiatus factory LED+dimmer, and planned `12V-11` ambient/Govee strips) and trigger row `118` only if sustained overload is observed
-- Final AC receptacle count and distribution target (`3` vs `4` locations; target `6` vs `8` practical plug points)
-- Verify physical fitment and service-access clearances for the split-DIN AC hardware set (`rows 13`, `15`, `107`, `108`, `109`, `110`, `111`, `112`, `113`, `114`, `123`) during cabinet mockup
-- Final passthrough locations for solar, shore power, and fuel/heater paths, including whether an exterior truck-bed-wall diesel tank/fill/pump can route through a protected grommet/bulkhead to the heater
+- Confirm AC dead-checks before energization: AC-in/AC-out neutral isolation, continuous PE/equipment ground, no fixed downstream neutral-ground bond, and staged GFCI test during AC-out commissioning.
+- Final passthrough locations for solar and fuel/heater paths, including whether an exterior truck-bed-wall diesel tank/fill/pump can route through a protected grommet/bulkhead to the heater. Shore inlet hardware is selected; final inlet/cable support details are an install-fit task using on-hand clamps/grommets/strain relief.
 - Lock roof-to-shell solar jumper connector strategy and exact service-loop length for full popup travel
 - Flexible solar model/stringing strategy under roof `75 lb` cap and deferred-procurement timing
 - Lock interior/exterior mounting rail ecosystem (rail profile, nut/hardware standard, bracket interfaces) and final linear-foot allowances

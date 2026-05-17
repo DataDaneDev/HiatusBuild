@@ -77,12 +77,12 @@ These rows unblock safe MultiPlus shore charging and should not wait on final re
 | DIN accessory kit | `1` kit | Neutral isolation hardware, PE/ground bus support, ferrules, labels/blanks as needed | `14`, `41` | Purchased / labels-blanks confirm on hand |
 | GFCI receptacles | `2` | `20A` self-test GFCI receptacles, one per active branch | `15` | Purchased |
 | Standard downstream receptacles | `0` in current scope | Prior downstream non-GFCI receptacle plan is obsolete | `111` | Obsolete |
-| Outlet boxes + covers/faceplates + clamps | `2` sets | Boxes and covers sized for the two active GFCI receptacles | `112` | Planned / confirm on hand |
+| Outlet boxes + covers/faceplates + clamps | `2` sets | Two active GFCI receptacles have covers/plates; final boxes/clamps are install-fit details using on-hand hardware as needed | `112` | Install-fit detail / not a first-charge blocker |
 | AC branch cable | `30 ft` purchased | `12/3` stranded triplex branch cable (`C-31/C-32`) | `113` | Purchased |
 | Shore + AC-in/AC-out feeder cable | `20 ft` purchased | `10/3` stranded triplex for `C-28/C-29/C-30` (`30A` paths) | `114` | Purchased |
-| Strain relief/cable glands | per enclosure entries | Entry hardware sized to `10/3` and branch cable ODs | `44` | Required |
-| Grommets | per pass-through points | Abrasion protection at penetrations | `43` | Required |
-| P-clamps and retention hardware | per route | Cable support and vibration control | `45` | Required |
+| Strain relief/cable glands | per enclosure entries | Use assorted on-hand entry hardware sized during physical layout | `44` | On-hand fitment stock |
+| Grommets | per pass-through points | Abrasion protection at penetrations, selected hands-on during routing | `43` | On-hand / install fit |
+| P-clamps and retention hardware | per route | Cable support and vibration control, selected hands-on during routing | `45` | On-hand / install fit |
 | Loom/sleeving | per exposed runs | Harness abrasion protection | `42` | Required |
 | Heat shrink (adhesive) | install consumable | Termination sealing and strain relief support | `38` | Required |
 | Ferrules/terminals (AC-relevant) | install consumable | Sized to `10 AWG` and `12 AWG` terminations as required by device terminals | `41`, `116` | Required |
@@ -141,6 +141,6 @@ Use this checklist as the acceptance gate before procurement freeze and before f
 ## Procurement Notes
 - DIN rail is a mounting method; breaker listing and rating remain the controlling requirement.
 - Lowest-cost listed policy is acceptable only if each selected device has verifiable NRTL listing (`UL` or `ETL`) for intended use.
-- Purchased SKU lock is recorded in `bom/bom_estimated_items.csv` for rows `13`, `14`, `15`, `41`, `107`, `108`, `109`, `110`, `113`, `114`, `123`, `179`, `180`, and `181`.
-- Row `111` is obsolete under the current `2x` GFCI-receptacle plan. Row `112` remains planned/confirm-on-hand for physical outlet boxes/covers.
+- Purchased SKU lock is recorded in `bom/bom_estimated_items.csv` for rows `13`, `14`, `15`, `41`, `107`, `108`, `109`, `110`, `113`, `114`, `123`, `179`, and `180`. Row `181` was same-order tire-deflator/off-road support hardware and is intentionally outside AC scope.
+- Row `111` is obsolete under the current `2x` GFCI-receptacle plan. Row `112` is only an install-fit box/cover/clamp detail around the two active GFCIs, not an AC design blocker.
 - Current utilization note (`2026-05-16`): AC protection chain and purchase scope are locked for a `30A` system with two active `20A` branches. Do not add a third active AC branch without revisiting the AC-out main/enclosure/feed plan.

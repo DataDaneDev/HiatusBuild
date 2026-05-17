@@ -34,7 +34,7 @@ related:
 - Solar option screening matrix (stringing + MPPT fit flags): [SOLAR_configuration_matrix](../studies/SOLAR_configuration_matrix.md)
 - Electrical decisions, risks, and unresolved items: [TRACKING](TRACKING.md)
 
-### Planning snapshot (as-of `2026-05-14`)
+### Planning snapshot (base model as-of `2026-05-14`; AC purchase note updated `2026-05-16`)
 - Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).
 - House architecture: `48V` core with Orion-Tr Smart `48V->12V` charging/step-down feeding a shared battery-backed `12V` junction.
 - Inverter/charger candidate: Victron MultiPlus-II `48/3000/35-50`.
@@ -60,7 +60,7 @@ related:
 | Legacy single-12V upgrade path | Mechman `370A` + Big 3 path is deprecated under the dual-`48V` migration baseline | `bom/bom_estimated_items.csv` rows `103` and `104` |
 | DC-DC charger | Orion-Tr Smart `48/12 30A` (`360W`) | `bom/bom_estimated_items.csv` row 20 |
 | 12V buffer battery | `12V 100Ah LiFePO4` on shared 12V junction (`F-11` + `SW-12V-BATT`) | `bom/bom_estimated_items.csv` rows 21, 124, and 125 |
-| Solar array candidate | Flexible-first placeholder (`~800-1000W` class; prior `9x100W`/`3S3P` concept retained for modeling basis) | `bom/bom_estimated_items.csv` row 24 |
+| Solar array candidate | Flexible-first placeholder (`~800-1000W` class); prior `9x100W`/`3S3P` concept is modeling-only and must not drive roof holes, combiner count, or procurement until solar is reopened after shore and alternator charging | `bom/bom_estimated_items.csv` row 24 |
 | Solar controller | SmartSolar `MPPT 150/45` | `bom/bom_estimated_items.csv` row 25 |
 | Load profiles (BOM + owner-supplied office loads) | `core_workday`, `winter_workday`, `minimal_idle_day` | `bom/load_model_wh.csv` |
 | Owner-supplied office assumptions | Laptop + 27 inch 1440p monitor + tablet/peripheral charging | `bom/load_model_wh.csv` rows marked `Owner-Supplied` |
@@ -92,8 +92,8 @@ Load totals below are from `bom/load_model_wh.csv` model v3 (BOM loads plus owne
 ### Charging potential
 All values are planning-level and should be replaced with measured charge logs after shakedown tests.
 
-#### Solar charging (`900W` flexible `3S3P` focus)
-Base planning factor for your target roof setup is now `68%` end-to-end harvest efficiency, with sensitivity from `60%` (poor conditions) to `75%` (strong conditions).
+#### Solar charging (placeholder `~900W` flexible model)
+Solar remains deferred until shore charging and alternator charging are working. The prior `900W`/`3S3P` model is only an energy-planning placeholder; final modules, stringing, combiner/fuse count, and roof penetrations stay unlocked. Base planning factor for the target roof setup is `68%` end-to-end harvest efficiency, with sensitivity from `60%` (poor conditions) to `75%` (strong conditions).
 
 | Derate component | Planning factor | Note |
 | --- | --- | --- |

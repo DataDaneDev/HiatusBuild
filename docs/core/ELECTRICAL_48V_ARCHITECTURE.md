@@ -47,7 +47,7 @@ Related docs:
 | House batteries | `3x` Dumfume `51.2V 100Ah` LiFePO4 | `3` |
 | Main house disconnect | Victron `275A` battery switch | `5` |
 | Main fused distribution | Victron Lynx Distributor `M10` | `6` |
-| Battery branch protection | `F-01A/B/C` `200A` Class T (provisional pending final battery limit confirmation) | `7`, `105` |
+| Battery branch protection | `F-01A/B/C` `200A` Class T (provisional pending final battery limit confirmation); owner confirmed `3` holders and `4` slow-blow Class T fuses total | `7` |
 | Inverter/charger | MultiPlus-II `48/3000/35-50` | `12` |
 | 48V to 12V charger | Orion-Tr Smart `48/12-30` | `20` |
 | Monitoring | Cerbo GX + SmartShunt `300A` | `22`, `23` |
@@ -114,8 +114,8 @@ flowchart LR
 | `F-01A/B/C` | Battery branch positive protection | `200A` Class T provisional | `2/0 AWG` |
 | `F-04` | Alternator branch into Lynx Slot 3 | `150A` MEGA (`58V/80V`) | `2/0 AWG` |
 | `F-12` | WS500 power lead | `10A` baseline (`15A` if required by alternator case) | harness lead |
-| `F-13` | WS500 battery positive sense | `3A` | harness lead |
-| `F-14` | WS500 current-sense lead | `5A` where required by selected shunt layout | harness lead |
+| `F-13` | WS500 battery positive sense | `3A`; fuse/holder voltage class must be verified for the `48V` bank or proven by WS500 harness documentation | harness lead |
+| `F-14` | WS500 current-sense lead | `5A` where required; confirm actual voltage/reference from WS500 documentation before hardware lock | harness lead |
 | `F-15` | Upfitter #3 to WS500 brown ignition wire | `3A` inline ATO/ATC | `16 AWG` TXL/GXL control wire |
 
 ### Major conductors
