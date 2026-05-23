@@ -133,12 +133,12 @@ Do not finalize these yet:
 - Roof/solar run terminations.
 
 ## 3.6 Alternator path execution baseline (now locked)
-- Build around the dedicated `48V` secondary alternator path (`A1` baseline) and retire Sterling-path layout dependencies.
+- Build around the dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) only; obsolete pre-Mechman charger layout dependencies are removed from active planning.
 - Keep Lynx Slot 3 reserved for the alternator branch (`F-04` now re-baselined in the fuse schedule).
-- Reserve mounting space for WS500 harness fusing and APM-48 placement/service access.
+- Reserve mounting/service access for APM-48, `F-04 150A` bank-end alternator branch fuse access, WS500 `F-12/F-13` low-current fuses, and the unfused twisted WS500 current-sense pair.
 - Reserve a small protected control-wire path from Ford `Upfitter #3` to the WS500 brown ignition/enable lead (`F-15` local inline fuse at the upfitter-to-WS500 handoff).
 - Use existing uncut `2/0` stock for the alternator `+` and dedicated negative run until measured field routing proves otherwise.
-- Do not initiate physical Sterling return shipment until Mechman fitment and kit-content details are confirmed.
+- Do not install/energize alternator charging until Mechman fitment/content, WS500 harness polarity, low-current fuse voltage ratings, APM-48 placement, and shutdown sequence are confirmed.
 
 ---
 
@@ -220,7 +220,7 @@ This keeps progress steady without waiting on missing materials.
 
 - Solar panel model/stringing not yet locked.
 - Final PV fusing/wire lengths not yet locked.
-- Alternator path is re-baselined to dedicated `48V` secondary alternator; Mechman alternator has been purchased, and Sterling return is pending received-kit/fitment/support confirmation.
+- Alternator path is locked to the dedicated `48V` secondary alternator; Mechman kit/APM-48 are received, and obsolete pre-Mechman charger hardware is out of active planning.
 - AC-in-only shore charge path SKU lock is the priority; final AC outlet/branch count remains secondary.
 - Final closet envelope dimensions may shift after camper is physically in hand.
 - Bed rail cap sealing, old rail-hole closure, tailgate removal/storage, and tonneau/weather timing need Hiatus confirmation.

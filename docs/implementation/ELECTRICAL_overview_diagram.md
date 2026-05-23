@@ -13,7 +13,7 @@ related:
 
 # Electrical Topology Diagram (Implementation v6)
 
-As-of date: `2026-05-16`
+As-of date: `2026-05-22`
 
 Purpose: provide a complete, install-level electrical topology for the current build scope, including all major electrical components, fuse IDs, fuse housings, planned wire gauges, and estimated one-way run lengths for procurement planning.
 
@@ -25,10 +25,10 @@ Related docs:
 - Procurement source of truth: `bom/bom_estimated_items.csv`
 
 ## Sweep Outcomes Included In This Revision
-- Re-based alternator charging architecture from Sterling B2B to dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48` baseline).
-- Re-based Lynx Slot 3 branch to alternator input with `F-04 150A` (`58V/80V` MEGA).
-- Retired legacy Sterling engine-bay path (`F-08`, `C-16`, `C-17`) from active architecture.
-- Added WS500 low-current fused-lead visibility (`F-12/F-13/F-14`) in topology and conductor schedule.
+- Keeps alternator charging architecture on the dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48` baseline); obsolete pre-Mechman charger paths are removed from primary topology.
+- Keeps Lynx Slot 3 branch to alternator input with `F-04 150A` (`58V/80V` MEGA).
+- Removes obsolete pre-Mechman engine-bay fuse/conductor placeholders from active architecture.
+- Clarifies WS500 fused-lead visibility (`F-12/F-13`) and treats current-sense high/low as an unfused twisted sense pair per current Wakespeed manual.
 - Added Ford `Upfitter #3 -> F-15 -> WS500 brown ignition` manual alternator-control path.
 - Added explicit fuse-holder/housing definitions for every fuse family (`Class T`, Lynx `MEGA`, inline `MIDI/ANL/AMI`, PV `gPV`, and `ATO/ATC`).
 - Added conductor schedule across `48V`, `12V`, PV, and AC segments with explicit assumptions.
@@ -66,7 +66,7 @@ flowchart LR
         UP3["Ford Upfitter Switch #3\n(factory relay output)"]
         F15["F-15 3A inline fuse\nWS500 ignition/enable control"]
         ALT48 -. "field/stator/sense harness" .- WS500
-        WS500 -. "F-12/F-13/F-14 fused leads" .- ALT48
+        WS500 -. "F-12/F-13 fused leads; current-sense pair unfused" .- ALT48
         UP3 -. "12V control feed" .-> F15 -. "brown ignition/enable wire" .-> WS500
     end
 
@@ -92,7 +92,7 @@ flowchart LR
         F04["F-04 150A MEGA\nLynx Slot 3 alternator branch"]
         MULTI["MultiPlus-II\n48/3000/35-50"]
         ORION["Orion-Tr Smart 48/12-30\nIsolated charger"]
-        F06["F-06 30A MIDI (58V)\n04980921GXM5 inline holder"]
+        F06["F-06 Orion 48V input fuse\n20A target, >=58VDC"]
     end
 
     BATA -- "2/0 AWG +, ~2.5 ft" --> F01A --> POSBUS
@@ -118,7 +118,7 @@ flowchart LR
     APM48 -- "2/0 AWG short link" --> F04 --> LYNX
     ALT48 -- "B- dedicated 2/0 AWG, ~20 ft (ASSUMED)" --> LYNX
 
-    LYNX -- "Slot 4: F-05 40A MEGA\n6 AWG, ~2.5 ft" --> F06 --> ORION
+    LYNX -- "Slot 4: F-05 40A MEGA feeder protection\n6 AWG, ~2.5 ft" --> F06 --> ORION
     ORION -- "48V input - (6 AWG, ~2.5 ft)" --> LYNX
 ```
 
@@ -309,20 +309,20 @@ flowchart LR
 | `F-03` | `60A MEGA` | Lynx integrated slot holder | Lynx Slot 2 |
 | `F-04` | `150A MEGA` | Lynx integrated slot holder | Lynx Slot 3 (dedicated alternator branch) |
 | `F-05` | `40A MEGA` | Lynx integrated slot holder | Lynx Slot 4 |
-| `F-06` | `30A` MIDI (`58V`) | Littelfuse `04980921GXM5` inline sealed holder (`58VDC`) | Electrical cabinet near Orion branch source |
+| `F-06` | Orion `48V` input fuse: `20A` install target, `>=58VDC` | Sealed inline holder, or omit if final layout uses one correctly rated Lynx-source fuse that satisfies both feeder and Orion input protection | Electrical cabinet near Orion `48V` input/source |
 | `F-07` | `60A MEGA` (`58V` class) | Victron MEGA fuse holder | Electrical cabinet at Orion `12V +` source end |
 | `F-09A/B/C` | `15A gPV` each | `10x38` touch-safe fuse holders in PV combiner | Roof-entry combiner enclosure |
 | `F-10` | Per branch (`ATO/ATC`) | Integrated blade sockets in generic 12V fuse block | Electrical cabinet |
 | `F-11` | `100A` class (12V buffer battery main) | Sealed inline MIDI/AMI/ANL holder | Within ~`7"` of 12V buffer battery positive post |
-| `F-12` | `10A/15A` WS500 power lead fuse | Sealed inline ATC/ATO holder | Near WS500 power lead source |
-| `F-13` | `3A` WS500 battery-sense fuse | Fuse/holder must be rated for actual `48V` bank max voltage unless the WS500 harness rating proves otherwise | Near WS500 battery-sense source |
-| `F-14` | `5A` WS500 current-sense fuse (as required) | Confirm actual circuit reference/voltage class from WS500 documentation before choosing holder | Near shunt/sense source point |
-| `F-15` | `3A` WS500 ignition/enable control fuse | Sealed inline ATC/ATO holder | Near Ford upfitter blunt-cut wire / WS500 control-wire handoff |
+| `F-12` | `10A/15A` WS500 regulator power fuse | Sealed inline holder; voltage rating must cover actual source voltage | Near WS500 power lead source |
+| `F-13` | `3A` WS500 positive voltage-sense fuse | Fuse/holder must be rated for actual `48V` bank max voltage unless the WS500 harness rating proves otherwise | Near WS500 positive-sense source |
+| WS500 current-sense pair | No fuse; purple/grey high/low sense pair to shunt/current-sense point | Twist pair if extended; route away from noise | Shunt/current-sense source point |
+| `F-15` | `3A` WS500 ignition/enable control fuse | Sealed inline ATC/ATO holder; 12V control circuit | Near Ford upfitter blunt-cut wire / WS500 control-wire handoff |
 | `SW-12V-BATT` | Manual battery disconnect switch | Sealed rotary DC switch body | Electrical cabinet near 12V fuse-block main `+` stud for service access |
-| `OEM-SHUNT` | Factory low-current inline fuse (SmartShunt harness) | Integrated inline holder in Victron harness lead | Electrical cabinet near Lynx positive tap |
+| `OEM-SHUNT` | External Victron-supplied inline fuse in red SmartShunt `Vbatt+` cable | Inline holder in supplied red cable | Electrical cabinet near Lynx positive tap / SmartShunt |
 
 Retired from active architecture:
-- `F-08` legacy Sterling engine-bay input fuse path.
+- Obsolete pre-Mechman charger/fuse paths are removed from active board layout and labels.
 
 ## Conductor Schedule (Start-to-Finish)
 | Segment ID | Circuit segment | Nominal voltage | Current basis | Overcurrent protection | Planned wire gauge | Estimated one-way length (this pass) |
@@ -341,11 +341,9 @@ Retired from active architecture:
 | `C-10` | MPPT `BAT-` -> Lynx `-` bus | `48V` | Controller return current | `F-03` protects paired positive | `6 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-11` | Secondary alternator `B+` -> APM-48 -> Lynx Slot 3 (`F-04`) | `48V` | Alternator branch design current | `F-04` `150A` | `2/0 AWG` | `20 ft` (`ASSUMED`, one-way) |
 | `C-12` | Secondary alternator `B-` -> Lynx `-` bus (dedicated return) | `48V` | Alternator branch return current | `F-04` paired | `2/0 AWG` | `20 ft` (`ASSUMED`, one-way) |
-| `C-13` | Lynx Slot 4 (`F-05`) -> `F-06` holder | `48V` | Orion branch feeder, fuse-limited | `F-05` `40A` | `6 AWG` | `2.5 ft` (`ASSUMED`) |
-| `C-14` | `F-06` -> Orion `48V +` input | `48V` | Orion input, fuse-limited | `F-06` `30A` MIDI | `6 AWG` planned (`8 AWG` minimum per Orion table) | `2.5 ft` (`ASSUMED`) |
-| `C-15` | Orion `48V -` input -> Lynx `-` bus | `48V` | Orion input return current | `F-06` protects paired positive | `6 AWG` | `2.5 ft` (`ASSUMED`) |
-| `C-16` | Legacy Sterling input `+` path (`F-08`) | `12V` | Retired path | Retired (`F-08`) | N/A | N/A (legacy only) |
-| `C-17` | Legacy Sterling input `-` return path | `12V` | Retired path | Retired (`F-08` paired) | N/A | N/A (legacy only) |
+| `C-13` | Lynx Slot 4 (`F-05`) -> Orion `48V` input protection point | `48V` | Orion feeder from Lynx, fuse-limited | `F-05` `40A` feeder protection | `6 AWG` | `2.5 ft` (`ASSUMED`) |
+| `C-14` | Orion `48V` input protection point -> Orion `48V +` input | `48V` | Orion input, fuse-limited | `F-06` `20A` install target (`>=58VDC`) if split input protection is retained | `6 AWG` planned (`8 AWG` minimum per Orion terminal table) | `2.5 ft` (`ASSUMED`) |
+| `C-15` | Orion `48V -` input -> Lynx `-` bus | `48V` | Orion input return current | Orion input positive protection paired | `6 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-18` | Orion `12V +` -> `F-07` -> 12V fuse block main `+` stud | `12V` | Charger output path (`30A` continuous, `60A` fuse) | `F-07` `60A` | `6 AWG` planned (`8 AWG` minimum per Orion table) | `2.5 ft` (`ASSUMED`) |
 | `C-19` | Orion `12V -` -> 12V fuse block integrated `-` bus / main `-` stud | `12V` | Charger output return | `F-07` protects paired positive | `6 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-19A` | 12V buffer battery `+` -> `F-11` -> `SW-12V-BATT` -> 12V fuse block main `+` stud | `12V` | Buffer source path and service isolation path | `F-11` `100A` class | `4 AWG` planned | `2.5 ft` (`ASSUMED`) |
@@ -368,9 +366,9 @@ Retired from active architecture:
 | `C-35` | 12V panel -> USB PD station branch (galley zone) | `12V` | Galley charging branch (`65W` class USB-C plus USB-A/C loads) | `F-10` branch fuse (`15A`) | `14 AWG duplex` baseline | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-36` | 12V panel -> Maxxair fan (Hiatus pre-installed) | `12V` | Roof ventilation branch | `F-10` branch fuse (`10A`) | `14 AWG duplex` baseline | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-37` | 12V panel -> DC ambient/cabinet LED strips (planned Govee) | `12V` | Branch load | `F-10` branch fuse (`5A`) | `18/2` baseline | `8 ft` (`ASSUMED`, near-load branch) |
-| `C-38` | WS500 power lead source -> WS500 regulator input | `12V` origin lead | Regulator electronics feed | `F-12` (`10A` baseline) | Harness lead | `8 ft` (`ASSUMED`) |
+| `C-38` | WS500 regulator power source -> WS500 regulator input | `48V`-referenced unless harness docs prove otherwise | Regulator electronics feed | `F-12` (`10A`/`15A`) | Harness lead | `8 ft` (`ASSUMED`) |
 | `C-39` | WS500 battery positive-sense lead -> WS500 | `48V` sense lead | Regulator voltage sense | `F-13` (`3A`) | Harness lead | `8 ft` (`ASSUMED`) |
-| `C-40` | WS500 current-sense lead path (if required by selected shunt layout) | low-current sense | Regulator current feedback | `F-14` (`5A` as required) | Harness lead | `8 ft` (`ASSUMED`) |
+| `C-40` | WS500 current-sense high/low pair to selected shunt/current-sense point | low-current sense | Regulator current feedback | No fuse per current Wakespeed manual; twist pair if extended | Harness lead | `8 ft` (`ASSUMED`) |
 | `C-41` | Ford Upfitter `#3` output -> `F-15` -> WS500 brown ignition/enable wire | `12V` control lead | Manual alternator-enable signal only | `F-15` (`3A`) | `16 AWG` TXL/GXL | `6 ft` (`ASSUMED`) |
 
 ## Wiring Validation Worksheet (Estimate Pass, 2026-02-18)
@@ -397,10 +395,8 @@ Calculation basis for drop screening:
 | `C-11` | Secondary alternator `B+` | Lynx Slot 3 via APM-48 | `F-04 150A` | `150A` design | `2/0 AWG` | `20 ft` | `0.80%` @ `58.4V` | Row `28` (`2/0 red`) | PASS |
 | `C-12` | Secondary alternator `B-` | Lynx `-` bus (dedicated return) | `F-04` paired | `150A` design | `2/0 AWG` | `20 ft` | `0.80%` @ `58.4V` | Row `28` (`2/0 black`) | PASS |
 | `C-13` | Lynx Slot 4 | `F-06` source side | `F-05 40A` | `40A` | `6 AWG` | `2.5 ft` | `0.15%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS |
-| `C-14` | `F-06` load side | Orion `48V +` | `F-06 30A MIDI` | `30A` | `6 AWG` | `2.5 ft` | `0.12%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS |
-| `C-15` | Orion `48V -` | Lynx `-` bus | `F-06` paired | `30A` | `6 AWG` | `2.5 ft` | `0.12%` @ `51.2V` | Row `29` (`6 AWG black`) | PASS |
-| `C-16` | Legacy Sterling input `+` | Legacy Sterling input `+` | Retired (`F-08`) | N/A | N/A | N/A | N/A | legacy only | RETIRED |
-| `C-17` | Legacy Sterling input `-` | Legacy Sterling input `-` | Retired (`F-08` paired) | N/A | N/A | N/A | N/A | legacy only | RETIRED |
+| `C-14` | Orion input protection point | Orion `48V +` | `F-06 20A target` | `20A` install target | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG red`) | VERIFY final fuse simplification/value |
+| `C-15` | Orion `48V -` | Lynx `-` bus | Orion input positive protection paired | `20A` input fuse basis | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG black`) | PASS |
 | `C-18` | Orion `12V +` | Fuse block main `+` stud | `F-07 60A` | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG red`) | PASS |
 | `C-19` | Orion `12V -` | Fuse block integrated `-` bus / main `-` stud | `F-07` paired | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG black`) | PASS |
 | `C-19A` | Buffer battery `+` | Fuse block main `+` stud (via `F-11/SW`) | `F-11 100A` | `50A` design | `4 AWG` | `2.5 ft` | `0.52%` @ `12V` | Row `30` (`4 AWG red`) | PASS |
@@ -423,9 +419,9 @@ Calculation basis for drop screening:
 | `C-35` | 12V fuse panel | Galley USB PD station | `F-10 15A` | `8A` expected | `14 AWG duplex` | `8 ft` | `2.69%` @ `12V` | Row `116` (`12 AWG + 14 AWG USB set`) | PASS (near 3%; if sustained current rises, move to `12 AWG`) |
 | `C-36` | 12V fuse panel | Maxxair fan (Hiatus pre-installed) | `F-10 10A` | `4A` expected | `14 AWG duplex` | `8 ft` | `1.35%` @ `12V` | Row `32` (`14 AWG duplex`) | PASS |
 | `C-37` | 12V fuse panel | DC ambient/cabinet LED strips (planned Govee) | `F-10 5A` | `5A` design cap | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |
-| `C-38` | WS500 power lead source | WS500 regulator input | `F-12 10A` | low-current electronics feed | Harness lead | `8 ft` | N/A (harness-limited) | Row `171` (fuse kit) | PASS |
-| `C-39` | WS500 battery sense source | WS500 voltage-sense input | `F-13 3A` | low-current `48V` battery-sense lead; fuse/holder voltage class must be verified | Harness lead | `8 ft` | N/A (harness-limited) | Row `171` (fuse kit) | VERIFY WS500/manual voltage rating |
-| `C-40` | WS500 current-sense source | WS500 current-sense input | `F-14 5A` (if required) | low-current sense; confirm actual reference/voltage class | Harness lead | `8 ft` | N/A (harness-limited) | Row `171` (fuse kit) | VERIFY WS500/manual requirement |
+| `C-38` | WS500 regulator power source | WS500 regulator input | `F-12 10A/15A` | low-current electronics feed; likely `48V`-referenced in this build | Harness lead | `8 ft` | N/A (harness-limited) | Row `171` (fuse kit) | VERIFY holder/fuse voltage rating |
+| `C-39` | WS500 positive voltage-sense source | WS500 voltage-sense input | `F-13 3A` | low-current `48V` sense lead; fuse/holder voltage class must be verified | Harness lead | `8 ft` | N/A (harness-limited) | Row `171` (fuse kit) | VERIFY holder/fuse voltage rating |
+| `C-40` | WS500 current-sense high/low pair | WS500 current-sense input | No fuse per current manual | low-current sense; twist pair if extended | Harness lead | `8 ft` | N/A (harness-limited) | Harness kit | PASS after routing/noise check |
 | `C-41` | Ford Upfitter `#3` output | WS500 brown ignition/enable input via `F-15` | `F-15 3A` | manual low-current control only | `16 AWG` TXL/GXL | `6 ft` | N/A (control circuit) | Row `176` (upfitter control kit) | PASS |
 
 ## Wire Rollup (No-Padding Purchase Baseline)
@@ -505,9 +501,9 @@ Torque reference (verify against your exact manuals/hardware):
 2. Voltage-drop design intent used here: `<=2%` on major `48V` power runs and `<=3%` on `12V` branch circuits.
 3. `F-09` PV string fuse value (`15A`) remains provisional until final module datasheet max-series-fuse rating is confirmed.
 4. Cerbo GX feed is assumed from the `12V` panel (`12V-07`) for branch-level serviceability.
-5. Orion branch remains split-protection (`F-05` upstream feeder + `F-06` device-level input fuse).
+5. Orion branch is documented as split-protection (`F-05` upstream feeder + `F-06` Orion input) only until final board layout proves whether one correctly rated source fuse can satisfy both jobs; avoid duplicate fuses if the simpler layout is electrically equivalent and serviceable.
 6. No low-voltage-disconnect (LVD) automation is included in Phase 1; protection is source fusing plus manual `SW-12V-BATT` isolation.
-7. Alternator architecture lock is dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) with `F-04 150A`; legacy Sterling engine-bay path is retired.
+7. Alternator architecture lock is dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) with `F-04 150A`; obsolete pre-Mechman engine-bay fuse paths are removed from active layout.
 8. `F-01A/B/C` are provisionally set to `200A` pending final `51.2V` battery datasheet/manual confirmation; if validated limits are lower, shift to `175A`.
 9. `2/0` cable quantity planning baseline in this pass is `77.5 ft` total no-padding (`42.5 ft` red + `35.0 ft` black); user-applied order padding is intentionally deferred to checkout.
 10. Manual alternator shutdown baseline is Ford `Upfitter #3` feeding the WS500 brown ignition/enable wire through `F-15`; `WS500` white `Feature-In` remains a future-only reserve for automatic interlock work.

@@ -56,9 +56,9 @@ related:
 | Battery bank | `3x Dumfume 51.2V 100Ah` (`1S3P`; manual allows up to `1S4P`) | `bom/bom_estimated_items.csv` row 3 + `references/Dunfume_36V_48V_100Ah_Battery_-_User_Manual.pdf` |
 | Inverter/charger | MultiPlus-II `48/3000/35-50` | `bom/bom_estimated_items.csv` row 12 |
 | Alternator charging | Dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) with `Upfitter #3 -> WS500 brown ignition` manual control and Lynx Slot 3 alternator branch fuse lock | `bom/bom_estimated_items.csv` rows `168-171`, `176` + `docs/core/ELECTRICAL_48V_ARCHITECTURE.md` |
-| Sterling legacy items | `BB1248120` + `BBR` retained physically only until Mechman confirmation, then returned | `bom/bom_estimated_items.csv` rows `18` and `26` |
+| Obsolete pre-Mechman alternator charger/remote | Returned/obsolete; not part of primary layout, fuse planning, or commissioning | `bom/bom_estimated_items.csv` rows `18` and `26` |
 | Legacy single-12V upgrade path | Mechman `370A` + Big 3 path is deprecated under the dual-`48V` migration baseline | `bom/bom_estimated_items.csv` rows `103` and `104` |
-| DC-DC charger | Orion-Tr Smart `48/12 30A` (`360W`) | `bom/bom_estimated_items.csv` row 20 |
+| DC-DC charger | Orion-Tr Smart `48/12 30A` (`360W`); 48V input and 12V output are separately protected | `bom/bom_estimated_items.csv` row 20 |
 | 12V buffer battery | `12V 100Ah LiFePO4` on shared 12V junction (`F-11` + `SW-12V-BATT`) | `bom/bom_estimated_items.csv` rows 21, 124, and 125 |
 | Solar array candidate | Flexible-first placeholder (`~800-1000W` class); prior `9x100W`/`3S3P` concept is modeling-only and must not drive roof holes, combiner count, or procurement until solar is reopened after shore and alternator charging | `bom/bom_estimated_items.csv` row 24 |
 | Solar controller | SmartSolar `MPPT 150/45` | `bom/bom_estimated_items.csv` row 25 |
@@ -118,13 +118,13 @@ Solar remains deferred until shore charging and alternator charging are working.
 
 #### Alternator charging (dedicated `48V` secondary alternator path)
 - Active migration baseline: Mechman dual-alternator kit + WS500 regulator + APM-48 protection module.
-- `Lynx Slot 3` alternator branch fuse (`F-04`) is now locked at `150A` (`58V/80V MEGA` class).
-- WS500 low-current fuse set is now explicitly part of the design baseline (`10A` power lead baseline, `3A` sense, `5A` current-sense where required).
-- Manual charge-enable/disable path is now locked to Ford `Upfitter Switch #3` feeding the WS500 brown ignition/enable wire through local inline fuse `F-15`.
+- `Lynx Slot 3` alternator branch fuse (`F-04`) is locked at `150A` (`58V/80V MEGA` class) at the house-bank/Lynx end of the alternator positive run. Mechman guidance requires the alternator positive cable fuse within `12 in` of the battery-bank connection; if final layout places the Lynx farther away, add a bank-end fuse holder rather than leaving the branch unfused at the bank end.
+- WS500 fused low-current leads are `F-12` (`10A` baseline / `15A` if required for extra-large alternator case) for regulator power and `F-13` (`3A`) for positive voltage sense. Both are treated as `48V`-bank-referenced on this build unless the final harness documentation proves otherwise, so holder/fuse voltage rating must cover the `58.4V` charge-voltage system.
+- WS500 current-sense high/low wires are not a separate fuse position in the current Wakespeed manual; route as a twisted low-current sense pair to the selected shunt/current-sense point and keep them away from noise.
+- Manual charge-enable/disable path is locked to Ford `Upfitter Switch #3` feeding the WS500 brown ignition/enable wire through local inline fuse `F-15` (`3A`, 12V control circuit).
 - `WS500` white `Feature-In` is reserved for future automatic fault-interlock work and is not required in Phase 1.
 - Cable decision lock for this pass: reuse existing uncut `2/0` inventory for the alternator charge path (`~20 ft` one-way assumed), with dedicated equal-size negative run.
-- Sterling `BB1248120`/`BBR` remain physically on hand only as return-pending hardware until Mechman fitment/content confirmation closes.
-- Open execution gate: contact Mechman first, then complete Sterling physical return workflow.
+- Obsolete pre-Mechman alternator-charger hardware is returned/removed from active planning and should not appear in primary fuse/layout decisions.
 
 #### Shore charging (MultiPlus-II charger path)
 - Charger limit from model string: `35A`.
@@ -141,7 +141,7 @@ Solar remains deferred until shore charging and alternator charging are working.
 - Battery capacity now supports roughly `2.9-3.5` office-workdays without charging depending on season and reserve policy.
 - With `900W` flexible solar at the base `68%` factor, `4` PSH leaves a material daily deficit for both `core_workday` and `winter_workday`.
 - Shore charging can materially recover SOC in a single evening (`~6.18h` from `20%` to `100%` in bulk-ideal terms).
-- Alternator recovery potential is expected to materially exceed the old Sterling `~1.5kW` ceiling once the dedicated `48V` alternator path is commissioned.
+- Alternator recovery potential is expected to materially exceed the obsolete pre-Mechman charger path once the dedicated `48V` alternator path is commissioned.
 - Current execution risk is no longer charger-capacity-limited operation; it is migration/commissioning quality (fitment, regulation, protection, and measured thermal behavior).
 - MultiPlus-II `48/3000` inverter continuous output (`~2,400W`) can be exceeded by simultaneous induction + microwave + other AC loads, so high-draw AC loads need sequencing.
 - Orion-Tr Smart `48->12V 30A` charger (`360W`) is the continuous charging/feed ceiling into the shared 12V junction; buffer battery supports short transients but sustained overload still requires load budgeting.

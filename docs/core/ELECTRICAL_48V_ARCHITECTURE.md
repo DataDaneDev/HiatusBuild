@@ -22,7 +22,7 @@ related:
 - Keep unresolved vendor gates, risk state, and follow-up closure items in `docs/core/TRACKING.md`.
 - Keep broad project sequencing and day-to-day execution framing in `docs/core/PROJECT.md` or the active plan docs.
 
-As-of date: `2026-03-20`
+As-of date: `2026-05-22`
 
 Purpose: hold the finalized, concise `48V` house and alternator architecture in one place so wiring, protection, shutdown behavior, and BOM references are easy to understand without re-reading the historical trade studies.
 
@@ -35,7 +35,7 @@ Related docs:
 
 ## Final direction
 - House architecture stays `48V` core with `3x 51.2V 100Ah` batteries in parallel.
-- Alternator charging is the dedicated `48V` secondary alternator path, not Sterling B2B.
+- Alternator charging is the dedicated `48V` secondary alternator path; obsolete pre-Mechman charger hardware is removed from active planning.
 - Protection baseline is `Mechman + WS500 + Balmar APM-48`.
 - Manual alternator-charge enable/disable is through Ford `Upfitter Switch #3`.
 - `Upfitter #3` is a low-current control signal only. It does not carry alternator output current.
@@ -54,7 +54,7 @@ Related docs:
 | Alternator kit | Mechman `48V` secondary alternator kit with `WS500` | `168` |
 | Load-dump clamp | Balmar `APM-48` | `169` |
 | Alternator branch fuse | `F-04` `150A` MEGA (`58V/80V`) in Lynx Slot 3 | `170` |
-| WS500 low-current fuse set | `F-12`, `F-13`, `F-14` | `171` |
+| WS500 low-current fuse set | `F-12` regulator power + `F-13` positive voltage sense; current-sense pair is unfused per current manual | `171` |
 | WS500 Upfitter #3 control kit | `F-15` + control wire + holder/terminals | `176` |
 
 ## 48V power path
@@ -113,10 +113,10 @@ flowchart LR
 | --- | --- | --- | --- |
 | `F-01A/B/C` | Battery branch positive protection | `200A` Class T provisional | `2/0 AWG` |
 | `F-04` | Alternator branch into Lynx Slot 3 | `150A` MEGA (`58V/80V`) | `2/0 AWG` |
-| `F-12` | WS500 power lead | `10A` baseline (`15A` if required by alternator case) | harness lead |
-| `F-13` | WS500 battery positive sense | `3A`; fuse/holder voltage class must be verified for the `48V` bank or proven by WS500 harness documentation | harness lead |
-| `F-14` | WS500 current-sense lead | `5A` where required; confirm actual voltage/reference from WS500 documentation before hardware lock | harness lead |
-| `F-15` | Upfitter #3 to WS500 brown ignition wire | `3A` inline ATO/ATC | `16 AWG` TXL/GXL control wire |
+| `F-12` | WS500 regulator power lead | `10A` baseline (`15A` if required by alternator case); voltage rating must cover the connected alternator/system positive voltage | harness lead |
+| `F-13` | WS500 positive voltage-sense lead | `3A`; fuse/holder voltage class must cover the `48V` bank maximum unless proven by WS500 harness documentation | harness lead |
+| WS500 current-sense pair | Purple/grey current-sense high/low to shunt/current-sense point | No separate fuse position in current Wakespeed manual; twist pair if extended and route away from noise | harness lead |
+| `F-15` | Upfitter #3 to WS500 brown ignition wire | `3A` inline ATO/ATC on 12V control circuit | `16 AWG` TXL/GXL control wire |
 
 ### Major conductors
 - Battery branch and main `48V` trunk wiring: `2/0 AWG`.

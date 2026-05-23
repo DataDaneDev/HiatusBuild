@@ -95,17 +95,17 @@ related:
 
 - ID: D-008
 - Date: 2026-02-11
-- Decision: Freeze alternator charging architecture to Sterling `BB1248120` with `BBR` remote control.
-- Context: Prior BOM/docs left alternator charging open between dual Orion and Sterling options, keeping recovery-time math ambiguous.
-- Options considered: `2x Orion-Tr 12/48` (legacy pre-Sterling option), Sterling `BB1248120` without remote control, Sterling `BB1248120` with `BBR` remote.
-- Decision drivers: Significantly higher charge-rate ceiling, adjustable output limiting from the remote, and simplified single-unit charging architecture.
-- Result: Updated BOM (`row 18` charger, `row 26` remote), recalculated alternator charging in `docs/core/SYSTEMS.md`, and replaced unresolved Orion references in canonical planning docs.
-- Follow-up: Superseded by D-028 migration decision; retained for historical traceability only.
+- Decision: Historical/obsolete alternator-charger architecture freeze.
+- Context: Prior BOM/docs left alternator charging open and recovery-time math ambiguous.
+- Options considered: earlier DC-DC alternator-charging variants that are no longer part of active planning.
+- Decision drivers: Historical charge-rate and control assumptions before the dedicated `48V` secondary alternator decision.
+- Result: Superseded by D-028/D-030 and removed from active fuse/layout planning.
+- Follow-up: Historical traceability only; do not use for procurement, fusing, or board layout.
 
 - ID: D-009
 - Date: 2026-02-11
 - Decision: Add Mechman 370A alternator and Big 3 wiring as explicit purchase-later BOM items while keeping stock-alternator-first operation.
-- Context: Extended-idle use cases may benefit from higher idle-output headroom, but the Sterling remote can already reduce charger demand (`65%` target) to protect stock alternator operation.
+- Context: Historical/superseded. Extended-idle use cases were being evaluated before the dedicated `48V` secondary alternator path replaced the single-12V upgrade concept.
 - Options considered: Keep no-upgrade path only, add alternator only, add alternator plus Big 3 wiring scope.
 - Decision drivers: Planning transparency, safer high-current upgrade path, and clearer future procurement sequencing.
 - Result: Added purchase-later lines in BOM (`row 103` Mechman 370A alternator, `row 104` Big 3 estimate), added Big 3 wire notes to existing cable rows, and updated systems documentation with the staged strategy.
@@ -131,12 +131,12 @@ related:
 
 - ID: D-012
 - Date: 2026-02-12
-- Decision: Correct Sterling `BB1248120` electrical rating assumptions and promote the electrical topology artifact to implementation-level scope.
-- Context: Existing planning text treated `BB1248120` as `120A` on the `48V` output, which overstated alternator charging recovery, and the topology diagram still excluded holder/wire-gauge implementation detail.
+- Decision: Historical correction of obsolete alternator-charger rating assumptions and promotion of the topology artifact to implementation-level scope.
+- Context: Earlier planning overstated the output of an obsolete alternator-charger path, and the topology diagram still excluded holder/wire-gauge implementation detail.
 - Options considered: Keep existing assumptions, patch only charge-rate math, or patch charge-rate math and complete the fuse-holder + conductor topology together.
 - Decision drivers: Safety planning accuracy, implementation readiness, and removal of unresolved holder/gauge ambiguity.
-- Result: Updated `bom/bom_estimated_items.csv` row `18`, recalculated alternator charging section values in `docs/core/SYSTEMS.md`, and expanded `docs/implementation/ELECTRICAL_overview_diagram.md` + `docs/implementation/ELECTRICAL_fuse_schedule.md` to full implementation detail.
-- Follow-up: Validate real-world Sterling output power/current with instrumented charge logs and finalize holder SKUs before purchase freeze.
+- Result: Superseded by the dedicated `48V` secondary alternator architecture; current implementation docs now own active fuse and conductor detail.
+- Follow-up: Historical traceability only; do not use for current alternator commissioning.
 
 - ID: D-013
 - Date: 2026-02-13
@@ -276,12 +276,12 @@ related:
 
 - ID: D-028
 - Date: 2026-03-19
-- Decision: Assume migration from Sterling alternator charging to dedicated `48V` secondary alternator architecture and plan Sterling return.
-- Context: Current alternator trade study now carries a simple `A1` migration baseline (`Mechman + WS500 + APM-48`) and the project requested an exact procurement delta under that assumption.
-- Options considered: keep Sterling baseline active, stage Sterling/Mechman in parallel, or commit planning/procurement to Mechman migration assumption.
+- Decision: Replace obsolete alternator-charger planning with dedicated `48V` secondary alternator architecture.
+- Context: Current alternator trade study carried a simple `A1` migration baseline (`Mechman + WS500 + APM-48`) and the project requested an exact procurement delta under that assumption.
+- Options considered: keep the obsolete charger baseline active, stage old/new hardware in parallel, or commit planning/procurement to the Mechman/Wakespeed path.
 - Decision drivers: faster alternator-to-house charging, simplified architecture direction, and explicit procurement execution planning.
-- Result: Migration delta is now assimilated into canonical docs (`SYSTEMS`, `TRACKING`, starter plan, fuse schedule, and BOM). BOM rows updated for return/deprecation/new migration purchases (`18`, `26`, `103`, `104`, `168-173`) and standalone conditionals (`172`, `173`) removed from scope.
-- Follow-up: complete Mechman fitment/content confirmation first, then execute physical Sterling return.
+- Result: Migration delta is assimilated into canonical docs (`SYSTEMS`, `TRACKING`, starter plan, fuse schedule, and BOM). BOM rows updated for obsolete/returned hardware and new migration purchases (`18`, `26`, `103`, `104`, `168-173`) and standalone conditionals (`172`, `173`) removed from scope.
+- Follow-up: obsolete charger hardware is not part of active layout, fuse planning, or commissioning.
 
 - ID: D-029
 - Date: 2026-03-19
@@ -289,7 +289,7 @@ related:
 - Context: Migration execution required immediate closure of fuse sizing and cable strategy before cable cuts or new contingency buys.
 - Options considered: keep fuse/wire pending, downsize to new smaller cable now, or lock reuse-first with measured validation.
 - Decision drivers: avoid unnecessary new wire spend, keep installation momentum, and close alternator branch protection ambiguity.
-- Result: locked `F-04` at `150A` (`58V/80V` MEGA), added explicit WS500 low-current fuse set (`10A/3A/5A` class), and locked reuse of existing uncut `2/0` inventory for the `~20 ft` alternator run baseline. Updated `docs/implementation/ELECTRICAL_fuse_schedule.md` and BOM rows `170-173` accordingly.
+- Result: locked `F-04` at `150A` (`58V/80V` MEGA), added explicit WS500 low-current fuses (`F-12` `10A/15A`, `F-13` `3A`) with voltage-rating verification, clarified that WS500 current-sense high/low is not a fuse position, and locked reuse of existing uncut `2/0` inventory for the `~20 ft` alternator run baseline. Updated `docs/implementation/ELECTRICAL_fuse_schedule.md` and BOM rows `170-173` accordingly.
 - Follow-up: if measured route reality materially differs, re-run drop/ampacity screen before any gauge downsize.
 
 - ID: D-030
@@ -601,7 +601,7 @@ related:
 - Lock faucet, sink, drain/graywater, pump service-valve, and winterization details as discrete procurement rows.
 - Lock whether hot water is outdoor shower-only provisional or must feed the sink; defer indoor/RV propane or electric tanked path until service-map freeze.
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)
-- Confirm received Mechman dual-48V kit fitment/content for the truck (`2021 F-350 7.3L`) before shipping Sterling returns
+- Confirm received Mechman dual-48V kit fitment/content for the truck (`2021 F-350 7.3L`) before alternator commissioning
 - Confirm Wakespeed support status for the documented `Dumfume 51.2V 100Ah` battery manual (`58.4V` charge voltage, `20-50A` recommended charge current per battery, `1S4P` max expansion) before final commissioning of the `WS500`-controlled alternator path
 - Confirm the exact Ford upfitter blunt-cut wire/color/location used for `Upfitter #3` at install time and record the measured control-wire run length for `C-41`
 - Confirm the Dumfume manual's `20-50A` recommended charge current is intended to scale across the current `1S3P` bank for alternator-charging use, not just single-battery charging
