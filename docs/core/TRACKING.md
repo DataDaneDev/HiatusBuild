@@ -621,10 +621,9 @@ related:
 - Storage/security SOP for flight windows
 - Measured fridge compressor duty cycle by ambient band (cold, mild, hot) to replace modeled assumptions
 - Lock final fuse-holder SKU standard for Orion output, WS500 low-current fuses, `F-15` upfitter control fuse, and PV string fusing hardware
-- Orion `48V` input protection is now downscoped to a practical low-cost `20A` source-side fuse: preferred candidate is Littelfuse `166.7000.5202` FKS/ATO (`20A`, `80VDC`) in a visibly `80VDC` ATO/FKS holder, unless a practical `20A` Lynx-compatible option is sourced. Existing `30A 58V MIDI` stock can protect `6 AWG` as contingency/bench stock, but `20A` better matches the Orion manual.
+- Orion `48V` input protection is now locked as: run existing `30A 58V` MIDI for build/bench/interim use on the short `6 AWG` branch; later buy Mouser `576-166.7000.5202` Littelfuse FKS/ATO (`20A`, `80VDC`) plus Mouser `576-178.6150.0001` holder (`80VDC` listing owner-confirmed) for final cleanup.
 - Identify the purpose of the BOJACK `150A` hardware/holder stock before using or discarding it. Current working assumption: it is not the active `F-04` alternator fuse, not the WS500 low-current fuse set, and not install-approved for any `48V` role unless its DC voltage rating and holder form factor are confirmed.
 - Final SKU lock for `F-11` holder family and `SW-12V-BATT` switch model/location
-- Confirm final Orion `F-06` holder SKU: avoid `32VDC`-only ATO holders; verify whether proposed Littelfuse `178.6150.0001` is truly acceptable at `80VDC` or use an FH2/`178.6152.0001`-class holder with visible `80VDC` rating
 - Confirm acceptable monitoring expectation that Orion is not a direct GX telemetry node in current architecture
 - Confirm final location/format for measured run-length recordkeeping in implementation docs before final cable closeout
 - Lock final propane water-heater path: outdoor-use-only portable workflow vs listed indoor/RV unit with compliant venting/clearance package
