@@ -1,3 +1,8 @@
+## 2026-05-24 — Electrical fuse inventory loose ends
+- Captured two active electrical loose ends from owner inventory review:
+  - Orion `48V` input protection still targets `20A` per Victron guidance, but purchased `30A 58V MIDI` stock is not the default install value and owner has not found an obvious `48V+` `20A` practical replacement.
+  - BOJACK/`150A` hardware purpose is unresolved; it is not assumed to be the active `F-04` alternator fuse, not a WS500 low-current fuse, and not approved for a `48V` role without voltage/form-factor validation.
+- Updated `docs/core/TRACKING.md` and `bom/bom_estimated_items.csv` so these do not get lost during fuse-holder/SKU cleanup.
 
 ## 2026-05-17 — Pre-install audit triage and cleanup
 - Owner triaged `docs/studies/PREINSTALL_FULL_REPO_AUDIT_LIVE_2026-05-16.md` findings F-001 through F-018.
