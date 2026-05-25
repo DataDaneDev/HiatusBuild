@@ -1,3 +1,8 @@
+## 2026-05-24 — BOJACK 150A MIDI holder purpose resolved
+- BOM/git history shows the BOJACK `150A` AMI/MIDI holder pack was originally purchased for the old Sterling `BB1248120` `12V` input-fuse path.
+- Current status: obsolete/spare `12V` hardware only. It is not active Mechman/WS500 alternator protection, not Orion input protection, and not approved for any `48V` role without separate voltage/form-factor validation.
+- Updated `bom/bom_estimated_items.csv` row `11` and `docs/core/TRACKING.md` so the part does not get mistaken for board-mounted active fuse hardware.
+
 ## 2026-05-24 — Orion input fuse interim/final decision locked
 - Owner confirmed Mouser `576-178.6150.0001` holder listing says `80V`; final cleanup buy is Mouser `576-166.7000.5202` (`20A 80V` Littelfuse FKS/ATO fuse) plus Mouser `576-178.6150.0001` (`80V` Littelfuse ATO/FKS holder).
 - Current build/interim install will run the existing `30A 58V` MIDI on the short `6 AWG` Orion `48V` input branch. This is acceptable wire protection and does not block bench/build progress.

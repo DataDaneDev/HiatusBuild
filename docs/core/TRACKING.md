@@ -622,7 +622,7 @@ related:
 - Measured fridge compressor duty cycle by ambient band (cold, mild, hot) to replace modeled assumptions
 - Lock final fuse-holder SKU standard for Orion output, WS500 low-current fuses, `F-15` upfitter control fuse, and PV string fusing hardware
 - Orion `48V` input protection is now locked as: run existing `30A 58V` MIDI for build/bench/interim use on the short `6 AWG` branch; later buy Mouser `576-166.7000.5202` Littelfuse FKS/ATO (`20A`, `80VDC`) plus Mouser `576-178.6150.0001` holder (`80VDC` listing owner-confirmed) for final cleanup.
-- Identify the purpose of the BOJACK `150A` hardware/holder stock before using or discarding it. Current working assumption: it is not the active `F-04` alternator fuse, not the WS500 low-current fuse set, and not install-approved for any `48V` role unless its DC voltage rating and holder form factor are confirmed.
+- BOJACK `150A` AMI/MIDI holder stock purpose resolved: it came from the obsolete Sterling `BB1248120` `12V` input-fuse plan. Keep as obsolete/spare `12V` hardware only; do not use as active `F-04` alternator protection, WS500 fuse hardware, Orion input protection, or any `48V` install part unless separately voltage/form-factor validated.
 - Final SKU lock for `F-11` holder family and `SW-12V-BATT` switch model/location
 - Confirm acceptable monitoring expectation that Orion is not a direct GX telemetry node in current architecture
 - Confirm final location/format for measured run-length recordkeeping in implementation docs before final cable closeout
