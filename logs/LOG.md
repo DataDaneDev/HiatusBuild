@@ -1,5 +1,10 @@
-## 2026-05-24 — Orion input fuse replacement found
-- Replaced the unresolved Orion `48V` input protection guidance with a concrete buyable class: Eaton Bussmann `PV-20A10F` 10x38 `gPV` fuse (`20A`, `1000VDC`, `50kAIC`) in Eaton Bussmann `CHPV1U`/`CHPV1IU` holder (`30A`, `1000VDC`).
+## 2026-05-24 — Orion input fuse replacement downscoped
+- Corrected the overbuilt `1000VDC` Orion `F-06` recommendation. Practical final target is now a low-cost `20A`, `80VDC` FKS/ATO blade-fuse path, led by Littelfuse `166.7000.5202`, with an ATO/FKS holder that visibly carries an `80VDC` rating.
+- Existing `30A 58V` MIDI stock is no longer labeled obsolete: it is acceptable bench/contingency wire protection for the short `6 AWG` Orion input run, but `20A` remains the preferred final value because it matches the Victron Orion manual.
+- Added a hold on the proposed Littelfuse `178.6150.0001` holder until its voltage rating is confirmed; use an FH2/`178.6152.0001`-class `80VDC` holder if the `178.6150.0001` listing is only `32VDC`.
+
+## 2026-05-24 — Orion input fuse replacement found (superseded later same day)
+- Superseded by the downscoped practical `20A 80V` FKS/ATO path above. Original note: replaced the unresolved Orion `48V` input protection guidance with a concrete buyable class: Eaton Bussmann `PV-20A10F` 10x38 `gPV` fuse (`20A`, `1000VDC`, `50kAIC`) in Eaton Bussmann `CHPV1U`/`CHPV1IU` holder (`30A`, `1000VDC`).
 - Updated `ELECTRICAL_fuse_schedule.md`, `ELECTRICAL_overview_diagram.md`, and `bom/bom_estimated_items.csv`: existing `30A 58V MIDI` stock is now explicitly obsolete for final `F-06`; new row `182` tracks the replacement purchase.
 - Wire validation: planned `6 AWG` Orion `48V` input and `12V` output conductors remain conservative for the assumed short electrical-cabinet run; final pigtail/lug detail depends on the chosen CHPV holder conductor range.
 

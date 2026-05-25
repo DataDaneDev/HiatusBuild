@@ -92,8 +92,8 @@ flowchart LR
         F04["F-04 150A MEGA\nLynx Slot 3 alternator branch"]
         MULTI["MultiPlus-II\n48/3000/35-50"]
         ORION["Orion-Tr Smart 48/12-30\nIsolated charger"]
-        F05["F-05 Lynx Slot 4\nunused unless true 20A MEGA exists"]
-        F06["F-06 Orion 48V input fuse\n20A 1000VDC gPV, CHPV holder"]
+        F05["F-05 Lynx Slot 4\noptional if 20A fuse fits"]
+        F06["F-06 Orion 48V input fuse\n20A 80V FKS/ATO preferred"]
     end
 
     BATA -- "2/0 AWG +, ~2.5 ft" --> F01A --> POSBUS
@@ -310,7 +310,7 @@ flowchart LR
 | `F-03` | `60A MEGA` | Lynx integrated slot holder | Lynx Slot 2 |
 | `F-04` | `150A MEGA` | Lynx integrated slot holder | Lynx Slot 3 (dedicated alternator branch) |
 | `F-05` | `40A MEGA` | Lynx integrated slot holder | Lynx Slot 4 |
-| `F-06` | Orion `48V` input fuse: `20A` install target, `>=58VDC` | Sealed inline holder, or omit if final layout uses one correctly rated Lynx-source fuse that satisfies both feeder and Orion input protection | Electrical cabinet near Orion `48V` input/source |
+| `F-06` | Orion `48V` input fuse: `20A` install target, practical `58V/80V` class | `80VDC` FKS/ATO holder preferred, or omit if final layout uses one correctly rated Lynx-source fuse that satisfies both feeder and Orion input protection | Electrical cabinet near Orion `48V` input/source |
 | `F-07` | `60A MEGA` (`58V` class) | Victron MEGA fuse holder | Electrical cabinet at Orion `12V +` source end |
 | `F-09A/B/C` | `15A gPV` each | `10x38` touch-safe fuse holders in PV combiner | Roof-entry combiner enclosure |
 | `F-10` | Per branch (`ATO/ATC`) | Integrated blade sockets in generic 12V fuse block | Electrical cabinet |
@@ -396,7 +396,7 @@ Calculation basis for drop screening:
 | `C-11` | Secondary alternator `B+` | Lynx Slot 3 via APM-48 | `F-04 150A` | `150A` design | `2/0 AWG` | `20 ft` | `0.80%` @ `58.4V` | Row `28` (`2/0 red`) | PASS |
 | `C-12` | Secondary alternator `B-` | Lynx `-` bus (dedicated return) | `F-04` paired | `150A` design | `2/0 AWG` | `20 ft` | `0.80%` @ `58.4V` | Row `28` (`2/0 black`) | PASS |
 | `C-13` | Lynx `48V +` bus tap | `F-06` source side | `F-06 20A` mounted source-side | `20A` | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS |
-| `C-14` | Orion input protection point | Orion `48V +` | `F-06 20A 1000VDC gPV` | `20A` install target | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS; verify CHPV holder conductor range/pigtail hardware |
+| `C-14` | Orion input protection point | Orion `48V +` | `F-06 20A 80VDC FKS/ATO` preferred | `20A` install target | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS; verify selected holder is `80VDC` rated and pigtail/terminal hardware fits |
 | `C-15` | Orion `48V -` | Lynx `-` bus | Orion input positive protection paired | `20A` input fuse basis | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG black`) | PASS |
 | `C-18` | Orion `12V +` | Fuse block main `+` stud | `F-07 60A` | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG red`) | PASS |
 | `C-19` | Orion `12V -` | Fuse block integrated `-` bus / main `-` stud | `F-07` paired | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG black`) | PASS |
