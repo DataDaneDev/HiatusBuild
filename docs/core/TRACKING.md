@@ -621,7 +621,7 @@ related:
 - Storage/security SOP for flight windows
 - Measured fridge compressor duty cycle by ambient band (cold, mild, hot) to replace modeled assumptions
 - Final fuse-holder SKU standard for Orion input/output, WS500 low-current fuses, `F-15` upfitter control fuse, and PV string fusing hardware
-- Resolve Orion `48V` input fuse topology/value: final target is one correctly rated source-side Orion input fuse, preferably Lynx Slot 4 alone if a Lynx-compatible fuse exists at the Victron-recommended value. Keep separate inline `F-06` only if Lynx cannot be populated with the correct value/rating; purchased `30A 58V MIDI` stock remains not install-locked without manual/vendor approval.
+- Resolve Orion `48V` input fuse topology/value: final target is one correctly rated source-side Orion input fuse, preferably Lynx Slot 4 alone if a Lynx-compatible fuse exists at the Victron-recommended value. Existing `40A` Lynx stock is not final Orion device protection, and `40A` at Lynx plus `30A` inline is not the intended final answer. Keep separate inline `F-06` only if Lynx cannot be populated with the correct value/rating; purchased `30A 58V MIDI` stock remains not install-locked without manual/vendor approval.
 - Identify the purpose of the BOJACK `150A` hardware/holder stock before using or discarding it. Current working assumption: it is not the active `F-04` alternator fuse, not the WS500 low-current fuse set, and not install-approved for any `48V` role unless its DC voltage rating and holder form factor are confirmed.
 - Final SKU lock for `F-11` holder family and `SW-12V-BATT` switch model/location
 - Validate the chosen `F-05 + F-06` split-protection Orion branch against final measured run lengths and voltage drop

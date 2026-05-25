@@ -1,6 +1,7 @@
 ## 2026-05-24 — Orion input fuse topology reassessment
 - Reassessed the Orion `48V` input from scratch after owner noted the separate input fuse may be redundant beside the Lynx fuse.
 - Updated active guidance: final topology should use one correctly rated source-side Orion input fuse, preferably Lynx Slot 4 alone if a Lynx-compatible fuse exists at the Orion-required value. Keep separate inline `F-06` only if Lynx cannot be populated with the correct value/rating.
+- Follow-up correction: the existing `40A` Lynx stock is not final Orion device protection, and `40A` at Lynx plus `30A` inline should not be treated as the final answer.
 
 ## 2026-05-24 — Electrical fuse inventory loose ends
 - Captured two active electrical loose ends from owner inventory review:
