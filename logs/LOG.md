@@ -1,3 +1,7 @@
+## 2026-05-24 — Orion input fuse topology reassessment
+- Reassessed the Orion `48V` input from scratch after owner noted the separate input fuse may be redundant beside the Lynx fuse.
+- Updated active guidance: final topology should use one correctly rated source-side Orion input fuse, preferably Lynx Slot 4 alone if a Lynx-compatible fuse exists at the Orion-required value. Keep separate inline `F-06` only if Lynx cannot be populated with the correct value/rating.
+
 ## 2026-05-24 — Electrical fuse inventory loose ends
 - Captured two active electrical loose ends from owner inventory review:
   - Orion `48V` input protection still targets `20A` per Victron guidance, but purchased `30A 58V MIDI` stock is not the default install value and owner has not found an obvious `48V+` `20A` practical replacement.
