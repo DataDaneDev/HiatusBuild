@@ -1,3 +1,8 @@
+## 2026-05-24 — Orion input fuse replacement found
+- Replaced the unresolved Orion `48V` input protection guidance with a concrete buyable class: Eaton Bussmann `PV-20A10F` 10x38 `gPV` fuse (`20A`, `1000VDC`, `50kAIC`) in Eaton Bussmann `CHPV1U`/`CHPV1IU` holder (`30A`, `1000VDC`).
+- Updated `ELECTRICAL_fuse_schedule.md`, `ELECTRICAL_overview_diagram.md`, and `bom/bom_estimated_items.csv`: existing `30A 58V MIDI` stock is now explicitly obsolete for final `F-06`; new row `182` tracks the replacement purchase.
+- Wire validation: planned `6 AWG` Orion `48V` input and `12V` output conductors remain conservative for the assumed short electrical-cabinet run; final pigtail/lug detail depends on the chosen CHPV holder conductor range.
+
 ## 2026-05-24 — Orion input fuse topology reassessment
 - Reassessed the Orion `48V` input from scratch after owner noted the separate input fuse may be redundant beside the Lynx fuse.
 - Updated active guidance: final topology should use one correctly rated source-side Orion input fuse, preferably Lynx Slot 4 alone if a Lynx-compatible fuse exists at the Orion-required value. Keep separate inline `F-06` only if Lynx cannot be populated with the correct value/rating.

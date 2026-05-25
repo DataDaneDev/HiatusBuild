@@ -620,11 +620,11 @@ related:
 - Battery compartment heating and control implementation details (sensor, relay, setpoints)
 - Storage/security SOP for flight windows
 - Measured fridge compressor duty cycle by ambient band (cold, mild, hot) to replace modeled assumptions
-- Final fuse-holder SKU standard for Orion input/output, WS500 low-current fuses, `F-15` upfitter control fuse, and PV string fusing hardware
-- Resolve Orion `48V` input fuse topology/value: final target is one correctly rated source-side Orion input fuse, preferably Lynx Slot 4 alone if a Lynx-compatible fuse exists at the Victron-recommended value. Existing `40A` Lynx stock is not final Orion device protection, and `40A` at Lynx plus `30A` inline is not the intended final answer. Keep separate inline `F-06` only if Lynx cannot be populated with the correct value/rating; purchased `30A 58V MIDI` stock remains not install-locked without manual/vendor approval.
+- Lock final fuse-holder SKU standard for Orion output, WS500 low-current fuses, `F-15` upfitter control fuse, and PV string fusing hardware
+- Orion `48V` input protection is now a standalone source-side `F-06`: Eaton Bussmann `PV-20A10F` 20A 1000VDC 10x38 gPV fuse in `CHPV1U`/`CHPV1IU` holder, unless a true Lynx-compatible 20A >58.4VDC MEGA option is later sourced. Existing `30A 58V MIDI` and `40A` Lynx stock are not final Orion device protection.
 - Identify the purpose of the BOJACK `150A` hardware/holder stock before using or discarding it. Current working assumption: it is not the active `F-04` alternator fuse, not the WS500 low-current fuse set, and not install-approved for any `48V` role unless its DC voltage rating and holder form factor are confirmed.
 - Final SKU lock for `F-11` holder family and `SW-12V-BATT` switch model/location
-- Validate the chosen `F-05 + F-06` split-protection Orion branch against final measured run lengths and voltage drop
+- Confirm CHPV holder conductor range / pigtail-lug hardware for the standalone Orion `F-06` branch after purchase
 - Confirm acceptable monitoring expectation that Orion is not a direct GX telemetry node in current architecture
 - Confirm final location/format for measured run-length recordkeeping in implementation docs before final cable closeout
 - Lock final propane water-heater path: outdoor-use-only portable workflow vs listed indoor/RV unit with compliant venting/clearance package
