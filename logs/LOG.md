@@ -1,3 +1,8 @@
+## 2026-05-25 — Lynx Slot 4 left open; Orion input stays on F-06
+- Locked active topology to leave Lynx Slot 4/`F-05` open/blank. Orion `48V` input now uses a Lynx `48V+` bus tap into standalone `F-06`, not an oversized Lynx MEGA fuse.
+- Updated active electrical docs/BOM to show `F-06` as the single Orion input fuse: existing `30A 58V` MIDI for build/bench/interim use, planned `20A 80V` FKS/ATO cleanup later.
+- Rebased battery-discharge sizing envelope from old `F-02 + F-05 = 165A` to `F-02 + F-06 = 155A` interim / `145A` final, while keeping the existing `2/0` and `200A Class T` posture conservative.
+
 ## 2026-05-24 — BOJACK 150A MIDI holder purpose resolved
 - BOM/git history shows the BOJACK `150A` AMI/MIDI holder pack was originally purchased for the old Sterling `BB1248120` `12V` input-fuse path.
 - Current status: obsolete/spare `12V` hardware only. It is not active Mechman/WS500 alternator protection, not Orion input protection, and not approved for any `48V` role without separate voltage/form-factor validation.

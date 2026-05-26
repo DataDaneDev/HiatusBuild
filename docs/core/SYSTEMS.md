@@ -58,7 +58,7 @@ related:
 | Alternator charging | Dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) with `Upfitter #3 -> WS500 brown ignition` manual control and Lynx Slot 3 alternator branch fuse lock | `bom/bom_estimated_items.csv` rows `168-171`, `176` + `docs/core/ELECTRICAL_48V_ARCHITECTURE.md` |
 | Obsolete pre-Mechman alternator charger/remote | Returned/obsolete; not part of primary layout, fuse planning, or commissioning | `bom/bom_estimated_items.csv` rows `18` and `26` |
 | Legacy single-12V upgrade path | Mechman `370A` + Big 3 path is deprecated under the dual-`48V` migration baseline | `bom/bom_estimated_items.csv` rows `103` and `104` |
-| DC-DC charger | Orion-Tr Smart `48/12 30A` (`360W`); 48V input and 12V output are separately protected | `bom/bom_estimated_items.csv` row 20 |
+| DC-DC charger | Orion-Tr Smart `48/12 30A` (`360W`); `48V` input is protected by standalone `F-06` from a Lynx bus tap, Lynx Slot 4 stays open, and `12V` output is separately protected by `F-07` | `bom/bom_estimated_items.csv` row 20 |
 | 12V buffer battery | `12V 100Ah LiFePO4` on shared 12V junction (`F-11` + `SW-12V-BATT`) | `bom/bom_estimated_items.csv` rows 21, 124, and 125 |
 | Solar array candidate | Flexible-first placeholder (`~800-1000W` class); prior `9x100W`/`3S3P` concept is modeling-only and must not drive roof holes, combiner count, or procurement until solar is reopened after shore and alternator charging | `bom/bom_estimated_items.csv` row 24 |
 | Solar controller | SmartSolar `MPPT 150/45` | `bom/bom_estimated_items.csv` row 25 |
@@ -167,13 +167,13 @@ Decision date: `2026-02-12`
 Approved architecture for Phase 1:
 - `Victron Lynx Distributor M10` (`LYN060102010`) is the single distribution backbone.
 - Current tracked unit price is `$192.47`.
-- Current modeled `48V` fused branches (`4` total):
-- MultiPlus-II `48/3000`
-- SmartSolar `150/45`
-- Dedicated `48V` alternator branch output (`F-04` locked `150A`)
-- Orion-Tr Smart `48/12` (shared 12V junction feeder)
-- `1x` Lynx Distributor covers current branch count with `0` spare fused outputs.
-- If future branch expansion is needed, add a second Lynx module in that phase.
+- Current Lynx fused outputs in use (`3` total):
+- Slot 1: MultiPlus-II `48/3000` (`F-02 125A`)
+- Slot 2: SmartSolar `150/45` (`F-03 60A`)
+- Slot 3: Dedicated `48V` alternator branch output (`F-04 150A`)
+- Slot 4 (`F-05`) is intentionally open/blank; Orion-Tr Smart `48/12` uses a Lynx `48V+` bus tap plus standalone `F-06` inline protection instead of a Lynx MEGA fuse.
+- `1x` Lynx Distributor therefore covers the active branch count with `1` spare fused output, reserved for future expansion rather than Orion.
+- If future branch expansion consumes Slot 4 and more fused outputs are still needed, add a second Lynx module in that phase.
 
 Implementation notes:
 - `Lynx Distributor` includes the negative busbar, so a separate standalone negative bus is not required in the Lynx path.
@@ -192,7 +192,7 @@ Current detailed schedule (active reference):
 
 Scope covered:
 1. Main battery protection (`Class T`) quantity, rating, and placement.
-2. Lynx branch fuses for each `48V` branch (MultiPlus, MPPT, dedicated alternator branch, Orion input).
+2. Lynx branch fuses for active Lynx fused outputs (MultiPlus, MPPT, dedicated alternator branch) plus standalone `F-06` inline protection for the Orion input bus tap.
 3. WS500 low-current fuse requirements and alternator-branch protection coordination.
 4. Any additional protective devices required by manufacturer manuals for both charge-source and load paths.
 
@@ -290,9 +290,10 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 ### 48V battery system safety (primary)
 - Main hazards: high fault current, sustained DC arc potential, short-circuit heating, incorrect polarity during service, and thermal stress events.
 - Required architecture controls:
-- Battery positive path stays: battery -> Class T fuse near source -> main disconnect -> Lynx fused branches.
+- Battery positive path stays: battery -> Class T fuse near source -> main disconnect -> Lynx bus; load/charge branches are protected by Lynx fused outputs or, for Orion input, standalone source-side `F-06` at the Lynx bus tap.
 - Battery negative path stays: battery -> SmartShunt -> Lynx negative bus (all returns on load side of shunt).
 - Use only voltage-appropriate overcurrent devices on house DC branches (`58V`/`80V` class on `48V` paths); do not substitute `32V` automotive-only fuses on `48V` circuits.
+- Keep the Orion `F-06` source-side tap from the Lynx bus physically short and protected; do not leave a long unfused lead between the Lynx bus and the inline fuse.
 - Keep all busbars/studs covered and insulated; use boot covers, strain relief, and abrasion protection on all near-bus runs.
 - Manual alternator shutdown order stays: `Upfitter #3 OFF` first to disable the `WS500`, then open the main `48V` disconnect only after alternator charging is no longer active.
 - Commissioning controls (first energization and after major rework):

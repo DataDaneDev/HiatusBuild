@@ -63,9 +63,9 @@ related:
 Bench-test intent: validate wiring correctness and basic device behavior (shunt, Orion charger path, inverter/charger) *before* install, using controlled energization and small loads.
 
 - Battery parallel tie: measure each battery voltage before paralleling; bring packs to near-equal voltage/SOC first to avoid large equalization currents.
-- Safe energization order (DC): keep `48V` disconnect open and remove Lynx branch fuses; connect negatives first (battery negatives to battery-side negative combine, then to SmartShunt battery side); wire positives to Class T blocks with Class T fuses removed.
+- Safe energization order (DC): keep `48V` disconnect open, remove Lynx branch fuses, and remove/open standalone Orion input `F-06`; connect negatives first (battery negatives to battery-side negative combine, then to SmartShunt battery side); wire positives to Class T blocks with Class T fuses removed.
 - Bank bring-up: insert Class T fuses one-at-a-time (disconnect still open) and confirm expected bank voltage at the battery-side busbar.
-- System bring-up: close `48V` disconnect to energize the Lynx bus; then insert Lynx branch fuses one-at-a-time, verifying each branch after insertion.
+- System bring-up: close `48V` disconnect to energize the Lynx bus; then insert active Lynx branch fuses one-at-a-time (`F-02`, `F-03`, `F-04` as applicable), verifying each branch after insertion. Leave Lynx Slot 4/`F-05` blank. Energize Orion separately by installing/closing standalone `F-06` and verify the `48V->12V` path.
 - MultiPlus inrush: expect capacitor inrush when first energizing the inverter branch; use the pre-charge lead method below and stop if you see abnormal arcing/heating.
 - Pre-charge lead baseline (current topology):
 1. Preconditions: `F-02` installed, `48V` main disconnect `OFF`, and large `48V` loads/chargers disabled.

@@ -74,10 +74,10 @@ Status date: 2026-03-18
 - `docs/core/TRACKING.md` (open question on final fuse-holder SKU standard)
 - `bom/bom_estimated_items.csv` rows `11`, `105`, `106`
 - Clarification needed:
-- Final SKUs for inline holders covering `F-06`, `F-08`, `F-11`, plus the external Victron MEGA holder for `F-07` and PV combiner hardware standard.
+- Final SKUs for inline holders covering `F-11`, plus the external Victron MEGA holder for `F-07` and PV combiner hardware standard. `F-06` is now resolved for interim/final topology: standalone Orion input fuse from Lynx bus tap, existing `30A 58V` MIDI interim, Mouser `20A 80V` FKS/ATO final; Lynx Slot 4/`F-05` remains open.
 - Resolution target:
-- Freeze holder SKU ecosystem and update BOM notes to reflect exact installed hardware.
-- Status: Open
+- Freeze remaining holder SKU ecosystem and update BOM notes to reflect exact installed hardware.
+- Status: Partially open (`F-06` closed; remaining holder standards still pending)
 
 ## PRF-005 Shore AC Feed Path Is Under-Specified In Procurement Data
 - Severity: Medium
