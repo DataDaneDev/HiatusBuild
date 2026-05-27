@@ -73,7 +73,7 @@ related:
 - M3: camper installed / physical shell available for real measurements
 - M4: subsystem bench validation complete
 - M5: measured interior block envelopes and service map complete
-- M6: electrical module dead-mechanical layout and first-charge plan ready
+- M6: electrical module first-live checkpoint complete; hard-mounting, procurement, charger programming, and strain-relief closeout underway
 - M7: shakedown and punch-list closure
 
 ## Build sequencing baseline (as-of 2026-05-27)

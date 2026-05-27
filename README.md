@@ -13,12 +13,13 @@ This is the single workspace map and update guide for the Hiatus/F-350 camper bu
 - Camper status: Hiatus shell is in hand/installed; May 7, 2026 install readiness is now historical context
 - Primary use: Financial Analyst remote work (typical 9-5, Monday-Friday) with occasional subsidiary flights
 
-## Current project posture — 2026-05-14
-- Current focus: turn the real camper shell into measured block envelopes before final extrusion cuts, permanent skins, final wiring, or finish-floor glue-down.
+## Current project posture — 2026-05-27
+- Current focus: finish the electrical board as a hard-mounted, strain-relieved mobile module before final 80/20/truck integration.
+- Electrical state: first live `48V` checkpoint passed; `55.5V` confirmed through the system, MultiPlus inverter mode works, SmartShunt/Orion/Cerbo are online, and a short limited-current shore-charge test passed. Sustained shore charging remains gated on MultiPlus charge-profile programming.
+- Immediate procurement focus: order the remaining electrical-board/module parts, especially `MK3-USB`, Victron comms cables, board mounting/strain-relief hardware, grommets/loom, Orion final fuse cleanup, and WS500 fuse-holder pieces.
+- Board build focus: hard-mount Orion, Orion fuses, DC fuse panel, AC distribution box, Cerbo, and reserved WS500/MPPT locations; then finalize wiring, labels, covers, and strain relief.
 - Interior baseline: office-first hybrid layout with a passenger-side lofted Iceco/fridge + wet-spine exoskeleton over/near the `36 gal` wheel-well tank, pump/accumulator below the fridge, adjacent separated battery bench, driver-side electrical closet/workstation/DC shelf, and clear center aisle.
-- Furniture construction direction: prototype with `10-series` 80/20 where practical; use overlay/removable panels on living-facing surfaces; keep service zones exposed or quick-removable.
-- Electrical posture: dead mechanical layout first. Do not final-crimp, parallel, or energize the `3x 48V` battery bank until access, cable routing, fusing, and staged first-charge checks pass.
-- Flooring posture: keep Lonseal/final closure gated until EPS/subfloor fit, hardpoints, penetrations, moisture paths, and service access are verified in the installed camper.
+- Furniture/flooring posture: prototype with `10-series`/targeted 80/20 only where needed; keep Lonseal/final closure gated until EPS/subfloor fit, hardpoints, penetrations, moisture paths, and service access are verified.
 - Payload posture: legal payload still depends on the door sticker/scale tickets; current planning assumes a narrow payload margin and treats water, batteries, bumpers, spare, 80/20, panels, tools, and tech as active weight risks.
 
 ## First-stop update map
