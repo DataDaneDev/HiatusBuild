@@ -17,11 +17,11 @@ related:
 - Define a practical order of operations that still supports parallel workstreams.
 - Prioritize measured, reversible post-install module work: validate real camper envelopes first, then build systems and furniture modules without burying service access.
 
-## Planning assumptions (as-of 2026-05-14)
+## Planning assumptions (as-of 2026-05-27)
 - Hiatus install readiness/travel planning is historical; the real camper shell is available for physical measurements and mockups.
 - This plan assumes a post-install interior buildout with only reversible/module-first prep until service maps, penetrations, and access gates pass.
-- Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline.
-- Interior/furniture assumptions in `docs/implementation/INTERIOR_furniture_layout_and_galley.md` remain the current draft baseline.
+- Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline, with the first live `48V`/MultiPlus/Cerbo/shore checkpoint now passed.
+- Interior/furniture assumptions in `docs/implementation/INTERIOR_furniture_layout_and_galley.md` remain the current draft baseline, but exact cuts remain blocked on measured block envelopes.
 
 ## Typical full-build sequence (once camper shell is physically in hand)
 1. Layout freeze and service-map freeze

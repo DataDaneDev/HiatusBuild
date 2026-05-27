@@ -1,26 +1,28 @@
-<INSTRUCTIONS>
-## Skills
-A skill is a set of local instructions to follow that is stored in a `SKILL.md` file. Below is the list of skills that can be used. Each entry includes a name, description, and file path so you can open the source for full instructions when using a specific skill.
-### Available skills
-- skill-creator: Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Codex's capabilities with specialized knowledge, workflows, or tool integrations. (file: C:/Users/Sunny/.codex/skills/.system/skill-creator/SKILL.md)
-- skill-installer: Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos). (file: C:/Users/Sunny/.codex/skills/.system/skill-installer/SKILL.md)
-### How to use skills
-- Discovery: The list above is the skills available in this session (name + description + file path). Skill bodies live on disk at the listed paths.
-- Trigger rules: If the user names a skill (with `$SkillName` or plain text) OR the task clearly matches a skill's description shown above, you must use that skill for that turn. Multiple mentions mean use them all. Do not carry skills across turns unless re-mentioned.
-- Missing/blocked: If a named skill isn't in the list or the path can't be read, say so briefly and continue with the best fallback.
-- How to use a skill (progressive disclosure):
-  1) After deciding to use a skill, open its `SKILL.md`. Read only enough to follow the workflow.
-  2) When `SKILL.md` references relative paths (e.g., `scripts/foo.py`), resolve them relative to the skill directory listed above first, and only consider other paths if needed.
-  3) If `SKILL.md` points to extra folders such as `references/`, load only the specific files needed for the request; don't bulk-load everything.
-  4) If `scripts/` exist, prefer running or patching them instead of retyping large code blocks.
-  5) If `assets/` or templates exist, reuse them instead of recreating from scratch.
-- Coordination and sequencing:
-  - If multiple skills apply, choose the minimal set that covers the request and state the order you'll use them.
-  - Announce which skill(s) you're using and why (one short line). If you skip an obvious skill, say why.
-- Context hygiene:
-  - Keep context small: summarize long sections instead of pasting them; only load extra files when needed.
-  - Avoid deep reference-chasing: prefer opening only files directly linked from `SKILL.md` unless you're blocked.
-  - When variants exist (frameworks, providers, domains), pick only the relevant reference file(s) and note that choice.
-- Safety and fallback: If a skill can't be applied cleanly (missing files, unclear instructions), state the issue, pick the next-best approach, and continue.
-</INSTRUCTIONS>
+# Repository Agent Instructions
 
+This repo is Dane/Sunny's public Hiatus/F-350 camper build source of truth. Keep maintenance practical and conservative.
+
+## Canonical maintenance rules
+
+- Use this repo itself as the planning source of truth; do not import private notes, email, work material, or raw photos unless explicitly approved.
+- Prefer updating existing owner docs over creating new notes. Avoid document sprawl.
+- Current high-level state belongs in `README.md`, `00 Home.md`, `docs/README.md`, and `docs/core/PROJECT.md`.
+- Subsystem baseline belongs in `docs/core/SYSTEMS.md`; final `48V` topology belongs in `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`.
+- Implementation details belong in `docs/implementation/`; active sequence/procurement aids belong in `docs/plans/`; dated evidence belongs in `logs/LOG.md`.
+- Historical plans may remain for provenance, but mark them clearly historical/reference-only rather than deleting context.
+
+## Current posture to preserve
+
+- Camper shell is installed/in hand; May 7 install-readiness planning is historical.
+- Immediate build focus is finishing the proven live `48V` electrical board as a hard-mounted, strain-relieved mobile module.
+- First live electrical checkpoint passed on `2026-05-27`: `55.5V` confirmed through the system including MultiPlus, inverter mode works, SmartShunt/Orion/Cerbo are online, and a short limited-current shore-charge test passed.
+- Sustained/unattended charging remains gated on MultiPlus lithium-profile programming (`MK3-USB + VEConfigure` or equivalent). `DVCC` remains disabled unless a documented BMS/GX control path is added.
+- Interior/furniture geometry is still measured-envelope/prototype work: no final extrusion cuts, permanent skins, final shell penetrations, or Lonseal glue-down until service/access gates pass.
+
+## Verification before commit
+
+- Run `git diff --check`.
+- Scan changed text for secrets/private data and accidental public exposure.
+- Check markdown sanity for changed files: balanced code fences, no malformed headings, no broken local links introduced.
+- If changed docs have tracked PDF exports in `docs/pdf_exports/`, regenerate the affected PDFs/assets with `scripts/export-doc-pdfs.mjs` before commit.
+- Review `git diff --stat` and enough context to catch stale-date replacements, duplicated sections, or historical text accidentally reactivated as current guidance.

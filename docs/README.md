@@ -9,7 +9,7 @@ status: active
 
 # Docs Map
 
-Use this folder map when deciding where a document belongs. Current repo posture is **post-install interior buildout**: keep active truth in the owner docs below, and treat pre-install/readiness plans as historical references unless they are explicitly refreshed.
+Use this folder map when deciding where a document belongs. Current repo posture is **post-install electrical-module hard-mount plus measured interior buildout**: keep active truth in the owner docs below, and treat pre-install/readiness plans as historical references unless they are explicitly refreshed.
 
 ## Obsidian navigation
 - Start with [00 Home](../00%20Home.md) for daily navigation.

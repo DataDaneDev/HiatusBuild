@@ -326,7 +326,7 @@ related:
 - Options considered: wait for complete AC branch layout, buy a combined breaker box, or keep split AC-in/AC-out architecture and build AC-in first.
 - Decision drivers: safety, reduced decision coupling, and faster path to first battery charge.
 - Result: AC-in path rows `107`, `108`, `123`, `13`, `109`, `14`, and `114` are the immediate purchase/SKU-lock focus; AC-out branch rows can defer if not needed for initial charge.
-- Follow-up: superseded for procurement by D-044; still reconcile actual MultiPlus LiFePO4 charge profile before first energization.
+- Follow-up: superseded for procurement by D-044; first energization/short shore-charge test has passed, but sustained charging still requires MultiPlus LiFePO4 profile verification.
 
 - ID: D-034
 - Date: 2026-04-27

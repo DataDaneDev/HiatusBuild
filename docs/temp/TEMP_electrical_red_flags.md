@@ -4,7 +4,7 @@ aliases:
 tags:
   - hiatus/temp
   - hiatus/electrical
-status: temporary
+status: archived-reference
 related:
   - "[[TRACKING]]"
   - "[[ELECTRICAL_48V_ARCHITECTURE]]"
@@ -12,8 +12,8 @@ related:
 
 # Temporary Electrical Red Flags
 
-Purpose: hold unresolved electrical documentation issues so they can be closed one by one.
-Status date: 2026-03-20
+Purpose: archived electrical issue sweep. Do not use this file as the live tracker; current unresolved items belong in `docs/core/TRACKING.md` and implementation docs. Remaining open RF items below are retained as watchlist/provenance only.
+Status date: 2026-05-27
 
 ## RF-001 Non-BOM Work Loads Excluded From Canonical Model
 - Severity: High

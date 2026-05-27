@@ -4,15 +4,15 @@ aliases:
 tags:
   - hiatus/temp
   - hiatus/procurement
-status: temporary
+status: archived-reference
 related:
   - "[[TRACKING]]"
 ---
 
 # Temporary Procurement Red Flags
 
-Purpose: track procurement-readiness gaps before purchase freeze, with emphasis on electrical cabinet kickoff dependencies.
-Status date: 2026-03-18
+Purpose: archived procurement issue sweep. Do not use this file as the live buy list; current procurement action belongs in `docs/plans/PROCUREMENT_purchase_list_2026-05-26.md`, `bom/bom_estimated_items.csv`, and `docs/core/TRACKING.md`. Remaining open PRF items below are retained as watchlist/provenance only.
+Status date: 2026-05-27
 
 ## PRF-001 BOM Source Of Truth Is Split Across Multiple Files
 - Severity: High

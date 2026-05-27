@@ -20,11 +20,11 @@ related:
 
 # Interior Furniture Layout and Galley Design Concepts
 
-As-of date: `2026-05-14`
+As-of date: `2026-05-27`
 
 Purpose: capture the active furniture/layout direction for the Hiatus/F-350 camper before final cuts. This document owns the interior **layout concept**, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, galley/plumbing service strategy, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`.
 
-Status: **draft implementation baseline for mockup and design development**, updated after installed-camper layout work on `2026-05-14`. This is not a final cut list. Do not convert these concepts into exact extrusion cuts, drawer-slide lengths, panels, penetrations, or water/fuel routing until the installed shell, roof sweep, tank, fridge, pump, battery, diesel-heater, and electrical envelopes are physically measured. Current construction direction: prototype the `10-series`/targeted 80/20 exoskeleton first, then add mechanically removable overlay panels over living-facing surfaces after frame geometry and service access are proven.
+Status: **draft implementation baseline for mockup and design development**, refreshed after the `2026-05-27` electrical live checkpoint. The layout concept is still current, but this is not a final cut list. Do not convert these concepts into exact extrusion cuts, drawer-slide lengths, panels, penetrations, or water/fuel routing until the installed shell, roof sweep, tank, fridge, pump, battery, diesel-heater, and electrical-board envelopes are physically measured. Current construction direction: finish the hard-mounted electrical board/module first, then prototype the `10-series`/targeted 80/20 exoskeleton and add mechanically removable overlay panels over living-facing surfaces after frame geometry and service access are proven.
 
 Orientation convention throughout:
 

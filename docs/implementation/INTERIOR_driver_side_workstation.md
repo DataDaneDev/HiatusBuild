@@ -15,17 +15,17 @@ related:
 
 # Driver-Side Workstation, Monitor, Electrical Shelf, and Storage Mechanisms
 
-As-of date: `2026-05-14`
+As-of date: `2026-05-27`
 
 Purpose: capture a buildable design direction for the driver/left-side workstation and electrical-closet interface so the camper can support full-time work, preserve pop-down roof clearance, keep DC electronics/laptop plugs accessible, and gain storage without ruining ergonomics.
 
-Status: **draft implementation baseline**, updated after the passenger-side fridge/wet-spine change. Do not convert this into exact extrusion cuts, drawer-slide lengths, panel skins, or final penetrations until post-install shell measurements, driver-side electrical closet/DC shelf checks, diesel-heater service checks, and roof-popdown sweep tests pass.
+Status: **draft implementation baseline**, refreshed after the `2026-05-27` electrical live checkpoint. Do not convert this into exact extrusion cuts, drawer-slide lengths, panel skins, or final penetrations until post-install shell measurements, hard-mounted electrical-board/closet checks, DC shelf checks, diesel-heater service checks, and roof-popdown sweep tests pass.
 
 Related docs:
 - `docs/core/SYSTEMS.md`
 - `docs/core/TRACKING.md`
 - `docs/implementation/INTERIOR_furniture_layout_and_galley.md`
-- `docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md`
+- `docs/plans/PROJECT_build_order_of_operations.md`
 
 Generated concept diagram:
 

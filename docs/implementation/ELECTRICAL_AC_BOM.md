@@ -105,7 +105,7 @@ These rows unblock safe MultiPlus shore charging and should not wait on final re
 - Confirm battery charge profile is intentionally set for the selected LiFePO4 voltage basis before sustained charging.
 - Confirm AC-in and AC-out neutral paths are not mixed.
 
-Use this checklist as the acceptance gate before procurement freeze and before first live AC commissioning.
+Use this checklist as the continuing acceptance gate before sustained shore charging, AC-out branch energization, or any AC enclosure closeout.
 
 ### 1) Topology integrity
 - Confirm one unique AC-in chain exists: `shore source/adapters -> portable EMS -> cord -> inlet -> AC-in breaker -> MultiPlus AC-in`.

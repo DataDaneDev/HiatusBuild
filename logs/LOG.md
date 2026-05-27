@@ -1,3 +1,9 @@
+## 2026-05-27 — Repo freshness maintenance after first-live checkpoint
+- Refreshed stale top-level and active-plan posture after the first live `48V`/MultiPlus/Cerbo/shore checkpoint.
+- Updated procurement guidance to prioritize `MK3-USB`, Victron comms cables, board mounting/strain-relief hardware, Orion final `F-06` cleanup, and WS500 low-current fuse-holder validation.
+- Downscoped the old broad `15-series` TNutz starter-stock posture: buy prototype stock only after real module envelopes and service access are proven.
+- Marked old temp red-flag files as archived/reference surfaces rather than live trackers, and replaced stale generated `AGENTS.md` skill boilerplate with repo-specific maintenance guidance.
+
 ## 2026-05-27 — First 48V/MultiPlus/Cerbo/shore live checkpoint completed
 - Owner confirmed `55.5V` throughout the `48V` system, including at the MultiPlus after pre-charge/energization.
 - MultiPlus switch `I` brought inverter mode online: inverter light illuminated, slight hum observed, and no error lights reported.
