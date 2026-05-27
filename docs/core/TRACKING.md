@@ -425,7 +425,16 @@ related:
 - Options considered: two separate AC-in/AC-out enclosures, one combined DIN enclosure without AC-out main, one combined DIN enclosure with `30A` AC-out main, or upsizing feeder/panel for `40A+` output.
 - Decision drivers: compactness, clear `30A` system cap, standard `10/3` feeder use, service labeling, and avoiding a full `40A/50A/75A` output build.
 - Result: purchased Progressive Industries EMS-PT30X portable `30A` EMS; Camco TT-30P-to-L5-30R shore cord plus 15A dogbone; Nilight L5-30 inlet; Mollom `6-way` DIN enclosure; ControlGear `30A` breakers qty `2` for AC-in and AC-out main; ControlGear `20A` breakers qty `2`; ELEGRP `20A` GFCI receptacles qty `2` with covers/plates, `10/3` and `12/3` triplex wire, bus bars, ferrule crimper kit, butyl tape, and Sikaflex-221. Row `111` downstream non-GFCI receptacles is obsolete; row `112` is no longer a design blocker because outlet box/cover details are handled as installation fitment around the two active GFCIs. A user-provided pop-up multipurpose outlet remains deferred/outside active baseline until details are supplied.
-- Follow-up: confirm single-enclosure neutral isolation/PE continuity/no fixed downstream neutral-ground bond with dead checks, then perform AC-in-only charge validation before AC-out branch energization. Do not reopen receptacle-count churn unless a later pop-up outlet SKU/layout decision requires it.
+- Follow-up: single-enclosure neutral isolation/PE continuity/no fixed downstream neutral-ground bond still need formal dead-check record before AC-out commissioning. Short AC-in charging validation is now complete; AC-out branch/GFCI commissioning remains separate.
+
+- ID: D-045
+- Date: 2026-05-27
+- Decision: Mark first `48V` DC / MultiPlus / Cerbo / limited shore-charge commissioning checkpoint as passed, while keeping sustained charging and AC-out/alternator commissioning gated.
+- Context: Owner completed first live energization after pre-charge and measured `55.5V` throughout the `48V` system, including the MultiPlus. MultiPlus inverter mode came online with normal light/hum and no errors. SmartShunt and Orion appeared in VictronConnect. Cerbo GX AP/remote-console workflow came online. A short shore-charge test ran with household-source current limiting.
+- Options considered: treat the system as fully commissioned, treat the live test as failed/incomplete, or record it as a successful staged checkpoint with remaining configuration gates.
+- Decision drivers: avoid losing important live-test evidence while not overclaiming charger-profile, AC-out, GFCI, or alternator readiness.
+- Result: first live `48V` and AC-in functional checkpoint is passed. AC Input 1 should be labeled `Shore power`; household outlet testing uses `10A` first-test / `12A` max-on-15A policy. Cerbo is documented as a small inline fused `48V` feed (`CERBO-PWR`) rather than a 12V fuse-panel branch. Parallel battery cable balancing is documented as similar total loop resistance, not equal positive-only length.
+- Follow-up: program/verify MultiPlus LiFePO4 charge settings with `MK3-USB + VEConfigure` or equivalent before sustained charging; repeat shore-charge test with logged values; formally verify AC neutral/ground/GFCI behavior before AC-out use; keep alternator commissioning deferred.
 
 ## Risk register
 - ID: R-001
@@ -486,10 +495,10 @@ related:
 - Risk: High-fault-current `48V` battery architecture can produce severe arc/thermal events during commissioning or service if isolation, torque, polarity, or fuse-voltage controls are missed.
 - Impact (1-5): 5
 - Likelihood (1-5): 2
-- Mitigation: Enforce documented pre-energization checks (polarity, torque witness, correct fuse voltage class, bus insulation covers, disconnect/isolation verification) and require controlled service procedure.
-- Trigger: First full-system energization and any major rewiring event.
+- Mitigation: Enforce documented pre-energization checks (polarity, torque witness, correct fuse voltage class, bus insulation covers, disconnect/isolation verification) and require controlled service procedure. First energization passed without observed faults; post-live cleanup still needs labels/covers/torque-witness/service-access verification.
+- Trigger: Any major rewiring event, cover/label closeout, and post-energization inspection.
 - Owner: Sunny
-- Status: Open
+- Status: Partially mitigated by first live `48V` test; inspection closeout pending
 
 - ID: R-008
 - Risk: Propane leak or combustion byproduct exposure (CO) could occur if rear-mount routing, passthrough sealing, detector placement, or appliance listing/venting assumptions are wrong.
@@ -504,10 +513,10 @@ related:
 - Risk: AC shock/fire risk from neutral-ground misconfiguration or incomplete GFCI/RCD protection on branch circuits.
 - Impact (1-5): 5
 - Likelihood (1-5): 2
-- Mitigation: Preserve AC protection chain (`source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> AC-in breaker -> MultiPlus -> 30A AC-out main -> 20A branch breakers -> GFCI receptacles`), validate outlet polarity and GFCI/RCD operation at commissioning, keep AC-in and AC-out neutrals isolated, and verify ground continuity/chassis bonding.
-- Trigger: AC branch wiring completion and first shore/inverter live test.
+- Mitigation: Preserve AC protection chain (`source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> AC-in breaker -> MultiPlus -> 30A AC-out main -> 20A branch breakers -> GFCI receptacles`), validate outlet polarity and GFCI/RCD operation at commissioning, keep AC-in and AC-out neutrals isolated, and verify ground continuity/chassis bonding. Short AC-in shore-charge test passed; AC-out/GFCI validation remains open.
+- Trigger: AC branch wiring completion and AC-out/GFCI live test.
 - Owner: Sunny
-- Status: Open
+- Status: Partially mitigated; AC-in function passed, AC-out/GFCI pending
 
 - ID: R-010
 - Risk: Roof-to-shell coiled solar jumper routing can chafe, snag, or leak at passthrough points if cable travel and strain relief are not validated through popup cycles.
@@ -567,10 +576,10 @@ related:
 - Risk: Battery first-charge or paralleling error can create BMS trips, high-current faults, or mismatched parallel-bank behavior.
 - Impact (1-5): 5
 - Likelihood (1-5): 2
-- Mitigation: Configure MultiPlus LiFePO4 profile, set source current limit, charge/test one battery at a time, log voltage/SOC/temp, and parallel only after matching is documented.
-- Trigger: First shore charge and first parallel tie of the `3x 48V` bank.
+- Mitigation: Configure MultiPlus LiFePO4 profile, set source current limit, log voltage/SOC/temp, and verify parallel-bank behavior under controlled charge/load. Short first shore-charge test passed at reduced household input current, but charger profile is not yet formally programmed/verified.
+- Trigger: Sustained shore charging, any high-SOC charge session, and first logged parallel-bank current-sharing check.
 - Owner: Sunny
-- Status: Open
+- Status: Partially mitigated; sustained-charge programming/logging pending
 
 - ID: R-017
 - Risk: Workstation/monitor/electrical-shelf mechanisms can collide with the pop-down roof or become vibration projectiles if stow height, cable loops, shelves, panels, or latches are validated from assumptions instead of real shell measurements.
@@ -591,8 +600,8 @@ related:
 - Status: Open
 
 ## Open questions
-- Reconcile MultiPlus charge profile value before first charge (`56.8V` planning basis vs `58.4V` battery/manual basis).
-- Confirm one-battery-at-a-time first-charge procedure and acceptable voltage/SOC matching threshold before paralleling.
+- Program/verify the MultiPlus LiFePO4 charge profile before sustained charging (`56.8V` planning basis vs `58.4V` battery/manual basis remains unresolved until VEConfigure/MK3 settings are checked).
+- Log parallel-bank current-sharing/voltage behavior under controlled charge/load; use similar total loop resistance per battery path rather than forcing equal positive-only leads.
 - Measure Iceco lid-open/vent/power-cord envelope at the raised passenger-side `~16 in` lofted height and validate tank overlap, pump-service access, and aisle/entry clearance.
 - Measure the driver-side desk/monitor/electrical-shelf roof-down sweep envelope, choose the primary monitor mechanism (`rising VESA spine` vs under-desk flip-up vs quick-release sleeve), and validate that the stowed face-down cradle supports bezel/back-shell/VESA structure rather than loading the LCD panel.
 - Lock workstation travel restraints: monitor mast/carriage latch, monitor arm hard stop, desk leaf latch, storage-door/service-panel latch standard, and cable-chain/service-loop path below the roof-safe line.
@@ -611,7 +620,7 @@ related:
 - Confirm only that the retained factory alternator continues to handle normal starter/vehicle charging independently if the Mechman `48V` path is adopted
 - Confirm measured daily draw for owner-supplied laptop/monitor/tablet charging to replace planning assumptions
 - Validate Orion `48/12-30` charger headroom with the current 12V branch plan (including USB stations, `12V-10` Maxxair fan, `12V-06` Hiatus factory LED+dimmer, and planned `12V-11` ambient/Govee strips) and trigger row `118` only if sustained overload is observed
-- Confirm AC dead-checks before energization: AC-in/AC-out neutral isolation, continuous PE/equipment ground, no fixed downstream neutral-ground bond, and staged GFCI test during AC-out commissioning.
+- Confirm/document AC dead-checks before AC-out commissioning: AC-in/AC-out neutral isolation, continuous PE/equipment ground, no fixed downstream neutral-ground bond, and staged GFCI test during AC-out commissioning.
 - Final passthrough locations for solar and fuel/heater paths, including whether an exterior truck-bed-wall diesel tank/fill/pump can route through a protected grommet/bulkhead to the heater. Shore inlet hardware is selected; final inlet/cable support details are an install-fit task using on-hand clamps/grommets/strain relief.
 - Lock roof-to-shell solar jumper connector strategy and exact service-loop length for full popup travel
 - Flexible solar model/stringing strategy under roof `75 lb` cap and deferred-procurement timing
@@ -624,7 +633,7 @@ related:
 - Orion `48V` input protection is now locked as: use a Lynx `48V+` bus tap into standalone `F-06`; run existing `30A 58V` MIDI for build/bench/interim use on the short `6 AWG` branch; later buy Mouser `576-166.7000.5202` Littelfuse FKS/ATO (`20A`, `80VDC`) plus Mouser `576-178.6150.0001` holder (`80VDC` listing owner-confirmed) for final cleanup. Lynx Slot 4/`F-05` remains open/blank and is not Orion protection.
 - BOJACK `150A` AMI/MIDI holder stock purpose resolved: it came from the obsolete Sterling `BB1248120` `12V` input-fuse plan. Keep as obsolete/spare `12V` hardware only; do not use as active `F-04` alternator protection, WS500 fuse hardware, Orion input protection, or any `48V` install part unless separately voltage/form-factor validated.
 - Final SKU lock for `F-11` holder family and `SW-12V-BATT` switch model/location
-- Confirm acceptable monitoring expectation that Orion is not a direct GX telemetry node in current architecture
+- Confirm acceptable monitoring expectation that Orion is not a direct GX telemetry node in current architecture; current Orion visibility is VictronConnect/BLE
 - Confirm final location/format for measured run-length recordkeeping in implementation docs before final cable closeout
 - Lock final propane water-heater path: outdoor-use-only portable workflow vs listed indoor/RV unit with compliant venting/clearance package
 - Lock propane passthrough hardware standard and no-concealed-joints rule for final routing

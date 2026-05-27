@@ -22,7 +22,7 @@ related:
 - Keep unresolved vendor gates, risk state, and follow-up closure items in `docs/core/TRACKING.md`.
 - Keep broad project sequencing and day-to-day execution framing in `docs/core/PROJECT.md` or the active plan docs.
 
-As-of date: `2026-05-22`
+As-of date: `2026-05-27`
 
 Purpose: hold the finalized, concise `48V` house and alternator architecture in one place so wiring, protection, shutdown behavior, and BOM references are easy to understand without re-reading the historical trade studies.
 
@@ -40,6 +40,15 @@ Related docs:
 - Manual alternator-charge enable/disable is through Ford `Upfitter Switch #3`.
 - `Upfitter #3` is a low-current control signal only. It does not carry alternator output current.
 - `WS500` white `Feature-In` is reserved for future fault-interlock work, not required in Phase 1.
+
+## Current commissioning state (`2026-05-27`)
+- `48V` bus has been live-tested: owner measured `55.5V` throughout the system, including at the MultiPlus.
+- MultiPlus-II DC/inverter mode has been switched on with inverter light illuminated, slight normal hum, and no reported error lights.
+- SmartShunt and Orion-Tr Smart are visible in VictronConnect.
+- Cerbo GX access point/remote-console workflow is active; Cerbo power is a small inline fused feed from the `48V` system side and MultiPlus communication is via `VE.Bus` RJ45.
+- Shore charging has been short-tested through the MultiPlus at household-outlet current limits. This proves basic AC-in/charger function, not final charge-profile correctness.
+- Do not treat the charger as commissioned for unattended/sustained use until the MultiPlus LiFePO4 charge profile is programmed/verified against the Dumfume manual. `DVCC` remains disabled unless a documented BMS/GX control path is added.
+- AC-out branch/GFCI commissioning and secondary-alternator commissioning are still separate future gates.
 
 ## Locked component set
 | Function | Locked baseline | BOM row(s) |
@@ -119,11 +128,13 @@ flowchart LR
 | `F-06` | Orion `48V` input from Lynx bus tap | `30A 58V` MIDI interim; `20A 80V` FKS/ATO final | `6 AWG` planned; keep source-side unfused tap short |
 | `F-12` | WS500 regulator power lead | `10A` baseline (`15A` if required by alternator case); voltage rating must cover the connected alternator/system positive voltage | harness lead |
 | `F-13` | WS500 positive voltage-sense lead | `3A`; fuse/holder voltage class must cover the `48V` bank maximum unless proven by WS500 harness documentation | harness lead |
+| `CERBO-PWR` | Cerbo GX low-current power feed | `1A-3A` inline fuse/holder rated for the `48V` bank maximum; system/load side of main disconnect preferred for bench shutdown | `18 AWG` red/black duplex acceptable |
 | WS500 current-sense pair | Purple/grey current-sense high/low to shunt/current-sense point | No separate fuse position in current Wakespeed manual; twist pair if extended and route away from noise | harness lead |
 | `F-15` | Upfitter #3 to WS500 brown ignition wire | `3A` inline ATO/ATC on 12V control circuit | `16 AWG` TXL/GXL control wire |
 
 ### Major conductors
 - Battery branch and main `48V` trunk wiring: `2/0 AWG`.
+- Parallel battery-current sharing target is similar **total loop resistance** per battery path, not equal positive-only length. The current bench layout may use short/medium/long positive leads balanced by long/medium/short negative leads; do not add unnecessary cable coils solely to make positive leads identical.
 - Secondary alternator positive path (`ALT B+ -> APM-48 -> F-04 -> Lynx`): `2/0 AWG`, `~20 ft` one-way planning basis.
 - Secondary alternator dedicated negative return (`ALT B- -> Lynx -`): `2/0 AWG`, `~20 ft` one-way planning basis.
 - Orion `48V` feeder and MPPT battery leads: `6 AWG`; Orion positive leaves the Lynx bus through standalone `F-06`, not Lynx Slot 4.

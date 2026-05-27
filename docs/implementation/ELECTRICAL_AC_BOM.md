@@ -13,7 +13,7 @@ related:
 
 # Electrical AC BOM (Phase 1)
 
-As-of date: `2026-05-16`
+As-of date: `2026-05-27`
 
 Purpose: maintain the purchased Phase 1 AC architecture baseline: portable `30A` EMS, `30A` shore inlet/cord, one `6-way` DIN enclosure, `30A` AC-in breaker, `30A` AC-out main breaker, and two active `20A` GFCI-protected AC-out branches. Final physical outlet locations and enclosure access remain measurement-gated in the installed camper.
 
@@ -28,7 +28,7 @@ Related docs:
 ### AC-in chain (shore to inverter)
 - `shore source/adapters -> portable 30A EMS -> 30A shore cord -> L5-30 shore inlet -> combined 6-way AC DIN enclosure -> 30A UL489 AC-in breaker/disconnect -> MultiPlus AC-in (L/N/PE)`
 - AC-in conductors are `10 AWG` / `10/3` on the protected AC-in path (`30A` hardware basis).
-- MultiPlus input current limit is set to actual source (`15A`, `20A`, or `30A`) when adapters are used.
+- MultiPlus input current limit is set to actual source when adapters are used. Use `10A` for first household tests and `12A` maximum policy on a normal `15A` outlet; do not leave the limit at `50A` on adapter/household shore.
 
 ### AC-out chain (inverter-backed branch distribution)
 - `MultiPlus AC-out-1 -> 10/3 feeder -> combined 6-way AC DIN enclosure -> 30A UL489 AC-out main breaker -> 20A branch 1 + 20A branch 2 -> GFCI receptacle per branch`
@@ -88,13 +88,21 @@ These rows unblock safe MultiPlus shore charging and should not wait on final re
 | Ferrules/terminals (AC-relevant) | install consumable | Sized to `10 AWG` and `12 AWG` terminations as required by device terminals | `41`, `116` | Required |
 | AC-out-2 branch breaker/protection hardware | `0` in Phase 1 | Reserve-only route, no energized branch hardware in this phase | N/A | Reserve-only (not procured) |
 
+## First-Live AC-In Test Result (`2026-05-27`)
+- AC Input 1 should be labeled `Shore power` for this mobile/source-current-limited system.
+- MultiPlus switch `II` is charger-only; switch `I` is inverter/charger normal mode; `O` is off.
+- Short shore test passed with household-source current limiting: about `1294W` shore input and about `54.3V x 21.6A` (`~1173W`) battery charge in bulk.
+- Current disconnect practice: connect RV/EMS/load side first, then energize shore; disconnect in reverse by de-energizing/unplugging shore source before disconnecting the RV side.
+- This result does not close battery-charge-profile commissioning. Program/verify the MultiPlus lithium settings before sustained charging.
+
 ## Manual AC Validation Checklist
 
 ### 0) AC-in-only initial charger validation
 - Confirm AC-in physical order: `shore source/adapters -> portable EMS -> shore cord -> inlet -> AC-in breaker/disconnect -> MultiPlus AC-in`.
 - Confirm AC-out breakers/loads are disconnected or not yet installed for the first battery-charge test.
-- Confirm MultiPlus input current limit is set to actual source (`15A`, `20A`, or `30A`).
-- Confirm battery charge profile is intentionally set for the selected LiFePO4 voltage basis before energization.
+- Confirm MultiPlus input current limit is set to actual source (`10A` first household test, `12A` max on normal `15A`, actual rating for `20A`/`30A`).
+- Confirm AC Input 1 is labeled/configured as `Shore power`.
+- Confirm battery charge profile is intentionally set for the selected LiFePO4 voltage basis before sustained charging.
 - Confirm AC-in and AC-out neutral paths are not mixed.
 
 Use this checklist as the acceptance gate before procurement freeze and before first live AC commissioning.

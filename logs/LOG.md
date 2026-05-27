@@ -1,3 +1,12 @@
+## 2026-05-27 — First 48V/MultiPlus/Cerbo/shore live checkpoint completed
+- Owner confirmed `55.5V` throughout the `48V` system, including at the MultiPlus after pre-charge/energization.
+- MultiPlus switch `I` brought inverter mode online: inverter light illuminated, slight hum observed, and no error lights reported.
+- SmartShunt and Orion-Tr Smart both appeared in VictronConnect. Cerbo GX Wi-Fi access point/remote-console workflow came online; Cerbo power/comms path is `48V` small fused feed plus `VE.Bus` RJ45 to MultiPlus.
+- AC Input 1 should be treated/labeled as `Shore power`; household-source test used reduced input-current limit (`10A` first test / `12A` max policy on `15A` outlet).
+- Short shore-charge test showed about `1294W` shore input and about `54.3V x 21.6A` (`~1173W`) battery charge in bulk. Treat this as a functional test only until MultiPlus LiFePO4 charge settings are programmed/verified against the Dumfume manual.
+- Shutdown practice captured: MultiPlus `O`, disable Orion if needed, de-energize/unplug shore, wait briefly, then open main `48V` disconnect. Residual voltage on Lynx/load side with disconnect open is expected capacitor bleed-down unless it remains stable/current-capable.
+- Documentation updated: project/system snapshot, `48V` architecture, topology/fuse schedule, bench guide, AC BOM/checklist, operations quick cards, tracking risks/open questions, and this log.
+
 ## 2026-05-25 — Lynx Slot 4 left open; Orion input stays on F-06
 - Locked active topology to leave Lynx Slot 4/`F-05` open/blank. Orion `48V` input now uses a Lynx `48V+` bus tap into standalone `F-06`, not an oversized Lynx MEGA fuse.
 - Updated active electrical docs/BOM to show `F-06` as the single Orion input fuse: existing `30A 58V` MIDI for build/bench/interim use, planned `20A 80V` FKS/ATO cleanup later.

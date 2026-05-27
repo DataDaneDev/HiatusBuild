@@ -20,7 +20,7 @@ related:
 - Keep exact topology, fuse, conductor, and bench procedure detail in `docs/implementation/`.
 
 ## Snapshot
-- As-of date: 2026-05-14
+- As-of date: 2026-05-27
 - Phase: post-install interior buildout and measured systems-layout validation
 - Install milestone: May 7, 2026 Hiatus install is now historical context; the real camper shell is available for physical mockups and measurements
 - Mission: build a reliable off-grid camper workspace suitable for full-time professional use
@@ -41,8 +41,9 @@ related:
 - Use [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md) as the active phase sequence. Use [INSTALL_MINUS_12_READINESS_PLAN](../plans/INSTALL_MINUS_12_READINESS_PLAN.md) and [STARTER_PLAN_electrical_and_flooring_pre_camper](../plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md) as historical install-window/pre-camper references unless they are explicitly refreshed.
 - Use [INTERIOR_furniture_layout_and_galley](../implementation/INTERIOR_furniture_layout_and_galley.md) as the current owner for the office-first passenger-side lofted fridge/wet-spine concept, separated battery bench, and `10-series` 80/20 overlay-panel direction.
 - Use [ELECTRICAL_48V_ARCHITECTURE](ELECTRICAL_48V_ARCHITECTURE.md) as the canonical `48V` design reference while mechanically laying out the electrical module and alternator-control path.
-- Active work now includes measured camper block envelopes, dead-mechanical electrical layout, fuse/device access checks, 80/20 prototype stock/hardware planning, floor/subfloor gates, and payload/weight tracking.
-- Defer irreversible work (final penetrations, final cable cuts/crimps, final extrusion vendor cuts, permanent skins, and finish-floor glue-down) until physical measurement, service-map, and access checks pass.
+- Active work now includes measured camper block envelopes, electrical module live-commissioning cleanup, fuse/device access checks, 80/20 prototype stock/hardware planning, floor/subfloor gates, and payload/weight tracking.
+- Electrical status has moved past dead-layout only: the `48V` bus, SmartShunt, Orion, Cerbo, MultiPlus inverter mode, and a short limited-current shore-charge test have all been proven without observed errors.
+- Defer irreversible work (final shell penetrations, shell-dependent final cable cuts, final extrusion vendor cuts, permanent skins, and finish-floor glue-down) until physical measurement, service-map, access, and post-energization checks pass.
 
 ## Scope
 - In scope: electrical, charging, solar, communications, interior structure/cabinetry, operations process, maintenance tracking
@@ -75,9 +76,9 @@ related:
 - M6: electrical module dead-mechanical layout and first-charge plan ready
 - M7: shakedown and punch-list closure
 
-## Build sequencing baseline (as-of 2026-05-14)
+## Build sequencing baseline (as-of 2026-05-27)
 - Build sequencing is tracked as an overlapping phase plan (not strict serial trades).
-- May 7 install readiness is historical context; current sequencing focus is measured interior envelopes, dead mechanical systems layout, targeted prototype extrusion/hardware ordering, and staged electrical first-charge preparation.
+- May 7 install readiness is historical context; current sequencing focus is measured interior envelopes, post-energization electrical cleanup/programming, targeted prototype extrusion/hardware ordering, and staged AC-out/alternator validation.
 - CAD and AI-generated diagrams are planning references only; real camper measurements and physical mockups own final dimensions.
 - Detailed stage-by-stage order of operations, dependencies, and draft date windows:
 - [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md)
@@ -86,10 +87,11 @@ related:
 - **Measured envelopes:** physically tape/cardboard the passenger-side lofted fridge/wet-spine skeleton, pump/accumulator board, water tank overlap, separated battery bench, driver-side electrical box/step box, `24 in x 48 in` wheel-well desk, DC shelf, diesel heater zone, and workstation before final cut lists.
 - **Extrusion/furniture:** order/use 80/20 as controlled prototype stock/hardware, not a final vendor-cut enclosure. Default toward `10-series` unless real point loads or restraint needs prove otherwise.
 - **Panel strategy:** use overlay/removable panels on living-facing surfaces, keep service zones exposed or quick-removable, and use magnets only for light service covers with locator/backup retention where panel loss matters.
-- **Electrical:** shore-power / initial-charge remains a priority before any alternator work. Purchased Phase 1 AC baseline is now `shore source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> single 6-way AC DIN enclosure -> 30A AC-in breaker/disconnect -> MultiPlus AC-in`, with `30A` AC-out main plus two `20A` GFCI branches for later AC-out validation. SKU lock is recorded in BOM rows `13`, `14`, `15`, `41`, `107`, `108`, `109`, `110`, `113`, `114`, `123`, `179`, and `180`; cable glands/clamps/grommets are on-hand fitment stock, not a design blocker.
-- AC-in and AC-out may share the purchased single `6-way` enclosure only if neutral paths remain isolated, PE/equipment grounding is continuous, no fixed downstream neutral-ground bond is added, and labeling/barriers/strain relief are verified during install. Do not let receptacle-count churn or the later pop-up outlet idea block the AC-in charge path.
-- Before first charge, reconcile the MultiPlus LiFePO4 charge profile (`56.8V` planning basis vs `58.4V` battery/manual basis), set source current limits, and charge/test one `48V` battery at a time before paralleling.
-- Defer Mechman alternator installation until batteries are present, shore charging/monitoring are proven, and alternator vendor/support gates are closed.
+- **Electrical:** current live-commissioning checkpoint is complete: owner confirmed `55.5V` throughout the `48V` system including at the MultiPlus, MultiPlus inverter mode came on with normal light/hum and no errors, SmartShunt and Orion are visible in VictronConnect, Cerbo GX access point/remote-console workflow is active, and a short shore-charge test ran at limited household-outlet current.
+- Purchased Phase 1 AC baseline remains `shore source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> single 6-way AC DIN enclosure -> 30A AC-in breaker/disconnect -> MultiPlus AC-in`, with `30A` AC-out main plus two `20A` GFCI branches for later AC-out validation. SKU lock is recorded in BOM rows `13`, `14`, `15`, `41`, `107`, `108`, `109`, `110`, `113`, `114`, `123`, `179`, and `180`; cable glands/clamps/grommets are on-hand fitment stock.
+- AC-in and AC-out may share the purchased single `6-way` enclosure only if neutral paths remain isolated, PE/equipment grounding is continuous, no fixed downstream neutral-ground bond is added, and labeling/barriers/strain relief are verified during install. AC-out branch validation is still pending.
+- Before sustained charging, program/verify the MultiPlus LiFePO4 charge profile via `MK3-USB + VEConfigure` or equivalent: absorption/float per Dumfume manual, equalization off, lithium temperature-compensation behavior confirmed, charger current conservative, and `DVCC` left disabled unless a documented BMS/GX control path is later added.
+- Defer Mechman alternator installation until shore charging/monitoring are fully programmed/proven and alternator vendor/support gates are closed.
 - **Flooring gate:** do not glue Lonseal or permanently close the floor until EPS/subfloor fit, moisture path, hardpoint, and penetration/service-access checks pass in the installed camper.
 - **Payload gate:** capture door-sticker payload and staged scale weights. Treat total payload, rear axle load, rear tire load, and left/right balance as active constraints.
 
@@ -111,8 +113,9 @@ Purpose: turn the installed camper shell into measured block envelopes before bu
    - Use the interior furniture/galley concept doc as the layout checkpoint, then verify against real roof-down sweep, cabover/bench cushion use, fridge lid/vent/cord envelope, tank overlap/fitting orientation, pump service access, battery extraction, and wet/dry separation.
    - Default to `10-series` 80/20, plywood, panels, brackets, and light rail unless measured heavy/dynamic modules prove they need larger extrusion.
 5. **Electrical bench path**
-   - Layout Board A/B with real service access and cable corridors.
-   - SKU-lock AC-in charging hardware, write first-charge checklist, then charge/test one battery at a time.
+   - Continue from the completed first live checkpoint: verify torque/witness marks, covers, labeling, SmartShunt/Cerbo power-source behavior, and shutdown/de-energization behavior.
+   - Program the MultiPlus battery charge profile before sustained charging, then repeat shore-charge validation with logged voltage/current/SOC/temperature.
+   - Keep AC-out branch/GFCI validation and alternator commissioning as separate later gates.
 
 ### Cabinetry approach (recommended)
 - Treat 80/20 as the *structure* and simple panels as the *skins*.

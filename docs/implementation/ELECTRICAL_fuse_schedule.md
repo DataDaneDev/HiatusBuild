@@ -13,7 +13,7 @@ related:
 
 # Electrical Fuse Schedule (Implementation - Lynx Topology)
 
-As-of date: `2026-05-22`
+As-of date: `2026-05-27`
 
 Purpose: define each required fuse by circuit, protected conductor/device, holder/housing method, physical placement, and linked wire-gauge assumptions for the approved Phase 1 Lynx architecture with a battery-backed 12V bus and dedicated 48V secondary alternator branch.
 
@@ -77,8 +77,9 @@ Lock for this build pass:
 | `F-11` | 12V buffer battery `+` -> 12V fuse block main `+` stud via `SW-12V-BATT` | Buffer battery source cable and downstream junction fault exposure | Inline MIDI/AMI/ANL family rated `>=32VDC` | `100A` class baseline | Sealed inline holder mounted close to battery positive | Within ~`7"` of 12V buffer battery positive post | `4 AWG` planned |
 | `F-12` | WS500 regulator power lead | WS500 power feed lead | Inline fuse/holder rated for the actual source voltage; current Wakespeed manual recommends sealed ATC, but this build treats the lead as `48V`-referenced unless final harness docs prove otherwise | `10A` baseline (`15A` if required by extra-large alternator case) | Sealed inline holder per WS500 kit/manual, with verified voltage rating | Near source end of WS500 regulator power lead | Harness lead |
 | `F-13` | WS500 positive voltage-sense lead | WS500 battery/charging voltage sense lead | Inline fuse/holder rated for actual `48V` bank maximum voltage unless WS500-supplied harness documentation proves otherwise | `3A` | Holder per WS500 manual/kit, voltage class verified before install | Near positive sense takeoff on charge side of the main alternator branch fuse / battery-bank connection | Harness lead |
+| `CERBO-PWR` | `48V` system positive -> Cerbo GX power `+` | Cerbo GX low-current electronics feed | Inline fuse/holder rated for `48V` bank maximum voltage | `1A-3A` | Small inline holder close to the positive takeoff | Electrical cabinet, preferably system/load side of main disconnect so Cerbo powers down with the house system during bench shutdown | `18 AWG` red/black duplex acceptable |
 | `F-15` | Ford Upfitter `#3` -> WS500 brown ignition/enable wire | Low-current regulator enable/control wire | Inline ATC/ATO (`32V` class acceptable; 12V control circuit) | `3A` | Sealed inline holder near the Ford upfitter blunt-cut source / splice handoff | Engine bay or control-wire handoff point before small-gauge run to WS500 | `16 AWG` TXL/GXL |
-| `OEM-SHUNT` | Lynx positive tap -> SmartShunt `Vbatt+` terminal | SmartShunt electronics supply/sense lead | External Victron-supplied red cable with inline low-current fuse; not an internal SmartShunt fuse | OEM value | Inline holder in supplied red cable | Electrical cabinet near Lynx positive tap / SmartShunt | OEM harness lead |
+| `OEM-SHUNT` | Battery-side positive or Lynx/system positive tap -> SmartShunt `Vbatt+` terminal | SmartShunt electronics supply/sense lead | External Victron-supplied red cable with inline low-current fuse; not an internal SmartShunt fuse | OEM value | Inline holder in supplied red cable | Prefer battery-side positive if SOC continuity is desired while the main disconnect is open; system side is acceptable if zero parasitic draw during disconnect-off storage matters more | OEM harness lead |
 
 ## Retired Fuse IDs
 Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do not reserve board space or labels for them.
@@ -95,6 +96,7 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 | 12V buffer battery main fuse (`100A` class) | `1` | `3` | Spare pack basis is BOM row `105` |
 | WS500 regulator power fuse (`F-12`) | `1` active position | `2` | Carry `10A` and `15A` spares with holder/fuse voltage rating verified for the source voltage |
 | WS500 positive voltage-sense fuse (`F-13`) | `1` active position | `2` | Carry `3A` spares with holder/fuse voltage rating verified for the `48V` bank maximum |
+| Cerbo GX power fuse (`CERBO-PWR`) | `1` active position | `1` | Carry a spare `1A-3A` fuse/holder rated for the `48V` bank maximum |
 | WS500 ignition/enable fuse (`F-15`) | `1` active position | `2` | Carry spare `3A` mini/ATO fuse and one spare sealed holder; 12V control circuit |
 | PV string fuse `15A gPV` | `3` | `3` | One spare per string |
 | SmartShunt OEM harness fuse | `1` | `1` | Keep OEM-equivalent spare if field-replaceable |
@@ -108,6 +110,7 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 | Orion installed fuse-holder hardware (`F-06`, `F-07`) | `bom/bom_estimated_items.csv` row `11` |
 | Orion input fuses (`F-06` active; `F-05` not used in active topology) | `bom/bom_estimated_items.csv` rows `11`, `133`, and `182` |
 | WS500 low-current fuse/holder kit (`F-12`, `F-13`) | `bom/bom_estimated_items.csv` row `171` |
+| Cerbo GX power feed (`CERBO-PWR`) | `bom/bom_estimated_items.csv` row `22`; small inline fuse/holder may come from low-current install stock |
 | WS500 Upfitter `#3` enable/control path (`F-15`) | `bom/bom_estimated_items.csv` row `176` |
 | 12V buffer battery (`B12`) | `bom/bom_estimated_items.csv` row `21` |
 | 12V buffer battery main fuse + holder (`F-11`) | `bom/bom_estimated_items.csv` row `125` |

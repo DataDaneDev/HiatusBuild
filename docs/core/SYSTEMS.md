@@ -34,14 +34,24 @@ related:
 - Solar option screening matrix (stringing + MPPT fit flags): [SOLAR_configuration_matrix](../studies/SOLAR_configuration_matrix.md)
 - Electrical decisions, risks, and unresolved items: [TRACKING](TRACKING.md)
 
-### Planning snapshot (base model as-of `2026-05-14`; AC purchase note updated `2026-05-16`)
+### Planning snapshot (base model as-of `2026-05-27`)
 - Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).
 - House architecture: `48V` core with Orion-Tr Smart `48V->12V` charging/step-down feeding a shared battery-backed `12V` junction.
-- Inverter/charger candidate: Victron MultiPlus-II `48/3000/35-50`.
+- Inverter/charger: Victron MultiPlus-II `48/3000/35-50`, DC/inverter mode live-tested with no observed errors.
 - Charge sources in current BOM: solar MPPT, dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48` migration baseline), shore AC charger path.
 - Monitoring and protection: Cerbo GX, SmartShunt, battery temp sensing, Class T primary fuse + branch fusing.
-- AC protection chain is now purchased/locked for Phase 1 (`shore source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> single 6-way AC DIN enclosure -> 30A AC-in breaker -> MultiPlus -> 30A AC-out main -> two 20A GFCI branches`), with AC-in-only initial charging still used as the first live validation step.
-- Current build phase: use the installed camper shell for dead-mechanical electrical layout, measured block envelopes, and service-map validation before final cable cuts, energization, extrusion vendor cuts, skins, or finish-floor glue-down.
+- AC protection chain is purchased/locked for Phase 1 (`shore source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> single 6-way AC DIN enclosure -> 30A AC-in breaker -> MultiPlus -> 30A AC-out main -> two 20A GFCI branches`). AC-in/MultiPlus charging has passed a short limited-current live test; AC-out branch/GFCI commissioning remains pending.
+- Current build phase: use the installed camper shell for measured block envelopes and service-map validation while completing post-energization electrical cleanup, charger programming, labels/covers, and logged retests before final shell-dependent cable cuts, extrusion vendor cuts, skins, or finish-floor glue-down.
+
+### Commissioning snapshot (`2026-05-27`)
+- Owner confirmed `55.5V` at the `48V` bus and at the MultiPlus after pre-charge/energization.
+- MultiPlus switch `I` brought inverter mode online; inverter light illuminated, slight hum was observed, and no error lights were reported.
+- SmartShunt and Orion-Tr Smart are visible in VictronConnect. SmartShunt red fused `Vbatt+` lead should remain battery-side if SOC continuity while the main disconnect is open is desired; the parasitic draw is negligible for normal short storage windows.
+- Cerbo GX is powered from the `48V` system through a small inline fused feed and uses `VE.Bus`/RJ45 to the MultiPlus; its Wi-Fi access point/remote-console workflow is active.
+- AC input source type should be labeled `Shore power`, not generic `Grid`, for the mobile source-current-limited workflow.
+- Household-outlet shore test used a reduced MultiPlus input-current limit (`10A` first test / `12A` maximum policy on a `15A` circuit). Observed values were about `1294W` shore input and about `54.3V x 21.6A` (`~1173W`) battery charge in bulk.
+- Treat the short shore-charge result as a functional test only until the MultiPlus battery charge profile is programmed/verified against the Dumfume manual. Leave `DVCC` disabled unless a documented BMS/GX control path is added.
+- Normal shutdown/de-energize for the current bench system: MultiPlus `O`, disable Orion if needed, de-energize/unplug shore, wait briefly, then open the main `48V` disconnect. Residual voltage on the Lynx/load side with the disconnect open is expected from device capacitance but must be treated as live until metered near zero.
 
 ### Modeling rules (procurement-first plus full-load)
 - Primary procurement source of truth is `bom/bom_estimated_items.csv`.
@@ -127,15 +137,17 @@ Solar remains deferred until shore charging and alternator charging are working.
 - Obsolete pre-Mechman alternator-charger hardware is returned/removed from active planning and should not appear in primary fuse/layout decisions.
 
 #### Shore charging (MultiPlus-II charger path)
-- Charger limit from model string: `35A`.
-- Existing planning math uses `56.8V` absorption target (`~1,988W`), while the battery manual/BOM basis references `58.4V` (`~2,044W` at `35A`). Reconcile and document the actual MultiPlus LiFePO4 charge profile before first energization.
-- Initial garage workflow: use AC-in-only MultiPlus charging and connect/charge one `48V` battery at a time before paralleling the `1S3P` bank.
-- Ideal bulk-only recharge times at `56.8V` planning basis:
+- Charger limit from model string: `35A`; final charge voltage/current must be configured from the Dumfume manual before sustained charging.
+- Current first-live result: AC-in shore charging was proven at household-outlet limits with MultiPlus input limit reduced (`10A` first test; `12A` policy ceiling on a `15A` circuit). Reported Cerbo values were about `1294W` from shore and about `54.3V x 21.6A` into the battery bank in bulk.
+- Required before unattended or extended charging: program/verify MultiPlus LiFePO4 charge profile with `MK3-USB + VEConfigure` or equivalent; set absorption/float to manual values, equalization off, lithium temperature compensation behavior confirmed, and charger current conservative.
+- `DVCC` remains disabled in the current architecture because there is no documented BMS-to-GX control path.
+- AC input current policy: label AC Input 1 as `Shore power`; use `10A` for first tests and `12A` maximum on a normal `15A` household circuit; use the actual pedestal/source rating for `20A`/`30A` sources.
+- Ideal bulk-only recharge times at `56.8V` planning basis remain reference-only until measured charge logs replace them:
 - Replace one `core_workday`: `1.78h`.
 - Replace one `winter_workday`: `2.11h`.
 - Recharge full `3x` bank from `20%` to `100%`: `6.18h`.
 - Recharge one `48V 100Ah` battery from `20%` to `100%`: about `2.06h` ideal bulk-only.
-- Real-world times are longer due to absorption taper near full charge, lower input-current limits on `15A` household sources, and any configured charge-current derate.
+- Real-world times are longer due to absorption taper near full charge, reduced household input-current limits, and any configured charge-current derate.
 
 ### Operational implications and constraints
 - Battery capacity now supports roughly `2.9-3.5` office-workdays without charging depending on season and reserve policy.

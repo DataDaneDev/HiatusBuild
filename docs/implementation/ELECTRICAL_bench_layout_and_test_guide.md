@@ -13,7 +13,7 @@ related:
 
 # Electrical Bench Layout + Test Guide
 
-As-of date: `2026-05-14`
+As-of date: `2026-05-27`
 
 Purpose: provide a practical, print-friendly game plan for building and validating the electrical module mechanically before final wiring, energization, or permanent enclosure/panel closeout.
 
@@ -40,14 +40,14 @@ Related docs:
 
 ## 2) Recommended sequence (ground build -> test fit -> hard mount)
 
-Current owner status (`2026-05-11`): major electrical components are physically laid out on plywood but not connected, drilled, or energized. The next step is mechanical layout discipline, not live wiring.
+Current owner status (`2026-05-27`): the electrical module has passed the first live checkpoint. Owner confirmed `55.5V` throughout the `48V` system, MultiPlus inverter mode on with no errors, SmartShunt and Orion online in VictronConnect, Cerbo remote-console/AP workflow active, and a short limited-current shore-charge test completed.
 
 Immediate priority:
-1. Photograph the current floor layout and label each major component/fuse path.
-2. Make 1:1 paper or cardboard templates with terminal sides, cable bend-radius keep-outs, fuse-service access, and wrench access marked.
-3. Build/brace the two-plane plywood mockup and move templates onto it.
-4. Only after the template layout passes access checks, pilot-drill a small subset of non-energized components.
-5. Do not crimp final high-current cables or parallel/energize the `3x 48V` bank until the staged test ladder below is ready.
+1. Preserve the current working topology; do not add alternator or AC-out branch complexity until cleanup checks pass.
+2. Add/verify labels, covers, torque witness marks, strain relief, cable protection, and service access around the energized layout.
+3. Program/verify the MultiPlus LiFePO4 charge profile with `MK3-USB + VEConfigure` or equivalent before sustained charging.
+4. Repeat shore-charge validation with logged voltage/current/SOC/temperature after charger settings are confirmed.
+5. Keep AC-out branch/GFCI validation and Mechman/WS500 alternator commissioning as separate later gates.
 
 ### Phase L1: Build the two backer boards on the ground
 1. Rip the `1/2"` sheet into Board A + Board B to your target envelope.
@@ -123,7 +123,7 @@ Exit criteria:
 
 ## 4) Wiring layout rules (before you crimp anything)
 
-- Keep equal-length parallel battery cables as locked in architecture docs.
+- Keep parallel battery paths balanced by similar total loop resistance. Equal positive-only leads are not required if short/medium/long positives are offset by long/medium/short negatives.
 - Keep `48V` high-current paths short and direct.
 - Keep AC and DC routing physically separated; cross at `90` degrees only when unavoidable.
 - Use abrasion protection at every edge pass-through.
@@ -154,24 +154,35 @@ Pass when:
 
 ### T2: 48V core energization (no alternator)
 - Bring up house `48V` path first.
+- Use pre-charge before closing the main disconnect into MultiPlus/inverter capacitance.
 - Verify expected voltage at key nodes and no abnormal heat/smell/noise.
 - Confirm disconnect behavior and basic inverter/charger DC-side response.
 
+Current result (`2026-05-27`):
+- Owner measured `55.5V` throughout the system, including at the MultiPlus.
+- MultiPlus switch `I` brought inverter mode online; inverter light illuminated, slight hum was observed, and no error lights were reported.
+- SmartShunt and Orion-Tr Smart were visible in VictronConnect.
+
 Pass when:
-- Stable voltage and normal behavior at all checkpoints.
+- Stable voltage and normal behavior at all checkpoints, with labels/covers/torque marks verified after the first live session.
 
 ### T2.5: Shore / MultiPlus initial charge validation
 - Build the AC-in-only path first: shore source/adapters -> portable EMS -> shore cord -> inlet -> AC-in breaker/disconnect -> MultiPlus AC-in.
 - Keep AC-out branch breakers/loads disconnected for the first charge test.
 - Confirm the T0 AC dead-checks are complete before shore energization.
-- Connect and charge one `48V` battery at a time through the final-style protected DC path.
-- Confirm MultiPlus LiFePO4 charge profile and source current limit before energizing.
+- Set AC Input 1 label/type to `Shore power` and set the MultiPlus input current limit to the actual source. Use `10A` for first household tests and `12A` maximum policy on a normal `15A` outlet.
+- Leave `DVCC` disabled unless a documented BMS/GX control path is added.
+- Before sustained charging, program/verify MultiPlus LiFePO4 charge profile from the Dumfume manual (`MK3-USB + VEConfigure` or equivalent): absorption/float, charge current, equalization off, and lithium temperature-compensation behavior.
 - Use the pre-charge procedure before closing the `48V` disconnect into MultiPlus capacitance.
 - Leave alternator branch inactive and `F-04` out during shore-charge validation.
-- Log starting/resting voltage, charge current, temperature, SOC/monitor readings, abnormal heat/noise/smell, and stop conditions for each battery.
+- Log starting/resting voltage, charge current, temperature, SOC/monitor readings, abnormal heat/noise/smell, input-current limit, and stop conditions.
+
+Current result (`2026-05-27`):
+- Short AC-in test passed at limited household-outlet draw: about `1294W` shore input and about `54.3V x 21.6A` (`~1173W`) battery charging in bulk.
+- This is a functional test only; the MultiPlus battery profile still needs formal programming/verification before unattended or extended charging.
 
 Pass when:
-- Each battery charges normally with no unexplained BMS trips, abnormal heat, polarity issues, or AC faults, and the three batteries are close enough to parallel per battery/manual procedure.
+- Shore charging repeats normally with programmed battery settings, no unexplained BMS trips, abnormal heat, polarity issues, or AC faults, and logged values match expected limits.
 
 ### T3: 12V distribution validation
 - Validate Orion-fed `12V` junction behavior and branch fusing.
@@ -218,7 +229,8 @@ Use one card per session:
 ## 7) Hold points (do not cross yet)
 
 - Do not finalize shell-dependent cable cuts.
-- Do not parallel the three `48V` batteries until each has been individually charged/tested and voltage/SOC matching is documented.
+- Do not run sustained/unattended MultiPlus charging until the charger profile is programmed/verified against the battery manual.
+- Do not treat the short AC-in charge test as AC-out branch commissioning; GFCI/outlet validation remains separate.
 - Do not lock roof/solar final terminations.
 - Do not permanently close access panels before all staged tests pass.
 - Do not use main `48V` disconnect as first alternator shutdown method while charging is active; use `Upfitter #3` (`WS500` disable path) first.

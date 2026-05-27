@@ -6,7 +6,7 @@ flowchart LR
         UP3["Ford Upfitter Switch #3\n(factory relay output)"]
         F15["F-15 3A inline fuse\nWS500 ignition/enable control"]
         ALT48 -. "field/stator/sense harness" .- WS500
-        WS500 -. "F-12/F-13/F-14 fused leads" .- ALT48
+        WS500 -. "F-12/F-13 fused leads; current-sense pair unfused" .- ALT48
         UP3 -. "12V control feed" .-> F15 -. "brown ignition/enable wire" .-> WS500
     end
 
@@ -32,7 +32,8 @@ flowchart LR
         F04["F-04 150A MEGA\nLynx Slot 3 alternator branch"]
         MULTI["MultiPlus-II\n48/3000/35-50"]
         ORION["Orion-Tr Smart 48/12-30\nIsolated charger"]
-        F06["F-06 30A MIDI (58V)\n04980921GXM5 inline holder"]
+        SLOT4["Lynx Slot 4\nopen spare fused position\n(no Orion MEGA installed)"]
+        F06["F-06 Orion 48V input fuse\ninterim 30A 58V MIDI; final 20A 80V FKS/ATO"]
     end
 
     BATA -- "2/0 AWG +, ~2.5 ft" --> F01A --> POSBUS
@@ -58,5 +59,6 @@ flowchart LR
     APM48 -- "2/0 AWG short link" --> F04 --> LYNX
     ALT48 -- "B- dedicated 2/0 AWG, ~20 ft (ASSUMED)" --> LYNX
 
-    LYNX -- "Slot 4: F-05 40A MEGA\n6 AWG, ~2.5 ft" --> F06 --> ORION
+    LYNX -. "Slot 4 left open; no Orion MEGA fuse" .- SLOT4
+    LYNX -- "48V+ bus tap: F-06 source fuse\n6 AWG, ~2.5 ft; keep source-side lead short" --> F06 --> ORION
     ORION -- "48V input - (6 AWG, ~2.5 ft)" --> LYNX

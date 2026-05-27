@@ -76,7 +76,7 @@ Bench-test intent: validate wiring correctness and basic device behavior (shunt,
 6. Close disconnect: turn main disconnect `ON` while pre-charge lead remains attached.
 7. Remove pre-charge lead: remove battery-side clip first, then load-side clip.
 8. Do not use bare wire "touch" methods for pre-charge bypass.
-- Functional checks: verify SmartShunt reads voltage correctly, Orion outputs stable `12V` under load, MultiPlus inverts correctly into a small known load, and MultiPlus charges correctly when AC-in is applied.
+- Functional checks: verify SmartShunt reads voltage correctly, Orion outputs stable `12V` under load, MultiPlus inverts correctly into a small known load, and MultiPlus charges correctly when AC-in is applied. For the current build, SmartShunt and Orion have been verified in VictronConnect and MultiPlus inverter/limited shore-charge behavior has passed a first-live check.
 - Alternator-control check (when the secondary alternator path is installed): confirm `Upfitter #3 ON` enables the WS500 brown ignition/enable wire and `Upfitter #3 OFF` disables regulator output before using the main `48V` disconnect as a service step.
 - 12V mode checks:
 1. Orion-only mode (service validation): open `SW-12V-BATT`, keep Orion active, and verify 12V panel remains stable under expected baseline load.
@@ -85,7 +85,28 @@ Bench-test intent: validate wiring correctness and basic device behavior (shunt,
 - Shutdown check: open `48V` disconnect and confirm the system de-energizes as expected; verify no unintended return paths bypass shunt measurement.
 - Alternator-fault shutdown rule: if a battery pack trips or alternator charging fault is suspected while the engine is running, switch `Upfitter #3 OFF` first, wait for alternator charge current to collapse, then open the main `48V` disconnect only if full house shutdown is still required.
 
-### Propane-specific checks
+## Electrical operating quick cards (`2026-05-27`)
+### Normal 48V startup / inverter use
+1. Shore unplugged unless deliberately testing shore.
+2. Main `48V` disconnect closed after pre-charge when large capacitive loads are connected.
+3. MultiPlus switch `I` for normal inverter/charger operation.
+4. Verify SmartShunt/Cerbo values and check for abnormal heat/smell/noise.
+
+### Normal power-down / de-energize for bench storage
+1. Turn MultiPlus switch to `O`.
+2. Disable Orion if needed for the test/storage state.
+3. De-energize/unplug shore source if connected.
+4. Wait `30-60s`.
+5. Open the main `48V` disconnect.
+6. Treat Lynx/load-side voltage as live until the meter shows near zero; residual voltage after disconnect-open can be normal capacitor bleed-down.
+
+### Shore connect/disconnect
+- Connect order: RV/load side and EMS path first, then energize the shore source.
+- Disconnect order: de-energize/unplug the shore source first, then disconnect the RV/load side.
+- Household `15A` source policy: `10A` first test, `12A` maximum normal limit.
+- Do not use sustained/unattended shore charging until the MultiPlus LiFePO4 profile is programmed/verified.
+
+## Propane-specific checks
 - Tank bracket tight, valve accessible, and hose routing clear of heat/chafe zones.
 - No propane odor before opening cabin; if odor exists, keep system off and ventilate.
 - Leak-check propane path after any fitting change and before travel segments with planned propane use.
