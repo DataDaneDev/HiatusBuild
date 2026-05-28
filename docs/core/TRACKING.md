@@ -350,9 +350,9 @@ related:
 - Date: 2026-04-27
 - Decision: Decouple cold-water galley progress from final water-heater selection.
 - Context: Faucet is missing, and water heater decision fatigue risks blocking pump/tank/sink progress.
-- Options considered: electric tankless, small tanked electric, portable outdoor propane, listed indoor/RV propane, or cold-water-first with future hot tie-in.
+- Options considered: electric tankless, small tanked electric, portable outdoor propane, listed indoor/RV propane, engine-coolant marine calorifier, or cold-water-first with future hot tie-in.
 - Decision drivers: current inverter scale, safety, and schedule.
-- Result: Build toward cold-water tank/pump/faucet/sink/drain baseline with capped future hot tie-in; treat portable propane as outdoor-only provisional and defer electric tanked/listed indoor propane until service-map freeze.
+- Result: Build toward cold-water tank/pump/faucet/sink/drain baseline with capped future hot tie-in; treat portable propane as outdoor-only provisional and defer electric tanked/listed indoor propane/engine-coolant calorifier until service-map freeze. As of `2026-05-28`, the engine-coolant option remains physically plausible because the Hiatus is a topper over the retained F-350 bed, so coolant lines could route through bed/floor structure rather than the removable shell.
 - Follow-up: add discrete BOM rows for faucet/sink/drain/propane support classes and lock graywater/winterization details.
 
 - ID: D-037
