@@ -1,3 +1,9 @@
+## 2026-05-27 — Amazon comms/programming and prototype hardware purchase logged
+- Owner purchased the immediate Amazon procurement wave; private order/payment/address details were intentionally not copied into public docs. Order subtotal basis for build tracking: `$171.17` before tax (`$183.57` total with estimated tax).
+- Build-relevant electrical items purchased: Victron `MK3-USB-C` interface (`$59.44`), VE.Direct cable `5.90 ft` (`$16.31`), VE.Direct cable `2.95 ft` (`$16.13`), and one `3 ft` manufactured RJ45/Ethernet patch cable (`$5.99`).
+- Plumbing/interior/support items purchased: `10 mm ID x 13 mm OD` food-grade silicone vent hose/clamp kit (`$10.99`), one Acegoo `118W` 12V USB-C/USB-A PD outlet (`$22.99`), countersunk cup magnets (`$12.34`), magnetic accessory mount (`$9.99`), and steel weld tabs/brackets (`$16.99`).
+- BOM/procurement impact: rows `115`, `183`, `184`, `185`, and `186` updated; row `187` added for gravity-fill vent hose/clamps. MultiPlus sustained shore charging remains gated on programming/verification, not merely owning the MK3.
+
 ## 2026-05-27 — Repo freshness maintenance after first-live checkpoint
 - Refreshed stale top-level and active-plan posture after the first live `48V`/MultiPlus/Cerbo/shore checkpoint.
 - Updated procurement guidance to prioritize `MK3-USB`, Victron comms cables, board mounting/strain-relief hardware, Orion final `F-06` cleanup, and WS500 low-current fuse-holder validation.

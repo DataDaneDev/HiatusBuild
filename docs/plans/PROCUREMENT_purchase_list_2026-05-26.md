@@ -1,4 +1,4 @@
-# Procurement Purchase List — refreshed 2026-05-27
+# Procurement Purchase List — refreshed 2026-05-28
 
 Purpose: short-term buy list for finishing the live-tested electrical board as a hard-mounted, strain-relieved mobile module, plus only the supporting interior/prototype items that should not block that work.
 
@@ -6,41 +6,39 @@ Scope note: this is a purchase aid, not a final cut list. Do not order final ext
 
 ## Priority order
 
-1. MultiPlus programming path and Victron/Cerbo communication cables.
-2. Electrical-board hard-mount, protection, labeling, strain-relief, and abrasion-control hardware.
+1. Program/verify MultiPlus with the purchased `MK3-USB-C`; do not treat sustained shore charging as commissioned until settings are verified.
+2. Finish electrical-board hard-mount, protection, labeling, strain-relief, and abrasion-control hardware after checking what is now on hand.
 3. Mouser fuse cleanup parts for Orion final `F-06` and WS500 low-current circuits.
-4. Gravity-fill vent hose and clamps.
-5. Prototype-only 80/20/TNutz stock after electrical-board positions are mechanically proven.
-6. Diesel heater tank later, after physical re-measurement.
+4. Prototype-only 80/20/TNutz stock after electrical-board positions are mechanically proven.
+5. Diesel heater tank later, after physical re-measurement.
 
 ## Amazon / Victron purchase list
 
 ### MultiPlus programming + Victron/Cerbo wiring
 
-- **MK3-USB interface**
-  - Buy: Victron `MK3-USB` interface.
-  - Use: program/verify MultiPlus LiFePO4 charger settings with VEConfigure before sustained or unattended shore charging.
-  - Status: priority purchase; this is the main blocker to treating shore charging as fully commissioned.
+- **MK3-USB-C interface**
+  - Purchased: Victron `MK3-USB-C` interface on `2026-05-27` (`$59.44`).
+  - Use: program/verify MultiPlus LiFePO4 charger settings with VEConfigure/VictronConnect before sustained or unattended shore charging.
+  - Status: hardware purchased; commissioning blocker remains **settings verification**, not procurement.
 
 - **SmartShunt to Cerbo VE.Direct cable**
-  - Buy: Victron VE.Direct cable, `1.8 m / 5.9 ft`.
-  - Link: <https://www.amazon.com/Victron-VE-Direct-Cable-1-8m/dp/B01CPWVTS2>
-  - Reason: safer routing margin than a too-short cable for SmartShunt placement.
+  - Purchased: Victron VE.Direct cable, `5.90 ft` on `2026-05-27` (`$16.31`).
+  - Use: SmartShunt-to-Cerbo monitoring link.
 
 - **MPPT to Cerbo VE.Direct cable**
-  - Buy: Victron VE.Direct cable, `0.3 m / 0.98 ft`, only if the final MPPT/Cerbo positions are close.
-  - Link: <https://www.amazon.com/Victron-VE-Direct-Cable-0-3m/dp/B01F9ESER2>
-  - Fallback: buy a longer Victron VE.Direct cable if final board routing needs slack.
+  - Purchased: Victron VE.Direct cable, `2.95 ft` on `2026-05-27` (`$16.13`).
+  - Use: MPPT-to-Cerbo link if routing works; otherwise keep as service/spare and buy a longer VE.Direct cable only if the final board layout needs more slack.
 
-- **Short VE.Bus/RJ45 patch cables**
-  - Buy: straight-through Cat6/RJ45 patch cables in `1 ft` and `3 ft` lengths.
-  - Link/search: <https://www.amazon.com/s?k=1+foot+cat6+patch+cable>
-  - Link/search: <https://www.amazon.com/s?k=3+foot+cat6+patch+cable>
-  - Use: Cerbo VE.Bus to MultiPlus and spare short service routing option. Do **not** use the Cerbo LAN port for VE.Bus.
+- **Short VE.Bus/RJ45 patch cable**
+  - Purchased: one manufactured RJ45/Ethernet patch cable, `3 ft`, on `2026-05-27` (`$5.99`).
+  - Use: Cerbo VE.Bus to MultiPlus or MK3 service path. Do **not** use the Cerbo LAN port for VE.Bus.
+  - Optional: buy a second short spare/service cable later only if the single `3 ft` cable is inconvenient during MK3 programming.
 
 Existing/on-hand reminder: Cerbo power input cable with inline fuse and `2x` VE.Can RJ45 terminators are already accounted for; no CAN bus is currently planned.
 
 ### Electrical-board mobile-module cleanup
+
+2026-05-27 Amazon order added prototype mounting/accessory hardware: countersunk neodymium cup magnets, magnetic accessory mount, and steel weld tabs/brackets. Still verify the boring board-cleanup consumables below from on-hand stock before buying duplicates.
 
 - **Rubber grommet assortment**
   - Buy if current stock is thin: mixed firewall/pass-through grommets sized for AC/DC cable entry points.
@@ -67,8 +65,7 @@ Existing/on-hand reminder: Cerbo power input cable with inline fuse and `2x` VE.
 Known interface: gravity-fill vent nipple measured around `10 mm OD` on the main land and about `11 mm OD` at the largest barb/ridge.
 
 - **Preferred hose**
-  - Buy: `10 mm ID` food-grade/potable flexible tube.
-  - Link/search: <https://www.amazon.com/s?k=10mm+ID+food+grade+silicone+tubing>
+  - Purchased: `10 mm ID x 13 mm OD`, `10 ft` food-grade silicone tube with stainless worm-gear clamps on `2026-05-27` (`$10.99`).
 
 - **Common fallback**
   - Buy: `3/8 in ID` food-grade/potable tube; warm the hose if needed to install over the ~`11 mm` barb/ridge.
@@ -76,9 +73,8 @@ Known interface: gravity-fill vent nipple measured around `10 mm OD` on the main
   - Stiffer/less kink-prone search: <https://www.amazon.com/s?k=3%2F8+ID+food+grade+braided+PVC+tubing>
 
 - **Clamps**
-  - Buy: small stainless hose clamps sized to the installed hose OD, not just the barb OD.
-  - Likely search range: `10-16 mm`, but verify against the actual tube OD selected.
-  - Link/search: <https://www.amazon.com/s?k=stainless+hose+clamps+10-16mm>
+  - Purchased with hose kit; verify clamp range against installed `13 mm OD` tube.
+  - If included clamps do not tighten cleanly, replace with small stainless clamps sized to the installed hose OD.
 
 - **Avoid**
   - Do not use the previous `1/2 in ID x 5/8 in OD` tube for this vent nipple; it is too large.
@@ -164,10 +160,23 @@ Ordering posture: prototype material only. Do **not** buy the old broad `8x 92 i
 - Solar panels, PV combiner, and PV string fuses until shore/alternator charging are more proven and the roof passthrough/service-loop strategy is reopened.
 - Custom/fancy bracket packs beyond prototype hardware.
 
+## 2026-05-27 Amazon purchase captured
+
+Purchased/order subtotal: `$171.17` before tax (`$183.57` total with estimated tax). Public docs intentionally omit order number, address, and payment details.
+
+Build-relevant items captured in BOM/log:
+
+- Victron `MK3-USB-C` interface — `$59.44`.
+- Victron VE.Direct cable, `5.90 ft` — `$16.31`.
+- Victron VE.Direct cable, `2.95 ft` — `$16.13`.
+- RJ45/Ethernet patch cable, `3 ft` — `$5.99`.
+- Food-grade silicone vent hose/clamp kit, `10 mm ID x 13 mm OD`, `10 ft` — `$10.99`.
+- Acegoo `118W` 12V USB-C/USB-A PD outlet, qty `1` — `$22.99`.
+- Prototype mounting/accessory hardware: cup magnets (`$12.34`), magnetic accessory mount (`$9.99`), steel weld tabs/brackets (`$16.99`).
+
 ## Validation gates before next procurement round
 
-- Confirm final electrical-board component positions before buying additional exact-length data/communication cables.
-- Program/verify MultiPlus charger settings with MK3/VEConfigure before relying on sustained shore charging.
+- Program/verify MultiPlus charger settings with the purchased MK3 before relying on sustained shore charging.
 - Mount the electrical board hardware and verify service access, cable bends, fuse access, covers, labels, and strain relief.
 - Dry-fit vent hose and clamp; verify no leak and no vent restriction.
 - Physically re-measure diesel tank envelope before ordering tank hardware.
