@@ -34,7 +34,7 @@ related:
 - Solar option screening matrix (stringing + MPPT fit flags): [SOLAR_configuration_matrix](../studies/SOLAR_configuration_matrix.md)
 - Electrical decisions, risks, and unresolved items: [TRACKING](TRACKING.md)
 
-### Planning snapshot (base model as-of `2026-05-27`)
+### Planning snapshot (base model as-of `2026-05-28`)
 - Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).
 - House architecture: `48V` core with Orion-Tr Smart `48V->12V` charging/step-down feeding a shared battery-backed `12V` junction.
 - Inverter/charger: Victron MultiPlus-II `48/3000/35-50`, DC/inverter mode live-tested with no observed errors.
@@ -50,7 +50,7 @@ related:
 - Cerbo GX is powered from the `48V` system through a small inline fused feed and uses `VE.Bus`/RJ45 to the MultiPlus; its Wi-Fi access point/remote-console workflow is active.
 - AC input source type should be labeled `Shore power`, not generic `Grid`, for the mobile source-current-limited workflow.
 - Household-outlet shore test used a reduced MultiPlus input-current limit (`10A` first test / `12A` maximum policy on a `15A` circuit). Observed values were about `1294W` shore input and about `54.3V x 21.6A` (`~1173W`) battery charge in bulk.
-- Treat the short shore-charge result as a functional test only until the MultiPlus battery charge profile is programmed/verified against the Dumfume manual. Leave `DVCC` disabled unless a documented BMS/GX control path is added.
+- Treat the short shore-charge result as a functional test only until the MultiPlus battery charge profile is programmed/verified against the Dumfume manual: absorption/charge voltage `58.4V` (`+/-0.2V`), equalization off, charger current within the three-battery bank limit, and source-current limit set for the actual shore outlet. Leave `DVCC` disabled unless a documented BMS/GX control path is added.
 - Normal shutdown/de-energize for the current bench system: MultiPlus `O`, disable Orion if needed, de-energize/unplug shore, wait briefly, then open the main `48V` disconnect. Residual voltage on the Lynx/load side with the disconnect open is expected from device capacitance but must be treated as live until metered near zero.
 
 ### Modeling rules (procurement-first plus full-load)
@@ -63,7 +63,7 @@ related:
 ### Input reference (maintained)
 | Input | Current value | Source |
 | --- | --- | --- |
-| Battery bank | `3x Dumfume 51.2V 100Ah` (`1S3P`; manual allows up to `1S4P`) | `bom/bom_estimated_items.csv` row 3 + `references/Dunfume_36V_48V_100Ah_Battery_-_User_Manual.pdf` |
+| Battery bank | `3x Dumfume 51.2V 100Ah` (`1S3P`; manual allows up to `1S4P`). Per battery: charge voltage `58.4V +/-0.2V`; recommended charge current `20A`; max continuous charge `100A`; recommended discharge `50A`; max continuous discharge `200A`; over-discharge protect/recover `36.8V`/`43.2V`; discharge overcurrent `600A`; short-circuit `1800A`; low-temp charge protection approx `41F-50F`, recovery at `50F`; high-temp protection `157F`/`140F`. | `bom/bom_estimated_items.csv` row 3 + `references/Dunfume_36V_48V_100Ah_Battery_-_User_Manual.pdf` |
 | Inverter/charger | MultiPlus-II `48/3000/35-50` | `bom/bom_estimated_items.csv` row 12 |
 | Alternator charging | Dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) with `Upfitter #3 -> WS500 brown ignition` manual control and Lynx Slot 3 alternator branch fuse lock | `bom/bom_estimated_items.csv` rows `168-171`, `176` + `docs/core/ELECTRICAL_48V_ARCHITECTURE.md` |
 | Obsolete pre-Mechman alternator charger/remote | Returned/obsolete; not part of primary layout, fuse planning, or commissioning | `bom/bom_estimated_items.csv` rows `18` and `26` |
@@ -137,16 +137,16 @@ Solar remains deferred until shore charging and alternator charging are working.
 - Obsolete pre-Mechman alternator-charger hardware is returned/removed from active planning and should not appear in primary fuse/layout decisions.
 
 #### Shore charging (MultiPlus-II charger path)
-- Charger limit from model string: `35A`; final charge voltage/current must be configured from the Dumfume manual before sustained charging.
+- Charger limit from model string: `35A`; Dumfume manual charge target is `58.4V +/-0.2V`. For the `3x` bank, manual-backed current references are `60A` recommended charge total and `300A` max continuous charge total, so the MultiPlus `35A` maximum is within battery-bank limits.
 - Current first-live result: AC-in shore charging was proven at household-outlet limits with MultiPlus input limit reduced (`10A` first test; `12A` policy ceiling on a `15A` circuit). Reported Cerbo values were about `1294W` from shore and about `54.3V x 21.6A` into the battery bank in bulk.
-- Required before unattended or extended charging: program/verify MultiPlus LiFePO4 charge profile with `MK3-USB + VEConfigure` or equivalent; set absorption/float to manual values, equalization off, lithium temperature compensation behavior confirmed, and charger current conservative.
+- Required before unattended or extended charging: program/verify MultiPlus LiFePO4 charge profile with `MK3-USB + VEConfigure` or equivalent; set absorption/charge voltage to `58.4V`, use a conservative LiFePO4 float/storage value, equalization off, lithium temperature compensation behavior disabled/confirmed, and charger current at or below the MultiPlus `35A` limit.
 - `DVCC` remains disabled in the current architecture because there is no documented BMS-to-GX control path.
 - AC input current policy: label AC Input 1 as `Shore power`; use `10A` for first tests and `12A` maximum on a normal `15A` household circuit; use the actual pedestal/source rating for `20A`/`30A` sources.
-- Ideal bulk-only recharge times at `56.8V` planning basis remain reference-only until measured charge logs replace them:
-- Replace one `core_workday`: `1.78h`.
-- Replace one `winter_workday`: `2.11h`.
-- Recharge full `3x` bank from `20%` to `100%`: `6.18h`.
-- Recharge one `48V 100Ah` battery from `20%` to `100%`: about `2.06h` ideal bulk-only.
+- Ideal bulk-only recharge times at `58.4V` charge target and `35A` charger limit remain reference-only until measured charge logs replace them:
+- Replace one `core_workday`: `1.73h`.
+- Replace one `winter_workday`: `2.06h`.
+- Recharge full `3x` bank from `20%` to `100%`: `6.01h`.
+- Recharge one `48V 100Ah` battery from `20%` to `100%`: about `2.00h` ideal bulk-only.
 - Real-world times are longer due to absorption taper near full charge, reduced household input-current limits, and any configured charge-current derate.
 
 ### Operational implications and constraints

@@ -22,7 +22,7 @@ related:
 - Keep unresolved vendor gates, risk state, and follow-up closure items in `docs/core/TRACKING.md`.
 - Keep broad project sequencing and day-to-day execution framing in `docs/core/PROJECT.md` or the active plan docs.
 
-As-of date: `2026-05-27`
+As-of date: `2026-05-28`
 
 Purpose: hold the finalized, concise `48V` house and alternator architecture in one place so wiring, protection, shutdown behavior, and BOM references are easy to understand without re-reading the historical trade studies.
 
@@ -47,7 +47,7 @@ Related docs:
 - SmartShunt and Orion-Tr Smart are visible in VictronConnect.
 - Cerbo GX access point/remote-console workflow is active; Cerbo power is a small inline fused feed from the `48V` system side and MultiPlus communication is via `VE.Bus` RJ45.
 - Shore charging has been short-tested through the MultiPlus at household-outlet current limits. This proves basic AC-in/charger function, not final charge-profile correctness.
-- Do not treat the charger as commissioned for unattended/sustained use until the MultiPlus LiFePO4 charge profile is programmed/verified against the Dumfume manual. `DVCC` remains disabled unless a documented BMS/GX control path is added.
+- Do not treat the charger as commissioned for unattended/sustained use until the MultiPlus LiFePO4 charge profile is programmed/verified against the Dumfume manual: `58.4V +/-0.2V` charge/absorption target, equalization off, conservative LiFePO4 float/storage behavior, and source-current limit matched to the actual shore circuit. `DVCC` remains disabled unless a documented BMS/GX control path is added.
 - AC-out branch/GFCI commissioning and secondary-alternator commissioning are still separate future gates.
 
 ## Locked component set
@@ -56,7 +56,7 @@ Related docs:
 | House batteries | `3x` Dumfume `51.2V 100Ah` LiFePO4 | `3` |
 | Main house disconnect | Victron `275A` battery switch | `5` |
 | Main fused distribution | Victron Lynx Distributor `M10` | `6` |
-| Battery branch protection | `F-01A/B/C` `200A` Class T (provisional pending final battery limit confirmation); owner confirmed `3` holders and `4` slow-blow Class T fuses total | `7` |
+| Battery branch protection | `F-01A/B/C` `200A` Class T; manual-backed battery limit is `200A` max continuous discharge per battery, with terminal/manufacturer fuse guidance still not separately specified; owner confirmed `3` holders and `4` slow-blow Class T fuses total | `7` |
 | Inverter/charger | MultiPlus-II `48/3000/35-50` | `12` |
 | 48V to 12V charger | Orion-Tr Smart `48/12-30`; fed from Lynx `48V+` bus tap through standalone `F-06` (`30A 58V` MIDI interim, `20A 80V` FKS/ATO final); Lynx Slot 4 remains open | `20`, `11`, `133`, `182` |
 | Monitoring | Cerbo GX + SmartShunt `300A` | `22`, `23` |
@@ -65,6 +65,15 @@ Related docs:
 | Alternator branch fuse | `F-04` `150A` MEGA (`58V/80V`) in Lynx Slot 3 | `170` |
 | WS500 low-current fuse set | `F-12` regulator power + `F-13` positive voltage sense; current-sense pair is unfused per current manual | `171` |
 | WS500 Upfitter #3 control kit | `F-15` + control wire + holder/terminals | `176` |
+
+## Battery manual limits and charger-programming baseline
+- Battery model basis: Dumfume `51.2V 100Ah` LiFePO4, `3x` in parallel (`1S3P`; manual allows up to `1S4P`).
+- Per-battery charge voltage: `58.4V +/-0.2V`; charge-limit/over-charge protection voltage also listed as `58.4V`.
+- Per-battery current references: recommended charge `20A`; max continuous charge `100A`; recommended discharge `50A`; max continuous discharge `200A`.
+- Bank-level reference for current `3x` setup: recommended charge `60A`; max continuous charge `300A`; recommended discharge `150A`; max continuous discharge `600A`.
+- Protection thresholds: over-discharge protection `36.8V`, recovery `43.2V`; discharge overcurrent protection `600A`; short-circuit protection `1800A`.
+- Temperature thresholds: low-temp charge protection approx `41F-50F` with recovery at `50F`; high-temp protection listed as `157F`/`140F`.
+- MultiPlus-II charger limit is `35A`, so full-output charging is below the bank's `60A` recommended-charge reference. For first household-outlet tests, keep AC input current at `10A`, then `12A` max on a normal `15A` source.
 
 ## 48V power path
 ```mermaid
