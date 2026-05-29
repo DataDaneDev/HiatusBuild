@@ -106,6 +106,54 @@ Bench-test intent: validate wiring correctness and basic device behavior (shunt,
 - Household `15A` source policy: `10A` first test, `12A` maximum normal limit.
 - Do not use sustained/unattended shore charging until the MultiPlus LiFePO4 profile is programmed/verified.
 
+### MultiPlus-II factory/default screenshot baseline (`2026-05-28`)
+Use this only as a manual rollback reference if the MultiPlus settings need to be reconstructed from the owner screenshots. It is **not** the active Hiatus charging profile.
+
+- General/defaults captured:
+  - System frequency: `60Hz`.
+  - AC1 input current limit: factory/default high source limit; reduce to `10A` first test / `12A` household policy before shore use.
+  - Dynamic current limit: `Off`.
+  - External current sensor connected: `Off`.
+  - Enable battery monitor: `Off`.
+- Inverter/defaults captured:
+  - Inverter output voltage: `120V`.
+  - DC input low-shutdown: `37.2V`.
+  - Ground relay: `On`.
+  - AES: `Off`.
+  - PowerAssist: `On`.
+  - Assist current boost factor: `2.0`.
+- Charger/defaults captured:
+  - Charger enabled: `On`.
+  - Charge current: `35A`.
+  - Absorption voltage: `57.60V`.
+  - Float voltage: `55.20V`.
+  - Repeated absorption interval: `7 days`.
+  - Repeated absorption time: `1.00h`.
+  - Maximum absorption time: `8.00h`.
+  - Low-temperature cutoff: disabled / not set.
+  - Lithium batteries: `On`.
+  - Storage mode: `Off`.
+  - Use equalization: `Off`.
+  - Weak AC input: `Off`.
+  - Stop after excessive bulk: default captured from screenshot; verify in app if reconstructing exactly.
+  - Disable VSense: `Off`.
+- AC input control/defaults captured:
+  - Conditional AC input connection: `Off`.
+  - Load/SOC/voltage-based AC input connection rules: disabled while conditional mode is off.
+  - Voltage threshold shown in disabled section included `64.00V`; ignore while conditional mode is off.
+
+### Active MultiPlus-II Hiatus programming target (`2026-05-28`)
+- Battery type/profile: LiFePO4 / user-defined.
+- Absorption/charge voltage: `58.4V`.
+- Float voltage: `54.0V`.
+- Storage voltage if shown: `52.8V`.
+- Maximum absorption time: `1.0h` (`0.5h` acceptable for first cautious test).
+- Charge current: `35A`.
+- Equalization / automatic equalization: `Off`.
+- Temperature compensation: `Off`; low-temp charge cutoff `10C / 50F` if available.
+- Inverter low-voltage protection target: pre-alarm `46.0V`, shutdown `44.0V`, restart `48.0V`.
+- PowerAssist: `Off` for first clean shore test or use rocker `II` charger-only; may be re-enabled later deliberately.
+
 ## Propane-specific checks
 - Tank bracket tight, valve accessible, and hose routing clear of heat/chafe zones.
 - No propane odor before opening cabin; if odor exists, keep system off and ventilate.

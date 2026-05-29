@@ -1,3 +1,7 @@
+## 2026-05-28 — MultiPlus default screenshot rollback values captured
+- Added `docs/core/OPERATIONS.md` rollback reference for the visible MultiPlus-II factory/default values from owner screenshots, plus the active Hiatus programming target for the Dumfume `3x 51.2V 100Ah` bank.
+- Key default values preserved for manual reconstruction include charger `57.60V` absorption, `55.20V` float, `8h` max absorption, inverter low-shutdown `37.2V`, `120V` output, PowerAssist `On`, and conditional AC input control `Off`.
+
 ## 2026-05-28 — Dumfume battery manual limits and MultiPlus programming baseline captured
 - Owner provided live battery-manual values while programming the MultiPlus via MK3: `51.2V 100Ah`, recommended charge voltage `58.4V +/-0.2V`, charge-limit/over-charge protection voltage `58.4V`, recommended charge current `20A`, max continuous charge current `100A`, recommended discharge current `50A`, max continuous discharge current `200A`, over-discharge protection/recovery `36.8V`/`43.2V`, discharge overcurrent protection `600A`, short-circuit protection `1800A`, low-temp charge protection approx `41F-50F` with recovery at `50F`, and high-temp protection `157F`/`140F`.
 - Current `3x` bank reference: `60A` recommended charge total and `300A` max continuous charge total; the MultiPlus-II `48/3000/35-50` `35A` charger limit is within that envelope.
