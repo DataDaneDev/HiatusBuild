@@ -144,11 +144,11 @@ Use this only as a manual rollback reference if the MultiPlus settings need to b
 
 ### Active MultiPlus-II Hiatus programming target (`2026-05-28`)
 - Battery type/profile: LiFePO4 / user-defined.
-- Absorption/charge voltage: `58.4V`.
+- Absorption/charge voltage: `56.8V` for current commissioning. The Dumfume manual lists `58.4V +/-0.2V`, but it also lists `58.4V` as the charge-limit/over-charge protection voltage; do not use the BMS protection ceiling as the routine charger target while the bank is showing top-end protection behavior.
 - Float voltage: `54.0V`.
 - Storage voltage if shown: `52.8V`.
-- Maximum absorption time: `1.0h` (`0.5h` acceptable for first cautious test).
-- Charge current: `35A`.
+- Maximum absorption time: `0.5h`; reduce to `0.25h` if the bank still trips near full. Do not use the captured factory/default `8.0h` absorption dwell for LiFePO4 commissioning.
+- Charge current: `35A` when all `3` house batteries are paralleled (`~11.7A` each); if charging a single battery by itself, cap charger current at `20A` for the first test.
 - Equalization / automatic equalization: `Off`.
 - Temperature compensation: `Off`; low-temp charge cutoff `10C / 50F` if available.
 - Inverter low-voltage protection target: pre-alarm `46.0V`, shutdown `44.0V`, restart `48.0V`.

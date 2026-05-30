@@ -47,7 +47,7 @@ Related docs:
 - SmartShunt and Orion-Tr Smart are visible in VictronConnect.
 - Cerbo GX access point/remote-console workflow is active; Cerbo power is a small inline fused feed from the `48V` system side and MultiPlus communication is via `VE.Bus` RJ45.
 - Shore charging has been short-tested through the MultiPlus at household-outlet current limits. This proves basic AC-in/charger function, not final charge-profile correctness.
-- Do not treat the charger as commissioned for unattended/sustained use until the MultiPlus LiFePO4 charge profile is programmed/verified against the Dumfume manual: `58.4V +/-0.2V` charge/absorption target, equalization off, conservative LiFePO4 float/storage behavior, and source-current limit matched to the actual shore circuit. `DVCC` remains disabled unless a documented BMS/GX control path is added.
+- Do not treat the charger as commissioned for unattended/sustained use until the MultiPlus LiFePO4 charge profile is programmed/verified by live test. Current commissioning target is `56.8V` absorption/charge, `54.0V` float, short absorption dwell, equalization off, conservative LiFePO4 storage behavior, and source-current limit matched to the actual shore circuit. The Dumfume manual's `58.4V +/-0.2V` value is documented, but because the same manual also lists `58.4V` as charge-limit/over-charge protection voltage, it is not the active routine charger target while top-end BMS protection behavior is being seen. `DVCC` remains disabled unless a documented BMS/GX control path is added.
 - AC-out branch/GFCI commissioning and secondary-alternator commissioning are still separate future gates.
 
 ## Locked component set
@@ -73,7 +73,7 @@ Related docs:
 - Bank-level reference for current `3x` setup: recommended charge `60A`; max continuous charge `300A`; recommended discharge `150A`; max continuous discharge `600A`.
 - Protection thresholds: over-discharge protection `36.8V`, recovery `43.2V`; discharge overcurrent protection `600A`; short-circuit protection `1800A`.
 - Temperature thresholds: low-temp charge protection approx `41F-50F` with recovery at `50F`; high-temp protection listed as `157F`/`140F`.
-- MultiPlus-II charger limit is `35A`, so full-output charging is below the bank's `60A` recommended-charge reference. For first household-outlet tests, keep AC input current at `10A`, then `12A` max on a normal `15A` source.
+- MultiPlus-II charger limit is `35A`, so full-output charging is below the bank's `60A` recommended-charge reference (`~11.7A` per battery in `3P`). For first household-outlet tests, keep AC input current at `10A`, then `12A` max on a normal `15A` source. Current charger-programming target is `56.8V` absorption/charge, `54.0V` float, `52.8V` storage if shown, `0.5h` max absorption, equalization off, and temperature compensation off.
 
 ## 48V power path
 ```mermaid

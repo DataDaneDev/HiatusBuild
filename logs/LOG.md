@@ -1,3 +1,8 @@
+## 2026-05-30 — MultiPlus charge target lowered after top-end BMS trip theory
+- Revised active MultiPlus-II commissioning profile for the Dumfume `3x 51.2V 100Ah` bank after live symptoms pointed toward top-end BMS charge protection.
+- Key decision: use `56.8V` absorption/charge, `54.0V` float, `52.8V` storage if shown, `0.5h` max absorption, equalization off, temperature compensation off, and `35A` charger current only when all three batteries are paralleled. If testing one battery alone, cap charger current at `20A`.
+- Rationale: the Dumfume manual lists `58.4V +/-0.2V` as a charge value but also lists `58.4V` as charge-limit/over-charge protection, leaving no practical voltage margin; the current target keeps the charger below the BMS protection ceiling rather than using the BMS as normal charge termination.
+
 ## 2026-05-28 — MultiPlus default screenshot rollback values captured
 - Added `docs/core/OPERATIONS.md` rollback reference for the visible MultiPlus-II factory/default values from owner screenshots, plus the active Hiatus programming target for the Dumfume `3x 51.2V 100Ah` bank.
 - Key default values preserved for manual reconstruction include charger `57.60V` absorption, `55.20V` float, `8h` max absorption, inverter low-shutdown `37.2V`, `120V` output, PowerAssist `On`, and conditional AC input control `Off`.
