@@ -142,19 +142,20 @@ Use this only as a manual rollback reference if the MultiPlus settings need to b
   - Load/SOC/voltage-based AC input connection rules: disabled while conditional mode is off.
   - Voltage threshold shown in disabled section included `64.00V`; ignore while conditional mode is off.
 
-### Active MultiPlus-II Hiatus programming target (`2026-05-28`)
+### Active MultiPlus-II Hiatus charging profile (`2026-05-30`)
 - Battery type/profile: LiFePO4 / user-defined.
-- Absorption/charge voltage: `56.8V` for current commissioning. The Dumfume manual lists `58.4V +/-0.2V`, but it also lists `58.4V` as the charge-limit/over-charge protection voltage; do not use the BMS protection ceiling as the routine charger target while the bank is showing top-end protection behavior.
+- Absorption/charge voltage: `56.8V`. The Dumfume manual lists `58.4V +/-0.2V`, but it also lists `58.4V` as the charge-limit/over-charge protection voltage; do not use the BMS protection ceiling as the routine charger target while the bank is showing top-end protection behavior.
 - Float voltage: `54.0V`.
 - Storage voltage if shown: `52.8V`.
 - Charge curve: `Fixed` for current commissioning. Do not use `Adaptive + BatterySafe` while diagnosing top-end BMS protection; use a deterministic fixed voltage target and dwell first.
-- Absorption time: set the minimum the interface allows. If the field allows sub-hour values, use `0.5h`; if VEConfigure only allows `1-8h`, set `1h`, not `8h`.
+- Absorption time: `1h` because the observed VEConfigure field allows `1-8h`; do not use `8h`.
 - Repeated absorption time: `0.25h` if editable; keep repeated absorption short.
 - Charge current: `35A` when all `3` house batteries are paralleled (`~11.7A` each); if charging a single battery by itself, cap charger current at `20A` for the first test.
 - Equalization / automatic equalization: `Off`.
 - Temperature compensation: `Off`; low-temp charge cutoff `10C / 50F` if available.
 - Inverter low-voltage protection target: pre-alarm `46.0V`, shutdown `44.0V`, restart `48.0V`.
 - PowerAssist: `Off` for first clean shore test or use rocker `II` charger-only; may be re-enabled later deliberately.
+- Live validation snapshot: with shore input limited to `12A`, MultiPlus and SmartShunt settled at `56.8V` in absorption with `0A` charge current; battery display read about `55.8V`; owner set SmartShunt SOC to `100%` at this settled state.
 
 ## Propane-specific checks
 - Tank bracket tight, valve accessible, and hose routing clear of heat/chafe zones.

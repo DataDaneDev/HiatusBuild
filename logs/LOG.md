@@ -1,3 +1,9 @@
+## 2026-05-30 — Shore-charge profile settled at 56.8V absorption
+- Owner confirmed active MultiPlus charge settings were programmed and shore charging entered bulk, then absorption as expected.
+- Settled snapshot: MultiPlus `56.8V`, SmartShunt `56.8V`, charge current `0A` while in absorption, battery display about `55.8V`, and shore input current limit `12A` for the household-source test.
+- Owner set SmartShunt SOC to `100%` at this settled full/near-full state. Current go-forward profile remains fixed LiFePO4 with absorption/charge `56.8V`, float `54.0V`, storage `52.8V` if shown, absorption `1h` because the UI allows `1-8h`, repeated absorption `0.25h`, equalization off, temperature compensation off, and `35A` charger current for the full `3x` bank.
+- Note on instruments: prior cheap DMM readings were inconsistent/high versus MultiPlus/SmartShunt/battery-display behavior and should not be used as the top-end tuning authority until cross-checked.
+
 ## 2026-05-30 — MultiPlus charge target lowered after top-end BMS trip theory
 - Revised active MultiPlus-II commissioning profile for the Dumfume `3x 51.2V 100Ah` bank after live symptoms pointed toward top-end BMS charge protection.
 - Key decision: use `56.8V` absorption/charge, `54.0V` float, `52.8V` storage if shown, `0.5h` max absorption, equalization off, temperature compensation off, and `35A` charger current only when all three batteries are paralleled. If testing one battery alone, cap charger current at `20A`.
