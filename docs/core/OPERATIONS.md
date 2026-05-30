@@ -147,7 +147,9 @@ Use this only as a manual rollback reference if the MultiPlus settings need to b
 - Absorption/charge voltage: `56.8V` for current commissioning. The Dumfume manual lists `58.4V +/-0.2V`, but it also lists `58.4V` as the charge-limit/over-charge protection voltage; do not use the BMS protection ceiling as the routine charger target while the bank is showing top-end protection behavior.
 - Float voltage: `54.0V`.
 - Storage voltage if shown: `52.8V`.
-- Maximum absorption time: `0.5h`; reduce to `0.25h` if the bank still trips near full. Do not use the captured factory/default `8.0h` absorption dwell for LiFePO4 commissioning.
+- Charge curve: `Fixed` for current commissioning. Do not use `Adaptive + BatterySafe` while diagnosing top-end BMS protection; use a deterministic fixed voltage target and dwell first.
+- Absorption time: set the minimum the interface allows. If the field allows sub-hour values, use `0.5h`; if VEConfigure only allows `1-8h`, set `1h`, not `8h`.
+- Repeated absorption time: `0.25h` if editable; keep repeated absorption short.
 - Charge current: `35A` when all `3` house batteries are paralleled (`~11.7A` each); if charging a single battery by itself, cap charger current at `20A` for the first test.
 - Equalization / automatic equalization: `Off`.
 - Temperature compensation: `Off`; low-temp charge cutoff `10C / 50F` if available.
