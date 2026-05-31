@@ -120,7 +120,7 @@ flowchart LR
     LYNX -- "Slot 1: F-02 125A MEGA\n2/0 AWG +, ~2.5 ft" --> MULTI
     MULTI -- "2/0 AWG -, ~2.5 ft" --> LYNX
 
-    MPPT -- "BAT+ via Slot 2: F-03 60A MEGA\n6 AWG, ~2.5 ft" --> LYNX
+    MPPT -- "BAT+ via Slot 2: F-03 60A/80V MEGA\n6 AWG, ~2.5 ft" --> LYNX
     MPPT -- "BAT- 6 AWG, ~2.5 ft" --> LYNX
 
     ALT48 -- "B+ 2/0 AWG, ~20 ft (ASSUMED)" --> APM48
@@ -136,7 +136,7 @@ flowchart LR
 ```mermaid
 flowchart LR
     ORION["Orion-Tr Smart 48/12-30\nIsolated charger"]
-    F07["F-07 60A MEGA (58V)\nVictron MEGA holder near Orion"]
+    F07["F-07 60A MEGA (80V)\nVictron MEGA holder near Orion"]
     PANEL["12V fuse block\n12-circuit, integrated negative bus\nmain + / - studs (source combine + shared return)"]
     B12["12V 100Ah LiFePO4\nbuffer battery"]
     F11["F-11 100A class\nbattery main fuse"]
@@ -315,11 +315,11 @@ flowchart LR
 | `F-01B` | `200A Class T` (provisional) | Blue Sea Class T fuse block (`110A-200A` family) | Battery compartment near Battery B `+` |
 | `F-01C` | `200A Class T` (provisional) | Blue Sea Class T fuse block (`110A-200A` family) | Battery compartment near Battery C `+` |
 | `F-02` | `125A MEGA` | Lynx integrated slot holder | Lynx Slot 1 |
-| `F-03` | `60A MEGA` | Lynx integrated slot holder | Lynx Slot 2 |
+| `F-03` | `60A MEGA` (`80V` Victron replacement stock) | Lynx integrated slot holder | Lynx Slot 2 |
 | `F-04` | `150A MEGA` | Lynx integrated slot holder | Lynx Slot 3 (dedicated alternator branch) |
 | `F-05` | Not installed / open spare position | Lynx integrated slot holder left blank | Lynx Slot 4; reserve for future branch, not Orion |
 | `F-06` | Orion `48V` input fuse: interim `30A 58V` MIDI; final `20A 80V` FKS/ATO | Current build uses existing MIDI holder/fuse from a Lynx `48V+` bus tap; final cleanup buy is Mouser `576-166.7000.5202` + `576-178.6150.0001` | Electrical cabinet between Lynx bus tap and Orion `48V +`; keep source-side unfused lead short |
-| `F-07` | `60A MEGA` (`58V` class) | Victron MEGA fuse holder | Electrical cabinet at Orion `12V +` source end |
+| `F-07` | `60A MEGA` (`80V` Victron replacement stock) | Victron MEGA fuse holder | Electrical cabinet at Orion `12V +` source end |
 | `F-09A/B/C` | `15A gPV` each | `10x38` touch-safe fuse holders in PV combiner | Roof-entry combiner enclosure |
 | `F-10` | Per branch (`ATO/ATC`) | Integrated blade sockets in generic 12V fuse block | Electrical cabinet |
 | `F-11` | `100A` class (12V buffer battery main) | Sealed inline MIDI/AMI/ANL holder | Within ~`7"` of 12V buffer battery positive post |
@@ -347,7 +347,7 @@ Retired from active architecture:
 | `C-06A` | Lynx positive tap -> SmartShunt positive sense/power lead | `48V` | Shunt electronics supply (very low current) | Factory inline fuse in OEM harness | OEM harness lead | `2.5 ft` (`ASSUMED`) |
 | `C-07` | Lynx Slot 1 (`F-02`) -> MultiPlus `DC+` | `48V` | Inverter branch, fuse-limited | `F-02` `125A` | `2/0 AWG` (manual minimum `AWG 1` on short runs) | `2.5 ft` (`ASSUMED`) |
 | `C-08` | MultiPlus `DC-` -> Lynx `-` bus | `48V` | Inverter return current | `F-02` protects paired positive | `2/0 AWG` | `2.5 ft` (`ASSUMED`) |
-| `C-09` | MPPT `BAT+` -> Lynx Slot 2 (`F-03`) | `48V` | Controller output (`45A` max) | `F-03` `60A` | `6 AWG` | `2.5 ft` (`ASSUMED`) |
+| `C-09` | MPPT `BAT+` -> Lynx Slot 2 (`F-03`) | `48V` | Controller output (`45A` max) | `F-03` `60A/80V` Victron row `188` | `6 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-10` | MPPT `BAT-` -> Lynx `-` bus | `48V` | Controller return current | `F-03` protects paired positive | `6 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-11` | Secondary alternator `B+` -> APM-48 -> Lynx Slot 3 (`F-04`) | `48V` | Alternator branch design current | `F-04` `150A` | `2/0 AWG` | `20 ft` (`ASSUMED`, one-way) |
 | `C-12` | Secondary alternator `B-` -> Lynx `-` bus (dedicated return) | `48V` | Alternator branch return current | `F-04` paired | `2/0 AWG` | `20 ft` (`ASSUMED`, one-way) |
@@ -400,14 +400,14 @@ Calculation basis for drop screening:
 | `C-06A` | Lynx positive tap | SmartShunt sense/power lead | OEM inline fuse | OEM harness current | OEM harness | `2.5 ft` | N/A (low-current OEM lead) | Row `23` (kit harness) | PASS |
 | `C-07` | Lynx Slot 1 `DC+` | MultiPlus `DC+` | `F-02 125A` | `125A` | `2/0 AWG` | `2.5 ft` | `0.10%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
 | `C-08` | MultiPlus `DC-` | Lynx `-` bus | `F-02` paired | `125A` | `2/0 AWG` | `2.5 ft` | `0.10%` @ `51.2V` | Row `28` (`2/0 black`) | PASS |
-| `C-09` | MPPT `BAT+` | Lynx Slot 2 | `F-03 60A` | `45A` | `6 AWG` | `2.5 ft` | `0.17%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS |
+| `C-09` | MPPT `BAT+` | Lynx Slot 2 | `F-03 60A` (`80V` Victron row `188`) | `45A` | `6 AWG` | `2.5 ft` | `0.17%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS |
 | `C-10` | MPPT `BAT-` | Lynx `-` bus | `F-03` paired | `45A` | `6 AWG` | `2.5 ft` | `0.17%` @ `51.2V` | Row `29` (`6 AWG black`) | PASS |
 | `C-11` | Secondary alternator `B+` | Lynx Slot 3 via APM-48 | `F-04 150A` | `150A` design | `2/0 AWG` | `20 ft` | `0.80%` @ `58.4V` | Row `28` (`2/0 red`) | PASS |
 | `C-12` | Secondary alternator `B-` | Lynx `-` bus (dedicated return) | `F-04` paired | `150A` design | `2/0 AWG` | `20 ft` | `0.80%` @ `58.4V` | Row `28` (`2/0 black`) | PASS |
 | `C-13` | Lynx `48V +` bus tap | `F-06` source side | Interim `F-06 30A 58V` MIDI; final `20A 80VDC` FKS/ATO | `30A` interim / `20A` final | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS |
 | `C-14` | Orion input protection point | Orion `48V +` | Interim `F-06 30A 58V` MIDI; final `20A 80VDC` FKS/ATO | `30A` interim / `20A` final | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS; final holder `576-178.6150.0001` confirmed `80VDC` by owner listing |
 | `C-15` | Orion `48V -` | Lynx `-` bus | Orion input positive protection paired | `30A` interim / `20A` final fuse basis | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG black`) | PASS |
-| `C-18` | Orion `12V +` | Fuse block main `+` stud | `F-07 60A` | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG red`) | PASS |
+| `C-18` | Orion `12V +` | Fuse block main `+` stud | `F-07 60A/80V` Victron row `188` | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG red`) | PASS |
 | `C-19` | Orion `12V -` | Fuse block integrated `-` bus / main `-` stud | `F-07` paired | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG black`) | PASS |
 | `C-19A` | Buffer battery `+` | Fuse block main `+` stud (via `F-11/SW`) | `F-11 100A` | `50A` design | `4 AWG` | `2.5 ft` | `0.52%` @ `12V` | Row `30` (`4 AWG red`) | PASS |
 | `C-19B` | Buffer battery `-` | Fuse block integrated `-` bus / main `-` stud | N/A | `50A` design | `4 AWG` | `2.5 ft` | `0.52%` @ `12V` | Row `30` (`4 AWG black`) | PASS |

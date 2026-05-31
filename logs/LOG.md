@@ -1,8 +1,15 @@
 ## 2026-05-30 — Shore-charge profile settled at 56.8V absorption
+
 - Owner confirmed active MultiPlus charge settings were programmed and shore charging entered bulk, then absorption as expected.
 - Settled snapshot: MultiPlus `56.8V`, SmartShunt `56.8V`, charge current `0A` while in absorption, battery display about `55.8V`, and shore input current limit `12A` for the household-source test.
 - Owner set SmartShunt SOC to `100%` at this settled full/near-full state. Current go-forward profile remains fixed LiFePO4 with absorption/charge `56.8V`, float `54.0V`, storage `52.8V` if shown, absorption `1h` because the UI allows `1-8h`, repeated absorption `0.25h`, equalization off, temperature compensation off, and `35A` charger current for the full `3x` bank.
 - Note on instruments: prior cheap DMM readings were inconsistent/high versus MultiPlus/SmartShunt/battery-display behavior and should not be used as the top-end tuning authority until cross-checked.
+
+## 2026-05-30 — Victron 60A/80V MEGA fuse replacement purchase
+
+- Owner purchased Victron `60A/80V` MEGA fuse 5-pack for MPPT/Orion-output stock: Amazon ASIN `B0F9PKDGWD`, listing/part text `CIP138060020`, observed price `$46.75`.
+- Earlier low-cost `60A` MEGA batch (`6x`, two 3-packs at `$4.99` each / `$9.98` total) was owner-confirmed as misadvertised/not actually `58V`; mark as trash/quarantined and do not use on `48V` paths.
+- Allocation: install `1x` at MPPT battery-side Lynx Slot 2 / `F-03`; install `1x` at Orion `12V` output / `F-07` if that holder needs a `60A` MEGA; retain `3x` spares. Do not use for MultiPlus `F-02` (`125A`), alternator `F-04` (`150A`), or Orion `48V` input `F-06` (MIDI/FKS/ATO path).
 
 ## 2026-05-30 — MultiPlus charge target lowered after top-end BMS trip theory
 - Revised active MultiPlus-II commissioning profile for the Dumfume `3x 51.2V 100Ah` bank after live symptoms pointed toward top-end BMS charge protection.
