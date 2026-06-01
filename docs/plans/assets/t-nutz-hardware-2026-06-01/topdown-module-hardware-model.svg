@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <title>Hiatus TNUTZ 10-Series Module Hardware Model</title>
+  <style>
+    .bg{fill:#111827}.bed{fill:#1f2937;stroke:#9ca3af;stroke-width:4}.aisle{fill:#374151;stroke:#6b7280;stroke-width:2;stroke-dasharray:8 8}.module{stroke:#f9fafb;stroke-width:3;rx:14}.m1{fill:#355e3b}.m2{fill:#7c2d12}.m3{fill:#1d4ed8}.m4{fill:#4b5563}.m5{fill:#7c3aed}.m6{fill:#0f766e}.label{font-family:Arial,Helvetica,sans-serif;fill:#f9fafb;font-size:25px;font-weight:700}.sub{font-family:Arial,Helvetica,sans-serif;fill:#e5e7eb;font-size:18px}.tiny{font-family:Arial,Helvetica,sans-serif;fill:#e5e7eb;font-size:15px}.legend{font-family:Arial,Helvetica,sans-serif;fill:#f9fafb;font-size:19px}.heavy{fill:#ef4444}.std{fill:#f59e0b}.disc{fill:#60a5fa}.floor{fill:#22c55e}.panel{fill:#d946ef}
+  </style>
+  <rect class="bg" x="0" y="0" width="1200" height="760"/>
+  <text class="label" x="60" y="48">Hiatus TNUTZ / 10-Series Hardware Model</text>
+  <text class="sub" x="60" y="78">Top = cab/bulkhead. Bottom = tailgate. Driver side left, passenger side right. Visual is functional, not dimensional.</text>
+  <rect class="bed" x="60" y="110" width="760" height="560" rx="20"/>
+  <text class="sub" x="365" y="100">CAB / BULKHEAD</text>
+  <text class="sub" x="372" y="700">TAILGATE / REAR ENTRY</text>
+  <rect class="aisle" x="410" y="135" width="70" height="510" rx="8"/>
+  <text class="tiny" x="418" y="385" transform="rotate(90 418,385)">clear aisle / service path</text>
+
+  <rect class="module m1" x="95" y="135" width="690" height="95"/>
+  <text class="label" x="115" y="170">M1 BULKHEAD / BATTERY BENCH</text>
+  <text class="sub" x="115" y="200">low datum, battery mass, service lids; M2 rises at driver bulkhead</text>
+
+  <rect class="module m2" x="95" y="135" width="300" height="230"/>
+  <text class="label" x="115" y="270">M2 DRIVER</text>
+  <text class="label" x="115" y="300">ELECTRICAL TOWER</text>
+  <text class="sub" x="115" y="328">to ~46 in build height</text>
+  <text class="tiny" x="115" y="350">H8 S6 D4 L4 F6 P6</text>
+
+  <rect class="module m3" x="95" y="375" width="300" height="135"/>
+  <text class="label" x="115" y="420">M3 DRIVER DESK</text>
+  <text class="sub" x="115" y="450">24 x 48-ish workstation</text>
+  <text class="tiny" x="115" y="475">H10 S6 D4 L4 F4 P6</text>
+
+  <rect class="module m4" x="95" y="520" width="300" height="125"/>
+  <text class="label" x="115" y="565">M4 REAR STORAGE</text>
+  <text class="sub" x="115" y="595">tailgate driver-side storage</text>
+  <text class="tiny" x="115" y="620">H4 S8 D4 F4 P6</text>
+
+  <rect class="module m5" x="495" y="245" width="290" height="130"/>
+  <text class="label" x="515" y="290">M5 FRIDGE STAND</text>
+  <text class="sub" x="515" y="320">~16 in raised support</text>
+  <text class="tiny" x="515" y="345">H12 S8 D4 L4 F4 P4</text>
+
+  <rect class="module m6" x="495" y="385" width="290" height="260"/>
+  <text class="label" x="515" y="430">M6 36 in GALLEY</text>
+  <text class="sub" x="515" y="460">passenger-side wet/counter run</text>
+  <text class="sub" x="515" y="485">to tailgate</text>
+  <text class="tiny" x="515" y="515">H14 S10 D6 L4 F6 P12</text>
+
+  <line x1="395" y1="250" x2="495" y2="250" stroke="#60a5fa" stroke-width="5" stroke-dasharray="12 8"/>
+  <line x1="395" y1="440" x2="495" y2="440" stroke="#60a5fa" stroke-width="5" stroke-dasharray="12 8"/>
+  <line x1="395" y1="575" x2="495" y2="575" stroke="#60a5fa" stroke-width="5" stroke-dasharray="12 8"/>
+
+  <rect x="860" y="110" width="285" height="560" rx="18" fill="#111827" stroke="#6b7280" stroke-width="2"/>
+  <text class="label" x="885" y="150">Legend / totals</text>
+  <circle class="heavy" cx="890" cy="190" r="11"/><text class="legend" x="915" y="197">H heavy gusset: 60 base</text>
+  <text class="tiny" x="915" y="220">CB-010-K, order 72</text>
+  <circle class="std" cx="890" cy="255" r="11"/><text class="legend" x="915" y="262">S standard gusset: 46 base</text>
+  <text class="tiny" x="915" y="285">CB-010-A, order 56</text>
+  <circle class="disc" cx="890" cy="320" r="11"/><text class="legend" x="915" y="327">D/L disconnect plates</text>
+  <text class="tiny" x="915" y="350">JP-010-D 28→36</text>
+  <text class="tiny" x="915" y="372">JP-010-G 16→24</text>
+  <circle class="floor" cx="890" cy="407" r="11"/><text class="legend" x="915" y="414">F floor/wall feet: 30 base</text>
+  <text class="tiny" x="915" y="437">FM-010-A/B, order 36</text>
+  <circle class="panel" cx="890" cy="472" r="11"/><text class="legend" x="915" y="479">P panel points: 42 base</text>
+  <text class="tiny" x="915" y="502">AC-010-E/PR-010-A, order 60</text>
+  <text class="legend" x="885" y="555">Structural T-nuts/screws</text>
+  <text class="tiny" x="885" y="582">ST-010: base 568 → order 650</text>
+  <text class="tiny" x="885" y="605">1/4-20 x 1/2 screws: base 568 → order 650</text>
+  <text class="tiny" x="885" y="628">Light/panel T-nuts: base 42 → order 100</text>
+</svg>

@@ -107,6 +107,8 @@ Posture: not a blocker. Re-measure before buying. Carry-extra-fuel is acceptable
 
 ## TNutz / 80/20 posture
 
+Detailed hardware model: [TNUTZ_80_20_HARDWARE_MODEL_2026-06-01](TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md). Use that worksheet for the current robust `10-series` connector/T-nut/floor-mount order; this section remains the shorter procurement posture summary.
+
 Ordering posture: prototype material only. Do **not** buy the old broad `8x 92 in` `15-series` package as a default starter order. Choose **no machining** for any prototype sticks unless a specific measured module envelope has passed physical mockup.
 
 ### Better current approach
