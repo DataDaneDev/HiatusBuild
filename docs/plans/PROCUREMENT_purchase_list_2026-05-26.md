@@ -24,7 +24,7 @@ Scope note: this is a purchase aid, not a final cut list. Do not order final ext
 
 1. Program/verify MultiPlus with the purchased `MK3-USB-C`; do not treat sustained shore charging as commissioned until settings are verified.
 2. Finish electrical-board hard-mount, protection, labeling, strain-relief, and abrasion-control hardware after checking what is now on hand.
-3. Mouser fuse cleanup parts for Orion final standalone `F-06`: current interim is a `30A 58V` MIDI; buy the `20A 80VDC` fuse + holder listed below when swapping to final cleanup hardware.
+3. Orion final standalone `F-06` cleanup stock is purchased: current interim remains `30A 58V` MIDI until the convenient swap to `20A 80VDC` FKS/ATO hardware.
 4. WIP TNUTZ shopping cart for `10-series` prototype stock/hardware after reviewing the visual aids and current module assumptions; do not treat it as final-cut geometry.
 5. Diesel heater tank later, after physical re-measurement.
 
@@ -113,9 +113,10 @@ Posture: not a blocker. Re-measure before buying. Carry-extra-fuel is acceptable
 ## Mouser / electrical cleanup list
 
 - **Orion final `F-06` input fuse cleanup**
-  - Buy: Mouser `576-166.7000.5202` Littelfuse FKS/ATO fuse, `20A`, `80VDC`.
-  - Buy: Mouser `576-178.6150.0001` Littelfuse ATO/FKS holder, `80VDC` listing owner-confirmed.
-  - Priority: cleanup item, not a build blocker; existing `30A 58V` MIDI is acceptable interim protection on the short `6 AWG` Orion input branch.
+  - Purchased `2026-06-01` Mouser order, total `$38.79`.
+  - Fuse stock: `3x` Mouser `576-166.7000.5202` / Littelfuse `166.7000.5202` FKS/ATO fuse, `20A`, `80VDC`, `$7.88` each / `$23.64` extended.
+  - Holder stock: `3x` Mouser `576-178.6150.0001` / Littelfuse `178.6150.0001` fuse holder housing for FKH/ATO-FKS holder, `80VDC` listing owner-confirmed, `$1.51` each / `$4.53` extended.
+  - Allocation: install `1x` fuse/holder for final Orion `48V` input `F-06`; retain `2x` spare fuses/holders. Existing `30A 58V` MIDI remains acceptable interim protection on the short `6 AWG` Orion input branch until the swap.
 
 - **WS500 low-current fuse/holder pieces**
   - Buy only after confirming the harness/manual voltage-rating need: `F-12` regulator power lead baseline `10A` and `F-13` positive voltage-sense lead `3A`.

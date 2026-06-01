@@ -328,7 +328,7 @@ flowchart LR
 | `F-03` | `60A MEGA` (`80V` Victron replacement stock) | Lynx integrated slot holder | Lynx Slot 2 |
 | `F-04` | `150A MEGA` | Lynx integrated slot holder | Lynx Slot 3 (dedicated alternator branch) |
 | `F-05` | Not installed / open spare position | Lynx integrated slot holder left blank | Lynx Slot 4; reserve for future branch, not Orion |
-| `F-06` | Orion `48V` input fuse: interim `30A 58V` MIDI; final `20A 80V` FKS/ATO | Current build uses existing MIDI holder/fuse from a Lynx `48V+` bus tap; final cleanup buy is Mouser `576-166.7000.5202` + `576-178.6150.0001` | Electrical cabinet between Lynx bus tap and Orion `48V +`; keep source-side unfused lead short |
+| `F-06` | Orion `48V` input fuse: interim `30A 58V` MIDI; final `20A 80V` FKS/ATO | Current build uses existing MIDI holder/fuse from a Lynx `48V+` bus tap; final cleanup stock purchased `2026-06-01`: `3x` Mouser `576-166.7000.5202` fuses + `3x` `576-178.6150.0001` holders | Electrical cabinet between Lynx bus tap and Orion `48V +`; keep source-side unfused lead short |
 | `F-07` | `60A MEGA` (`80V` Victron replacement stock) | Victron MEGA fuse holder | Electrical cabinet at Orion `12V +` source end |
 | `F-09A/B/C` | `15A gPV` each | `10x38` touch-safe fuse holders in PV combiner | Roof-entry combiner enclosure |
 | `F-10` | Per branch (`ATO/ATC`) | Integrated blade sockets in generic 12V fuse block | Electrical cabinet |

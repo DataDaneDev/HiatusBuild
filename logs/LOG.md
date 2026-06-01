@@ -1,18 +1,24 @@
+## 2026-06-01 — Mouser Orion F-06 final cleanup stock purchased
+
+- Owner purchased Mouser Orion `F-06` final cleanup stock: `3x` Littelfuse `166.7000.5202` / Mouser `576-166.7000.5202` FKS/ATO fuses (`20A`, `80VDC`) and `3x` Littelfuse `178.6150.0001` / Mouser `576-178.6150.0001` holders (`80VDC` listing owner-confirmed).
+- Cost basis: fuses `$7.88` each / `$23.64` extended; holders `$1.51` each / `$4.53` extended; order total `$38.79`, with `$10.62` shipping/tax/remainder over the `$28.17` parts subtotal.
+- Allocation: install `1x` fuse/holder for final Orion `48V` input `F-06`; retain `2x` spare fuse/holder sets. Existing `30A 58V` MIDI remains acceptable interim protection on the short `6 AWG` Orion input run until swapped.
+
 ## 2026-06-01 — Camper audio system selected and integrated
-
-## 2026-06-01 — Docs/plans closeout and route-map cleanup
-- Consolidated TNUTZ/80-20 ownership: detailed WIP cart/visual aids now live in `docs/plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md`; procurement list is the short summary; `HIATUS_work_plan_2026-05-29.md` is historical/reference only.
-- Marked camper audio as preliminary/future-roadmap and changed audio BOM rows `189-193` to deferred/preliminary rather than near-term planned purchases.
-- Downgraded the `24V` lighting worksheet to draft/unlikely and kept active lighting architecture on the existing `12V-11` branch until deliberately reopened.
-- Corrected AC branch intent: Branch A = office/driver side; Branch B = galley/passenger side.
-- Reconfirmed Orion input protection path: standalone `F-06`, current/interim `30A 58V` MIDI, final cleanup buy is Mouser `576-166.7000.5202` (`20A 80VDC`) plus `576-178.6150.0001` holder.
-- Refreshed route maps/frontmatter and clarified historical install/starter plans so stale plan snippets do not read as current instructions.
-
 
 - Added a camper-only DC-first audio plan, separate from any future truck-cab driving subwoofer system.
 - Selected draft package: Kicker `46KMC2` source unit, Kicker `CSC67` `4 ohm` speaker pair, and Kicker `49PTRTP10` powered down-firing 10 in subwoofer with `4 AWG`/`40A` sub branch.
 - Added BOM rows `189-193`, deprecated the old row `101` sound-system placeholder, added implementation owner doc `docs/implementation/CAMPER_audio_system.md`, and synchronized electrical overview/fuse schedule, systems, interior placement notes, and tracking.
 - Updated `bom/load_model_wh.csv` to model moderate camper-audio use: `core_workday` now `3,794 Wh/day`, `winter_workday` now `4,587 Wh/day`, and `minimal_idle_day` remains `624 Wh/day`.
+
+## 2026-06-01 — Docs/plans closeout and route-map cleanup
+
+- Consolidated TNUTZ/80-20 ownership: detailed WIP cart/visual aids now live in `docs/plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md`; procurement list is the short summary; `HIATUS_work_plan_2026-05-29.md` is historical/reference only.
+- Marked camper audio as preliminary/future-roadmap and changed audio BOM rows `189-193` to deferred/preliminary rather than near-term planned purchases.
+- Downgraded the `24V` lighting worksheet to draft/unlikely and kept active lighting architecture on the existing `12V-11` branch until deliberately reopened.
+- Corrected AC branch intent: Branch A = office/driver side; Branch B = galley/passenger side.
+- Reconfirmed Orion input protection path: standalone `F-06`, current/interim `30A 58V` MIDI, and final cleanup stock now purchased per the Mouser entry above.
+- Refreshed route maps/frontmatter and clarified historical install/starter plans so stale plan snippets do not read as current instructions.
 
 ## 2026-05-30 — Shore-charge profile settled at 56.8V absorption
 
