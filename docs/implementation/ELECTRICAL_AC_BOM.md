@@ -8,12 +8,12 @@ status: active
 related:
   - "[[SYSTEMS]]"
   - "[[ELECTRICAL_48V_ARCHITECTURE]]"
-  - "[[INSTALL_MINUS_12_READINESS_PLAN]]"
+  - "[[ELECTRICAL_overview_diagram]]"
 ---
 
 # Electrical AC BOM (Phase 1)
 
-As-of date: `2026-05-27`
+As-of date: `2026-06-01`
 
 Purpose: maintain the purchased Phase 1 AC architecture baseline: portable `30A` EMS, `30A` shore inlet/cord, one `6-way` DIN enclosure, `30A` AC-in breaker, `30A` AC-out main breaker, and two active `20A` GFCI-protected AC-out branches. Final physical outlet locations and enclosure access remain measurement-gated in the installed camper.
 
@@ -23,6 +23,9 @@ Related docs:
 - `docs/core/TRACKING.md`
 - `bom/bom_estimated_items.csv`
 
+## Historical provenance
+- [INSTALL_MINUS_12_READINESS_PLAN](../plans/INSTALL_MINUS_12_READINESS_PLAN.md) preserves the May 7 install-window AC planning context; this file owns current Phase 1 AC procurement/implementation.
+
 ## Locked AC Architecture
 
 ### AC-in chain (shore to inverter)
@@ -31,8 +34,8 @@ Related docs:
 - MultiPlus input current limit is set to actual source when adapters are used. Use `10A` for first household tests and `12A` maximum policy on a normal `15A` outlet; do not leave the limit at `50A` on adapter/household shore.
 
 ### AC-out chain (inverter-backed branch distribution)
-- `MultiPlus AC-out-1 -> 10/3 feeder -> combined 6-way AC DIN enclosure -> 30A UL489 AC-out main breaker -> 20A branch 1 + 20A branch 2 -> GFCI receptacle per branch`
-- Current purchased receptacle plan is `2` active GFCI receptacles total. Prior downstream non-GFCI receptacle locations are obsolete unless a later layout revision reopens them.
+- `MultiPlus AC-out-1 -> 10/3 feeder -> combined 6-way AC DIN enclosure -> 30A UL489 AC-out main breaker -> 20A Branch A + 20A Branch B -> GFCI receptacle per branch`
+- Current purchased receptacle plan is `2` active GFCI receptacles total: Branch A = office/driver side, Branch B = galley/passenger side. Prior downstream non-GFCI receptacle locations are obsolete unless a later layout revision reopens them.
 - AC-out branch hardware is not required to perform the initial AC-in-only battery charging test, but it is now included in the purchased Phase 1 cart.
 
 ### Neutral and ground handling

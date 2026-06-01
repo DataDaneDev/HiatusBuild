@@ -7,7 +7,8 @@ tags:
 status: active
 related:
   - "[[PROJECT]]"
-  - "[[INSTALL_MINUS_12_READINESS_PLAN]]"
+  - "[[PROCUREMENT_purchase_list_2026-05-26]]"
+  - "[[TNUTZ_80_20_HARDWARE_MODEL_2026-06-01]]"
   - "[[SYSTEMS]]"
 ---
 
@@ -17,11 +18,11 @@ related:
 - Define a practical order of operations that still supports parallel workstreams.
 - Prioritize measured, reversible post-install module work: validate real camper envelopes first, then build systems and furniture modules without burying service access.
 
-## Planning assumptions (as-of 2026-05-27)
+## Planning assumptions (as-of 2026-06-01)
 - Hiatus install readiness/travel planning is historical; the real camper shell is available for physical measurements and mockups.
 - This plan assumes a post-install interior buildout with only reversible/module-first prep until service maps, penetrations, and access gates pass.
 - Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline, with the first live `48V`/MultiPlus/Cerbo/shore checkpoint now passed.
-- Interior/furniture assumptions in `docs/implementation/INTERIOR_furniture_layout_and_galley.md` remain the current draft baseline, but exact cuts remain blocked on measured block envelopes.
+- Interior/furniture assumptions in `docs/implementation/INTERIOR_furniture_layout_and_galley.md` remain the current draft baseline, but exact cuts remain blocked on measured block envelopes. TNUTZ cart consolidation lives in `docs/plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md`; procurement summary lives in `docs/plans/PROCUREMENT_purchase_list_2026-05-26.md`; lighting remains draft with `24V` currently unlikely.
 
 ## Typical full-build sequence (once camper shell is physically in hand)
 1. Layout freeze and service-map freeze
@@ -100,15 +101,15 @@ related:
 - Freeze service map from real shell dimensions before penetrations, final cable cuts, Lonseal glue-down, or permanent module skins.
 - Place top-off orders based on real measurements and update logs/tracking.
 
-5. Current restart phase (updated `2026-05-27`)
-- Owner status: the subfloor is now complete; sheet vinyl/Lonseal remains intentionally unglued to avoid damage and preserve access while rough-in decisions are still open.
+5. Current restart phase (updated `2026-06-01`)
+- Owner status: the subfloor is now complete; sheet vinyl/Lonseal remains intentionally unglued to avoid damage and preserve access while rough-in/interior buildout decisions are still open. Sheet-vinyl installation is a late finish-floor step after interior buildout/service-access gates, not a near-term blocker.
 - Visually inspect sealed bed paths after cure and normal travel/shakedown; look for lifted tape, cracked beads, dust trails, or dampness before any flooring closeout.
 - Hold glue-down until the floor/rough-in gate passes: no pending floor penetrations, hardpoint pockets verified, EPS/subfloor sitting flush, and adhesive/roller method confirmed.
 - Tape/cardboard block envelopes for the passenger-side lofted fridge/wet-spine skeleton, `36 gal` wheel-well tank overlap, pump/accumulator board, separated battery bench, driver-side electrical closet/DC shelf, desk, diesel heater, and external diesel-tank/fuel-line service envelope before ordering exact extrusion cuts.
 - Treat broad `15-series` as downscoped. Default to `10-series`, plywood, light rail, or direct mounting unless a measured heavy/dynamic module proves it needs larger extrusion stiffness. The lofted fridge exoskeleton may justify targeted stock/prototype extrusion before exact final cuts because the electrical/plumbing/battery geometry is genuinely three-dimensional.
 - Next practical workstream: convert the proven live electrical layout into a hard-mounted mobile board module: order remaining parts, mount Orion/fuses/DC panel/AC box/Cerbo/reserved WS500/MPPT positions, then finalize wiring, labels, covers, strain relief, and service access before 80/20/truck integration.
 - Validate the office-first interior concept against real dimensions: passenger-side lofted fridge over/near the wheel-well tank, under-fridge pump/accumulator service bay, separated battery bench with flat divider board and cushion/lid access, driver-side `46 in` electrical closet/workstation/DC shelf, diesel heater base zone, and center-aisle/cabover-step movement.
-- Build the 80/20/furniture list from physical module envelopes first: classify each member as structural, panel support, service-access edge, or locator/anti-rattle, then buy prototype stock/hardware before final vendor-cut lengths.
+- Build the 80/20/furniture list from physical module envelopes first: classify each member as structural, panel support, service-access edge, or locator/anti-rattle, then use the consolidated TNUTZ WIP cart/visual aids before final vendor-cut lengths.
 
 ## Deferred / purchase-later rows (keep out of current critical path unless triggered)
 - Optional 12V expansion path: row `118`.

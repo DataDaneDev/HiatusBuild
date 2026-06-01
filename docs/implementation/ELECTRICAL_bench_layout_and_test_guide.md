@@ -15,7 +15,7 @@ related:
 
 As-of date: `2026-05-27`
 
-Purpose: provide a practical, print-friendly game plan for building and validating the electrical module mechanically before final wiring, energization, or permanent enclosure/panel closeout.
+Purpose: provide a practical, print-friendly game plan for building, hard-mounting, post-live cleanup, and staged validation of the electrical module before mobile install or permanent enclosure/panel closeout.
 
 Related docs:
 - `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`

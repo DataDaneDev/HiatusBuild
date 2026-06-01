@@ -8,7 +8,7 @@ tags:
   - hiatus/audio
   - hiatus/electrical
   - hiatus/interior
-status: draft
+status: preliminary
 related:
   - "[[SYSTEMS]]"
   - "[[ELECTRICAL_overview_diagram]]"
@@ -21,7 +21,7 @@ related:
 
 As-of date: `2026-06-01`
 
-Purpose: define a compact, budget-conscious camper audio system with strong bass, good-enough cabin sound, simple tablet integration, and explicit `12V` wiring/fusing. This is the camper-only system; truck-cab driving subwoofers remain a separate truck audio project.
+Purpose: preserve a compact, budget-conscious camper audio concept with strong bass, good-enough cabin sound, simple tablet integration, and explicit `12V` wiring/fusing for later build phases. This is preliminary/future-roadmap only, not near-term procurement. The camper-only system remains separate from any truck-cab driving subwoofer project.
 
 ## Design target
 
@@ -41,7 +41,7 @@ Non-goals:
 
 ## Selected system package
 
-Default package is a simple `2.1` system: Kicker marine/powersports source unit powers a pair of full-range speakers directly, with RCA line-out and remote turn-on feeding a powered down-firing subwoofer.
+Preliminary package is a simple `2.1` system: Kicker marine/powersports source unit powers a pair of full-range speakers directly, with RCA line-out and remote turn-on feeding a powered down-firing subwoofer.
 
 | Function | Selected product | Link | Planning notes |
 | --- | --- | --- | --- |
@@ -52,7 +52,7 @@ Default package is a simple `2.1` system: Kicker marine/powersports source unit 
 | RCA signal cable | Kicker K-Series 2-channel RCA cable, length to measured route | https://www.kicker.com/2-channel-4-meter-rca-cable-k-series | Use measured length; route away from 4 AWG power and high-current DC conductors. |
 | Speaker wire | Kicker marine speaker wire | https://www.kicker.com/marine-speaker-wire | Use `16 AWG` marine speaker wire for the two speaker runs; do not run speaker negatives to chassis/shell. |
 
-Estimated purchase bucket: about `$950-$1,100` before tax/shipping depending on retailer and wiring kit pricing. This intentionally buys bass first and avoids a separate full-range amplifier/DSP for Phase 1.
+Estimated future purchase bucket: about `$950-$1,100` before tax/shipping depending on retailer and wiring kit pricing. Do not buy now; this intentionally preserves a bass-first concept for a later phase and avoids a separate full-range amplifier/DSP unless future testing justifies it.
 
 ## Impedance and audio topology
 

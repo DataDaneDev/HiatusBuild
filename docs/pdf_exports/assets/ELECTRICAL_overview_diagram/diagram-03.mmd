@@ -24,8 +24,8 @@ flowchart LR
         ACBOXOUT["Same combined 6-way AC DIN enclosure\noutput neutral isolated from input neutral"]
         OUTMAIN["AC-out main breaker\n30A UL489"]
         OUT1PROT["Branch protection for AC-out-1\n20A + 20A; GFCI at first outlet"]
-        BR_A["Branch A: galley outlets"]
-        BR_B["Branch B: office outlets"]
+        BR_A["Branch A: office / driver-side outlet"]
+        BR_B["Branch B: galley / passenger-side outlet"]
         OUT2PROT["AC-out-2 reserve path only\n(capped route, no energized Phase 1 hardware)"]
         ACBOXOUT --> OUTMAIN --> OUT1PROT
         OUT1PROT -- "12 AWG branch cable, ~15 ft (ASSUMED)" --> BR_A
@@ -36,7 +36,8 @@ flowchart LR
         IND["Induction cooktop"]
         MW["Microwave"]
         MON["External monitor + office chargers"]
-        GENOUT["General 120V GFCI receptacles\n2 total locations"]
+        OFFICE_REC["Office/driver GFCI receptacle"]
+        GALLEY_REC["Galley/passenger GFCI receptacle"]
         SHORE_ONLY["Future shore-only load (optional)\nA/C or electric water heat"]
     end
 
@@ -49,10 +50,11 @@ flowchart LR
     OUT1 -- "10/3 AC feeder, ~2.5 ft" --> ACBOXOUT
     OUT2 -. "12 AWG capped reserve route, ~15 ft (ASSUMED optional)" .-> OUT2PROT
 
-    BR_A --> IND
-    BR_A --> MW
+    BR_A --> OFFICE_REC
     BR_A --> MON
-    BR_B --> GENOUT
+    BR_B --> GALLEY_REC
+    BR_B --> IND
+    BR_B --> MW
     OUT2PROT -. "future activation only" .-> SHORE_ONLY
 
     BR_A -. "if AC USB outlets selected" .-> PD_AC

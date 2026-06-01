@@ -13,10 +13,10 @@ This is the single workspace map and update guide for the Hiatus/F-350 camper bu
 - Camper status: Hiatus shell is in hand/installed; May 7, 2026 install readiness is now historical context
 - Primary use: Financial Analyst remote work (typical 9-5, Monday-Friday) with occasional subsidiary flights
 
-## Current project posture — 2026-05-27
+## Current project posture — 2026-06-01
 - Current focus: finish the electrical board as a hard-mounted, strain-relieved mobile module before final 80/20/truck integration.
-- Electrical state: first live `48V` checkpoint passed; `55.5V` confirmed through the system, MultiPlus inverter mode works, SmartShunt/Orion/Cerbo are online, and a short limited-current shore-charge test passed. Sustained shore charging remains gated on MultiPlus charge-profile programming.
-- Immediate procurement focus: order the remaining electrical-board/module parts, especially `MK3-USB`, Victron comms cables, board mounting/strain-relief hardware, grommets/loom, Orion final fuse cleanup, and WS500 fuse-holder pieces.
+- Electrical state: first live `48V` checkpoint passed; `55.5V` confirmed through the system, MultiPlus inverter mode works, SmartShunt/Orion/Cerbo are online, and a short limited-current shore-charge test passed. Sustained shore charging remains gated on verified MultiPlus charge-profile programming and logged retest.
+- Immediate procurement focus: electrical-board/module cleanup, Orion final standalone `F-06` fuse-holder swap (`30A` interim -> `20A` final), and WIP TNUTZ `10-series` cart review. Camper audio is preliminary/future; lighting remains undecided with `24V` currently unlikely.
 - Board build focus: hard-mount Orion, Orion fuses, DC fuse panel, AC distribution box, Cerbo, and reserved WS500/MPPT locations; then finalize wiring, labels, covers, and strain relief.
 - Interior baseline: office-first hybrid layout with a passenger-side lofted Iceco/fridge + wet-spine exoskeleton over/near the `36 gal` wheel-well tank, pump/accumulator below the fridge, adjacent separated battery bench, driver-side electrical closet/workstation/DC shelf, and clear center aisle.
 - Furniture/flooring posture: prototype with `10-series`/targeted 80/20 only where needed; keep Lonseal/final closure gated until EPS/subfloor fit, hardpoints, penetrations, moisture paths, and service access are verified.
@@ -39,7 +39,12 @@ Use this table first whenever you are deciding where to put information.
 | Electrical implementation topology details | [ELECTRICAL_overview_diagram](docs/implementation/ELECTRICAL_overview_diagram.md) |
 | Fuse IDs, values, holders, spare policy | [ELECTRICAL_fuse_schedule](docs/implementation/ELECTRICAL_fuse_schedule.md) |
 | Bench-build electrical layout and staged test checklist | [ELECTRICAL_bench_layout_and_test_guide](docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md) |
+| AC implementation and branch intent | [ELECTRICAL_AC_BOM](docs/implementation/ELECTRICAL_AC_BOM.md) |
+| Interior furniture/galley/workstation layout | [INTERIOR_furniture_layout_and_galley](docs/implementation/INTERIOR_furniture_layout_and_galley.md), [INTERIOR_driver_side_workstation](docs/implementation/INTERIOR_driver_side_workstation.md) |
+| Flooring / sheet-vinyl finish gate | [FLOORING_subfloor_build_process](docs/implementation/FLOORING_subfloor_build_process.md) |
 | Active post-install order of operations | [PROJECT_build_order_of_operations](docs/plans/PROJECT_build_order_of_operations.md) |
+| Active procurement / WIP shopping carts | [PROCUREMENT_purchase_list](docs/plans/PROCUREMENT_purchase_list_2026-05-26.md), [TNUTZ_80_20_HARDWARE_MODEL](docs/plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md), [INTERIOR_LIGHTING_PLAN](docs/plans/INTERIOR_LIGHTING_PLAN_2026-05-31.md) |
+| Future/preliminary audio package | [CAMPER_audio_system](docs/implementation/CAMPER_audio_system.md) |
 | Historical install-window / pre-camper references | [INSTALL_MINUS_12_READINESS_PLAN](docs/plans/INSTALL_MINUS_12_READINESS_PLAN.md), [STARTER_PLAN_electrical_and_flooring_pre_camper](docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md) |
 
 ## Document relationship rules
@@ -92,13 +97,16 @@ Use this order whenever the same change touches multiple files:
 - Supporting implementation artifacts:
 1. [ELECTRICAL_overview_diagram](docs/implementation/ELECTRICAL_overview_diagram.md)
 2. [ELECTRICAL_fuse_schedule](docs/implementation/ELECTRICAL_fuse_schedule.md)
-3. [PROJECT_build_order_of_operations](docs/plans/PROJECT_build_order_of_operations.md)
-4. [ELECTRICAL_AC_BOM](docs/implementation/ELECTRICAL_AC_BOM.md)
-5. [ELECTRICAL_bench_layout_and_test_guide](docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md)
+3. [ELECTRICAL_AC_BOM](docs/implementation/ELECTRICAL_AC_BOM.md)
+4. [ELECTRICAL_bench_layout_and_test_guide](docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md)
+5. [FLOORING_subfloor_build_process](docs/implementation/FLOORING_subfloor_build_process.md)
+6. [INTERIOR_furniture_layout_and_galley](docs/implementation/INTERIOR_furniture_layout_and_galley.md)
+7. [INTERIOR_driver_side_workstation](docs/implementation/INTERIOR_driver_side_workstation.md)
+8. [CAMPER_audio_system](docs/implementation/CAMPER_audio_system.md) - preliminary/future
 - Workbook extracts kept for traceability (non-canonical):
 1. [PROJECT_workbook_hiatus_consult](docs/legacy/PROJECT_workbook_hiatus_consult.md)
 2. [SYSTEMS_workbook_build_notes_obsolete](docs/legacy/SYSTEMS_workbook_build_notes_obsolete.md)
-- Temporary issue trackers still present for compatibility:
+- Archived issue trackers retained for compatibility, not live routing:
 1. [TEMP_electrical_red_flags](docs/temp/TEMP_electrical_red_flags.md)
 2. [TEMP_procurement_red_flags](docs/temp/TEMP_procurement_red_flags.md)
 

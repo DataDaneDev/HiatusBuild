@@ -21,12 +21,12 @@ Purpose: one practical planning document for the remaining days before the Hiatu
 
 Install appointment:
 
-- Date/time: Thursday, May 7, 2026 at `9:00 AM`
-- Location: `3171 Mercer Ave, Suite 101, Bellingham, WA 98225`
-- Starting point: Park City, Utah
-- Work time off: May `6-11`
+- Date/time: Thursday, May 7, 2026 morning appointment
+- Location: Hiatus production/install facility in Bellingham, Washington
+- Starting point: Utah
+- Work time off: May `6-11` historical travel/install window
 
-## Current owner-confirmed state
+## Historical owner-confirmed state (as of 2026-05-04)
 
 ### Truck bed / flooring
 
@@ -69,7 +69,7 @@ Install appointment:
 - A faucet is now a missing discrete purchase item.
 - Hot water remains unresolved: electric tanked may be viable later, electric tankless is not realistic on the current inverter scale, and portable propane should be treated as outdoor-use-only unless a specific unit is listed for enclosed/RV use.
 
-## Priority triage
+## Historical priority triage
 
 ### Workload rule
 
@@ -189,7 +189,7 @@ Gate E1 passes when:
 
 ## Flooring and truck-bed sealing plan
 
-### Current status and recommended order
+### Historical status and recommended order
 
 Completed May 4:
 1. Bed rail caps removed; most clips broke, but caps were reinstalled with a large Loctite polyurethane bead underneath.
@@ -228,7 +228,7 @@ Treat current furniture CAD as stale/reference-only until the fridge and purchas
 
 Do not buy the previous broad `15-series` starter package unless a remaining module has a real freestanding structural need. The purchased `36 gal` wheel-well tank removes the old vertical-tank exoskeleton requirement.
 
-Current order posture:
+Historical order posture:
 
 - Use the Washington trip for design scouting and real measurement, not exact-cut ordering.
 - Order soon after install only after taped/cardboard block envelopes show what actually needs framing.
@@ -299,7 +299,7 @@ Immediate BOM/procurement gaps:
 
 Target load: `30-60 min`, no messy truck work.
 
-- Replace the narrow May 7 plan with this integrated plan.
+- Historical note: this integrated May 7 plan replaced the narrower install-minus-12 plan at the time; it is no longer the active project sequence.
 - Confirm install appointment, arrival expectations, and whether Hiatus can remove/store tailgate onsite.
 - Record the corrected PTO window: May 6-11, with May 6 reserved for travel/staging rather than build work.
 - Start the single working checklist across electrical, floor, bed sealing, layout, plumbing, and travel.

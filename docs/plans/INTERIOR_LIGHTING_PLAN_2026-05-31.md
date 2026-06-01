@@ -1,6 +1,23 @@
+---
+aliases:
+  - Interior lighting plan
+  - Camper lighting draft
+tags:
+  - hiatus/plan
+  - hiatus/lighting
+  - hiatus/electrical
+status: draft
+related:
+  - "[[SYSTEMS]]"
+  - "[[ELECTRICAL_overview_diagram]]"
+  - "[[PROJECT_build_order_of_operations]]"
+---
+
 # Interior Lighting Plan — Amazon-First Rev B
 
 _As of 2026-05-31 11:37 MDT. Planning draft based on current working lengths: upper strips about 7 ft per side; lower/aisle strip about 6 ft total._
+
+Freshness note `2026-06-01`: this is **not active electrical architecture** and needs more work. The `24V` interior-lighting path is currently unlikely; keep the active baseline on the existing `12V-11` lighting branch unless/until the lighting architecture is deliberately reopened and promoted through `SYSTEMS`, electrical diagrams, fuse schedule, load model, and tracking.
 
 ## Decision summary
 
@@ -13,9 +30,9 @@ Use **two lighting zones**, not four:
 
 This eliminates the redundant under-desk + aisle/kick split. The lower strip should be installed once, low and indirect, where it can serve both night path and entry lighting.
 
-## Why 24V still makes sense here
+## 24V option status — unlikely, not active baseline
 
-The previous Rev A was overbuilt, but the **24V decision still holds** because the Amazon LED-strip ecosystem is good and a cheap buck converter is enough. Do **not** use a Victron Orion-Tr just for these lights.
+The calculations below are preserved as a draft option, but the **24V decision does not hold as active guidance**. Current owner posture is that `24V` interior lighting is unlikely. Do **not** buy the converter/24V strip cart or rewire the lighting branch from this document alone; first decide whether the lighting should stay on the existing `12V-11` branch or whether a separate converter-backed lighting subsystem is truly worth the complexity.
 
 With Dane's corrected lengths:
 
@@ -35,7 +52,7 @@ Total likely max
 
 A cheap **48V nominal to 24V 10A / 240W buck converter** has plenty of headroom. Fuse it correctly and keep it accessible.
 
-## Recommended build — balanced and flexible
+## Prior draft build — balanced/flexible option, not approved cart
 
 ### Zone 1 — upper CCT white wash
 
@@ -143,7 +160,7 @@ A plain rotary PWM dimmer is effectively a **one-location control**. You can put
 
 Default if choosing rotary: put the lower-light rotary near the **rear/barn doors**, because entry/night use matters most there. The upper CCT zone can still have front/rear RF remotes.
 
-## 48V to 24V power
+## 48V to 24V power option — unlikely
 
 **Buy:**
 
@@ -216,9 +233,9 @@ Best default placement: **low kick/aisle lip**, not under both desk and galley s
   - red low = night/bug/entry;
   - amber/orange low = door-open bug mode.
 
-## Buying recommendation
+## Prior draft buying worksheet — do not buy yet
 
-### Recommended cart — flexible but still sane
+### Prior draft cart — flexible but not approved
 
 - 1× BTF 24V CCT 16.4 ft upper strip: https://www.amazon.com/BTF-LIGHTING-Flexible-3000K-6000K-Decoration-Controller/dp/B0C8D4JNJK
 - 1× MiBoxer/LGIDTECH FUT035S CCT controller: https://www.amazon.com/LGIDTECH-FUT035S-Miboxer-Controller-12-24V/dp/B0B1WDKTGL
@@ -253,7 +270,8 @@ Best default placement: **low kick/aisle lip**, not under both desk and galley s
 
 ## Procurement hold points
 
-- Confirm whether lower strip will be **RGBCCT flexible** or **fixed warm-white rotary**.
+- First decide whether lighting remains on the existing `12V-11` branch; `24V` is currently unlikely and should not be promoted without a deliberate architecture update.
+- Confirm whether lower strip will be **RGBCCT flexible** or **fixed warm-white rotary** if the draft strip approach remains useful.
 - Confirm channel inner width for the 12 mm RGBCCT strip before buying/mounting the lower channel.
 - Confirm controller/remote pairing behavior on the bench before burying any wiring.
 - Do not rely on LED tape adhesive alone; fasten the aluminum channel mechanically where practical.

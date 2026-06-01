@@ -16,6 +16,8 @@ Start here when opening the project in Obsidian.
 - [Build order of operations](docs/plans/PROJECT_build_order_of_operations.md) - post-install sequence from measured envelopes through rough-in, module build, and commissioning.
 - [Interior furniture and galley](docs/implementation/INTERIOR_furniture_layout_and_galley.md) - current office-first passenger-side lofted fridge/wet-spine, separated battery bench, and 10-series/overlay-panel furniture direction.
 - [Electrical bench layout and test guide](docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md) - staged electrical commissioning, post-live cleanup, hard-mounting, and strain-relief discipline.
+- [Active procurement list](docs/plans/PROCUREMENT_purchase_list_2026-05-26.md) - current shopping/priorities, including Orion final fuse cleanup and TNUTZ cart pointers.
+- [TNUTZ 80/20 hardware model](docs/plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md) - consolidated WIP `10-series` cart and visual aids.
 - [Tracking](docs/core/TRACKING.md) - decisions, risks, assumptions, open questions.
 - [Project Log](logs/LOG.md) - dated work evidence, measurements, tests, and follow-ups.
 
@@ -30,6 +32,9 @@ Start here when opening the project in Obsidian.
 - [Electrical fuse schedule](docs/implementation/ELECTRICAL_fuse_schedule.md)
 - [Electrical bench layout and test guide](docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md)
 - [Electrical AC BOM](docs/implementation/ELECTRICAL_AC_BOM.md)
+- [Interior driver-side workstation](docs/implementation/INTERIOR_driver_side_workstation.md)
+- [Camper audio system](docs/implementation/CAMPER_audio_system.md) - preliminary/future package, not near-term procurement.
+- [Interior lighting plan](docs/plans/INTERIOR_LIGHTING_PLAN_2026-05-31.md) - draft; `24V` lighting currently unlikely.
 - [Flooring subfloor build process](docs/implementation/FLOORING_subfloor_build_process.md)
 
 ## Plans And History
@@ -37,7 +42,7 @@ Start here when opening the project in Obsidian.
 - [Starter electrical and flooring plan](docs/plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md) - historical pre-camper execution reference.
 - [Studies](docs/studies/) - option analysis and historical reasoning.
 - [Legacy extracts](docs/legacy/) - workbook history only, not current-state maintenance.
-- [Temporary trackers](docs/temp/) - retire or absorb into canonical docs as items close.
+- [Archived temporary trackers](docs/temp/) - compatibility/provenance only; do not use as live routing unless refreshed at the top.
 
 ## Structured Sources
 - [Estimated BOM](bom/bom_estimated_items.csv)

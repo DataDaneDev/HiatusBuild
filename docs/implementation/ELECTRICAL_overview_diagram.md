@@ -14,7 +14,7 @@ related:
 
 # Electrical Topology Diagram (Implementation v6)
 
-As-of date: `2026-05-27`
+As-of date: `2026-06-01`
 
 Purpose: provide a complete, install-level electrical topology for the current build scope, including all major electrical components, fuse IDs, fuse housings, planned wire gauges, and estimated one-way run lengths for procurement planning.
 
@@ -230,8 +230,8 @@ flowchart LR
         ACBOXOUT["Same combined 6-way AC DIN enclosure\noutput neutral isolated from input neutral"]
         OUTMAIN["AC-out main breaker\n30A UL489"]
         OUT1PROT["Branch protection for AC-out-1\n20A + 20A; GFCI at first outlet"]
-        BR_A["Branch A: galley outlets"]
-        BR_B["Branch B: office outlets"]
+        BR_A["Branch A: office / driver-side outlet"]
+        BR_B["Branch B: galley / passenger-side outlet"]
         OUT2PROT["AC-out-2 reserve path only\n(capped route, no energized Phase 1 hardware)"]
         ACBOXOUT --> OUTMAIN --> OUT1PROT
         OUT1PROT -- "12 AWG branch cable, ~15 ft (ASSUMED)" --> BR_A
@@ -242,7 +242,8 @@ flowchart LR
         IND["Induction cooktop"]
         MW["Microwave"]
         MON["External monitor + office chargers"]
-        GENOUT["General 120V GFCI receptacles\n2 total locations"]
+        OFFICE_REC["Office/driver GFCI receptacle"]
+        GALLEY_REC["Galley/passenger GFCI receptacle"]
         SHORE_ONLY["Future shore-only load (optional)\nA/C or electric water heat"]
     end
 
@@ -255,10 +256,11 @@ flowchart LR
     OUT1 -- "10/3 AC feeder, ~2.5 ft" --> ACBOXOUT
     OUT2 -. "12 AWG capped reserve route, ~15 ft (ASSUMED optional)" .-> OUT2PROT
 
-    BR_A --> IND
-    BR_A --> MW
+    BR_A --> OFFICE_REC
     BR_A --> MON
-    BR_B --> GENOUT
+    BR_B --> GALLEY_REC
+    BR_B --> IND
+    BR_B --> MW
     OUT2PROT -. "future activation only" .-> SHORE_ONLY
 
     BR_A -. "if AC USB outlets selected" .-> PD_AC
@@ -285,7 +287,7 @@ flowchart LR
 - Shore interface: `30A` RV-style inlet baseline with adapter kit for `15A`/`20A` hookups.
 - AC input protection: portable EMS + combined DIN enclosure + `30A` AC input breaker/disconnect upstream of MultiPlus AC-in.
 - AC-out-1 distribution: `30A` AC-out main plus two protected `20A` branches with GFCI-at-first-outlet strategy.
-- Receptacle plan: current purchased baseline is `2` total `120V` GFCI receptacles, one per active branch. Prior downstream non-GFCI receptacles are obsolete unless a later layout revision reopens them.
+- Receptacle plan: current purchased baseline is `2` total `120V` GFCI receptacles, one per active branch: Branch A = office/driver side, Branch B = galley/passenger side. Prior downstream non-GFCI receptacles are obsolete unless a later layout revision reopens them.
 - USB charging plan: `2` DC-fed USB PD station assemblies on `12V` branches (`1` office, `1` galley) with branch baselines of `20A` (office) and `15A` (galley).
 - AC-out-2 remains reserve-only in Phase 1 (labeled capped route; no energized branch hardware procured).
 
@@ -379,8 +381,8 @@ Retired from active architecture:
 | `C-28` | Shore source/adapters -> portable EMS -> shore cord -> shore inlet -> combined AC DIN enclosure / AC input breaker | `120VAC` | Source-limited shore current (adapter-constrained at source) | `30A` AC input breaker/disconnect baseline with source-current-limit settings policy | `10/3` shore feed to inlet/AC-in area | `8 ft` (`ASSUMED`) |
 | `C-29` | AC input breaker/disconnect -> MultiPlus AC-in | `120VAC` | MultiPlus AC input current (`30A` hardware basis) | Upstream `30A` AC breaker/disconnect (`C-28`) | `10 AWG` stranded AC conductors | `2.5 ft` (`ASSUMED`, cabinet internal) |
 | `C-30` | MultiPlus AC-out-1 -> combined AC DIN enclosure / AC-out main breaker | `120VAC` | Inverter-backed AC-out feeder current (`30A` system cap) | `30A` AC-out main breaker | `10/3` stranded AC feeder | `2.5 ft` (`ASSUMED`, cabinet internal) |
-| `C-31` | Branch A -> GFCI receptacle | `120VAC` | Branch load (galley/general high-draw outlet) | `20A` branch breaker + GFCI receptacle | `12/3` stranded AC branch cable | `15 ft` (`ASSUMED`, branch leg default) |
-| `C-32` | Branch B -> GFCI receptacle | `120VAC` | Branch load (office/general outlet use) | `20A` branch breaker + GFCI receptacle | `12/3` stranded AC branch cable | `15 ft` (`ASSUMED`, branch leg default) |
+| `C-31` | Branch A -> office/driver GFCI receptacle | `120VAC` | Branch load (office monitor/chargers/general outlet use) | `20A` branch breaker + GFCI receptacle | `12/3` stranded AC branch cable | `15 ft` (`ASSUMED`, branch leg default) |
+| `C-32` | Branch B -> galley/passenger GFCI receptacle | `120VAC` | Branch load (galley/general high-draw outlet; induction/microwave sequenced) | `20A` branch breaker + GFCI receptacle | `12/3` stranded AC branch cable | `15 ft` (`ASSUMED`, branch leg default) |
 | `C-33` | MultiPlus AC-out-2 (reserve-only) -> capped route for future shore-only branch | `120VAC` | N/A in Phase 1 (route reserved only) | N/A in Phase 1 (no energized branch hardware) | `12 AWG` stranded AC conductors (reserve path only) | `15 ft` (`ASSUMED`, reserve route default) |
 | `C-34` | 12V panel -> USB PD station branch (office zone) | `12V` | High-demand office charging branch (`100W + 65W` class station budget) | `F-10` branch fuse (`20A`) | `12 AWG duplex` baseline | `5 ft` (`ASSUMED`, short-run requirement) |
 | `C-35` | 12V panel -> USB PD station branch (galley zone) | `12V` | Galley charging branch (`65W` class USB-C plus USB-A/C loads) | `F-10` branch fuse (`15A`) | `14 AWG duplex` baseline | `8 ft` (`ASSUMED`, near-load branch) |
@@ -438,8 +440,8 @@ Calculation basis for drop screening:
 | `C-28` | Shore inlet path | AC input breaker/disconnect | Source-limited AC OCP | `30A` hardware basis | `10/3` | `8 ft` | `0.40%` @ `120VAC` | Row `114` (`10/3 shore + AC-in/out feed`) | PASS |
 | `C-29` | AC input breaker/disconnect | MultiPlus AC-in | Upstream AC OCP | `30A` hardware basis | `10 AWG AC` | `2.5 ft` | `0.12%` @ `120VAC` | Row `114` (`10/3 shore + AC-in/out feed`) | PASS |
 | `C-30` | MultiPlus AC-out-1 | AC-out main breaker | `30A` AC-out main | `30A` hardware basis | `10/3` | `2.5 ft` | `0.12%` @ `120VAC` | Row `114` (`10/3 shore + AC-in/out feed`) | PASS |
-| `C-31` | Branch A | Galley receptacle chain | `20A` branch OCP | `20A` | `12 AWG AC` | `15 ft` | `0.79%` @ `120VAC` | Row `113` (`12 AWG AC branch`) | PASS |
-| `C-32` | Branch B | Office/general receptacle chain | `20A` branch OCP | `20A` | `12 AWG AC` | `15 ft` | `0.79%` @ `120VAC` | Row `113` (`12 AWG AC branch`) | PASS |
+| `C-31` | Branch A | Office/driver receptacle chain | `20A` branch OCP | `20A` | `12 AWG AC` | `15 ft` | `0.79%` @ `120VAC` | Row `113` (`12 AWG AC branch`) | PASS |
+| `C-32` | Branch B | Galley/passenger receptacle chain | `20A` branch OCP | `20A` | `12 AWG AC` | `15 ft` | `0.79%` @ `120VAC` | Row `113` (`12 AWG AC branch`) | PASS |
 | `C-33` | MultiPlus AC-out-2 | Reserve-only capped route | N/A in Phase 1 | N/A | `12 AWG AC` (reserve path only) | `15 ft` | `0.60%` @ `120VAC` (future-use screen) | N/A (not procured in Phase 1) | RESERVE |
 | `C-34` | 12V fuse panel | Office USB PD station | `F-10 20A` | `20A` design cap | `12 AWG duplex` | `5 ft` | `2.65%` @ `12V` | Row `116` (`12 AWG + 14 AWG USB set`) | PASS (keep `<=5 ft` or upsize) |
 | `C-35` | 12V fuse panel | Galley USB PD station | `F-10 15A` | `8A` expected | `14 AWG duplex` | `8 ft` | `2.69%` @ `12V` | Row `116` (`12 AWG + 14 AWG USB set`) | PASS (near 3%; if sustained current rises, move to `12 AWG`) |

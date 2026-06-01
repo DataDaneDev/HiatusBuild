@@ -1,4 +1,20 @@
-# Procurement Purchase List — refreshed 2026-05-28
+---
+aliases:
+  - Active procurement purchase list
+  - Hiatus procurement list
+tags:
+  - hiatus/plan
+  - hiatus/procurement
+status: active
+related:
+  - "[[PROJECT_build_order_of_operations]]"
+  - "[[TNUTZ_80_20_HARDWARE_MODEL_2026-06-01]]"
+  - "[[ELECTRICAL_fuse_schedule]]"
+---
+
+# Active Procurement Purchase List — refreshed 2026-06-01
+
+Freshness note `2026-06-01`: filename date is historical; this is the current short-horizon procurement surface. Use it for shopping-cart posture, not final cut/fabrication geometry.
 
 Purpose: short-term buy list for finishing the live-tested electrical board as a hard-mounted, strain-relieved mobile module, plus only the supporting interior/prototype items that should not block that work.
 
@@ -8,8 +24,8 @@ Scope note: this is a purchase aid, not a final cut list. Do not order final ext
 
 1. Program/verify MultiPlus with the purchased `MK3-USB-C`; do not treat sustained shore charging as commissioned until settings are verified.
 2. Finish electrical-board hard-mount, protection, labeling, strain-relief, and abrasion-control hardware after checking what is now on hand.
-3. Mouser fuse cleanup parts for Orion final `F-06` and WS500 low-current circuits.
-4. Prototype-only 80/20/TNutz stock after electrical-board positions are mechanically proven.
+3. Mouser fuse cleanup parts for Orion final standalone `F-06`: current interim is a `30A 58V` MIDI; buy the `20A 80VDC` fuse + holder listed below when swapping to final cleanup hardware.
+4. WIP TNUTZ shopping cart for `10-series` prototype stock/hardware after reviewing the visual aids and current module assumptions; do not treat it as final-cut geometry.
 5. Diesel heater tank later, after physical re-measurement.
 
 ## Amazon / Victron purchase list
@@ -107,13 +123,13 @@ Posture: not a blocker. Re-measure before buying. Carry-extra-fuel is acceptable
 
 ## TNutz / 80/20 posture
 
-Detailed hardware model: [TNUTZ_80_20_HARDWARE_MODEL_2026-06-01](TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md). Use that worksheet for the current robust `10-series` connector/T-nut/floor-mount order; this section remains the shorter procurement posture summary.
+Detailed hardware model and WIP cart owner: [TNUTZ_80_20_HARDWARE_MODEL_2026-06-01](TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md). Use that worksheet for the consolidated `10-series` connector/T-nut/floor-mount cart and visual aids. The owner still needs to review the visuals before treating the cart as ready to submit. This section remains the shorter procurement posture summary.
 
-Ordering posture: prototype material only. Do **not** buy the old broad `8x 92 in` `15-series` package as a default starter order. Choose **no machining** for any prototype sticks unless a specific measured module envelope has passed physical mockup.
+Ordering posture: WIP shopping cart / prototype material only. Do **not** buy the old broad `8x 92 in` `15-series` package as a default starter order. Choose **no machining** for any prototype sticks unless a specific measured module envelope has passed physical mockup.
 
 ### Better current approach
 
-- Buy or use small `10-series` prototype stock/hardware first for furniture/service-panel mockups.
+- Current owner intent: consolidate around `17 x 94 in` full-length TNUTZ `10-series` sticks plus the hardware model quantities, pending visual-aid review and physical validation.
 - Keep a few representative `15-series` pieces only for stiffness comparison or a proven heavy/dynamic module.
 - Treat the electrical board/module as the first mechanical proof: mount real components, prove access, then decide what frame/skin support is actually needed.
 

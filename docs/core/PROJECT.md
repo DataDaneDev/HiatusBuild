@@ -41,7 +41,7 @@ related:
 - Use [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md) as the active phase sequence. Use [INSTALL_MINUS_12_READINESS_PLAN](../plans/INSTALL_MINUS_12_READINESS_PLAN.md) and [STARTER_PLAN_electrical_and_flooring_pre_camper](../plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md) as historical install-window/pre-camper references unless they are explicitly refreshed.
 - Use [INTERIOR_furniture_layout_and_galley](../implementation/INTERIOR_furniture_layout_and_galley.md) as the current owner for the office-first passenger-side lofted fridge/wet-spine concept, separated battery bench, and `10-series` 80/20 overlay-panel direction.
 - Use [ELECTRICAL_48V_ARCHITECTURE](ELECTRICAL_48V_ARCHITECTURE.md) as the canonical `48V` design reference while mechanically laying out the electrical module and alternator-control path.
-- Active work now includes measured camper block envelopes, electrical module live-commissioning cleanup, fuse/device access checks, 80/20 prototype stock/hardware planning, camper audio placement/routing validation, floor/subfloor gates, and payload/weight tracking.
+- Active work now includes measured camper block envelopes, electrical module live-commissioning cleanup, fuse/device access checks, 80/20 prototype stock/hardware planning, floor/subfloor gates, and payload/weight tracking. Camper audio remains preliminary/future-roadmap, not near-term procurement.
 - Electrical status has moved past dead-layout only: the `48V` bus, SmartShunt, Orion, Cerbo, MultiPlus inverter mode, and a short limited-current shore-charge test have all been proven without observed errors.
 - Defer irreversible work (final shell penetrations, shell-dependent final cable cuts, final extrusion vendor cuts, permanent skins, and finish-floor glue-down) until physical measurement, service-map, access, and post-energization checks pass.
 
@@ -50,7 +50,7 @@ related:
 - Out of scope for phase 1: non-critical aesthetic upgrades and major unrelated truck mechanical projects
 
 ## Requirements baseline (draft)
-- Workday autonomy target: modeled profiles (BOM loads + owner-supplied office loads + moderate camper-audio use) indicate `3,794 Wh/day` (`core_workday`) and `4,587 Wh/day` (`winter_workday`); battery reserve floor policy is `20%` minimum SOC
+- Workday autonomy target: conservative modeled profiles (BOM loads + owner-supplied office loads + preliminary future-audio allowance) indicate `3,794 Wh/day` (`core_workday`) and `4,587 Wh/day` (`winter_workday`); actual near-term office-only use may be lower. Battery reserve floor policy is `20%` minimum SOC
 - Connectivity reliability target: Starlink is planned primary path; fallback strategy still TBD
 - Thermal comfort and electronics protection limits: TBD
 - System safety requirements: fusing, disconnects, wire protection, labeling, service access

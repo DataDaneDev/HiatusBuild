@@ -44,14 +44,21 @@ Use this folder map when deciding where a document belongs. Current repo posture
 - [implementation](implementation/): build-ready reference docs that support the active baseline.
 - [INTERIOR_furniture_layout_and_galley](implementation/INTERIOR_furniture_layout_and_galley.md): current draft office-first interior layout, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, 10-series 80/20/overlay-panel direction, service-panel rules, and generated concept caveats.
 - [INTERIOR_driver_side_workstation](implementation/INTERIOR_driver_side_workstation.md): draft driver-side desk, stow-low monitor, electrical-closet/DC-shelf interface, diesel-heater base zone, and storage mechanism design.
-- [CAMPER_audio_system](implementation/CAMPER_audio_system.md): camper-only `12V` audio package, source/sub/speaker selection, fusing, wire sizing, routing, and tuning notes.
+- [CAMPER_audio_system](implementation/CAMPER_audio_system.md): preliminary/future camper-only `12V` audio package, source/sub/speaker selection, fusing, wire sizing, routing, and tuning notes; not near-term procurement.
+- [ELECTRICAL_overview_diagram](implementation/ELECTRICAL_overview_diagram.md): implementation topology, conductor IDs, branch maps, diagrams, and active electrical assumptions.
+- [ELECTRICAL_fuse_schedule](implementation/ELECTRICAL_fuse_schedule.md): fuse IDs, amperages, holder/fuse families, Orion standalone `F-06`, spare policy, and BOM row mapping.
+- [ELECTRICAL_AC_BOM](implementation/ELECTRICAL_AC_BOM.md): purchased Phase 1 AC hardware and Branch A/B outlet intent.
 - [ELECTRICAL_bench_layout_and_test_guide](implementation/ELECTRICAL_bench_layout_and_test_guide.md): staged electrical commissioning, first-live results, hard-mounting/access checks, and post-live wiring/strain-relief validation.
 - [FLOORING_subfloor_build_process](implementation/FLOORING_subfloor_build_process.md): subfloor/EPS/Lonseal gates and finish-floor hold conditions.
 - Rule: implementation docs may expand the core baseline, but they should not silently redefine it.
 
 ## Plans
-- [plans](plans/): active execution plans and order-of-operations docs.
+- [plans](plans/): active execution plans, procurement aids, WIP carts, and historical references.
 - [PROJECT_build_order_of_operations](plans/PROJECT_build_order_of_operations.md): active post-install build sequence.
+- [PROCUREMENT_purchase_list_2026-05-26](plans/PROCUREMENT_purchase_list_2026-05-26.md): active short-horizon procurement list; filename date is historical.
+- [TNUTZ_80_20_HARDWARE_MODEL_2026-06-01](plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md): consolidated WIP TNUTZ `10-series` cart, hardware model, and visual-aid owner.
+- [INTERIOR_LIGHTING_PLAN_2026-05-31](plans/INTERIOR_LIGHTING_PLAN_2026-05-31.md): draft lighting worksheet; `24V` lighting is currently unlikely and not active architecture.
+- [HIATUS_work_plan_2026-05-29](plans/HIATUS_work_plan_2026-05-29.md): historical one-night work plan and rough cutlist worksheet; not current sequencing.
 - [INSTALL_MINUS_12_READINESS_PLAN](plans/INSTALL_MINUS_12_READINESS_PLAN.md) and [STARTER_PLAN_electrical_and_flooring_pre_camper](plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md): historical install-window/pre-camper references unless updated at the top with a newer as-of date.
 - Rule: plans may sequence work and call out current focus, but they should point back to canonical design docs for the actual baseline.
 
@@ -60,8 +67,8 @@ Use this folder map when deciding where a document belongs. Current repo posture
 - Rule: once a decision is locked, studies become supporting history rather than current truth.
 
 ## Temp
-- [temp](temp/): temporary issue trackers that can be retired once absorbed into canonical docs.
-- Rule: any still-open item in `temp/` should either point to its canonical owner or be absorbed and retired.
+- [temp](temp/): archived temporary issue trackers retained for compatibility/provenance only.
+- Rule: do not use `temp/` as live routing; absorb still-relevant items into canonical owners before acting on them.
 
 ## Legacy
 - [legacy](legacy/): workbook extracts retained for traceability only.

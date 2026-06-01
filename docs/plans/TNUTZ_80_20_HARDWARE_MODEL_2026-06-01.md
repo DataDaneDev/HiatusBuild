@@ -1,6 +1,23 @@
+---
+aliases:
+  - TNUTZ 80/20 hardware model
+  - TNUTZ shopping cart worksheet
+tags:
+  - hiatus/plan
+  - hiatus/8020
+  - hiatus/procurement
+status: draft
+related:
+  - "[[PROCUREMENT_purchase_list_2026-05-26]]"
+  - "[[PROJECT_build_order_of_operations]]"
+  - "[[INTERIOR_furniture_layout_and_galley]]"
+---
+
 # TNUTZ 10-Series Hardware Model — Hiatus Interior Buildout
 
-_As of `2026-06-01`. Status: modeled procurement worksheet, not final fabrication geometry._
+_As of `2026-06-01`. Status: WIP TNUTZ shopping-cart / visual-aid worksheet. Consolidated order owner, not final fabrication geometry._
+
+Freshness note `2026-06-01`: this file is the detailed owner for the current TNUTZ/80-20 order consolidation. The owner still needs to review the visual aids and WIP cart before submitting any order. Use [PROCUREMENT_purchase_list_2026-05-26](PROCUREMENT_purchase_list_2026-05-26.md) only as the short procurement summary.
 
 ## Purpose
 
@@ -21,7 +38,7 @@ This model intentionally overbuilds structural connection hardware versus a mini
 ## Hard assumptions
 
 1. Primary extrusion remains `10-series` / `1 in` profile, currently `EX-1010` style full-length stock.
-2. Current extrusion stock target remains `17 x 94 in` full sticks, not vendor pre-cut.
+2. Current WIP extrusion stock target remains `17 x 94 in` full sticks, not vendor pre-cut; submit only after the visual aids and module assumptions are reviewed.
 3. Structural T-slot hardware should be `1/4-20`; use `5/16` only for truck/camper plusnut anchoring where the plusnut/hole pattern calls for it.
 4. No hidden-only joints for critical furniture. Hidden connectors can be nice visually, but this build needs visible/serviceable gussets and plates for inspection and retightening.
 5. Module seams use external joining plates so the bench/tower/desk/fridge/galley can be separated later without destroying the frame.
@@ -275,7 +292,7 @@ Order quantities are rounded up because this is a vibration-prone camper build, 
 7. **Add M4 rear storage last** so it does not steal tailgate/entry/service clearance.
 8. Anchor to truck/camper only after the full aisle/roof/service map passes.
 
-## Final validation before placing the TNUTZ hardware order
+## Final validation before placing/submitting the TNUTZ hardware order
 
 - Confirm whether you want black anodized visible brackets or plain zinc/aluminum where hidden.
 - Confirm whether your current `1/4-20` bolt stock includes enough low-profile `1/2 in` button/flanged screws. If yes, reduce screw purchase.

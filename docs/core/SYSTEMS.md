@@ -55,7 +55,7 @@ related:
 
 ### Modeling rules (procurement-first plus full-load)
 - Primary procurement source of truth is `bom/bom_estimated_items.csv`.
-- Load model is maintained in `bom/load_model_wh.csv` (model v4) and includes BOM-sourced installed loads, owner-supplied work electronics (kept out of BOM cost totals), and a moderate camper-audio listening profile.
+- Load model is maintained in `bom/load_model_wh.csv` (model v4) and includes BOM-sourced installed loads, owner-supplied work electronics (kept out of BOM cost totals), and a conservative preliminary/future camper-audio listening profile. Audio is not near-term procurement.
 - Legacy workbook WH model assumptions are retired and not used.
 - Voltage convention: use `48V` as architecture label, but use `51.2V` nominal for battery Wh accounting.
 - Run-length convention: measured physical layout lengths are cut-length source-of-truth; CAD values are planning references only.
@@ -76,12 +76,12 @@ related:
 | Owner-supplied office assumptions | Laptop + 27 inch 1440p monitor + tablet/peripheral charging | `bom/load_model_wh.csv` rows marked `Owner-Supplied` |
 
 ### Modeled expected usage
-Load totals below are from `bom/load_model_wh.csv` model v4 (BOM loads plus owner-supplied office loads plus a moderate camper-audio profile).
+Load totals below are from `bom/load_model_wh.csv` model v4 (BOM loads plus owner-supplied office loads plus a conservative preliminary/future camper-audio profile).
 
 | Scenario | Daily energy | 5-day workweek energy | 7-day week energy | Dominant contributors |
 | --- | --- | --- | --- | --- |
-| `core_workday` | `3,794 Wh` | `18,970 Wh` | `26,558 Wh` | Laptop, monitor, Starlink, cooking, inverter idle, moderate camper audio |
-| `winter_workday` | `4,587 Wh` | `22,935 Wh` | `32,109 Wh` | Laptop, monitor, Starlink, diesel heater, cooking, moderate camper audio |
+| `core_workday` | `3,794 Wh` | `18,970 Wh` | `26,558 Wh` | Laptop, monitor, Starlink, cooking, inverter idle, conservative future-audio allowance |
+| `winter_workday` | `4,587 Wh` | `22,935 Wh` | `32,109 Wh` | Laptop, monitor, Starlink, diesel heater, cooking, conservative future-audio allowance |
 | `minimal_idle_day` | `624 Wh` | `3,120 Wh` | `4,368 Wh` | Fridge + always-on monitoring/detector loads |
 
 ### Capacity analysis (corrected battery bank)
@@ -139,7 +139,7 @@ Solar remains deferred until shore charging and alternator charging are working.
 #### Shore charging (MultiPlus-II charger path)
 - Charger limit from model string: `35A`; Dumfume manual lists charge voltage as `58.4V +/-0.2V` but also lists charge-limit/over-charge protection at `58.4V`, so current commissioning uses a lower routine target: `56.8V` absorption/charge with `54.0V` float. For the `3x` bank, manual-backed current references are `60A` recommended charge total and `300A` max continuous charge total, so the MultiPlus `35A` maximum is within battery-bank limits.
 - Current first-live result: AC-in shore charging was proven at household-outlet limits with MultiPlus input limit reduced (`10A` first test; `12A` policy ceiling on a `15A` circuit). Reported Cerbo values were about `1294W` from shore and about `54.3V x 21.6A` into the battery bank in bulk.
-- Charge-profile validation snapshot (`2026-05-30`): active fixed LiFePO4 profile settled into absorption at `56.8V` on the MultiPlus and SmartShunt with `0A` charge current; battery display read about `55.8V`; SmartShunt SOC was set to `100%` at that settled state. Shore input current limit was `12A` on the household-source test.
+- Supervised charge-profile target snapshot (`2026-05-30`): fixed LiFePO4 settings appeared to settle into absorption at `56.8V` on the MultiPlus and SmartShunt with `0A` charge current; battery display read about `55.8V`; SmartShunt SOC was set to `100%` at that settled state. Treat this as a supervised target/settings snapshot, not closure of sustained/unattended charging. Shore input current limit was `12A` on the household-source test.
 - Required before unattended or extended charging: program/verify MultiPlus LiFePO4 charge profile with `MK3-USB + VEConfigure` or equivalent; set absorption/charge voltage to the current `56.8V` target, use `54.0V` float and `52.8V` storage if available, equalization off, lithium temperature compensation behavior disabled/confirmed, minimum absorption time (`1h` in the observed `1-8h` field), repeated absorption `0.25h`, and charger current at or below the MultiPlus `35A` limit.
 - `DVCC` remains disabled in the current architecture because there is no documented BMS-to-GX control path.
 - AC input current policy: label AC Input 1 as `Shore power`; use `10A` for first tests and `12A` maximum on a normal `15A` household circuit; use the actual pedestal/source rating for `20A`/`30A` sources.
@@ -151,8 +151,8 @@ Solar remains deferred until shore charging and alternator charging are working.
 - Real-world times are longer due to absorption taper near full charge, reduced household input-current limits, and any configured charge-current derate.
 
 ### Operational implications and constraints
-- Battery capacity now supports roughly `2.7-3.2` office-workdays without charging depending on season, reserve policy, and the modeled moderate camper-audio profile.
-- With `900W` flexible solar at the base `68%` factor, `4` PSH leaves a material daily deficit for both `core_workday` and `winter_workday`; the moderate-audio profile increases that deficit versus the prior office-only model.
+- Battery capacity now supports roughly `2.7-3.2` office-workdays without charging in the conservative future-audio model, depending on season and reserve policy; actual near-term office-only use may be better.
+- With `900W` flexible solar at the base `68%` factor, `4` PSH leaves a material daily deficit for both `core_workday` and `winter_workday`; the future-audio allowance increases that deficit versus the prior office-only model.
 - Shore charging can materially recover SOC in a single evening (`~6.18h` from `20%` to `100%` in bulk-ideal terms).
 - Alternator recovery potential is expected to materially exceed the obsolete pre-Mechman charger path once the dedicated `48V` alternator path is commissioned.
 - Current execution risk is no longer charger-capacity-limited operation; it is migration/commissioning quality (fitment, regulation, protection, and measured thermal behavior).
@@ -249,11 +249,11 @@ shore_charge_power_w = charge_voltage * charger_current_a
 bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 ```
 - Retired model note:
-- `bom/load_model_wh.csv` v1 (workbook-derived chart), v2 (BOM-only), and v3 (BOM plus owner-supplied office loads) are superseded by model v4 (BOM plus owner-supplied office loads plus moderate camper-audio profile).
+- `bom/load_model_wh.csv` v1 (workbook-derived chart), v2 (BOM-only), and v3 (BOM plus owner-supplied office loads) are superseded by model v4 (BOM plus owner-supplied office loads plus a conservative preliminary/future camper-audio allowance).
 
 ## Camper audio
-- Camper audio implementation owner: [CAMPER_audio_system](../implementation/CAMPER_audio_system.md). Active draft package is a DC-first `2.1` camper-only system: Samsung `S11 Ultra` tablet -> Kicker `46KMC2` marine media receiver -> Kicker `CSC67` `4 ohm` speaker pair plus Kicker `49PTRTP10` powered down-firing 10 in subwoofer.
-- BOM rows `189-193` track the source unit, speaker pair, powered sub, 4 AWG sub power/fuse kit, RCA/speaker wiring, mounts, and install consumables. Row `101` is now only a deprecated sound-system placeholder.
+- Camper audio implementation owner: [CAMPER_audio_system](../implementation/CAMPER_audio_system.md). Status: preliminary/future-roadmap, not near-term procurement. Draft package is a DC-first `2.1` camper-only system: Samsung `S11 Ultra` tablet -> Kicker `46KMC2` marine media receiver -> Kicker `CSC67` `4 ohm` speaker pair plus Kicker `49PTRTP10` powered down-firing 10 in subwoofer.
+- BOM rows `189-193` track deferred/preliminary source unit, speaker pair, powered sub, 4 AWG sub power/fuse kit, RCA/speaker wiring, mounts, and install consumables. Row `101` is now only a deprecated sound-system placeholder.
 - Electrical posture: KMC2 uses a `15A` source/head-unit branch from the `12V` fuse panel; PTRTP10 uses a separate `40A` source fuse near the `12V` source takeoff with `4 AWG` positive and matching `4 AWG` return to the `12V` negative bus/main stud. Audio returns should not use shell/chassis as the normal current path.
 - 12V headroom note: the selected audio system can theoretically peak around `55A` at `12V` (`15A` source unit + `40A` powered sub branch), above the Orion `30A` continuous 12V feed. The `12V` buffer battery supports peaks and short loud sessions, but sustained high-volume use should be watched on the `12V` battery voltage/SOC while other 12V loads are running.
 - Physical placement default: KMC2 in the driver-side electrical/workstation/DC-shelf face; powered sub low in a dry driver-side toe-kick/step-box or dry bench volume near the `12V` junction; speaker cutouts/pods wait for wall panel thickness, roof-down sweep, and furniture-service checks.
@@ -336,7 +336,7 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 - Do not solder-splice high-current 12V source conductors; use crimped lugs on rated stud terminals.
 - Maintain branch-level fuse-to-conductor coordination per `docs/implementation/ELECTRICAL_fuse_schedule.md`.
 - Keep always-on detector branch (`12V-05`) protected but never switch-controlled.
-- Keep ambient/cabinet strip lighting on the dedicated DC branch (`12V-11`) so low-light use does not require inverter operation.
+- Keep ambient/cabinet strip lighting on the dedicated DC branch (`12V-11`) so low-light use does not require inverter operation. The separate `24V` lighting worksheet is draft/unlikely and is not active architecture unless deliberately promoted.
 - If sustained `12V` demand exceeds Orion headroom, treat additional `48V->12V` charger capacity (`BOM row 118`) as a safety action, not a convenience upgrade.
 
 ### 120VAC shore/inverter safety

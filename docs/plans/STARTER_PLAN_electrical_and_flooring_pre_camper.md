@@ -31,9 +31,9 @@ Related references:
 
 ---
 
-## 1) Current status lock (what to assume right now)
+## 1) Historical status lock (what this plan assumed then)
 
-### Have now (working assumptions)
+### Historical “have now” working assumptions
 - Truck in hand: `2021 F-350 long bed`.
 - Most core electrical components are already purchased.
 - Electrical architecture remains `48V core + 12V distribution`.
@@ -43,21 +43,21 @@ Related references:
 - `1x` `1/2 in` plywood sheet remains the electrical backer/closet material, currently uncut with components laid out on/near it.
 - Tooling readiness increased (major Bauer/Harbor Freight purchase completed).
 
-### Not finalized / not in hand yet
+### Historical “not finalized / not in hand yet” list
 - Camper shell not yet installed.
 - Solar panels and final PV wiring/fusing path are not yet locked for final procurement.
 - Alternator architecture direction is dedicated `48V` secondary alternator (`Mechman + WS500 + APM-48`); Mechman kit and APM-48 are received, but install remains deferred until batteries/shore charging/monitoring are proven.
 - Final AC branch/receptacle count is secondary; the AC-in-only shore charge path must be SKU-locked first.
 - Bed rail caps have been re-bonded/sealed with polyurethane; small drill holes were patched with Gorilla Patch & Seal tape, and selected corner air gaps received polyurethane beads. Cure/inspection and ordinary post-drive inspection remain open before final floor closeout.
 
-### Practical rule
+### Historical practical rule
 - **Install-trip mode now:** travel empty-bed, let sealants cure, capture real camper measurements, and do not bring batteries/electrical unless Hiatus asks.
 - **Resume reversible truck-only prep after return** (EPS trim, subfloor verification, post-drive dust/water-path inspection, block envelopes, bench layout, fuse/device matching, labels).
 - **Do not do irreversible shell-dependent work yet** (final shell penetrations, final shell-run cable cuts, permanent finish-floor glue-down, final module skins, exact-cut extrusion).
 
 ---
 
-## 2) Fast-start checklist (phone view)
+## 2) Historical fast-start checklist (phone view)
 
 Use this as your “open phone and go” sequence.
 
@@ -142,7 +142,7 @@ Do not finalize these yet:
 
 ---
 
-## 4) Flooring + truck-bed sealing: active pre-camper execution plan
+## 4) Flooring + truck-bed sealing: historical pre-camper execution plan
 
 The flooring workstream is now beyond templating: EPS is installed, three plywood slices are installed, Lonseal and adhesive are in hand, and the next risk is crossing the glue-down point too early.
 

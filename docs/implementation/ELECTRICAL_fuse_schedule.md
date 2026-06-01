@@ -14,7 +14,7 @@ related:
 
 # Electrical Fuse Schedule (Implementation - Lynx Topology)
 
-As-of date: `2026-05-27`
+As-of date: `2026-06-01`
 
 Purpose: define each required fuse by circuit, protected conductor/device, holder/housing method, physical placement, and linked wire-gauge assumptions for the approved Phase 1 Lynx architecture with a battery-backed 12V bus and dedicated 48V secondary alternator branch.
 
@@ -25,15 +25,15 @@ Related docs:
 - BOM source of truth: `bom/bom_estimated_items.csv`
 
 ## Design Basis
-- Topology: `Victron Lynx Distributor M10` (`LYN060102010`) with `4` fused `48V` branches.
+- Topology: `Victron Lynx Distributor M10` (`LYN060102010`) with `3` active fused `48V` branches and Lynx Slot 4 open/spare.
 - Battery bank assumption: `3x 48V 100Ah` batteries in parallel (`3` separate battery-positive conductors leaving batteries).
 - 12V distribution assumption: 12V fuse block used as the shared junction device (main `+` stud = source combine, integrated negative bus/main `-` = return), fed by Orion-Tr Smart `48/12-30` charger and a `12V 100Ah LiFePO4` buffer battery branch.
 - Parallel-bank safety rule: use one Class T fuse per battery-positive conductor leaving the battery.
-- Branch devices on Lynx:
+- Active branch devices on Lynx:
 1. MultiPlus-II `48/3000`
 2. SmartSolar `150/45`
 3. Dedicated `48V` secondary alternator branch (Mechman/WS500 path)
-4. Orion-Tr `48/12-30` input
+4. Slot 4 / `F-05` open spare — Orion-Tr `48/12-30` input is **not** a Lynx fused branch; it uses standalone source-side `F-06` from a Lynx `48V+` bus tap.
 - Alternator path lock for this pass:
 1. `F-04` is locked to `150A` MEGA (`58V/80V`) in Lynx Slot 3 at the house-bank/Lynx end of the alternator positive run.
 2. Obsolete pre-Mechman charger/fuse paths are removed from active architecture and primary layout planning.

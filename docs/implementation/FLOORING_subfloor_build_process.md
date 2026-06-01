@@ -6,9 +6,8 @@ tags:
   - hiatus/flooring
 status: active
 related:
-  - "[[INSTALL_MINUS_12_READINESS_PLAN]]"
-  - "[[STARTER_PLAN_electrical_and_flooring_pre_camper]]"
   - "[[PROJECT_build_order_of_operations]]"
+  - "[[PROJECT]]"
 ---
 
 # Flooring Subfloor Build Process
@@ -18,13 +17,13 @@ related:
 - Baseline date for this revision: May 14, 2026.
 - Moisture-control premise updated May 3, 2026: the Hiatus is effectively a sealed capper with barn doors; the inside of the truck bed remains the build substrate, so water must not be allowed under the subfloor.
 - Field progress updated May 4, 2026: bed rail caps were re-bonded/sealed with polyurethane; small drill holes and corner gaps were patched/sealed; trowel is purchased.
-- Field progress updated May 14, 2026: the subfloor is complete enough to serve as the current working datum, while Lonseal remains intentionally unglued until rough-in, hardpoints, and service-access decisions are validated in the installed camper.
+- Field progress updated May 14, 2026: the subfloor is complete enough to serve as the current working datum, while Lonseal remains intentionally unglued until rough-in, hardpoints, and service-access decisions are validated in the installed camper. Owner update 2026-06-01: sheet vinyl/Lonseal installation is expected late, after interior buildout/service-access gates, not as a near-term task.
 
 ## Final Subfloor Structure (Bottom to Top)
 1. Existing spray-in bedliner.
 2. `5/8 in` SilveRboard Graphite EPS between ribs only. Current state: installed/trimmed enough for the current subfloor datum; inspect for proud spots, rocking, moisture paths, or hardpoint conflicts before finish-floor closure.
 3. `3/4 in` birch plywood directly over EPS + rib structure. Current state: complete in three slices with bottom/edges sealed and top bond face untreated for Lonseal adhesive; keep removable/serviceable until rough-in and hardpoint gates pass.
-4. Lonseal Lonwood Madera marine sheet vinyl, glue-down finish layer. Current state: sheet vinyl and adhesive are in hand; glue-down is gated because it reduces subfloor serviceability.
+4. Lonseal Lonwood Madera marine sheet vinyl, glue-down finish layer. Current state: sheet vinyl and adhesive are in hand; glue-down is a late finish step after interior buildout/rough-in gates because it reduces subfloor serviceability.
 
 ## Explicitly De-Scoped Layer
 - Full-bed `EPDM/RPDB` thermal-break sheet above EPS and below plywood is no longer in the active floor stack-up.
@@ -64,6 +63,10 @@ related:
 - Active flooring package remaining expected spend: `$424.68`.
 - Active flooring package estimated total: `$704.93`.
 - Bed sealing consumables added outside the prior flooring package total: `$32` (`rows 177-178`).
+
+## Historical provenance
+- [INSTALL_MINUS_12_READINESS_PLAN](../plans/INSTALL_MINUS_12_READINESS_PLAN.md) preserves the May 7 install-window floor/seal planning.
+- [STARTER_PLAN_electrical_and_flooring_pre_camper](../plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md) preserves the pre-camper floor/electrical starter plan.
 
 ## Installation Sequence
 ### Phase 0 - Bed rail dust/weather closeout before finish floor

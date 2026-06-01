@@ -1,12 +1,29 @@
-# Hiatus Work Plan — Tonight + Tomorrow
+---
+aliases:
+  - Hiatus May 29 work plan
+  - TNUTZ rough cutlist worksheet
+tags:
+  - hiatus/plan
+  - hiatus/history
+  - hiatus/8020
+status: reference
+related:
+  - "[[PROJECT_build_order_of_operations]]"
+  - "[[PROCUREMENT_purchase_list_2026-05-26]]"
+  - "[[TNUTZ_80_20_HARDWARE_MODEL_2026-06-01]]"
+---
 
-_As of Friday 2026-05-29, 21:04 MDT. Assumption: tomorrow is one hard 8-hour build block._
+# Historical Hiatus Work Plan — 2026-05-29 Tonight + Tomorrow
+
+_As of Friday 2026-05-29, 21:04 MDT. Assumption at the time: tomorrow is one hard 8-hour build block._
+
+Freshness note `2026-06-01`: this is a **historical/reference worksheet**, not the active build order. The rough TNUTZ cutlist is preserved for review, but active TNUTZ shopping-cart consolidation lives in [TNUTZ_80_20_HARDWARE_MODEL_2026-06-01](TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md), with procurement summary in [PROCUREMENT_purchase_list_2026-05-26](PROCUREMENT_purchase_list_2026-05-26.md).
 
 ## Mission
 
 Get momentum back without creating rework: order the extrusion tonight, fix the charging/programming issue first tomorrow, then hard-mount and truck-fit the board.
 
-## Tonight — must finish
+## Historical tonight plan — not current instruction
 
 ### 1. Place the extrusion order
 
@@ -74,7 +91,7 @@ Review gates before cutting:
 - Do not keep cycling the battery into BMS trip/protect.
 - Do not start a late-night hard-mounting rabbit hole.
 
-## Tomorrow — 8-hour crunch plan
+## Historical tomorrow plan — 8-hour crunch worksheet
 
 ### Hour 0–1 — Fix charge/programming issue first
 
