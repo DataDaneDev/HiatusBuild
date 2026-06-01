@@ -434,7 +434,7 @@ related:
 - Options considered: treat the system as fully commissioned, treat the live test as failed/incomplete, or record it as a successful staged checkpoint with remaining configuration gates.
 - Decision drivers: avoid losing important live-test evidence while not overclaiming charger-profile, AC-out, GFCI, or alternator readiness.
 - Result: first live `48V` and AC-in functional checkpoint is passed. AC Input 1 should be labeled `Shore power`; household outlet testing uses `10A` first-test / `12A` max-on-15A policy. Cerbo is documented as a small inline fused `48V` feed (`CERBO-PWR`) rather than a 12V fuse-panel branch. Parallel battery cable balancing is documented as similar total loop resistance, not equal positive-only length.
-- Follow-up: program/verify MultiPlus LiFePO4 charge settings with `MK3-USB + VEConfigure` or equivalent before sustained charging; repeat shore-charge test with logged values; formally verify AC neutral/ground/GFCI behavior before AC-out use; keep alternator commissioning deferred.
+- Follow-up: MultiPlus LiFePO4 charge-settings verification was later closed by owner live behavior check (bulk -> quick absorption at/near `100%` on the first battery). Formally verify AC neutral/ground/GFCI behavior before AC-out use; keep alternator commissioning deferred.
 
 - ID: D-046
 - Date: 2026-06-01
@@ -444,6 +444,15 @@ related:
 - Decision drivers: strong bass per dollar, compact packaging, low integration risk, simple tablet control, and keeping high-current audio wiring on the camper `12V` side without new `48V` branch complexity.
 - Result: draft future package is Kicker `46KMC2` source/head unit + Kicker `CSC67` `4 ohm` speaker pair + Kicker `49PTRTP10` powered 10 in down-firing sub. BOM rows `189-193`, implementation doc `docs/implementation/CAMPER_audio_system.md`, electrical fuse/conductor integration, and load model v4 preserve the concept for later, but audio is not near-term procurement.
 - Follow-up: validate KMC2 mounting depth, PTRTP10 dry/ventilated low mounting location, speaker cutout/pod locations, final RCA/speaker-wire lengths, and actual `12V` buffer-battery behavior during loud audio plus normal 12V loads.
+
+- ID: D-047
+- Date: 2026-06-01
+- Decision: Close the MultiPlus shore-charge programming/verification blocker for the current charger setup without requiring a second-battery charge cycle.
+- Context: Owner redid the MultiPlus settings and confirmed the first battery entered bulk, then quickly transitioned to absorption because it was already at/near `100%`, which matched the planned behavior. Owner does not need or want to charge a second battery solely for documentation.
+- Options considered: require a second battery charge before closing the gate, close the profile gate based on first-battery behavior while leaving physical/AC-out/alternator gates open, or keep all charging marked uncommissioned.
+- Decision drivers: charger settings and behavior were validated, additional charging is unnecessary wear/time, and the remaining risks are physical install/strain relief plus separate AC-out/alternator commissioning rather than charger-profile programming.
+- Result: MultiPlus profile verification is closed for current shore charging; no second-battery charge is required just to validate the profile.
+- Follow-up: keep normal unattended-charge physical safety checks: source-current limit, no abnormal heat/smell/noise, protected wiring, covers, and strain relief.
 
 ## Risk register
 - ID: R-001
@@ -585,10 +594,10 @@ related:
 - Risk: Battery first-charge or paralleling error can create BMS trips, high-current faults, or mismatched parallel-bank behavior.
 - Impact (1-5): 5
 - Likelihood (1-5): 2
-- Mitigation: Configure MultiPlus LiFePO4 profile, set source current limit, log voltage/SOC/temp, and verify parallel-bank behavior under controlled charge/load. Short first shore-charge test passed at reduced household input current, but charger profile is not yet formally programmed/verified.
+- Mitigation: MultiPlus LiFePO4 profile has been configured/owner-verified by first-battery behavior; keep source-current limit matched to the shore circuit, log voltage/SOC/temp during meaningful charge sessions, and verify parallel-bank behavior during future controlled charge/load use.
 - Trigger: Sustained shore charging, any high-SOC charge session, and first logged parallel-bank current-sharing check.
 - Owner: Sunny
-- Status: Partially mitigated; sustained-charge programming/logging pending
+- Status: Partially mitigated; charger-profile programming closed, parallel-bank behavior and physical install/strain-relief gates still open
 
 - ID: R-017
 - Risk: Workstation/monitor/electrical-shelf mechanisms can collide with the pop-down roof or become vibration projectiles if stow height, cable loops, shelves, panels, or latches are validated from assumptions instead of real shell measurements.

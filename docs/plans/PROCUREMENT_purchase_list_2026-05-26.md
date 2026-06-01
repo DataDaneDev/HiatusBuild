@@ -22,7 +22,7 @@ Scope note: this is a purchase aid, not a final cut list. Do not order final ext
 
 ## Priority order
 
-1. Program/verify MultiPlus with the purchased `MK3-USB-C`; do not treat sustained shore charging as commissioned until settings are verified.
+1. MultiPlus programming/verification is no longer the procurement blocker: settings were redone and first-battery shore-charge behavior matched plan. Keep normal physical safety gates before unattended charging.
 2. Finish electrical-board hard-mount, protection, labeling, strain-relief, and abrasion-control hardware after checking what is now on hand.
 3. Orion final standalone `F-06` cleanup stock is purchased: current interim remains `30A 58V` MIDI until the convenient swap to `20A 80VDC` FKS/ATO hardware.
 4. WIP TNUTZ shopping cart for `10-series` prototype stock/hardware after reviewing the visual aids and current module assumptions; do not treat it as final-cut geometry.
@@ -34,8 +34,8 @@ Scope note: this is a purchase aid, not a final cut list. Do not order final ext
 
 - **MK3-USB-C interface**
   - Purchased: Victron `MK3-USB-C` interface on `2026-05-27` (`$59.44`).
-  - Use: program/verify MultiPlus LiFePO4 charger settings with VEConfigure/VictronConnect before sustained or unattended shore charging.
-  - Status: hardware purchased; commissioning blocker remains **settings verification**, not procurement.
+  - Use: service/programming interface for MultiPlus LiFePO4 charger settings.
+  - Status: hardware purchased and settings owner-verified by first-battery behavior; retain as service/rollback tool.
 
 - **SmartShunt to Cerbo VE.Direct cable**
   - Purchased: Victron VE.Direct cable, `5.90 ft` on `2026-05-27` (`$16.31`).

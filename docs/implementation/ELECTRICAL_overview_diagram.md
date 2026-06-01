@@ -42,7 +42,7 @@ Related docs:
 - SmartShunt and Orion-Tr Smart connected in VictronConnect.
 - Cerbo GX access point/remote-console workflow active; Cerbo is powered from a small inline fused `48V` feed and connected to MultiPlus via `VE.Bus` RJ45.
 - Short AC-in shore-charge test passed at household-source current limits: about `1294W` shore input and about `54.3V x 21.6A` battery charging in bulk.
-- Hold open: MultiPlus LiFePO4 charge profile must still be programmed/verified before sustained charging; AC-out branch/GFCI and alternator commissioning remain future gates.
+- Hold open: MultiPlus LiFePO4 charge profile is now programmed/owner-verified by supervised first-battery behavior; AC-out branch/GFCI, alternator commissioning, Cerbo hard-mounting, and final strain-relief/abrasion-control remain future gates.
 
 ## Length Estimation Defaults Used In This Pass
 1. Cabinet internal interconnect default: `2.5 ft` one-way (`ASSUMED`).

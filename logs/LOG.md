@@ -1,3 +1,9 @@
+## 2026-06-01 — MultiPlus profile verification blocker closed and board finish gate clarified
+
+- Owner clarified that MultiPlus settings were redone and the first battery behaved as planned during shore charging: bulk began, then quickly transitioned to absorption because the battery was already at/near `100%`. No second-battery charge is required just to validate the charger profile.
+- Remaining electrical board work is physical closeout: Cerbo is the only major item not hard-mounted; decide any route/sand/seal/paint step before J-clamp strain relief makes teardown more annoying.
+- Documentation impact: removed stale "charger profile not verified" blockers while keeping AC-out/GFCI, alternator commissioning, Cerbo mounting, covers, labels, strain relief, and abrasion-control as open gates.
+
 ## 2026-06-01 — Mouser Orion F-06 final cleanup stock purchased
 
 - Owner purchased Mouser Orion `F-06` final cleanup stock: `3x` Littelfuse `166.7000.5202` / Mouser `576-166.7000.5202` FKS/ATO fuses (`20A`, `80VDC`) and `3x` Littelfuse `178.6150.0001` / Mouser `576-178.6150.0001` holders (`80VDC` listing owner-confirmed).

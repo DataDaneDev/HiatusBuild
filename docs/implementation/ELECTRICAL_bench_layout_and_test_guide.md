@@ -13,7 +13,7 @@ related:
 
 # Electrical Bench Layout + Test Guide
 
-As-of date: `2026-05-27`
+As-of date: `2026-06-01`
 
 Purpose: provide a practical, print-friendly game plan for building, hard-mounting, post-live cleanup, and staged validation of the electrical module before mobile install or permanent enclosure/panel closeout.
 
@@ -40,13 +40,13 @@ Related docs:
 
 ## 2) Recommended sequence (ground build -> test fit -> hard mount)
 
-Current owner status (`2026-05-27`): the electrical module has passed the first live checkpoint. Owner confirmed `55.5V` throughout the `48V` system, MultiPlus inverter mode on with no errors, SmartShunt and Orion online in VictronConnect, Cerbo remote-console/AP workflow active, and a short limited-current shore-charge test completed.
+Current owner status (`2026-06-01`): the electrical module has passed the first live checkpoint. Owner confirmed `55.5V` throughout the `48V` system, MultiPlus inverter mode on with no errors, SmartShunt and Orion online in VictronConnect, Cerbo remote-console/AP workflow active, and shore charging behavior verified after settings were redone. Major board hardware is hard-mounted except the Cerbo.
 
 Immediate priority:
 1. Preserve the current working topology; do not add alternator or AC-out branch complexity until cleanup checks pass.
-2. Add/verify labels, covers, torque witness marks, strain relief, cable protection, and service access around the energized layout.
-3. Program/verify the MultiPlus LiFePO4 charge profile with `MK3-USB + VEConfigure` or equivalent before sustained charging.
-4. Repeat shore-charge validation with logged voltage/current/SOC/temperature after charger settings are confirmed.
+2. If finishing the board, photograph/label the current layout, remove hardware once, route/sand/seal/paint, then reinstall before wiring gets more permanent.
+3. Hard-mount the Cerbo.
+4. Add/verify labels, covers, torque witness marks, J-clamp strain relief, cable protection, and service access around the energized layout.
 5. Keep AC-out branch/GFCI validation and Mechman/WS500 alternator commissioning as separate later gates.
 
 ### Phase L1: Build the two backer boards on the ground
@@ -177,9 +177,9 @@ Pass when:
 - Leave alternator branch inactive and `F-04` out during shore-charge validation.
 - Log starting/resting voltage, charge current, temperature, SOC/monitor readings, abnormal heat/noise/smell, input-current limit, and stop conditions.
 
-Current result (`2026-05-27`):
+Current result (`2026-06-01`):
 - Short AC-in test passed at limited household-outlet draw: about `1294W` shore input and about `54.3V x 21.6A` (`~1173W`) battery charging in bulk.
-- This is a functional test only; the MultiPlus battery profile still needs formal programming/verification before unattended or extended charging.
+- Charge-profile verification is now treated as passed for the current shore-charger setup: owner redid settings and confirmed first-battery behavior entered bulk, then quickly transitioned to absorption because the battery was already at/near `100%`, as planned. No second-battery charge is required just to validate the profile.
 
 Pass when:
 - Shore charging repeats normally with programmed battery settings, no unexplained BMS trips, abnormal heat, polarity issues, or AC faults, and logged values match expected limits.
@@ -229,7 +229,7 @@ Use one card per session:
 ## 7) Hold points (do not cross yet)
 
 - Do not finalize shell-dependent cable cuts.
-- Do not run sustained/unattended MultiPlus charging until the charger profile is programmed/verified against the battery manual.
+- Do not leave shore charging unattended while wiring is loose, unprotected, being rerouted, or missing required strain relief/covers; the MultiPlus profile itself is programmed/owner-verified.
 - Do not treat the short AC-in charge test as AC-out branch commissioning; GFCI/outlet validation remains separate.
 - Do not lock roof/solar final terminations.
 - Do not permanently close access panels before all staged tests pass.

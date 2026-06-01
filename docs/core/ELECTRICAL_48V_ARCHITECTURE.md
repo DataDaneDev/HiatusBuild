@@ -41,14 +41,14 @@ Related docs:
 - `Upfitter #3` is a low-current control signal only. It does not carry alternator output current.
 - `WS500` white `Feature-In` is reserved for future fault-interlock work, not required in Phase 1.
 
-## Current commissioning state (`2026-05-27`)
+## Current commissioning state (`2026-06-01`)
 - `48V` bus has been live-tested: owner measured `55.5V` throughout the system, including at the MultiPlus.
 - MultiPlus-II DC/inverter mode has been switched on with inverter light illuminated, slight normal hum, and no reported error lights.
 - SmartShunt and Orion-Tr Smart are visible in VictronConnect.
 - Cerbo GX access point/remote-console workflow is active; Cerbo power is a small inline fused feed from the `48V` system side and MultiPlus communication is via `VE.Bus` RJ45.
-- Shore charging has been short-tested through the MultiPlus at household-outlet current limits. This proves basic AC-in/charger function, not final charge-profile correctness.
-- Do not treat the charger as commissioned for unattended/sustained use until the MultiPlus LiFePO4 charge profile is programmed/verified by live test. Current commissioning target is `56.8V` absorption/charge, `54.0V` float, short absorption dwell, equalization off, conservative LiFePO4 storage behavior, and source-current limit matched to the actual shore circuit. The Dumfume manual's `58.4V +/-0.2V` value is documented, but because the same manual also lists `58.4V` as charge-limit/over-charge protection voltage, it is not the active routine charger target while top-end BMS protection behavior is being seen. `DVCC` remains disabled unless a documented BMS/GX control path is added.
-- AC-out branch/GFCI commissioning and secondary-alternator commissioning are still separate future gates.
+- Shore charging has been tested through the MultiPlus at household-outlet current limits. The first short test proved basic AC-in/charger function; later owner verification redid the settings and confirmed first-battery behavior entered bulk, then quickly transitioned to absorption at/near `100%` as planned.
+- MultiPlus LiFePO4 charge-profile programming/verification is treated as closed for the current shore-charger setup. Current target is `56.8V` absorption/charge, `54.0V` float, short absorption dwell, equalization off, conservative LiFePO4 storage behavior, and source-current limit matched to the actual shore circuit. The Dumfume manual's `58.4V +/-0.2V` value is documented, but because the same manual also lists `58.4V` as charge-limit/over-charge protection voltage, it is not the active routine charger target. `DVCC` remains disabled unless a documented BMS/GX control path is added.
+- AC-out branch/GFCI commissioning, secondary-alternator commissioning, final Cerbo mounting, and board strain-relief/abrasion-control closeout are still separate future gates.
 
 ## Locked component set
 | Function | Locked baseline | BOM row(s) |

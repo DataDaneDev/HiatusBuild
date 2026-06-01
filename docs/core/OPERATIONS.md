@@ -104,7 +104,7 @@ Bench-test intent: validate wiring correctness and basic device behavior (shunt,
 - Connect order: RV/load side and EMS path first, then energize the shore source.
 - Disconnect order: de-energize/unplug the shore source first, then disconnect the RV/load side.
 - Household `15A` source policy: `10A` first test, `12A` maximum normal limit.
-- Do not use sustained/unattended shore charging until the MultiPlus LiFePO4 profile is programmed/verified.
+- MultiPlus LiFePO4 shore-charge profile has been programmed/owner-verified. Before leaving charging unattended, still apply normal physical safety gates: correct source-current limit, no abnormal heat/smell/noise, protected/strain-relieved wiring, and no active wiring changes in progress.
 
 ### MultiPlus-II factory/default screenshot baseline (`2026-05-28`)
 Use this only as a manual rollback reference if the MultiPlus settings need to be reconstructed from the owner screenshots. It is **not** the active Hiatus charging profile.
@@ -155,7 +155,7 @@ Use this only as a manual rollback reference if the MultiPlus settings need to b
 - Temperature compensation: `Off`; low-temp charge cutoff `10C / 50F` if available.
 - Inverter low-voltage protection target: pre-alarm `46.0V`, shutdown `44.0V`, restart `48.0V`.
 - PowerAssist: `Off` for first clean shore test or use rocker `II` charger-only; may be re-enabled later deliberately.
-- Supervised snapshot: with shore input limited to `12A`, MultiPlus and SmartShunt settled at `56.8V` in absorption with `0A` charge current; battery display read about `55.8V`; owner set SmartShunt SOC to `100%` at this settled state. This is a settings/target snapshot only; sustained/unattended shore charging still requires MK3/VEConfigure-equivalent verification and logged retest.
+- Supervised verification: settings were redone with the current target and the first battery behaved as planned, entering bulk and then quickly transitioning to absorption because it was already at/near `100%`. Earlier settled snapshot with shore input limited to `12A` showed MultiPlus and SmartShunt at `56.8V` in absorption with `0A` charge current; battery display read about `55.8V`; owner set SmartShunt SOC to `100%` at this settled state. No separate second-battery charge is required just to validate the charger profile.
 
 ## Propane-specific checks
 - Tank bracket tight, valve accessible, and hose routing clear of heat/chafe zones.
