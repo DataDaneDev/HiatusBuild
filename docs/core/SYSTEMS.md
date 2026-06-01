@@ -34,7 +34,7 @@ related:
 - Solar option screening matrix (stringing + MPPT fit flags): [SOLAR_configuration_matrix](../studies/SOLAR_configuration_matrix.md)
 - Electrical decisions, risks, and unresolved items: [TRACKING](TRACKING.md)
 
-### Planning snapshot (base model as-of `2026-05-28`)
+### Planning snapshot (base model as-of `2026-06-01`)
 - Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).
 - House architecture: `48V` core with Orion-Tr Smart `48V->12V` charging/step-down feeding a shared battery-backed `12V` junction.
 - Inverter/charger: Victron MultiPlus-II `48/3000/35-50`, DC/inverter mode live-tested with no observed errors.
@@ -55,7 +55,7 @@ related:
 
 ### Modeling rules (procurement-first plus full-load)
 - Primary procurement source of truth is `bom/bom_estimated_items.csv`.
-- Load model is maintained in `bom/load_model_wh.csv` (model v3) and includes BOM-sourced installed loads plus owner-supplied work electronics (kept out of BOM cost totals).
+- Load model is maintained in `bom/load_model_wh.csv` (model v4) and includes BOM-sourced installed loads, owner-supplied work electronics (kept out of BOM cost totals), and a moderate camper-audio listening profile.
 - Legacy workbook WH model assumptions are retired and not used.
 - Voltage convention: use `48V` as architecture label, but use `51.2V` nominal for battery Wh accounting.
 - Run-length convention: measured physical layout lengths are cut-length source-of-truth; CAD values are planning references only.
@@ -76,12 +76,12 @@ related:
 | Owner-supplied office assumptions | Laptop + 27 inch 1440p monitor + tablet/peripheral charging | `bom/load_model_wh.csv` rows marked `Owner-Supplied` |
 
 ### Modeled expected usage
-Load totals below are from `bom/load_model_wh.csv` model v3 (BOM loads plus owner-supplied office loads).
+Load totals below are from `bom/load_model_wh.csv` model v4 (BOM loads plus owner-supplied office loads plus a moderate camper-audio profile).
 
 | Scenario | Daily energy | 5-day workweek energy | 7-day week energy | Dominant contributors |
 | --- | --- | --- | --- | --- |
-| `core_workday` | `3,530 Wh` | `17,650 Wh` | `24,710 Wh` | Laptop, monitor, Starlink, cooking, inverter idle |
-| `winter_workday` | `4,202 Wh` | `21,010 Wh` | `29,414 Wh` | Laptop, monitor, Starlink, diesel heater, cooking |
+| `core_workday` | `3,794 Wh` | `18,970 Wh` | `26,558 Wh` | Laptop, monitor, Starlink, cooking, inverter idle, moderate camper audio |
+| `winter_workday` | `4,587 Wh` | `22,935 Wh` | `32,109 Wh` | Laptop, monitor, Starlink, diesel heater, cooking, moderate camper audio |
 | `minimal_idle_day` | `624 Wh` | `3,120 Wh` | `4,368 Wh` | Fridge + always-on monitoring/detector loads |
 
 ### Capacity analysis (corrected battery bank)
@@ -89,14 +89,14 @@ Load totals below are from `bom/load_model_wh.csv` model v3 (BOM loads plus owne
 | --- | --- | --- |
 | Nominal battery energy | `51.2V x 100Ah x 3` | `15,360 Wh` |
 | Usable energy to 20% reserve floor | `15,360 x 0.8` | `12,288 Wh` |
-| Core day depth of discharge | `3,530 / 15,360` | `22.98%` per day |
-| Winter day depth of discharge | `4,202 / 15,360` | `27.36%` per day |
+| Core day depth of discharge | `3,794 / 15,360` | `24.70%` per day |
+| Winter day depth of discharge | `4,587 / 15,360` | `29.86%` per day |
 
 ### Autonomy (no charging)
 | Scenario | Days (`100% -> 20%`) |
 | --- | --- |
-| `core_workday` | `3.48` |
-| `winter_workday` | `2.92` |
+| `core_workday` | `3.24` |
+| `winter_workday` | `2.68` |
 | `minimal_idle_day` | `19.69` |
 
 ### Charging potential
@@ -116,14 +116,14 @@ Solar remains deferred until shore charging and alternator charging are working.
 
 | `900W` array efficiency | 2 PSH day | 4 PSH day | 5 PSH day | Net vs `core_workday` at 4 PSH | Net vs `winter_workday` at 4 PSH |
 | --- | --- | --- | --- | --- | --- |
-| `60%` | `1,080 Wh` | `2,160 Wh` | `2,700 Wh` | `-1,370 Wh/day` | `-2,042 Wh/day` |
-| `68%` (planning base) | `1,224 Wh` | `2,448 Wh` | `3,060 Wh` | `-1,082 Wh/day` | `-1,754 Wh/day` |
-| `75%` | `1,350 Wh` | `2,700 Wh` | `3,375 Wh` | `-830 Wh/day` | `-1,502 Wh/day` |
+| `60%` | `1,080 Wh` | `2,160 Wh` | `2,700 Wh` | `-1,634 Wh/day` | `-2,427 Wh/day` |
+| `68%` (planning base) | `1,224 Wh` | `2,448 Wh` | `3,060 Wh` | `-1,346 Wh/day` | `-2,139 Wh/day` |
+| `75%` | `1,350 Wh` | `2,700 Wh` | `3,375 Wh` | `-1,094 Wh/day` | `-1,887 Wh/day` |
 
 - Break-even PSH at `900W`:
-- `core_workday` (base `68%`): `3,530 / (900 x 0.68) = 5.77` PSH/day.
-- `winter_workday` (base `68%`): `4,202 / (900 x 0.68) = 6.87` PSH/day.
-- Sensitivity band for `winter_workday`: `6.23` PSH/day (`75%`) to `7.78` PSH/day (`60%`).
+- `core_workday` (base `68%`): `3,794 / (900 x 0.68) = 6.20` PSH/day.
+- `winter_workday` (base `68%`): `4,587 / (900 x 0.68) = 7.50` PSH/day.
+- Sensitivity band for `winter_workday`: `6.80` PSH/day (`75%`) to `8.49` PSH/day (`60%`).
 - `MPPT 150/45` is not the bottleneck for the current array range.
 
 #### Alternator charging (dedicated `48V` secondary alternator path)
@@ -144,20 +144,20 @@ Solar remains deferred until shore charging and alternator charging are working.
 - `DVCC` remains disabled in the current architecture because there is no documented BMS-to-GX control path.
 - AC input current policy: label AC Input 1 as `Shore power`; use `10A` for first tests and `12A` maximum on a normal `15A` household circuit; use the actual pedestal/source rating for `20A`/`30A` sources.
 - Ideal bulk-only recharge times at the current `56.8V` commissioning target and `35A` charger limit remain reference-only until measured charge logs replace them:
-- Replace one `core_workday`: `1.78h`.
-- Replace one `winter_workday`: `2.11h`.
+- Replace one `core_workday`: `1.91h`.
+- Replace one `winter_workday`: `2.31h`.
 - Recharge full `3x` bank from `20%` to `100%`: `6.18h`.
 - Recharge one isolated `48V 100Ah` battery from `20%` to `100%`: about `3.61h` at the single-battery `20A` current cap.
 - Real-world times are longer due to absorption taper near full charge, reduced household input-current limits, and any configured charge-current derate.
 
 ### Operational implications and constraints
-- Battery capacity now supports roughly `2.9-3.5` office-workdays without charging depending on season and reserve policy.
-- With `900W` flexible solar at the base `68%` factor, `4` PSH leaves a material daily deficit for both `core_workday` and `winter_workday`.
+- Battery capacity now supports roughly `2.7-3.2` office-workdays without charging depending on season, reserve policy, and the modeled moderate camper-audio profile.
+- With `900W` flexible solar at the base `68%` factor, `4` PSH leaves a material daily deficit for both `core_workday` and `winter_workday`; the moderate-audio profile increases that deficit versus the prior office-only model.
 - Shore charging can materially recover SOC in a single evening (`~6.18h` from `20%` to `100%` in bulk-ideal terms).
 - Alternator recovery potential is expected to materially exceed the obsolete pre-Mechman charger path once the dedicated `48V` alternator path is commissioned.
 - Current execution risk is no longer charger-capacity-limited operation; it is migration/commissioning quality (fitment, regulation, protection, and measured thermal behavior).
 - MultiPlus-II `48/3000` inverter continuous output (`~2,400W`) can be exceeded by simultaneous induction + microwave + other AC loads, so high-draw AC loads need sequencing.
-- Orion-Tr Smart `48->12V 30A` charger (`360W`) is the continuous charging/feed ceiling into the shared 12V junction; buffer battery supports short transients but sustained overload still requires load budgeting.
+- Orion-Tr Smart `48->12V 30A` charger (`360W`) is the continuous charging/feed ceiling into the shared 12V junction; buffer battery supports short transients, including audio bass peaks, but sustained overload still requires load budgeting.
 
 ### Safety baseline
 - Positive path sequence: battery -> Class T fuse (near source) -> disconnect -> Lynx Distributor -> fused branch feeds
@@ -249,7 +249,14 @@ shore_charge_power_w = charge_voltage * charger_current_a
 bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 ```
 - Retired model note:
-- `bom/load_model_wh.csv` v1 (workbook-derived chart) and v2 (BOM-only) are superseded by model v3 (BOM plus owner-supplied office loads).
+- `bom/load_model_wh.csv` v1 (workbook-derived chart), v2 (BOM-only), and v3 (BOM plus owner-supplied office loads) are superseded by model v4 (BOM plus owner-supplied office loads plus moderate camper-audio profile).
+
+## Camper audio
+- Camper audio implementation owner: [CAMPER_audio_system](../implementation/CAMPER_audio_system.md). Active draft package is a DC-first `2.1` camper-only system: Samsung `S11 Ultra` tablet -> Kicker `46KMC2` marine media receiver -> Kicker `CSC67` `4 ohm` speaker pair plus Kicker `49PTRTP10` powered down-firing 10 in subwoofer.
+- BOM rows `189-193` track the source unit, speaker pair, powered sub, 4 AWG sub power/fuse kit, RCA/speaker wiring, mounts, and install consumables. Row `101` is now only a deprecated sound-system placeholder.
+- Electrical posture: KMC2 uses a `15A` source/head-unit branch from the `12V` fuse panel; PTRTP10 uses a separate `40A` source fuse near the `12V` source takeoff with `4 AWG` positive and matching `4 AWG` return to the `12V` negative bus/main stud. Audio returns should not use shell/chassis as the normal current path.
+- 12V headroom note: the selected audio system can theoretically peak around `55A` at `12V` (`15A` source unit + `40A` powered sub branch), above the Orion `30A` continuous 12V feed. The `12V` buffer battery supports peaks and short loud sessions, but sustained high-volume use should be watched on the `12V` battery voltage/SOC while other 12V loads are running.
+- Physical placement default: KMC2 in the driver-side electrical/workstation/DC-shelf face; powered sub low in a dry driver-side toe-kick/step-box or dry bench volume near the `12V` junction; speaker cutouts/pods wait for wall panel thickness, roof-down sweep, and furniture-service checks.
 
 ## Communications
 - Primary internet path: Starlink Standard (DC power conversion item tracked in BOM)

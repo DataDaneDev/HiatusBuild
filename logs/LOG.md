@@ -1,3 +1,10 @@
+## 2026-06-01 — Camper audio system selected and integrated
+
+- Added a camper-only DC-first audio plan, separate from any future truck-cab driving subwoofer system.
+- Selected draft package: Kicker `46KMC2` source unit, Kicker `CSC67` `4 ohm` speaker pair, and Kicker `49PTRTP10` powered down-firing 10 in subwoofer with `4 AWG`/`40A` sub branch.
+- Added BOM rows `189-193`, deprecated the old row `101` sound-system placeholder, added implementation owner doc `docs/implementation/CAMPER_audio_system.md`, and synchronized electrical overview/fuse schedule, systems, interior placement notes, and tracking.
+- Updated `bom/load_model_wh.csv` to model moderate camper-audio use: `core_workday` now `3,794 Wh/day`, `winter_workday` now `4,587 Wh/day`, and `minimal_idle_day` remains `624 Wh/day`.
+
 ## 2026-05-30 — Shore-charge profile settled at 56.8V absorption
 
 - Owner confirmed active MultiPlus charge settings were programmed and shore charging entered bulk, then absorption as expected.

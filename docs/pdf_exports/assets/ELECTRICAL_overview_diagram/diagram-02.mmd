@@ -1,6 +1,6 @@
 flowchart LR
     ORION["Orion-Tr Smart 48/12-30\nIsolated charger"]
-    F07["F-07 60A MEGA (58V)\nVictron MEGA holder near Orion"]
+    F07["F-07 60A MEGA (80V)\nVictron MEGA holder near Orion"]
     PANEL["12V fuse block\n12-circuit, integrated negative bus\nmain + / - studs (source combine + shared return)"]
     B12["12V 100Ah LiFePO4\nbuffer battery"]
     F11["F-11 100A class\nbattery main fuse"]
@@ -16,6 +16,8 @@ flowchart LR
     USB_GALLEY["12V-09 Galley USB PD station\n15A / 14 AWG"]
     MAXXAIR["12V-10 Maxxair fan\n10A / 14 AWG (Hiatus pre-installed)"]
     LED_AMBIENT["12V-11 DC ambient/cabinet LED strips\n5A / 18/2 (planned Govee)"]
+    AUDIO_HU["12V-12 Kicker KMC2 media center\n15A / 12 AWG short-run"]
+    AUDIO_SUB["12V-AUDIO-SUB Kicker PTRTP10 powered sub\n40A / 4 AWG dedicated branch"]
 
     ORION -- "6 AWG, ~2.5 ft to main + stud" --> F07 --> PANEL
     ORION -- "6 AWG, ~2.5 ft to main - / neg bus" --> PANEL
@@ -33,6 +35,8 @@ flowchart LR
     PANEL -- "14 AWG duplex, ~8 ft (ASSUMED)" --> USB_GALLEY
     PANEL -- "14 AWG duplex, ~8 ft (ASSUMED)" --> MAXXAIR
     PANEL -- "18/2, ~8 ft (ASSUMED)" --> LED_AMBIENT
+    PANEL -- "12 AWG duplex, ~5 ft (ASSUMED short run)" --> AUDIO_HU
+    PANEL -- "4 AWG + via AUDIO-SUB 40A source fuse, ~8 ft (ASSUMED)" --> AUDIO_SUB
 
     STAR -- "return in duplex, ~8 ft" --> PANEL
     FRIDGE -- "return in duplex, ~12 ft" --> PANEL
@@ -44,3 +48,5 @@ flowchart LR
     USB_GALLEY -- "return in duplex, ~8 ft" --> PANEL
     MAXXAIR -- "return in duplex, ~8 ft" --> PANEL
     LED_AMBIENT -- "return in 18/2, ~8 ft" --> PANEL
+    AUDIO_HU -- "return in duplex, ~5 ft" --> PANEL
+    AUDIO_SUB -- "4 AWG return to main - / negative bus, ~8 ft" --> PANEL

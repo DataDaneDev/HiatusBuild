@@ -9,6 +9,7 @@ related:
   - "[[ELECTRICAL_48V_ARCHITECTURE]]"
   - "[[ELECTRICAL_fuse_schedule]]"
   - "[[SYSTEMS]]"
+  - "[[CAMPER_audio_system]]"
 ---
 
 # Electrical Topology Diagram (Implementation v6)
@@ -152,6 +153,8 @@ flowchart LR
     USB_GALLEY["12V-09 Galley USB PD station\n15A / 14 AWG"]
     MAXXAIR["12V-10 Maxxair fan\n10A / 14 AWG (Hiatus pre-installed)"]
     LED_AMBIENT["12V-11 DC ambient/cabinet LED strips\n5A / 18/2 (planned Govee)"]
+    AUDIO_HU["12V-12 Kicker KMC2 media center\n15A / 12 AWG short-run"]
+    AUDIO_SUB["12V-AUDIO-SUB Kicker PTRTP10 powered sub\n40A / 4 AWG dedicated branch"]
 
     ORION -- "6 AWG, ~2.5 ft to main + stud" --> F07 --> PANEL
     ORION -- "6 AWG, ~2.5 ft to main - / neg bus" --> PANEL
@@ -169,6 +172,8 @@ flowchart LR
     PANEL -- "14 AWG duplex, ~8 ft (ASSUMED)" --> USB_GALLEY
     PANEL -- "14 AWG duplex, ~8 ft (ASSUMED)" --> MAXXAIR
     PANEL -- "18/2, ~8 ft (ASSUMED)" --> LED_AMBIENT
+    PANEL -- "12 AWG duplex, ~5 ft (ASSUMED short run)" --> AUDIO_HU
+    PANEL -- "4 AWG + via AUDIO-SUB 40A source fuse, ~8 ft (ASSUMED)" --> AUDIO_SUB
 
     STAR -- "return in duplex, ~8 ft" --> PANEL
     FRIDGE -- "return in duplex, ~12 ft" --> PANEL
@@ -180,6 +185,8 @@ flowchart LR
     USB_GALLEY -- "return in duplex, ~8 ft" --> PANEL
     MAXXAIR -- "return in duplex, ~8 ft" --> PANEL
     LED_AMBIENT -- "return in 18/2, ~8 ft" --> PANEL
+    AUDIO_HU -- "return in duplex, ~5 ft" --> PANEL
+    AUDIO_SUB -- "4 AWG return to main - / negative bus, ~8 ft" --> PANEL
 ```
 
 ### 12V Operating Intent (Locked)
@@ -193,6 +200,7 @@ flowchart LR
 - Hiatus pre-installed 12V branches are tracked here as `12V-06` (factory LED lights with dimmer) and `12V-10` (Maxxair fan); verify final installed branch labeling during electrical audit.
 - Planned Govee/ambient strip lighting is a separate branch (`12V-11`) and not part of the Hiatus factory `12V-06` lighting circuit.
 - DC-first lighting intent: keep ambient/cabinet strip lighting on `12V-11` so nighttime lighting does not require inverter operation.
+- Camper audio intent: Kicker `46KMC2` source unit uses a `15A` `12V-12` branch from the fuse block, while Kicker `49PTRTP10` powered sub uses a separate `40A` fused `4 AWG` branch from the 12V source/junction rather than a normal blade-fuse panel branch. Bass peaks may exceed the Orion `30A` continuous feed and are supported by the `12V` buffer battery for short durations.
 
 ## AC Path Topology (Shore + Inverter Output, Full Hierarchy)
 ```mermaid
@@ -322,6 +330,8 @@ flowchart LR
 | `F-07` | `60A MEGA` (`80V` Victron replacement stock) | Victron MEGA fuse holder | Electrical cabinet at Orion `12V +` source end |
 | `F-09A/B/C` | `15A gPV` each | `10x38` touch-safe fuse holders in PV combiner | Roof-entry combiner enclosure |
 | `F-10` | Per branch (`ATO/ATC`) | Integrated blade sockets in generic 12V fuse block | Electrical cabinet |
+| `AUDIO-HU` / `12V-12` | `15A` source/head-unit branch; KMC2 harness also contains a `15A ATM` fuse | 12V fuse block branch plus KMC2 harness fuse | Electrical cabinet to driver-side DC shelf/source face |
+| `AUDIO-SUB` | `40A` external fuse for Kicker PTRTP10 powered sub branch | Inline/MRBF/AFS/ANL-class holder matched to selected 4 AWG kit; use `40A`, not a generic `100A` kit fuse | Within about `18 in` of the 12V source takeoff feeding the powered sub |
 | `F-11` | `100A` class (12V buffer battery main) | Sealed inline MIDI/AMI/ANL holder | Within ~`7"` of 12V buffer battery positive post |
 | `F-12` | `10A/15A` WS500 regulator power fuse | Sealed inline holder; voltage rating must cover actual source voltage | Near WS500 power lead source |
 | `F-13` | `3A` WS500 positive voltage-sense fuse | Fuse/holder must be rated for actual `48V` bank max voltage unless the WS500 harness rating proves otherwise | Near WS500 positive-sense source |
@@ -380,6 +390,12 @@ Retired from active architecture:
 | `C-39` | WS500 battery positive-sense lead -> WS500 | `48V` sense lead | Regulator voltage sense | `F-13` (`3A`) | Harness lead | `8 ft` (`ASSUMED`) |
 | `C-40` | WS500 current-sense high/low pair to selected shunt/current-sense point | low-current sense | Regulator current feedback | No fuse per current Wakespeed manual; twist pair if extended | Harness lead | `8 ft` (`ASSUMED`) |
 | `C-41` | Ford Upfitter `#3` output -> `F-15` -> WS500 brown ignition/enable wire | `12V` control lead | Manual alternator-enable signal only | `F-15` (`3A`) | `16 AWG` TXL/GXL | `6 ft` (`ASSUMED`) |
+| `C-42` | 12V panel -> Kicker `46KMC2` media center/source unit | `12V` | Source/head-unit branch (`15A` max; KMC2 manual shows `15A ATM`) | `F-10`/`AUDIO-HU` `15A` branch plus KMC2 harness fuse | `12 AWG duplex` if kept near `5 ft`; use `10 AWG` if longer | `5 ft` (`ASSUMED`, driver-side DC shelf) |
+| `C-43` | 12V source/main `+` stud -> `AUDIO-SUB` source fuse -> Kicker `49PTRTP10` powered sub `+` | `12V` | Powered sub branch; PTRTP10 manual external fuse value | `AUDIO-SUB` `40A` | `4 AWG` tinned/OFC | `8 ft` (`ASSUMED`; shorten by placing sub near 12V junction) |
+| `C-44` | Kicker `49PTRTP10` powered sub `-` -> 12V negative bus/main `-` stud | `12V` | Powered sub return | `AUDIO-SUB` protects paired positive | `4 AWG` tinned/OFC | `8 ft` (`ASSUMED`, paired with positive) |
+| `C-45` | KMC2 remote turn-on output -> PTRTP10 remote input | `12V` low-current control | Remote amp/sub enable | KMC2/source branch protected | `18 AWG` | `8 ft` (`ASSUMED`) |
+| `C-46` | KMC2 RCA line-out -> PTRTP10 RCA input | low-level audio signal | Subwoofer signal | N/A | shielded 2-channel RCA | measured route (`~4m` planning cable) |
+| `C-47L/R` | KMC2 front speaker outputs -> left/right Kicker `CSC67` speakers | speaker-level audio | One `4 ohm` speaker per KMC2 channel | KMC2 internal protection / `AUDIO-HU` source branch | `16 AWG` marine speaker wire | `10-12 ft` each (`ASSUMED`) |
 
 ## Wiring Validation Worksheet (Estimate Pass, 2026-02-18)
 Calculation basis for drop screening:
@@ -433,6 +449,11 @@ Calculation basis for drop screening:
 | `C-39` | WS500 positive voltage-sense source | WS500 voltage-sense input | `F-13 3A` | low-current `48V` sense lead; fuse/holder voltage class must be verified | Harness lead | `8 ft` | N/A (harness-limited) | Row `171` (fuse kit) | VERIFY holder/fuse voltage rating |
 | `C-40` | WS500 current-sense high/low pair | WS500 current-sense input | No fuse per current manual | low-current sense; twist pair if extended | Harness lead | `8 ft` | N/A (harness-limited) | Harness kit | PASS after routing/noise check |
 | `C-41` | Ford Upfitter `#3` output | WS500 brown ignition/enable input via `F-15` | `F-15 3A` | manual low-current control only | `16 AWG` TXL/GXL | `6 ft` | N/A (control circuit) | Row `176` (upfitter control kit) | PASS |
+| `C-42` | 12V panel | Kicker `46KMC2` media center | `AUDIO-HU 15A` branch + KMC2 `15A ATM` harness fuse | `15A` max fuse basis | `12 AWG duplex` | `5 ft` | `1.99%` @ `12V` | Row `192/193` audio wiring | PASS if kept short; use `10 AWG` if longer |
+| `C-43/C-44` | 12V source/main studs | Kicker `49PTRTP10` powered sub | `AUDIO-SUB 40A` external source fuse | `40A` manual fuse basis | `4 AWG` positive + matching return | `8 ft` | `1.33%` @ `12V` | Row `192` audio power kit | PASS; keep branch short and dry |
+| `C-45` | KMC2 remote output | PTRTP10 remote input | KMC2/source branch protected | low-current remote | `18 AWG` | `8 ft` | N/A | Row `193` audio signal/control | PASS |
+| `C-46` | KMC2 RCA line-out | PTRTP10 RCA input | N/A | low-level signal | shielded RCA | measured route | N/A | Row `193` audio signal/control | Route away from 4 AWG power |
+| `C-47L/R` | KMC2 front speaker outputs | Left/right `CSC67` speakers | KMC2/source branch protected | one `4 ohm` speaker per channel | `16 AWG` marine speaker wire | `10-12 ft` each | N/A | Row `193` audio speaker wire | Do not parallel speakers |
 
 ## Wire Rollup (No-Padding Purchase Baseline)
 | Gauge / cable family | Estimated total | Source circuits | BOM row |
@@ -441,14 +462,15 @@ Calculation basis for drop screening:
 | `2/0 AWG` black | `35.0 ft` | `C-05`, `C-06`, `C-08`, `C-12` | `28` |
 | `6 AWG` red | `10.0 ft` | `C-09`, `C-13`, `C-14`, `C-18` | `29` |
 | `6 AWG` black | `7.5 ft` | `C-10`, `C-15`, `C-19` | `29` |
-| `4 AWG` red | `2.5 ft` | `C-19A` | `30` |
-| `4 AWG` black | `2.5 ft` | `C-19B` | `30` |
+| `4 AWG` red | `10.5 ft` (`2.5 ft` existing + `8 ft` audio sub planning branch) | `C-19A`, `C-43` | `30`, `192` |
+| `4 AWG` black | `10.5 ft` (`2.5 ft` existing + `8 ft` audio sub return) | `C-19B`, `C-44` | `30`, `192` |
 | `10 AWG pair-equivalent` (PV) | placeholder only | `C-27` final module/string topology deferred until solar workstream; do not buy combiner/fuse count or cut roof entries from the old `3S3P` model | `31` |
 | `14 AWG duplex` | `52 ft` | `C-20`, `C-21`, `C-22`, `C-23`, `C-35`, `C-36` | `32` |
 | `18/2` | `24.0 ft` plus separate Cerbo low-current duplex | `C-24`, `C-25`, `C-37`; Cerbo `C-26` uses 48V fused low-current duplex | `33` / low-current stock |
 | `12 AWG AC branch cable` | `30 ft` (`C-33` excluded in Phase 1) | `C-31`, `C-32` | `113` |
 | `10/3 shore + AC-in/out feed` | `13 ft` | `C-28`, `C-29`, `C-30` | `114` |
-| USB branch mix (`12 AWG` + `14 AWG`) | `5 ft` (`12 AWG`) + `8 ft` (`14 AWG`) | `C-34`, `C-35` | `116` |
+| USB/audio branch mix (`12 AWG` + `14 AWG`) | USB: `5 ft` (`12 AWG`) + `8 ft` (`14 AWG`); audio source: `5 ft` `12 AWG` short-run assumption | `C-34`, `C-35`, `C-42` | `116`, `193` |
+| Camper audio signal/speaker/control wiring | RCA measured route, `18 AWG` remote, and `16 AWG` marine speaker wire runs | `C-45`, `C-46`, `C-47L/R` | `193` |
 | WS500 harness/sense leads | Included in selected kit/harness set | `C-38`, `C-39`, `C-40` | `168`, `171` |
 | `16 AWG` TXL/GXL control wire | `6 ft` | `C-41` | `176` |
 
@@ -503,6 +525,7 @@ Torque reference (verify against your exact manuals/hardware):
 - Receptacle boxes + `120V` outlets (current purchased baseline `2` GFCI receptacles; row `112` remains planned/confirm-on-hand for boxes/covers)
 - AC-out-2 reserve-only capped route (no energized Phase 1 branch hardware)
 - USB PD station branch hardware (`2` stations: office + galley)
+- Camper audio hardware: Kicker `46KMC2` source branch, Kicker `49PTRTP10` powered sub branch, `AUDIO-HU` 15A source protection, `AUDIO-SUB` 40A source fuse, RCA/speaker/remote wiring
 - Battery temperature sensor wiring to inverter/monitoring path
 - SmartShunt fused positive sense/power lead (factory harness)
 - Cerbo GX `CERBO-PWR` small inline fused `48V` power feed
@@ -519,9 +542,11 @@ Torque reference (verify against your exact manuals/hardware):
 8. `F-01A/B/C` are provisionally set to `200A` pending final `51.2V` battery datasheet/manual confirmation; if validated limits are lower, shift to `175A`.
 9. `2/0` cable quantity planning baseline in this pass is `77.5 ft` total no-padding (`42.5 ft` red + `35.0 ft` black); user-applied order padding is intentionally deferred to checkout.
 10. Manual alternator shutdown baseline is Ford `Upfitter #3` feeding the WS500 brown ignition/enable wire through `F-15`; `WS500` white `Feature-In` remains a future-only reserve for automatic interlock work.
+11. Camper audio is a `12V` accessory load. KMC2 source branch is `15A`; PTRTP10 sub branch is `40A` with `4 AWG` power and return. Audio peaks can exceed Orion continuous output and rely on the `12V` buffer battery, so first loud testing should watch `12V` voltage/SOC.
 
 ## Completion Status
 - DC/PV topology is complete for current BOM scope and load model scope.
 - AC hierarchy is complete at architecture level, including transfer behavior, branch strategy, and protection chain.
 - Full-circuit estimate pass is now documented with run lengths, voltage-drop screening, and purchase rollups.
+- Camper audio branch added as a DC-first `12V` accessory package: Kicker `46KMC2` source branch plus Kicker `49PTRTP10` powered sub branch; detailed product/routing notes live in `docs/implementation/CAMPER_audio_system.md`.
 - Remaining work is final measured-length replacement and SKU-level closeout before final cut-to-length harness production.

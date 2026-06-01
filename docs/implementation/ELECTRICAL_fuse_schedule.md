@@ -9,6 +9,7 @@ related:
   - "[[ELECTRICAL_48V_ARCHITECTURE]]"
   - "[[ELECTRICAL_overview_diagram]]"
   - "[[OPERATIONS]]"
+  - "[[CAMPER_audio_system]]"
 ---
 
 # Electrical Fuse Schedule (Implementation - Lynx Topology)
@@ -74,6 +75,8 @@ Lock for this build pass:
 | `F-07` | Orion `12V` output `+` -> 12V fuse block main `+` stud | Main `12V` feeder from Orion into shared source-combine point | `MEGA`, `80V` Victron replacement stock | `60A` | Victron MEGA fuse holder (external, non-Lynx) | Electrical cabinet, within ~`7"` of Orion `12V` output stud | `6 AWG` planned (`8 AWG` minimum per Orion cable table) |
 | `F-09A/B/C` | PV string `+` leads -> MPPT PV combiner | Each solar string positive conductor and reverse-current path | `gPV` string fuse (`>=150VDC`) | `15A` each (provisional) | `10x38` touch-safe PV fuse holders in weatherproof combiner enclosure | Roof-entry combiner near gland/pass-through | `10 AWG` PV wire |
 | `F-10` | `12V` fuse block branch circuits -> each `12V` load | Individual `12V` branch conductors and load circuits | ATO/ATC blade fuses (`32V` class) | Per-circuit | Integrated sockets in marine `12V` fuse block | `12V` fuse block in electrical cabinet | Per branch |
+| `AUDIO-HU` / `12V-12` | `12V` fuse block -> Kicker `46KMC2` media center/source unit | KMC2 source/head-unit branch conductor and device harness | ATO/ATC branch fuse (`32V` class) plus KMC2 harness `15A ATM` fuse | `15A` | Integrated `12V` fuse block branch plus OEM KMC2 harness fuse | Electrical cabinet to driver-side DC shelf/source face | `12 AWG duplex` if kept around `5 ft`; `10 AWG` if route grows toward `8 ft+` |
+| `AUDIO-SUB` | 12V source/main `+` stud -> external fuse -> Kicker `49PTRTP10` powered sub `+` | Powered-sub positive branch and subwoofer input; manual-required external protection | Inline/MRBF/AFS/ANL-class fuse matched to selected `4 AWG` kit (`32V`+ DC class acceptable on 12V branch) | `40A` | Holder within about `18 in` of 12V source takeoff; if using Kicker `47KMPK4`, fit the PTRTP10-required `40A` fuse rather than the kit generic larger fuse | Near `12V` source/junction, downstream of `SW-12V-BATT` | `4 AWG` positive with matching `4 AWG` return to 12V negative bus/main stud |
 | `F-11` | 12V buffer battery `+` -> 12V fuse block main `+` stud via `SW-12V-BATT` | Buffer battery source cable and downstream junction fault exposure | Inline MIDI/AMI/ANL family rated `>=32VDC` | `100A` class baseline | Sealed inline holder mounted close to battery positive | Within ~`7"` of 12V buffer battery positive post | `4 AWG` planned |
 | `F-12` | WS500 regulator power lead | WS500 power feed lead | Inline fuse/holder rated for the actual source voltage; current Wakespeed manual recommends sealed ATC, but this build treats the lead as `48V`-referenced unless final harness docs prove otherwise | `10A` baseline (`15A` if required by extra-large alternator case) | Sealed inline holder per WS500 kit/manual, with verified voltage rating | Near source end of WS500 regulator power lead | Harness lead |
 | `F-13` | WS500 positive voltage-sense lead | WS500 battery/charging voltage sense lead | Inline fuse/holder rated for actual `48V` bank maximum voltage unless WS500-supplied harness documentation proves otherwise | `3A` | Holder per WS500 manual/kit, voltage class verified before install | Near positive sense takeoff on charge side of the main alternator branch fuse / battery-bank connection | Harness lead |
@@ -101,6 +104,8 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 | PV string fuse `15A gPV` | `3` | `3` | One spare per string |
 | SmartShunt OEM harness fuse | `1` | `1` | Keep OEM-equivalent spare if field-replaceable |
 | ATO/ATC branch fuses | variable | `2` each used value | Keep mixed kit onboard |
+| Camper audio KMC2 branch (`AUDIO-HU`) | `1` active `15A` branch plus KMC2 harness `15A ATM` | `2` spare `15A` blade/ATM fuses | Preserve both source-side conductor protection and the KMC2 harness fuse |
+| Camper audio powered sub (`AUDIO-SUB`) | `1` active `40A` external fuse | `1-2` spare `40A` fuses matching the selected holder family | PTRTP10 manual calls for `40A` external fuse and `4 AWG` power/ground |
 
 ## BOM Row Mapping
 | Fuse scope | BOM row(s) |
@@ -116,6 +121,8 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 | 12V buffer battery main fuse + holder (`F-11`) | `bom/bom_estimated_items.csv` row `125` |
 | 12V battery disconnect (`SW-12V-BATT`) | `bom/bom_estimated_items.csv` row `124` |
 | 12V branch panel and blade fuses (`F-10`) | `bom/bom_estimated_items.csv` row `16` |
+| Camper audio source/head-unit branch (`AUDIO-HU` / `12V-12`) | `bom/bom_estimated_items.csv` rows `189`, `192`, and `193` |
+| Camper audio powered-sub branch (`AUDIO-SUB`) | `bom/bom_estimated_items.csv` rows `191` and `192` |
 | SmartShunt external OEM fused red lead (`OEM-SHUNT`) | `bom/bom_estimated_items.csv` row `23` (included with SmartShunt kit) |
 | PV string fuses + holder (`F-09A/B/C`) and spares | `bom/bom_estimated_items.csv` row `106` |
 
@@ -127,3 +134,4 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 5. Final lock for `F-11` still requires explicit 12V buffer battery/BMS continuous discharge-current confirmation.
 6. `F-15` exists to protect the smaller-gauge control wire between Ford `Upfitter #3` and the WS500 brown ignition/enable wire; the factory `25A` upfitter circuit protection is not the final wire-protection device for that branch.
 7. Orion `F-05/F-06` lock: the active topology uses `F-06` as the single source-side Orion input fuse from a Lynx `48V+` bus tap. Lynx Slot 4/`F-05` stays open/blank because practical `20A` Lynx/MEGA protection is not available; the existing `40A` Lynx stock is spare-only and must not be installed as Orion device protection. Do not stack a Lynx MEGA fuse plus `F-06` inline fuse for the Orion branch unless the topology is deliberately reopened.
+8. Camper audio `12V` load: KMC2 source branch and PTRTP10 powered-sub branch are downstream 12V loads, not new 48V branches. The PTRTP10 `40A` branch can exceed Orion `30A` continuous output during heavy bass; rely on the 12V buffer battery for transients and validate sustained loud-use behavior before assuming all 12V loads can run at max simultaneously.

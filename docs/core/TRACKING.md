@@ -24,9 +24,9 @@ related:
 - Constraints: truck/camper/dates are fixed constants
 - Assumptions to validate: autonomy target, climate profile, load profile, travel cadence impacts
 - Electrical run-length policy: physical bench-layout measurements are the primary cut-length source; CAD values are reference-only.
-- Working load baseline assumption from load model v3 (BOM + owner-supplied office loads):
-- `core_workday`: `3,530 Wh/day`
-- `winter_workday`: `4,202 Wh/day`
+- Working load baseline assumption from load model v4 (BOM + owner-supplied office loads + moderate camper-audio profile):
+- `core_workday`: `3,794 Wh/day`
+- `winter_workday`: `4,587 Wh/day`
 - `minimal_idle_day`: `624 Wh/day`
 
 ## Decision log
@@ -436,6 +436,15 @@ related:
 - Result: first live `48V` and AC-in functional checkpoint is passed. AC Input 1 should be labeled `Shore power`; household outlet testing uses `10A` first-test / `12A` max-on-15A policy. Cerbo is documented as a small inline fused `48V` feed (`CERBO-PWR`) rather than a 12V fuse-panel branch. Parallel battery cable balancing is documented as similar total loop resistance, not equal positive-only length.
 - Follow-up: program/verify MultiPlus LiFePO4 charge settings with `MK3-USB + VEConfigure` or equivalent before sustained charging; repeat shore-charge test with logged values; formally verify AC neutral/ground/GFCI behavior before AC-out use; keep alternator commissioning deferred.
 
+- ID: D-046
+- Date: 2026-06-01
+- Decision: Add a compact DC-first camper audio system as a separate camper subsystem from the truck-cab driving subwoofer system.
+- Context: Owner wants strong bass and good audio in the camper without audiophile cost or duplicative truck/camper audio wiring. The `S11 Ultra` tablet is already the shared dashboard/Victron/media device.
+- Options considered: soundbar-only, truck/camper shared subwoofer hardware, powered-sub camper `2.1`, or full multi-amp audiophile system.
+- Decision drivers: strong bass per dollar, compact packaging, low integration risk, simple tablet control, and keeping high-current audio wiring on the camper `12V` side without new `48V` branch complexity.
+- Result: selected draft camper package is Kicker `46KMC2` source/head unit + Kicker `CSC67` `4 ohm` speaker pair + Kicker `49PTRTP10` powered 10 in down-firing sub. Added BOM rows `189-193`, implementation doc `docs/implementation/CAMPER_audio_system.md`, electrical fuse/conductor integration, and load model v4 with moderate audio use.
+- Follow-up: validate KMC2 mounting depth, PTRTP10 dry/ventilated low mounting location, speaker cutout/pod locations, final RCA/speaker-wire lengths, and actual `12V` buffer-battery behavior during loud audio plus normal 12V loads.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -619,7 +628,8 @@ related:
 - User-confirmed assumption: losing automatic house-to-starting-battery support is acceptable
 - Confirm only that the retained factory alternator continues to handle normal starter/vehicle charging independently if the Mechman `48V` path is adopted
 - Confirm measured daily draw for owner-supplied laptop/monitor/tablet charging to replace planning assumptions
-- Validate Orion `48/12-30` charger headroom with the current 12V branch plan (including USB stations, `12V-10` Maxxair fan, `12V-06` Hiatus factory LED+dimmer, and planned `12V-11` ambient/Govee strips) and trigger row `118` only if sustained overload is observed
+- Validate Orion `48/12-30` charger headroom with the current 12V branch plan (including USB stations, `12V-10` Maxxair fan, `12V-06` Hiatus factory LED+dimmer, planned `12V-11` ambient/Govee strips, `12V-12` KMC2 audio source branch, and the separate `12V-AUDIO-SUB` powered-sub branch) and trigger row `118` only if sustained overload is observed. Audio bass peaks may exceed Orion continuous output and rely on the `12V` buffer battery for transient support.
+- Lock camper audio mounting and routing details from `docs/implementation/CAMPER_audio_system.md`: KMC2 face/depth, PTRTP10 dry low location/ventilation/service access, speaker cutout or pod method, RCA/speaker-wire lengths, and loud-test voltage behavior with normal 12V loads running.
 - Confirm/document AC dead-checks before AC-out commissioning: AC-in/AC-out neutral isolation, continuous PE/equipment ground, no fixed downstream neutral-ground bond, and staged GFCI test during AC-out commissioning.
 - Final passthrough locations for solar and fuel/heater paths, including whether an exterior truck-bed-wall diesel tank/fill/pump can route through a protected grommet/bulkhead to the heater. Shore inlet hardware is selected; final inlet/cable support details are an install-fit task using on-hand clamps/grommets/strain relief.
 - Lock roof-to-shell solar jumper connector strategy and exact service-loop length for full popup travel

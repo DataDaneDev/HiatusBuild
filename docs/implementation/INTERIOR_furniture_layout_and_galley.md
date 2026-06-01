@@ -232,6 +232,7 @@ Build direction:
 - Keep the pump strainer, accumulator, pressure gauge, shutoff, winterization pickup, and electrical connector visible through one service opening.
 - Use drip trays, leak sensor, and physical partitions so a plumbing leak cannot run into the battery enclosure.
 - Use overlay/removable panels for finished faces only after the skeleton passes access and interference checks.
+- Do not place the powered audio subwoofer or audio wiring in the wet-service bay. If camper audio uses the planned powered sub, keep it in a dry low bench/toe-kick/electrical-side volume and preserve service access/ventilation.
 - Keep the fridge vent path open: lower cool-air intake, upper warm-air exhaust, and no tight skin around compressor vents.
 
 Advanced detail: treat this as a **systems exoskeleton**, not cabinetry. Every extrusion member should have a job: structural support, service-panel edge, pump-board mount, fridge restraint, battery-bench boundary, or anti-rattle locator.

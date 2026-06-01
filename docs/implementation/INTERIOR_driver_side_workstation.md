@@ -255,10 +255,10 @@ The driver side no longer owns the Iceco/fridge. Use the freed driver-side volum
 ### Electrical closet and DC shelf
 
 - Electrical closet/panel can extend vertically up to the `46 in` maximum interior build height, subject to roof/window/entry clearance.
-- A shallow shelf/box may project toward the computer desk/camper entry for DC electronics, laptop plugs, chargers, USB-C/PD, router/Starlink power, and labeled office circuits.
-- Keep AC, DC, and data paths separated or physically partitioned; label any mixed-adjacent service cavity clearly.
-- Keep power bricks and receptacles out of spill paths from the desk front edge.
-- Ventilate power electronics; do not trap laptop docks, USB-C PD supplies, or Starlink DC conversion hardware in sealed acrylic boxes without airflow.
+- A shallow shelf/box may project toward the computer desk/camper entry for DC electronics, laptop plugs, chargers, USB-C/PD, router/Starlink power, the camper audio source face (`Kicker 46KMC2` if selected), and labeled office/audio circuits.
+- Keep AC, DC, audio signal, and data paths separated or physically partitioned; label any mixed-adjacent service cavity clearly.
+- Keep power bricks, receptacles, and audio source wiring out of spill paths from the desk front edge.
+- Ventilate power electronics; do not trap laptop docks, USB-C PD supplies, Starlink DC conversion hardware, or audio electronics in sealed acrylic boxes without airflow.
 
 ### Diesel-heater base zone
 
