@@ -1,3 +1,15 @@
+## 2026-06-03 — 80/20 panel spacer washers purchased
+
+- Owner purchased a `25` pack of black rubber bushing spacer flat washers for 80/20 panel mounting: `3/4 in OD x 1/4 in ID x 1/4 in` thickness, `$10` total / `$0.40` each.
+- Planning use: `1/4 in` standoffs/anti-rattle spacers behind `1/2 in` plywood inset/front panels on `10-series` 80/20, producing an effective `3/4 in` panel stack and a cleaner `1/4 in` visual reveal. Not for countertops, shelf load paths, or structural retention by itself.
+- BOM row `50` updated from generic planned rubber washers to purchased 80/20 panel spacer washers.
+
+## 2026-06-01 — Amazon order-history BOM reconciliation
+
+- Reconciled `references/amazon_order_history.csv` against `bom/bom_estimated_items.csv` using quantity-extended item subtotals from the export; duplicate embedded CSV header row was ignored.
+- Amazon CSV arithmetic: `138` item rows, `$9,266.68` quantity-extended item subtotal, `$9,057.08` mapped into the Hiatus/F-350 BOM, and `$209.60` excluded as non-build/personal/motorcycle/unrelated maintenance/cosmetic.
+- Added sanitized audit trail at `bom/amazon_order_history_reconciliation_2026-06-01.md`; raw private order fields were not copied into the report.
+
 ## 2026-06-01 — MultiPlus profile verification blocker closed and board finish gate clarified
 
 - Owner clarified that MultiPlus settings were redone and the first battery behaved as planned during shore charging: bulk began, then quickly transitioned to absorption because the battery was already at/near `100%`. No second-battery charge is required just to validate the charger profile.
