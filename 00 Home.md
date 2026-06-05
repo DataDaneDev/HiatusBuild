@@ -34,7 +34,7 @@ Start here when opening the project in Obsidian.
 - [Electrical AC BOM](docs/implementation/ELECTRICAL_AC_BOM.md)
 - [Interior driver-side workstation](docs/implementation/INTERIOR_driver_side_workstation.md)
 - [Camper audio system](docs/implementation/CAMPER_audio_system.md) - preliminary/future package, not near-term procurement.
-- [Interior lighting plan](docs/plans/INTERIOR_LIGHTING_PLAN_2026-05-31.md) - draft; `24V` lighting currently unlikely.
+- [Interior lighting plan](docs/plans/INTERIOR_LIGHTING_PLAN_2026-05-31.md) - deferred desired `12V` QuinLED/WLED design with hardwired buttons; not near-term procurement.
 - [Flooring subfloor build process](docs/implementation/FLOORING_subfloor_build_process.md)
 
 ## Plans And History

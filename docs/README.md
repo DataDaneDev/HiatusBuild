@@ -57,7 +57,7 @@ Use this folder map when deciding where a document belongs. Current repo posture
 - [PROJECT_build_order_of_operations](plans/PROJECT_build_order_of_operations.md): active post-install build sequence.
 - [PROCUREMENT_purchase_list_2026-05-26](plans/PROCUREMENT_purchase_list_2026-05-26.md): active short-horizon procurement list; filename date is historical.
 - [TNUTZ_80_20_HARDWARE_MODEL_2026-06-01](plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md): consolidated WIP TNUTZ `10-series` cart, hardware model, and visual-aid owner.
-- [INTERIOR_LIGHTING_PLAN_2026-05-31](plans/INTERIOR_LIGHTING_PLAN_2026-05-31.md): draft lighting worksheet; `24V` lighting is currently unlikely and not active architecture.
+- [INTERIOR_LIGHTING_PLAN_2026-05-31](plans/INTERIOR_LIGHTING_PLAN_2026-05-31.md): deferred desired `12V` QuinLED/WLED interior lighting design with hardwired buttons; supersedes the prior `24V`/MiBoxer worksheet and is not near-term procurement.
 - [HIATUS_work_plan_2026-05-29](plans/HIATUS_work_plan_2026-05-29.md): historical one-night work plan and rough cutlist worksheet; not current sequencing.
 - [INSTALL_MINUS_12_READINESS_PLAN](plans/INSTALL_MINUS_12_READINESS_PLAN.md) and [STARTER_PLAN_electrical_and_flooring_pre_camper](plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md): historical install-window/pre-camper references unless updated at the top with a newer as-of date.
 - Rule: plans may sequence work and call out current focus, but they should point back to canonical design docs for the actual baseline.

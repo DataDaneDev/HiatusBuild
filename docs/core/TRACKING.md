@@ -454,6 +454,15 @@ related:
 - Result: MultiPlus profile verification is closed for current shore charging; no second-battery charge is required just to validate the profile.
 - Follow-up: keep normal unattended-charge physical safety checks: source-current limit, no abnormal heat/smell/noise, protected wiring, covers, and strain relief.
 
+- ID: D-048
+- Date: 2026-06-05
+- Decision: Preserve the desired interior lighting design as a deferred `12V` QuinLED/WLED system with hardwired momentary buttons, superseding the prior `24V`/MiBoxer worksheet.
+- Context: Owner likes the integrated WLED direction but explicitly does not want to install or procure lighting yet because plumbing, Starlink, solar, alternator, and furniture are higher priority.
+- Options considered: keep MiBoxer RF controllers/remotes, use a `24V` converter-backed lighting subsystem, or use a single WLED/ESP32 analog PWM lighting controller.
+- Decision drivers: one integrated system, fewer remote batteries, documented hardware, local hardwired controls for daily use, and preserving future app/API/Home Assistant flexibility without making lighting a current rabbit hole.
+- Result: `docs/plans/INTERIOR_LIGHTING_PLAN_2026-05-31.md` now owns the deferred desired design: `12V-11 -> QuinLED An-Penta-Deca -> upper CCT + lower RGBCCT`, with three hardwired button locations and WLED presets.
+- Follow-up: do not buy lighting yet; preserve rough-in opportunities and later verify strip/channel width, branch fuse/conductor sizing, controller channel current, button locations, WLED presets, and power-loss behavior on the bench before install.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -637,7 +646,7 @@ related:
 - User-confirmed assumption: losing automatic house-to-starting-battery support is acceptable
 - Confirm only that the retained factory alternator continues to handle normal starter/vehicle charging independently if the Mechman `48V` path is adopted
 - Confirm measured daily draw for owner-supplied laptop/monitor/tablet charging to replace planning assumptions
-- Validate Orion `48/12-30` charger headroom with the current 12V branch plan (including USB stations, `12V-10` Maxxair fan, `12V-06` Hiatus factory LED+dimmer, and planned `12V-11` ambient/Govee strips). Audio remains preliminary/future; if `12V-12` KMC2 and `12V-AUDIO-SUB` are later promoted, re-check sustained Orion headroom and buffer-battery behavior before buying.
+- Validate Orion `48/12-30` charger headroom with the current 12V branch plan (including USB stations, `12V-10` Maxxair fan, `12V-06` Hiatus factory LED+dimmer, and planned `12V-11` WLED/QuinLED ambient strips). Audio remains preliminary/future; if `12V-12` KMC2 and `12V-AUDIO-SUB` are later promoted, re-check sustained Orion headroom and buffer-battery behavior before buying.
 - Later, if audio is promoted from preliminary: lock camper audio mounting and routing details from `docs/implementation/CAMPER_audio_system.md`: KMC2 face/depth, PTRTP10 dry low location/ventilation/service access, speaker cutout or pod method, RCA/speaker-wire lengths, and loud-test voltage behavior with normal 12V loads running.
 - Confirm/document AC dead-checks before AC-out commissioning: AC-in/AC-out neutral isolation, continuous PE/equipment ground, no fixed downstream neutral-ground bond, and staged GFCI test during AC-out commissioning.
 - Final passthrough locations for solar and fuel/heater paths, including whether an exterior truck-bed-wall diesel tank/fill/pump can route through a protected grommet/bulkhead to the heater. Shore inlet hardware is selected; final inlet/cable support details are an install-fit task using on-hand clamps/grommets/strain relief.

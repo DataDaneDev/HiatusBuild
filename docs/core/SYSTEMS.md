@@ -290,7 +290,7 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 - Heating approach in notes: diesel heater low in the driver-side utility/electrical-closet zone, with any warm-air branch to batteries controlled and kept off sensitive electrical hardware.
 - Diesel fuel planning: owner is investigating an external truck-bed-wall tank around `8 gal` in an approximately `3 in x 17 in` envelope. Preferred direction is to keep diesel storage/fill/pump outside the living space, with only a protected fuel line passing through a grommet/bulkhead to the heater. `8 gal` diesel reserve is roughly `50-60 hr` of continuous full-output runtime for a typical `5 kW` heater; use `~48 hr` as a conservative full-blast planning number.
 - Ventilation: Maxxair fan included in current camper config
-- Lighting split: Hiatus factory overhead LED+dimmer is a separate circuit from planned ambient/cabinet LED strips (Govee)
+- Lighting split: Hiatus factory overhead LED+dimmer remains separate from the planned ambient/cabinet LED subsystem. Desired future interior-lighting design is `12V` QuinLED/WLED analog PWM control on the dedicated lighting branch, with upper CCT white wash, lower RGBCCT night/entry strip, and hardwired momentary buttons; install/procurement is deferred.
 - Condensation controls and climate envelope limits: TBD
 
 ## Safety
@@ -336,7 +336,7 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 - Do not solder-splice high-current 12V source conductors; use crimped lugs on rated stud terminals.
 - Maintain branch-level fuse-to-conductor coordination per `docs/implementation/ELECTRICAL_fuse_schedule.md`.
 - Keep always-on detector branch (`12V-05`) protected but never switch-controlled.
-- Keep ambient/cabinet strip lighting on the dedicated DC branch (`12V-11`) so low-light use does not require inverter operation. The separate `24V` lighting worksheet is draft/unlikely and is not active architecture unless deliberately promoted.
+- Keep ambient/cabinet strip lighting on the dedicated DC branch (`12V-11`) so low-light use does not require inverter operation. Desired future path is `12V` QuinLED/WLED analog PWM control, not the superseded `24V` converter/MiBoxer worksheet; verify final fuse/conductor sizing once selected strip wattage and expansion channels are known.
 - If sustained `12V` demand exceeds Orion headroom, treat additional `48V->12V` charger capacity (`BOM row 118`) as a safety action, not a convenience upgrade.
 
 ### 120VAC shore/inverter safety

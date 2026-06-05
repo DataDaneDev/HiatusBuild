@@ -13,10 +13,10 @@ This is the single workspace map and update guide for the Hiatus/F-350 camper bu
 - Camper status: Hiatus shell is in hand/installed; May 7, 2026 install readiness is now historical context
 - Primary use: Financial Analyst remote work (typical 9-5, Monday-Friday) with occasional subsidiary flights
 
-## Current project posture — 2026-06-01
+## Current project posture — 2026-06-05
 - Current focus: finish the electrical board as a hard-mounted, strain-relieved mobile module before final 80/20/truck integration.
 - Electrical state: first live `48V` checkpoint passed; `55.5V` confirmed through the system, MultiPlus inverter mode works, SmartShunt/Orion/Cerbo are online, and MultiPlus LiFePO4 settings have been owner-verified by supervised one-battery shore-charge behavior: bulk began, then quickly transitioned to absorption at/near 100% as planned. AC-out/GFCI and alternator commissioning remain separate gates.
-- Immediate procurement focus: electrical-board/module cleanup, install the purchased Orion final standalone `F-06` cleanup stock when convenient (`30A 58V` MIDI interim -> `20A 80V` FKS/ATO final), and WIP TNUTZ `10-series` cart review. Camper audio is preliminary/future; lighting remains undecided with `24V` currently unlikely.
+- Immediate procurement focus: electrical-board/module cleanup, install the purchased Orion final standalone `F-06` cleanup stock when convenient (`30A 58V` MIDI interim -> `20A 80V` FKS/ATO final), and WIP TNUTZ `10-series` cart review. Camper audio remains preliminary/future; interior lighting now has a deferred desired design: `12V` QuinLED/WLED with hardwired buttons, not near-term procurement.
 - Board build focus: major electrical hardware is hard-mounted except the Cerbo; decide/finish the board surface now if desired, mount Cerbo, then finalize wiring, labels, covers, J-clamp/strain relief, and abrasion protection.
 - Interior baseline: office-first hybrid layout with a passenger-side lofted Iceco/fridge + wet-spine exoskeleton over/near the `36 gal` wheel-well tank, pump/accumulator below the fridge, adjacent separated battery bench, driver-side electrical closet/workstation/DC shelf, and clear center aisle.
 - Furniture/flooring posture: prototype with `10-series`/targeted 80/20 only where needed; keep Lonseal/final closure gated until EPS/subfloor fit, hardpoints, penetrations, moisture paths, and service access are verified.

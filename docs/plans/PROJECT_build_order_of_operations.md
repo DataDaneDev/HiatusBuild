@@ -22,7 +22,7 @@ related:
 - Hiatus install readiness/travel planning is historical; the real camper shell is available for physical measurements and mockups.
 - This plan assumes a post-install interior buildout with only reversible/module-first prep until service maps, penetrations, and access gates pass.
 - Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline, with the first live `48V`/MultiPlus/Cerbo/shore checkpoint now passed.
-- Interior/furniture assumptions in `docs/implementation/INTERIOR_furniture_layout_and_galley.md` remain the current draft baseline, but exact cuts remain blocked on measured block envelopes. TNUTZ cart consolidation lives in `docs/plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md`; procurement summary lives in `docs/plans/PROCUREMENT_purchase_list_2026-05-26.md`; lighting remains draft with `24V` currently unlikely.
+- Interior/furniture assumptions in `docs/implementation/INTERIOR_furniture_layout_and_galley.md` remain the current draft baseline, but exact cuts remain blocked on measured block envelopes. TNUTZ cart consolidation lives in `docs/plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md`; procurement summary lives in `docs/plans/PROCUREMENT_purchase_list_2026-05-26.md`; lighting now has a deferred desired `12V` QuinLED/WLED design in `docs/plans/INTERIOR_LIGHTING_PLAN_2026-05-31.md`, with procurement/install intentionally after plumbing, Starlink, solar, alternator, and core furniture work.
 
 ## Typical full-build sequence (once camper shell is physically in hand)
 1. Layout freeze and service-map freeze

@@ -1,3 +1,10 @@
+## 2026-06-05 — Interior lighting design overwritten with deferred WLED plan
+
+- Replaced the prior `24V`/MiBoxer interior lighting worksheet with a deferred desired `12V` QuinLED/WLED design on `12V-11`.
+- Desired design: one QuinLED An-Penta-Deca analog PWM controller, upper CCT white-wash zone, lower RGBCCT night/entry zone, WLED presets, and hardwired momentary buttons for rear/entry, desk/bench, and bed control.
+- Updated BOM row `98` and the load-model lighting labels from the old Govee placeholder to the deferred WLED/QuinLED package while preserving the current average-use Wh assumptions until final strip wattage is selected.
+- Procurement/install status: intentionally deferred until after plumbing, Starlink, solar, alternator, and core furniture work; preserve rough-in opportunities but do not buy lighting hardware yet.
+
 ## 2026-06-03 — 80/20 panel spacer washers purchased
 
 - Owner purchased a `25` pack of black rubber bushing spacer flat washers for 80/20 panel mounting: `3/4 in OD x 1/4 in ID x 1/4 in` thickness, `$10` total / `$0.40` each.
