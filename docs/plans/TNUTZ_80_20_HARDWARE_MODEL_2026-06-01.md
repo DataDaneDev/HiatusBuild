@@ -28,8 +28,8 @@ Source: owner-provided Amazon cart text plus TNUTZ cart text. This is a pre-subm
 - **TNUTZ order should stay the one-shot order** because the visible cart total is high relative to item subtotal: line-item subtotal is about `$995.64`; cart total is `$1,292.38`; implied shipping/tax/fees are about `$296.74` / `29.8%` over item subtotal.
 - **Do not split TNUTZ.** Add TNUTZ-only or shipping-sensitive items now if they are likely needed.
 - **Extrusion pricing is acceptable:** `EX-1010` is `$24.94` per `94 in` stick / about `$3.18/ft`; `EX-1020` is `$39.98` per `94 in` stick / about `$5.10/ft`.
-- **Amazon is acceptable for easy-return commodity hardware**, but the current Amazon cart mixes `10-series`, metric `2020`, `M5`, `M6`, and `1/4-20`. Keep the frame standard as `1/4-20`; treat metric screws/T-nuts from generic kits as throwaway unless deliberately isolated.
-- **Big correction:** the Amazon `1/4-20 x 1/2 in flat-head` screw bulk buy is probably the wrong default for 10-series brackets unless the brackets/plates are countersunk. Bulk frame screws should usually be `1/4-20 x 1/2 in` button-head, flanged button-head, or low-profile socket screws.
+- **Amazon is acceptable for easy-return commodity hardware**, but keep the frame standard as `1/4-20`. Generic kits may include metric screws/T-nuts; treat those as incidental unless deliberately isolated.
+- **Screw-head correction after owner clarification:** the Amazon `1/4-20 x 1/2 in flat-head` screws are not countersunk flat-heads; they are effectively low-profile pan/button-style socket screws. They are acceptable if the Allen socket engagement is good and the head bears cleanly on the brackets/plates. Button/pan/flanged-button heads remain safer bulk defaults if socket strip-out or small bearing area appears during test assembly.
 - **Current cart has 23 sticks of `EX-1010` plus 1 stick of `EX-1020`.** If the target was strictly `23` total sticks, reduce `EX-1010` to `22`. If shipping is the constraint, keeping `23 + 1` is defensible.
 - **Cart does not show any explicit tri-slot/one-flat-side extrusion.** If the plan is still “one or two tri-slot sticks just in case,” substitute `1–2` of the `EX-1010` sticks for the correct tri-slot profile before submitting.
 
@@ -47,14 +47,14 @@ Amazon subtotal shown by cart: `$747.94` for `31` items. Individual item prices 
 | ARES WING dual heavy gas monitor arm | `1 arm` | **Conditional keep.** OK for parked ergonomics only if the AW3423DWF gets a padded travel dock/cradle that unloads the arm during driving. |
 | Ergounion VESA laptop tray | `1 tray` | **Conditional keep.** Good parked accessory. Do not let a laptop ride there offroad. |
 | FORRCKY 20-set 10-series 90° corner brackets | `80 sets` | **Keep.** This is the main cheap-corner quantity. Use with `1/4-20` hardware if holes fit. |
-| FORRCKY “2020” heavy-duty corner bracket kit | `10 sets` | **Cancel/avoid unless verified.** Metric `2020` is not the same as 10-series/1010; holes/pattern/hardware often mismatch. |
+| FORRCKY 1010 heavy-duty corner bracket / gusset kit | `10 sets` | **Keep if listing is now true 1010/10-series.** This is the Amazon heavy-gusset substitute for expensive TNUTZ `CB-010-K`; verify hole spacing and use the `1/4-20` hardware standard where possible. |
 | Abeicy 2-hole inside corner brackets, 25 pack | `50 brackets` | **Keep.** Good light/medium inside corners. |
 | 16 in stainless piano hinges, 4 pack | `4 hinges` / `64 in total` | **Change if bench lid wants continuous hinge.** Four short hinges act like separate hinges, not a true continuous hinge. Buy a real `48–72 in` continuous hinge for the large bench lid if geometry allows. |
 | Black TPE edge trim | `16.4 ft` | **Keep.** Useful anti-rattle/edge protection. |
 | Birch veneer edge banding | `50 ft` | **Keep/defer.** Finish item; not critical to frame day. |
 | Ravinte 16 in folding shelf brackets | `2 brackets` | **Keep for table/bench-extension experiments.** Add positive latch/support if it becomes a sleeper/road-load component. |
 | DMWD 30A 12V / 20A 120VAC rocker switches | `5 switches` | **Use only for low-current auxiliary/service control unless exact circuit/listing is verified.** Do not use for 48V battery circuits or permanent AC branch shortcuts. |
-| BNUOK `1/4-20 x 1/2 in` flat-head screws, 100 pack | `800 screws` | **Replace or reduce.** Bulk 10-series bracket screws should be button/flanged/low-profile, not countersunk flat-head, unless the mating hardware is countersunk. |
+| BNUOK `1/4-20 x 1/2 in` low-profile socket screws, 100 pack | `800 screws` | **Keep if test fit is good.** Owner clarified these are not countersunk flat-heads; they are low-profile pan/button-like screws. Button/pan heads only matter if these strip easily or do not bear cleanly on generic brackets. |
 | 6061 flat bar `3/16 x 1 x 12 in` packs | `25 bars` / `25 ft` | **Keep.** Good DIY plates/VESA tabs. Yields about `141` two-inch plates or `72` four-inch plates with `1/8 in` kerf if dedicated entirely to plates. |
 | 1010 internal L-shape inside connectors | `12 sets` | **Keep as sample/light hidden connectors.** Do not make hidden-only connectors the main load path. |
 
@@ -90,18 +90,16 @@ Amazon subtotal shown by cart: `$747.94` for `31` items. Individual item prices 
 ### Recommended pre-submit changes
 
 1. **TNUTZ: change `1–2` 1010 sticks to tri-slot/one-flat-side** if that option is still desired; otherwise accept all 4-slot.
-2. **TNUTZ: increase `CB-010-K` from `8` to `24` minimum, `36` preferred** if the budget can absorb it. Use these at bench, fridge, galley, desk, electrical tower, and monitor-spine load corners.
-3. **Amazon: cancel the `2020` heavy-duty bracket kit** unless the listing proves 10-series/1 in/`1/4-20` compatibility.
-4. **Amazon: replace the bulk `1/4-20 x 1/2 flat-head` screws with button-head/flanged-button/low-profile socket screws** for general 80/20 bracket use. Keep a smaller flat-head quantity only for countersunk flat-bar plates/panels.
-5. **Amazon/TNUTZ: add or verify these shop consumables:** `9/32 in` clearance bits, spare `#7` tap bits, tap handle, cutting fluid, deburring/countersink tool, blue threadlocker, paint pen/witness marker, flat washers/fender washers.
-6. **Bench lid: buy one real long continuous hinge** if the bench-top hinge line is long and straight. The four `16 in` hinges are okay as three/four separate hinges but are not the same as a continuous hinge.
-7. **Travel hardware missing:** add over-center draw latches / positive latches, rubber bumpers, webbing straps, and strap anchors for monitor/bench/service panels. Magnets are good for light hatches, but road-load items still need positive retention.
-8. **Monitor mount:** the dual gas arm is acceptable only with a padded travel cradle/dock and arm restraint. Use the `EX-1020` mast and/or flat-bar VESA/backing plates to keep the arm mount from being just a desk-skin load.
+2. **Heavy/load gussets:** TNUTZ `CB-010-K` is structurally nice but expensive at `$4.80` each. Owner intends to use the corrected Amazon 1010 heavy-gusset kit as the main substitute; buy TNUTZ `CB-010-K` only where exact fit/quality matters most.
+3. **Amazon/TNUTZ: add or verify these shop consumables:** `9/32 in` clearance bits, spare `#7` tap bits, tap handle, cutting fluid, deburring/countersink tool, blue threadlocker, paint pen/witness marker, flat washers/fender washers.
+4. **Bench lid: buy one real long continuous hinge** if the bench-top hinge line is long and straight. The four `16 in` hinges can be butted together and may work, but are not as clean as a single continuous hinge because each segment has separate pin alignment, gaps, and screw-pattern interruptions.
+5. **Travel hardware missing:** add over-center draw latches / positive latches, rubber bumpers, webbing straps, and strap anchors for monitor/bench/service panels. Magnets are good for light hatches, but road-load items still need positive retention.
+6. **Monitor mount:** the dual gas arm is acceptable only with a padded travel cradle/dock and arm restraint. Use the `EX-1020` mast and/or flat-bar VESA/backing plates to keep the arm mount from being just a desk-skin load.
 
 ### Buy / hold summary
 
-- **Buy from TNUTZ now:** extrusion, `1020`, tap/jig/end-fastener tooling, gasket/tread/covers, cable mounts, angle stock, bulk TNUTZ T-nuts, and more `CB-010-K` if possible.
-- **Buy from Amazon now after edits:** 10-series cheap corner brackets, roll-in `1/4-20` T-nuts, button-head screws, flat bar, edge trim, hinge/latch/propping hardware, monitor arm if paired with a travel cradle.
+- **Buy from TNUTZ now:** extrusion, `1020`, tap/jig/end-fastener tooling, gasket/tread/covers, cable mounts, angle stock, bulk TNUTZ T-nuts, and only the TNUTZ heavy gussets needed for exact-fit/high-confidence load corners.
+- **Buy from Amazon now after edits:** 10-series cheap corner brackets, corrected 1010 heavy-gusset kit, roll-in `1/4-20` T-nuts, low-profile socket screws after test-fit, flat bar, edge trim, hinge/latch/propping hardware, monitor arm if paired with a travel cradle.
 - **Hold until later:** drawer slides, final cabinet pulls, final cosmetic skins, exact sliding-door track, large drawer hardware order, gas struts for bench lid.
 
 ## Purpose
