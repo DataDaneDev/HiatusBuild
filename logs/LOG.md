@@ -1,3 +1,10 @@
+## 2026-06-07 — Mechman/WS500/APM-48 install guide added
+
+- Added `docs/implementation/ELECTRICAL_Mechman_WS500_APM48_install_guide.md` as the detailed shop reference for the Mechman `48V` secondary alternator, Wakespeed `WS500`, Balmar `APM-48`, Ford Upfitter `#3` enable path, staged-install/drivability gates, first-run checks, and fault/shutdown handling.
+- Reviewed current official Mechman, Wakespeed, and Balmar online/manual sources alongside local repo PDFs; retained unresolved gates for Mechman support confirmation on extended electrically-disabled staged driving, exact alternator field/ground behavior, WS500 harness polarity, and final profile values.
+- Corrected the active architecture/topology diagrams to show the APM-48 as a parallel surge/load-dump clamp at the alternator `B+`/`B-` or case point, not a series charge-current device.
+- Updated repo navigation (`README.md`, `00 Home.md`, `docs/README.md`) and electrical cross-links so the install guide is discoverable from the canonical electrical docs.
+
 ## 2026-06-05 — Interior lighting design overwritten with deferred WLED plan
 
 - Replaced the prior `24V`/MiBoxer interior lighting worksheet with a deferred desired `12V` QuinLED/WLED design on `12V-11`.

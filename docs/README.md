@@ -28,7 +28,7 @@ Use this folder map when deciding where a document belongs. Current repo posture
 | File | Owns | Defers to |
 | --- | --- | --- |
 | [PROJECT](core/PROJECT.md) | Scope, milestones, sequencing posture, near-term priorities | [SYSTEMS](core/SYSTEMS.md) for subsystem baselines, [ELECTRICAL_48V_ARCHITECTURE](core/ELECTRICAL_48V_ARCHITECTURE.md) for final `48V` design, [TRACKING](core/TRACKING.md) for live decision/risk/open-question state |
-| [ELECTRICAL_48V_ARCHITECTURE](core/ELECTRICAL_48V_ARCHITECTURE.md) | Final `48V` house/alternator architecture, shutdown logic, control-path intent | Implementation docs for exact conductor/fuse/layout detail, [TRACKING](core/TRACKING.md) for unresolved gates |
+| [ELECTRICAL_48V_ARCHITECTURE](core/ELECTRICAL_48V_ARCHITECTURE.md) | Final `48V` house/alternator architecture, shutdown logic, control-path intent | Implementation docs for exact conductor/fuse/layout detail, [ELECTRICAL_Mechman_WS500_APM48_install_guide](implementation/ELECTRICAL_Mechman_WS500_APM48_install_guide.md) for install/commissioning procedure, [TRACKING](core/TRACKING.md) for unresolved gates |
 | [SYSTEMS](core/SYSTEMS.md) | Cross-system baseline, subsystem design snapshot, modeling context | [ELECTRICAL_48V_ARCHITECTURE](core/ELECTRICAL_48V_ARCHITECTURE.md) for locked `48V` architecture, implementation docs for install-level detail, [TRACKING](core/TRACKING.md) for state changes |
 | [OPERATIONS](core/OPERATIONS.md) | Checklists, inspections, commissioning and field procedures | Core design docs for architecture rationale, [LOG](../logs/LOG.md) for dated results |
 | [TRACKING](core/TRACKING.md) | Decisions, risks, assumptions, open questions | Owner docs for full current design or procedure detail |
@@ -47,6 +47,7 @@ Use this folder map when deciding where a document belongs. Current repo posture
 - [CAMPER_audio_system](implementation/CAMPER_audio_system.md): preliminary/future camper-only `12V` audio package, source/sub/speaker selection, fusing, wire sizing, routing, and tuning notes; not near-term procurement.
 - [ELECTRICAL_overview_diagram](implementation/ELECTRICAL_overview_diagram.md): implementation topology, conductor IDs, branch maps, diagrams, and active electrical assumptions.
 - [ELECTRICAL_fuse_schedule](implementation/ELECTRICAL_fuse_schedule.md): fuse IDs, amperages, holder/fuse families, Orion standalone `F-06`, spare policy, and BOM row mapping.
+- [ELECTRICAL_Mechman_WS500_APM48_install_guide](implementation/ELECTRICAL_Mechman_WS500_APM48_install_guide.md): detailed shop guide for Mechman `48V` alternator, WS500, APM-48, staged-install/drivability gates, first-run tests, and shutdown/fault handling.
 - [ELECTRICAL_AC_BOM](implementation/ELECTRICAL_AC_BOM.md): purchased Phase 1 AC hardware and Branch A/B outlet intent.
 - [ELECTRICAL_bench_layout_and_test_guide](implementation/ELECTRICAL_bench_layout_and_test_guide.md): staged electrical commissioning, first-live results, hard-mounting/access checks, and post-live wiring/strain-relief validation.
 - [FLOORING_subfloor_build_process](implementation/FLOORING_subfloor_build_process.md): subfloor/EPS/Lonseal gates and finish-floor hold conditions.

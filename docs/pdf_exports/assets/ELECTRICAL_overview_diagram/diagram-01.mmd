@@ -2,7 +2,7 @@ flowchart LR
     subgraph VEH_ALT48["Dedicated 48V Alternator Path"]
         ALT48["Secondary 48V alternator\n(Mechman kit class)"]
         WS500["Wakespeed WS500\nfield regulator"]
-        APM48["Balmar APM-48\nload-dump clamp module"]
+        APM48["Balmar APM-48\nparallel load-dump clamp\nat alternator B+/B-"]
         UP3["Ford Upfitter Switch #3\n(factory relay output)"]
         F15["F-15 3A inline fuse\nWS500 ignition/enable control"]
         ALT48 -. "field/stator/sense harness" .- WS500
@@ -55,8 +55,8 @@ flowchart LR
     MPPT -- "BAT+ via Slot 2: F-03 60A/80V MEGA\n6 AWG, ~2.5 ft" --> LYNX
     MPPT -- "BAT- 6 AWG, ~2.5 ft" --> LYNX
 
-    ALT48 -- "B+ 2/0 AWG, ~20 ft (ASSUMED)" --> APM48
-    APM48 -- "2/0 AWG short link" --> F04 --> LYNX
+    ALT48 -- "B+ 2/0 AWG, ~20 ft (ASSUMED)" --> F04 --> LYNX
+    APM48 -. "red to B+; black to B-/case\nnot in series with charge cable" .- ALT48
     ALT48 -- "B- dedicated 2/0 AWG, ~20 ft (ASSUMED)" --> LYNX
 
     LYNX -. "Slot 4 left open; no Orion MEGA fuse" .- SLOT4

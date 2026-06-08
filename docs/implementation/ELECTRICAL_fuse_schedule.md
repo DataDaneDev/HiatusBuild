@@ -8,6 +8,7 @@ status: active
 related:
   - "[[ELECTRICAL_48V_ARCHITECTURE]]"
   - "[[ELECTRICAL_overview_diagram]]"
+  - "[[ELECTRICAL_Mechman_WS500_APM48_install_guide]]"
   - "[[OPERATIONS]]"
   - "[[CAMPER_audio_system]]"
 ---

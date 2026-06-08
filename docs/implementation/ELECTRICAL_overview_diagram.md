@@ -8,6 +8,7 @@ status: active
 related:
   - "[[ELECTRICAL_48V_ARCHITECTURE]]"
   - "[[ELECTRICAL_fuse_schedule]]"
+  - "[[ELECTRICAL_Mechman_WS500_APM48_install_guide]]"
   - "[[SYSTEMS]]"
   - "[[CAMPER_audio_system]]"
 ---
@@ -30,7 +31,9 @@ Related docs:
 - Keeps Lynx Slot 3 branch to alternator input with `F-04 150A` (`58V/80V` MEGA).
 - Removes obsolete pre-Mechman engine-bay fuse/conductor placeholders from active architecture.
 - Clarifies WS500 fused-lead visibility (`F-12/F-13`) and treats current-sense high/low as an unfused twisted sense pair per current Wakespeed manual.
-- Added Ford `Upfitter #3 -> F-15 -> WS500 brown ignition` manual alternator-control path.
+- Adds Ford `Upfitter #3 -> F-15 -> WS500 brown ignition` manual alternator-control path.
+- Adds the detailed Mechman/WS500/APM-48 install guide as the shop reference for staged installation, first-run checks, and load-dump/shutdown handling.
+- Defines APM-48 as a parallel surge clamp at the alternator rather than a series charge-current device.
 - Added explicit fuse-holder/housing definitions for every fuse family (`Class T`, Lynx `MEGA`, inline `MIDI/ANL/AMI`, PV `gPV`, and `ATO/ATC`).
 - Added conductor schedule across `48V`, `12V`, PV, and AC segments with explicit assumptions.
 - Updated 12V topology to a shared 12V junction fed by an Orion-Tr Smart `48/12-30` charger and a `12V 100Ah` buffer battery branch, with `F-11` source fuse plus `SW-12V-BATT` manual isolation.
@@ -71,7 +74,7 @@ flowchart LR
     subgraph VEH_ALT48["Dedicated 48V Alternator Path"]
         ALT48["Secondary 48V alternator\n(Mechman kit class)"]
         WS500["Wakespeed WS500\nfield regulator"]
-        APM48["Balmar APM-48\nload-dump clamp module"]
+        APM48["Balmar APM-48\nparallel load-dump clamp\nat alternator B+/B-"]
         UP3["Ford Upfitter Switch #3\n(factory relay output)"]
         F15["F-15 3A inline fuse\nWS500 ignition/enable control"]
         ALT48 -. "field/stator/sense harness" .- WS500
@@ -124,8 +127,8 @@ flowchart LR
     MPPT -- "BAT+ via Slot 2: F-03 60A/80V MEGA\n6 AWG, ~2.5 ft" --> LYNX
     MPPT -- "BAT- 6 AWG, ~2.5 ft" --> LYNX
 
-    ALT48 -- "B+ 2/0 AWG, ~20 ft (ASSUMED)" --> APM48
-    APM48 -- "2/0 AWG short link" --> F04 --> LYNX
+    ALT48 -- "B+ 2/0 AWG, ~20 ft (ASSUMED)" --> F04 --> LYNX
+    APM48 -. "red to B+; black to B-/case\nnot in series with charge cable" .- ALT48
     ALT48 -- "B- dedicated 2/0 AWG, ~20 ft (ASSUMED)" --> LYNX
 
     LYNX -. "Slot 4 left open; no Orion MEGA fuse" .- SLOT4

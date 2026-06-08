@@ -15,9 +15,9 @@ flowchart LR
     NEGBUS --> SHUNT["SmartShunt 300A"]
     SHUNT --> LYNX
 
-    ALT48["Secondary 48V alternator"] --> APM48["APM-48"]
-    APM48 --> F04["F-04 150A MEGA"]
+    ALT48["Secondary 48V alternator"] --> F04["F-04 150A MEGA"]
     F04 --> LYNX
+    APM48["APM-48\nparallel surge clamp\nat alternator B+/B-"] -. "red to B+; black to B-/case" .- ALT48
     ALT48 -. "Dedicated 2/0 AWG return" .-> LYNX
 
     LYNX --> MULTI["MultiPlus-II 48/3000\nSlot 1 / F-02 125A"]

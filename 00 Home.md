@@ -30,6 +30,7 @@ Start here when opening the project in Obsidian.
 ## Build Detail
 - [Electrical topology diagram](docs/implementation/ELECTRICAL_overview_diagram.md)
 - [Electrical fuse schedule](docs/implementation/ELECTRICAL_fuse_schedule.md)
+- [Mechman 48V alternator install guide](docs/implementation/ELECTRICAL_Mechman_WS500_APM48_install_guide.md)
 - [Electrical bench layout and test guide](docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md)
 - [Electrical AC BOM](docs/implementation/ELECTRICAL_AC_BOM.md)
 - [Interior driver-side workstation](docs/implementation/INTERIOR_driver_side_workstation.md)

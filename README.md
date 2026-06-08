@@ -38,6 +38,7 @@ Use this table first whenever you are deciding where to put information.
 | Electrical load modeling assumptions (Wh) | [load_model_wh.csv](bom/load_model_wh.csv) |
 | Electrical implementation topology details | [ELECTRICAL_overview_diagram](docs/implementation/ELECTRICAL_overview_diagram.md) |
 | Fuse IDs, values, holders, spare policy | [ELECTRICAL_fuse_schedule](docs/implementation/ELECTRICAL_fuse_schedule.md) |
+| Mechman `48V` alternator / WS500 / APM-48 install and first-run guide | [ELECTRICAL_Mechman_WS500_APM48_install_guide](docs/implementation/ELECTRICAL_Mechman_WS500_APM48_install_guide.md) |
 | Bench-build electrical layout and staged test checklist | [ELECTRICAL_bench_layout_and_test_guide](docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md) |
 | AC implementation and branch intent | [ELECTRICAL_AC_BOM](docs/implementation/ELECTRICAL_AC_BOM.md) |
 | Interior furniture/galley/workstation layout | [INTERIOR_furniture_layout_and_galley](docs/implementation/INTERIOR_furniture_layout_and_galley.md), [INTERIOR_driver_side_workstation](docs/implementation/INTERIOR_driver_side_workstation.md) |
@@ -97,12 +98,13 @@ Use this order whenever the same change touches multiple files:
 - Supporting implementation artifacts:
 1. [ELECTRICAL_overview_diagram](docs/implementation/ELECTRICAL_overview_diagram.md)
 2. [ELECTRICAL_fuse_schedule](docs/implementation/ELECTRICAL_fuse_schedule.md)
-3. [ELECTRICAL_AC_BOM](docs/implementation/ELECTRICAL_AC_BOM.md)
-4. [ELECTRICAL_bench_layout_and_test_guide](docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md)
-5. [FLOORING_subfloor_build_process](docs/implementation/FLOORING_subfloor_build_process.md)
-6. [INTERIOR_furniture_layout_and_galley](docs/implementation/INTERIOR_furniture_layout_and_galley.md)
-7. [INTERIOR_driver_side_workstation](docs/implementation/INTERIOR_driver_side_workstation.md)
-8. [CAMPER_audio_system](docs/implementation/CAMPER_audio_system.md) - preliminary/future
+3. [ELECTRICAL_Mechman_WS500_APM48_install_guide](docs/implementation/ELECTRICAL_Mechman_WS500_APM48_install_guide.md)
+4. [ELECTRICAL_AC_BOM](docs/implementation/ELECTRICAL_AC_BOM.md)
+5. [ELECTRICAL_bench_layout_and_test_guide](docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md)
+6. [FLOORING_subfloor_build_process](docs/implementation/FLOORING_subfloor_build_process.md)
+7. [INTERIOR_furniture_layout_and_galley](docs/implementation/INTERIOR_furniture_layout_and_galley.md)
+8. [INTERIOR_driver_side_workstation](docs/implementation/INTERIOR_driver_side_workstation.md)
+9. [CAMPER_audio_system](docs/implementation/CAMPER_audio_system.md) - preliminary/future
 - Workbook extracts kept for traceability (non-canonical):
 1. [PROJECT_workbook_hiatus_consult](docs/legacy/PROJECT_workbook_hiatus_consult.md)
 2. [SYSTEMS_workbook_build_notes_obsolete](docs/legacy/SYSTEMS_workbook_build_notes_obsolete.md)

@@ -10,6 +10,7 @@ related:
   - "[[SYSTEMS]]"
   - "[[ELECTRICAL_overview_diagram]]"
   - "[[ELECTRICAL_fuse_schedule]]"
+  - "[[ELECTRICAL_Mechman_WS500_APM48_install_guide]]"
   - "[[TRACKING]]"
 ---
 
@@ -29,6 +30,7 @@ Purpose: hold the finalized, concise `48V` house and alternator architecture in 
 Related docs:
 - [Electrical topology diagram](../implementation/ELECTRICAL_overview_diagram.md)
 - [Electrical fuse schedule](../implementation/ELECTRICAL_fuse_schedule.md)
+- [Mechman / WS500 / APM-48 install guide](../implementation/ELECTRICAL_Mechman_WS500_APM48_install_guide.md)
 - [Systems](SYSTEMS.md)
 - [Tracking](TRACKING.md)
 - [Estimated BOM](../../bom/bom_estimated_items.csv)
@@ -94,9 +96,9 @@ flowchart LR
     NEGBUS --> SHUNT["SmartShunt 300A"]
     SHUNT --> LYNX
 
-    ALT48["Secondary 48V alternator"] --> APM48["APM-48"]
-    APM48 --> F04["F-04 150A MEGA"]
+    ALT48["Secondary 48V alternator"] --> F04["F-04 150A MEGA"]
     F04 --> LYNX
+    APM48["APM-48\nparallel surge clamp\nat alternator B+/B-"] -. "red to B+; black to B-/case" .- ALT48
     ALT48 -. "Dedicated 2/0 AWG return" .-> LYNX
 
     LYNX --> MULTI["MultiPlus-II 48/3000\nSlot 1 / F-02 125A"]
@@ -150,10 +152,11 @@ flowchart LR
 - Upfitter #3 control lead to WS500 brown wire: `16 AWG` TXL/GXL planning basis, `~6 ft` one-way assumed until measured.
 
 ## APM-48 wiring intent
-- Mount the `APM-48` at the alternator end of the `48V` branch, as close to the alternator output as practical.
+- Mount the `APM-48` at the alternator end of the `48V` branch, as close to the alternator output/ground points as practical.
+- Treat the APM-48 as a parallel surge/load-dump clamp across the alternator, not a series device in the alternator charge-current path.
 - Connect APM red to alternator `B+`.
 - Connect APM black to alternator `B-`, or to the approved alternator ground/case point if the alternator is not isolated-ground.
-- Do not stack the APM ring terminals under the main battery cable lugs unless the product instructions for the exact unit explicitly allow it.
+- Do **not** place either APM connector under the main battery cable lugs; Balmar's quick-start sheet explicitly prohibits placing APM connectors under the battery cable lugs.
 
 ## Normal operating sequence
 1. Main `48V` disconnect closed.
