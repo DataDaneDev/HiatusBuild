@@ -1,3 +1,8 @@
+## 2026-06-08 — 7.3L single-generator belt routing image saved
+
+- Added the owner-confirmed `7.3L` single-generator belt-routing image to `media/references/mechman-ws500-apm48-install-guide/`.
+- Updated the Mechman/WS500/APM-48 install guide with the routing orientation note: image label `A` is closest to the engine, and label `B` is furthest from the engine.
+
 ## 2026-06-07 — Mechman/WS500/APM-48 install guide added
 
 - Added `docs/implementation/ELECTRICAL_Mechman_WS500_APM48_install_guide.md` as the detailed shop reference for the Mechman `48V` secondary alternator, Wakespeed `WS500`, Balmar `APM-48`, Ford Upfitter `#3` enable path, staged-install/drivability gates, first-run checks, and fault/shutdown handling.

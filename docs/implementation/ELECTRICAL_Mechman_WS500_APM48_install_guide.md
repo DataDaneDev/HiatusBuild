@@ -17,7 +17,7 @@ related:
 
 # Mechman `48V` Alternator + WS500 + APM-48 Install Guide
 
-As-of date: `2026-06-07`
+As-of date: `2026-06-08`
 
 Purpose: one shop-reference document for installing and commissioning the Hiatus dedicated `48V` secondary alternator path: Mechman `48V` alternator/bracket, Wakespeed `WS500`, Balmar `APM-48`, Ford Upfitter `#3` enable, and the existing `48V` house bank/Lynx architecture.
 
@@ -80,6 +80,7 @@ If there is any doubt about Mechman's warranty position on driving with the alte
 - `references/Mechman General 48v install INSTR-48V-GEN_3-28-2025.pdf`
 - `references/Mechman 48v Alt Install Guide INSTR-48V-GEN_3-28-2025.pdf` — duplicate of the general `48V` install guide.
 - `references/Mechman dual alternator bracket INSTR-GZDB-20.pdf`
+- `media/references/mechman-ws500-apm48-install-guide/7.3l-single-generator-belt-routing-owner-confirmed-2026-06-08.jpg` — owner-confirmed `7.3L` single-generator belt-routing orientation reference.
 - `references/WS500-Product-Manual-09-30-2022-V2.pdf`
 - `references/WS500-Quick-Start-Guide-09-30-2022-V3.pdf`
 - `references/Alternator Protection Module PDS-APM-24.pdf` — official Balmar APM quick-start PDF, despite filename; applies by module voltage class.
@@ -136,6 +137,14 @@ If there is any doubt about Mechman's warranty position on driving with the alte
   4. Install second OEM-compatible T-mount alternator with `3x M10-1.5 x 80mm` bolts.
   5. Install the supplied `88.06 in` serpentine belt per the Mechman diagram.
 - The guide text extraction does not include torque values. Use Ford/Mechman service data for torque, not guesses.
+
+Owner-confirmed single-generator routing orientation, `2026-06-08`:
+
+- On the truck's `7.3L` single-generator belt layout, label `A` in the saved reference image is the belt span **closest to the engine**.
+- Label `B` is the belt span **furthest from the engine**.
+- Use this as an orientation aid while still following the official Mechman/Ford routing and torque instructions for the actual install state.
+
+![7.3L single-generator belt-routing orientation: A closest to engine, B furthest from engine](../../media/references/mechman-ws500-apm48-install-guide/7.3l-single-generator-belt-routing-owner-confirmed-2026-06-08.jpg)
 
 ### Wakespeed WS500 wiring/control facts
 
@@ -485,6 +494,7 @@ Therefore:
 Before mechanical install:
 
 - [ ] Official Mechman bracket PDF open for belt routing.
+- [ ] Owner-confirmed `7.3L` single-generator routing image available for orientation: `A` closest to engine, `B` furthest from engine.
 - [ ] Batteries disconnected as required for work.
 - [ ] Eye protection / insulated tools / no jewelry.
 - [ ] Alternator terminals identified.
