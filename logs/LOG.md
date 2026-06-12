@@ -1,3 +1,9 @@
+## 2026-06-11 — Mechman staged-driving gate closed and WS500 rough-in clarified
+
+- Owner confirmed the alternator noise was the Mechman-supplied idler pulley not being seated properly; after tightening/seating it, the noise went away.
+- Mechman confirmed the truck can be driven with the `48V` alternator mechanically installed and unwired/electrically disabled.
+- Updated the Mechman/WS500/APM-48 install guide to remove the stale staged-driving support gate and add an alternator-to-bed rough-in bundle map for high-current, WS500 alternator-leg, battery/shunt, temperature-sensor, and cab/control wiring.
+
 ## 2026-06-08 — 7.3L single-generator belt routing image saved
 
 - Added the owner-confirmed `7.3L` single-generator belt-routing image to `media/references/mechman-ws500-apm48-install-guide/`.
@@ -6,7 +12,7 @@
 ## 2026-06-07 — Mechman/WS500/APM-48 install guide added
 
 - Added `docs/implementation/ELECTRICAL_Mechman_WS500_APM48_install_guide.md` as the detailed shop reference for the Mechman `48V` secondary alternator, Wakespeed `WS500`, Balmar `APM-48`, Ford Upfitter `#3` enable path, staged-install/drivability gates, first-run checks, and fault/shutdown handling.
-- Reviewed current official Mechman, Wakespeed, and Balmar online/manual sources alongside local repo PDFs; retained unresolved gates for Mechman support confirmation on extended electrically-disabled staged driving, exact alternator field/ground behavior, WS500 harness polarity, and final profile values.
+- Reviewed current official Mechman, Wakespeed, and Balmar online/manual sources alongside local repo PDFs; retained unresolved gates at that time for exact alternator field/ground behavior, WS500 harness polarity, and final profile values. The staged-driving support-confirmation gate was later closed on `2026-06-11` after owner/Mechman confirmation.
 - Corrected the active architecture/topology diagrams to show the APM-48 as a parallel surge/load-dump clamp at the alternator `B+`/`B-` or case point, not a series charge-current device.
 - Updated repo navigation (`README.md`, `00 Home.md`, `docs/README.md`) and electrical cross-links so the install guide is discoverable from the canonical electrical docs.
 

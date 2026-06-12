@@ -133,6 +133,8 @@ Solar remains deferred until shore charging and alternator charging are working.
 - WS500 current-sense high/low wires are not a separate fuse position in the current Wakespeed manual; route as a twisted low-current sense pair to the selected shunt/current-sense point and keep them away from noise.
 - Manual charge-enable/disable path is locked to Ford `Upfitter Switch #3` feeding the WS500 brown ignition/enable wire through local inline fuse `F-15` (`3A`, 12V control circuit).
 - `WS500` white `Feature-In` is reserved for future automatic fault-interlock work and is not required in Phase 1.
+- Mechanical-only staged driving with the Mechman alternator installed but unwired/electrically disabled is owner/Mechman-confirmed acceptable after the idler/belt/noise check passes; this does not commission alternator charging.
+- WS500 rough-in default is regulator near the truck-bed house electrical area so analog shunt/battery-sense wiring stays short; run the alternator-leg wiring forward in separate labeled looms from the `2/0` charge pair.
 - Cable decision lock for this pass: reuse existing uncut `2/0` inventory for the alternator charge path (`~20 ft` one-way assumed), with dedicated equal-size negative run.
 - Obsolete pre-Mechman alternator-charger hardware is returned/removed from active planning and should not appear in primary fuse/layout decisions.
 

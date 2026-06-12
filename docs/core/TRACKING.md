@@ -463,6 +463,15 @@ related:
 - Result: `docs/plans/INTERIOR_LIGHTING_PLAN_2026-05-31.md` now owns the deferred desired design: `12V-11 -> QuinLED An-Penta-Deca -> upper CCT + lower RGBCCT`, with three hardwired button locations and WLED presets.
 - Follow-up: do not buy lighting yet; preserve rough-in opportunities and later verify strip/channel width, branch fuse/conductor sizing, controller channel current, button locations, WLED presets, and power-loss behavior on the bench before install.
 
+- ID: D-049
+- Date: 2026-06-11
+- Decision: Close the Mechman mechanical/staged-driving concern and rough in WS500 wiring with the regulator near the truck-bed house electrical area.
+- Context: Owner found the alternator noise was the Mechman-supplied idler pulley not being seated properly; tightening/seating the idler cleared the noise. Mechman confirmed the truck can be driven with the `48V` alternator mechanically installed and unwired/electrically disabled.
+- Options considered: keep the prior staged-driving support gate open, treat the alternator as fully commissioned, or close only the mechanical/drivability gate while keeping electrical commissioning gated.
+- Decision drivers: owner/Mechman confirmation, clean separation between mechanical drivability and live charging, and Wakespeed's analog shunt-sense/noise guidance.
+- Result: mechanical-only staged driving is acceptable in the disabled/unwired state after belt/idler/noise checks pass. The WS500 rough-in default is regulator near the truck-bed house bank/shunt area, with `2/0` B+/B- high-current pair plus separate labeled looms for WS500 alternator leg, alternator temp sensor, local battery/shunt sense, and cab/control wiring.
+- Follow-up: record measured route lengths; keep PH/NH harness polarity, alternator field-voltage/derate, case-ground behavior, WS500 profile, APM, fusing, sense wiring, and first charging run as commissioning gates.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -510,13 +519,13 @@ related:
 - Status: Open
 
 - ID: R-006
-- Risk: Dedicated `48V` secondary-alternator integration could still fail on fitment/support details (kit content, `PH`/`NH` harness polarity, grounding/isolation behavior, and load-dump mitigation closure).
+- Risk: Dedicated `48V` secondary-alternator commissioning could still fail on electrical integration details (`PH`/`NH` harness polarity, field-voltage/derate, grounding/isolation behavior under charge, WS500 profile, and load-dump mitigation closure).
 - Impact (1-5): 4
 - Likelihood (1-5): 2
-- Mitigation: Confirm truck-specific Mechman kit fitment/content, lock harness polarity/accessory set, and close grounding/load-dump validation gates before commissioning.
-- Trigger: Mechman confirmation closeout and pre-commissioning gate.
+- Mitigation: Mechanical/idler/staged-driving concern is closed by owner/Mechman confirmation. Keep live charging gated until harness polarity/accessory set, regulator profile, APM, fusing, dedicated return, shunt/sense wiring, and first-run shutdown behavior are verified.
+- Trigger: WS500 wiring closeout and first alternator charging commissioning.
 - Owner: Sunny
-- Status: Open
+- Status: Partially mitigated; mechanical/drivability gate closed, electrical commissioning gates open
 
 - ID: R-007
 - Risk: High-fault-current `48V` battery architecture can produce severe arc/thermal events during commissioning or service if isolation, torque, polarity, or fuse-voltage controls are missed.

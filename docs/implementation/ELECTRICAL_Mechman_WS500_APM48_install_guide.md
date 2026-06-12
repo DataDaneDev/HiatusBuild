@@ -17,7 +17,7 @@ related:
 
 # Mechman `48V` Alternator + WS500 + APM-48 Install Guide
 
-As-of date: `2026-06-08`
+As-of date: `2026-06-11`
 
 Purpose: one shop-reference document for installing and commissioning the Hiatus dedicated `48V` secondary alternator path: Mechman `48V` alternator/bracket, Wakespeed `WS500`, Balmar `APM-48`, Ford Upfitter `#3` enable, and the existing `48V` house bank/Lynx architecture.
 
@@ -33,33 +33,29 @@ This is an implementation guide, not a substitute for the official manuals. Use 
 - Manual charge enable: Ford `Upfitter Switch #3 -> F-15 3A inline fuse -> WS500 brown ignition/enable wire`.
 - Main alternator branch: `2/0 AWG` positive and dedicated `2/0 AWG` negative return, `F-04 150A MEGA` at Lynx Slot 3 / house-bank end.
 
-## Bottom line on staged installation and driving
+## Current physical/staged-driving status
 
-Official Mechman language is conservative: do **not** operate the charging system without a properly configured regulator. The official docs do not explicitly bless long-term road use with the `48V` alternator belted but electrically inert.
+Owner update, `2026-06-11`: the alternator noise was traced to the Mechman-supplied idler pulley not being seated properly. After tightening/seating the idler, the noise went away. Mechman also confirmed that the truck can be driven with the `48V` alternator mechanically installed and unwired/electrically disabled.
 
-Practical staged-install answer:
+Practical staged-install status:
 
-1. **Mechanical-only staged install is plausible but must be treated as a disabled alternator, not a half-installed charging system.**
-2. An externally regulated alternator with no powered/enabled regulator should have no commanded field current and therefore should not produce meaningful charging output. However, do not assume guaranteed `0.000V` under every condition; alternators can have design-specific residual behavior. Verify the actual alternator with a meter before relying on it.
-3. If the truck must be driven before commissioning, the safest staged state is:
-   - bracket/alternator/belt installed and mechanically verified;
+1. **Mechanical-only staged driving is acceptable for this build after the belt/idler/noise check passes, but it is still a disabled alternator, not a commissioned charging system.**
+2. The alternator must remain electrically inert while unwired:
    - WS500 not enabled;
-   - field lead disconnected or capped/isolated;
-   - alternator B+ not connected to an unterminated live cable;
+   - field/regulator connector disconnected or capped/isolated;
+   - alternator `B+` booted/capped and not connected to an unterminated live cable;
    - all studs/cable ends insulated and strain-relieved;
-   - no partial wiring can accidentally energize the field;
-   - belt routing/tension/clearance verified at idle before road driving.
-4. Do **not** drive with the alternator capable of producing power into an unfused, unterminated, partially wired, or disconnected house-bank path.
-5. Do **not** energize the WS500 / field circuit until main charge cable, dedicated negative return, APM-48, fusing, sense wiring, shunt/current sense, temperature sensing, and WS500 profile are installed and checked.
+   - no partial wiring can accidentally energize the field.
+3. Do **not** drive with the alternator capable of producing power into an unfused, unterminated, partially wired, or disconnected house-bank path.
+4. Do **not** energize the WS500 / field circuit until main charge cable, dedicated negative return, APM-48, fusing, sense wiring, shunt/current sense, temperature sensing, and WS500 profile are installed and checked.
+5. If belt/idler noise returns, treat it as a mechanical belt/pulley seating issue first: stop, inspect alignment/tension/hardware, then re-test at idle before road use.
 
-Best staged approach if schedule forces it:
+Staged approach:
 
-- Stage 1: install bracket/alternator/belt only; keep alternator electrically inert; idle-check belt and noise; then short road test.
-- Stage 2: install/route large cables and APM, but keep WS500 disabled until termination/protection is complete.
+- Stage 1: bracket/alternator/belt installed; alternator electrically inert; idler seated; belt/noise check passed; road driving OK in this disabled state.
+- Stage 2: install/route large cables, APM, and rough-in WS500 wiring, but keep WS500 disabled until termination/protection is complete.
 - Stage 3: wire/configure WS500 with Upfitter `#3` OFF; verify app/profile/sensors before first enable.
 - Stage 4: first charging run with meters and a planned shutdown path.
-
-If there is any doubt about Mechman's warranty position on driving with the alternator mechanically installed but not commissioned, ask Mechman support directly before extended driving.
 
 ## Hard no-go rules
 
@@ -312,6 +308,39 @@ Voltage-drop target:
 - Existing build lock: use on-hand `2/0 AWG` for the assumed `~20 ft` one-way positive and dedicated negative return, giving strong margin for the `150A` branch.
 - First-run measured target from Mechman: charge path and ground path each `<0.1V` drop under load.
 
+### Rough-in bundle to run while the alternator chase is open
+
+Preferred WS500 placement for this build: mount the WS500 near the house electrical board / truck-bed battery and shunt area, not deep in the engine bay. This keeps the analog shunt-current and battery-sense wiring short and serviceable. Run the alternator-leg wiring forward to the Mechman unit.
+
+Run these as separate, labeled, protected looms rather than one messy bundle:
+
+1. **High-current charge pair**
+   - `2/0 AWG` positive from alternator `B+` to Lynx Slot 3 / `F-04 150A` at the house end.
+   - `2/0 AWG` dedicated negative return from alternator `B-` / approved case-ground point to Lynx negative / house return.
+   - Keep these physically protected from heat, chafe, steering/suspension movement, and sharp pass-throughs.
+
+2. **WS500 alternator leg: engine bay ↔ WS500**
+   - Red alternator positive / regulator power lead via `F-12` (`10A` baseline, `15A` only if required for extra-large-case alternator guidance).
+   - Black alternator negative / regulator ground lead to alternator ground terminal or approved case-ground point.
+   - Blue field lead to the alternator field terminal through the correct `PH`/`NH` harness path.
+   - Yellow stator/AC/tach lead if the final configuration uses a stator/tach signal.
+   - Wakespeed extension guidance: use finely stranded tinned `14 AWG`; use `12 AWG` for alternator positive/negative, field, and stator if the run is over `20 ft`.
+
+3. **Alternator temperature sensor**
+   - Mount at the alternator rear case bolt or ground-terminal bolt.
+   - If extended, keep at least `4 in` from noise sources and use shielded instrument cable where practical, shield grounded at one end only.
+
+4. **WS500 battery/shunt leg: local near house bank**
+   - Red/yellow positive battery-voltage sense through `F-13 3A` to the charged bank / charge side of the main fuse as configured.
+   - Black/yellow negative battery-voltage sense to the house-bank negative reference.
+   - Purple/grey current-sense high/low to the Wakespeed shunt or selected current-sense point; use twisted pair / instrument cable and keep routing quiet.
+   - Battery temperature sensor at/near the house battery bank if used by the final profile.
+
+5. **Cab/control leg**
+   - Brown ignition/enable from Ford `Upfitter #3` through `F-15 3A` to the WS500.
+   - White Feature-In is reserved for future charge-disable / force-float interlock work; rough in a spare control conductor if the chase is open, but do not depend on it for Phase 1.
+   - Orange lamp/alarm is optional; run only if a dash warning lamp/audible alarm is wanted.
+
 ### Phase 3 — WS500 harness and control wiring
 
 WS500 must be mounted, wired, and configured before charging is allowed.
@@ -486,7 +515,7 @@ Therefore:
 - Confirm whether the Mechman `48V` alternator field is `12V` or true `48V` for derate/profile setup.
 - Confirm alternator negative/case isolation behavior for APM black-lead landing and dedicated negative return.
 - Confirm final WS500 profile values against Dumfume manual and Mechman/Wakespeed support guidance.
-- Confirm whether Mechman support approves extended driving with the alternator installed/belted but electrically disabled, if that is needed.
+- Record final measured alternator-to-bed route lengths for the high-current pair and WS500 alternator-leg extensions.
 - Record first-run measurements in `logs/LOG.md` after commissioning.
 
 ## One-page shop checklist
