@@ -1,3 +1,8 @@
+## 2026-06-12 — Gates 88.5 in Mechman belt test/spare ordered
+
+- Owner ordered a Gates `K060885` Micro-V serpentine belt, 6-rib, approx. `88.46-88.5 in`, `$28.52`, arriving `2026-06-13`.
+- BOM row `206` added as the longer Mechman dual-alternator accessory-belt test/spare; install validation remains pending against tensioner range, belt seating, and no squeal/walk.
+
 ## 2026-06-11 — Mechman staged-driving gate closed and WS500 rough-in clarified
 
 - Owner confirmed the alternator noise was the Mechman-supplied idler pulley not being seated properly; after tightening/seating it, the noise went away.
