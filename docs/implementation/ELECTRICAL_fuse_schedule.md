@@ -15,7 +15,7 @@ related:
 
 # Electrical Fuse Schedule (Implementation - Lynx Topology)
 
-As-of date: `2026-06-01`
+As-of date: `2026-06-17`
 
 Purpose: define each required fuse by circuit, protected conductor/device, holder/housing method, physical placement, and linked wire-gauge assumptions for the approved Phase 1 Lynx architecture with a battery-backed 12V bus and dedicated 48V secondary alternator branch.
 
@@ -38,7 +38,7 @@ Related docs:
 - Alternator path lock for this pass:
 1. `F-04` is locked to `150A` MEGA (`58V/80V`) in Lynx Slot 3 at the house-bank/Lynx end of the alternator positive run.
 2. Obsolete pre-Mechman charger/fuse paths are removed from active architecture and primary layout planning.
-3. WS500 required fused leads are `F-12` regulator power and `F-13` positive voltage sense; current-sense high/low is an unfused twisted sense pair per current Wakespeed manual.
+3. Confirmed `PH-VAN` harness uses one short red/black pair as combined regulator power and voltage sense at the house/main bus. Treat former separate `F-12` regulator-power and `F-13` positive-sense functions as one fused `PH-VAN` red lead for this install; current Wakespeed VAN diagram shows `15A` at that lead. Current-sense high/low remains an unfused twisted sense pair per Wakespeed manual.
 4. Ford `Upfitter Switch #3` is locked as the manual `WS500` enable source through `F-15`.
 
 ## Alternator Branch Fuse + Wire Finalization (`2026-03-19`)
@@ -79,8 +79,7 @@ Lock for this build pass:
 | `AUDIO-HU` / `12V-12` | `12V` fuse block -> Kicker `46KMC2` media center/source unit | KMC2 source/head-unit branch conductor and device harness | ATO/ATC branch fuse (`32V` class) plus KMC2 harness `15A ATM` fuse | `15A` | Integrated `12V` fuse block branch plus OEM KMC2 harness fuse | Electrical cabinet to driver-side DC shelf/source face | `12 AWG duplex` if kept around `5 ft`; `10 AWG` if route grows toward `8 ft+` |
 | `AUDIO-SUB` | 12V source/main `+` stud -> external fuse -> Kicker `49PTRTP10` powered sub `+` | Powered-sub positive branch and subwoofer input; manual-required external protection | Inline/MRBF/AFS/ANL-class fuse matched to selected `4 AWG` kit (`32V`+ DC class acceptable on 12V branch) | `40A` | Holder within about `18 in` of 12V source takeoff; if using Kicker `47KMPK4`, fit the PTRTP10-required `40A` fuse rather than the kit generic larger fuse | Near `12V` source/junction, downstream of `SW-12V-BATT` | `4 AWG` positive with matching `4 AWG` return to 12V negative bus/main stud |
 | `F-11` | 12V buffer battery `+` -> 12V fuse block main `+` stud via `SW-12V-BATT` | Buffer battery source cable and downstream junction fault exposure | Inline MIDI/AMI/ANL family rated `>=32VDC` | `100A` class baseline | Sealed inline holder mounted close to battery positive | Within ~`7"` of 12V buffer battery positive post | `4 AWG` planned |
-| `F-12` | WS500 regulator power lead | WS500 power feed lead | Inline fuse/holder rated for the actual source voltage; current Wakespeed manual recommends sealed ATC, but this build treats the lead as `48V`-referenced unless final harness docs prove otherwise | `10A` baseline (`15A` if required by extra-large alternator case) | Sealed inline holder per WS500 kit/manual, with verified voltage rating | Near source end of WS500 regulator power lead | Harness lead |
-| `F-13` | WS500 positive voltage-sense lead | WS500 battery/charging voltage sense lead | Inline fuse/holder rated for actual `48V` bank maximum voltage unless WS500-supplied harness documentation proves otherwise | `3A` | Holder per WS500 manual/kit, voltage class verified before install | Near positive sense takeoff on charge side of the main alternator branch fuse / battery-bank connection | Harness lead |
+| `F-12/F-13-PHVAN` | `PH-VAN` WS500 red lead at house/main positive bus | Combined WS500 regulator power and positive voltage-sense lead | Inline fuse/holder rated for actual `48V` bank maximum; current Wakespeed VAN/internal-BMS diagram shows this fused at `15A` | `15A` unless Wakespeed/Mechman profile guidance overrides | Sealed inline holder close to the house/main positive bus takeoff feeding the short `PH-VAN` red lead | Electrical panel near WS500/main bus; do not extend the short VAN red/black pair | Harness lead |
 | `CERBO-PWR` | `48V` system positive -> Cerbo GX power `+` | Cerbo GX low-current electronics feed | Inline fuse/holder rated for `48V` bank maximum voltage | `1A-3A` | Small inline holder close to the positive takeoff | Electrical cabinet, preferably system/load side of main disconnect so Cerbo powers down with the house system during bench shutdown | `18 AWG` red/black duplex acceptable |
 | `F-15` | Ford Upfitter `#3` -> WS500 brown ignition/enable wire | Low-current regulator enable/control wire | Inline ATC/ATO (`32V` class acceptable; 12V control circuit) | `3A` | Sealed inline holder near the Ford upfitter blunt-cut source / splice handoff | Engine bay or control-wire handoff point before small-gauge run to WS500 | `16 AWG` TXL/GXL |
 | `OEM-SHUNT` | Battery-side positive or Lynx/system positive tap -> SmartShunt `Vbatt+` terminal | SmartShunt electronics supply/sense lead | External Victron-supplied red cable with inline low-current fuse; not an internal SmartShunt fuse | OEM value | Inline holder in supplied red cable | Prefer battery-side positive if SOC continuity is desired while the main disconnect is open; system side is acceptable if zero parasitic draw during disconnect-off storage matters more | OEM harness lead |
@@ -98,8 +97,7 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 | `MEGA 40A` (`58V/80V`) | `0` active | `3` | Legacy spare stock only; do not use as Orion device protection |
 | Orion `48V` input protection | Interim installed/available: existing `30A 58V` MIDI. Final cleanup stock purchased: `3x` Mouser `576-166.7000.5202` `20A 80VDC` FKS/ATO fuses + `3x` `576-178.6150.0001` `80VDC` holders | Install `1x` final fuse/holder and carry `2` spare final `20A` FKS/ATO fuses + holders | Interim `30A` protects the short `6 AWG` run; final `20A` matches the Orion manual and is the preferred cleanup hardware |
 | 12V buffer battery main fuse (`100A` class) | `1` | `3` | Spare pack basis is BOM row `105` |
-| WS500 regulator power fuse (`F-12`) | `1` active position | `2` | Carry `10A` and `15A` spares with holder/fuse voltage rating verified for the source voltage |
-| WS500 positive voltage-sense fuse (`F-13`) | `1` active position | `2` | Carry `3A` spares with holder/fuse voltage rating verified for the `48V` bank maximum |
+| WS500 `PH-VAN` combined regulator power / positive-sense fuse (`F-12/F-13-PHVAN`) | `1` active position | `2` | Carry `15A` spares with holder/fuse voltage rating verified for the `48V` bank maximum |
 | Cerbo GX power fuse (`CERBO-PWR`) | `1` active position | `1` | Carry a spare `1A-3A` fuse/holder rated for the `48V` bank maximum |
 | WS500 ignition/enable fuse (`F-15`) | `1` active position | `2` | Carry spare `3A` mini/ATO fuse and one spare sealed holder; 12V control circuit |
 | PV string fuse `15A gPV` | `3` | `3` | One spare per string |
@@ -115,7 +113,7 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 | Lynx branch MEGA fuses (`F-02` to `F-04` installed; Slot 4/`F-05` open) + spare set | `bom/bom_estimated_items.csv` rows `10`, `170`, and `188` |
 | Orion installed fuse-holder hardware (`F-06`, `F-07`) | `bom/bom_estimated_items.csv` row `11` |
 | Orion input fuses (`F-06` active; `F-05` not used in active topology) | `bom/bom_estimated_items.csv` rows `11`, `133`, and `182` |
-| WS500 low-current fuse/holder kit (`F-12`, `F-13`) | `bom/bom_estimated_items.csv` row `171` |
+| WS500 low-current fuse/holder kit (`F-12/F-13-PHVAN`) | `bom/bom_estimated_items.csv` row `171` |
 | Cerbo GX power feed (`CERBO-PWR`) | `bom/bom_estimated_items.csv` row `22`; small inline fuse/holder may come from low-current install stock |
 | WS500 Upfitter `#3` enable/control path (`F-15`) | `bom/bom_estimated_items.csv` row `176` |
 | 12V buffer battery (`B12`) | `bom/bom_estimated_items.csv` row `21` |
@@ -130,7 +128,7 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 ## Assumptions and Open Items
 1. Wire sizing above assumes copper conductors and enclosed vehicle routing.
 2. `F-09A/B/C` and the old `3S3P` fuse count are modeling placeholders only; final PV fusing waits until solar modules/stringing are selected after shore and alternator charging are working.
-3. Confirm Mechman kit content/polarity (`PH`/`NH`) and WS500 harness voltage ratings before final low-current fuse-holder purchase/install.
+3. Confirm WS500 `PH-VAN` harness fuse-holder voltage rating before final install; current build default is one `15A` fused red lead at the house/main positive bus for combined regulator power and positive voltage sense.
 4. `SW-12V-BATT` remains manual-only in Phase 1; no automatic LVD behavior is assumed.
 5. Final lock for `F-11` still requires explicit 12V buffer battery/BMS continuous discharge-current confirmation.
 6. `F-15` exists to protect the smaller-gauge control wire between Ford `Upfitter #3` and the WS500 brown ignition/enable wire; the factory `25A` upfitter circuit protection is not the final wire-protection device for that branch.

@@ -302,6 +302,16 @@ High-current cable routing:
 - Keep unfused positive exposure as short as practical. Mechman says fuse within `12 in` of battery-bank connection; in this build that protection is the house-end `F-04` branch fuse.
 - Do not leave a long alternator positive cable connected at one end and floating/unterminated at the other.
 
+Field routing card, owner-confirmed route `2026-06-17`:
+
+- Preferred physical route: alternator area -> fixed frame path under truck -> up at front of bed -> existing/front-bed-wall grommet -> electrical panel area.
+- Route the two `2/0 AWG` cables first because they dictate bend radius and support points; keep `B+` and dedicated `B-` together on the same protected route.
+- Protect the `2/0` with split loom, abrasion sleeve, rubber hose chafe guards, or equivalent wherever it contacts/approaches frame edges, brackets, pass-throughs, or zip-tie support points.
+- Add strain relief before and after the bed-wall grommet; do not let cable movement saw against the pass-through. Use a gentle bend and a subtle drip loop outside the grommet if water can track along the cable.
+- Use rubber-lined P-clamps/Adel clamps on existing bolts/holes where cleanly available. Heavy UV/heat-rated zip ties are acceptable as support on fixed frame structure if paired with chafe protection, but do not tie to brake lines, fuel lines, factory harnesses, steering, suspension, driveshaft-adjacent parts, or anything that moves.
+- Zip-tie spacing target: about `12-18 in` on straight runs, closer near bends, transitions, and bed entry. Do not cinch so tightly that the tie bites into insulation.
+- Keep the already-loomed WS500 harness near the route but not tightly lashed to the `2/0` where avoidable. Focus extra protection on the large unfused/charge conductors and pass-throughs.
+
 Voltage-drop target:
 
 - Mechman target: `2%` alternator-to-bank voltage drop.
@@ -338,7 +348,7 @@ Run these as separate, labeled, protected looms rather than one messy bundle:
 4. **WS500 battery/shunt/control leg: local near house bank**
    - `PH-VAN` red combined regulator power / positive voltage sense through the appropriate small fuse to the charged house/main positive bus.
    - `PH-VAN` black combined regulator negative / negative voltage sense to the matching house/main negative bus.
-   - Purple/grey current-sense high/low to the Wakespeed shunt or selected current-sense point; use twisted pair / instrument cable and keep routing quiet.
+   - Purple/grey current-sense high/low to the Wakespeed shunt or selected current-sense point; use twisted pair / instrument cable and keep routing quiet. Wakespeed allows the regulator shunt on either the positive or negative alternator line; choose one only, place it in the dedicated alternator branch near the electrical board, connect purple to the high/source side and grey to the low/system-ground side per the Wakespeed diagram, then verify current sign in the WS500 app before trusting readings.
    - Battery temperature sensor at/near the house battery bank if used by the final profile.
    - Yellow/green CAN connector labeled/protected as unused unless a compatible CAN/BMS integration is later added.
 
