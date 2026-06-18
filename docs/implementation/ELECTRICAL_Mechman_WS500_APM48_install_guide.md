@@ -17,7 +17,7 @@ related:
 
 # Mechman `48V` Alternator + WS500 + APM-48 Install Guide
 
-As-of date: `2026-06-11`
+As-of date: `2026-06-17`
 
 Purpose: one shop-reference document for installing and commissioning the Hiatus dedicated `48V` secondary alternator path: Mechman `48V` alternator/bracket, Wakespeed `WS500`, Balmar `APM-48`, Ford Upfitter `#3` enable, and the existing `48V` house bank/Lynx architecture.
 
@@ -312,6 +312,13 @@ Voltage-drop target:
 
 Preferred WS500 placement for this build: mount the WS500 near the house electrical board / truck-bed battery and shunt area, not deep in the engine bay. This keeps the analog shunt-current and battery-sense wiring short and serviceable. Run the alternator-leg wiring forward to the Mechman unit.
 
+Owner-confirmed harness finding, `2026-06-17`: the supplied Wakespeed harness is the `PH-VAN` style harness, not the older/basic harness assumed by some diagrams. Practical implications:
+
+- The VAN harness has a single short red/black pair. Treat these as the combined WS500 regulator power and battery voltage-sense pair; land them at the house/main bus area near the WS500 with appropriate small fusing. Do **not** try to run those short red/black leads to the alternator.
+- The VAN harness has no orange lamp/feature-out wire; absence of orange is normal.
+- The short yellow/green connector is the CAN high/low connector. With the current Dumfume internal-BMS/no-confirmed-CAN setup, label/protect it as unused and do not connect it to alternator, battery, field, stator, or ground.
+- The blue/yellow alternator connector uses the provided Mechman one-wire adapter: blue passes through as the field-control wire; yellow is the generic stator/AC/tach sense lead and is unused/dead-ended with this adapter unless Mechman/Wakespeed explicitly require a stator/tach signal.
+
 Run these as separate, labeled, protected looms rather than one messy bundle:
 
 1. **High-current charge pair**
@@ -320,21 +327,20 @@ Run these as separate, labeled, protected looms rather than one messy bundle:
    - Keep these physically protected from heat, chafe, steering/suspension movement, and sharp pass-throughs.
 
 2. **WS500 alternator leg: engine bay ↔ WS500**
-   - Red alternator positive / regulator power lead via `F-12` (`10A` baseline, `15A` only if required for extra-large-case alternator guidance).
-   - Black alternator negative / regulator ground lead to alternator ground terminal or approved case-ground point.
-   - Blue field lead to the alternator field terminal through the correct `PH`/`NH` harness path.
-   - Yellow stator/AC/tach lead if the final configuration uses a stator/tach signal.
-   - Wakespeed extension guidance: use finely stranded tinned `14 AWG`; use `12 AWG` for alternator positive/negative, field, and stator if the run is over `20 ft`.
+   - Blue field lead to the alternator field terminal through the provided Mechman one-wire adapter.
+   - Yellow stator/AC/tach lead is present in the blue/yellow connector but unused/dead-ended by the supplied adapter unless Mechman/Wakespeed explicitly require a stator/tach signal.
+   - The `PH-VAN` harness red/black pair does **not** run forward to the alternator in this build; keep it local at the WS500/house bus area as the combined regulator power and voltage-sense pair.
 
 3. **Alternator temperature sensor**
    - Mount at the alternator rear case bolt or ground-terminal bolt.
    - If extended, keep at least `4 in` from noise sources and use shielded instrument cable where practical, shield grounded at one end only.
 
-4. **WS500 battery/shunt leg: local near house bank**
-   - Red/yellow positive battery-voltage sense through `F-13 3A` to the charged bank / charge side of the main fuse as configured.
-   - Black/yellow negative battery-voltage sense to the house-bank negative reference.
+4. **WS500 battery/shunt/control leg: local near house bank**
+   - `PH-VAN` red combined regulator power / positive voltage sense through the appropriate small fuse to the charged house/main positive bus.
+   - `PH-VAN` black combined regulator negative / negative voltage sense to the matching house/main negative bus.
    - Purple/grey current-sense high/low to the Wakespeed shunt or selected current-sense point; use twisted pair / instrument cable and keep routing quiet.
    - Battery temperature sensor at/near the house battery bank if used by the final profile.
+   - Yellow/green CAN connector labeled/protected as unused unless a compatible CAN/BMS integration is later added.
 
 5. **Cab/control leg**
    - Brown ignition/enable from Ford `Upfitter #3` through `F-15 3A` to the WS500.
@@ -345,18 +351,17 @@ Run these as separate, labeled, protected looms rather than one messy bundle:
 
 WS500 must be mounted, wired, and configured before charging is allowed.
 
-Minimum required WS500 connections for this build:
+Minimum required WS500 connections for this build with the confirmed `PH-VAN` harness:
 
 - brown ignition/enable to Ford `Upfitter #3` through `F-15 3A`;
-- red alternator-positive / regulator power lead through `F-12`;
-- black alternator-negative / regulator ground lead;
-- blue field lead through correct `PH`/`NH` harness path;
-- yellow stator/tach lead if required by the configuration;
-- red/yellow positive battery sense through `F-13 3A`;
-- black/yellow negative battery sense;
+- `PH-VAN` red combined regulator power / positive voltage sense through the appropriate small fuse at the house/main positive bus;
+- `PH-VAN` black combined regulator negative / negative voltage sense at the matching house/main negative bus;
+- blue field lead through the provided Mechman one-wire adapter;
+- yellow stator/tach lead remains unused/dead-ended unless Mechman/Wakespeed explicitly require it;
 - purple/grey current-sense pair to Wakespeed shunt/current-sense point;
 - alternator temperature sensor;
 - battery temperature sensor if used by profile/config;
+- yellow/green CAN connector protected as unused unless a compatible CAN/BMS integration is later added;
 - CAN/app/config access as needed.
 
 Wire-extension guidance from Wakespeed:
