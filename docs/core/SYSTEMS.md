@@ -76,12 +76,12 @@ related:
 | Owner-supplied office assumptions | Laptop + 27 inch 1440p monitor + tablet/peripheral charging | `bom/load_model_wh.csv` rows marked `Owner-Supplied` |
 
 ### Modeled expected usage
-Load totals below are from `bom/load_model_wh.csv` model v4 (BOM loads plus owner-supplied office loads plus a conservative preliminary/future camper-audio profile).
+Load totals below are from `bom/load_model_wh.csv` model v5 (BOM loads plus the purchased Ninja SP151 cooking appliance, owner-supplied office loads, and a conservative preliminary/future camper-audio profile).
 
 | Scenario | Daily energy | 5-day workweek energy | 7-day week energy | Dominant contributors |
 | --- | --- | --- | --- | --- |
-| `core_workday` | `3,794 Wh` | `18,970 Wh` | `26,558 Wh` | Laptop, monitor, Starlink, cooking, inverter idle, conservative future-audio allowance |
-| `winter_workday` | `4,587 Wh` | `22,935 Wh` | `32,109 Wh` | Laptop, monitor, Starlink, diesel heater, cooking, conservative future-audio allowance |
+| `core_workday` | `3,915 Wh` | `19,575 Wh` | `27,405 Wh` | Laptop, monitor, Starlink, cooking, inverter idle, conservative future-audio allowance |
+| `winter_workday` | `4,829 Wh` | `24,145 Wh` | `33,803 Wh` | Laptop, monitor, Starlink, diesel heater, cooking, conservative future-audio allowance |
 | `minimal_idle_day` | `624 Wh` | `3,120 Wh` | `4,368 Wh` | Fridge + always-on monitoring/detector loads |
 
 ### Capacity analysis (corrected battery bank)
@@ -89,14 +89,14 @@ Load totals below are from `bom/load_model_wh.csv` model v4 (BOM loads plus owne
 | --- | --- | --- |
 | Nominal battery energy | `51.2V x 100Ah x 3` | `15,360 Wh` |
 | Usable energy to 20% reserve floor | `15,360 x 0.8` | `12,288 Wh` |
-| Core day depth of discharge | `3,794 / 15,360` | `24.70%` per day |
-| Winter day depth of discharge | `4,587 / 15,360` | `29.86%` per day |
+| Core day depth of discharge | `3,915 / 15,360` | `25.49%` per day |
+| Winter day depth of discharge | `4,829 / 15,360` | `31.44%` per day |
 
 ### Autonomy (no charging)
 | Scenario | Days (`100% -> 20%`) |
 | --- | --- |
-| `core_workday` | `3.24` |
-| `winter_workday` | `2.68` |
+| `core_workday` | `3.14` |
+| `winter_workday` | `2.54` |
 | `minimal_idle_day` | `19.69` |
 
 ### Charging potential
@@ -116,14 +116,14 @@ Solar remains deferred until shore charging and alternator charging are working.
 
 | `900W` array efficiency | 2 PSH day | 4 PSH day | 5 PSH day | Net vs `core_workday` at 4 PSH | Net vs `winter_workday` at 4 PSH |
 | --- | --- | --- | --- | --- | --- |
-| `60%` | `1,080 Wh` | `2,160 Wh` | `2,700 Wh` | `-1,634 Wh/day` | `-2,427 Wh/day` |
-| `68%` (planning base) | `1,224 Wh` | `2,448 Wh` | `3,060 Wh` | `-1,346 Wh/day` | `-2,139 Wh/day` |
-| `75%` | `1,350 Wh` | `2,700 Wh` | `3,375 Wh` | `-1,094 Wh/day` | `-1,887 Wh/day` |
+| `60%` | `1,080 Wh` | `2,160 Wh` | `2,700 Wh` | `-1,755 Wh/day` | `-2,669 Wh/day` |
+| `68%` (planning base) | `1,224 Wh` | `2,448 Wh` | `3,060 Wh` | `-1,467 Wh/day` | `-2,381 Wh/day` |
+| `75%` | `1,350 Wh` | `2,700 Wh` | `3,375 Wh` | `-1,215 Wh/day` | `-2,129 Wh/day` |
 
 - Break-even PSH at `900W`:
-- `core_workday` (base `68%`): `3,794 / (900 x 0.68) = 6.20` PSH/day.
-- `winter_workday` (base `68%`): `4,587 / (900 x 0.68) = 7.50` PSH/day.
-- Sensitivity band for `winter_workday`: `6.80` PSH/day (`75%`) to `8.49` PSH/day (`60%`).
+- `core_workday` (base `68%`): `3,915 / (900 x 0.68) = 6.40` PSH/day.
+- `winter_workday` (base `68%`): `4,829 / (900 x 0.68) = 7.89` PSH/day.
+- Sensitivity band for `winter_workday`: `7.15` PSH/day (`75%`) to `8.94` PSH/day (`60%`).
 - `MPPT 150/45` is not the bottleneck for the current array range.
 
 #### Alternator charging (dedicated `48V` secondary alternator path)
@@ -146,19 +146,19 @@ Solar remains deferred until shore charging and alternator charging are working.
 - `DVCC` remains disabled in the current architecture because there is no documented BMS-to-GX control path.
 - AC input current policy: label AC Input 1 as `Shore power`; use `10A` for first tests and `12A` maximum on a normal `15A` household circuit; use the actual pedestal/source rating for `20A`/`30A` sources.
 - Ideal bulk-only recharge times at the current `56.8V` commissioning target and `35A` charger limit remain reference-only until measured charge logs replace them:
-- Replace one `core_workday`: `1.91h`.
-- Replace one `winter_workday`: `2.31h`.
+- Replace one `core_workday`: `1.97h`.
+- Replace one `winter_workday`: `2.43h`.
 - Recharge full `3x` bank from `20%` to `100%`: `6.18h`.
 - Recharge one isolated `48V 100Ah` battery from `20%` to `100%`: about `3.61h` at the single-battery `20A` current cap.
 - Real-world times are longer due to absorption taper near full charge, reduced household input-current limits, and any configured charge-current derate.
 
 ### Operational implications and constraints
-- Battery capacity now supports roughly `2.7-3.2` office-workdays without charging in the conservative future-audio model, depending on season and reserve policy; actual near-term office-only use may be better.
+- Battery capacity now supports roughly `2.5-3.1` office-workdays without charging in the conservative future-audio model, depending on season and reserve policy; actual near-term office-only use may be better.
 - With `900W` flexible solar at the base `68%` factor, `4` PSH leaves a material daily deficit for both `core_workday` and `winter_workday`; the future-audio allowance increases that deficit versus the prior office-only model.
 - Shore charging can materially recover SOC in a single evening (`~6.18h` from `20%` to `100%` in bulk-ideal terms).
 - Alternator recovery potential is expected to materially exceed the obsolete pre-Mechman charger path once the dedicated `48V` alternator path is commissioned.
 - Current execution risk is no longer charger-capacity-limited operation; it is migration/commissioning quality (fitment, regulation, protection, and measured thermal behavior).
-- MultiPlus-II `48/3000` inverter continuous output (`~2,400W`) can be exceeded by simultaneous induction + microwave + other AC loads, so high-draw AC loads need sequencing.
+- MultiPlus-II `48/3000` inverter continuous output (`~2,400W`) can be exceeded by simultaneous induction + Ninja SP151 air fryer/toaster oven + other AC loads, so high-draw AC loads need sequencing.
 - Orion-Tr Smart `48->12V 30A` charger (`360W`) is the continuous charging/feed ceiling into the shared 12V junction; buffer battery supports short transients, including audio bass peaks, but sustained overload still requires load budgeting.
 
 ### Safety baseline

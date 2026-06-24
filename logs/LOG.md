@@ -1,3 +1,9 @@
+## 2026-06-24 — Ninja SP151 microwave-replacement appliance order logged
+
+- Owner ordered an Amazon appliance/tooling support bundle with grand total `$186.19`: Ninja SP151 8-in-1 flip-up air fryer/toaster oven (`1800W`) `$149.95`, GWYXC bamboo cutting-board/topper `$20.99`, GDMINLO 60 in flexible soft tape measure `$3.69`, Amazon Basics 15 in parchment paper `$5.47`, and `$6.09` tax/order remainder.
+- BOM row `68` replaced the old compact-microwave placeholder with the purchased Ninja SP151 order group; item/order details were sanitized and no private order metadata was recorded.
+- Load model updated to model the Ninja SP151 at `1800W` for short sequenced cooking cycles: `core_workday` now `3,915 Wh/day`, `winter_workday` now `4,829 Wh/day`, and `minimal_idle_day` remains `624 Wh/day`.
+
 ## 2026-06-12 — Gates 88.5 in Mechman belt test/spare ordered
 
 - Owner ordered a Gates `K060885` Micro-V serpentine belt, 6-rib, approx. `88.46-88.5 in`, `$28.52`, arriving `2026-06-13`.

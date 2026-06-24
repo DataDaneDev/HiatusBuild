@@ -377,7 +377,7 @@ Use convertible surfaces:
 - Removable induction cooktop stored vertically.
 - Cutting board / sink cover slot.
 - Collapsible dish tub instead of a deep domestic sink if vertical volume is tight.
-- Low appliance bay that can remain flexible: microwave, future `2.5-4 gal` electric tank, dry food bins, or removable appliance crate.
+- Low appliance bay that can remain flexible: removable Ninja SP151 air fryer/toaster oven, future `2.5-4 gal` electric tank, dry food bins, or removable appliance crate.
 - Graywater slide cassette under sink with waterless trap or removable drain approach.
 
 Avoid:
@@ -423,8 +423,8 @@ Energy reference:
 
 Power conflict examples:
 
-- Induction high + microwave input can exceed `2.4 kW` inverter-continuous class.
-- Microwave + common `1440 W` electric heater load can also exceed comfort margin.
+- Induction high + Ninja SP151 air fryer/toaster oven input can exceed `2.4 kW` inverter-continuous class.
+- Ninja SP151 air fryer/toaster oven + common `1440 W` electric heater load can also exceed comfort margin.
 - Induction high + a `1440 W` electric heater is not acceptable as a normal simultaneous load.
 
 If electric tanked hot water is added:
@@ -522,10 +522,10 @@ Pass when: all service actions can be done without unloading the whole galley.
 
 ### Gate I5: load sequencing test
 
-Before adding microwave or electric hot water, write and label a simple operating hierarchy:
+Before using the Ninja SP151 air fryer/toaster oven, induction, or electric hot water, write and label a simple operating hierarchy:
 
 1. Induction cooking.
-2. Microwave.
+2. Ninja SP151 air fryer/toaster oven.
 3. Water-heater recovery.
 4. Office loads.
 
@@ -541,7 +541,7 @@ Buy/commit later, after mockup:
 - Drawer slide lengths.
 - Final panels/skins.
 - Monitor arm/mast exact hardware if roof sweep is unknown.
-- Microwave pocket final size.
+- Appliance bay final pocket/restraint for the Ninja SP151.
 - Electric tanked heater.
 - Propane cubby/hot-water hardware.
 - Permanent penetrations.
@@ -574,7 +574,7 @@ Do not buy broad `15-series` because “camper furniture needs extrusion.” Buy
 - Graywater strategy: jug/cassette size, waterless trap, vent, dump path, overflow behavior.
 - Hot-water scope: cold-only phase 1, outdoor propane shower only, sink hot water, or small electric tanked later.
 - Shower deployment: rear barn doors, passenger access window, or both.
-- Appliance bay identity: microwave, electric tank, bins, or swappable crate.
+- Appliance bay identity: Ninja SP151 restraint/storage, electric tank, bins, or swappable crate.
 
 ---
 

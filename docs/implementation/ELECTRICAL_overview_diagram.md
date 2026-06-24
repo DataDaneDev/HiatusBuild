@@ -243,7 +243,7 @@ flowchart LR
 
     subgraph AC_LOADS["Planned AC Loads"]
         IND["Induction cooktop"]
-        MW["Microwave"]
+        OVEN["Ninja SP151 air fryer/toaster oven"]
         MON["External monitor + office chargers"]
         OFFICE_REC["Office/driver GFCI receptacle"]
         GALLEY_REC["Galley/passenger GFCI receptacle"]
@@ -263,7 +263,7 @@ flowchart LR
     BR_A --> MON
     BR_B --> GALLEY_REC
     BR_B --> IND
-    BR_B --> MW
+    BR_B --> OVEN
     OUT2PROT -. "future activation only" .-> SHORE_ONLY
 
     BR_A -. "if AC USB outlets selected" .-> PD_AC
@@ -385,7 +385,7 @@ Retired from active architecture:
 | `C-29` | AC input breaker/disconnect -> MultiPlus AC-in | `120VAC` | MultiPlus AC input current (`30A` hardware basis) | Upstream `30A` AC breaker/disconnect (`C-28`) | `10 AWG` stranded AC conductors | `2.5 ft` (`ASSUMED`, cabinet internal) |
 | `C-30` | MultiPlus AC-out-1 -> combined AC DIN enclosure / AC-out main breaker | `120VAC` | Inverter-backed AC-out feeder current (`30A` system cap) | `30A` AC-out main breaker | `10/3` stranded AC feeder | `2.5 ft` (`ASSUMED`, cabinet internal) |
 | `C-31` | Branch A -> office/driver GFCI receptacle | `120VAC` | Branch load (office monitor/chargers/general outlet use) | `20A` branch breaker + GFCI receptacle | `12/3` stranded AC branch cable | `15 ft` (`ASSUMED`, branch leg default) |
-| `C-32` | Branch B -> galley/passenger GFCI receptacle | `120VAC` | Branch load (galley/general high-draw outlet; induction/microwave sequenced) | `20A` branch breaker + GFCI receptacle | `12/3` stranded AC branch cable | `15 ft` (`ASSUMED`, branch leg default) |
+| `C-32` | Branch B -> galley/passenger GFCI receptacle | `120VAC` | Branch load (galley/general high-draw outlet; induction/Ninja SP151 sequenced) | `20A` branch breaker + GFCI receptacle | `12/3` stranded AC branch cable | `15 ft` (`ASSUMED`, branch leg default) |
 | `C-33` | MultiPlus AC-out-2 (reserve-only) -> capped route for future shore-only branch | `120VAC` | N/A in Phase 1 (route reserved only) | N/A in Phase 1 (no energized branch hardware) | `12 AWG` stranded AC conductors (reserve path only) | `15 ft` (`ASSUMED`, reserve route default) |
 | `C-34` | 12V panel -> USB PD station branch (office zone) | `12V` | High-demand office charging branch (`100W + 65W` class station budget) | `F-10` branch fuse (`20A`) | `12 AWG duplex` baseline | `5 ft` (`ASSUMED`, short-run requirement) |
 | `C-35` | 12V panel -> USB PD station branch (galley zone) | `12V` | Galley charging branch (`65W` class USB-C plus USB-A/C loads) | `F-10` branch fuse (`15A`) | `14 AWG duplex` baseline | `8 ft` (`ASSUMED`, near-load branch) |

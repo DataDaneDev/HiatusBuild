@@ -43,13 +43,13 @@ Status date: 2026-05-27
 - Final receptacle-count closure (`3` vs `4` locations) on the retained two-branch AC baseline.
 - Final pre-charge resistor strategy/SKU for row `19`.
 - Confirmed AC load list for Phase 1:
-- `Appliances`: induction cooktop (`bom` row `67`), compact microwave (`bom` row `68`)
+- `Appliances`: induction cooktop (`bom` row `67`), Ninja SP151 air fryer/toaster oven (`bom` row `68`)
 - `Office`: monitor/charger branch via inverter (`bom/load_model_wh.csv` owner-supplied rows)
 - `Infrastructure`: shore AC charger path via MultiPlus (`bom` row `12`)
 - Modeled AC-related daily energy (planning):
 - `core_workday`: `986 Wh/day` (~`27.9%` of `3,530 Wh/day`)
 - `winter_workday`: `1,290 Wh/day` (~`30.7%` of `4,202 Wh/day`)
-- Largest AC contributors are induction + microwave + monitor path, with inverter-idle overhead when AC path is active.
+- Largest AC contributors are induction + Ninja SP151 + monitor path, with inverter-idle overhead when AC path is active.
 - Research notes (2026-02-13):
 - Victron MultiPlus-II installation guidance still requires AC overcurrent/disconnect on AC input and UL943-class residual-current protection plus overcurrent protection on AC output branches.
 - Input breaker can be downsized to shore service rating; a `20A` shore input does not require a large panel.
