@@ -31,7 +31,7 @@ Source: owner-provided Amazon cart text plus TNUTZ cart text. This is a pre-subm
 - **Amazon is acceptable for easy-return commodity hardware**, but keep the frame standard as `1/4-20`. Generic kits may include metric screws/T-nuts; treat those as incidental unless deliberately isolated.
 - **Screw-head correction after owner clarification:** the Amazon `1/4-20 x 1/2 in flat-head` screws are not countersunk flat-heads; they are effectively low-profile pan/button-style socket screws. They are acceptable if the Allen socket engagement is good and the head bears cleanly on the brackets/plates. Button/pan/flanged-button heads remain safer bulk defaults if socket strip-out or small bearing area appears during test assembly.
 - **Current cart has 23 sticks of `EX-1010` plus 1 stick of `EX-1020`.** If the target was strictly `23` total sticks, reduce `EX-1010` to `22`. If shipping is the constraint, keeping `23 + 1` is defensible.
-- **Cart does not show any explicit tri-slot/one-flat-side extrusion.** If the plan is still “one or two tri-slot sticks just in case,” substitute `1–2` of the `EX-1010` sticks for the correct tri-slot profile before submitting.
+- **Owner field check later confirmed the delivered `EX-1010` sticks are regular 4-slot pieces.** The cart/order does not show any explicit tri-slot/one-flat-side extrusion, so current planning should not assume any `1010-S` pieces.
 
 ### Parsed Amazon cart
 
@@ -62,7 +62,7 @@ Amazon subtotal shown by cart: `$747.94` for `31` items. Individual item prices 
 
 | Item | Qty | Unit | Extended | Review |
 | --- | ---: | ---: | ---: | --- |
-| `EX-1010` 1 x 1 smooth T-slot, `94 in` | `23` | `$24.94` | `$573.62` | **Keep**, unless replacing `1–2` with tri-slot or reducing to 22 because the `EX-1020` stick counts toward the intended total. |
+| `EX-1010` 1 x 1 smooth T-slot, `94 in` | `23` | `$24.94` | `$573.62` | **Keep.** Treat the purchased/delivered sticks as regular 4-slot `EX-1010`; no tri-slot / one-flat-side `1010-S` substitution is assumed. |
 | `ET-010-1/4-20` economy T-nut | `600` | `$0.16` | `$96.00` | **Keep.** Good low-cost bulk. Add more roll-in/drop-in later if closed-frame changes require it. |
 | `CB-010-K` 4-hole inside corner gusset | `8` | `$4.80` | `$38.40` | **Low for load corners.** If this is truly the only TNUTZ order, increase to at least `24`; `36` is better. Add cost from current qty: `+16 = $76.80`, `+28 = $134.40`. |
 | `CBS-010-B` 3-hole slotted inside corner bracket | `20` | `$3.60` | `$72.00` | **Keep.** Useful adjustable/heavier corner class. |
@@ -89,7 +89,7 @@ Amazon subtotal shown by cart: `$747.94` for `31` items. Individual item prices 
 
 ### Recommended pre-submit changes
 
-1. **TNUTZ: change `1–2` 1010 sticks to tri-slot/one-flat-side** if that option is still desired; otherwise accept all 4-slot.
+1. **No tri-slot substitution to carry forward.** Treat the purchased `EX-1010` sticks as regular 4-slot pieces unless a future order explicitly adds a one-flat-side profile.
 2. **Heavy/load gussets:** TNUTZ `CB-010-K` is structurally nice but expensive at `$4.80` each. Owner intends to use the corrected Amazon 1010 heavy-gusset kit as the main substitute; buy TNUTZ `CB-010-K` only where exact fit/quality matters most.
 3. **Amazon/TNUTZ: add or verify these shop consumables:** `9/32 in` clearance bits, spare `#7` tap bits, tap handle, cutting fluid, deburring/countersink tool, blue threadlocker, paint pen/witness marker, flat washers/fender washers.
 4. **Bench lid: buy one real long continuous hinge** if the bench-top hinge line is long and straight. The four `16 in` hinges can be butted together and may work, but are not as clean as a single continuous hinge because each segment has separate pin alignment, gaps, and screw-pattern interruptions.
@@ -382,4 +382,4 @@ Order quantities are rounded up because this is a vibration-prone camper build, 
 - Confirm plusnut size for final frame-to-truck anchors before buying any additional anchor bolts.
 - Confirm if any module truly needs `15-series`; current model says no, except possibly a future monitor mast/spine if the tested 10-series spine is too flexible.
 - Re-check the rough cutlist placements before cutting: `17-19 in` corner, `30 in` driver verticals, `65 in` vs `64 in`, and `24+20 in` cooler/front interpretation.
-- Reconcile the current cart against the `2026-06-05` combined cart review before checkout: tri-slot substitution if desired, `CB-010-K` increase if budget allows, and Amazon screw/head-style correction.
+- Reconcile the current cart against the `2026-06-05` combined cart review before checkout: owner later confirmed the purchased `EX-1010` stock stayed regular 4-slot with no tri-slot substitution; `CB-010-K` increase and Amazon screw/head-style correction remain the relevant follow-ups.

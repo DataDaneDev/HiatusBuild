@@ -1,3 +1,8 @@
+## 2026-06-24 — EX-1010 profile interpretation corrected
+
+- Owner confirmed the delivered `23x EX-1010` sticks are regular 4-slot pieces, not tri-slot / one-flat-side `1010-S` extrusion.
+- Updated the TNUTZ hardware model note, BOM wording, and current cutlist-derived outputs to remove the stray `1010-S` assumption and normalize those pieces back to regular `1010`.
+
 ## 2026-06-24 — Galley sink and faucet purchased
 
 - Owner purchased a FORIOUS black pull-out kitchen faucet with soap dispenser for `$47.99` and a Sarlai black drop-in/workstation sink for `$161.10`; raw order metadata was not copied into the repo.
