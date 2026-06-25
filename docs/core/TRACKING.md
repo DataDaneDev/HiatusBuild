@@ -353,7 +353,7 @@ related:
 - Options considered: electric tankless, small tanked electric, portable outdoor propane, listed indoor/RV propane, engine-coolant marine calorifier, or cold-water-first with future hot tie-in.
 - Decision drivers: current inverter scale, safety, and schedule.
 - Result: Build toward cold-water tank/pump/faucet/sink/drain baseline with capped future hot tie-in; treat portable propane as outdoor-only provisional and defer electric tanked/listed indoor propane/engine-coolant calorifier until service-map freeze. As of `2026-05-28`, the engine-coolant option remains physically plausible because the Hiatus is a topper over the retained F-350 bed, so coolant lines could route through bed/floor structure rather than the removable shell.
-- Follow-up: add discrete BOM rows for faucet/sink/drain/propane support classes and lock graywater/winterization details.
+- Follow-up: discrete BOM rows for faucet/sink are now added and purchased (`207-208`); still lock drain/graywater and propane support classes plus graywater/winterization details.
 
 - ID: D-037
 - Date: 2026-04-27
@@ -643,7 +643,7 @@ related:
 - Lock workstation travel restraints: monitor mast/carriage latch, monitor arm hard stop, desk leaf latch, storage-door/service-panel latch standard, and cable-chain/service-loop path below the roof-safe line.
 - Confirm actual seated work envelope: chair/stool height, desk height/depth, monitor viewing distance, knee clearance, footrest need, and reachable AC/DC/USB-C station locations.
 - Dry-fit purchased `36 gal` wheel-well tank with the passenger-side lofted fridge/wet-spine skeleton; verify body/fitting envelope, bracket orientation, plusnut locations, tank/fridge overlap, pump-board access, leak path, and whether a secondary floor/tie-down restraint path is needed. Gravity-fill vent nipple measurement is captured (`10 mm` OD main land, `11 mm` OD largest barb); replacement vent tube dry-fit remains open.
-- Lock faucet, sink, drain/graywater, pump service-valve, and winterization details as discrete procurement rows.
+- Lock drain/graywater, pump service-valve, and winterization details as discrete procurement rows; sink/faucet are now purchased and logged in BOM rows `207-208`.
 - Lock whether hot water is outdoor shower-only provisional or must feed the sink; defer indoor/RV propane or electric tanked path until service-map freeze.
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)
 - Confirm received Mechman dual-48V kit fitment/content for the truck (`2021 F-350 7.3L`) before alternator commissioning

@@ -1,3 +1,9 @@
+## 2026-06-24 — Galley sink and faucet purchased
+
+- Owner purchased a FORIOUS black pull-out kitchen faucet with soap dispenser for `$47.99` and a Sarlai black drop-in/workstation sink for `$161.10`; raw order metadata was not copied into the repo.
+- Sink dimensions logged: `15 in x 15 in` exterior topmount footprint with approx. `11 in x 13 in` interior basin.
+- Added BOM rows `207-208`; generic cabinetry row `87` no longer carries sink/faucet as a catch-all. Current layout note: because the chosen sink is topmount, verify actual cutout, faucet under-counter clearance, drain/graywater path, and any local sink-zone rail/connector drop before final cuts.
+
 ## 2026-06-24 — Ninja SP151 microwave-replacement appliance order logged
 
 - Owner ordered an Amazon appliance/tooling support bundle with grand total `$186.19`: Ninja SP151 8-in-1 flip-up air fryer/toaster oven (`1800W`) `$149.95`, GWYXC bamboo cutting-board/topper `$20.99`, GDMINLO 60 in flexible soft tape measure `$3.69`, Amazon Basics 15 in parchment paper `$5.47`, and `$6.09` tax/order remainder.

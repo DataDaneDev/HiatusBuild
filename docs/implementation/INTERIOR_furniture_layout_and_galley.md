@@ -374,6 +374,8 @@ Implications:
 Use convertible surfaces:
 
 - Small sink with flush cover.
+- Purchased galley fixture baseline: Sarlai drop-in/workstation sink, black topmount, `15 in x 15 in` exterior with approx. `11 in x 13 in` interior basin, plus FORIOUS black pull-out faucet with soap dispenser.
+- Current fit assumption: an `18-19 in` countertop with about `14 in` clear extrusion opening is probably workable because the chosen sink is topmount, but the actual sink cutout, faucet shank/nut/hose bends, drain/graywater path, and any local rail/connector drop still need field validation before final cuts.
 - Removable induction cooktop stored vertically.
 - Cutting board / sink cover slot.
 - Collapsible dish tub instead of a deep domestic sink if vertical volume is tight.
