@@ -1,3 +1,8 @@
+## 2026-06-26 — Portable cooktop, fan/light, and tire repair kit purchased
+
+- Owner purchased three Amazon/retail items totaling `$160.28` in provided item prices: Duxtop `8100MC/BT-180G3` 1800W portable induction cooktop (`$60.34`), BougeRV 20000mAh rechargeable portable fan/light (`$49.99`), and GlueTread full-size 4x4 sidewall tire repair kit (`$49.95`).
+- BOM row `67` now replaces the generic induction placeholder with the purchased Duxtop unit; rows `209-210` add the portable fan/light and sidewall tire repair kit. The load model still treats induction as a `1200W` average cooking cycle with `1800W` max available, sequenced against the Ninja SP151 and other high-draw AC loads.
+
 ## 2026-06-25 — Current module cut-list workbook filed
 
 - Added the owner-built current best module assignment / garage cut-list workbook at `docs/plans/assets/module-cutlists/2026-06-25_module-cutlist-and-assignments.xlsx`.
