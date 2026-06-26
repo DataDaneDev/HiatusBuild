@@ -1,3 +1,9 @@
+## 2026-06-25 — Current module cut-list workbook filed
+
+- Added the owner-built current best module assignment / garage cut-list workbook at `docs/plans/assets/module-cutlists/2026-06-25_module-cutlist-and-assignments.xlsx`.
+- Naming convention going forward: use date-led generic cut-list filenames instead of temporary trigger words like faucet when the artifact is the current overall module/cut-list source.
+- Workbook contents were not edited during filing.
+
 ## 2026-06-24 — EX-1010 profile interpretation corrected
 
 - Owner confirmed the delivered `23x EX-1010` sticks are regular 4-slot pieces, not tri-slot / one-flat-side `1010-S` extrusion.

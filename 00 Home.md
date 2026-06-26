@@ -17,7 +17,7 @@ Start here when opening the project in Obsidian.
 - [Interior furniture and galley](docs/implementation/INTERIOR_furniture_layout_and_galley.md) - current office-first passenger-side lofted fridge/wet-spine, separated battery bench, and 10-series/overlay-panel furniture direction.
 - [Electrical bench layout and test guide](docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md) - staged electrical commissioning, post-live cleanup, hard-mounting, and strain-relief discipline.
 - [Active procurement list](docs/plans/PROCUREMENT_purchase_list_2026-05-26.md) - current shopping/priorities, including Orion final fuse cleanup and TNUTZ cart pointers.
-- [TNUTZ 80/20 hardware model](docs/plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md) - consolidated WIP `10-series` cart and visual aids.
+- [TNUTZ 80/20 hardware model](docs/plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md) - consolidated WIP `10-series` cart, visual aids, and current dated module cut-list workbook pointer.
 - [Tracking](docs/core/TRACKING.md) - decisions, risks, assumptions, open questions.
 - [Project Log](logs/LOG.md) - dated work evidence, measurements, tests, and follow-ups.
 

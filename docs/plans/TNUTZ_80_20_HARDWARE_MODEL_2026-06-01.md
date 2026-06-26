@@ -15,9 +15,11 @@ related:
 
 # TNUTZ 10-Series Hardware Model — Hiatus Interior Buildout
 
-_As of `2026-06-01`. Status: WIP TNUTZ shopping-cart / visual-aid worksheet. Consolidated order owner, not final fabrication geometry._
+_As of `2026-06-25`. Status: WIP TNUTZ shopping-cart / visual-aid worksheet with current dated cut-list workbook artifact. Consolidated order owner, not final fabrication geometry._
 
 Freshness note `2026-06-01`: this file is the detailed owner for the current TNUTZ/80-20 order consolidation. The owner still needs to review the visual aids and WIP cart before submitting any order. Use [PROCUREMENT_purchase_list_2026-05-26](PROCUREMENT_purchase_list_2026-05-26.md) only as the short procurement summary.
+
+Current cut-list artifact `2026-06-25`: the current best module assignment / garage cut-list workbook is [`assets/module-cutlists/2026-06-25_module-cutlist-and-assignments.xlsx`](assets/module-cutlists/2026-06-25_module-cutlist-and-assignments.xlsx). Date-led filenames in this folder are the convention going forward; do not encode temporary drivers like faucet accommodation into the filename unless they are the enduring reason the artifact exists.
 
 ## Combined cart review — `2026-06-05`
 
@@ -133,6 +135,7 @@ Visual artifacts:
 
 - SVG: [`assets/t-nutz-hardware-2026-06-01/topdown-module-hardware-model.svg`](assets/t-nutz-hardware-2026-06-01/topdown-module-hardware-model.svg)
 - PNG: [`assets/t-nutz-hardware-2026-06-01/topdown-module-hardware-model.png`](assets/t-nutz-hardware-2026-06-01/topdown-module-hardware-model.png)
+- Current dated workbook: [`assets/module-cutlists/2026-06-25_module-cutlist-and-assignments.xlsx`](assets/module-cutlists/2026-06-25_module-cutlist-and-assignments.xlsx)
 
 These are functional connector models, not dimensional fabrication geometry.
 
