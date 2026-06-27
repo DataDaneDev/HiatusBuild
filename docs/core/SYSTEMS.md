@@ -34,14 +34,14 @@ related:
 - Solar option screening matrix (stringing + MPPT fit flags): [SOLAR_configuration_matrix](../studies/SOLAR_configuration_matrix.md)
 - Electrical decisions, risks, and unresolved items: [TRACKING](TRACKING.md)
 
-### Planning snapshot (base model as-of `2026-06-01`)
+### Planning snapshot (base model as-of `2026-06-27`)
 - Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).
 - House architecture: `48V` core with Orion-Tr Smart `48V->12V` charging/step-down feeding a shared battery-backed `12V` junction.
 - Inverter/charger: Victron MultiPlus-II `48/3000/35-50`, DC/inverter mode live-tested with no observed errors.
 - Charge sources in current BOM: solar MPPT, dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48` migration baseline), shore AC charger path.
 - Monitoring and protection: Cerbo GX, SmartShunt, battery temp sensing, Class T primary fuse + branch fusing.
 - AC protection chain is purchased/locked for Phase 1 (`shore source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> single 6-way AC DIN enclosure -> 30A AC-in breaker -> MultiPlus -> 30A AC-out main -> two 20A GFCI branches`). AC-in/MultiPlus charging has passed a short limited-current live test; AC-out branch/GFCI commissioning remains pending.
-- Current build phase: use the installed camper shell for measured block envelopes and service-map validation while completing post-energization electrical cleanup, Cerbo mounting, labels/covers, J-clamp/strain relief, and any board finish work before final shell-dependent cable cuts, extrusion vendor cuts, skins, or finish-floor glue-down.
+- Current build phase: the electrical backer has been trimmed to inset into its `80/20` frame and the module is freestanding after minor component shifts for real MultiPlus depth. Treat it as shop-fit complete but not road-ready until tied into the bench/desk/galley structure with anti-rack restraint, hardpoint verification, covers, labels, J-clamp/strain relief, and service-access checks before final shell-dependent cable cuts, skins, or finish-floor glue-down.
 
 ### Commissioning snapshot (`2026-05-27`)
 - Owner confirmed `55.5V` at the `48V` bus and at the MultiPlus after pre-charge/energization.

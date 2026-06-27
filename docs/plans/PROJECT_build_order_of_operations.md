@@ -18,11 +18,12 @@ related:
 - Define a practical order of operations that still supports parallel workstreams.
 - Prioritize measured, reversible post-install module work: validate real camper envelopes first, then build systems and furniture modules without burying service access.
 
-## Planning assumptions (as-of 2026-06-01)
+## Planning assumptions (as-of 2026-06-27)
 - Hiatus install readiness/travel planning is historical; the real camper shell is available for physical measurements and mockups.
-- This plan assumes a post-install interior buildout with only reversible/module-first prep until service maps, penetrations, and access gates pass.
-- Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline, with the first live `48V`/MultiPlus/Cerbo/shore checkpoint now passed.
-- Interior/furniture assumptions in `docs/implementation/INTERIOR_furniture_layout_and_galley.md` remain the current draft baseline, but exact cuts remain blocked on measured block envelopes. TNUTZ cart consolidation lives in `docs/plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md`; procurement summary lives in `docs/plans/PROCUREMENT_purchase_list_2026-05-26.md`; lighting now has a deferred desired `12V` QuinLED/WLED design in `docs/plans/INTERIOR_LIGHTING_PLAN_2026-05-31.md`, with procurement/install intentionally after plumbing, Starlink, solar, alternator, and core furniture work.
+- This plan assumes a post-install interior buildout with reversible/module-first work until service maps, penetrations, and access gates pass.
+- Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline, with the first live `48V`/MultiPlus/Cerbo/shore checkpoint passed and the electrical backer now trimmed/inset into its `80/20` frame.
+- Current electrical-module state: component placement has been adjusted for real MultiPlus depth, the module is freestanding and ready to tie into the bench/desk structure, but it is not road-ready as a standalone module because it still needs bench/desk/galley tie-in, panels/anti-rack restraint, hardpoint verification, and final fastener/strain-relief closeout.
+- Interior/furniture assumptions in `docs/implementation/INTERIOR_furniture_layout_and_galley.md` remain the current draft baseline. The active sequence is now integrated module buildout: bench first, desk desktop/workstation support next, then galley/wet-spine counter/appliance module with the purchased sink/faucet, induction cooktop, and Ninja SP151 cubby. TNUTZ cart consolidation lives in `docs/plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md`; procurement summary lives in `docs/plans/PROCUREMENT_purchase_list_2026-05-26.md`; lighting remains deferred behind core furniture/plumbing/electrical integration.
 
 ## Typical full-build sequence (once camper shell is physically in hand)
 1. Layout freeze and service-map freeze
@@ -101,14 +102,14 @@ related:
 - Freeze service map from real shell dimensions before penetrations, final cable cuts, Lonseal glue-down, or permanent module skins.
 - Place top-off orders based on real measurements and update logs/tracking.
 
-5. Current restart phase (updated `2026-06-01`)
-- Owner status: the subfloor is now complete; sheet vinyl/Lonseal remains intentionally unglued to avoid damage and preserve access while rough-in/interior buildout decisions are still open. Sheet-vinyl installation is a late finish-floor step after interior buildout/service-access gates, not a near-term blocker.
-- Visually inspect sealed bed paths after cure and normal travel/shakedown; look for lifted tape, cracked beads, dust trails, or dampness before any flooring closeout.
+5. Current module-integration phase (updated `2026-06-27`)
+- Owner status: the electrical backer has been trimmed so it insets cleanly into the `80/20` electrical frame. Minor component shifts were made after real MultiPlus depth proved deeper than earlier assumptions; these are mechanical packaging changes, not an electrical architecture change.
+- The electrical module is now freestanding and ready to tie into the bench/desk structure. Treat the freestanding state as a shop-fit milestone only; do not drive with it loose or lightly anchored because it is still too wobbly without bench/desk/galley tie-in, panels/anti-rack restraint, and final hardpoint verification.
+- Immediate build sequence: build the bench/battery/step structure first so it braces the electrical module and preserves battery/service access; fit the desk desktop/workstation support next; then build the galley/wet-spine counter/appliance module.
+- Galley scope now has real purchased fixtures/appliances to package: Sarlai topmount sink, FORIOUS faucet, Duxtop induction cooktop, and Ninja SP151 air-fryer/toaster-oven cubby. Validate sink cutout/faucet clearance/drain path and appliance heat/retention before permanent panels.
+- Continue using available `10-series`/`2010` stock, regular angle, and on-hand connector hardware as build/prototype stock; use the pending 80/20 nut/hardware shipment for final seams, serviceable fasteners, and hardware standardization rather than letting missing hardware stall module fitting.
+- Sheet-vinyl/Lonseal remains intentionally unglued to avoid damage and preserve access while rough-in/interior buildout decisions are still open. Sheet-vinyl installation is a late finish-floor step after interior buildout/service-access gates, not a near-term blocker.
 - Hold glue-down until the floor/rough-in gate passes: no pending floor penetrations, hardpoint pockets verified, EPS/subfloor sitting flush, and adhesive/roller method confirmed.
-- Tape/cardboard block envelopes for the passenger-side lofted fridge/wet-spine skeleton, `36 gal` wheel-well tank overlap, pump/accumulator board, separated battery bench, driver-side electrical closet/DC shelf, desk, diesel heater, and external diesel-tank/fuel-line service envelope before ordering exact extrusion cuts.
-- Treat broad `15-series` as downscoped. Default to `10-series`, plywood, light rail, or direct mounting unless a measured heavy/dynamic module proves it needs larger extrusion stiffness. The lofted fridge exoskeleton may justify targeted stock/prototype extrusion before exact final cuts because the electrical/plumbing/battery geometry is genuinely three-dimensional.
-- Next practical workstream: convert the proven live electrical layout into a hard-mounted mobile board module: order remaining parts, mount Orion/fuses/DC panel/AC box/Cerbo/reserved WS500/MPPT positions, then finalize wiring, labels, covers, strain relief, and service access before 80/20/truck integration.
-- Validate the office-first interior concept against real dimensions: passenger-side lofted fridge over/near the wheel-well tank, under-fridge pump/accumulator service bay, separated battery bench with flat divider board and cushion/lid access, driver-side `46 in` electrical closet/workstation/DC shelf, diesel heater base zone, and center-aisle/cabover-step movement.
 - Build the 80/20/furniture list from physical module envelopes first: classify each member as structural, panel support, service-access edge, or locator/anti-rattle, then use the consolidated TNUTZ WIP cart/visual aids before final vendor-cut lengths.
 
 ## Deferred / purchase-later rows (keep out of current critical path unless triggered)
@@ -118,7 +119,8 @@ related:
 - Hold 1: No penetrations until layout + service map is frozen from real installed camper measurements.
 - Hold 2: No Lonseal glue-down, insulation, or panel closure until floor/rough-in/service-access gates pass.
 - Hold 3: No final cabinetry close-out, drawer-slide lengths, or cosmetic skins until fridge/tank/electrical envelopes are verified.
-- Hold 4: No field deployment until shakedown defects are triaged.
+- Hold 4: No road travel with the freestanding electrical module until it is tied into the bench/desk/galley structure, anti-rack restraint/panels are installed, hardpoints are verified, and fasteners are witness-marked.
+- Hold 5: No field deployment until shakedown defects are triaged.
 
 ## Truck-bed-camper adaptations vs typical van guides
 - Less bare-metal body prep than a cargo van, but shell penetrations/sealing quality is even more critical.

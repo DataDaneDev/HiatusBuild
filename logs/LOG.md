@@ -1,3 +1,10 @@
+## 2026-06-27 — Electrical module shop-fit complete; integrated module build order updated
+
+- Owner reported the electrical backer was trimmed to inset cleanly into the `80/20` electrical frame, with minor component shifts made after the real MultiPlus depth proved deeper than the earlier model. No core electrical architecture change was implied.
+- Electrical module is now freestanding and ready to tie into the bench/desk structure, but it should not be driven loose/standalone because it remains too wobbly without bench/desk/galley tie-in, panels/anti-rack restraint, and final hardpoint verification.
+- Updated active docs to shift near-term sequence from isolated electrical-module fabrication to integrated module buildout: bench/battery/step structure first, desk desktop/workstation support next, then galley/wet-spine counter/appliance module.
+- Galley packaging now explicitly includes the purchased Sarlai sink, FORIOUS faucet, Duxtop induction cooktop, and Ninja SP151 air-fryer/toaster-oven cubby, with cutout/faucet/drain/heat/retention validation gates before final panels.
+
 ## 2026-06-26 — Portable cooktop, fan/light, and tire repair kit purchased
 
 - Owner purchased three Amazon/retail items totaling `$160.28` in provided item prices: Duxtop `8100MC/BT-180G3` 1800W portable induction cooktop (`$60.34`), BougeRV 20000mAh rechargeable portable fan/light (`$49.99`), and GlueTread full-size 4x4 sidewall tire repair kit (`$49.95`).

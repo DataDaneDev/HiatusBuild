@@ -472,6 +472,15 @@ related:
 - Result: mechanical-only staged driving is acceptable in the disabled/unwired state after belt/idler/noise checks pass. The WS500 rough-in default is regulator near the truck-bed house bank/shunt area, with `2/0` B+/B- high-current pair plus separate labeled looms for WS500 alternator leg, alternator temp sensor, local battery/shunt sense, and cab/control wiring.
 - Follow-up: record measured route lengths; keep PH/NH harness polarity, alternator field-voltage/derate, case-ground behavior, WS500 profile, APM, fusing, sense wiring, and first charging run as commissioning gates.
 
+- ID: D-050
+- Date: 2026-06-27
+- Decision: Treat the trimmed/inset freestanding electrical module as shop-fit complete but not road-ready until it is tied into the bench/desk/galley structure.
+- Context: Owner trimmed the electrical backer to inset into the `80/20` frame and adjusted component placement after real MultiPlus depth proved deeper than the earlier model. The module now stands on its own and is ready to connect to the bench, but it is still too wobbly to drive with before panels and bench/desk tie-in.
+- Options considered: bolt the freestanding electrical module into the truck now; pause and wait for the pending 80/20 nut/hardware shipment; continue building the bench/desk/galley modules and integrate them before road use.
+- Decision drivers: road vibration/projectile risk, module racking control, practical use of on-hand extrusion/angle/hardware, and the need to validate the bench/desk/galley as one physical system.
+- Result: next build sequence is bench/battery/step structure first, desk desktop/workstation support next, then galley/wet-spine counter/appliance module around the purchased sink/faucet, induction cooktop, and Ninja SP151 cubby. Do not drive with the electrical module freestanding.
+- Follow-up: verify hardpoints, panels/diagonals/anti-rattle retention, fastener witness marks, strain relief, and emergency electrical access before road shakedown.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -600,13 +609,13 @@ related:
 - Status: Open
 
 - ID: R-015
-- Risk: Ordering final furniture extrusion, drawer slides, or panels from stale CAD creates rework because the active passenger-side lofted fridge/wet-spine/battery-bench layout is a real three-dimensional interference problem.
+- Risk: Furniture/module integration can still rack, shift, or require rework if the electrical tower, bench, desk, galley, fridge/tank overlap, and service panels are treated as separate objects rather than one restrained interior structure.
 - Impact (1-5): 4
-- Likelihood (1-5): 4
-- Mitigation: Do not place exact-cut extrusion orders before taped/cardboard block envelopes and rough skeleton validation in the installed camper. Targeted prototype stock/hardware is acceptable when it is used to prove the lofted fridge, pump/accumulator, tank overlap, battery bench, electrical closet, and desk service geometry.
-- Trigger: Any exact-cut extrusion, drawer slide, panel, skin, fridge support, battery bench, or pump-board purchase.
+- Likelihood (1-5): 3
+- Mitigation: Current posture is correct: continue building integrated `80/20` modules with on-hand stock/hardware, but do not road-test the freestanding electrical module until it is tied into the bench/desk/galley structure with panels/diagonals/angle bracing, verified hardpoints, and service-access checks. Keep exact skins/drawer slides/final panels gated on module fit.
+- Trigger: Any exact-cut extrusion, drawer slide, panel, skin, fridge support, battery bench, pump-board purchase, or attempt to drive with the freestanding electrical module.
 - Owner: Sunny
-- Status: Open
+- Status: Partially mitigated by physical electrical-module fit; road-restraint/integrated-module gate open
 
 - ID: R-016
 - Risk: Battery first-charge or paralleling error can create BMS trips, high-current faults, or mismatched parallel-bank behavior.
@@ -636,13 +645,14 @@ related:
 - Status: Open
 
 ## Open questions
-- Program/verify the MultiPlus LiFePO4 charge profile before sustained charging (`56.8V` planning basis vs `58.4V` battery/manual basis remains unresolved until VEConfigure/MK3 settings are checked).
+- Verify electrical-module road-restraint details before driving: bench/desk tie-in, hardpoints, panel/diagonal/angle bracing, fastener witness marks, anti-rattle interfaces, strain relief, and emergency disconnect/fuse access.
 - Log parallel-bank current-sharing/voltage behavior under controlled charge/load; use similar total loop resistance per battery path rather than forcing equal positive-only leads.
 - Measure Iceco lid-open/vent/power-cord envelope at the raised passenger-side `~16 in` lofted height and validate tank overlap, pump-service access, and aisle/entry clearance.
 - Measure the driver-side desk/monitor/electrical-shelf roof-down sweep envelope, choose the primary monitor mechanism (`rising VESA spine` vs under-desk flip-up vs quick-release sleeve), and validate that the stowed face-down cradle supports bezel/back-shell/VESA structure rather than loading the LCD panel.
 - Lock workstation travel restraints: monitor mast/carriage latch, monitor arm hard stop, desk leaf latch, storage-door/service-panel latch standard, and cable-chain/service-loop path below the roof-safe line.
 - Confirm actual seated work envelope: chair/stool height, desk height/depth, monitor viewing distance, knee clearance, footrest need, and reachable AC/DC/USB-C station locations.
 - Dry-fit purchased `36 gal` wheel-well tank with the passenger-side lofted fridge/wet-spine skeleton; verify body/fitting envelope, bracket orientation, plusnut locations, tank/fridge overlap, pump-board access, leak path, and whether a secondary floor/tie-down restraint path is needed. Gravity-fill vent nipple measurement is captured (`10 mm` OD main land, `11 mm` OD largest barb); replacement vent tube dry-fit remains open.
+- Validate purchased galley fixtures/appliances in the integrated counter module: Sarlai sink cutout, FORIOUS faucet under-counter clearance, drain/graywater path, Duxtop induction use/stow location, and Ninja SP151 cubby heat/retention/plug access.
 - Lock drain/graywater, pump service-valve, and winterization details as discrete procurement rows; sink/faucet are now purchased and logged in BOM rows `207-208`.
 - Lock whether hot water is outdoor shower-only provisional or must feed the sink; defer indoor/RV propane or electric tanked path until service-map freeze.
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)

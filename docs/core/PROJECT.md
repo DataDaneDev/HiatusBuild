@@ -20,8 +20,8 @@ related:
 - Keep exact topology, fuse, conductor, and bench procedure detail in `docs/implementation/`.
 
 ## Snapshot
-- As-of date: 2026-06-01
-- Phase: post-install interior buildout and measured systems-layout validation
+- As-of date: 2026-06-27
+- Phase: post-install module integration buildout: electrical tower, bench/desk structure, and galley/wet-spine skeleton
 - Install milestone: May 7, 2026 Hiatus install is now historical context; the real camper shell is available for physical mockups and measurements
 - Mission: build a reliable off-grid camper workspace suitable for full-time professional use
 
@@ -39,11 +39,13 @@ related:
 
 ## Current execution focus (post-install interior buildout)
 - Use [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md) as the active phase sequence. Use [INSTALL_MINUS_12_READINESS_PLAN](../plans/INSTALL_MINUS_12_READINESS_PLAN.md) and [STARTER_PLAN_electrical_and_flooring_pre_camper](../plans/STARTER_PLAN_electrical_and_flooring_pre_camper.md) as historical install-window/pre-camper references unless they are explicitly refreshed.
-- Use [INTERIOR_furniture_layout_and_galley](../implementation/INTERIOR_furniture_layout_and_galley.md) as the current owner for the office-first passenger-side lofted fridge/wet-spine concept, separated battery bench, and `10-series` 80/20 overlay-panel direction.
-- Use [ELECTRICAL_48V_ARCHITECTURE](ELECTRICAL_48V_ARCHITECTURE.md) as the canonical `48V` design reference while mechanically laying out the electrical module and alternator-control path.
-- Active work now includes measured camper block envelopes, electrical module live-commissioning cleanup, fuse/device access checks, 80/20 prototype stock/hardware planning, floor/subfloor gates, and payload/weight tracking. Camper audio remains preliminary/future-roadmap, not near-term procurement.
-- Electrical status has moved past dead-layout only: the `48V` bus, SmartShunt, Orion, Cerbo, MultiPlus inverter mode, and a short limited-current shore-charge test have all been proven without observed errors.
-- Defer irreversible work (final shell penetrations, shell-dependent final cable cuts, final extrusion vendor cuts, permanent skins, and finish-floor glue-down) until physical measurement, service-map, access, and post-energization checks pass.
+- Use [INTERIOR_furniture_layout_and_galley](../implementation/INTERIOR_furniture_layout_and_galley.md) as the current owner for the office-first passenger-side lofted fridge/wet-spine concept, separated battery bench, galley counter/appliance bay, and `10-series` 80/20 overlay-panel direction.
+- Use [ELECTRICAL_48V_ARCHITECTURE](ELECTRICAL_48V_ARCHITECTURE.md) as the canonical `48V` design reference while integrating the electrical module with the bench/desk structure and preserving alternator-control/service paths.
+- Current physical state: the electrical backer has been trimmed to inset cleanly into the `80/20` frame; component locations were adjusted for real MultiPlus depth without changing the core electrical architecture; the electrical module is now freestanding and ready to tie into the bench/desk structure.
+- Travel rule: do **not** drive with the freestanding electrical module by itself. It is intentionally not treated as road-ready until it is tied into the bench/desk/galley structure, hard-mounted to truck/camper hardpoints as applicable, and has panels/diagonal restraint/anti-rattle retention installed.
+- Active work now shifts from isolated electrical-module fabrication to integrated `80/20` module buildout: bench first, desk desktop/workstation support, then galley/wet-spine counter with sink/faucet, induction position, and Ninja SP151 air-fryer cubby. Camper audio remains preliminary/future-roadmap, not near-term procurement.
+- Electrical status remains live-proven at the system level: the `48V` bus, SmartShunt, Orion, Cerbo, MultiPlus inverter mode, and a short limited-current shore-charge test have all been proven without observed errors; remaining closeout is mechanical restraint, covers/panels, strain relief, labels, and access checks.
+- Defer irreversible work (final shell penetrations, shell-dependent final cable cuts, permanent skins, and finish-floor glue-down) until physical module fit, service-map, access, and post-drive/shakedown checks pass.
 
 ## Scope
 - In scope: electrical, charging, solar, communications, interior structure/cabinetry, operations process, maintenance tracking
@@ -76,46 +78,42 @@ related:
 - M6: electrical module first-live checkpoint complete; hard-mounting, procurement, charger programming, and strain-relief closeout underway
 - M7: shakedown and punch-list closure
 
-## Build sequencing baseline (as-of 2026-05-27)
+## Build sequencing baseline (as-of 2026-06-27)
 - Build sequencing is tracked as an overlapping phase plan (not strict serial trades).
-- May 7 install readiness is historical context; current sequencing focus is measured interior envelopes, post-energization electrical cleanup/programming, targeted prototype extrusion/hardware ordering, and staged AC-out/alternator validation.
-- CAD and AI-generated diagrams are planning references only; real camper measurements and physical mockups own final dimensions.
+- May 7 install readiness is historical context; current sequencing focus is integrated module buildout: tie the trimmed/inset electrical module into the bench/desk structure, then build the galley/wet-spine counter/appliance module around the purchased sink/faucet, induction cooktop, and Ninja SP151 cubby.
+- CAD and AI-generated diagrams are planning references only; real camper measurements, physical mockups, and the current module workbook own final dimensions.
 - Detailed stage-by-stage order of operations, dependencies, and draft date windows:
 - [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md)
 
 ## Immediate next decisions
-- **Measured envelopes:** physically tape/cardboard the passenger-side lofted fridge/wet-spine skeleton, pump/accumulator board, water tank overlap, separated battery bench, driver-side electrical box/step box, `24 in x 48 in` wheel-well desk, DC shelf, diesel heater zone, and workstation before final cut lists.
-- **Extrusion/furniture:** order/use 80/20 as controlled prototype stock/hardware, not a final vendor-cut enclosure. Default toward `10-series` unless real point loads or restraint needs prove otherwise.
+- **Electrical module integration:** keep the electrical tower out of driving service until it is tied into the bench/desk frame, panel/diagonal restraint is added, and the final truck/camper hardpoint plan is proven. The current freestanding state is a shop-fit milestone, not a road-ready state.
+- **Bench first:** build the battery/bench/step structure that physically braces the electrical module and preserves battery extraction, disconnect/fuse access, and cushion/step loads.
+- **Desk next:** fit the desktop/workstation support against the electrical/bench structure before final galley skins so seated geometry, roof-down sweep, DC/AC access, and entry movement stay honest.
+- **Galley third:** build the passenger-side galley/wet-spine counter around the purchased Sarlai topmount sink, FORIOUS faucet, Duxtop induction cooktop, and Ninja SP151 air-fryer/toaster-oven cubby; validate cutout, faucet hose/nut clearance, drain/graywater path, and appliance heat/retention before final panels.
+- **Extrusion/furniture:** continue using available `10-series`/`2010` stock, regular angle, and on-hand Chinese connector hardware as prototype/build stock; reserve the pending nut/hardware shipment for final tightening and serviceable seams. Avoid exact-final skins until all modules fit together in the truck.
 - **Panel strategy:** use overlay/removable panels on living-facing surfaces, keep service zones exposed or quick-removable, and use magnets only for light service covers with locator/backup retention where panel loss matters.
-- **Electrical:** current live-commissioning checkpoint is complete: owner confirmed `55.5V` throughout the `48V` system including at the MultiPlus, MultiPlus inverter mode came on with normal light/hum and no errors, SmartShunt and Orion are visible in VictronConnect, Cerbo GX access point/remote-console workflow is active, and a short shore-charge test ran at limited household-outlet current.
-- Purchased Phase 1 AC baseline remains `shore source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> single 6-way AC DIN enclosure -> 30A AC-in breaker/disconnect -> MultiPlus AC-in`, with `30A` AC-out main plus two `20A` GFCI branches for later AC-out validation. SKU lock is recorded in BOM rows `13`, `14`, `15`, `41`, `107`, `108`, `109`, `110`, `113`, `114`, `123`, `179`, and `180`; cable glands/clamps/grommets are on-hand fitment stock.
-- AC-in and AC-out may share the purchased single `6-way` enclosure only if neutral paths remain isolated, PE/equipment grounding is continuous, no fixed downstream neutral-ground bond is added, and labeling/barriers/strain relief are verified during install. AC-out branch validation is still pending.
-- Before sustained charging, program/verify the MultiPlus LiFePO4 charge profile via `MK3-USB + VEConfigure` or equivalent: absorption/float per Dumfume manual, equalization off, lithium temperature-compensation behavior confirmed, charger current conservative, and `DVCC` left disabled unless a documented BMS/GX control path is later added.
-- Defer Mechman alternator installation until shore charging/monitoring are fully programmed/proven and alternator vendor/support gates are closed.
+- **Electrical:** current live-commissioning checkpoint is complete; the new mechanical priority is tie-in, anti-rack restraint, covers, labels, service loops, and post-drive retorque/witness-mark checks. AC-out/GFCI and alternator commissioning remain later separate gates.
 - **Flooring gate:** do not glue Lonseal or permanently close the floor until EPS/subfloor fit, moisture path, hardpoint, and penetration/service-access checks pass in the installed camper.
 - **Payload gate:** capture door-sticker payload and staged scale weights. Treat total payload, rear axle load, rear tire load, and left/right balance as active constraints.
 
 ## Post-install build restart sequence
-Purpose: turn the installed camper shell into measured block envelopes before buying hard-to-return interior structure.
+Purpose: turn the installed camper shell and shop-built modules into a restrained, serviceable MVP structure before travel use.
 
-1. **Shakedown / inspect**
-   - Stay local enough to address early Hiatus issues if practical.
-   - Check barn doors, cap seals, bed rail caps, windows/fan, dust paths, rattles, and water paths.
-2. **Measure / map**
-   - Capture interior dimensions, hardpoints, bed rail interface, floor clearances, door swing, window/fan locations, and candidate pass-through zones.
-   - Mark no-drill/no-load zones and likely service chases.
-3. **Floor closeout**
-   - Visually inspect sealed bed paths after cure and normal travel/shakedown; look for lifted tape, cracked beads, dust trails, or dampness.
-   - Trim EPS flat in ribs, verify plywood flushness, and keep hardpoint pockets non-compressible.
-   - Glue Lonseal only after the gate passes.
-4. **Block envelopes before extrusion**
-   - Tape/cardboard the passenger-side lofted fridge/wet-spine skeleton, purchased `36 gal` wheel-well tank, under-fridge pump/accumulator board, separated battery bench, driver-side electrical closet/DC shelf, diesel heater base zone, and desk.
-   - Use the interior furniture/galley concept doc as the layout checkpoint, then verify against real roof-down sweep, cabover/bench cushion use, fridge lid/vent/cord envelope, tank overlap/fitting orientation, pump service access, battery extraction, and wet/dry separation.
-   - Default to `10-series` 80/20, plywood, panels, brackets, and light rail unless measured heavy/dynamic modules prove they need larger extrusion.
-5. **Electrical bench path**
-   - Continue from the completed first live checkpoint: verify torque/witness marks, covers, labeling, SmartShunt/Cerbo power-source behavior, and shutdown/de-energization behavior.
-   - Program the MultiPlus battery charge profile before sustained charging, then repeat shore-charge validation with logged voltage/current/SOC/temperature.
-   - Keep AC-out branch/GFCI validation and alternator commissioning as separate later gates.
+1. **Electrical module tie-in / no-drive gate**
+   - The trimmed/inset electrical backer and freestanding `80/20` electrical module are a successful shop-fit milestone.
+   - Do not drive with the freestanding module loose or only lightly bolted; brace it into the bench/desk structure and verify anti-rack panels/diagonals, hardpoints, strain relief, and fastener witness marks first.
+2. **Bench/step structure**
+   - Build the bench/battery/step structure that braces the electrical module and keeps battery extraction, disconnects, fuses, and service panels reachable.
+   - Validate lid/cushion/step loads and cabover entry before skins.
+3. **Desk/workstation support**
+   - Fit the desktop and driver-side workstation support to the electrical/bench structure.
+   - Validate seated work geometry, roof-down sweep, entry clearance, DC/AC/USB access, monitor stow/latch path, and cable loops before permanent panels.
+4. **Galley/wet-spine counter module**
+   - Build the galley counter/wet-spine skeleton around the purchased sink/faucet, Duxtop induction cooktop, and Ninja SP151 appliance bay.
+   - Validate sink cutout, faucet under-counter clearance, drain/graywater cassette, pump/strainer/manifold service, leak tray, induction stow/use position, air-fryer heat clearance, and travel restraint.
+5. **Truck fit and shakedown**
+   - Fit the integrated modules in the truck as a system, then add panels/covers/latches only after service access still works.
+   - Do a local low-consequence drive/shakedown for rattles, movement, fastener loosening, leaks, high-draw load sequencing, and emergency electrical access before longer travel.
 
 ### Cabinetry approach (recommended)
 - Treat 80/20 as the *structure* and simple panels as the *skins*.

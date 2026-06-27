@@ -20,11 +20,11 @@ related:
 
 # Interior Furniture Layout and Galley Design Concepts
 
-As-of date: `2026-05-27`
+As-of date: `2026-06-27`
 
-Purpose: capture the active furniture/layout direction for the Hiatus/F-350 camper before final cuts. This document owns the interior **layout concept**, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, galley/plumbing service strategy, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`.
+Purpose: capture the active furniture/layout direction for the Hiatus/F-350 camper before final cuts. This document owns the interior **layout concept**, driver-side electrical-module/bench/desk integration, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, galley/plumbing service strategy, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`.
 
-Status: **draft implementation baseline for mockup and design development**, refreshed after the `2026-05-27` electrical live checkpoint. The layout concept is still current, but this is not a final cut list. Do not convert these concepts into exact extrusion cuts, drawer-slide lengths, panels, penetrations, or water/fuel routing until the installed shell, roof sweep, tank, fridge, pump, battery, diesel-heater, and electrical-board envelopes are physically measured. Current construction direction: finish the hard-mounted electrical board/module first, then prototype the `10-series`/targeted 80/20 exoskeleton and add mechanically removable overlay panels over living-facing surfaces after frame geometry and service access are proven.
+Status: **draft implementation baseline for active module buildout**, refreshed after the `2026-06-27` electrical-module shop-fit update. The electrical backer has been trimmed to inset into the `80/20` electrical frame; components were shifted for real MultiPlus depth without changing the core electrical architecture; the module is freestanding and ready to tie into the bench/desk structure. It is not road-ready standalone. Current construction direction: build the bench/battery/step structure that braces the electrical module, fit the desk desktop/workstation support, then build the galley/wet-spine counter/appliance module around the purchased sink/faucet, induction cooktop, and Ninja SP151 air-fryer cubby. Keep final skins, exact drawer slides, permanent penetrations, and finish-floor glue-down gated on integrated fit/service access.
 
 Orientation convention throughout:
 
@@ -99,6 +99,19 @@ Owner-provided installed-camper photo/mockup confirms these current physical env
 - The side/top photo with the tape measure shows the driver-side cardboard electrical/step-box projection being checked against aisle/desk space; treat the visible roughly `18 in` tape span as a photo scale cue only, not a canonical measurement.
 
 Practical implication: the next design artifact should be a measured block-envelope sketch from this taped mockup: datum, battery extraction path, step-box projection, desk/wheel-well notch, fridge slide/vent/lid sweep, pump-service access, and final aisle width after panel/handle allowances. Do not treat the photos as sufficient for exact extrusion lengths.
+
+### Electrical module integration update — 2026-06-27
+
+Owner-provided build update confirms the electrical module has moved from board/mockup work into physical `80/20` module integration:
+
+- The electrical backer was trimmed to inset cleanly into the `80/20` electrical frame.
+- Component positions were adjusted for actual MultiPlus depth; the change is a packaging/mechanical fit correction, not a change to the active `48V` electrical architecture.
+- The electrical module is freestanding and ready to tie into the bench/desk structure, but it is too wobbly for road use as a standalone object.
+- Near-term module strategy is now integrated construction rather than isolated electrical work: bench/battery/step structure first, desk desktop/workstation support next, then galley/wet-spine counter/appliance module.
+- Available extra material includes two extra sticks, one `2010` extra-thick two-slot/two-bar stick, and regular angle stock; use these as fit/brace/prototype material before waiting on perfect final hardware.
+- Pending dedicated `80/20` nuts/hardware should not block mock-fit, but final travel configuration should use the correct fastener standard, witness marks, and anti-rattle/retention hardware.
+
+Travel rule: **do not drive with the electrical module freestanding**. Drive only after it is tied into the bench/desk/galley structure or otherwise braced to verified hardpoints, with panels/diagonals/latches installed enough to control racking and cargo/projectile risk.
 
 ---
 
@@ -196,7 +209,7 @@ The driver-side electrical/desk zone and adjacent battery bench have to solve th
 5. Preserve a cushioned bench/lid surface that can be covered by Hiatus bed cushions when the bed is not in use.
 
 ### Recommended construction concept
-
+- **Electrical module tie-in:** treat the current freestanding electrical tower as a braced part of the bench/desk system, not an independent road-travel object. The bench/step frame should give it lateral restraint, anti-rack support, and hardpoint paths while preserving service access to disconnects, fuses, Cerbo, Orion, AC enclosure, and cable clamps.
 - **Battery well:** low, restrained, partitioned from wet-service volume, and sized so batteries can be extracted without dismantling the whole interior.
 - **Flat divider board:** separates battery bay below from bench storage/cushion use above; treat this as a protective service boundary, not just a shelf.
 - **Lift/hinged lid:** lid must open for battery access and include mechanical stays or controlled support; loose lift-off panels become projectiles.
@@ -370,16 +383,16 @@ Implications:
 - Keep dense pantry/tools away from the high passenger wall if the water tank is full; use lighter/bulkier storage above the tank.
 
 ### Countertop and appliance strategy
-
 Use convertible surfaces:
 
 - Small sink with flush cover.
 - Purchased galley fixture baseline: Sarlai drop-in/workstation sink, black topmount, `15 in x 15 in` exterior with approx. `11 in x 13 in` interior basin, plus FORIOUS black pull-out faucet with soap dispenser.
 - Current fit assumption: an `18-19 in` countertop with about `14 in` clear extrusion opening is probably workable because the chosen sink is topmount, but the actual sink cutout, faucet shank/nut/hose bends, drain/graywater path, and any local rail/connector drop still need field validation before final cuts.
-- Removable induction cooktop stored vertically.
+- Removable Duxtop `8100MC/BT-180G3` induction cooktop stored vertically or in a retained slot when not in use; cooking position must keep pan handle, cord, GFCI outlet, and countertop heat clearance clear of the sink/faucet.
+- Dedicated low cubby for the Ninja SP151 air-fryer/toaster oven with positive travel restraint, heat clearance, crumb-cleanout access, and a plug/service path that does not cross the wet bay.
 - Cutting board / sink cover slot.
 - Collapsible dish tub instead of a deep domestic sink if vertical volume is tight.
-- Low appliance bay that can remain flexible: removable Ninja SP151 air fryer/toaster oven, future `2.5-4 gal` electric tank, dry food bins, or removable appliance crate.
+- Low appliance bay can remain flexible around the Ninja SP151: future `2.5-4 gal` electric tank, dry food bins, or removable appliance crate only if they do not compromise heat clearance, graywater access, or wet/dry separation.
 - Graywater slide cassette under sink with waterless trap or removable drain approach.
 
 Avoid:
@@ -489,6 +502,15 @@ Mechanism rules:
 ---
 
 ## 13) Mockup and validation gates
+
+### Gate I0: electrical module road-restraint tie-in
+
+- Tie the freestanding electrical module into the bench/desk structure or verified hardpoints before any road travel.
+- Add anti-rack restraint: panels, diagonals, angle, gussets, or equivalent bracing enough that the tower cannot sway independently.
+- Confirm service access remains reachable after tie-in: main disconnect, Class T/fuse areas, Lynx, Orion, Cerbo, AC enclosure, cable clamps, and labels.
+- Add final fastener standardization, torque/witness marks, anti-rattle interfaces, and strain-relief checks.
+
+Pass when: the electrical module behaves as part of the interior structure, not a loose freestanding rack, and emergency electrical access still works.
 
 ### Gate I1: roof-down, bench, and cabover-step sweep
 
