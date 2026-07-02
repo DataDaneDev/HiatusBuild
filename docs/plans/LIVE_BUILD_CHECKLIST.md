@@ -90,7 +90,8 @@ A realistic win is **not** a finished camper. A realistic win is:
 - [ ] Put all extrusion/offcut stock in one visible staging area.
 - [ ] Mark the known latest cutlist workbook as the current source: `docs/plans/assets/module-cutlists/2026-06-25_module-cutlist-and-assignments.xlsx`.
 - [ ] Preserve the Bench one-off updates in the workbook; do not overwrite the local working copy blindly from `HEAD`.
-- [ ] Make three physical piles: `Bench`, `Desk`, `Galley candidate`.
+- [ ] Make three physical piles: `Bench`, `Desk`, `Galley`.
+- [ ] Mark the `23` workbook-assigned Galley pieces with `G` on the floor before cutting.
 - [ ] Label every cut extrusion with module + length + workbook/source row if known.
 - [ ] Separate hardware by class: T-nuts, angle brackets, corner cubes, panel fasteners, bolts/washers, latch hardware.
 - [ ] Identify missing hardware that blocks final travel-tight assembly vs hardware that only blocks cosmetics.
@@ -190,8 +191,9 @@ Goal: secure the office without turning it into roof-close or travel cargo risk.
 
 Goal: build the galley datum so cooler/fridge/plumbing fitment stops being guesswork.
 
-- [ ] Extract and label the galley candidate cuts from the current workbook/unassigned pool.
-- [ ] Identify all non-Bench, non-Electrical pieces that may belong to galley/fridge/wet-spine.
+- [ ] Use the Galley assignments now written in the current workbook: `23` total pieces tagged `Galley` in `piece_assignment` / `garage_final_cutlist`.
+- [ ] Mark these `G` on the floor before cutting: `1-1`, `2-1`, `2-2`, `5-2`, `6-2`, `11-1`, `12-1`, `12-4`, `13-1`, `16-4`, `17-4`, `17-5`, `19-3`, `19-4`, `19-5`, `19-6`, `20-4`, `20-5`, `21-2`, `21-3`, `21-4`, `21-5`, `21-6`.
+- [ ] Preserve the existing Bench reservations from shared source-row pools; Galley uses the remaining unassigned `R18`/`R19`/`R21` pieces plus the owner-confirmed `17.5 in` row.
 - [ ] Mock passenger-side fridge/cooler position with real handles, hinge/lid swing, cord bend, and hand clearance.
 - [ ] Confirm raised fridge/cooler height target, currently about `16 in` above floor/service zone.
 - [ ] Confirm relationship to `36 gal` wheel-well tank envelope.
