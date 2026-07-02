@@ -41,8 +41,9 @@ It does **not** replace the owner docs:
 
 ## Current build posture
 
-- Electrical module is live-proven at the bench/system level but still not road-ready as a freestanding structure.
-- Immediate physical priority is integrated structure: **bench/battery/step first, desk/workstation second, galley/wet-spine third**.
+- Electrical module is live-proven and now in the truck, but still not road-ready as a freestanding structure.
+- Immediate physical priority is integrated structure: **cut/build Galley, tie it into Bench/electrical structure, and use that dry fit to identify bench/floor/hardpoint modifications before final battery wiring**.
+- Batteries are intentionally out of the truck for this phase. Charge/install the remaining batteries only after bench/galley access, floor hardpoints, and service path are comfortable enough to avoid destructive rework.
 - Lonseal glue-down is intentionally late. Do not glue until hardpoints, rough-in, floor penetrations, moisture paths, and service access are proven.
 - Alternator charging remains a separate commissioning gate. Mechanical/staged wiring is OK only if the alternator cannot charge into an incomplete or unsafe path.
 - Solar research/procurement is deferred until shore + alternator + roof/module constraints are better proven.
@@ -53,10 +54,10 @@ It does **not** replace the owner docs:
 
 A realistic win is **not** a finished camper. A realistic win is:
 
-1. Bench/battery/step structure rigid enough to brace the electrical module.
-2. Desk frame/top physically placed enough to prove work geometry and electrical service access.
-3. Galley/fridge/wet-spine skeleton started enough to become the datum for cooler/fridge/plumbing fitment.
-4. Remaining batteries charged and staged safely.
+1. Galley/fridge/wet-spine skeleton started enough to become the datum for cooler/fridge/plumbing fitment.
+2. Galley tied into the Bench/electrical structure with removable, accessible fasteners.
+3. Battery bay/extraction path physically proven with batteries still out or isolated.
+4. Floor hardpoint and Lonseal escape path preserved before final battery wiring.
 5. Electrical module moved from “works on bench” toward “mechanically restrained system,” with wiring/strain-relief/test gates defined.
 6. No irreversible finish work done before the underlying gates pass.
 
@@ -100,10 +101,10 @@ A realistic win is **not** a finished camper. A realistic win is:
 
 ## 1. Battery charging and staging
 
-Goal: all batteries charged, known, and safe before final wiring/tests.
+Goal: keep batteries safe and isolated until physical access, floor hardpoints, and service path are proven enough for final in-truck wiring.
 
 - [ ] Confirm the currently charged battery count and SOC/voltage.
-- [ ] Charge the other `3 of 4` batteries as applicable, including the `12V` battery.
+- [ ] [DEFER] Charge the other `3 of 4` batteries, including the `12V` battery, after the battery install path is comfortable in the truck.
 - [ ] For each `48V` battery, record resting voltage and display SOC after charge/rest.
 - [ ] For the `12V` battery, record resting voltage and display SOC after charge/rest.
 - [ ] Confirm all batteries are above low-temperature charge cutoff before charging.
@@ -112,6 +113,8 @@ Goal: all batteries charged, known, and safe before final wiring/tests.
 - [ ] Confirm each 48V battery has its intended Class T/fuse/disconnect path before being paralleled into service.
 - [ ] Confirm battery extraction path from the bench: no rail, lid, panel, or cable blocks removal.
 - [ ] Add temporary “charged / not charged / do not connect” labels if any battery is out of sync.
+- [ ] Use battery placeholders or no-battery clearance checks during Galley/Bench dry fit; do not let loose heavy batteries become shop obstacles.
+- [ ] [HOLD] Do not final-route, final-cut, or final-torque battery cabling until floor hardpoints/Lonseal strategy and battery extraction access are proven.
 
 ## 2. Bench / battery / step module
 
@@ -129,6 +132,7 @@ Goal: build the structure that braces the electrical module and controls battery
 - [ ] Add battery restraints: strap bars, capture rails, hold-downs, or framed pockets.
 - [ ] Confirm Class T / disconnect / Lynx / shunt / fuse access does not require dismantling the bench.
 - [ ] Confirm emergency service slit/access door for disconnect/fuse inspection.
+- [ ] Confirm no final floor bolt or hardpoint will be hidden under an installed battery or inaccessible galley/bench member.
 - [ ] Add edge protection/scuff plate where the bench doubles as a step.
 - [ ] Mark fasteners for final witness marks after retorque, not during first loose mockup.
 - [ ] Do not install final skins until electrical service and battery extraction pass.
@@ -198,6 +202,7 @@ Goal: build the galley datum so cooler/fridge/plumbing fitment stops being guess
 - [ ] Confirm raised fridge/cooler height target, currently about `16 in` above floor/service zone.
 - [ ] Confirm relationship to `36 gal` wheel-well tank envelope.
 - [ ] Build the lofted fridge/cooler support skeleton as a service exoskeleton, not a sealed cabinet.
+- [ ] Tie Galley to Bench/electrical structure with removable plates/bolts reachable from the aisle/top/service openings; avoid hidden fasteners that require removing batteries.
 - [ ] Add positive fridge/cooler travel restraint and hard stops.
 - [ ] Preserve lower cool-air intake and upper warm-air exhaust around fridge compressor vents.
 - [ ] Confirm pump/accumulator/strainer/manifold service opening below/near fridge.
@@ -286,6 +291,8 @@ Goal: finish floor only after hidden work and anchors are resolved.
 - [ ] Confirm EPS is not proud, buckled, wet, or blocking hardpoint pockets.
 - [ ] Confirm plywood slices sit flat and can still be removed intentionally.
 - [ ] Mark every planned structural hardpoint before vinyl glue-down.
+- [ ] Before final battery wiring, choose the floor escape strategy: module can lift out as Galley/Bench sections, or Lonseal has planned slits/relief holes/service edges around hardpoints.
+- [ ] Keep final module-to-floor bolts accessible from the aisle/top/service openings; do not require removing charged batteries just to reach clamp hardware.
 - [ ] Remove EPS locally at structural hardpoints so plywood bears directly on steel.
 - [ ] Confirm no new floor-through penetrations, heater routes, drains, anchor holes, or under-floor service needs remain.
 - [ ] Dry-fit Lonseal and confirm pattern/grain/edge trim strategy.
