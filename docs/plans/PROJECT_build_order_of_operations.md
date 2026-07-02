@@ -25,6 +25,8 @@ related:
 - Current electrical-module state: component placement has been adjusted for real MultiPlus depth, the module is freestanding and ready to tie into the bench/desk structure, but it is not road-ready as a standalone module because it still needs bench/desk/galley tie-in, panels/anti-rack restraint, hardpoint verification, and final fastener/strain-relief closeout.
 - Interior/furniture assumptions in `docs/implementation/INTERIOR_furniture_layout_and_galley.md` remain the current draft baseline. The active sequence is now integrated module buildout: bench first, desk desktop/workstation support next, then galley/wet-spine counter/appliance module with the purchased sink/faucet, induction cooktop, and Ninja SP151 cubby. TNUTZ cart consolidation lives in `docs/plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md`; procurement summary lives in `docs/plans/PROCUREMENT_purchase_list_2026-05-26.md`; lighting remains deferred behind core furniture/plumbing/electrical integration.
 
+- Active post-install sprint/punch-list tracker: `docs/plans/LIVE_BUILD_CHECKLIST.md`. Update it whenever the practical next steps, blockers, or completed build work changes.
+
 ## Typical full-build sequence (once camper shell is physically in hand)
 1. Layout freeze and service-map freeze
 - Lock exact locations for: batteries, inverter/charger, Lynx, tank(s), pump, heater, shore inlet, solar entry, cable chases, and service access panels.

@@ -55,6 +55,7 @@ Use this folder map when deciding where a document belongs. Current repo posture
 
 ## Plans
 - [plans](plans/): active execution plans, procurement aids, WIP carts, and historical references.
+- [LIVE_BUILD_CHECKLIST](plans/LIVE_BUILD_CHECKLIST.md): live running build checklist and July 4 sprint tracker; update whenever practical build state, blockers, or next shop actions change.
 - [PROJECT_build_order_of_operations](plans/PROJECT_build_order_of_operations.md): active post-install build sequence.
 - [PROCUREMENT_purchase_list_2026-05-26](plans/PROCUREMENT_purchase_list_2026-05-26.md): active short-horizon procurement list; filename date is historical.
 - [TNUTZ_80_20_HARDWARE_MODEL_2026-06-01](plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md): consolidated WIP TNUTZ `10-series` cart, hardware model, visual-aid owner, and pointer to dated module cut-list workbooks under `plans/assets/module-cutlists/`.

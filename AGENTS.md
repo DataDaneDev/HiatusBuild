@@ -9,6 +9,7 @@ This repo is Dane/Sunny's public Hiatus/F-350 camper build source of truth. Keep
 - Current high-level state belongs in `README.md`, `00 Home.md`, `docs/README.md`, and `docs/core/PROJECT.md`.
 - Subsystem baseline belongs in `docs/core/SYSTEMS.md`; final `48V` topology belongs in `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`.
 - Implementation details belong in `docs/implementation/`; active sequence/procurement aids belong in `docs/plans/`; dated evidence belongs in `logs/LOG.md`.
+- `docs/plans/LIVE_BUILD_CHECKLIST.md` is the live running build checklist. Whenever the practical build state, sequence, blockers, completed physical work, or next shop action changes, update that checklist in the same maintenance pass instead of leaving the change only in chat.
 - Historical plans may remain for provenance, but mark them clearly historical/reference-only rather than deleting context.
 
 ## Current posture to preserve
