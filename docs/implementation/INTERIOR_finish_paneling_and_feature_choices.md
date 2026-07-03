@@ -307,6 +307,7 @@ Build a shallow angled cupboard/display/service cubby at the Galley front transi
 - `45°` chamfered shape if square clips entry movement.
 - Warm wood surround/interior.
 - Smoked acrylic or smoked polycarbonate door/panel in a black-trimmed frame.
+- Optional signature treatment: a rounded hardwood/live-edge-inspired cap at the top of the `45°` face, blended into the main countertop so the entry-side edge feels like furniture rather than a chopped-off extrusion corner.
 - Positive latch, not magnets alone.
 - Internal lower lip/dividers so contents do not pile against the door.
 - Light daily-use contents only: coffee kit, spices, headlamp, chargers, notebook, keys, first-aid quick items, or similar.
@@ -315,18 +316,48 @@ Build a shallow angled cupboard/display/service cubby at the Galley front transi
 
 | Variation | Best use | Notes |
 | --- | --- | --- |
+| Smoked `45°` front + rounded wood cap | Signature tailgate/entry feature | Best current “fancy but useful” concept: protects one-door entry movement, adds a tactile furniture edge, and makes the cupboard look intentional instead of like a leftover angled bay |
 | Smoked door + wood interior | Most polished | Best overall aesthetic; hides clutter while showing depth |
 | Open angled cubby + shock cord | More utility | Good for soft quick-grab items; less refined |
 | Angled service/display panel | If real system behind it | Only worthwhile if it exposes useful gauge/switch/QD/service item |
 | Lower hidden bay + upper smoked door | Balanced | Practical clutter below, signature accent above |
 
-### 6.3 Constraints
+### 6.3 Signature smoked-front / rounded-wood-cap concept
+
+The strongest version of this idea is at the **tailgate/entry end of the Galley**, where the `45°` face protects the one-barn-door entry path but still creates a small intentional cupboard.
+
+Concept stack:
+
+- Main Galley counter stays mostly rectangular/functional.
+- Counter transitions into a rounded hardwood cap/nosing over the `45°` corner.
+- The cap can be made from a small live-edge or live-edge-inspired hardwood piece, but the hand-contact edge should be sanded smooth, sealed, and durable.
+- Smoked acrylic/polycarbonate below becomes the angled cupboard/door face.
+- Black trim/fasteners frame the smoked panel so it matches the `80/20` skeleton.
+- Interior of the cupboard stays warm wood or black-lined utility, depending on what is stored there.
+
+Preferred construction logic:
+
+- Let the `80/20` frame and/or a wood cleat carry the wood cap. **Do not let the acrylic carry the cap load.**
+- Put the smoked panel in a small frame, rabbet, channel, or gasketed landing so vibration does not chip the plastic.
+- Use smoked **polycarbonate** if the panel is likely to get kicked, bumped, or used near entry traffic; use smoked acrylic only if it is protected and the cleaner/glossier look matters more.
+- Use a positive latch or captive fastener for the cupboard door. Magnets can make it feel nice, but should not be the only travel retention.
+- Keep the door swing/drop/removal clear of the barn-door entry path, cooler/bench lid, and galley workflow.
+- Use the cupboard for light curated items, not dense tools or heavy cookware.
+
+Live-edge caution:
+
+- A raw bark live edge is probably wrong at the entry/galley edge: it catches dirt, water, clothing, and fingers.
+- Better target: a small **rounded hardwood cap with live-edge character** or a live-edge piece that has been cleaned, stabilized, sanded, sealed, and softened into a practical quarter-round/nosing.
+- If a marketplace piece is too irregular, heavy, green, cracked, or splintery, use it elsewhere as an accent shelf rather than on the main entry edge.
+
+### 6.4 Constraints
 
 - Mock in cardboard before cutting plastic or finished wood.
 - Door cannot swing into entry path, bench lid, cooler lid, or galley workflow.
 - Keep it shallow enough to avoid a weird inaccessible wedge.
 - Do not make it the only access path to critical plumbing/electrical service.
 - Do not make the smoked panel carry structure.
+- Keep the rounded cap low-profile enough that it does not become a hip/shoulder snag when entering with one barn door open.
 
 ---
 
@@ -616,10 +647,10 @@ Avoid:
 2. Make two finish samples from scrap: clear satin and one warmer/stained option.
 3. Prototype one `1/2 in` overlay panel with black spacers/fasteners.
 4. Prototype or source one smoked acrylic/polycarbonate sample.
-5. Mock the `45°` front cupboard in cardboard.
+5. Mock the `45°` front cupboard in cardboard, including the smoked angled front plus rounded wood-cap/nosing idea.
 6. Mark every Galley/Bench face by category: finished wood, service removable, smoked feature, or exposed `80/20`.
 7. Mock Galley and desk tops in `3/4 in` plywood.
-8. Browse Marketplace for one large matching butcher-block/hardwood tabletop only after rough top dimensions are known.
+8. Browse Marketplace for one large matching butcher-block/hardwood tabletop only after rough top dimensions are known; separately watch for a small dry hardwood/live-edge offcut suitable for the Galley entry-corner cap.
 9. Select one latch family for clean doors and one utility latch family for service panels.
 10. Hold final countertop, final skins, final floor, and final battery-trapped work until the validation gates above pass.
 

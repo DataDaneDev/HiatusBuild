@@ -1,3 +1,9 @@
+## 2026-07-03 — Galley `45°` smoked-front / rounded wood-cap concept captured
+
+- Added the tailgate/entry-end Galley signature feature concept: a `45°` smoked acrylic/polycarbonate cupboard face under a rounded hardwood/live-edge-inspired cap that blends into the main countertop.
+- Build posture: acrylic/polycarbonate remains a non-structural door/panel; the wood cap must be carried by `80/20`/wood cleats, use positive travel retention, and be mocked with the one-barn-door entry path before final plastic or finished wood cuts.
+- Marketplace posture: look for dry, stable hardwood/live-edge character as a small cap/nosing offcut, not a raw bark slab that catches water, dirt, clothing, or fingers.
+
 ## 2026-07-03 — Interior finish, paneling, storage, and feature choices synthesized
 
 - Added `docs/implementation/INTERIOR_finish_paneling_and_feature_choices.md` as the draft owner for Galley/desk finish and creative-useful feature decisions: wood tops, plywood thickness posture, butcher-block/live-edge sourcing, smoked acrylic/polycarbonate accent panels, lift-out bins vs drawers vs elastic cubbies, `45°` Galley front cupboard, latches, anti-rattle, and validation gates.
