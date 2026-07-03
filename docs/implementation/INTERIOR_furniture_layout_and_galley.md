@@ -16,15 +16,16 @@ related:
   - "[[SYSTEMS]]"
   - "[[TRACKING]]"
   - "[[INTERIOR_driver_side_workstation]]"
+  - "[[INTERIOR_finish_paneling_and_feature_choices]]"
 ---
 
 # Interior Furniture Layout and Galley Design Concepts
 
-As-of date: `2026-06-27`
+As-of date: `2026-07-03`
 
-Purpose: capture the active furniture/layout direction for the Hiatus/F-350 camper before final cuts. This document owns the interior **layout concept**, driver-side electrical-module/bench/desk integration, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, galley/plumbing service strategy, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`.
+Purpose: capture the active furniture/layout direction for the Hiatus/F-350 camper before final cuts. This document owns the interior **layout concept**, driver-side electrical-module/bench/desk integration, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, galley/plumbing service strategy, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`; the finish/paneling/storage feature-design detail now lives in `docs/implementation/INTERIOR_finish_paneling_and_feature_choices.md`.
 
-Status: **draft implementation baseline for active module buildout**, refreshed after the `2026-06-27` electrical-module shop-fit update. The electrical backer has been trimmed to inset into the `80/20` electrical frame; components were shifted for real MultiPlus depth without changing the core electrical architecture; the module is freestanding and ready to tie into the bench/desk structure. It is not road-ready standalone. Current construction direction: build the bench/battery/step structure that braces the electrical module, fit the desk desktop/workstation support, then build the galley/wet-spine counter/appliance module around the purchased sink/faucet, induction cooktop, and Ninja SP151 air-fryer cubby. Keep final skins, exact drawer slides, permanent penetrations, and finish-floor glue-down gated on integrated fit/service access.
+Status: **draft implementation baseline for active module buildout**, refreshed after the `2026-07-03` Galley frame and finish-feature planning update. The electrical backer has been trimmed to inset into the `80/20` electrical frame; components were shifted for real MultiPlus depth without changing the core electrical architecture; the module is freestanding and ready to tie into the bench/desk structure. It is not road-ready standalone. The Galley extrusion frame is cut and built as an exoskeleton, but remains tippy until tied into the Bench/cooler area. Current construction direction: stabilize/tie the Galley into the Bench/cooler structure, protect the entry with a likely `45°` front-corner chamfer if the square corner clips movement, then use the integrated fit to validate wood tops, removable panels, wet-spine access, and storage features. Keep final skins, exact drawer slides, permanent penetrations, and finish-floor glue-down gated on integrated fit/service access.
 
 Orientation convention throughout:
 

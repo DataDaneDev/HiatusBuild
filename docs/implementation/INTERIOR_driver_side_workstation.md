@@ -11,6 +11,7 @@ status: draft
 related:
   - "[[SYSTEMS]]"
   - "[[TRACKING]]"
+  - "[[INTERIOR_finish_paneling_and_feature_choices]]"
 ---
 
 # Driver-Side Workstation, Monitor, Electrical Shelf, and Storage Mechanisms
@@ -25,6 +26,7 @@ Related docs:
 - `docs/core/SYSTEMS.md`
 - `docs/core/TRACKING.md`
 - `docs/implementation/INTERIOR_furniture_layout_and_galley.md`
+- `docs/implementation/INTERIOR_finish_paneling_and_feature_choices.md`
 - `docs/plans/PROJECT_build_order_of_operations.md`
 
 Generated concept diagram:

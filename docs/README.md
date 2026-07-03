@@ -43,6 +43,7 @@ Use this folder map when deciding where a document belongs. Current repo posture
 ## Implementation
 - [implementation](implementation/): build-ready reference docs that support the active baseline.
 - [INTERIOR_furniture_layout_and_galley](implementation/INTERIOR_furniture_layout_and_galley.md): current draft office-first interior layout, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, 10-series 80/20/overlay-panel direction, service-panel rules, and generated concept caveats.
+- [INTERIOR_finish_paneling_and_feature_choices](implementation/INTERIOR_finish_paneling_and_feature_choices.md): draft Galley/desk finish and feature-design choices — wood tops, paneling, smoked acrylic/polycarbonate accents, storage mix, 45-degree Galley cupboard, latches, anti-rattle, and validation gates.
 - [INTERIOR_driver_side_workstation](implementation/INTERIOR_driver_side_workstation.md): draft driver-side desk, stow-low monitor, electrical-closet/DC-shelf interface, diesel-heater base zone, and storage mechanism design.
 - [CAMPER_audio_system](implementation/CAMPER_audio_system.md): preliminary/future camper-only `12V` audio package, source/sub/speaker selection, fusing, wire sizing, routing, and tuning notes; not near-term procurement.
 - [ELECTRICAL_overview_diagram](implementation/ELECTRICAL_overview_diagram.md): implementation topology, conductor IDs, branch maps, diagrams, and active electrical assumptions.

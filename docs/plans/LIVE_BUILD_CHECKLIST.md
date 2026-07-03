@@ -314,15 +314,23 @@ Goal: finish floor only after hidden work and anchors are resolved.
 
 ## 11. Panels, skins, latches, storage, and travel retention
 
-Goal: add only the panels that make the system safer or stiffer before cosmetic closure.
+Goal: add only the panels/features that make the system safer, stiffer, more serviceable, or visually intentional before cosmetic closure. Detailed feature choices live in `docs/implementation/INTERIOR_finish_paneling_and_feature_choices.md`.
 
+- [ ] Map every Galley/Bench/desk face as `finished wood`, `service removable`, `smoked/translucent feature`, or `open/exposed 80/20`.
 - [ ] Identify panels that are structural/shear/anti-rack vs cosmetic covers.
 - [ ] Prioritize panels that brace electrical module, bench, desk, and galley skeleton.
+- [ ] Use `1/2 in` plywood for most living-facing vertical/removable faces; use `3/4 in` for tops, bench lids, cooler-bearing surfaces, step/load surfaces, and large horizontal spans.
+- [ ] Mock Galley and desk tops in `3/4 in` plywood before buying/cutting premium butcher block or hardwood.
+- [ ] Make at least two finish samples on scrap: clear satin and one warmer/stained option.
+- [ ] Prototype one `1/2 in` overlay panel using the intended black fasteners/spacers/anti-rattle tape.
+- [ ] Source/test one smoked acrylic/polycarbonate sample before committing the `45°` front cupboard feature panel.
+- [ ] Mock the `45°` Galley front cupboard in cardboard and confirm door swing/reach/cooler/bench interference before cutting plastic or finished wood.
 - [ ] Keep electrical/plumbing service panels quick-removable.
 - [ ] Use mechanical fasteners, quarter-turns, latches, or captive hardware for panels that matter.
 - [ ] Use magnets only for light service covers with locator tabs/lips/backup retention.
 - [ ] Add anti-rattle tape/felt/neoprene on panel interfaces.
 - [ ] Add latches for every drawer/bin/door/slide in both travel and use states where needed.
+- [ ] Prefer lift-out bins, elastic/shock-cord cubbies, and a few low positive-latched drawers over a full drawer wall until dimensions are stable.
 - [ ] Add soft storage in body-contact zones instead of hard protruding drawers.
 - [ ] Add toe-kick/access storage only if it does not bury service wiring/disconnects.
 - [ ] Add labels for service-panel contents.

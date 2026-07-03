@@ -1,3 +1,9 @@
+## 2026-07-03 — Interior finish, paneling, storage, and feature choices synthesized
+
+- Added `docs/implementation/INTERIOR_finish_paneling_and_feature_choices.md` as the draft owner for Galley/desk finish and creative-useful feature decisions: wood tops, plywood thickness posture, butcher-block/live-edge sourcing, smoked acrylic/polycarbonate accent panels, lift-out bins vs drawers vs elastic cubbies, `45°` Galley front cupboard, latches, anti-rattle, and validation gates.
+- Updated the live checklist to convert those feature ideas into next shop actions: face mapping, `1/2 in` overlay-panel prototype, `3/4 in` top mockups, finish samples, smoked-panel sample, and cardboard `45°` cupboard mockup before final skins/countertops.
+- Kept the governing gates unchanged: stabilize/tie Galley to Bench/cooler before finish work; keep service panels removable; defer final hot-water appliance geometry, Lonseal glue-down, and battery-trapped work until access is proven.
+
 ## 2026-07-03 — Galley extrusion frame cut and built
 
 - Owner reported the Galley `10-series` extrusion frame is fully cut and built as an exoskeleton.
