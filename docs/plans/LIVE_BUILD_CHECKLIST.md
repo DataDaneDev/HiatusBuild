@@ -322,7 +322,7 @@ Goal: add only the panels/features that make the system safer, stiffer, more ser
 - [ ] Use `1/2 in` plywood for most living-facing vertical/removable faces; use `3/4 in` for tops, bench lids, cooler-bearing surfaces, step/load surfaces, and large horizontal spans.
 - [ ] Mock Galley and desk tops in `3/4 in` plywood before buying/cutting premium butcher block or hardwood.
 - [ ] Make at least two finish samples on scrap: clear satin and one warmer/stained option.
-- [ ] Prototype one `1/2 in` overlay panel using the intended black fasteners/spacers/anti-rattle tape.
+- [ ] Prototype one `1/2 in` overlay panel using the intended fasteners/spacers/anti-rattle tape; keep hardware visually quiet against the silver extrusion rather than making it a feature.
 - [ ] Source/test one smoked acrylic/polycarbonate sample before committing the `45°` front cupboard feature panel.
 - [ ] Mock the `45°` Galley front cupboard in cardboard and confirm door swing/reach/cooler/bench interference before cutting plastic or finished wood.
 - [ ] Keep electrical/plumbing service panels quick-removable.

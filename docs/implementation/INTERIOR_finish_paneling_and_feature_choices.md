@@ -38,7 +38,7 @@ Current physical context:
 
 Build the interior as:
 
-> **Warm wood touch surfaces and living-facing panels, built around a black industrial 80/20 service skeleton, with smoked translucent panels used only as deliberate accents.**
+> **Warm wood touch surfaces and living-facing panels, built around a visible silver `80/20` service skeleton, with smoked translucent panels used only as deliberate accents.**
 
 The best current default is:
 
@@ -50,18 +50,19 @@ The best current default is:
 6. **Front Galley corner:** default to a physical sweep-tested `45°` chamfer if a square corner clips entry movement. Treat a rounded corner as a later finish detail, not the structural default.
 7. **Hot water:** keep hot-water appliance geometry deferred. Build cold water, sink, drain, spray/QD, and capped future hot stubs first.
 
-The target read is **not** “random plywood screwed to aluminum.” It should look like **purpose-built warm cabin furniture with visible black mechanical logic**.
+The target read is **not** “random plywood screwed to aluminum.” It should look like **purpose-built warm cabin furniture integrated with a clean silver mechanical/service skeleton**. Hardware should be consistent and functional, not a decorative feature sprayed everywhere.
 
 ---
 
 ## 2) Design language rules
 
-### 2.1 Wood is the field; black metal is the structure
+### 2.1 Wood is the field; silver extrusion is the service skeleton
 
 Use this as the governing visual rule:
 
 - Warm wood = surfaces people touch, see, sit on, cook on, and work at.
-- Black `80/20` / hardware = structure, service seams, removable panel language, accessory rails, and tie-in points.
+- Silver `80/20` = visible structure, service seams, accessory rails, and tie-in points.
+- Hardware = consistent, aligned, functional fastening; keep it visually quiet unless it is intentionally framing a feature panel.
 - Smoked translucent panels = accents or useful inspection features, not the default wall material.
 
 ### 2.2 Repeat a few decisions everywhere
@@ -71,16 +72,16 @@ The galley and desk do not need identical shapes, but they should repeat:
 - the same dominant wood tone;
 - the same satin sheen;
 - the same front-edge radius/chamfer;
-- the same black fastener language;
+- the same fastener/reveal discipline;
 - similar panel gaps/reveals;
 - similar latch/handle vocabulary;
 - similar “service panels are intentionally removable” details.
 
-A consistent edge profile and hardware pattern will make mixed materials feel more intentional than trying to hide every fastener.
+A consistent edge profile, reveal, and hardware pattern will make mixed materials feel more intentional than trying to hide every fastener.
 
-### 2.3 Let some fasteners be visible
+### 2.3 Keep necessary fasteners quiet and consistent
 
-Visible black button-head bolts, finish washers, countersunk screws, and quarter-turns can look right in this build if they are repeated and aligned. Random hardware finishes will look accidental; repeated black hardware will look designed.
+Visible hardware is fine when it is needed for service or structure, but it is not the design feature. Match the surrounding context: silver/zinc/stainless can disappear against silver extrusion; dark hardware can be used sparingly where it frames smoked plastic or a dark service panel. Random mixed hardware will look accidental; repeated, aligned, purpose-specific hardware will look designed.
 
 ### 2.4 Service access is part of the design
 
@@ -97,14 +98,39 @@ Minimum rule: if a panel covers service-critical hardware, it must be removable 
 | Option | Best use | Pros | Watchouts | Current posture |
 | --- | --- | --- | --- | --- |
 | `3/4 in` plywood with hardwood edge/lipping | First-pass galley counter, desk top, bench/cooler support | Stable, available, modifiable, beginner-friendly, lighter than slabs | Edges need finishing; sink cutouts must be sealed | **Recommended first real build path** |
-| `3/4 in` plywood with black-painted edges | Industrial/warm hybrid, exposed plywood cleanup | Ties into black extrusion, forgiving, easy touch-up | Sloppy paint lines look DIY | Good for visible edges and service-adjacent surfaces |
+| `3/4 in` plywood with finished/painted edges | Warm/utility hybrid, exposed plywood cleanup | Forgiving, easy touch-up, can tie into smoked/dark service accents | Sloppy paint lines look DIY | Good for visible edges and service-adjacent surfaces |
 | Butcher block / edge-glued countertop | Final high-touch galley + desk surfaces | Warm, substantial, refinishable, “real furniture” | Heavier, moves with humidity, sink edges need aggressive sealing | Good upgrade if one source piece can feed both desk and galley |
 | Used hardwood tabletop | Matching desk/galley source material | Often cheap, already flat/finished, can look polished | Verify solid wood or quality veneer; avoid particleboard near sink | Excellent Marketplace target |
 | Live-edge slab | Accent/focal feature | Unique and memorable | Heavy, irregular, harder to seal, dirt-catching, awkward near sink | Use as accent shelf/lip only, not default counter |
 | Prefinished cabinet plywood | Vertical panels, doors, service covers | Stable, clean, less finishing labor | Edges still need banding; less “rustic” | Good if a local cabinet shop has remnants |
 | Laminate/HPL over plywood | Wet-resistant galley work surface | Durable and wipeable | Less warm unless wood-look; harder to repair invisibly | Good fallback if wood maintenance becomes annoying |
 
-### 3.2 Recommended material path
+### 3.2 Rough board-foot estimate for the desk + Galley
+
+Use this only as a buying estimate until the exact desk depth, Galley depth, sink cutout, and rounded end template are locked.
+
+Assumptions:
+
+- PC desk: `48 in` wide by `22-24 in` deep.
+- Galley counter: about `60 in` long by `14-18 in` deep.
+- Rounded entry end: roughly a `15 in` radius quarter-round/cap, ideally cut from a small blank/offcut rather than a full round.
+- Final wood thickness: roughly `3/4 in` finished; rough `4/4` lumber is bought closer to `1 in` nominal before milling.
+
+| Piece | Approx size | Area | Finished `3/4 in` BF equivalent | `4/4` rough-lumber BF basis |
+| --- | ---: | ---: | ---: | ---: |
+| PC desk | `48 x 22-24 in` | `7.3-8.0 sq ft` | `5.5-6.0 BF` | `7.3-8.0 BF` |
+| Galley counter | `60 x 14-18 in` | `5.8-7.5 sq ft` | `4.4-5.6 BF` | `5.8-7.5 BF` |
+| Rounded entry cap | `15 in` radius quarter / `15 x 15 in` blank | `1.2-1.6 sq ft` | `0.9-1.2 BF` | `1.2-1.6 BF` |
+| **Net total** | — | — | **`10.8-12.6 BF`** | **`14.4-17.1 BF`** |
+
+Buying posture:
+
+- If buying flat finished butcher block/tabletop material: target the actual square footage plus cut waste; roughly `15-18 BF` equivalent is the useful mental model.
+- If buying rough `4/4` boards for glue-up/milling: buy about **`20-24 BF`** to cover width selection, defects, straightening, glue-up trimming, and mistakes.
+- A one-piece full `30 in` diameter round is about `4.9 BF` at `1 in` thick by itself; do not buy that unless the piece is actually cheap and beautiful.
+- Cost feel: `20 BF` is about `$100` at `$5/BF`, `$240` at `$12/BF`; `24 BF` is about `$120` at `$5/BF`, `$288` at `$12/BF`.
+
+### 3.3 Recommended material path
 
 Use **`3/4 in` plywood as the prototype and possibly finished substrate**:
 
@@ -115,7 +141,7 @@ Use **`3/4 in` plywood as the prototype and possibly finished substrate**:
 
 This avoids wasting a good slab before the geometry is real.
 
-### 3.3 Butcher block guidance
+### 3.4 Butcher block guidance
 
 Butcher block is the most sensible “cool” upgrade if a good piece appears locally.
 
@@ -136,7 +162,7 @@ Avoid it for the first final-ish top if:
 
 Mounting rule: **do not permanently glue butcher block to the `80/20` frame.** Use accessible mechanical fasteners with slotted/oversized holes or bracket allowance so wood can move slightly.
 
-### 3.4 Live-edge guidance
+### 3.5 Live-edge guidance
 
 Live edge is allowed as an accent, but should not drive the core build.
 
@@ -156,7 +182,7 @@ Bad uses:
 - surfaces that need easy wipe-down;
 - any piece that is green, warped, barky, heavy, or still drying.
 
-### 3.5 Finish direction
+### 3.6 Finish direction
 
 Default finish: **clear or lightly warmed satin**, not glossy.
 
@@ -176,7 +202,29 @@ Beginner-friendly sequence:
 
 For sink-adjacent wood, seal the cutout edge aggressively. Raw plywood or end grain near the sink is where water damage starts.
 
-### 3.6 Edge language
+### 3.7 Wood species and scent posture
+
+Scent matters, but do not make the main wet/work surfaces out of a soft aromatic wood just for smell.
+
+| Wood / source | Best role | Why | Watchouts |
+| --- | --- | --- | --- |
+| Maple / birch butcher block | Desk and Galley top | hard, clean, available, classic countertop look | smell is neutral; needs finish and sealed sink edges |
+| White oak / ash | Premium durable tops or edge/nosing | harder, furniture-grade, good with silver extrusion | can be pricier; oak grain needs pore filling only if a glass-smooth finish is desired |
+| Walnut / cherry | Accent strips, edge caps, premium desk/feature parts | warm, intentional, furniture-like | cost; darker tone may dominate small interior |
+| Acacia / rubberwood butcher block | Budget-friendly ready-made tops | common in pre-made countertops/tabletops | inspect for weight, glue lines, warping, and end-grain near wet areas |
+| Aromatic cedar / eastern red cedar / juniper | removable cubby liners, closet/shoe/storage accents, vented scent strips | strong smell; easy to refresh by light sanding | soft, dents easily, scent fades under film finish; not ideal for main desk/Galley top |
+| Western red cedar | light accent panels or protected trim | smells good, light, warm color | very soft; not a primary work surface |
+| Spanish cedar | premium scent accent/drawer liner | stable, aromatic, used in humidors | often expensive and not necessary for structural tops |
+
+Scent strategy:
+
+- Use cedar as **replaceable/removable accent material**: cubby liner, shoe bay, small slatted panel, underside scent strip, or interior cupboard panel.
+- Leave scent pieces unfinished or use a very light oil/wax only if needed; heavy polyurethane/varnish traps the smell.
+- Keep cedar out of wet/sink/high-abuse top surfaces.
+- Refresh smell by lightly sanding exposed cedar/juniper later.
+- If the whole camper starts smelling too strong, removable scent strips are easy to pull; a cedar countertop is not.
+
+### 3.8 Edge language
 
 | Location | Recommended edge | Why |
 | --- | --- | --- |
@@ -185,7 +233,7 @@ For sink-adjacent wood, seal the cutout edge aggressively. Raw plywood or end gr
 | Bench/cooler lid edges | eased edge or small roundover | Prevents splinters and hip/knee strikes |
 | Vertical panel edges | eased chamfer/roundover or banding | Finished look and fewer splinters |
 | Sink cutout | lightly eased + heavily sealed | Reduces splintering and water intrusion |
-| Service panels | simple eased edge + black fasteners | Utility aesthetic stays clean |
+| Service panels | simple eased edge + consistent reachable fasteners | Utility aesthetic stays clean |
 
 ---
 
@@ -196,9 +244,9 @@ For sink-adjacent wood, seal the cutout edge aggressively. Raw plywood or end gr
 - **`1/2 in` plywood:** living-facing vertical fronts, removable skins, non-load doors, light access covers.
 - **`3/4 in` plywood:** countertops, bench lids, cooler/fridge support decks, step/load surfaces, large horizontal spans.
 - **Smoked acrylic/polycarbonate:** selected accent/service panels only.
-- **Black/charcoal panels:** electrical/plumbing service faces where a utility look is more appropriate than warm wood.
+- **Dark/charcoal panels:** electrical/plumbing service faces where a utility look is more appropriate than warm wood.
 
-For `1/2 in` panels that look too shallow against `10-series`, use black `~1/4 in` spacers, washer stacks, or backing strips to create a cleaner reveal. Do not jump to `3/4 in` everywhere just for visual depth.
+For `1/2 in` panels that look too shallow against `10-series`, use thin `~1/4 in` spacers, washer stacks, or backing strips chosen to match the surrounding extrusion/panel. Do not jump to `3/4 in` everywhere just for visual depth.
 
 ### 4.2 Overlay panels beat inset panels during this phase
 
@@ -219,7 +267,7 @@ Inset panels can look clean, but they are less forgiving and can trap service ac
 | Material | Best use | Pros | Watchouts | Current posture |
 | --- | --- | --- | --- | --- |
 | Clear acrylic | display cubbies, low-impact doors | crisp, glassy, easy to see contents | scratches/cracks, exposes clutter | use sparingly |
-| Smoked/tinted acrylic | feature doors, 45° cupboard | looks intentional, hides clutter, fits black/wood aesthetic | brittle if over-tightened | best visual accent |
+| Smoked/tinted acrylic | feature doors, 45° cupboard | looks intentional, hides clutter, fits wood/silver/smoked aesthetic | brittle if over-tightened | best visual accent |
 | Smoked/tinted polycarbonate | lower/impact-prone doors, travel-facing panels | much tougher than acrylic | scratches easier, less crisp | best practical transparent panel |
 
 Transparent panel rules:
@@ -278,7 +326,7 @@ Best for:
 - paper towels;
 - light quick-grab items.
 
-Use a repeated black shock-cord/webbing pattern so it looks intentional, not improvised. Add a lower lip or rail so the cord is not carrying all vertical load.
+Use a repeated shock-cord/webbing pattern so it looks intentional, not improvised. Add a lower lip or rail so the cord is not carrying all vertical load.
 
 Do not use elastic-only retention for dense tools, glass, cookware, or anything that can hurt someone if it escapes.
 
@@ -306,7 +354,7 @@ Build a shallow angled cupboard/display/service cubby at the Galley front transi
 
 - `45°` chamfered shape if square clips entry movement.
 - Warm wood surround/interior.
-- Smoked acrylic or smoked polycarbonate door/panel in a black-trimmed frame.
+- Smoked acrylic or smoked polycarbonate door/panel in a slim silver, dark, or wood-trimmed frame.
 - Optional signature treatment: a rounded hardwood/live-edge-inspired cap at the top of the `45°` face, blended into the main countertop so the entry-side edge feels like furniture rather than a chopped-off extrusion corner.
 - Positive latch, not magnets alone.
 - Internal lower lip/dividers so contents do not pile against the door.
@@ -332,8 +380,8 @@ Concept stack:
 - Counter transitions into a rounded hardwood cap/nosing over the `45°` corner.
 - The cap can be made from a small live-edge or live-edge-inspired hardwood piece, but the hand-contact edge should be sanded smooth, sealed, and durable.
 - Smoked acrylic/polycarbonate below becomes the angled cupboard/door face.
-- Black trim/fasteners frame the smoked panel so it matches the `80/20` skeleton.
-- Interior of the cupboard stays warm wood or black-lined utility, depending on what is stored there.
+- Trim/fasteners frame the smoked panel so it looks integrated with the silver `80/20` skeleton.
+- Interior of the cupboard stays warm wood or dark-lined utility, depending on what is stored there.
 
 Preferred construction logic:
 
@@ -457,14 +505,15 @@ No propane hot-water cutout, LP line, vent/combustion plan, or cabinet geometry 
 
 ### 8.1 Fastener language
 
-Recommended visible hardware family:
+Recommended hardware posture:
 
-- black button-head bolts into T-nuts;
-- black countersunk screws where face screws are acceptable;
-- black finish washers/spacers where reveal or anti-rattle is needed;
-- threaded inserts for panels that will be removed repeatedly;
-- quarter-turn/captive fasteners for frequent service panels;
-- stainless only where corrosion/water exposure makes it functionally better.
+- use silver/zinc/stainless button-head bolts into T-nuts where hardware sits on or near the silver extrusion;
+- use countersunk screws where face screws are acceptable and should sit flush;
+- use finish washers/spacers only where they solve reveal, pull-through, or anti-rattle problems;
+- use threaded inserts for panels that will be removed repeatedly;
+- use quarter-turn/captive fasteners for frequent service panels;
+- use dark hardware sparingly where it frames smoked plastic or dark service panels;
+- do not turn hardware into a decorative motif across every face.
 
 ### 8.2 Latch rules
 
@@ -580,7 +629,7 @@ Avoid:
    - Mark each face as `finished wood`, `service removable`, `smoked/translucent feature`, or `open/exposed 80/20`.
 
 4. **Prototype panel language**
-   - Build one small `1/2 in` overlay panel with final-ish black fasteners/spacers/anti-rattle tape.
+   - Build one small `1/2 in` overlay panel with final-ish fasteners/spacers/anti-rattle tape.
    - Build or source one smoked plastic sample and test drilling/scratch/look.
 
 5. **Mock top surfaces in `3/4 in` plywood**
@@ -651,9 +700,9 @@ Avoid:
 
 ## 12) Near-term action list
 
-1. Pick target wood tone: light birch/oak, medium acacia/walnut, or clear plywood + black edge detail.
+1. Pick target wood tone: light birch/oak, aromatic cedar accent, medium acacia/walnut, or clear plywood + clean edge detail.
 2. Make two finish samples from scrap: clear satin and one warmer/stained option.
-3. Prototype one `1/2 in` overlay panel with black spacers/fasteners.
+3. Prototype one `1/2 in` overlay panel with final spacer/fastener style.
 4. Prototype or source one smoked acrylic/polycarbonate sample.
 5. Mock the `45°` front cupboard in cardboard, including the smoked angled front plus rounded wood-cap/nosing idea.
 6. Mark every Galley/Bench face by category: finished wood, service removable, smoked feature, or exposed `80/20`.
@@ -667,7 +716,7 @@ Avoid:
 ## 13) Recommendation summary
 
 - **Use existing plywood intelligently first.** It is the fastest way to prove geometry without wasting a premium slab.
-- **Make Galley and desk siblings, not twins.** Same wood tone, sheen, edge profile, and black hardware language are enough.
+- **Make Galley and desk siblings, not twins.** Same wood tone, sheen, edge profile, and hardware/reveal discipline are enough.
 - **Use `1/2 in` for vertical/removable faces and `3/4 in` for tops/load surfaces.** Add spacers for reveal instead of using heavy panels everywhere.
 - **Use smoked acrylic/polycarbonate as a selective feature.** Best candidate: the `45°` front Galley cupboard/transition.
 - **Favor bins, elastic cubbies, and a few latched drawers.** Drawers are useful but should not dominate before dimensions are stable.

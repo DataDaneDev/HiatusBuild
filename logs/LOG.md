@@ -1,3 +1,9 @@
+## 2026-07-03 — Interior wood quantity, species, and silver-extrusion correction captured
+
+- Added rough board-foot estimate for PC desk, Galley counter, and rounded entry cap: finished `3/4 in` equivalent is roughly `10.8-12.6 BF`; rough `4/4` net basis is roughly `14.4-17.1 BF`; practical rough-lumber buy target is `20-24 BF` with waste/selection allowance.
+- Corrected finish/design language: actual extrusion is silver, not black; hardware should stay consistent, reachable, and visually quiet rather than becoming a decorative feature across the camper.
+- Added wood-species/scent posture: cedar/juniper is best as removable scent accents, cubby liners, shoe/closet panels, or vented strips; main wet/work tops should prioritize harder woods such as maple/birch butcher block, white oak/ash, acacia/rubberwood, walnut, or cherry depending on budget and sourcing.
+
 ## 2026-07-03 — Galley entry-cap cost-control posture added
 
 - Marketplace wood rounds with roughly `15 in` radius / `30 in` diameter are likely to be priced as furniture/art pieces, not scrap.
