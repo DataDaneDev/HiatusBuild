@@ -1,3 +1,10 @@
+## 2026-07-03 — Galley extrusion frame cut and built
+
+- Owner reported the Galley `10-series` extrusion frame is fully cut and built as an exoskeleton.
+- Current physical state: frame is still tippy/unstable because it has only limited rear/one-leg support until tied into the Bench/cooler area; next structural gate is a removable Galley-to-Bench tie-in that does not bury battery or floor-bolt access.
+- Active front-corner decision: protect camper entry clearance first. Default working direction is a physical sweep-tested `45°` chamfer rather than a square corner that clips entry or a fussy rounded corner.
+- Galley utility-corner planning remains open: rear/service corner is a candidate for drain path, pump-fed cold spray nozzle/QD, capped future hot-water stubs, and a possible future listed/vented propane hot-water footprint. Do not commit permanent propane hot water until appliance listing, vent/cutout, clearances, LP routing, detectors, and winterization access are proven.
+
 ## 2026-06-27 — Electrical module shop-fit complete; integrated module build order updated
 
 - Owner reported the electrical backer was trimmed to inset cleanly into the `80/20` electrical frame, with minor component shifts made after the real MultiPlus depth proved deeper than the earlier model. No core electrical architecture change was implied.

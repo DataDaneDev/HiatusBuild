@@ -42,7 +42,8 @@ It does **not** replace the owner docs:
 ## Current build posture
 
 - Electrical module is live-proven and now in the truck, but still not road-ready as a freestanding structure.
-- Immediate physical priority is integrated structure: **cut/build Galley, tie it into Bench/electrical structure, and use that dry fit to identify bench/floor/hardpoint modifications before final battery wiring**.
+- Galley extrusion frame is cut and built as an exoskeleton. It is currently tippy/unstable until tied into the Bench/cooler area; treat that tie-in as the next structural gate.
+- Immediate physical priority is integrated structure: **tie Galley into Bench/electrical structure, resolve the entrance-side front corner shape, and use that dry fit to identify bench/floor/hardpoint modifications before final battery wiring**.
 - Batteries are intentionally out of the truck for this phase. Charge/install the remaining batteries only after bench/galley access, floor hardpoints, and service path are comfortable enough to avoid destructive rework.
 - Lonseal glue-down is intentionally late. Do not glue until hardpoints, rough-in, floor penetrations, moisture paths, and service access are proven.
 - Alternator charging remains a separate commissioning gate. Mechanical/staged wiring is OK only if the alternator cannot charge into an incomplete or unsafe path.
@@ -54,8 +55,8 @@ It does **not** replace the owner docs:
 
 A realistic win is **not** a finished camper. A realistic win is:
 
-1. Galley/fridge/wet-spine skeleton started enough to become the datum for cooler/fridge/plumbing fitment.
-2. Galley tied into the Bench/electrical structure with removable, accessible fasteners.
+1. Galley/fridge/wet-spine skeleton tied into the Bench/cooler area enough to stop tipping and become the datum for cooler/fridge/plumbing fitment.
+2. Galley front corner roughed as an entrance-safe service corner, with removable, accessible fasteners.
 3. Battery bay/extraction path physically proven with batteries still out or isolated.
 4. Floor hardpoint and Lonseal escape path preserved before final battery wiring.
 5. Electrical module moved from “works on bench” toward “mechanically restrained system,” with wiring/strain-relief/test gates defined.
@@ -195,9 +196,15 @@ Goal: secure the office without turning it into roof-close or travel cargo risk.
 
 Goal: build the galley datum so cooler/fridge/plumbing fitment stops being guesswork.
 
-- [ ] Use the Galley assignments now written in the current workbook: `23` total pieces tagged `Galley` in `piece_assignment` / `garage_final_cutlist`.
-- [ ] Mark these `G` on the floor before cutting: `1-1`, `2-1`, `2-2`, `5-2`, `6-2`, `11-1`, `12-1`, `12-4`, `13-1`, `16-4`, `17-4`, `17-5`, `19-3`, `19-4`, `19-5`, `19-6`, `20-4`, `20-5`, `21-2`, `21-3`, `21-4`, `21-5`, `21-6`.
+- [x] Use the Galley assignments now written in the current workbook: `23` total pieces tagged `Galley` in `piece_assignment` / `garage_final_cutlist`.
+- [x] Galley extrusion frame cut and built as an exoskeleton.
+- [x] Mark these `G` on the floor before cutting: `1-1`, `2-1`, `2-2`, `5-2`, `6-2`, `11-1`, `12-1`, `12-4`, `13-1`, `16-4`, `17-4`, `17-5`, `19-3`, `19-4`, `19-5`, `19-6`, `20-4`, `20-5`, `21-2`, `21-3`, `21-4`, `21-5`, `21-6`.
 - [ ] Preserve the existing Bench reservations from shared source-row pools; Galley uses the remaining unassigned `R18`/`R19`/`R21` pieces plus the owner-confirmed `17.5 in` row.
+- [ ] Tie the Galley frame into the Bench/cooler area so the current one-leg/tippy state becomes a restrained rectangle before adding skins or heavy fixtures.
+- [ ] Modify/add cooler-bench tie-in rails or plates as needed; keep the seam removable and accessible without removing batteries.
+- [ ] Decide the entrance-side Galley front corner shape with a physical sweep test: default `45° chamfer` if square clips entry and round is too fussy for the current 10-series frame.
+- [ ] Keep the front/rear Galley utility corner as a serviceable wet corner candidate: drain path, spray nozzle/QD, future hot-water stub, and removable panel access.
+- [ ] Do not commit to permanent propane hot water in the Galley corner until the exact listed appliance, vent/cutout, combustion air, clearances, LP routing, detectors, and winterization access are proven.
 - [ ] Mock passenger-side fridge/cooler position with real handles, hinge/lid swing, cord bend, and hand clearance.
 - [ ] Confirm raised fridge/cooler height target, currently about `16 in` above floor/service zone.
 - [ ] Confirm relationship to `36 gal` wheel-well tank envelope.
@@ -229,6 +236,7 @@ Goal: cold-water-first, hot-ready later, serviceable and leak-testable.
 - [ ] Add leak sensor or at least a visible inspection point.
 - [ ] Run cold line to sink faucet cold side.
 - [ ] Stub/cap future hot-water feed/return so hot-water uncertainty does not block sink use.
+- [ ] Rough-plan a pump-fed cold spray nozzle/QD near the Galley utility corner; gravity-only spray is acceptable as a fallback drain/rinse concept but should not drive the layout.
 - [ ] Add exterior shower cold QD only if routing does not force premature penetrations.
 - [ ] Build graywater cassette/drain path with winterizable/waterless trap strategy.
 - [ ] Pressure/leak test plumbing before panel closure.
