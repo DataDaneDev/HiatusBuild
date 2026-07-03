@@ -350,6 +350,14 @@ Live-edge caution:
 - Better target: a small **rounded hardwood cap with live-edge character** or a live-edge piece that has been cleaned, stabilized, sanded, sealed, and softened into a practical quarter-round/nosing.
 - If a marketplace piece is too irregular, heavy, green, cracked, or splintery, use it elsewhere as an accent shelf rather than on the main entry edge.
 
+Cost-control posture:
+
+- Do **not** pay designer-slab pricing for a full round just to harvest one entry-corner cap. A `15 in` radius implies a `30 in` diameter blank; that is a large furniture-scale piece, and the market often prices it like one.
+- The build only needs a small visible rounded/nosing zone, not a perfect full wood circle.
+- Better low-cost sources: hardwood stair tread offcut, table-top corner, butcher-block cutoff, cabinet-shop scrap, cutting-board blank, laminated plywood with hardwood edge banding, or two/three glued hardwood strips shaped with a jigsaw/router/sander.
+- Use a cardboard/MDF/plywood template first, then transfer the final radius/quarter-round shape to the chosen wood.
+- If the live-edge character is expensive or awkward, fake the intent with a smooth hardwood radius and repeat the same wood tone/finish elsewhere.
+
 ### 6.4 Constraints
 
 - Mock in cardboard before cutting plastic or finished wood.
@@ -650,7 +658,7 @@ Avoid:
 5. Mock the `45°` front cupboard in cardboard, including the smoked angled front plus rounded wood-cap/nosing idea.
 6. Mark every Galley/Bench face by category: finished wood, service removable, smoked feature, or exposed `80/20`.
 7. Mock Galley and desk tops in `3/4 in` plywood.
-8. Browse Marketplace for one large matching butcher-block/hardwood tabletop only after rough top dimensions are known; separately watch for a small dry hardwood/live-edge offcut suitable for the Galley entry-corner cap.
+8. Browse Marketplace for one large matching butcher-block/hardwood tabletop only after rough top dimensions are known; separately watch for a small dry hardwood/live-edge offcut suitable for the Galley entry-corner cap, but do not pay full-round/designer-slab pricing when a shaped offcut will do.
 9. Select one latch family for clean doors and one utility latch family for service panels.
 10. Hold final countertop, final skins, final floor, and final battery-trapped work until the validation gates above pass.
 

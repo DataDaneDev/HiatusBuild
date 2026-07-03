@@ -1,3 +1,8 @@
+## 2026-07-03 — Galley entry-cap cost-control posture added
+
+- Marketplace wood rounds with roughly `15 in` radius / `30 in` diameter are likely to be priced as furniture/art pieces, not scrap.
+- Updated the finish/features doc to avoid buying a full round for the Galley entry cap; preferred approach is a small hardwood/tabletop/butcher-block/stair-tread/cabinet-shop offcut shaped from a template, or a smooth hardwood radius that repeats the chosen wood tone.
+
 ## 2026-07-03 — Galley `45°` smoked-front / rounded wood-cap concept captured
 
 - Added the tailgate/entry-end Galley signature feature concept: a `45°` smoked acrylic/polycarbonate cupboard face under a rounded hardwood/live-edge-inspired cap that blends into the main countertop.
