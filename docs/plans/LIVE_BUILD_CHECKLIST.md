@@ -41,10 +41,10 @@ It does **not** replace the owner docs:
 
 ## Current build posture
 
-- Electrical module is live-proven and now in the truck, but still not road-ready as a freestanding structure.
-- Galley extrusion frame is cut and built as an exoskeleton. It is currently tippy/unstable until tied into the Bench/cooler area; treat that tie-in as the next structural gate.
-- Immediate physical priority is integrated structure: **tie Galley into Bench/electrical structure, resolve the entrance-side front corner shape, and use that dry fit to identify bench/floor/hardpoint modifications before final battery wiring**.
-- Batteries are intentionally out of the truck for this phase. Charge/install the remaining batteries only after bench/galley access, floor hardpoints, and service path are comfortable enough to avoid destructive rework.
+- Owner-reported `2026-07-04`: Galley/cooler/Bench/electrical tie-ins are complete enough that they now behave as one large in-truck module.
+- Electrical module is no longer being treated as a loose standalone shop artifact, but road-ready status still depends on hardpoints, strain relief, witness marks, emergency access, and a final shove/rack check.
+- Immediate physical priority is the Desk/workstation module: use the updated workbook, mark the `24` Desk pieces with `D`, cut the last remaining members, and tie the lower desk frame into the driver-side/electrical spine without burying service access.
+- Battery, floor, and Lonseal status remain gated: do not final-trap floor holes, battery cabling, or service paths until the full integrated module and desk access are proven.
 - Lonseal glue-down is intentionally late. Do not glue until hardpoints, rough-in, floor penetrations, moisture paths, and service access are proven.
 - Alternator charging remains a separate commissioning gate. Mechanical/staged wiring is OK only if the alternator cannot charge into an incomplete or unsafe path.
 - Solar research/procurement is deferred until shore + alternator + roof/module constraints are better proven.
@@ -54,6 +54,8 @@ It does **not** replace the owner docs:
 ### Definition of a successful long weekend
 
 A realistic win is **not** a finished camper. A realistic win is:
+
+As of `2026-07-04`, the Galley/cooler/Bench/electrical tie-in has moved from target to current state. The remaining weekend win is Desk/workstation geometry plus floor/hardpoint/service gates.
 
 1. Galley/fridge/wet-spine skeleton tied into the Bench/cooler area enough to stop tipping and become the datum for cooler/fridge/plumbing fitment.
 2. Galley front corner roughed as an entrance-safe service corner, with removable, accessible fasteners.
@@ -92,8 +94,9 @@ A realistic win is **not** a finished camper. A realistic win is:
 - [ ] Put all extrusion/offcut stock in one visible staging area.
 - [ ] Mark the known latest cutlist workbook as the current source: `docs/plans/assets/module-cutlists/2026-06-25_module-cutlist-and-assignments.xlsx`.
 - [ ] Preserve the Bench one-off updates in the workbook; do not overwrite the local working copy blindly from `HEAD`.
-- [ ] Make three physical piles: `Bench`, `Desk`, `Galley`.
-- [ ] Mark the `23` workbook-assigned Galley pieces with `G` on the floor before cutting.
+- [x] Keep module piles separate: `Bench`, `Galley`, `Electrical`, and the remaining `Desk` pool.
+- [x] Mark the `23` workbook-assigned Galley pieces with `G` on the floor before cutting.
+- [ ] Mark the `24` workbook-assigned Desk pieces with `D` on the floor before final desk cuts.
 - [ ] Label every cut extrusion with module + length + workbook/source row if known.
 - [ ] Separate hardware by class: T-nuts, angle brackets, corner cubes, panel fasteners, bolts/washers, latch hardware.
 - [ ] Identify missing hardware that blocks final travel-tight assembly vs hardware that only blocks cosmetics.
@@ -162,6 +165,8 @@ Goal: turn the freestanding live-proven electrical module into a restrained mobi
 
 Goal: prove full-time work geometry before building clever monitor mechanisms or skins.
 
+- [x] Use the Desk assignments now written in the current workbook: `24` total pieces tagged `Desk` in `piece_assignment` / `garage_final_cutlist`, with a dedicated `desk_shop_list` tab.
+- [ ] Mark these `D` on the floor before final desk cuts: `1-3`, `5-1`, `6-1`, `7-2`, `7-3`, `8-2`, `8-4`, `9-1`, `9-3`, `10-1`, `10-2`, `10-4`, `12-2`, `12-3`, `15-4`, `16-3`, `17-1`, `17-2`, `18-2`, `18-3`, `19-1`, `20-1`, `20-2`, `21-1`.
 - [ ] Reconfirm driver-side desk footprint near wheel well; current target remains roughly `24 in x 48 in` until measured fit says otherwise.
 - [ ] Mock chair/stool position and seated elbow height.
 - [ ] Check knee/foot clearance around wheel well and electrical step projection.
@@ -199,9 +204,9 @@ Goal: build the galley datum so cooler/fridge/plumbing fitment stops being guess
 - [x] Use the Galley assignments now written in the current workbook: `23` total pieces tagged `Galley` in `piece_assignment` / `garage_final_cutlist`.
 - [x] Galley extrusion frame cut and built as an exoskeleton.
 - [x] Mark these `G` on the floor before cutting: `1-1`, `2-1`, `2-2`, `5-2`, `6-2`, `11-1`, `12-1`, `12-4`, `13-1`, `16-4`, `17-4`, `17-5`, `19-3`, `19-4`, `19-5`, `19-6`, `20-4`, `20-5`, `21-2`, `21-3`, `21-4`, `21-5`, `21-6`.
-- [ ] Preserve the existing Bench reservations from shared source-row pools; Galley uses the remaining unassigned `R18`/`R19`/`R21` pieces plus the owner-confirmed `17.5 in` row.
-- [ ] Tie the Galley frame into the Bench/cooler area so the current one-leg/tippy state becomes a restrained rectangle before adding skins or heavy fixtures.
-- [ ] Modify/add cooler-bench tie-in rails or plates as needed; keep the seam removable and accessible without removing batteries.
+- [x] Preserve the existing Bench reservations from shared source-row pools; Galley uses the remaining unassigned `R18`/`R19`/`R21` pieces plus the owner-confirmed `17.5 in` row.
+- [x] Tie the Galley frame into the Bench/cooler area so the current one-leg/tippy state becomes a restrained rectangle before adding skins or heavy fixtures.
+- [x] Modify/add cooler-bench tie-in rails or plates as needed; keep the seam removable and accessible without removing batteries.
 - [ ] Decide the entrance-side Galley front corner shape with a physical sweep test: default `45° chamfer` if square clips entry and round is too fussy for the current 10-series frame.
 - [ ] Keep the front/rear Galley utility corner as a serviceable wet corner candidate: drain path, spray nozzle/QD, future hot-water stub, and removable panel access.
 - [ ] Do not commit to permanent propane hot water in the Galley corner until the exact listed appliance, vent/cutout, combustion air, clearances, LP routing, detectors, and winterization access are proven.
@@ -209,7 +214,7 @@ Goal: build the galley datum so cooler/fridge/plumbing fitment stops being guess
 - [ ] Confirm raised fridge/cooler height target, currently about `16 in` above floor/service zone.
 - [ ] Confirm relationship to `36 gal` wheel-well tank envelope.
 - [ ] Build the lofted fridge/cooler support skeleton as a service exoskeleton, not a sealed cabinet.
-- [ ] Tie Galley to Bench/electrical structure with removable plates/bolts reachable from the aisle/top/service openings; avoid hidden fasteners that require removing batteries.
+- [x] Tie Galley to Bench/electrical structure with removable plates/bolts reachable from the aisle/top/service openings; avoid hidden fasteners that require removing batteries.
 - [ ] Add positive fridge/cooler travel restraint and hard stops.
 - [ ] Preserve lower cool-air intake and upper warm-air exhaust around fridge compressor vents.
 - [ ] Confirm pump/accumulator/strainer/manifold service opening below/near fridge.

@@ -1,3 +1,9 @@
+## 2026-07-04 — Desk cutlist assignments completed
+
+- Owner reported the Galley/cooler/Bench/electrical tie-ins are complete enough that the interior now behaves as one large in-truck module; active build focus shifted to the Desk/workstation module.
+- Updated `docs/plans/assets/module-cutlists/2026-06-25_module-cutlist-and-assignments.xlsx`: the remaining `24` unassigned pieces are now tagged `Desk`, `garage_final_cutlist` mirrors that module tag, and a dedicated `desk_shop_list` tab lists the Desk pieces and grouped source-row/length pools.
+- Updated the live checklist with the Desk marking list, the completed Galley/Bench/electrical tie-in state, and the remaining hardpoint/service-access gates before flooring, final cabling, or road travel.
+
 ## 2026-07-03 — Interior wood quantity, species, and silver-extrusion correction captured
 
 - Added rough board-foot estimate for PC desk, Galley counter, and rounded entry cap: finished `3/4 in` equivalent is roughly `10.8-12.6 BF`; rough `4/4` net basis is roughly `14.4-17.1 BF`; practical rough-lumber buy target is `20-24 BF` with waste/selection allowance.
