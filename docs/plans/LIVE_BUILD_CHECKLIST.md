@@ -92,7 +92,7 @@ As of `2026-07-04`, the Galley/cooler/Bench/electrical tie-in has moved from tar
 - [ ] Photograph/current-state pass before moving major parts.
 - [ ] Clear a safe walking/cutting path in the shop/truck bed.
 - [ ] Put all extrusion/offcut stock in one visible staging area.
-- [ ] Mark the known latest cutlist workbook as the current source: `docs/plans/assets/module-cutlists/2026-06-25_module-cutlist-and-assignments.xlsx`.
+- [ ] Mark the known latest cutlist workbook as the current source: `docs/plans/assets/module-cutlists/2026-07-04_module-cutlist-and-assignments.xlsx`.
 - [ ] Preserve the Bench one-off updates in the workbook; do not overwrite the local working copy blindly from `HEAD`.
 - [x] Keep module piles separate: `Bench`, `Galley`, `Electrical`, and the remaining `Desk` pool.
 - [x] Mark the `23` workbook-assigned Galley pieces with `G` on the floor before cutting.

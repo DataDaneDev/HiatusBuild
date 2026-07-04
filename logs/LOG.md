@@ -1,7 +1,7 @@
 ## 2026-07-04 — Desk cutlist assignments completed
 
 - Owner reported the Galley/cooler/Bench/electrical tie-ins are complete enough that the interior now behaves as one large in-truck module; active build focus shifted to the Desk/workstation module.
-- Updated `docs/plans/assets/module-cutlists/2026-06-25_module-cutlist-and-assignments.xlsx`: the remaining `24` unassigned pieces are now tagged `Desk`, `garage_final_cutlist` mirrors that module tag, and a dedicated `desk_shop_list` tab lists the Desk pieces and grouped source-row/length pools.
+- Renamed the active cutlist workbook to `docs/plans/assets/module-cutlists/2026-07-04_module-cutlist-and-assignments.xlsx` and tagged the remaining `24` unassigned pieces as `Desk`; `garage_final_cutlist` mirrors that module tag, and a dedicated `desk_shop_list` tab lists the Desk pieces and grouped source-row/length pools.
 - Updated the live checklist with the Desk marking list, the completed Galley/Bench/electrical tie-in state, and the remaining hardpoint/service-access gates before flooring, final cabling, or road travel.
 
 ## 2026-07-03 — Interior wood quantity, species, and silver-extrusion correction captured
@@ -48,7 +48,7 @@
 
 ## 2026-06-25 — Current module cut-list workbook filed
 
-- Added the owner-built current best module assignment / garage cut-list workbook at `docs/plans/assets/module-cutlists/2026-06-25_module-cutlist-and-assignments.xlsx`.
+- Added the owner-built current best module assignment / garage cut-list workbook under a date-led filename. This artifact was later renamed to `docs/plans/assets/module-cutlists/2026-07-04_module-cutlist-and-assignments.xlsx` when the Desk assignment pass materially changed the current shop workbook.
 - Naming convention going forward: use date-led generic cut-list filenames instead of temporary trigger words like faucet when the artifact is the current overall module/cut-list source.
 - Follow-up cleanup normalized the assignment keywords in `piece_assignment`: module values now use `Electrical` / `Bench`, `Against` was renamed to `assign_orientation`, `garage_final_cutlist.module_info` mirrors assigned rows, and an `assignment_legend` tab records the controlled vocabulary and current E-cut caution.
 
