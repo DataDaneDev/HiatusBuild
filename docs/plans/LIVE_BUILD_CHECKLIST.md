@@ -20,7 +20,7 @@ related:
 
 # Live Build Checklist — July 4 Sprint + Running Build Tracker
 
-As-of: `2026-07-05`
+As-of: `2026-07-06`
 
 Owner: Sunny / Dane
 
@@ -41,14 +41,16 @@ It does **not** replace the owner docs:
 
 ## Current build posture
 
-- Owner-reported `2026-07-04`: Galley/cooler/Bench/electrical tie-ins are complete enough that they now behave as one large in-truck module.
+- Owner-reported `2026-07-06`: desk/storage module has been reinforced and mostly test-installed; owner found a few changes to make before treating the Desk as final geometry.
+- Owner also reinforced the Galley heavily, including redoing a rear/back stretch as one continuous `2010` member; Galley now feels very sturdy.
+- All major modules are now test-fit/installed and generally look good, which moves the build from rough skeleton assembly into **corrections, rough-in, service access, panels, and commissioning gates**.
 - Electrical module is no longer being treated as a loose standalone shop artifact, but road-ready status still depends on hardpoints, strain relief, witness marks, emergency access, and a final shove/rack check.
-- Immediate physical priority is the Desk/workstation module: use the updated workbook, mark the `24` Desk pieces with `D`, cut the last remaining members, and tie the lower desk frame into the driver-side/electrical spine without burying service access.
+- Near-term physical priority is not cosmetic closure: first finish the Desk/storage corrections, record changed dimensions, run seated/entry/roof/access tests, then add only panels/tabs/latches that improve stiffness, serviceability, or template accuracy.
 - Final surface direction is now a three-piece Nick commission in black walnut after templates are locked: live-edge Galley counter, dimensional Desk top, and L-shaped Bench/lid top.
-- Battery, floor, and Lonseal status remain gated: do not final-trap floor holes, battery cabling, or service paths until the full integrated module and desk access are proven.
+- Battery, floor, and Lonseal status remain gated: do not final-trap floor holes, battery cabling, or service paths until the full integrated module, plumbing rough-in, hardpoints, and service access are proven.
 - Lonseal glue-down is intentionally late. Do not glue until hardpoints, rough-in, floor penetrations, moisture paths, and service access are proven.
-- Alternator charging remains a separate commissioning gate. Mechanical/staged wiring is OK only if the alternator cannot charge into an incomplete or unsafe path.
-- Solar research/procurement is deferred until shore + alternator + roof/module constraints are better proven.
+- Alternator charging remains a separate commissioning gate. Rough-in/routing with fuses pulled can proceed, but first-charge waits for APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior.
+- Solar, hot water, and propane remain discovery/provisioning workstreams until shore, water/fill routing, roof real estate, and exterior mount/pass-through constraints are better proven.
 
 ## July 4 sprint strategy
 
@@ -75,6 +77,16 @@ As of `2026-07-04`, the Galley/cooler/Bench/electrical tie-in has moved from tar
 | Sun `2026-07-05` | Galley/fridge/wet-spine skeleton | galley/cooler/fridge datum built, sink/faucet/appliance envelopes checked | permanent plumbing closeout, final countertops |
 | Mon `2026-07-06` if available | Wire/strain-relief/test + punch-list | safe low-power tests, AC/GFCI if ready, updated blocker list | alternator first-charge unless every prerequisite is green |
 | Week after | Alternator rough-in/commissioning, plumbing pressure test, floor gate | controlled subsystem tests | Lonseal glue-down before hardpoints/penetrations are proven |
+
+### Post-sprint priority ladder — `2026-07-06`
+
+Now that the major modules are test-fit/installed, the next work should close gates in this order:
+
+1. **Tonight:** finish Desk/storage corrections, record any changed dimensions, run seated/entry/roof-sweep/service-access tests, and add temporary restraint where the module still moves.
+2. **Next physical build block:** make the service/panel map, then build only the panels/tabs/latches that add stiffness, protect wiring/plumbing, or define Nick's wood templates.
+3. **Next systems block:** rough in water tank ports, fill/vent/outlet routing, pump board/tray, graywater path, and capped hot stubs before final panels or flooring.
+4. **Next electrical block:** close AC/DC safety items, shore-port location/routing, covers, strain relief, labels, and GFCI/low-power tests. Use one battery only if it helps controlled tests; do not install the full bank just to remove it again.
+5. **Later / parallel discovery:** alternator rough-in with fuses pulled, hot-water product discovery, propane mount location, and solar/roof passthrough planning. Do not let these drive irreversible penetrations until exact routes and hardware are known.
 
 ## Status legend
 
@@ -167,15 +179,18 @@ Goal: turn the freestanding live-proven electrical module into a restrained mobi
 Goal: prove full-time work geometry before building clever monitor mechanisms or skins.
 
 - [x] Use the Desk assignments now written in the current workbook: `24` total pieces tagged `Desk` in `piece_assignment` / `garage_final_cutlist`, with a dedicated `desk_shop_list` tab.
-- [ ] Mark these `D` on the floor before final desk cuts: `1-3`, `5-1`, `6-1`, `7-2`, `7-3`, `8-2`, `8-4`, `9-1`, `9-3`, `10-1`, `10-2`, `10-4`, `12-2`, `12-3`, `15-4`, `16-3`, `17-1`, `17-2`, `18-2`, `18-3`, `19-1`, `20-1`, `20-2`, `21-1`.
-- [ ] Reconfirm driver-side desk footprint near wheel well; current target remains roughly `24 in x 48 in` until measured fit says otherwise.
+- [x] Desk/storage module reinforced and mostly test-installed in the truck as of owner report `2026-07-06`.
+- [~] Apply owner-identified Desk/storage corrections from the first test install before locking top/panel geometry.
+- [ ] Mark these `D` on the floor before final desk cuts if any uncut pieces remain: `1-3`, `5-1`, `6-1`, `7-2`, `7-3`, `8-2`, `8-4`, `9-1`, `9-3`, `10-1`, `10-2`, `10-4`, `12-2`, `12-3`, `15-4`, `16-3`, `17-1`, `17-2`, `18-2`, `18-3`, `19-1`, `20-1`, `20-2`, `21-1`.
+- [~] Reconfirm driver-side desk footprint near wheel well; current target remains roughly `24 in x 48 in` until measured fit says otherwise.
 - [ ] Mock chair/stool position and seated elbow height.
 - [ ] Check knee/foot clearance around wheel well and electrical step projection.
-- [ ] Place rough desktop or template at target height.
+- [~] Place rough desktop or template at target height.
 - [ ] Confirm entry/exit movement and hip/shoulder clearance.
 - [ ] Confirm roof-down sweep envelope for desk, DC shelf, monitor stow block, and cable loops.
+- [ ] Record any changed Desk/storage dimensions from the `2026-07-06` test install in the changed-dimensions log before updating Nick/template packets.
 - [ ] Decide desktop material for MVP: plywood/laminated birch template now; final commissioned black walnut after seated fit, roof sweep, and entry clearance are proven.
-- [ ] Build lower desk frame tied into the electrical/bench spine.
+- [~] Build lower desk frame tied into the electrical/bench spine.
 - [ ] Add shallow DC electronics shelf/box only if it does not block service access or entry movement.
 - [ ] Reserve ventilated cubby space for laptop dock, router/Starlink power, USB-C PD, and monitor brick.
 - [ ] Add temporary outlet/USB access position for seated testing.
@@ -207,6 +222,7 @@ Goal: build the galley datum so cooler/fridge/plumbing fitment stops being guess
 - [x] Mark these `G` on the floor before cutting: `1-1`, `2-1`, `2-2`, `5-2`, `6-2`, `11-1`, `12-1`, `12-4`, `13-1`, `16-4`, `17-4`, `17-5`, `19-3`, `19-4`, `19-5`, `19-6`, `20-4`, `20-5`, `21-2`, `21-3`, `21-4`, `21-5`, `21-6`.
 - [x] Preserve the existing Bench reservations from shared source-row pools; Galley uses the remaining unassigned `R18`/`R19`/`R21` pieces plus the owner-confirmed `17.5 in` row.
 - [x] Tie the Galley frame into the Bench/cooler area so the current one-leg/tippy state becomes a restrained rectangle before adding skins or heavy fixtures.
+- [x] Reinforce Galley rear/back stretch as one continuous `2010` member; owner reports the Galley is now very sturdy as of `2026-07-06`.
 - [x] Modify/add cooler-bench tie-in rails or plates as needed; keep the seam removable and accessible without removing batteries.
 - [ ] Decide the entrance-side Galley front corner shape with a physical sweep test: default `45° chamfer` if square clips entry and round is too fussy for the current 10-series frame.
 - [ ] Keep the front/rear Galley utility corner as a serviceable wet corner candidate: drain path, spray nozzle/QD, future hot-water stub, and removable panel access.
@@ -493,28 +509,31 @@ Run this before assuming a weekend task is blocked.
 
 ## If energy is low
 
-1. Label parts and piles.
-2. Charge batteries.
-3. Identify galley candidate cuts.
-4. Build only enough skeleton to create a datum.
-5. Stop before making irreversible cuts when tired.
+1. Write the Desk/storage correction list on tape or paper and photograph the current module state.
+2. Mark changed dimensions and roof/entry/interference notes before moving parts again.
+3. Label the next service-panel zones: electrical, wet spine, battery, bench lid, desk cubby.
+4. Sort the next `buy now / buy later / do not buy yet` items: panel fasteners/latches, P-clamps/loom/labels, plumbing fittings, shore-port hardware.
+5. Stop before drilling exterior penetrations or cutting final countertop/flooring when tired.
 
 ## If energy is high
 
-1. Bench frame + battery extraction path.
-2. Electrical module brace/tie-in.
-3. Desk frame/top location.
-4. Galley/fridge/wet-spine skeleton.
-5. Strain relief, covers, labels, low-power tests.
+1. Finish Desk/storage test-install corrections and run seated/entry/roof/service-access checks.
+2. Map and prototype the first functional panels: anti-rack/service panels, not full cosmetics.
+3. Build the water-system rough-in board/tray on the bench: tank outlet, fill/vent plan, strainer, pump, accumulator, manifold, leak tray, graywater path, and capped hot stubs.
+4. Locate shore-power inlet and internal cable/breaker strain-relief path; cut only after the inside/outside route is proven.
+5. Add electrical covers, strain relief, labels, and controlled low-power tests. Use one battery only if the test needs it; keep the full bank out until access/floor/plumbing gates are closed.
 
-## Do not spend the long weekend on unless everything above is ahead of schedule
+## Do not prioritize next unless the gate above is already green
 
-- Final solar purchase.
-- Cosmetic skins.
+- Full battery-bank install just to remove it again.
+- Alternator first-charge.
+- Final solar purchase or roof penetration.
+- Permanent propane/hot-water appliance mount.
+- Lonseal glue-down.
+- Cosmetic skins everywhere.
 - Permanent monitor mechanism perfection.
 - Final lighting design.
 - Audio system.
-- Hot-water upgrade.
 - Decorative finish work.
 
 ## Hard holds
@@ -525,3 +544,4 @@ Run this before assuming a weekend task is blocked.
 - [HOLD] No final countertop sink cutout until faucet/drain/rail clearance is physically proven.
 - [HOLD] No premium black walnut final cuts until plywood templates, support tabs, service access, entry sweep, and finish sample are approved.
 - [HOLD] No final panels over electrical/plumbing until labels, strain relief, leak/functional tests, and service access pass.
+- [HOLD] No shore, water-fill, propane, or roof/solar exterior penetrations until both the exterior location and inside service/routing/strain-relief path are physically proven.
