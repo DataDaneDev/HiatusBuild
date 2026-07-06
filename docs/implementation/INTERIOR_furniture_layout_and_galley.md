@@ -21,11 +21,11 @@ related:
 
 # Interior Furniture Layout and Galley Design Concepts
 
-As-of date: `2026-07-03`
+As-of date: `2026-07-05`
 
 Purpose: capture the active furniture/layout direction for the Hiatus/F-350 camper before final cuts. This document owns the interior **layout concept**, driver-side electrical-module/bench/desk integration, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, galley/plumbing service strategy, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`; the finish/paneling/storage feature-design detail now lives in `docs/implementation/INTERIOR_finish_paneling_and_feature_choices.md`.
 
-Status: **draft implementation baseline for active module buildout**, refreshed after the `2026-07-03` Galley frame and finish-feature planning update. The electrical backer has been trimmed to inset into the `80/20` electrical frame; components were shifted for real MultiPlus depth without changing the core electrical architecture; the module is freestanding and ready to tie into the bench/desk structure. It is not road-ready standalone. The Galley extrusion frame is cut and built as an exoskeleton, but remains tippy until tied into the Bench/cooler area. Current construction direction: stabilize/tie the Galley into the Bench/cooler structure, protect the entry with a likely `45°` front-corner chamfer if the square corner clips movement, then use the integrated fit to validate wood tops, removable panels, wet-spine access, and storage features. Keep final skins, exact drawer slides, permanent penetrations, and finish-floor glue-down gated on integrated fit/service access.
+Status: **draft implementation baseline for active module buildout**, refreshed after the `2026-07-05` black-walnut surface commission direction. The electrical backer has been trimmed to inset into the `80/20` electrical frame; components were shifted for real MultiPlus depth without changing the core electrical architecture. Owner reported on `2026-07-04` that the Galley/cooler/Bench/electrical tie-ins are complete enough that the interior now behaves as one large in-truck module, with active focus shifting to the Desk/workstation module. Current construction direction: finish measured Desk geometry, convert the Galley/desk/Bench top surfaces into plywood templates/dimension packets for Nick, protect the entry with a controlled inward-curving live-edge/`45°`-compatible Galley end if it passes the physical sweep test, then use the integrated fit to validate removable panels, wet-spine access, and storage features. Keep final skins, exact drawer slides, permanent penetrations, and finish-floor glue-down gated on integrated fit/service access.
 
 Orientation convention throughout:
 
@@ -113,6 +113,25 @@ Owner-provided build update confirms the electrical module has moved from board/
 - Pending dedicated `80/20` nuts/hardware should not block mock-fit, but final travel configuration should use the correct fastener standard, witness marks, and anti-rattle/retention hardware.
 
 Travel rule: **do not drive with the electrical module freestanding**. Drive only after it is tied into the bench/desk/galley structure or otherwise braced to verified hardpoints, with panels/diagonals/latches installed enough to control racking and cargo/projectile risk.
+
+### Black walnut surface commission update — 2026-07-05
+
+Owner is leaning toward commissioning three final black walnut pieces from Nick after the current module geometry is locked:
+
+1. **Passenger-side Galley countertop**
+   - Target: black walnut live-edge slab, likely `~4 ft x 19 in` based on owner phrasing; confirm exact dimension sheet before cutting.
+   - Thickness: `1.5 in` preferred; `2 in` acceptable if the best slab requires it.
+   - Entry end: last `~15 in` should use a live edge that curves inward if Nick can source a suitable slab, so the camper entrance feels intentional and less snag-prone.
+   - The live edge must remain functional: cleaned/eased/sealed, no loose bark, no dirt/water trap, and no hip/shoulder snag with the one-barn-door entry path.
+2. **Driver-side computer desk top**
+   - Target: dimensional black walnut rather than generic phenolic/Richlite as the final surface, while keeping plywood templates for fit validation first.
+   - Finish and edge language should match the Galley: satin, softened wrist/front edge, quiet hardware, and sealed underside/holes.
+3. **L-shaped Bench/lid top**
+   - Target: dimensional black walnut L-shaped lid/top over the storage cubby.
+   - Support: tabs/lands on the aluminum extrusion, with hinge line and support surfaces proven by template.
+   - Lift assist: gas struts are desired if actual lid weight and geometry support it; add closed-state latch, anti-rattle bumpers, and mechanical open/overtravel control.
+
+Finish posture for all three: satin polyurethane or equivalent durable clear film finish by default; epoxy only as a selective void/crack stabilizer unless the plasticky flood-coat look is deliberately chosen. Seal all faces, undersides, holes, live edges, and sink/cutout edges.
 
 ---
 
@@ -213,7 +232,7 @@ The driver-side electrical/desk zone and adjacent battery bench have to solve th
 - **Electrical module tie-in:** treat the current freestanding electrical tower as a braced part of the bench/desk system, not an independent road-travel object. The bench/step frame should give it lateral restraint, anti-rack support, and hardpoint paths while preserving service access to disconnects, fuses, Cerbo, Orion, AC enclosure, and cable clamps.
 - **Battery well:** low, restrained, partitioned from wet-service volume, and sized so batteries can be extracted without dismantling the whole interior.
 - **Flat divider board:** separates battery bay below from bench storage/cushion use above; treat this as a protective service boundary, not just a shelf.
-- **Lift/hinged lid:** lid must open for battery access and include mechanical stays or controlled support; loose lift-off panels become projectiles.
+- **Lift/hinged lid:** lid must open for battery/storage access and include mechanical stays, gas struts, or controlled support sized to the actual lid weight; loose lift-off panels become projectiles. If the final L-shaped top is black walnut, verify hinge line, support tabs, strut geometry, closed latch, and service reach before cutting the finished lid.
 - **Electrical closet:** use a vertical backer/closet face for serviceable fuses, disconnects, Lynx/Shunt/12V hardware, and labels, with dead-front protection where daily furniture users can touch it.
 - **DC shelf/box:** acceptable toward the desk/entry if it remains shallow, ventilated, spill-protected, and does not block entry movement.
 - **Service slit/access door:** keep emergency disconnect/fuse inspection reachable without pulling cushions or unloading the cabover.
@@ -389,6 +408,8 @@ Use convertible surfaces:
 - Small sink with flush cover.
 - Purchased galley fixture baseline: Sarlai drop-in/workstation sink, black topmount, `15 in x 15 in` exterior with approx. `11 in x 13 in` interior basin, plus FORIOUS black pull-out faucet with soap dispenser.
 - Current fit assumption: an `18-19 in` countertop with about `14 in` clear extrusion opening is probably workable because the chosen sink is topmount, but the actual sink cutout, faucet shank/nut/hose bends, drain/graywater path, and any local rail/connector drop still need field validation before final cuts.
+- Final Galley surface direction: commission a black walnut live-edge slab after the plywood template is proven; current owner target is likely `~4 ft x 19 in`, `1.5 in` preferred thickness / `2 in` acceptable, with the last `~15 in` of the entry end curving inward if the slab allows.
+- Treat the final walnut counter as protected furniture, not a raw cutting board: satin polyurethane or equivalent durable finish, all faces/cutouts/live edges sealed, and epoxy limited to void/check stabilization unless the full flood-coat look is intentionally selected.
 - Removable Duxtop `8100MC/BT-180G3` induction cooktop stored vertically or in a retained slot when not in use; cooking position must keep pan handle, cord, GFCI outlet, and countertop heat clearance clear of the sink/faucet.
 - Dedicated low cubby for the Ninja SP151 air-fryer/toaster oven with positive travel restraint, heat clearance, crumb-cleanout access, and a plug/service path that does not cross the wet bay.
 - Cutting board / sink cover slot.

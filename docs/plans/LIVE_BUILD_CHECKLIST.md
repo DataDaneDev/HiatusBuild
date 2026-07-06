@@ -20,7 +20,7 @@ related:
 
 # Live Build Checklist — July 4 Sprint + Running Build Tracker
 
-As-of: `2026-07-02`
+As-of: `2026-07-05`
 
 Owner: Sunny / Dane
 
@@ -44,6 +44,7 @@ It does **not** replace the owner docs:
 - Owner-reported `2026-07-04`: Galley/cooler/Bench/electrical tie-ins are complete enough that they now behave as one large in-truck module.
 - Electrical module is no longer being treated as a loose standalone shop artifact, but road-ready status still depends on hardpoints, strain relief, witness marks, emergency access, and a final shove/rack check.
 - Immediate physical priority is the Desk/workstation module: use the updated workbook, mark the `24` Desk pieces with `D`, cut the last remaining members, and tie the lower desk frame into the driver-side/electrical spine without burying service access.
+- Final surface direction is now a three-piece Nick commission in black walnut after templates are locked: live-edge Galley counter, dimensional Desk top, and L-shaped Bench/lid top.
 - Battery, floor, and Lonseal status remain gated: do not final-trap floor holes, battery cabling, or service paths until the full integrated module and desk access are proven.
 - Lonseal glue-down is intentionally late. Do not glue until hardpoints, rough-in, floor penetrations, moisture paths, and service access are proven.
 - Alternator charging remains a separate commissioning gate. Mechanical/staged wiring is OK only if the alternator cannot charge into an incomplete or unsafe path.
@@ -173,7 +174,7 @@ Goal: prove full-time work geometry before building clever monitor mechanisms or
 - [ ] Place rough desktop or template at target height.
 - [ ] Confirm entry/exit movement and hip/shoulder clearance.
 - [ ] Confirm roof-down sweep envelope for desk, DC shelf, monitor stow block, and cable loops.
-- [ ] Decide desktop material for MVP: plywood/laminated birch now; phenolic/Richlite later only if worth it.
+- [ ] Decide desktop material for MVP: plywood/laminated birch template now; final commissioned black walnut after seated fit, roof sweep, and entry clearance are proven.
 - [ ] Build lower desk frame tied into the electrical/bench spine.
 - [ ] Add shallow DC electronics shelf/box only if it does not block service access or entry movement.
 - [ ] Reserve ventilated cubby space for laptop dock, router/Starlink power, USB-C PD, and monitor brick.
@@ -220,6 +221,9 @@ Goal: build the galley datum so cooler/fridge/plumbing fitment stops being guess
 - [ ] Confirm pump/accumulator/strainer/manifold service opening below/near fridge.
 - [ ] Confirm wet bay cannot leak into battery/electrical bays; add partition/drip tray concept.
 - [ ] Place Sarlai `15 in x 15 in` topmount sink template on galley counter area.
+- [ ] Confirm final Nick Galley counter dimension sheet: likely `~4 ft x 19 in`, `1.5 in` preferred thickness / `2 in` acceptable, with the last `~15 in` inward-curving live-edge target if the slab allows.
+- [ ] Confirm black walnut counter support-tab/fastener locations before Nick cuts/drills; do not rely on cosmetic skins to carry the slab.
+- [ ] Choose finish sample for black walnut Galley: satin polyurethane/default durable film finish; epoxy only for local void/check stabilization unless intentionally choosing a plastic-gloss flood coat.
 - [ ] Check faucet shank/nut/hose clearance under the counter.
 - [ ] Check sink drain/graywater cassette path.
 - [ ] Check Duxtop induction cooktop storage/use position and cord route.
@@ -325,8 +329,12 @@ Goal: add only the panels/features that make the system safer, stiffer, more ser
 - [ ] Identify panels that are structural/shear/anti-rack vs cosmetic covers.
 - [ ] Prioritize panels that brace electrical module, bench, desk, and galley skeleton.
 - [ ] Use `1/2 in` plywood for most living-facing vertical/removable faces; use `3/4 in` for tops, bench lids, cooler-bearing surfaces, step/load surfaces, and large horizontal spans.
-- [ ] Mock Galley and desk tops in `3/4 in` plywood before buying/cutting premium butcher block or hardwood.
+- [ ] Mock Galley, desk, and L-shaped Bench/lid tops in `3/4 in` plywood before Nick cuts premium black walnut.
+- [ ] Prepare Nick's dimension packet: Galley live-edge counter/template, Desk top template, L-shaped Bench/lid template, support tabs, hinge line, latch points, and any cutout/no-drill zones.
 - [ ] Make at least two finish samples on scrap: clear satin and one warmer/stained option.
+- [ ] Make black walnut/offcut finish samples: satin polyurethane as default; epoxy only as a selective fill/stabilizer sample unless intentionally choosing full flood coat.
+- [ ] Size Bench/lid gas struts only after actual walnut lid weight, hinge line, opening angle, and mount points are known.
+- [ ] Add positive closed-state latch, anti-rattle bumpers, and a mechanical open stop/backup support for the Bench/lid; gas struts are not travel retention by themselves.
 - [ ] Prototype one `1/2 in` overlay panel using the intended fasteners/spacers/anti-rattle tape; keep hardware visually quiet against the silver extrusion rather than making it a feature.
 - [ ] Source/test one smoked acrylic/polycarbonate sample before committing the `45°` front cupboard feature panel.
 - [ ] Mock the `45°` Galley front cupboard in cardboard and confirm door swing/reach/cooler/bench interference before cutting plastic or finished wood.
@@ -515,4 +523,5 @@ Run this before assuming a weekend task is blocked.
 - [HOLD] No road travel with freestanding/lightly restrained electrical module.
 - [HOLD] No alternator first-charge until APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior are ready.
 - [HOLD] No final countertop sink cutout until faucet/drain/rail clearance is physically proven.
+- [HOLD] No premium black walnut final cuts until plywood templates, support tabs, service access, entry sweep, and finish sample are approved.
 - [HOLD] No final panels over electrical/plumbing until labels, strain relief, leak/functional tests, and service access pass.

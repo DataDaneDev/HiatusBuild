@@ -1,3 +1,10 @@
+## 2026-07-05 — Black walnut surface commission direction captured
+
+- Owner discussed final interior wood surfaces with Nick and is leaning toward three commissioned black walnut pieces: a live-edge Galley countertop, a dimensional-lumber computer desk top, and a dimensional-lumber L-shaped Bench/lid top.
+- Captured current Galley target as likely `~4 ft x 19 in` pending exact confirmation, `1.5 in` preferred thickness / `2 in` acceptable if the right slab requires it, with the last `~15 in` of the entry end using an inward-curving live edge if Nick can source a suitable slab.
+- Updated finish posture: satin polyurethane or comparable durable clear film finish is the default for cooking/desk use after full cure; epoxy is best limited to void/check stabilization unless a deliberately plasticky full flood-coat look is chosen. All faces, undersides, holes, cutouts, end grain, and live edges need sealing.
+- Added Bench/lid gas-strut gate: size struts only after the walnut lid weight, hinge line, opening angle, and mount points are known; use closed-state latch, anti-rattle bumpers, and mechanical open/overtravel control.
+
 ## 2026-07-04 — Desk cutlist assignments completed
 
 - Owner reported the Galley/cooler/Bench/electrical tie-ins are complete enough that the interior now behaves as one large in-truck module; active build focus shifted to the Desk/workstation module.

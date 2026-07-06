@@ -481,6 +481,15 @@ related:
 - Result: next build sequence is bench/battery/step structure first, desk desktop/workstation support next, then galley/wet-spine counter/appliance module around the purchased sink/faucet, induction cooktop, and Ninja SP151 cubby. Do not drive with the electrical module freestanding.
 - Follow-up: verify hardpoints, panels/diagonals/anti-rattle retention, fastener witness marks, strain relief, and emergency electrical access before road shakedown.
 
+- ID: D-051
+- Date: 2026-07-05
+- Decision: Commission final high-touch interior wood surfaces from Nick in black walnut after templates/dimensions are locked.
+- Context: Owner discussed final wood surfaces with Nick and wants the camper to use three related black walnut pieces rather than unrelated commodity tops: Galley counter, Desk top, and L-shaped Bench/lid top.
+- Options considered: keep plywood/butcher-block-only finish path, source marketplace/tabletop material, or commission custom black walnut pieces.
+- Decision drivers: intentional furniture-grade interior, matching Galley/Desk/Bench design language, and the opportunity to use a controlled live edge at the Galley entry end.
+- Result: current surface baseline is a black walnut live-edge Galley countertop, likely `~4 ft x 19 in` pending exact confirmation, `1.5 in` preferred / `2 in` acceptable thickness, with the last `~15 in` curving inward if the slab allows; a dimensional black walnut computer desk top; and a dimensional black walnut L-shaped Bench/lid top supported on aluminum-extrusion tabs with gas struts if actual weight/geometry work. Finish default is satin polyurethane or equivalent durable clear film, with epoxy used selectively for void/check stabilization rather than full flood coat unless deliberately chosen.
+- Follow-up: create plywood/templates and dimension packet for Nick; confirm final Galley length/width, sink/faucet/appliance clearances, support tabs, Desk depth/height, Bench hinge/strut/latch geometry, finish sample, price, and schedule before premium cuts.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -645,6 +654,7 @@ related:
 - Status: Open
 
 ## Open questions
+- Lock Nick black-walnut commission details: exact Galley counter length/width (`~4 ft x 19 in` target pending confirmation), `1.5 in` vs `2 in` thickness, last `~15 in` live-edge curve, Desk dimensions, L-shaped Bench/lid hinge/support/gas-strut geometry, finish sample, price, and delivery timing.
 - Verify electrical-module road-restraint details before driving: bench/desk tie-in, hardpoints, panel/diagonal/angle bracing, fastener witness marks, anti-rattle interfaces, strain relief, and emergency disconnect/fuse access.
 - Log parallel-bank current-sharing/voltage behavior under controlled charge/load; use similar total loop resistance per battery path rather than forcing equal positive-only leads.
 - Measure Iceco lid-open/vent/power-cord envelope at the raised passenger-side `~16 in` lofted height and validate tank overlap, pump-service access, and aisle/entry clearance.

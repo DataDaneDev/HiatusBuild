@@ -20,17 +20,18 @@ related:
 
 # Interior Finish, Paneling, Storage, and Feature Choices
 
-As-of date: `2026-07-03`
+As-of date: `2026-07-05`
 
 Purpose: synthesize the open **creative-but-useful** design choices for the Hiatus/F-350 interior as the build moves from raw `10-series` extrusion skeletons toward finished galley/desk/bench surfaces. This document does not replace the layout owner doc. It owns the finish language, panel strategy, storage feature decisions, wood/countertop direction, and validation gates that make the galley and workstation feel like one intentional system rather than disconnected shop-built modules.
 
 Current physical context:
 
 - The Galley `10-series` extrusion frame is cut and built as an exoskeleton.
-- The frame is still tippy until tied into the Bench/cooler area; that structural tie-in remains the next gate before skins or heavy fixtures.
+- Owner-reported `2026-07-04`: the Galley/cooler/Bench/electrical tie-ins are complete enough that the interior now behaves as one large in-truck module; active build focus has shifted to the Desk/workstation module and final surface dimensions.
 - The passenger-side Galley connects to the Bench/cooler area and will carry the sink/faucet, cold-water-first wet spine, drain/graywater path, cooler/fridge support, and future hot-water provisions.
 - The driver-side workstation should visually relate to the galley without sacrificing real work ergonomics.
 - Available panel stock includes some `1/2 in` and `3/4 in` plywood. Working assumption: `1/2 in` for vertical/front/removable faces; `3/4 in` for tops, bench lids, cooler-bearing surfaces, and other load surfaces.
+- Owner is leaning toward commissioning three final black walnut surfaces from Nick: a live-edge Galley countertop, a dimensional-lumber computer desk top, and a dimensional-lumber L-shaped Bench/lid top.
 
 ---
 
@@ -42,7 +43,7 @@ Build the interior as:
 
 The best current default is:
 
-1. **Wood tops:** use `3/4 in` plywood as the first real galley/desk top substrate, then upgrade to butcher block or a matching hardwood tabletop only if a good source piece appears after geometry is proven.
+1. **Wood tops:** use `3/4 in` plywood templates/substrates to prove fit, but the current final-surface direction is commissioned black walnut for the Galley counter, driver-side desk, and L-shaped Bench/lid top once exact dimensions are locked.
 2. **Vertical panels:** use `1/2 in` plywood overlay panels for most living-facing fronts and removable skins.
 3. **Service zones:** leave `80/20` visible or cover with quick-removable service panels. Do not hide pumps, valves, fuses, disconnects, drains, winterization fittings, or module tie-in bolts behind permanent skins.
 4. **Feature panels:** use smoked/tinted acrylic or polycarbonate selectively, especially at the `45°` Galley front cupboard/transition, small cubbies, or useful inspection windows.
@@ -101,13 +102,40 @@ Minimum rule: if a panel covers service-critical hardware, it must be removable 
 | `3/4 in` plywood with finished/painted edges | Warm/utility hybrid, exposed plywood cleanup | Forgiving, easy touch-up, can tie into smoked/dark service accents | Sloppy paint lines look DIY | Good for visible edges and service-adjacent surfaces |
 | Butcher block / edge-glued countertop | Final high-touch galley + desk surfaces | Warm, substantial, refinishable, “real furniture” | Heavier, moves with humidity, sink edges need aggressive sealing | Good upgrade if one source piece can feed both desk and galley |
 | Used hardwood tabletop | Matching desk/galley source material | Often cheap, already flat/finished, can look polished | Verify solid wood or quality veneer; avoid particleboard near sink | Excellent Marketplace target |
-| Live-edge slab | Accent/focal feature | Unique and memorable | Heavy, irregular, harder to seal, dirt-catching, awkward near sink | Use as accent shelf/lip only, not default counter |
+| Live-edge slab | Accent/focal feature, controlled Galley entry-side edge | Unique and memorable | Heavy, irregular, harder to seal, dirt-catching, awkward near sink if raw/barky | Planned for the black walnut Galley counter only if the live edge is cleaned/eased/sealed and does not compromise entry or wipe-down |
 | Prefinished cabinet plywood | Vertical panels, doors, service covers | Stable, clean, less finishing labor | Edges still need banding; less “rustic” | Good if a local cabinet shop has remnants |
 | Laminate/HPL over plywood | Wet-resistant galley work surface | Durable and wipeable | Less warm unless wood-look; harder to repair invisibly | Good fallback if wood maintenance becomes annoying |
 
-### 3.2 Rough board-foot estimate for the desk + Galley
+### 3.2 Commissioned black walnut surface direction — `2026-07-05`
 
-Use this only as a buying estimate until the exact desk depth, Galley depth, sink cutout, and rounded end template are locked.
+Current owner/Nick commission target:
+
+| Surface | Current target | Material / thickness | Finish direction | Open confirmations |
+| --- | --- | --- | --- | --- |
+| Galley countertop | Black walnut live-edge slab, likely `~4 ft x 19 in` based on owner phrasing; confirm the exact dimension sheet before cutting | Prefer `1.5 in` finished thickness; accept `2 in` if the right slab is only available thicker | Satin protective film finish; no raw/oiled-only cooking surface | Confirm exact length (`4 ft` vs transcript ambiguity), final width, sink/faucet/appliance clearances, support tabs, and entry-side live-edge curve |
+| Galley entry-side feature zone | Last `~15 in` of the Galley counter should use a live edge that curves inward if Nick can source the right slab | Same slab as main counter if possible | Same sealed finish; live edge cleaned, softened, and wipeable | Physical sweep test with the one-barn-door entry path; no barky/splintery snag edge |
+| Driver-side computer desk | Black walnut dimensional-lumber top | Thickness TBD by board availability, weight, and desk frame support | Same sheen/tone family as Galley; comfortable front wrist edge | Final desk depth/height after seated work test and roof/entry clearance |
+| L-shaped Bench/lid top | Black walnut dimensional-lumber L-shaped top over the storage cubby | Thickness TBD; account for mass before gas-strut sizing | Same finish family, all faces sealed | Hinge line, gas-strut geometry, latch/closed retention, open-state support, and service reach |
+
+Design intent:
+
+- Treat these as **siblings from one wood/finish language**: black walnut tone, satin sheen, softened edges, and quiet hardware.
+- Use plywood or MDF templates first. Do not ask Nick to cut premium walnut to final shape from guessed geometry.
+- The Galley live edge should be functional furniture, not a raw slab edge: remove loose bark/cambium, ease sharp spots, stabilize checks/voids, seal thoroughly, and avoid dirt/water traps at the sink/entry edge.
+- A `1.5 in` Galley slab is the preferred weight/fit target. `2 in` is acceptable if the slab is clearly better, but re-check sink/faucet reach, counter height, support tabs, and visual bulk before committing.
+- For the Bench/lid top, gas struts are plausible but should be sized from actual lid weight and hinge geometry after the walnut blank is known. Add closed-state latching and a mechanical backup/open stop; do not rely on struts alone as travel retention.
+
+Finish recommendation for Nick to test on walnut offcuts:
+
+1. **Default:** satin polyurethane or comparable durable clear film finish, applied in multiple thin coats.
+2. **Use-case rule:** acceptable for a cooking/prep surface after full cure, but still use cutting boards/trivets; do not treat the walnut as a butcher-block cutting surface.
+3. **Seal everything:** top, underside, live edge, end grain, mounting holes, sink/cutout edges, screw holes, and any underside pockets.
+4. **Epoxy posture:** use epoxy selectively to stabilize/fill cracks, knots, or voids. Avoid a full flood-coat unless the desired look is deliberately glossy/plastic and harder to repair.
+5. **Sample first:** compare satin poly vs any epoxy-filled/film sample with water, coffee/oil, heat-adjacent use, and scratch/wipe tests before finishing the actual pieces.
+
+### 3.3 Rough board-foot estimate for the desk + Galley
+
+Use this as a legacy buying estimate for `3/4 in`-equivalent rough planning only. The Nick black-walnut commission should be quoted from actual templates/dimensions and actual slab/board yield, especially if final thickness is `1.5-2 in` rather than `3/4 in`.
 
 Assumptions:
 
@@ -130,7 +158,7 @@ Buying posture:
 - A one-piece full `30 in` diameter round is about `4.9 BF` at `1 in` thick by itself; do not buy that unless the piece is actually cheap and beautiful.
 - Cost feel: `20 BF` is about `$100` at `$5/BF`, `$240` at `$12/BF`; `24 BF` is about `$120` at `$5/BF`, `$288` at `$12/BF`.
 
-### 3.3 Recommended material path
+### 3.4 Recommended material path
 
 Use **`3/4 in` plywood as the prototype and possibly finished substrate**:
 
@@ -141,7 +169,7 @@ Use **`3/4 in` plywood as the prototype and possibly finished substrate**:
 
 This avoids wasting a good slab before the geometry is real.
 
-### 3.4 Butcher block guidance
+### 3.5 Butcher block guidance
 
 Butcher block is the most sensible “cool” upgrade if a good piece appears locally.
 
@@ -162,12 +190,13 @@ Avoid it for the first final-ish top if:
 
 Mounting rule: **do not permanently glue butcher block to the `80/20` frame.** Use accessible mechanical fasteners with slotted/oversized holes or bracket allowance so wood can move slightly.
 
-### 3.5 Live-edge guidance
+### 3.6 Live-edge guidance
 
-Live edge is allowed as an accent, but should not drive the core build.
+Live edge is now allowed as a controlled Galley feature, but should not drive the core build or override service/entry ergonomics.
 
 Good uses:
 
+- the planned Galley entry-side counter edge if it curves inward cleanly, is supported, and remains wipeable;
 - narrow desk lip;
 - small shelf;
 - decorative rail;
@@ -176,15 +205,15 @@ Good uses:
 
 Bad uses:
 
-- primary sink counter;
+- raw/barky primary sink counter;
 - tight entry/aisle edge;
 - large unsupported desk;
 - surfaces that need easy wipe-down;
 - any piece that is green, warped, barky, heavy, or still drying.
 
-### 3.6 Finish direction
+### 3.7 Finish direction
 
-Default finish: **clear or lightly warmed satin**, not glossy.
+Default finish: **clear or lightly warmed satin**, not glossy. For the commissioned black walnut pieces, use a durable cured film finish such as satin polyurethane unless Nick recommends a comparable shop finish he has confidence in for wipe-down kitchen/desk use.
 
 Beginner-friendly sequence:
 
@@ -196,13 +225,15 @@ Beginner-friendly sequence:
 6. Sand `120 -> 180 -> 220` as appropriate.
 7. Break all sharp edges.
 8. Test stain/clear coat on offcuts before using it on real parts.
-9. Apply satin water-based polyurethane or similar durable clear finish.
+9. Apply satin polyurethane or similar durable clear finish in multiple thin coats; test water-based/non-yellowing vs oil-based/warmed look on offcuts first.
 10. Seal all faces, edges, undersides, holes, and cutouts.
 11. Reinstall with mechanical fasteners.
 
-For sink-adjacent wood, seal the cutout edge aggressively. Raw plywood or end grain near the sink is where water damage starts.
+For sink-adjacent wood, seal the cutout edge aggressively. Raw plywood or end grain near the sink is where water damage starts. On live-edge walnut, remove loose bark/cambium, soften the hand-contact edge, stabilize checks/voids if needed, and seal the full irregular edge so it does not become a dirt/water trap.
 
-### 3.7 Wood species and scent posture
+Epoxy posture: use epoxy as a selective stabilizer/filler for voids, knots, cracks, or a small intentional feature. Do **not** default to a full pour/flood coat on black walnut unless the plastic-gloss look is explicitly desired and accepted as harder to repair/touch up than a satin film finish.
+
+### 3.8 Wood species and scent posture
 
 Scent matters, but do not make the main wet/work surfaces out of a soft aromatic wood just for smell.
 
@@ -210,7 +241,7 @@ Scent matters, but do not make the main wet/work surfaces out of a soft aromatic
 | --- | --- | --- | --- |
 | Maple / birch butcher block | Desk and Galley top | hard, clean, available, classic countertop look | smell is neutral; needs finish and sealed sink edges |
 | White oak / ash | Premium durable tops or edge/nosing | harder, furniture-grade, good with silver extrusion | can be pricier; oak grain needs pore filling only if a glass-smooth finish is desired |
-| Walnut / cherry | Accent strips, edge caps, premium desk/feature parts | warm, intentional, furniture-like | cost; darker tone may dominate small interior |
+| Black walnut / cherry | Final commissioned Galley/desk/Bench surfaces, accent strips, edge caps, premium feature parts | warm, intentional, furniture-like; black walnut pairs well with the visible silver extrusion | cost, weight at `1.5-2 in`, darker tone may dominate small interior if overused |
 | Acacia / rubberwood butcher block | Budget-friendly ready-made tops | common in pre-made countertops/tabletops | inspect for weight, glue lines, warping, and end-grain near wet areas |
 | Aromatic cedar / eastern red cedar / juniper | removable cubby liners, closet/shoe/storage accents, vented scent strips | strong smell; easy to refresh by light sanding | soft, dents easily, scent fades under film finish; not ideal for main desk/Galley top |
 | Western red cedar | light accent panels or protected trim | smells good, light, warm color | very soft; not a primary work surface |
@@ -224,13 +255,14 @@ Scent strategy:
 - Refresh smell by lightly sanding exposed cedar/juniper later.
 - If the whole camper starts smelling too strong, removable scent strips are easy to pull; a cedar countertop is not.
 
-### 3.8 Edge language
+### 3.9 Edge language
 
 | Location | Recommended edge | Why |
 | --- | --- | --- |
 | Desk wrist/front edge | `1/4 in` roundover if material allows | Comfort for typing/mousing |
 | Galley front edge | `1/8-1/4 in` roundover | Durable and hand-friendly |
 | Bench/cooler lid edges | eased edge or small roundover | Prevents splinters and hip/knee strikes |
+| Live-edge Galley entry zone | cleaned/eased natural curve; no loose bark | Preserves character without snagging clothes, hands, or water/dirt |
 | Vertical panel edges | eased chamfer/roundover or banding | Finished look and fewer splinters |
 | Sink cutout | lightly eased + heavily sealed | Reduces splintering and water intrusion |
 | Service panels | simple eased edge + consistent reachable fasteners | Utility aesthetic stays clean |
@@ -470,7 +502,20 @@ Validate:
 - removal path;
 - service access to the wet spine below/nearby.
 
-### 7.5 Spray nozzle / QD
+### 7.5 L-shaped Bench/lid top and gas struts
+
+The current final-surface direction is a black walnut dimensional-lumber L-shaped Bench/lid top over the storage cubby, supported by tabs/lands on the aluminum extrusion and lifted with gas struts if the geometry works.
+
+Build rules:
+
+- Prototype the L-shape in plywood first and verify it clears cushions, cabover step use, desk movement, Galley access, and service-panel removal.
+- Let the walnut lid bear on real `80/20` tabs/cleats/support lands, not on cosmetic skins.
+- Size gas struts only after actual lid weight, hinge line, opening angle, and mount points are known.
+- Add a positive closed-state latch and anti-rattle bumpers; gas struts help lift/hold open but are not travel retention.
+- Add a mechanical open stop, backup prop, or strut geometry that cannot over-center into the roof/wall/cabover path.
+- Keep the storage cubby usable with the lid open and keep battery/electrical service access separate from ordinary storage.
+
+### 7.6 Spray nozzle / QD
 
 A pump-fed cold spray nozzle/QD near the Galley utility corner is a high-utility feature if it does not force premature penetrations.
 
@@ -493,7 +538,7 @@ Requirements:
 
 Gravity-only spray can remain a fallback idea, but it should not drive the layout if the pump is already nearby.
 
-### 7.6 Hot-water deferral
+### 7.7 Hot-water deferral
 
 Keep hot water as **capped future stubs**, not a permanent appliance commitment.
 
@@ -638,7 +683,12 @@ Avoid:
    - Bench/cooler bearing surfaces.
    - Use them to validate fit before premium wood.
 
-6. **Validate service map**
+6. **Prepare Nick's walnut dimension packet**
+   - Galley counter template with exact length/width, sink/faucet/appliance clearances, support-tab locations, and the last `~15 in` inward-curving live-edge target.
+   - Desk top template with final seated work height/depth and front wrist-edge treatment.
+   - L-shaped Bench/lid template with hinge line, support tabs, latch positions, gas-strut candidate zones, and service-clearance notes.
+
+7. **Validate service map**
    - Pump/filter/shutoff.
    - Sink/faucet underside.
    - Drain/trap/graywater.
@@ -647,12 +697,12 @@ Avoid:
    - Counter fasteners.
    - Floor/bed hardpoints.
 
-7. **Sample finish and edge profile**
+8. **Sample finish and edge profile**
    - Choose clear satin vs warmed/stained finish from offcuts.
    - Test `1/8 in` and `1/4 in` roundovers.
    - Water-test a finished edge sample.
 
-8. **Only then commit final skins/countertop details**
+9. **Only then commit final skins/countertop details**
    - No final sink cutout until support/access gates pass.
    - No permanent panel over plumbing/electrical service.
    - No Lonseal/floor glue-down or battery-trapped wiring until access is proven.
@@ -700,26 +750,28 @@ Avoid:
 
 ## 12) Near-term action list
 
-1. Pick target wood tone: light birch/oak, aromatic cedar accent, medium acacia/walnut, or clear plywood + clean edge detail.
-2. Make two finish samples from scrap: clear satin and one warmer/stained option.
-3. Prototype one `1/2 in` overlay panel with final spacer/fastener style.
-4. Prototype or source one smoked acrylic/polycarbonate sample.
-5. Mock the `45°` front cupboard in cardboard, including the smoked angled front plus rounded wood-cap/nosing idea.
-6. Mark every Galley/Bench face by category: finished wood, service removable, smoked feature, or exposed `80/20`.
-7. Mock Galley and desk tops in `3/4 in` plywood.
-8. Browse Marketplace for one large matching butcher-block/hardwood tabletop only after rough top dimensions are known; separately watch for a small dry hardwood/live-edge offcut suitable for the Galley entry-corner cap, but do not pay full-round/designer-slab pricing when a shaped offcut will do.
-9. Select one latch family for clean doors and one utility latch family for service panels.
-10. Hold final countertop, final skins, final floor, and final battery-trapped work until the validation gates above pass.
+1. Pick target wood tone: black walnut is the current final-surface direction; plywood remains the template/prototype material.
+2. Convert the Nick black-walnut commission into a dimension packet: Galley `~4 ft x 19 in` target confirmation, last `~15 in` inward live-edge curve, desk top, and L-shaped Bench/lid template.
+3. Make finish samples on walnut/offcut scrap: satin polyurethane as the default, any warmer/oil-look option Nick recommends, and epoxy only as a selective crack/void filler sample.
+4. Prototype one `1/2 in` overlay panel with final spacer/fastener style.
+5. Prototype or source one smoked acrylic/polycarbonate sample.
+6. Mock the `45°` front cupboard in cardboard, including the smoked angled front plus rounded wood-cap/nosing idea.
+7. Mark every Galley/Bench face by category: finished wood, service removable, smoked feature, or exposed `80/20`.
+8. Mock Galley, desk, and L-shaped Bench/lid tops in `3/4 in` plywood.
+9. Calculate Bench/lid weight and gas-strut geometry only after the walnut thickness/dimensions are known.
+10. Select one latch family for clean doors and one utility latch family for service panels.
+11. Hold final countertop, final skins, final floor, and final battery-trapped work until the validation gates above pass.
 
 ---
 
 ## 13) Recommendation summary
 
-- **Use existing plywood intelligently first.** It is the fastest way to prove geometry without wasting a premium slab.
+- **Use existing plywood intelligently first.** It is the fastest way to prove geometry before Nick cuts premium black walnut.
 - **Make Galley and desk siblings, not twins.** Same wood tone, sheen, edge profile, and hardware/reveal discipline are enough.
+- **Current final-surface direction is black walnut.** Galley live-edge counter, dimensional-lumber desk, and L-shaped Bench/lid should repeat the same satin finish language.
 - **Use `1/2 in` for vertical/removable faces and `3/4 in` for tops/load surfaces.** Add spacers for reveal instead of using heavy panels everywhere.
 - **Use smoked acrylic/polycarbonate as a selective feature.** Best candidate: the `45°` front Galley cupboard/transition.
 - **Favor bins, elastic cubbies, and a few latched drawers.** Drawers are useful but should not dominate before dimensions are stable.
-- **Keep the front Galley corner `45°` unless the square corner clearly passes the entry test.** Round can wait.
+- **Keep the front Galley corner entry-safe.** A controlled inward-curving live edge over the last `~15 in` is good if it passes the physical sweep test; raw bark/snags are not.
 - **Build cold-water-first and hot-ready.** Do not let hypothetical propane hot water freeze the finished cabinet geometry.
 - **Service access beats cosmetic closure.** Beautiful panels are only successful if the camper can still be repaired, winterized, and shaken down without demolition.

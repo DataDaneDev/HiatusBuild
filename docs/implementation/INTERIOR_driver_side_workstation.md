@@ -16,11 +16,11 @@ related:
 
 # Driver-Side Workstation, Monitor, Electrical Shelf, and Storage Mechanisms
 
-As-of date: `2026-05-27`
+As-of date: `2026-07-05`
 
 Purpose: capture a buildable design direction for the driver/left-side workstation and electrical-closet interface so the camper can support full-time work, preserve pop-down roof clearance, keep DC electronics/laptop plugs accessible, and gain storage without ruining ergonomics.
 
-Status: **draft implementation baseline**, refreshed after the `2026-05-27` electrical live checkpoint. Do not convert this into exact extrusion cuts, drawer-slide lengths, panel skins, or final penetrations until post-install shell measurements, hard-mounted electrical-board/closet checks, DC shelf checks, diesel-heater service checks, and roof-popdown sweep tests pass.
+Status: **draft implementation baseline**, refreshed after the `2026-07-05` black-walnut surface commission direction. Do not convert this into exact extrusion cuts, drawer-slide lengths, panel skins, or final penetrations until post-install shell measurements, hard-mounted electrical-board/closet checks, DC shelf checks, diesel-heater service checks, and roof-popdown sweep tests pass.
 
 Related docs:
 - `docs/core/SYSTEMS.md`
@@ -221,10 +221,12 @@ Use if travel robustness matters more than one-motion deployment.
 
 ### Desk top
 
-- Material direction: phenolic, Richlite, or laminated Baltic/birch ply with sealed edges.
+- Final material direction: commissioned dimensional black walnut, matching the Galley and Bench/lid finish language, after a plywood template proves fit.
+- Prototype/MVP material: `3/4 in` plywood or laminated birch remains valid for fit testing and can act as the pattern Nick uses for the walnut top.
 - Shape: slightly radiused front edge; clipped or rounded aisle-side corner to avoid hip strikes.
 - Depth: favor enough forearm support for typing/mousing; avoid going so deep that entry/aisle movement suffers.
 - Mounting: T-slot underframe or cleats tied into the driver-wall service spine; avoid relying on a single Lagun-style point for the primary full-time desk unless used only as a fold-out auxiliary leaf.
+- Finish: satin polyurethane or equivalent durable clear film finish; seal top, underside, edges, cable/grommet holes, mounting holes, and any end grain. Epoxy should be limited to void/check stabilization unless a deliberate plastic-gloss surface is chosen.
 
 ### Ergonomic layout
 
@@ -419,7 +421,8 @@ Optional upgrade: a simple microswitch/reed-switch indicator on the monitor stow
 ## 14) Open design choices
 
 - Exact monitor mechanism: rising mast vs under-desk flip-up vs quick-release sleeve.
-- Exact desk length/depth/height after chair and roof-envelope measurement.
+- Exact desk length/depth/height after chair and roof-envelope measurement, then Nick's final walnut dimension/template packet.
 - Whether the monitor uses AC brick, DC-native power, or USB-C display/power through a dock.
 - Final storage split between shallow cubbies, soft pockets, toe-kick, and bench-step storage.
 - Final hardware ecosystem for latches, slides, and T-slot standard.
+- Final desk finish sample: satin walnut film finish by default; epoxy only for local fills unless intentionally selected.
