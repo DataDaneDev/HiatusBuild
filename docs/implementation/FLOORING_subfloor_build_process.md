@@ -32,7 +32,7 @@ related:
 
 ## Hardpoint Rule (Structural Anchors)
 - Determine hardpoints with the modules still installed/connected and fitment verified. This is now its own pre-teardown work block and may take a full day.
-- Default active path: furniture/module floor tabs bolt through the furniture bracket, Lonseal, plywood, and any local valley/air/EPS zone into Plusnuts/rivnuts installed in the truck bed floor from inside the bed.
+- Default active path: furniture/module floor tabs bolt through the furniture bracket, Lonseal, plywood clearance holes, and any local valley/air/EPS zone into Plusnuts/rivnuts installed directly in the truck bed metal from inside the bed. The Plusnut/rivnut body and flange seat in the steel bed floor, not in the plywood; the plywood/Lonseal are clamped layers above the metal anchor.
 - Prefer hardpoint locations on rib/high areas where plywood bears on steel. If a required hardpoint lands over a valley, treat EPS as a pass-through filler only; add/verify a solid clamp-load path rather than relying on foam compression.
 - Use the furniture hardpoints as the primary plywood-to-bed clamp where their locations also solve plywood flatness. Add separate plywood-only Plusnuts only where needed to pull down a proud/uneven plywood area, control a seam/edge, or preserve the floor independently of furniture removal.
 - Do not rely on screws into plywood for structural furniture retention; screws can loosen/release under vibration. Structural retention should load the truck bed metal via Plusnuts/rivnuts or other approved mechanical anchors.
