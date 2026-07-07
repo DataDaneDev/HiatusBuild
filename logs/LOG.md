@@ -1,3 +1,10 @@
+## 2026-07-06 — Hardpoint method corrected before flooring teardown
+
+- Owner clarified that hardpoint determination itself is likely at least a full day and should happen before modules are removed, while current module geometry is still live and fit-verified.
+- Updated flooring/checklist guidance: active path is to locate floor tabs and hardpoints with modules installed, drill/register/test Plusnuts/rivnuts from inside the truck bed before Lonseal, preserve hole locations through vinyl with datum measurements/photos/marked tape/pre-punched dry-fit holes or temporary locator bolts, then remove modules for bed cleanup/floor work.
+- Corrected EPS assumptions: EPS lives between bed-rib valleys only and does not need blanket removal. Trim proud/high EPS that rocks plywood; prefer hardpoints on rib/high supported areas, and if a hardpoint must pass through a valley/EPS zone, treat EPS as filler/pass-through only rather than a structural clamp-load member.
+- Captured retention direction: do not structurally screw furniture into plywood; primary furniture retention should bolt through the Lonseal/plywood stack into truck-bed Plusnuts/rivnuts. Use separate plywood-only anchors only where needed to flatten/control plywood seams or edges.
+
 ## 2026-07-06 — Flooring elevated to next gated sprint candidate
 
 - Owner challenged the prior sequencing because all major modules are now in-truck, connected, and fitment-verified; any final electrical or plumbing done before flooring would likely be removed again when the modules come out for Lonseal and hard mounting.

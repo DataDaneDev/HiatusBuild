@@ -46,8 +46,10 @@ It does **not** replace the owner docs:
 - All major modules are now test-fit/installed, connected, and owner-verified for fitment; Desk/storage corrections remain, but the integrated layout is good enough to treat teardown/reinstall as the next major gate.
 - Because every module must come out for bed cleanup, plywood leveling, Lonseal, and hard mounting, the floor has moved from generic “later finish work” to the **next gated sprint candidate**. Doing it now can avoid repeated teardown before alternator wiring, full battery install, shore power, and testable plumbing.
 - Electrical module is no longer being treated as a loose standalone shop artifact, but road-ready status still depends on hardpoints, strain relief, witness marks, emergency access, and a final shove/rack check.
-- Near-term physical priority is now: capture module geometry, finish Desk/storage corrections, plan hardpoints/service access, remove modules once, clean/level/prep bed and plywood, dry-fit Lonseal, then glue only if the floor/hardpoint/penetration gate passes.
+- Near-term physical priority is now: finish Desk/storage corrections enough to trust geometry, then spend a dedicated hardpoint day while modules are still installed/connected. Capture exact floor-tab locations, drill/register/test Plusnuts from inside the truck bed, and only then remove modules for clean/level/Lonseal work.
 - Final surface direction is now a three-piece Nick commission in black walnut after templates are locked: live-edge Galley counter, dimensional Desk top, and L-shaped Bench/lid top. A temporary Galley plywood counter/template is acceptable before final walnut so sink/faucet geometry can be proven.
+- Active hardpoint direction: do not structurally screw furniture to plywood. Use furniture/module hardpoints through the Lonseal/plywood stack into Plusnuts/rivnuts in the truck bed floor; use separate plywood-only anchors only where needed to fix plywood flatness/seams/edges.
+- EPS correction: EPS is between bed-rib valleys only, not a continuous bearing layer. Trim proud/high EPS that rocks the plywood, but do not plan blanket EPS removal. Prefer anchor locations on rib/high supported areas; if a hardpoint lands over a valley, treat EPS as pass-through filler and solve clamp load without relying on foam.
 - Plumbing remains discovery/mockup until electrical and counter geometry make it testable, but floor completion may be the prerequisite that makes final routing worth doing.
 - Alternator charging remains a separate commissioning gate. Rough-in/routing with fuses pulled can proceed after floor/module reinstall; first-charge waits for APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior.
 - Solar, hot water, and propane remain discovery/provisioning workstreams until shore, water/fill routing, roof real estate, and exterior mount/pass-through constraints are better proven.
@@ -82,12 +84,13 @@ As of `2026-07-04`, the Galley/cooler/Bench/electrical tie-in has moved from tar
 
 Now that the major modules are test-fit/installed and fitment is owner-verified, the next work should close gates in this order:
 
-1. **Before teardown:** finish Desk/storage corrections enough to trust geometry; photograph/label every module seam, connector, shim, bracket, footprint, and current hardpoint candidate.
-2. **Floor sprint:** remove modules once; clean the truck bed; level/settle the plywood subfloor; resolve hardpoints, relief holes, service edges, drain/penetration questions, and Lonseal dry-fit before glue.
-3. **Reinstall + hard mount:** reinstall Galley/Bench/Electrical/Desk modules over protected Lonseal, hard-mount through the proven stack, then retorque/witness-mark and confirm battery extraction/service access still works.
-4. **Electrical after floor:** final-route alternator conductors/harness, shore power, full `4x` battery bank, covers, labels, strain relief, and controlled tests after the floor no longer needs another major teardown.
-5. **Plumbing after floor/electrical/counter template:** use a temporary Galley plywood counter/template to prove sink/faucet/drain geometry; then final-route tank/fill/vent/pump/graywater/hot-stub plumbing when it can actually be leak/function tested.
-6. **Later / parallel discovery:** hot-water product discovery, propane mount location, and solar/roof passthrough planning. Do not let these drive irreversible penetrations until exact routes and hardware are known.
+1. **Before teardown — hardpoint day:** finish Desk/storage corrections enough to trust geometry; photograph/label every module seam, connector, shim, bracket, footprint, service opening, and candidate floor tab. Determine hardpoints before removing modules; assume this is at least a full-day task.
+2. **Drill/register anchors before vinyl:** from inside the truck bed, drill/register/test Plusnut/rivnut locations through the plywood/bed stack while the holes are visible. Build the hole-location recovery plan for Lonseal before glue: fixed-datum measurements, photos, marked tape, pre-punched dry-fit vinyl holes, and/or temporary locator bolts.
+3. **Floor sprint:** remove modules once; clean the truck bed; trim any proud EPS/high spots; level/settle the plywood subfloor; resolve relief holes, service edges, drain/penetration questions, and Lonseal dry-fit before glue.
+4. **Reinstall + hard mount:** reinstall Galley/Bench/Electrical/Desk modules over protected Lonseal, hard-mount through the registered stack into tested Plusnuts/rivnuts, then retorque/witness-mark and confirm battery extraction/service access still works.
+5. **Electrical after floor:** final-route alternator conductors/harness, shore power, full `4x` battery bank, covers, labels, strain relief, and controlled tests after the floor no longer needs another major teardown.
+6. **Plumbing after floor/electrical/counter template:** use a temporary Galley plywood counter/template to prove sink/faucet/drain geometry; then final-route tank/fill/vent/pump/graywater/hot-stub plumbing when it can actually be leak/function tested.
+7. **Later / parallel discovery:** hot-water product discovery, propane mount location, and solar/roof passthrough planning. Do not let these drive irreversible penetrations until exact routes and hardware are known.
 
 ## Status legend
 
@@ -323,20 +326,21 @@ Goal: use the verified module fit to do the one major teardown intentionally, fi
 
 - [~] Treat flooring as the next gated sprint candidate now that all major modules are connected/test-fit and owner-verified for fitment.
 - [ ] Before removing modules, photograph every module in place from multiple angles.
+- [ ] Spend a dedicated hardpoint day with the modules still installed/connected: identify actual floor tabs/brackets, drill/Plusnut tool access, bolt-head access, and service-panel conflicts.
 - [ ] Label every Galley/Bench/Electrical/Desk connection, seam, shim, bracket, and fastener group so reinstall is not a puzzle.
-- [ ] Trace module footprints, battery footprint/extraction path, service-panel openings, and hardpoint candidates onto tape/plywood.
+- [ ] Trace module footprints, battery footprint/extraction path, service-panel openings, floor-tab locations, and hardpoint candidates onto tape/plywood.
 - [ ] Capture current measurements that matter after teardown: aisle width, desk clearance, galley depth, bench opening, electrical service access, and roof-down/entry sweep limits.
 - [ ] Decide whether the Desk plywood/top template stays out during reinstall to preserve working room.
+- [ ] Drill/register/test chosen Plusnut/rivnut hardpoints from inside the truck bed before Lonseal hides the hole map.
+- [ ] Build a hole recovery plan for vinyl: fixed datum measurements, photos, marked tape, pre-punched dry-fit Lonseal holes, and/or temporary locator bolts/pins.
 - [ ] Remove modules as larger assemblies where practical; avoid unnecessary full disassembly if labeled seams can preserve geometry.
 - [ ] Clean/vacuum the truck bed and inspect for grit, moisture, sharp edges, sealant issues, drain/corner concerns, and abrasion points.
 - [ ] Inspect bed rail/corner/drain-hole sealing after normal use/cure.
-- [ ] Confirm EPS is not proud, buckled, wet, crushed, or blocking hardpoint pockets.
-- [ ] Level/settle plywood slices so they sit flat and can still be removed intentionally before glue decisions.
-- [ ] Mark every planned structural hardpoint before vinyl glue-down.
-- [ ] Choose the hardpoint strategy before final module reinstall: plusnut/rivnut/bed tie-down/through-bolt/rail tab path, backing/spacer stack, and accessible fastener heads.
-- [ ] Before final battery wiring, choose the floor escape strategy: module can lift out as Galley/Bench sections, or Lonseal has planned slits/relief holes/service edges around hardpoints.
+- [ ] Confirm EPS is not proud/high, buckled, wet, crushed, or rocking the plywood.
+- [ ] Level/settle plywood slices so they sit flat enough for adhesive and final module reinstall.
+- [ ] Use furniture/module hardpoints as the primary plywood-to-bed clamp where they land well; add separate plywood-only Plusnuts only where needed for flatness, seams, or edges.
+- [ ] Prefer hardpoint centers on rib/high supported areas. If a hardpoint must pass through an EPS/valley zone, treat EPS as filler/pass-through only and solve clamp load without depending on foam.
 - [ ] Keep final module-to-floor bolts accessible from the aisle/top/service openings; do not require removing charged batteries just to reach clamp hardware.
-- [ ] Remove EPS locally at structural hardpoints so plywood bears directly on steel or the approved spacer/backing stack.
 - [ ] Confirm no new floor-through penetrations, heater routes, drains, anchor holes, or under-floor service needs remain **or** deliberately reserve/grommet/edge-protect the future path before Lonseal.
 - [ ] Dry-fit Lonseal and confirm pattern/grain/edge trim strategy.
 - [ ] Confirm top plywood face is clean, dry, untreated, and adhesive-compatible.
@@ -521,16 +525,16 @@ Run this before assuming a weekend task is blocked.
 ## If energy is low
 
 1. Write the Desk/storage correction list on tape or paper and photograph the current module state.
-2. Mark changed dimensions, module footprints, seams, shims, brackets, hardpoint candidates, roof/entry/interference notes, and battery extraction path before moving parts again.
+2. Mark changed dimensions, module footprints, seams, shims, brackets, floor-tab/hardpoint candidates, roof/entry/interference notes, and battery extraction path before moving parts again.
 3. Label the next service-panel zones: electrical, wet spine, battery, bench lid, desk cubby.
-4. Sort the next `buy now / buy later / do not buy yet` items: Lonseal adhesive/tools/protection, hardpoint hardware, panel fasteners/latches, P-clamps/loom/labels, plumbing fittings, shore-port hardware.
-5. Stop before drilling exterior penetrations, cutting final countertop, or gluing flooring when tired.
+4. Sort the next `buy now / buy later / do not buy yet` items: Plusnuts/rivnuts and setting tooling, Lonseal adhesive/tools/protection, hardpoint/floor-tab hardware, panel fasteners/latches, P-clamps/loom/labels, plumbing fittings, shore-port hardware.
+5. Stop before drilling final holes or gluing flooring when tired.
 
 ## If energy is high
 
 1. Finish Desk/storage corrections enough to trust module geometry, then photograph/label/trace everything before teardown.
-2. Run the floor go/no-go: hardpoint map, battery extraction path, service-access plan, future floor-through/pass-through reservations, plywood leveling, adhesive/tool/cure readiness.
-3. If the gate is green, remove modules once, clean/level the bed and plywood, dry-fit Lonseal, glue/cure/protect, then reinstall and hard-mount modules.
+2. Run the pre-teardown hardpoint day: choose floor tabs, mark centers, confirm drill/Plusnut access, install/test/register Plusnuts where practical, and build the Lonseal hole-recovery map.
+3. If the hardpoint gate is green, remove modules once, clean/level the bed and plywood, dry-fit/pre-punch Lonseal, glue/cure/protect, then reinstall and hard-mount modules.
 4. After floor/module reinstall, final-route electrical: alternator conductors/harness, shore power, full `4x` battery install, covers, labels, strain relief, and controlled tests.
 5. After floor + electrical + temporary Galley counter template, final-route plumbing when it can actually be leak/function tested.
 
@@ -549,7 +553,7 @@ Run this before assuming a weekend task is blocked.
 
 ## Hard holds
 
-- [HOLD] No Lonseal glue-down unless module fit is verified, hardpoints are mapped, service access is preserved, future pass-through/floor-through needs are reserved or explicitly not needed, plywood is level/prepped, and adhesive/tool/cure conditions are ready.
+- [HOLD] No Lonseal glue-down unless module fit is verified, hardpoints are determined with modules still installed, Plusnut/rivnut holes are drilled/tested/registered, service access is preserved, future pass-through/floor-through needs are reserved or explicitly not needed, plywood is level/prepped, and adhesive/tool/cure conditions are ready.
 - [HOLD] No road travel with freestanding/lightly restrained electrical module.
 - [HOLD] No full `4x` battery install until the floor/module-reinstall gate is closed enough that the bank will not need to come back out for flooring.
 - [HOLD] No alternator first-charge until APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior are ready.
