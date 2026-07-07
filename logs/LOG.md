@@ -3,7 +3,7 @@
 - Owner reported the Desk/storage module has been reinforced and mostly test-installed, with a few corrections identified before locking top/panel geometry.
 - Owner also reported major Galley reinforcement, including redoing a rear/back stretch as one continuous `2010` member; Galley now feels very sturdy.
 - All major modules are now test-fit/installed and generally look good, moving the build from rough skeleton assembly into correction, service-access, rough-in, panel, and commissioning gates.
-- Updated the live checklist priority ladder: finish Desk/storage corrections first; then map/prototype functional service/anti-rack panels; then rough in water tank/fill/vent/pump/graywater/hot-stub plumbing; then shore/electrical closeout and controlled low-power testing. Alternator first-charge, full battery-bank install, Lonseal, final solar, permanent hot-water/propane, and exterior penetrations remain held until their prerequisites are physically proven.
+- Updated the live checklist priority ladder: finish Desk/storage corrections first; then map/prototype functional service/anti-rack panels; then keep plumbing in discovery/mockup until electrical and countertop geometry make it testable; then shore/electrical closeout and controlled low-power testing. Alternator first-charge, full battery-bank install, Lonseal, final solar, permanent hot-water/propane, and exterior penetrations remain held until their prerequisites are physically proven.
 
 ## 2026-07-05 — Black walnut surface commission direction captured
 

@@ -84,8 +84,8 @@ Now that the major modules are test-fit/installed, the next work should close ga
 
 1. **Tonight:** finish Desk/storage corrections, record any changed dimensions, run seated/entry/roof-sweep/service-access tests, and add temporary restraint where the module still moves.
 2. **Next physical build block:** make the service/panel map, then build only the panels/tabs/latches that add stiffness, protect wiring/plumbing, or define Nick's wood templates.
-3. **Next systems block:** rough in water tank ports, fill/vent/outlet routing, pump board/tray, graywater path, and capped hot stubs before final panels or flooring.
-4. **Next electrical block:** close AC/DC safety items, shore-port location/routing, covers, strain relief, labels, and GFCI/low-power tests. Use one battery only if it helps controlled tests; do not install the full bank just to remove it again.
+3. **Next systems block:** do plumbing discovery/mockup, not final install: solve water-tank port orientation, fill/vent/outlet route, pump board/tray location, graywater path, sink/faucet clearance on a plywood/cardboard countertop template, and capped future hot stubs. Leave final hoses/fittings removable until electrical and counter geometry allow real testing.
+4. **Next electrical block:** close enough AC/DC safety items to enable controlled subsystem tests: shore-port location/routing, covers, strain relief, labels, GFCI/low-power tests, and one-battery temporary power if needed. Do not install the full bank just to remove it again.
 5. **Later / parallel discovery:** alternator rough-in with fuses pulled, hot-water product discovery, propane mount location, and solar/roof passthrough planning. Do not let these drive irreversible penetrations until exact routes and hardware are known.
 
 ## Status legend
@@ -519,7 +519,7 @@ Run this before assuming a weekend task is blocked.
 
 1. Finish Desk/storage test-install corrections and run seated/entry/roof/service-access checks.
 2. Map and prototype the first functional panels: anti-rack/service panels, not full cosmetics.
-3. Build the water-system rough-in board/tray on the bench: tank outlet, fill/vent plan, strainer, pump, accumulator, manifold, leak tray, graywater path, and capped hot stubs.
+3. Plumbing work should stay in discovery/mockup until electrical and countertop geometry make it testable: tank outlet, fill/vent, pump/strainer/accumulator placement, leak tray, graywater path, sink/faucet template, and capped hot stubs. Do not final-install hoses/fittings that would just be removed later.
 4. Locate shore-power inlet and internal cable/breaker strain-relief path; cut only after the inside/outside route is proven.
 5. Add electrical covers, strain relief, labels, and controlled low-power tests. Use one battery only if the test needs it; keep the full bank out until access/floor/plumbing gates are closed.
 
