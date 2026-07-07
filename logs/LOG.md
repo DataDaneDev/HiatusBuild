@@ -1,3 +1,9 @@
+## 2026-07-06 — Flooring elevated to next gated sprint candidate
+
+- Owner challenged the prior sequencing because all major modules are now in-truck, connected, and fitment-verified; any final electrical or plumbing done before flooring would likely be removed again when the modules come out for Lonseal and hard mounting.
+- Updated the live checklist with a non-yes-man posture: flooring is now the likely next major sprint, but only as a gate. Before glue, module geometry must be documented, hardpoints mapped, service access preserved, future floor/pass-through needs reserved or explicitly ruled out, plywood leveled/prepped, and adhesive/tool/cure readiness confirmed.
+- Revised follow-on order after a successful floor sprint: reinstall/hard-mount modules, then final-route alternator/shore/full battery electrical, then final-route plumbing once electrical and a temporary Galley counter/sink template make leak/function testing real.
+
 ## 2026-07-06 — Major module test-fit state updated
 
 - Owner reported the Desk/storage module has been reinforced and mostly test-installed, with a few corrections identified before locking top/panel geometry.
