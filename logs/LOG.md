@@ -1,3 +1,8 @@
+## 2026-07-09 — Fresh-water tank level sender purchased
+
+- Owner purchased the KUS USA SSS/SSL 14.5 in reed-switch diesel/fuel-water level sender for `$60.00`, Standard American Output `240-30Ω`, with mounting gasket and screws.
+- Added BOM row `212` as the selected fresh-water tank level sender for the `36 gal` wheel-well tank. Current install assumption is Cerbo GX resistive tank input using US `240-30Ω`/`240-33Ω` setup; verify internal depth and flat top-port location before drilling.
+
 ## 2026-07-06 — Hardpoint method corrected before flooring teardown
 
 - Owner clarified that hardpoint determination itself is likely at least a full day and should happen before modules are removed, while current module geometry is still live and fit-verified.
