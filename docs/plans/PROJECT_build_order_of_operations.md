@@ -18,14 +18,14 @@ related:
 - Define a practical order of operations that still supports parallel workstreams.
 - Prioritize measured, reversible post-install module work: validate real camper envelopes first, then build systems and furniture modules without burying service access.
 
-## Planning assumptions (as-of 2026-06-27)
+## Planning assumptions (as-of 2026-07-10)
 - Hiatus install readiness/travel planning is historical; the real camper shell is available for physical measurements and mockups.
-- This plan assumes a post-install interior buildout with reversible/module-first work until service maps, penetrations, and access gates pass.
-- Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline, with the first live `48V`/MultiPlus/Cerbo/shore checkpoint passed and the electrical backer now trimmed/inset into its `80/20` frame.
-- Current electrical-module state: component placement has been adjusted for real MultiPlus depth, the module is freestanding and ready to tie into the bench/desk structure, but it is not road-ready as a standalone module because it still needs bench/desk/galley tie-in, panels/anti-rack restraint, hardpoint verification, and final fastener/strain-relief closeout.
-- Interior/furniture assumptions in `docs/implementation/INTERIOR_furniture_layout_and_galley.md` remain the current draft baseline. The active sequence is now integrated module buildout: bench first, desk desktop/workstation support next, then galley/wet-spine counter/appliance module with the purchased sink/faucet, induction cooktop, and Ninja SP151 cubby. TNUTZ cart consolidation lives in `docs/plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md`; procurement summary lives in `docs/plans/PROCUREMENT_purchase_list_2026-05-26.md`; lighting remains deferred behind core furniture/plumbing/electrical integration.
-
-- Active post-install sprint/punch-list tracker: `docs/plans/LIVE_BUILD_CHECKLIST.md`. Update it whenever the practical next steps, blockers, or completed build work changes.
+- Major Galley/Bench/Electrical/Desk modules have been test-fit as one system. The active critical path has shifted from module fabrication to a deliberate floor teardown, aluminum-compatible hardpoint, substrate, and reinstall gate.
+- The `2021 F-350` pickup box is aluminum. Direct box attachments must follow Ford SVE `Q-222R1`; on-hand steel rivet nuts and stainless fasteners are not valid bed hardpoints.
+- Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline, with the first live `48V`/MultiPlus/Cerbo/shore checkpoint passed. Do not drill around connected/live electrical equipment and do not road-travel until final restraint/access gates pass.
+- The current three-piece single-layer `3/4 in` plywood is below Lonseal's published two-layer `7/8 in` wood-substrate minimum. Glue-down waits for a `1/4 in` underlayment clearance mockup or written Lonseal acceptance of the exact vehicle substrate.
+- Interior/furniture assumptions in `docs/implementation/INTERIOR_furniture_layout_and_galley.md` remain the current baseline. Black-walnut finish surfaces stay template-gated; lighting remains deferred behind core flooring, furniture, plumbing, and electrical integration.
+- Active post-install tracker: `docs/plans/LIVE_BUILD_CHECKLIST.md`. Update it whenever practical sequence, blockers, or completed physical work changes.
 
 ## Typical full-build sequence (once camper shell is physically in hand)
 1. Layout freeze and service-map freeze
@@ -104,25 +104,26 @@ related:
 - Freeze service map from real shell dimensions before penetrations, final cable cuts, Lonseal glue-down, or permanent module skins.
 - Place top-off orders based on real measurements and update logs/tracking.
 
-5. Current module-integration phase (updated `2026-06-27`)
-- Owner status: the electrical backer has been trimmed so it insets cleanly into the `80/20` electrical frame. Minor component shifts were made after real MultiPlus depth proved deeper than earlier assumptions; these are mechanical packaging changes, not an electrical architecture change.
-- The electrical module is now freestanding and ready to tie into the bench/desk structure. Treat the freestanding state as a shop-fit milestone only; do not drive with it loose or lightly anchored because it is still too wobbly without bench/desk/galley tie-in, panels/anti-rack restraint, and final hardpoint verification.
-- Immediate build sequence: build the bench/battery/step structure first so it braces the electrical module and preserves battery/service access; fit the desk desktop/workstation support next; then build the galley/wet-spine counter/appliance module.
-- Galley scope now has real purchased fixtures/appliances to package: Sarlai topmount sink, FORIOUS faucet, Duxtop induction cooktop, and Ninja SP151 air-fryer/toaster-oven cubby. Validate sink cutout/faucet clearance/drain path and appliance heat/retention before permanent panels.
-- Continue using available `10-series`/`2010` stock, regular angle, and on-hand connector hardware as build/prototype stock; use the pending 80/20 nut/hardware shipment for final seams, serviceable fasteners, and hardware standardization rather than letting missing hardware stall module fitting.
-- Sheet-vinyl/Lonseal remains intentionally unglued to avoid damage and preserve access while rough-in/interior buildout decisions are still open. Sheet-vinyl installation is a late finish-floor step after interior buildout/service-access gates, not a near-term blocker.
-- Hold glue-down until the floor/rough-in gate passes: no pending floor penetrations, hardpoint pockets verified, EPS/subfloor sitting flush, and adhesive/roller method confirmed.
-- Build the 80/20/furniture list from physical module envelopes first: classify each member as structural, panel support, service-access edge, or locator/anti-rattle, then use the consolidated TNUTZ WIP cart/visual aids before final vendor-cut lengths.
+5. Current flooring-foundation phase (updated `2026-07-10`)
+- Major modules are test-fit well enough to preserve their real geometry. Finish only the remaining Desk/storage corrections required to trust final feet/tabs, then record centers from physical modules before teardown.
+- Do not final-drill the bed around connected/live electrical equipment. Isolate/remove loose batteries, transfer real tab centers, remove modules, then drill/set/test in a clean de-energized work area.
+- Classify every floor attachment: independent subfloor retention, ordinary cabinetry, or heavy-system restraint. Battery bench/electrical/full-tank restraint needs distributed/redundant load paths; do not assume thin aluminum pickup-box sheet inserts are crash-rated.
+- Clean/map the exposed bed; distinguish abandoned holes from seams and factory drains/weep paths. Gorilla tape is for compatible discrete hole patches only, not seams. Pass a controlled low-flow ingress test before floor closure.
+- Correct hardpoint materials for the aluminum pickup box before drilling: measured-grip aluminum rivet nuts/Plusnuts, Ford-compatible coated bolts/aluminum washers/isolators, restored edge corrosion protection, and no stainless or standard steel rivet nuts in direct box attachment.
+- Resolve the Lonseal substrate gate before glue. Preferred path is a staggered `1/4 in` APA underlayment over the three `3/4 in` base panels if the `0.250 in` height increase passes physical clearance; otherwise obtain written Lonseal acceptance of the exact single-layer vehicle substrate.
+- After hardpoints, independent floor retention, substrate, drainage, and full module refit pass, dry-fit/install Lonseal with the published #650 temperature/mix/working/rolling/cure process. Reinstall modules only after the full `72 h` cure.
+- Continue using physical module envelopes to control later furniture/panel decisions; keep final walnut, wiring, plumbing, and cosmetic closeout downstream of the floor foundation gate.
 
 ## Deferred / purchase-later rows (keep out of current critical path unless triggered)
 - Optional 12V expansion path: row `118`.
 
 ## Critical hold points (do not skip)
-- Hold 1: No penetrations until layout + service map is frozen from real installed camper measurements.
-- Hold 2: No Lonseal glue-down, insulation, or panel closure until floor/rough-in/service-access gates pass.
-- Hold 3: No final cabinetry close-out, drawer-slide lengths, or cosmetic skins until fridge/tank/electrical envelopes are verified.
-- Hold 4: No road travel with the freestanding electrical module until it is tied into the bench/desk/galley structure, anti-rack restraint/panels are installed, hardpoints are verified, and fasteners are witness-marked.
-- Hold 5: No field deployment until shakedown defects are triaged.
+- Hold 1: No final penetrations until the layout/service map and the underside/no-drill check are frozen from physical modules.
+- Hold 2: No pickup-box hardpoint drilling until the aluminum-compatible insert/fastener/isolation/coating stack and matched-gauge installation test pass.
+- Hold 3: No Lonseal glue-down until moisture/drainage, independent floor retention, substrate compliance, hardpoint registration, and #650 workflow gates pass.
+- Hold 4: No final cabinetry/panel closeout until fridge/tank/electrical envelopes and service access remain valid after the final floor stack.
+- Hold 5: No road travel with the electrical/heavy modules until integrated anti-rack and redundant restraint paths are complete, torqued, witness-marked, and inspected.
+- Hold 6: No field deployment until the low-consequence shakedown defects and post-drive fastener/moisture inspection are closed.
 
 ## Truck-bed-camper adaptations vs typical van guides
 - Less bare-metal body prep than a cargo van, but shell penetrations/sealing quality is even more critical.

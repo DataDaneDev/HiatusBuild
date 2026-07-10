@@ -34,14 +34,14 @@ related:
 - Solar option screening matrix (stringing + MPPT fit flags): [SOLAR_configuration_matrix](../studies/SOLAR_configuration_matrix.md)
 - Electrical decisions, risks, and unresolved items: [TRACKING](TRACKING.md)
 
-### Planning snapshot (base model as-of `2026-06-27`)
+### Planning snapshot (base model as-of `2026-07-10`)
 - Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).
 - House architecture: `48V` core with Orion-Tr Smart `48V->12V` charging/step-down feeding a shared battery-backed `12V` junction.
 - Inverter/charger: Victron MultiPlus-II `48/3000/35-50`, DC/inverter mode live-tested with no observed errors.
 - Charge sources in current BOM: solar MPPT, dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48` migration baseline), shore AC charger path.
 - Monitoring and protection: Cerbo GX, SmartShunt, battery temp sensing, Class T primary fuse + branch fusing.
 - AC protection chain is purchased/locked for Phase 1 (`shore source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> single 6-way AC DIN enclosure -> 30A AC-in breaker -> MultiPlus -> 30A AC-out main -> two 20A GFCI branches`). AC-in/MultiPlus charging has passed a short limited-current live test; AC-out branch/GFCI commissioning remains pending.
-- Current build phase: the electrical backer has been trimmed to inset into its `80/20` frame and the module is freestanding after minor component shifts for real MultiPlus depth. Treat it as shop-fit complete but not road-ready until tied into the bench/desk/galley structure with anti-rack restraint, hardpoint verification, covers, labels, J-clamp/strain relief, and service-access checks before final shell-dependent cable cuts, skins, or finish-floor glue-down.
+- Current build phase: integrated modules are test-fit, but the active gate is the floor/aluminum pickup-box foundation. Keep the electrical module de-energized/isolated during hardpoint drilling and not road-ready until the substrate is independently retained; Ford-compatible aluminum hardpoints plus heavy-system redundant load paths are proven; the module is tied into the bench/desk structure with anti-rack restraint; and covers, labels, strain relief, service access, and post-install witness marks are complete.
 
 ### Commissioning snapshot (`2026-05-27`)
 - Owner confirmed `55.5V` at the `48V` bus and at the MultiPlus after pre-charge/energization.
@@ -55,7 +55,7 @@ related:
 
 ### Modeling rules (procurement-first plus full-load)
 - Primary procurement source of truth is `bom/bom_estimated_items.csv`.
-- Load model is maintained in `bom/load_model_wh.csv` (model v4) and includes BOM-sourced installed loads, owner-supplied work electronics (kept out of BOM cost totals), and a conservative preliminary/future camper-audio listening profile. Audio is not near-term procurement.
+- Load model is maintained in `bom/load_model_wh.csv` (model v5) and includes BOM-sourced installed loads, owner-supplied work electronics (kept out of BOM cost totals), and a conservative preliminary/future camper-audio listening profile. Audio is not near-term procurement.
 - Legacy workbook WH model assumptions are retired and not used.
 - Voltage convention: use `48V` as architecture label, but use `51.2V` nominal for battery Wh accounting.
 - Run-length convention: measured physical layout lengths are cut-length source-of-truth; CAD values are planning references only.
@@ -251,7 +251,7 @@ shore_charge_power_w = charge_voltage * charger_current_a
 bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 ```
 - Retired model note:
-- `bom/load_model_wh.csv` v1 (workbook-derived chart), v2 (BOM-only), and v3 (BOM plus owner-supplied office loads) are superseded by model v4 (BOM plus owner-supplied office loads plus a conservative preliminary/future camper-audio allowance).
+- `bom/load_model_wh.csv` v1 (workbook-derived chart), v2 (BOM-only), v3 (BOM plus owner-supplied office loads), and v4 (added preliminary/future camper audio) are superseded by model v5, which adds the purchased Ninja SP151 appliance load while retaining the audio allowance.
 
 ## Camper audio
 - Camper audio implementation owner: [CAMPER_audio_system](../implementation/CAMPER_audio_system.md). Status: preliminary/future-roadmap, not near-term procurement. Draft package is a DC-first `2.1` camper-only system: Samsung `S11 Ultra` tablet -> Kicker `46KMC2` marine media receiver -> Kicker `CSC67` `4 ohm` speaker pair plus Kicker `49PTRTP10` powered down-firing 10 in subwoofer.

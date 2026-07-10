@@ -1,6 +1,6 @@
 # Hiatus Truck Bed Camper Project
 
-This is the single workspace map and update guide for the Hiatus/F-350 camper build. The repo is now in the **post-install interior buildout** phase: use it to keep the measured camper layout, electrical module, wet-spine/galley, flooring, payload, and 80/20/panel decisions aligned without creating parallel notes.
+This is the single workspace map and update guide for the Hiatus/F-350 camper build. The repo is now in the **flooring-foundation / restrained-reinstall** phase: use it to keep measured module geometry, the aluminum pickup box, flooring, hardpoints, electrical/plumbing modules, payload, and 80/20/panel decisions aligned without creating parallel notes.
 
 ## Open in Obsidian
 - Start at [00 Home](00%20Home.md) for the shortest navigation path.
@@ -8,19 +8,20 @@ This is the single workspace map and update guide for the Hiatus/F-350 camper bu
 - The shared `.obsidian` settings group the graph by folder role and keep personal workspace state local.
 
 ## Fixed project constants
-- Truck: 2021 Ford F-350 Regular Cab Long Bed
+- Truck: 2021 Ford F-350 Regular Cab Long Bed with aluminum pickup box
 - Truck mods: 2.5 inch lift, 37 inch tires, 4.88 differential regear
 - Camper status: Hiatus shell is in hand/installed; May 7, 2026 install readiness is now historical context
 - Primary use: Financial Analyst remote work (typical 9-5, Monday-Friday) with occasional subsidiary flights
 
-## Current project posture — 2026-06-05
-- Current focus: finish the electrical board as a hard-mounted, strain-relieved mobile module before final 80/20/truck integration.
-- Electrical state: first live `48V` checkpoint passed; `55.5V` confirmed through the system, MultiPlus inverter mode works, SmartShunt/Orion/Cerbo are online, and MultiPlus LiFePO4 settings have been owner-verified by supervised one-battery shore-charge behavior: bulk began, then quickly transitioned to absorption at/near 100% as planned. AC-out/GFCI and alternator commissioning remain separate gates.
-- Immediate procurement focus: electrical-board/module cleanup, install the purchased Orion final standalone `F-06` cleanup stock when convenient (`30A 58V` MIDI interim -> `20A 80V` FKS/ATO final), and WIP TNUTZ `10-series` cart review. Camper audio remains preliminary/future; interior lighting now has a deferred desired design: `12V` QuinLED/WLED with hardwired buttons, not near-term procurement.
-- Board build focus: major electrical hardware is hard-mounted except the Cerbo; decide/finish the board surface now if desired, mount Cerbo, then finalize wiring, labels, covers, J-clamp/strain relief, and abrasion protection.
-- Interior baseline: office-first hybrid layout with a passenger-side lofted Iceco/fridge + wet-spine exoskeleton over/near the `36 gal` wheel-well tank, pump/accumulator below the fridge, adjacent separated battery bench, driver-side electrical closet/workstation/DC shelf, and clear center aisle.
-- Furniture/flooring posture: prototype with `10-series`/targeted 80/20 only where needed; keep Lonseal/final closure gated until EPS/subfloor fit, hardpoints, penetrations, moisture paths, and service access are verified.
-- Payload posture: legal payload still depends on the door sticker/scale tickets; current planning assumes a narrow payload margin and treats water, batteries, bumpers, spare, 80/20, panels, tools, and tech as active weight risks.
+## Current project posture — 2026-07-10
+- Current focus: close the flooring foundation once, then reinstall modules with corrosion-compatible and dynamically credible restraint before final routes/skins.
+- Module geometry: Galley, Desk/storage, Bench, and electrical modules are reinforced/test-fit well enough to preserve their real feet, service access, and two-datum hardpoint map.
+- Pickup-box correction: the `2021 F-350` box is aluminum. Do not install on-hand standard steel rivet nuts (BOM `127`) or direct stainless hardware (BOM `46`) in it; follow Ford SVE `Q-222R1`, measured grip, aluminum inserts, compatible coated/isolation hardware, and matched-material testing.
+- Sealing posture: classify holes vs seams vs factory drains/weep paths. Gorilla Patch & Seal tape is limited to compatible discrete holes and does not replace seam repair. Pass a controlled zoned ingress test before closure.
+- Flooring posture: no Lonseal until hardpoints are registered/refit and the current three-panel `3/4 in` plywood receives a staggered `1/4 in` APA top layer or written Lonseal acceptance of the exact substrate.
+- Restraint posture: plywood is not the furniture anchor. Independently retain the floor; use rigid compression sleeves where required; and give the battery bench, electrical module, and full water tank distributed/redundant reinforced load paths rather than assuming ordinary thin-sheet inserts are crash-grade.
+- Electrical state: first-live `48V` checkpoint passed; AC-out/GFCI, alternator commissioning, final battery install, and road restraint remain separate gates.
+- Payload posture: legal payload still depends on the door sticker/scale tickets; water, batteries, bumpers, spare, 80/20, panels, tools, and tech remain active weight risks.
 
 ## First-stop update map
 Use this table first whenever you are deciding where to put information.

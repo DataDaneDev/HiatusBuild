@@ -1,0 +1,2 @@
+# Keep reference manuals as binary assets; do not normalize or text-diff PDF streams.
+*.pdf binary

@@ -24,9 +24,9 @@ related:
 - Constraints: truck/camper/dates are fixed constants
 - Assumptions to validate: autonomy target, climate profile, load profile, travel cadence impacts
 - Electrical run-length policy: physical bench-layout measurements are the primary cut-length source; CAD values are reference-only.
-- Working load baseline assumption from load model v4 (BOM + owner-supplied office loads + conservative preliminary/future camper-audio allowance):
-- `core_workday`: `3,794 Wh/day`
-- `winter_workday`: `4,587 Wh/day`
+- Working load baseline assumption from load model v5 (BOM + owner-supplied office loads + conservative preliminary/future camper-audio allowance):
+- `core_workday`: `3,915 Wh/day`
+- `winter_workday`: `4,829 Wh/day`
 - `minimal_idle_day`: `624 Wh/day`
 
 ## Decision log
@@ -442,7 +442,7 @@ related:
 - Context: Owner wants strong bass and good audio in the camper without audiophile cost or duplicative truck/camper audio wiring. The `S11 Ultra` tablet is already the shared dashboard/Victron/media device.
 - Options considered: soundbar-only, truck/camper shared subwoofer hardware, powered-sub camper `2.1`, or full multi-amp audiophile system.
 - Decision drivers: strong bass per dollar, compact packaging, low integration risk, simple tablet control, and keeping high-current audio wiring on the camper `12V` side without new `48V` branch complexity.
-- Result: draft future package is Kicker `46KMC2` source/head unit + Kicker `CSC67` `4 ohm` speaker pair + Kicker `49PTRTP10` powered 10 in down-firing sub. BOM rows `189-193`, implementation doc `docs/implementation/CAMPER_audio_system.md`, electrical fuse/conductor integration, and load model v4 preserve the concept for later, but audio is not near-term procurement.
+- Result: draft future package is Kicker `46KMC2` source/head unit + Kicker `CSC67` `4 ohm` speaker pair + Kicker `49PTRTP10` powered 10 in down-firing sub. BOM rows `189-193`, implementation doc `docs/implementation/CAMPER_audio_system.md`, electrical fuse/conductor integration, and the current load model (v5 supersedes the original v4 entry) preserve the concept for later, but audio is not near-term procurement.
 - Follow-up: validate KMC2 mounting depth, PTRTP10 dry/ventilated low mounting location, speaker cutout/pod locations, final RCA/speaker-wire lengths, and actual `12V` buffer-battery behavior during loud audio plus normal 12V loads.
 
 - ID: D-047
@@ -489,6 +489,15 @@ related:
 - Decision drivers: intentional furniture-grade interior, matching Galley/Desk/Bench design language, and the opportunity to use a controlled live edge at the Galley entry end.
 - Result: current surface baseline is a black walnut live-edge Galley countertop, likely `~4 ft x 19 in` pending exact confirmation, `1.5 in` preferred / `2 in` acceptable thickness, with the last `~15 in` curving inward if the slab allows; a dimensional black walnut computer desk top; and a dimensional black walnut L-shaped Bench/lid top supported on aluminum-extrusion tabs with gas struts if actual weight/geometry work. Finish default is satin polyurethane or equivalent durable clear film, with epoxy used selectively for void/check stabilization rather than full flood coat unless deliberately chosen.
 - Follow-up: create plywood/templates and dimension packet for Nick; confirm final Galley length/width, sink/faucet/appliance clearances, support tabs, Desk depth/height, Bench hinge/strut/latch geometry, finish sample, price, and schedule before premium cuts.
+
+- ID: D-052
+- Date: 2026-07-10
+- Decision: Promote the floor to the active foundation gate and reject the prior generic steel-Plusnut/single-layer-glue-down sequence.
+- Context: Integrated modules are test-fit, so one controlled teardown can now settle the bed, floor, and hardpoints before final system routing. Audit found the `2021 F-350` pickup box is aluminum; Gorilla tape instructions exclude seams; Lonseal's published wood-substrate requirement exceeds the current single `3/4 in` three-panel floor; and ordinary thin-sheet inserts cannot be assumed to restrain the battery/electrical/full-tank mass under dynamic loads.
+- Options considered: proceed with on-hand steel inserts/stainless bolts and glue the current substrate; defer all floor work; or stop at a defined engineering gate and correct materials, drainage, substrate, and restraint before irreversible work.
+- Decision drivers: aluminum corrosion compatibility, water-trap avoidance, bonded-floor durability, serviceability, dynamic restraint, and avoiding a second major teardown.
+- Result: capture real module feet while fit is proven; isolate/remove before metal drilling; classify openings and pass controlled ingress testing; use measured-grip aluminum inserts plus Ford-compatible coated/isolation hardware; independently retain the floor; use rigid aluminum compression sleeves where required; close the `1/4 in` underlayment vs written Lonseal-exception gate; prove every hardpoint with a full dry refit; then install/cure Lonseal and reinstall restrained modules. Gorilla tape is limited to compatible discrete holes, not seams/drains.
+- Follow-up: measure pickup-box grip, mock the `0.250 in` height increase, lock `F/C/H` hardpoint map and heavy-system second load paths, choose flat perimeter vs flash-cove, update BOM rows `46`, `127`, `149-150`, `178`, and `214-216`, and record installation/shakedown evidence in `logs/LOG.md`.
 
 ## Risk register
 - ID: R-001
@@ -600,31 +609,31 @@ related:
 - Status: Closed / historical (owner confirmed 2026-05-17)
 
 - ID: R-013
-- Risk: Old bed rail holes, rail-cap gaps, bed-floor drain holes, unused penetrations, and small bed-corner gaps can remain dust/water intrusion paths after the sealed barn-door camper upgrade. Water under the EPS/plywood subfloor is unacceptable because it can rot the floor.
+- Risk: Abandoned holes/body gaps can admit dust/water, but indiscriminate sealing can also block factory drains/weep paths and trap condensation or a future leak under the EPS/plywood.
 - Impact (1-5): 5
-- Likelihood (1-5): 2
-- Mitigation: Bed rail caps were re-bonded with polyurethane, small drill holes were patched with Gorilla Patch & Seal tape, and selected corner air gaps received polyurethane beads. Let cure, then inspect for lifted edges, proud interference, dust trails, or dampness after normal travel/shakedown before final flooring closeout.
-- Trigger: Pre-departure inspection, post-install ordinary inspection, subfloor reinstall, Lonseal glue-down decision, or first dusty/wet drive after camper install.
+- Likelihood (1-5): 3
+- Mitigation: Map/classify every opening; preserve deliberate low-point drainage/inspection; use hard-rolled Gorilla tape only on compatible discrete holes because the product excludes seams; mechanically patch larger openings; cure and pass a zoned low-flow/blotter ingress test before floor closure; inspect again after the first dusty/wet shakedown.
+- Trigger: Any new tape/sealant, subfloor reinstall, Lonseal glue-down, unexplained dampness/dust trail, or blocked/unknown drain.
 - Owner: Sunny
-- Status: Partially mitigated; cure/post-drive inspection pending
+- Status: Open; one tape roll used, second planned, opening map and controlled ingress test pending
 
 - ID: R-014
-- Risk: Premature Lonseal glue-down can trap unresolved floor penetrations/hardpoints and make three-piece subfloor removal difficult.
-- Impact (1-5): 4
+- Risk: Premature Lonseal glue-down can trap unresolved hardpoints/penetrations and bond a one-piece finish to a three-panel single-layer substrate below Lonseal's published wood-subfloor minimum, causing telegraphing, bond stress, or expensive teardown.
+- Impact (1-5): 5
 - Likelihood (1-5): 3
-- Mitigation: Require glue-down gate: rail/bed-floor/corner sealing complete and visually inspected after cure/normal use, EPS trim, hardpoint pocket verification, no pending floor penetrations, exact trowel purchased, roller/rolling method confirmed, and dry cure window.
-- Trigger: Decision to apply Lonseal adhesive.
+- Mitigation: Hold glue-down until moisture/drainage passes, the perimeter method is chosen, all holes/hardpoints are registered/tested, the floor is independently retained, and either a `1/4 in` APA underlayment passes the height mockup or Lonseal gives written acceptance of the exact substrate. Follow complete #650 mix/open/working/rolling/cure requirements.
+- Trigger: Any decision to cut/apply Lonseal adhesive or permanently bury base-floor fasteners/joints.
 - Owner: Sunny
-- Status: Open
+- Status: Open / explicit hold
 
 - ID: R-015
-- Risk: Furniture/module integration can still rack, shift, or require rework if the electrical tower, bench, desk, galley, fridge/tank overlap, and service panels are treated as separate objects rather than one restrained interior structure.
-- Impact (1-5): 4
+- Risk: Modules can rack, shift, tear pickup-box sheet, or create projectiles if steel/stainless hardpoints are used in the aluminum box, bolt preload crosses EPS/soft stack, or thin-sheet inserts are treated as the sole dynamic restraint for batteries, electrical equipment, or the full water tank.
+- Impact (1-5): 5
 - Likelihood (1-5): 3
-- Mitigation: Current posture is correct: continue building integrated `80/20` modules with on-hand stock/hardware, but do not road-test the freestanding electrical module until it is tied into the bench/desk/galley structure with panels/diagonals/angle bracing, verified hardpoints, and service-access checks. Keep exact skins/drawer slides/final panels gated on module fit.
-- Trigger: Any exact-cut extrusion, drawer slide, panel, skin, fridge support, battery bench, pump-board purchase, or attempt to drive with the freestanding electrical module.
+- Mitigation: Follow Ford `Q-222R1`; use measured-grip aluminum inserts plus compatible coated/isolation hardware and edge protection; test setting/spin/service behavior on matched aluminum; independently retain the floor; use rigid aluminum compression sleeves where needed; classify anchors `F/C/H`; and provide distributed/redundant reinforced load paths for heavy systems before shakedown.
+- Trigger: Pickup-box drilling, insert procurement/installation, heavy-module reinstall, filling the water tank, installing batteries, or any road test.
 - Owner: Sunny
-- Status: Partially mitigated by physical electrical-module fit; road-restraint/integrated-module gate open
+- Status: Open / no-drill and no-road gate
 
 - ID: R-016
 - Risk: Battery first-charge or paralleling error can create BMS trips, high-current faults, or mismatched parallel-bank behavior.
@@ -654,8 +663,13 @@ related:
 - Status: Open
 
 ## Open questions
+- Measure actual aluminum pickup-box sheet/grip and backside clearance at each candidate hardpoint; lock the aluminum insert SKU, drill size, coated bolt/aluminum washer/isolator stack, corrosion treatment, installation tool, and matched-gauge proof test.
+- Mock the `0.250 in` height increase and choose staggered `1/4 in` APA underlayment or obtain written Lonseal acceptance of the exact single-layer `3/4 in` three-panel substrate.
+- Map every factory drain/weep path and existing patch; decide the deliberate low-point drainage/inspection strategy and record the zoned low-flow ingress-test result.
+- Classify all floor points `F/C/H` and define reinforced/redundant restraint for the battery bench, electrical module, and full `36 gal` tank before any road test.
+- Decide flat-trim vs flash-cove Lonseal perimeter and whether Lonseal #400/contact-adhesive materials are required for vertical surfaces.
 - Lock Nick black-walnut commission details: exact Galley counter length/width (`~4 ft x 19 in` target pending confirmation), `1.5 in` vs `2 in` thickness, last `~15 in` live-edge curve, Desk dimensions, L-shaped Bench/lid hinge/support/gas-strut geometry, finish sample, price, and delivery timing.
-- Verify electrical-module road-restraint details before driving: bench/desk tie-in, hardpoints, panel/diagonal/angle bracing, fastener witness marks, anti-rattle interfaces, strain relief, and emergency disconnect/fuse access.
+- Verify electrical-module road-restraint details after the floor load-path decision: bench/desk tie-in, panels/diagonals, fastener witness marks, anti-rattle interfaces, strain relief, and emergency disconnect/fuse access.
 - Log parallel-bank current-sharing/voltage behavior under controlled charge/load; use similar total loop resistance per battery path rather than forcing equal positive-only leads.
 - Measure Iceco lid-open/vent/power-cord envelope at the raised passenger-side `~16 in` lofted height and validate tank overlap, pump-service access, and aisle/entry clearance.
 - Measure the driver-side desk/monitor/electrical-shelf roof-down sweep envelope, choose the primary monitor mechanism (`rising VESA spine` vs under-desk flip-up vs quick-release sleeve), and validate that the stowed face-down cradle supports bezel/back-shell/VESA structure rather than loading the LCD panel.

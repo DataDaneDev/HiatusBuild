@@ -9,7 +9,7 @@ status: active
 
 # Docs Map
 
-Use this folder map when deciding where a document belongs. Current repo posture is **post-install electrical-module hard-mount plus measured interior buildout**: keep active truth in the owner docs below, and treat pre-install/readiness plans as historical references unless they are explicitly refreshed.
+Use this folder map when deciding where a document belongs. Current repo posture is **flooring foundation plus corrosion-compatible/restrained module reinstall** (`2026-07-10`): keep active truth in the owner docs below, and treat pre-install/readiness plans as historical references unless explicitly refreshed.
 
 ## Obsidian navigation
 - Start with [00 Home](../00%20Home.md) for daily navigation.
@@ -56,9 +56,9 @@ Use this folder map when deciding where a document belongs. Current repo posture
 
 ## Plans
 - [plans](plans/): active execution plans, procurement aids, WIP carts, and historical references.
-- [LIVE_BUILD_CHECKLIST](plans/LIVE_BUILD_CHECKLIST.md): live running build checklist and July 4 sprint tracker; update whenever practical build state, blockers, or next shop actions change.
-- [PROJECT_build_order_of_operations](plans/PROJECT_build_order_of_operations.md): active post-install build sequence.
-- [PROCUREMENT_purchase_list_2026-05-26](plans/PROCUREMENT_purchase_list_2026-05-26.md): active short-horizon procurement list; filename date is historical.
+- [LIVE_BUILD_CHECKLIST](plans/LIVE_BUILD_CHECKLIST.md): live running build checklist and foundation-gate tracker; update whenever practical build state, blockers, or next shop actions change.
+- [PROJECT_build_order_of_operations](plans/PROJECT_build_order_of_operations.md): active flooring-foundation through restrained-reinstall sequence.
+- [PROCUREMENT_purchase_list_2026-05-26](plans/PROCUREMENT_purchase_list_2026-05-26.md): dated procurement snapshot; `bom/bom_estimated_items.csv` owns current item/status truth.
 - [TNUTZ_80_20_HARDWARE_MODEL_2026-06-01](plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md): consolidated WIP TNUTZ `10-series` cart, hardware model, visual-aid owner, and pointer to dated module cut-list workbooks under `plans/assets/module-cutlists/`.
 - [INTERIOR_LIGHTING_PLAN_2026-05-31](plans/INTERIOR_LIGHTING_PLAN_2026-05-31.md): deferred desired `12V` QuinLED/WLED interior lighting design with hardwired buttons; supersedes the prior `24V`/MiBoxer worksheet and is not near-term procurement.
 - [HIATUS_work_plan_2026-05-29](plans/HIATUS_work_plan_2026-05-29.md): historical one-night work plan and rough cutlist worksheet; not current sequencing.
