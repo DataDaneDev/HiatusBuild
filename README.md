@@ -1,6 +1,6 @@
 # Hiatus Truck Bed Camper Project
 
-This is the single workspace map and update guide for the Hiatus/F-350 camper build. The repo is now in the **flooring-foundation / restrained-reinstall** phase: use it to keep measured module geometry, the aluminum pickup box, flooring, hardpoints, electrical/plumbing modules, payload, and 80/20/panel decisions aligned without creating parallel notes.
+This is the single workspace map and update guide for the Hiatus/F-350 camper build. The repo is now in the **flooring-foundation / restrained-reinstall** phase: use it to keep measured module geometry, flooring, hardpoints, electrical/plumbing modules, payload, and 80/20/panel decisions aligned without creating parallel notes.
 
 ## Open in Obsidian
 - Start at [00 Home](00%20Home.md) for the shortest navigation path.
@@ -14,12 +14,12 @@ This is the single workspace map and update guide for the Hiatus/F-350 camper bu
 - Primary use: Financial Analyst remote work (typical 9-5, Monday-Friday) with occasional subsidiary flights
 
 ## Current project posture — 2026-07-10
-- Current focus: close the flooring foundation once, then reinstall modules with corrosion-compatible and dynamically credible restraint before final routes/skins.
+- Current focus: close the flooring foundation once, then reinstall modules on registered hardpoints before final routes/skins.
 - Module geometry: Galley, Desk/storage, Bench, and electrical modules are reinforced/test-fit well enough to preserve their real feet, service access, and two-datum hardpoint map.
-- Pickup-box correction: the `2021 F-350` box is aluminum. Do not install on-hand standard steel rivet nuts (BOM `127`) or direct stainless hardware (BOM `46`) in it; follow Ford SVE `Q-222R1`, measured grip, aluminum inserts, compatible coated/isolation hardware, and matched-material testing.
-- Sealing posture: classify holes vs seams vs factory drains/weep paths. Gorilla Patch & Seal tape is limited to compatible discrete holes and does not replace seam repair. Pass a controlled zoned ingress test before closure.
-- Flooring posture: no Lonseal until hardpoints are registered/refit and the current three-panel `3/4 in` plywood receives a staggered `1/4 in` APA top layer or written Lonseal acceptance of the exact substrate.
-- Restraint posture: plywood is not the furniture anchor. Independently retain the floor; use rigid compression sleeves where required; and give the battery bench, electrical module, and full water tank distributed/redundant reinforced load paths rather than assuming ordinary thin-sheet inserts are crash-grade.
+- Hardpoint state: holes are drilled and primed; stainless rivnuts are on hand but not yet set. Finish the bed sealing pass, set/bolt-test the rivnuts, and preserve their locations before flooring goes down.
+- Sealing posture: Gorilla Patch & Seal tape is being used pragmatically where it adheres to the bed liner as a dust/splash barrier. Inspect adhesion and rework actual lifted edges or known ingress paths before closure.
+- Flooring posture: the three-panel `3/4 in` plywood is the height-locked final substrate. No added underlayment; correct real rocking or moving seams before glue-down.
+- Restraint posture: plywood is not the furniture anchor. Use registered bed rivnuts for positively retained modules; use local plywood retention only where needed to keep a floor edge or seam flat.
 - Electrical state: first-live `48V` checkpoint passed; AC-out/GFCI, alternator commissioning, final battery install, and road restraint remain separate gates.
 - Payload posture: legal payload still depends on the door sticker/scale tickets; water, batteries, bumpers, spare, 80/20, panels, tools, and tech remain active weight risks.
 

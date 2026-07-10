@@ -492,12 +492,12 @@ related:
 
 - ID: D-052
 - Date: 2026-07-10
-- Decision: Promote the floor to the active foundation gate and reject the prior generic steel-Plusnut/single-layer-glue-down sequence.
-- Context: Integrated modules are test-fit, so one controlled teardown can now settle the bed, floor, and hardpoints before final system routing. Audit found the `2021 F-350` pickup box is aluminum; Gorilla tape instructions exclude seams; Lonseal's published wood-substrate requirement exceeds the current single `3/4 in` three-panel floor; and ordinary thin-sheet inserts cannot be assumed to restrain the battery/electrical/full-tank mass under dynamic loads.
-- Options considered: proceed with on-hand steel inserts/stainless bolts and glue the current substrate; defer all floor work; or stop at a defined engineering gate and correct materials, drainage, substrate, and restraint before irreversible work.
-- Decision drivers: aluminum corrosion compatibility, water-trap avoidance, bonded-floor durability, serviceability, dynamic restraint, and avoiding a second major teardown.
-- Result: capture real module feet while fit is proven; isolate/remove before metal drilling; classify openings and pass controlled ingress testing; use measured-grip aluminum inserts plus Ford-compatible coated/isolation hardware; independently retain the floor; use rigid aluminum compression sleeves where required; close the `1/4 in` underlayment vs written Lonseal-exception gate; prove every hardpoint with a full dry refit; then install/cure Lonseal and reinstall restrained modules. Gorilla tape is limited to compatible discrete holes, not seams/drains.
-- Follow-up: measure pickup-box grip, mock the `0.250 in` height increase, lock `F/C/H` hardpoint map and heavy-system second load paths, choose flat perimeter vs flash-cove, update BOM rows `46`, `127`, `149-150`, `178`, and `214-216`, and record installation/shakedown evidence in `logs/LOG.md`.
+- Decision: Promote the floor to the active foundation gate using the owner-confirmed practical build path.
+- Context: Integrated modules are test-fit, so one controlled teardown can settle the bed, floor, and hardpoints before final system routing. Owner confirmed that the hardpoint holes are drilled and primed, stainless rivnuts are on hand but not set, Gorilla tape is adhering well to bed liner as a dust/splash barrier, and the floor cannot exceed the existing `3/4 in` height.
+- Options considered: redesign the inserts/substrate around preferred manufacturer conditions; defer floor work; or retain the proven height and proceed with a flat/stable substrate plus registered stainless-rivnut hardpoints.
+- Decision drivers: strict build height, practical sealing performance, serviceability, avoiding another teardown, and positive module retention without turning the work into a compliance exercise.
+- Result: finish the remaining tape/seal pass, set and bolt-test the stainless rivnuts, map the location pattern, settle the existing EPS and `3/4 in` plywood until flat/quiet, dry-fit Lonseal with hole recovery planned, then install/cure and reinstall modules on the registered hardpoints. Product documents remain relevant for adhesive handling and cure, not as a mandate to alter the height-locked floor.
+- Follow-up: record the final rivnut map and sealing completion, verify the plywood panels do not rock or move at seams, choose the Lonseal perimeter treatment, and record first-drive inspection evidence in `logs/LOG.md`.
 
 ## Risk register
 - ID: R-001
@@ -609,31 +609,31 @@ related:
 - Status: Closed / historical (owner confirmed 2026-05-17)
 
 - ID: R-013
-- Risk: Abandoned holes/body gaps can admit dust/water, but indiscriminate sealing can also block factory drains/weep paths and trap condensation or a future leak under the EPS/plywood.
+- Risk: Remaining bed gaps, lifted tape, or poorly sealed hardpoint areas can admit dust or splash under the EPS/plywood.
 - Impact (1-5): 5
 - Likelihood (1-5): 3
-- Mitigation: Map/classify every opening; preserve deliberate low-point drainage/inspection; use hard-rolled Gorilla tape only on compatible discrete holes because the product excludes seams; mechanically patch larger openings; cure and pass a zoned low-flow/blotter ingress test before floor closure; inspect again after the first dusty/wet shakedown.
-- Trigger: Any new tape/sealant, subfloor reinstall, Lonseal glue-down, unexplained dampness/dust trail, or blocked/unknown drain.
+- Mitigation: Finish the practical tape/seal pass, hard-roll and inspect edges, keep hardpoint threads/bearing faces clear, and inspect known paths after the first dusty/wet drive. Rework actual failures rather than creating unnecessary sealing work.
+- Trigger: Lifted tape, an obvious open path, unexplained dampness/dust trail, or first-drive evidence of ingress.
 - Owner: Sunny
-- Status: Open; one tape roll used, second planned, opening map and controlled ingress test pending
+- Status: Open; one tape roll used, second planned, final sealing pass pending
 
 - ID: R-014
-- Risk: Premature Lonseal glue-down can trap unresolved hardpoints/penetrations and bond a one-piece finish to a three-panel single-layer substrate below Lonseal's published wood-subfloor minimum, causing telegraphing, bond stress, or expensive teardown.
+- Risk: Premature Lonseal glue-down can trap unresolved hardpoints/penetrations or telegraph a rocking/high/moving plywood joint, causing avoidable teardown.
 - Impact (1-5): 5
 - Likelihood (1-5): 3
-- Mitigation: Hold glue-down until moisture/drainage passes, the perimeter method is chosen, all holes/hardpoints are registered/tested, the floor is independently retained, and either a `1/4 in` APA underlayment passes the height mockup or Lonseal gives written acceptance of the exact substrate. Follow complete #650 mix/open/working/rolling/cure requirements.
+- Mitigation: Keep the height-locked `3/4 in` floor; hold glue-down until rivnuts are registered/tested, panel seams are flat and stable, the perimeter is chosen, and #650 mixing/spread/rolling/cure conditions are ready.
 - Trigger: Any decision to cut/apply Lonseal adhesive or permanently bury base-floor fasteners/joints.
 - Owner: Sunny
-- Status: Open / explicit hold
+- Status: Open / practical floor-prep hold
 
 - ID: R-015
-- Risk: Modules can rack, shift, tear pickup-box sheet, or create projectiles if steel/stainless hardpoints are used in the aluminum box, bolt preload crosses EPS/soft stack, or thin-sheet inserts are treated as the sole dynamic restraint for batteries, electrical equipment, or the full water tank.
+- Risk: Modules can rack, shift, or create service problems if rivnuts are poorly set, bolts are inaccessible, clamp load crosses unsupported EPS, or heavy assemblies are left visibly loose.
 - Impact (1-5): 5
 - Likelihood (1-5): 3
-- Mitigation: Follow Ford `Q-222R1`; use measured-grip aluminum inserts plus compatible coated/isolation hardware and edge protection; test setting/spin/service behavior on matched aluminum; independently retain the floor; use rigid aluminum compression sleeves where needed; classify anchors `F/C/H`; and provide distributed/redundant reinforced load paths for heavy systems before shakedown.
+- Mitigation: Use the owner-selected stainless rivnuts, verify firm collapse/no spin and usable threads, keep clamp load off EPS, record the location map, preserve service access, and use practical tabs/tie-ins where a heavier module needs more than one point of retention.
 - Trigger: Pickup-box drilling, insert procurement/installation, heavy-module reinstall, filling the water tank, installing batteries, or any road test.
 - Owner: Sunny
-- Status: Open / no-drill and no-road gate
+- Status: Open / rivnut installation and restrained-reinstall gate
 
 - ID: R-016
 - Risk: Battery first-charge or paralleling error can create BMS trips, high-current faults, or mismatched parallel-bank behavior.
@@ -663,10 +663,10 @@ related:
 - Status: Open
 
 ## Open questions
-- Measure actual aluminum pickup-box sheet/grip and backside clearance at each candidate hardpoint; lock the aluminum insert SKU, drill size, coated bolt/aluminum washer/isolator stack, corrosion treatment, installation tool, and matched-gauge proof test.
-- Mock the `0.250 in` height increase and choose staggered `1/4 in` APA underlayment or obtain written Lonseal acceptance of the exact single-layer `3/4 in` three-panel substrate.
-- Map every factory drain/weep path and existing patch; decide the deliberate low-point drainage/inspection strategy and record the zoned low-flow ingress-test result.
-- Classify all floor points `F/C/H` and define reinforced/redundant restraint for the battery bench, electrical module, and full `36 gal` tank before any road test.
+- Finish the remaining practical tape/seal work and record any known dust/splash paths worth revisiting after the first drive.
+- Set the stainless rivnuts; confirm firm collapse/no spin, bolt engagement, and a preserved location map before flooring covers them.
+- Dry-fit the height-locked `3/4 in` plywood panels and resolve only real rocking, high joints, loose edges, or moving seams.
+- Confirm the battery bench, electrical module, and full `36 gal` tank are positively retained and serviceable after reinstall; add practical tabs/tie-ins only where real movement or load sharing calls for them.
 - Decide flat-trim vs flash-cove Lonseal perimeter and whether Lonseal #400/contact-adhesive materials are required for vertical surfaces.
 - Lock Nick black-walnut commission details: exact Galley counter length/width (`~4 ft x 19 in` target pending confirmation), `1.5 in` vs `2 in` thickness, last `~15 in` live-edge curve, Desk dimensions, L-shaped Bench/lid hinge/support/gas-strut geometry, finish sample, price, and delivery timing.
 - Verify electrical-module road-restraint details after the floor load-path decision: bench/desk tie-in, panels/diagonals, fastener witness marks, anti-rattle interfaces, strain relief, and emergency disconnect/fuse access.

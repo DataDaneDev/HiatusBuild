@@ -1,11 +1,14 @@
+## 2026-07-10 — Flooring plan corrected to owner-confirmed practical path
+
+- Owner confirmed the live physical state: truck-bed hardpoint holes are drilled and primed; stainless rivnuts are on hand but **not yet installed**; one Gorilla tape roll is in use and a second is planned for the remaining sealing pass; final floor height cannot exceed the existing `3/4 in` plywood stack.
+- Replaced the over-rigid prior guidance. The active path is: finish practical sealing, set/bolt-test/map the stainless rivnuts, settle EPS and the three `3/4 in` plywood panels until flat/quiet, dry-fit/install Lonseal with the registered hole-recovery plan, then reinstall modules and inspect after the first local drive.
+- Removed the aluminum-insert substitution, rigid compression-sleeve, and `1/4 in` underlayment BOM candidates (`214-216`). Retained the useful checks: no clamp load through EPS, no blind recovery of covered hardpoints, flat/stable plywood before vinyl, and correct #650 adhesive handling/cure.
+- Prior same-day entry below remains historical evidence of the audit pass but is superseded where it conflicts with this owner-confirmed decision.
+
 ## 2026-07-10 — Flooring foundation engineering correction and canonical cleanup
 
-- Re-audited the active floor/sealing/hardpoint plan against the actual `2021 F-350` platform and current manufacturer guidance. This entry supersedes the generic steel-Plusnut/direct-drilling posture recorded on `2026-07-06`; no new physical hardpoint drilling or Lonseal glue-down is recorded here.
-- Corrected the critical material assumption: the pickup box is an aluminum attachment environment. On-hand BOM row `127` steel inserts and row `46` stainless hardware are rejected for direct pickup-box attachment under Ford SVE `Q-222R1`; BOM row `214` now holds the measured-grip aluminum-insert candidate path.
-- Corrected sealing logic: Gorilla Patch & Seal tape is only for compatible discrete holes and its own directions exclude seams. BOM row `178` now records the two-roll / `$28` scope (one used, one planned) without treating tape as a universal seam/drain repair. Factory drains/weep paths now require mapping and a controlled zoned ingress test before closure.
-- Added the missing clamp/load-path details: rigid aluminum compression sleeves are BOM row `215`; the floor must be independently retained; furniture bolts pass through registered/sealed clearance holes; and battery/electrical/full-tank systems require distributed/redundant reinforced restraint rather than relying on ordinary thin-sheet inserts as presumed crash-grade anchors.
-- Added the Lonseal substrate hold: the current one-layer, three-panel `3/4 in` base is below Lonseal's published wood-substrate path. BOM row `216` is a conditional staggered `1/4 in` APA top layer; install it only after a `0.250 in` height mockup, or obtain written Lonseal acceptance of the exact current mobile substrate.
-- Rewrote the canonical flooring procedure and synchronized `PROJECT`, `SYSTEMS`, `TRACKING` decision `D-052` / risks `R-013` through `R-015`, build order, live checklist, root/docs indexes, and BOM. Added Ford `Q-222R1` and the Böllhoff RIVNUT/PLUSNUT catalog, and refreshed the stored Lonseal vehicle guide reference.
+- Initial research pass: the floor/sealing/hardpoint plan was audited against platform and manufacturer references. Its prescriptive aluminum-hardware, seam-tape, compression-sleeve, and underlayment conclusions are superseded by the owner-confirmed practical plan above; reference PDFs are retained only as background research.
+- The canonical flooring procedure, `PROJECT`, `SYSTEMS`, `TRACKING`, build order, live checklist, indexes, and BOM were updated again to reflect the owner-confirmed `3/4 in` height lock, practical bedliner-tape use, drilled/primed holes, and pending stainless-rivnut installation.
 - Reconciled the active load-model pointer from stale v4 values to model v5 (`3,915 / 4,829 / 624 Wh/day`) in current core baselines; historical dated log entries remain unchanged.
 
 ## 2026-07-09 — Fresh-water tank level sender purchased

@@ -41,10 +41,10 @@ related:
 - Use [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md) for active sequence and [LIVE_BUILD_CHECKLIST](../plans/LIVE_BUILD_CHECKLIST.md) for shop actions. Earlier install-window plans are historical references unless explicitly refreshed.
 - Major Galley/Bench/Electrical/Desk modules have been reinforced/test-fit well enough to preserve real feet, seams, access, and integrated geometry through one controlled teardown.
 - Finish only the remaining Desk/storage corrections needed to trust tab locations, then isolate electrical/remove loose batteries and record hardpoint centers from physical modules. Do not drill bed metal around connected/live equipment.
-- The pickup box is aluminum. Direct hardpoints must follow Ford SVE `Q-222R1`; BOM row `127` steel rivet nuts and row `46` stainless fasteners are not approved for bed attachment.
-- The current three-piece single-layer `3/4 in` substrate is a hold. Preferred correction is staggered `1/4 in` APA underlayment if the `0.250 in` height mockup passes; otherwise obtain written Lonseal acceptance before glue.
-- Treat sealing as controlled opening classification, not “cover every gap”: preserve intentional drains/weep paths, use Gorilla tape only for compatible discrete holes, and pass low-flow ingress testing before closeout.
-- Separate independent floor retention, ordinary cabinetry hardpoints, and heavy-system restraint. The battery bench, electrical module, and full water tank need reinforced/distributed load paths; thin box sheet inserts are not assumed crash-rated.
+- Truck-bed hardpoint holes are drilled and primed. Stainless rivnuts are selected/on hand but not yet set; finish sealing, set/bolt-test them, and record locations before the floor closes.
+- The three-piece `3/4 in` plywood floor is height-locked and final. Do not add underlayment; instead correct real rocking, high joints, loose edges, or visibly moving seams before glue.
+- Gorilla tape is a practical dust/splash barrier where it is adhering well to the bed liner. Keep threads and rivnut bearing surfaces clear; inspect known edges after the first dusty/wet drive and rework actual failures.
+- Use registered bed rivnuts rather than plywood alone for modules needing positive retention. Keep the heavier battery/water/electrical assemblies visibly restrained and serviceable; solve observed movement with practical distributed tabs/tie-ins rather than speculative hardware redesign.
 - Electrical system status remains live-proven at the system level, but final wiring/full battery/plumbing work stays downstream of floor cure and restrained module reinstall. Alternator first-charge, AC-out/GFCI, solar, hot water, propane, lighting, and audio remain separate later gates.
 - Black-walnut Galley/Desk/Bench finish surfaces remain template-gated after final floor height and module geometry are proven.
 
@@ -80,33 +80,33 @@ related:
 - M7: shakedown and punch-list closure
 
 ## Build sequencing baseline (as-of 2026-07-10)
-- Build sequencing remains overlapping, but the floor is now a hard dependency because final electrical/plumbing routing and heavy-module installation should not precede another teardown.
+- Build sequencing remains overlapping, but the floor is now a hard dependency because final electrical/plumbing routing and module installation should not precede another teardown.
 - Use physical module feet/access and the current cutlist workbook, not stale CAD, to freeze the hardpoint map.
-- Canonical sequence: transfer real module geometry -> remove/isolate -> classify and test bed openings -> settle EPS/substrate -> close aluminum hardpoint and Lonseal substrate gates -> drill/set/register -> full module refit -> Lonseal install/cure -> restrained reinstall -> final electrical/plumbing routes -> shakedown.
+- Canonical sequence: transfer real module geometry -> finish bed sealing -> set/test/register stainless rivnuts -> settle EPS/existing `3/4 in` substrate -> full module refit -> Lonseal dry fit/install/cure -> restrained reinstall -> final electrical/plumbing routes -> shakedown.
 - Detailed owner docs:
   - [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md)
   - [FLOORING_subfloor_build_process](../implementation/FLOORING_subfloor_build_process.md)
   - [LIVE_BUILD_CHECKLIST](../plans/LIVE_BUILD_CHECKLIST.md)
 
 ## Immediate next decisions
-- **Hardpoint materials:** measure pickup-box sheet/grip and lock the aluminum rivet-nut/Plusnut, coated bolt, aluminum washer/isolator, corrosion treatment, and compression-sleeve stack; reject direct stainless/standard steel hardware.
-- **Substrate:** mock the `0.250 in` extra floor height and choose `1/4 in` APA underlayment or obtain written Lonseal acceptance of the current single-layer floor.
-- **Drainage/sealing:** map factory drains/weep paths and existing patches; use the planned second Gorilla roll only for compatible discrete holes; define and pass the controlled ingress test.
-- **Restraint:** classify `F/C/H` hardpoints and define redundant/reinforced paths for battery bench, electrical module, and full water tank before drilling.
+- **Hardpoint installation:** finish sealing, set each stainless rivnut, confirm firm collapse/no spin, bolt-test the threads, and record the completed location map.
+- **Substrate:** retain the locked `3/4 in` floor height; dry-fit the existing panels and resolve real rocking, high joints, loose edges, or moving seams.
+- **Sealing:** use the planned second Gorilla roll where its bedliner adhesion addresses a known splash/dust path; inspect the result rather than building a formal test program.
+- **Restraint:** use the registered rivnuts for positively retained modules and confirm the battery bench, electrical module, and water tank are not loose or dependent on plywood alone.
 - **Perimeter:** decide flat-trim vs flash-cove before cutting Lonseal; vertical/coved surfaces are not a #650-only installation.
 - **Payload:** capture door-sticker payload and staged scale weights. Treat total payload, rear axle load, rear tire load, and left/right balance as active constraints.
 
 ## Foundation-to-shakedown sequence
-Purpose: turn the proven module geometry into a stable, dry, corrosion-compatible, restrained final foundation before travel use.
+Purpose: turn the proven module geometry into a stable, dry, serviceable final foundation before travel use.
 
 1. **Geometry capture / de-energize**
    - Finish required Desk/storage corrections; isolate electrical/remove loose batteries; photograph/label modules and transfer real foot/tab centers from two bed datums.
-2. **Expose and qualify the bed**
-   - Remove modules/floor, map holes/seams/drains/patches and underside obstructions, repair only classified defects, and pass controlled ingress testing.
+2. **Finish bed sealing and hardpoints**
+   - Complete the practical tape/seal pass, set/bolt-test the stainless rivnuts, and record the finished pattern before it is covered.
 3. **Substrate and hardpoint dry build**
-   - Settle EPS/base plywood, close the Lonseal underlayment exception, install independently retained floor/joint control, and prove aluminum-compatible inserts/compression sleeves on matched material before truck drilling.
-4. **Final drill/register/refit**
-   - Drill with depth control, deburr/clean/protect/set/test, then refit every module with locator bolts and verify heavy-system redundant load paths plus battery/service access.
+   - Settle EPS/base plywood, correct only real rocking/high-joint problems, and refit modules with locator bolts plus verified service access.
+4. **Lonseal dry fit / locator proof**
+   - Preserve the hole-recovery map and refit modules with temporary locator bolts before adhesive work.
 5. **Lonseal and cure**
    - Dry-fit/cut after the perimeter decision, install with the complete #650 process, and keep foot traffic/heavy modules off through the published cure windows.
 6. **Restrained reinstall and shakedown**

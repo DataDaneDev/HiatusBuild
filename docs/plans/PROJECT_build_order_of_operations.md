@@ -20,10 +20,10 @@ related:
 
 ## Planning assumptions (as-of 2026-07-10)
 - Hiatus install readiness/travel planning is historical; the real camper shell is available for physical measurements and mockups.
-- Major Galley/Bench/Electrical/Desk modules have been test-fit as one system. The active critical path has shifted from module fabrication to a deliberate floor teardown, aluminum-compatible hardpoint, substrate, and reinstall gate.
-- The `2021 F-350` pickup box is aluminum. Direct box attachments must follow Ford SVE `Q-222R1`; on-hand steel rivet nuts and stainless fasteners are not valid bed hardpoints.
+- Major Galley/Bench/Electrical/Desk modules have been test-fit as one system. The active critical path has shifted from module fabrication to a deliberate floor teardown, practical hardpoint, substrate, and reinstall gate.
+- Truck-bed hardpoint holes are drilled and primed. Stainless rivnuts are on hand but not yet set; finish sealing and set/bolt-test them while the bed remains accessible.
 - Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline, with the first live `48V`/MultiPlus/Cerbo/shore checkpoint passed. Do not drill around connected/live electrical equipment and do not road-travel until final restraint/access gates pass.
-- The current three-piece single-layer `3/4 in` plywood is below Lonseal's published two-layer `7/8 in` wood-substrate minimum. Glue-down waits for a `1/4 in` underlayment clearance mockup or written Lonseal acceptance of the exact vehicle substrate.
+- The existing three-piece `3/4 in` plywood is the height-locked final substrate. Glue-down waits only for a flat, stable, dry dry-fit with hardpoint locations and service access proven.
 - Interior/furniture assumptions in `docs/implementation/INTERIOR_furniture_layout_and_galley.md` remain the current baseline. Black-walnut finish surfaces stay template-gated; lighting remains deferred behind core flooring, furniture, plumbing, and electrical integration.
 - Active post-install tracker: `docs/plans/LIVE_BUILD_CHECKLIST.md`. Update it whenever practical sequence, blockers, or completed physical work changes.
 
@@ -106,12 +106,11 @@ related:
 
 5. Current flooring-foundation phase (updated `2026-07-10`)
 - Major modules are test-fit well enough to preserve their real geometry. Finish only the remaining Desk/storage corrections required to trust final feet/tabs, then record centers from physical modules before teardown.
-- Do not final-drill the bed around connected/live electrical equipment. Isolate/remove loose batteries, transfer real tab centers, remove modules, then drill/set/test in a clean de-energized work area.
-- Classify every floor attachment: independent subfloor retention, ordinary cabinetry, or heavy-system restraint. Battery bench/electrical/full-tank restraint needs distributed/redundant load paths; do not assume thin aluminum pickup-box sheet inserts are crash-rated.
-- Clean/map the exposed bed; distinguish abandoned holes from seams and factory drains/weep paths. Gorilla tape is for compatible discrete hole patches only, not seams. Pass a controlled low-flow ingress test before floor closure.
-- Correct hardpoint materials for the aluminum pickup box before drilling: measured-grip aluminum rivet nuts/Plusnuts, Ford-compatible coated bolts/aluminum washers/isolators, restored edge corrosion protection, and no stainless or standard steel rivet nuts in direct box attachment.
-- Resolve the Lonseal substrate gate before glue. Preferred path is a staggered `1/4 in` APA underlayment over the three `3/4 in` base panels if the `0.250 in` height increase passes physical clearance; otherwise obtain written Lonseal acceptance of the exact single-layer vehicle substrate.
-- After hardpoints, independent floor retention, substrate, drainage, and full module refit pass, dry-fit/install Lonseal with the published #650 temperature/mix/working/rolling/cure process. Reinstall modules only after the full `72 h` cure.
+- Finish module-foot mapping before the floor closes; preserve rivnut locations from two bed datums so the vinyl holes are recoverable without guessing.
+- Complete the practical bed sealing pass. Gorilla tape may remain where it adheres well to bed liner and stops an observed dust/splash path; inspect it for lifted edges and keep threads/bearing surfaces clear.
+- Set each stainless rivnut, verify it does not spin, and run a sacrificial bolt in/out before covering the bed.
+- Keep the existing `3/4 in` plywood floor. Trim EPS and correct only actual rocking, high joints, loose edges, or moving seams.
+- After hardpoints, stable substrate, and full module refit pass, dry-fit/install Lonseal with the #650 mix/working/rolling/cure process. Reinstall modules only after the cure time on the current product directions.
 - Continue using physical module envelopes to control later furniture/panel decisions; keep final walnut, wiring, plumbing, and cosmetic closeout downstream of the floor foundation gate.
 
 ## Deferred / purchase-later rows (keep out of current critical path unless triggered)
@@ -119,8 +118,8 @@ related:
 
 ## Critical hold points (do not skip)
 - Hold 1: No final penetrations until the layout/service map and the underside/no-drill check are frozen from physical modules.
-- Hold 2: No pickup-box hardpoint drilling until the aluminum-compatible insert/fastener/isolation/coating stack and matched-gauge installation test pass.
-- Hold 3: No Lonseal glue-down until moisture/drainage, independent floor retention, substrate compliance, hardpoint registration, and #650 workflow gates pass.
+- Hold 2: No floor closure until the drilled/primed holes are sealed as needed, each stainless rivnut is set/bolt-tested, and the location map is preserved.
+- Hold 3: No Lonseal glue-down until the existing `3/4 in` panels are flat/stable, hardpoints are registered/refit, and the #650 workflow gates pass.
 - Hold 4: No final cabinetry/panel closeout until fridge/tank/electrical envelopes and service access remain valid after the final floor stack.
 - Hold 5: No road travel with the electrical/heavy modules until integrated anti-rack and redundant restraint paths are complete, torqued, witness-marked, and inspected.
 - Hold 6: No field deployment until the low-consequence shakedown defects and post-drive fastener/moisture inspection are closed.
