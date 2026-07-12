@@ -1,3 +1,10 @@
+## 2026-07-12 — Rivnuts installed; sleeve routing corrected by bed geometry
+
+- Owner confirmed all planned stainless truck-bed rivnuts are installed. Locations span rib highs, valleys, and some rib-edge transitions.
+- The on-hand sleeves are approximately `0.585 in OD x 7/16 in ID x 5/8 in long`. They are `1/8 in` shorter than the `3/4 in` plywood, so they are not universal through-plywood compression limiters.
+- Active routing: no under-plywood sleeve on supported rib highs; use a sleeve beneath the plywood only at a valley/EPS location whose measured gap fits; relocate or retire angled rib-edge locations that cannot accept square bearing. A true through-plywood limiter, if later needed, must be custom-length for `3/4 in plywood + measured gap`.
+- Added BOM row `217` for the purchased 50-pack and updated the live checklist, flooring procedure, project/system snapshots, build order, and tracking decision to the installed state.
+
 ## 2026-07-10 — Flooring plan corrected to owner-confirmed practical path
 
 - Owner confirmed the live physical state: truck-bed hardpoint holes are drilled and primed; stainless rivnuts are on hand but **not yet installed**; one Gorilla tape roll is in use and a second is planned for the remaining sealing pass; final floor height cannot exceed the existing `3/4 in` plywood stack.

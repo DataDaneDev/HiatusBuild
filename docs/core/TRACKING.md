@@ -493,10 +493,10 @@ related:
 - ID: D-052
 - Date: 2026-07-10
 - Decision: Promote the floor to the active foundation gate using the owner-confirmed practical build path.
-- Context: Integrated modules are test-fit, so one controlled teardown can settle the bed, floor, and hardpoints before final system routing. Owner confirmed that the hardpoint holes are drilled and primed, stainless rivnuts are on hand but not set, Gorilla tape is adhering well to bed liner as a dust/splash barrier, and the floor cannot exceed the existing `3/4 in` height.
+- Context: Integrated modules are test-fit, so one controlled teardown can settle the bed, floor, and hardpoints before final system routing. Owner confirmed that the stainless rivnuts are now installed across rib highs, valleys, and some rib-edge transitions, Gorilla tape is adhering well to bed liner as a dust/splash barrier, and the floor cannot exceed the existing `3/4 in` height.
 - Options considered: redesign the inserts/substrate around preferred manufacturer conditions; defer floor work; or retain the proven height and proceed with a flat/stable substrate plus registered stainless-rivnut hardpoints.
 - Decision drivers: strict build height, practical sealing performance, serviceability, avoiding another teardown, and positive module retention without turning the work into a compliance exercise.
-- Result: finish the remaining tape/seal pass, set and bolt-test the stainless rivnuts, map the location pattern, settle the existing EPS and `3/4 in` plywood until flat/quiet, dry-fit Lonseal with hole recovery planned, then install/cure and reinstall modules on the registered hardpoints. Product documents remain relevant for adhesive handling and cure, not as a mandate to alter the height-locked floor.
+- Result: finish the remaining tape/seal pass, hand-test/map the installed stainless rivnuts, relocate or retire poor angled locations, use the on-hand `5/8 in` sleeves only as measured under-plywood valley/EPS spacers, settle the existing EPS and `3/4 in` plywood until flat/quiet, dry-fit Lonseal with hole recovery planned, then install/cure and reinstall modules on the registered hardpoints. Product documents remain relevant for adhesive handling and cure, not as a mandate to alter the height-locked floor.
 - Follow-up: record the final rivnut map and sealing completion, verify the plywood panels do not rock or move at seams, choose the Lonseal perimeter treatment, and record first-drive inspection evidence in `logs/LOG.md`.
 
 ## Risk register

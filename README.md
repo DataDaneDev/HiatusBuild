@@ -13,10 +13,10 @@ This is the single workspace map and update guide for the Hiatus/F-350 camper bu
 - Camper status: Hiatus shell is in hand/installed; May 7, 2026 install readiness is now historical context
 - Primary use: Financial Analyst remote work (typical 9-5, Monday-Friday) with occasional subsidiary flights
 
-## Current project posture — 2026-07-10
+## Current project posture — 2026-07-12
 - Current focus: close the flooring foundation once, then reinstall modules on registered hardpoints before final routes/skins.
 - Module geometry: Galley, Desk/storage, Bench, and electrical modules are reinforced/test-fit well enough to preserve their real feet, service access, and two-datum hardpoint map.
-- Hardpoint state: holes are drilled and primed; stainless rivnuts are on hand but not yet set. Finish the bed sealing pass, set/bolt-test the rivnuts, and preserve their locations before flooring goes down.
+- Hardpoint state: the stainless rivnuts are installed across mixed bed geometry: rib highs, valleys, and a few rib-edge transitions. Hand-test/map every active insert during the plywood dry fit; relocate or retire any angled insert that cannot accept a square, serviceable load path.
 - Sealing posture: Gorilla Patch & Seal tape is being used pragmatically where it adheres to the bed liner as a dust/splash barrier. Inspect adhesion and rework actual lifted edges or known ingress paths before closure.
 - Flooring posture: the three-panel `3/4 in` plywood is the height-locked final substrate. No added underlayment; correct real rocking or moving seams before glue-down.
 - Restraint posture: plywood is not the furniture anchor. Use registered bed rivnuts for positively retained modules; use local plywood retention only where needed to keep a floor edge or seam flat.

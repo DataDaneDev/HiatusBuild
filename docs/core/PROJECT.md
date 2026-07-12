@@ -41,7 +41,7 @@ related:
 - Use [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md) for active sequence and [LIVE_BUILD_CHECKLIST](../plans/LIVE_BUILD_CHECKLIST.md) for shop actions. Earlier install-window plans are historical references unless explicitly refreshed.
 - Major Galley/Bench/Electrical/Desk modules have been reinforced/test-fit well enough to preserve real feet, seams, access, and integrated geometry through one controlled teardown.
 - Finish only the remaining Desk/storage corrections needed to trust tab locations, then isolate electrical/remove loose batteries and record hardpoint centers from physical modules. Do not drill bed metal around connected/live equipment.
-- Truck-bed hardpoint holes are drilled and primed. Stainless rivnuts are selected/on hand but not yet set; finish sealing, set/bolt-test them, and record locations before the floor closes.
+- Truck-bed stainless rivnuts are installed across rib highs, valleys, and some rib-edge transitions. Finish sealing, hand-test/map the active inserts, and relocate or retire any angled location that cannot accept a square load path before the floor closes.
 - The three-piece `3/4 in` plywood floor is height-locked and final. Do not add underlayment; instead correct real rocking, high joints, loose edges, or visibly moving seams before glue.
 - Gorilla tape is a practical dust/splash barrier where it is adhering well to the bed liner. Keep threads and rivnut bearing surfaces clear; inspect known edges after the first dusty/wet drive and rework actual failures.
 - Use registered bed rivnuts rather than plywood alone for modules needing positive retention. Keep the heavier battery/water/electrical assemblies visibly restrained and serviceable; solve observed movement with practical distributed tabs/tie-ins rather than speculative hardware redesign.
@@ -101,8 +101,8 @@ Purpose: turn the proven module geometry into a stable, dry, serviceable final f
 
 1. **Geometry capture / de-energize**
    - Finish required Desk/storage corrections; isolate electrical/remove loose batteries; photograph/label modules and transfer real foot/tab centers from two bed datums.
-2. **Finish bed sealing and hardpoints**
-   - Complete the practical tape/seal pass, set/bolt-test the stainless rivnuts, and record the finished pattern before it is covered.
+2. **Finish bed sealing and verify hardpoints**
+   - Complete the practical tape/seal pass, hand-test/map the installed stainless rivnuts, and relocate or retire any angled location that cannot accept a square load path before it is covered.
 3. **Substrate and hardpoint dry build**
    - Settle EPS/base plywood, correct only real rocking/high-joint problems, and refit modules with locator bolts plus verified service access.
 4. **Lonseal dry fit / locator proof**

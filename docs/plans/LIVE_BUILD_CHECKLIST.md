@@ -20,7 +20,7 @@ related:
 
 # Live Build Checklist — Flooring Foundation + Running Build Tracker
 
-As-of: `2026-07-10`
+As-of: `2026-07-12`
 
 Owner: Sunny / Dane
 
@@ -42,7 +42,7 @@ It does **not** replace the owner docs:
 ## Current build posture
 
 - Owner-reported `2026-07-06`: Desk/storage and Galley modules were reinforced and test-installed; the Galley rear stretch was rebuilt as one continuous `2010` member and the integrated layout was verified well enough to enter the floor teardown/reinstall gate.
-- `2026-07-10` owner correction: truck-bed hardpoint holes are drilled and primed; the stainless rivnuts are on hand but not set. Finish the remaining sealing pass, then set/bolt-test the rivnuts while the bed remains accessible.
+- `2026-07-12` owner update: the stainless truck-bed rivnuts are installed across rib highs, valleys, and some rib-edge transitions. Hand-test/map the active set during plywood dry fit; use the on-hand `5/8 in` sleeves only as measured under-plywood valley/EPS spacers and relocate or retire angled locations that cannot seat square.
 - The three-piece `3/4 in` plywood floor is height-locked. It is the final substrate; do not add underlayment. The real floor gate is flat, quiet, stable panels with no rocking or visibly moving seams.
 - One wide Gorilla Waterproof Patch & Seal Tape roll has been used and a second matching roll is planned. It is a practical dust/splash barrier where it adheres well to the bed liner; hard-roll it, keep threads/bearing surfaces clear, and rework only real lifted edges or known ingress paths.
 - Preserve the useful sequencing: record module/rivnut locations before vinyl, do not bury future access, avoid bolt clamp load through EPS, and use the bed rivnuts rather than plywood alone for positively retained modules.
@@ -84,7 +84,7 @@ Now that module fit is proven, close the floor in this practical order:
 
 1. **Finish the physical map:** finish only the Desk/storage work needed to trust feet/tabs; photograph and dimension rivnut/module locations from two bed datums.
 2. **Finish the bed:** complete the remaining tape/seal pass, confirm adhesion, and keep the bed dry and free of grit.
-3. **Set the rivnuts:** with the bed still exposed, set every stainless rivnut, verify it does not spin, and run a sacrificial bolt in/out of each thread.
+3. **Verify the installed rivnuts:** hand-thread/map each active insert, classify rib-high/valley/rib-edge geometry, use measured rigid support at valley locations, and relocate or retire any angled insert that cannot accept a square load path.
 4. **Settle the existing floor:** trim EPS only where it rocks the plywood; dry-fit the three `3/4 in` panels and solve real rocking, high joints, loose edges, or moving seams without increasing height.
 5. **Dry-fit then install Lonseal:** preserve the hardpoint-hole recovery plan, prepare the untreated plywood bond face, and follow #650 mixing/spread/rolling/cure directions.
 6. **Reinstall and prove:** protect the finish, bolt modules into the registered rivnuts, witness-mark important fasteners, verify service access, and inspect after the first local drive.
@@ -330,7 +330,10 @@ Goal: use the verified module fit to do the one major teardown intentionally, fi
 - [ ] Remove modules as assemblies where practical.
 - [x] Drill/prime the known truck-bed hardpoint holes.
 - [ ] Finish the remaining practical tape/seal pass; inspect adhesion and keep rivnut threads/bearing surfaces clear.
-- [ ] Set every stainless rivnut; confirm firm collapse/no spin and run a sacrificial bolt in/out of each.
+- [x] Install the stainless rivnuts.
+- [ ] Hand-thread and map every active insert; classify each as rib high, valley, or rib edge/transition.
+- [ ] Use the on-hand `5/8 in` sleeves only under the plywood at valley/EPS locations where the measured gap fits; do not bore the `3/4 in` plywood for these shorter sleeves.
+- [ ] Relocate or retire any angled rib-edge location that cannot seat a bolt and rigid support squarely.
 - [ ] Confirm EPS is dry and not proud/buckled/crushed; trim only where it rocks the plywood or conflicts with a real hardpoint.
 - [ ] Dry-fit/settle the three height-locked `3/4 in` plywood panels; resolve rocking, high joints, unsupported edges, grit, or moving seams.
 - [ ] Add only local plywood retention needed for a quiet/flat seam or edge; furniture retention stays at the rivnuts.

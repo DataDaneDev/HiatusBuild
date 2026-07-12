@@ -18,10 +18,10 @@ related:
 - Define a practical order of operations that still supports parallel workstreams.
 - Prioritize measured, reversible post-install module work: validate real camper envelopes first, then build systems and furniture modules without burying service access.
 
-## Planning assumptions (as-of 2026-07-10)
+## Planning assumptions (as-of 2026-07-12)
 - Hiatus install readiness/travel planning is historical; the real camper shell is available for physical measurements and mockups.
 - Major Galley/Bench/Electrical/Desk modules have been test-fit as one system. The active critical path has shifted from module fabrication to a deliberate floor teardown, practical hardpoint, substrate, and reinstall gate.
-- Truck-bed hardpoint holes are drilled and primed. Stainless rivnuts are on hand but not yet set; finish sealing and set/bolt-test them while the bed remains accessible.
+- Truck-bed stainless rivnuts are installed across rib highs, valleys, and some rib-edge transitions. Finish sealing, then hand-test/map every active insert and relocate or retire any angled location that cannot accept a square, serviceable load path.
 - Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline, with the first live `48V`/MultiPlus/Cerbo/shore checkpoint passed. Do not drill around connected/live electrical equipment and do not road-travel until final restraint/access gates pass.
 - The existing three-piece `3/4 in` plywood is the height-locked final substrate. Glue-down waits only for a flat, stable, dry dry-fit with hardpoint locations and service access proven.
 - Interior/furniture assumptions in `docs/implementation/INTERIOR_furniture_layout_and_galley.md` remain the current baseline. Black-walnut finish surfaces stay template-gated; lighting remains deferred behind core flooring, furniture, plumbing, and electrical integration.
@@ -118,7 +118,7 @@ related:
 
 ## Critical hold points (do not skip)
 - Hold 1: No final penetrations until the layout/service map and the underside/no-drill check are frozen from physical modules.
-- Hold 2: No floor closure until the drilled/primed holes are sealed as needed, each stainless rivnut is set/bolt-tested, and the location map is preserved.
+- Hold 2: No floor closure until each installed stainless rivnut is hand-tested/mapped, valley hardpoints have a measured non-compressible support path, and any angled rib-edge insert is relocated or retired.
 - Hold 3: No Lonseal glue-down until the existing `3/4 in` panels are flat/stable, hardpoints are registered/refit, and the #650 workflow gates pass.
 - Hold 4: No final cabinetry/panel closeout until fridge/tank/electrical envelopes and service access remain valid after the final floor stack.
 - Hold 5: No road travel with the electrical/heavy modules until integrated anti-rack and redundant restraint paths are complete, torqued, witness-marked, and inspected.

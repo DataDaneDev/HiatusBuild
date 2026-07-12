@@ -41,7 +41,7 @@ related:
 - Charge sources in current BOM: solar MPPT, dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48` migration baseline), shore AC charger path.
 - Monitoring and protection: Cerbo GX, SmartShunt, battery temp sensing, Class T primary fuse + branch fusing.
 - AC protection chain is purchased/locked for Phase 1 (`shore source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> single 6-way AC DIN enclosure -> 30A AC-in breaker -> MultiPlus -> 30A AC-out main -> two 20A GFCI branches`). AC-in/MultiPlus charging has passed a short limited-current live test; AC-out branch/GFCI commissioning remains pending.
-- Current build phase: integrated modules are test-fit, and the active gate is finishing the floor. Hardpoint holes are drilled/primed; finish bed sealing, set/bolt-test the stainless rivnuts, preserve their locations, settle the height-locked `3/4 in` floor, then reinstall the electrical module tied into the bench/desk structure with anti-rack restraint, covers, labels, strain relief, service access, and post-install witness marks.
+- Current build phase: integrated modules are test-fit, and the active gate is finishing the floor. Stainless bed rivnuts are installed across rib highs, valleys, and some rib-edge transitions; finish sealing, map/hand-test the active inserts, resolve or retire any angled locations, settle the height-locked `3/4 in` floor, then reinstall the electrical module tied into the bench/desk structure with anti-rack restraint, covers, labels, strain relief, service access, and post-install witness marks.
 
 ### Commissioning snapshot (`2026-05-27`)
 - Owner confirmed `55.5V` at the `48V` bus and at the MultiPlus after pre-charge/energization.
