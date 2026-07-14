@@ -1,3 +1,9 @@
+## 2026-07-13 — Lonseal template and rough-cut method locked
+
+- Owner reported the one-piece Lonseal is ready for driveway layout and needs wheel-well plus four corner-pillar cuts.
+- Active method: work in shade on a clean sacrificial surface; verify the `72 x 96 in` sheet covers the assembled floor; use the three fitted plywood panels as the primary face-down master; add registered local paper patches only where the plywood does not capture a pillar/wheel-well detail; rough-cut `1/2-1 in` large; then dry-fit and trim incrementally in the truck.
+- Preserve front/rear/driver/passenger orientation and hardpoint centers, do not assume side-to-side symmetry, and do not cut rivnut holes until the sheet is in its final registered position.
+
 ## 2026-07-12 — Rivnuts installed; sleeve routing corrected by bed geometry
 
 - Owner confirmed all planned stainless truck-bed rivnuts are installed. Locations span rib highs, valleys, and some rib-edge transitions.

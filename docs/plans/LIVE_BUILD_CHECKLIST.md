@@ -20,7 +20,7 @@ related:
 
 # Live Build Checklist — Flooring Foundation + Running Build Tracker
 
-As-of: `2026-07-12`
+As-of: `2026-07-13`
 
 Owner: Sunny / Dane
 
@@ -340,7 +340,9 @@ Goal: use the verified module fit to do the one major teardown intentionally, fi
 - [ ] Refit modules with temporary locator bolts; prove bolt access, hardpoint alignment, battery extraction, service access, and independent floor stability.
 - [ ] Confirm no new floor-through penetration remains or reserve/grommet/edge-protect it before Lonseal.
 - [ ] Decide flat perimeter vs flash-cove; #650 is horizontal-only and vertical/coved surfaces require #400 or written Lonseal direction.
-- [ ] Dry-fit Lonseal and confirm pattern/grain, perimeter, and hole-recovery strategy.
+- [ ] In shade on a clean sacrificial surface, verify the `72 x 96 in` sheet covers the assembled three-panel floor in the chosen grain direction before making any cut.
+- [ ] Template from the fitted plywood panels with the sheet face-down and plywood bond faces against the backing; for any wheel-well/corner-pillar detail the plywood does not capture, label a local paper patch `TOP` and flip it top-side-down onto the backing for transfer.
+- [ ] Rough-cut about `1/2-1 in` large where material allows, then dry-fit in the truck and trim wheel wells/pillars incrementally. Do not assume left/right symmetry or cut rivnut holes before final registration.
 - [ ] Confirm the top bond face is clean, dry, smooth, flat, untreated, and ready for adhesive.
 - [ ] Stage the correct trowel, practical roller method, mixer, PPE/ventilation, masking, blades, cleanup supplies, and help if useful.
 - [ ] Use the current #650 label/TDS for temperature, complete mixing, working time, rolling, and cure; do not rush adhesive work to meet an arbitrary schedule.

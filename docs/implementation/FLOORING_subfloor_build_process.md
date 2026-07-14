@@ -15,7 +15,7 @@ related:
 
 # Flooring and Subfloor Build Process
 
-**As of:** `2026-07-12`
+**As of:** `2026-07-13`
 **Role:** canonical owner for the truck-bed floor stack, sealing, hardpoint registration, Lonseal installation, and post-install checks.
 
 ## Owner-confirmed build decision
@@ -100,7 +100,13 @@ If a future hardpoint needs a true sleeve through the plywood, make a custom lim
 
 ### 4. Dry-fit and install Lonseal
 
-- [ ] Dry-fit the one-piece sheet and preserve the hardpoint-hole recovery plan.
+- [ ] Acclimate and cut in shade on a clean, flat sacrificial surface near the installation temperature; Lonseal's vehicle guide identifies `65-85°F` as the optimal controlled range and recommends rough-cutting slightly large before final trimming.
+- [ ] Before marking, verify the `72 x 96 in` sheet covers the fully assembled three-panel floor in the chosen grain direction. The `96 in` roll length has little nominal spare, so center front/rear coverage first.
+- [ ] Use the existing fitted plywood panels as the primary full-size template: lay the Lonseal face-down, place the plywood bond faces down against the backing in exact truck order/seam spacing, mark `FRONT`, `REAR`, `DRIVER`, `PASSENGER`, and trace the exact outline.
+- [ ] If a wheel-well or corner-pillar detail is not fully represented by the plywood edge, make a local kraft-paper/cardboard patch in the truck, label its `TOP` and two panel-edge/datum references, then flip it top-side-down onto the sheet backing with the plywood master. Do not assume left/right symmetry.
+- [ ] Mark a second rough-cut line that leaves about `1/2-1 in` extra material everywhere practical. At a wheel-well/pillar opening, that means initially cutting the opening smaller so extra material remains on the `KEEP` side. Mark that side, use smooth radiused inside corners, and make multiple light knife passes over sacrificial backing.
+- [ ] Move the rough-cut sheet into the truck unglued. Align centerline/front-rear references, make only the relief cuts needed to let it settle, and trim each wheel well/pillar in small increments. Finish with slight perimeter relief rather than jamming the sheet tightly against vertical metal.
+- [ ] Preserve the hardpoint-hole recovery map and center marks, but do not punch/cut rivnut holes until the sheet's final position is registered.
 - [ ] Confirm the plywood bond face is dry, smooth, dust-free, and untreated.
 - [ ] Fill/sand only the joints, fastener depressions, or blemishes that would telegraph through the vinyl.
 - [ ] Stage the correct trowel, roller method, mixer, blades, masking, cleanup supplies, protection, and a second person if useful.

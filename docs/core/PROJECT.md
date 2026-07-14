@@ -20,8 +20,8 @@ related:
 - Keep exact topology, fuse, conductor, and bench procedure detail in `docs/implementation/`.
 
 ## Snapshot
-- As-of date: 2026-07-10
-- Phase: flooring foundation — aluminum-box sealing/drainage, substrate compliance, hardpoints, Lonseal, and restrained module reinstall
+- As-of date: 2026-07-13
+- Phase: flooring foundation — installed-hardpoint verification, Lonseal template/dry fit, adhesive install, and restrained module reinstall
 - Install milestone: May 7, 2026 Hiatus install is historical context; the real camper shell and integrated module fit now control physical decisions
 - Mission: build a reliable off-grid camper workspace suitable for full-time professional use
 
