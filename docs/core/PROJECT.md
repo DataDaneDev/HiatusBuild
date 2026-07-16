@@ -20,8 +20,8 @@ related:
 - Keep exact topology, fuse, conductor, and bench procedure detail in `docs/implementation/`.
 
 ## Snapshot
-- As-of date: 2026-07-13
-- Phase: flooring foundation — installed-hardpoint verification, Lonseal template/dry fit, adhesive install, and restrained module reinstall
+- As-of date: 2026-07-16
+- Phase: permanent-floor cure and utilities-first restrained reinstall
 - Install milestone: May 7, 2026 Hiatus install is historical context; the real camper shell and integrated module fit now control physical decisions
 - Mission: build a reliable off-grid camper workspace suitable for full-time professional use
 
@@ -37,15 +37,17 @@ related:
 - Provide ergonomic, repeatable workstation setup
 - Keep system serviceable and safe in multi-climate travel use
 
-## Current execution focus (flooring foundation)
+## Current execution focus (floor cure and systems integration)
 - Use [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md) for active sequence and [LIVE_BUILD_CHECKLIST](../plans/LIVE_BUILD_CHECKLIST.md) for shop actions. Earlier install-window plans are historical references unless explicitly refreshed.
-- Major Galley/Bench/Electrical/Desk modules have been reinforced/test-fit well enough to preserve real feet, seams, access, and integrated geometry through one controlled teardown.
-- Finish only the remaining Desk/storage corrections needed to trust tab locations, then isolate electrical/remove loose batteries and record hardpoint centers from physical modules. Do not drill bed metal around connected/live equipment.
-- Truck-bed stainless rivnuts are installed across rib highs, valleys, and some rib-edge transitions. Finish sealing, hand-test/map the active inserts, and relocate or retire any angled location that cannot accept a square load path before the floor closes.
-- The three-piece `3/4 in` plywood floor is height-locked and final. Do not add underlayment; instead correct real rocking, high joints, loose edges, or visibly moving seams before glue.
-- Gorilla tape is a practical dust/splash barrier where it is adhering well to the bed liner. Keep threads and rivnut bearing surfaces clear; inspect known edges after the first dusty/wet drive and rework actual failures.
-- Use registered bed rivnuts rather than plywood alone for modules needing positive retention. Keep the heavier battery/water/electrical assemblies visibly restrained and serviceable; solve observed movement with practical distributed tabs/tie-ins rather than speculative hardware redesign.
-- Electrical system status remains live-proven at the system level, but final wiring/full battery/plumbing work stays downstream of floor cure and restrained module reinstall. Alternator first-charge, AC-out/GFCI, solar, hot water, propane, lighting, and audio remain separate later gates.
+- Owner reported that the one-piece Lonseal was glued to the three-piece `3/4 in` plywood floor on the evening of `2026-07-15`. The floor is now intentionally permanent: removing the three plywood sections would require cutting the vinyl along both plywood seams.
+- Hold heavy modules through the published `72 hr` cure window measured from actual adhesive completion. Because the exact finish time was not recorded, use the evening of `2026-07-18` only as the earliest planning estimate, not an automatic release.
+- Owner reports mild waviness/bumps and some edge lift. Edge boards are bolted down for cure pressure, and temporary bolts were run through adhesive-contaminated hardpoint holes to preserve thread paths. Back those bolts out/clean them carefully during cure, then make any floor-repair decision only after the boards come off and the full cure inspection is complete.
+- Use the empty-truck cure window for non-loading work: tank port inventory, sender/fill/vent/outlet/drain planning, plumbing-board layout, wire/hose inventory, labels, and bench preparation.
+- After cure, hard-mount the electrical module first. Install/wire/fuse the `3x 48V` bank while the battery bay is open, prove extraction and emergency access, then add the bench bridge/lid and remaining modules.
+- Treat the water tank as a two-stage job: workbench measurement/mockup followed by one bare-tank in-truck dry fit before any new sender/fill/vent hole is cut. Lock tank restraint and wet-spine service access before the passenger-side frame closes around it.
+- Shore and water-fill penetrations stay downstream of their installed inside endpoints. Prove the complete inside route, bend radius/fall, backing, service access, and strain relief before cutting the shell/bed-side interface.
+- Use registered bed rivnuts rather than plywood alone for modules needing positive retention. Electrical, battery, and full-tank loads must remain visibly restrained and serviceable.
+- Electrical system status remains live-proven at the system level, but AC-out/GFCI, final bank install, road restraint, and alternator first-charge remain separate gates. Solar, hot water, propane, lighting, and audio remain later workstreams.
 - Black-walnut Galley/Desk/Bench finish surfaces remain template-gated after final floor height and module geometry are proven.
 
 ## Scope
@@ -79,38 +81,38 @@ related:
 - M6: electrical module first-live checkpoint complete; hard-mounting, procurement, charger programming, and strain-relief closeout underway
 - M7: shakedown and punch-list closure
 
-## Build sequencing baseline (as-of 2026-07-10)
-- Build sequencing remains overlapping, but the floor is now a hard dependency because final electrical/plumbing routing and module installation should not precede another teardown.
-- Use physical module feet/access and the current cutlist workbook, not stale CAD, to freeze the hardpoint map.
-- Canonical sequence: transfer real module geometry -> finish bed sealing -> set/test/register stainless rivnuts -> settle EPS/existing `3/4 in` substrate -> full module refit -> Lonseal dry fit/install/cure -> restrained reinstall -> final electrical/plumbing routes -> shakedown.
+## Build sequencing baseline (as-of 2026-07-16)
+- The floor-removal branch is closed. Build sequencing now protects the installed Lonseal, preserves open access to heavy systems, and delays furniture closure until electrical/plumbing endpoints are installed and tested.
+- Canonical sequence: floor cure/bolt cleanup/post-cure inspection -> tank workbench port map -> hard-mount electrical module -> install and close out the `3x 48V` bank with the bench open -> bare-tank in-truck dry fit and port freeze -> tank/restraint/wet-spine install -> shore and water-fill penetrations -> final electrical/plumbing routes and tests -> remaining modules/panels -> shakedown.
 - Detailed owner docs:
   - [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md)
   - [FLOORING_subfloor_build_process](../implementation/FLOORING_subfloor_build_process.md)
   - [LIVE_BUILD_CHECKLIST](../plans/LIVE_BUILD_CHECKLIST.md)
 
 ## Immediate next decisions
-- **Hardpoint installation:** finish sealing, set each stainless rivnut, confirm firm collapse/no spin, bolt-test the threads, and record the completed location map.
-- **Substrate:** retain the locked `3/4 in` floor height; dry-fit the existing panels and resolve real rocking, high joints, loose edges, or moving seams.
-- **Sealing:** use the planned second Gorilla roll where its bedliner adhesion addresses a known splash/dust path; inspect the result rather than building a formal test program.
-- **Restraint:** use the registered rivnuts for positively retained modules and confirm the battery bench, electrical module, and water tank are not loose or dependent on plywood alone.
-- **Perimeter:** decide flat-trim vs flash-cove before cutting Lonseal; vertical/coved surfaces are not a #650-only installation.
+- **Cure/thread preservation:** identify the actual adhesive completion time if possible; keep heavy modules off for `72 hr`; back temporary clamp bolts out one at a time with hand/low-speed control, clean them, and avoid spinning/galling a stainless insert.
+- **Post-cure floor disposition:** remove edge boards after the heavy-furniture cure gate, inspect edge adhesion, hollow/raised areas, bolt-hole condition, and board/washer imprinting, then accept stable cosmetic waviness or define a localized repair without reopening the whole floor.
+- **Tank port map:** inventory every molded tank fitting and physically assign fill, vent, pump outlet, drain, sender, and unused/service ports. Do not assume gravity fill must enter through an arbitrary top hole; choose a manufacturer-compatible high-side/top fitting that supports continuous downhill fill-hose routing and a separate highest-point vent.
+- **Electrical/battery order:** electrical module first, `3x 48V` batteries and their fuse/disconnect/parallel wiring second, bench closure third. Prove extraction and emergency service before adding the upper bench structure.
+- **Penetrations:** shore inlet waits for the hard-mounted electrical path; water-fill/vent opening waits for tank orientation, fitting method, continuous hose fall/vent rise, and service access.
+- **Restraint:** use registered rivnuts for positively retained modules and confirm the battery bench, electrical module, and full water tank are not loose or dependent on plywood alone.
 - **Payload:** capture door-sticker payload and staged scale weights. Treat total payload, rear axle load, rear tire load, and left/right balance as active constraints.
 
-## Foundation-to-shakedown sequence
-Purpose: turn the proven module geometry into a stable, dry, serviceable final foundation before travel use.
+## Cure-to-shakedown sequence
+Purpose: turn the permanent floor into a serviceable installed electrical/water/furniture system without rebuilding access twice.
 
-1. **Geometry capture / de-energize**
-   - Finish required Desk/storage corrections; isolate electrical/remove loose batteries; photograph/label modules and transfer real foot/tab centers from two bed datums.
-2. **Finish bed sealing and verify hardpoints**
-   - Complete the practical tape/seal pass, hand-test/map the installed stainless rivnuts, and relocate or retire any angled location that cannot accept a square load path before it is covered.
-3. **Substrate and hardpoint dry build**
-   - Settle EPS/base plywood, correct only real rocking/high-joint problems, and refit modules with locator bolts plus verified service access.
-4. **Lonseal dry fit / locator proof**
-   - Preserve the hole-recovery map and refit modules with temporary locator bolts before adhesive work.
-5. **Lonseal and cure**
-   - Dry-fit/cut after the perimeter decision, install with the complete #650 process, and keep foot traffic/heavy modules off through the published cure windows.
-6. **Restrained reinstall and shakedown**
-   - Reinstall/protect/torque/witness-mark, finish post-floor electrical/plumbing routing, then run a low-consequence shakedown and inspect for moisture, insert spin, settlement, abrasion, movement, and fastener loss.
+1. **Cure and floor inspection**
+   - Preserve/clean hardpoint threads, keep heavy modules off for `72 hr`, remove cure boards, and record the accepted floor condition before loading it.
+2. **Tank workbench map plus bare dry fit**
+   - Measure the empty tank and KUS sender, inventory molded ports, mock fill/vent/outlet/drain/service-board routing on the garage floor, then place the bare tank in the truck once to verify wheel-well, extrusion, hose, sender-service, and restraint clearances before cutting.
+3. **Electrical module and open battery-bank install**
+   - Protect the floor, hard-mount/brace the electrical module, install and individually fuse/connect the `3x 48V` bank with the bench open, then verify disconnect, Class T, Lynx/shunt, covers, cable support, polarity, extraction, and service access.
+4. **Tank, restraint, and wet-spine install**
+   - Add the approved sender/fittings, bench leak-test the tank before installation, hard-mount its restraint, and install the removable pump/strainer/accumulator/manifold board with wet/dry separation and low-point service access.
+5. **Exterior penetrations and rough-in**
+   - With inside endpoints physically installed, prove and then cut the shore inlet plus gravity-fill/vent openings; seal, support, route, and test AC-in, cold-water, fill/vent, drain/graywater, and capped future-hot paths.
+6. **Remaining modules, closeout, and shakedown**
+   - Add the bench bridge and remaining Galley/Desk/fridge modules, keeping panels removable until electrical/plumbing tests pass; then torque/witness-mark, drive locally, and inspect for floor damage, leaks, insert spin, abrasion, module movement, and fastener loss.
 
 ### Cabinetry approach (recommended)
 - Treat 80/20 as the *structure* and simple panels as the *skins*.

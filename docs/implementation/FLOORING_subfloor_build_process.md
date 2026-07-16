@@ -15,25 +15,35 @@ related:
 
 # Flooring and Subfloor Build Process
 
-**As of:** `2026-07-13`
+**As of:** `2026-07-16`
 **Role:** canonical owner for the truck-bed floor stack, sealing, hardpoint registration, Lonseal installation, and post-install checks.
 
 ## Owner-confirmed build decision
 
-- The final floor-height limit is **`3/4 in` maximum**. The existing three removable `3/4 in` birch plywood panels are the final subfloor; do **not** add an underlayment layer.
-- The stainless rivnuts are installed across mixed geometry: rib highs, valleys, and some rib-edge transitions. Active locations still need a hand-thread check, map, and square-load-path review during the plywood dry fit.
-- One wide Gorilla Waterproof Patch & Seal Tape roll has been used. A second matching roll is planned for the remaining sealing work. In this protected, floored bed cavity, the tape is being used pragmatically as a well-adhered **dust/splash barrier**, not as an immersion-rated or structural repair.
-- The priority is a flat, quiet, serviceable floor and hard-mounted modules—not chasing every preferred condition in a flooring-product brochure.
+- The one-piece Lonwood Madera Topseal sheet was glued to the three-piece `3/4 in` birch plywood floor with Lonseal #650 on the evening of `2026-07-15`.
+- The floor is now intentionally **permanent**. The vinyl bridges both plywood seams; removing the plywood as three sections would require cutting the finish sheet along those seams. Routine floor removal is no longer a planned service path.
+- Owner reports mild waviness/bumps and some edge lift. Boards are bolted over the edges for cure pressure. Treat the visible result as a post-cure acceptance/repair decision; do not cut, inject, heat, or aggressively re-roll the floor during cure.
+- #650 entered some hardpoint holes. Temporary bolts were driven into the installed stainless rivnuts to preserve the threads. Remove/clean/reinstall those clamp bolts carefully during cure so they do not become permanent or spin/gall an insert.
+- The final floor-height limit remains **`3/4 in` maximum**. Do **not** add an underlayment layer or another finish-floor layer to mask waviness.
+- The stainless rivnuts remain the structural module hardpoints. Furniture still does not anchor to plywood alone.
 
 ## Current stack
 
 | Layer | Material | Working rule |
 | --- | --- | --- |
-| Finish | Lonwood Madera Topseal, Oregano, one piece | Keep uncut/glue-free until hardpoint and dry-fit work is complete |
-| Adhesive | Lonseal #650 two-part epoxy | Use the complete unit and follow its label/TDS for mix, spread, rolling, and cure |
-| Subfloor | Three `3/4 in` birch plywood sections | Final height-locked substrate; bottom and edges sealed, top bond faces untreated |
+| Finish | Lonwood Madera Topseal, Oregano, one piece | Glued `2026-07-15`; permanent finish bridging all three plywood sections |
+| Adhesive | Lonseal #650 two-part epoxy | Installed; keep heavy furniture/modules off for `72 hr` after actual completion |
+| Subfloor | Three `3/4 in` birch plywood sections | Final height-locked substrate; now tied together by the one-piece vinyl |
 | Insulation | `5/8 in` EPS in bed-rib valleys only | Filler/insulation; trim only where it makes plywood rock or conflicts with a hardpoint |
 | Support | Truck-bed rib highs | The plywood must settle flat on its real bearing points |
+
+## As-built glue-down and cure gate
+
+- Adhesive completion was reported only as the evening of `2026-07-15`; the exact clock time is not recorded. The published `72 hr` heavy-furniture gate therefore lands no earlier than the corresponding time on `2026-07-18`—use the real completion time if it can be recovered.
+- Published #650 handling basis: no foot traffic for `24 hr`, no heavy furniture for `72 hr`; the normal reroll window was `2-3 hr` after installation and should not be recreated a day later by force.
+- While edge boards still need to remain: back out one temporary bolt at a time with a hand ratchet or low-speed driver, stop if a rivnut starts to spin or stainless threads bind, clean adhesive from the bolt/hole, and reinstall only enough to maintain board pressure. Keep any thread lubricant strictly on threads and off the vinyl/plywood bond surface.
+- After the heavy-furniture cure window: remove boards, photograph the full floor, inspect every perimeter and hardpoint, identify raised/hollow vs merely wavy areas, and record any board/washer imprinting. Stable cosmetic waviness can be accepted; a loose edge or expanding hollow area needs a localized repair plan before furniture hides it.
+- Protect the floor with clean hardboard/cardboard/blankets during every module move. Do not drag extrusion or batteries across the finish.
 
 ## Practical floor-closeout rules
 
@@ -72,7 +82,9 @@ Use them by geometry:
 
 If a future hardpoint needs a true sleeve through the plywood, make a custom limiter whose length equals the full distance from the module tab/washer underside to the lower metal bearing surface: `3/4 in plywood + measured under-plywood gap`. Bore only after the final hole map is proven. A `5/8 in` Forstner hole gives about `0.040 in` total clearance around the current `0.585 in` sleeve; the top module tab or washer must span that bore positively.
 
-## Floor and hardpoint sequence
+## Floor and hardpoint record / remaining sequence
+
+Sections 1-3 preserve the intended pre-install checks for traceability. Glue-down is complete; unchecked historical items are not retroactive holds. Current work starts with the cure/post-cure tasks in Section 4 and restrained reinstall in Section 5.
 
 ### 1. Finish the map
 
@@ -98,19 +110,15 @@ If a future hardpoint needs a true sleeve through the plywood, make a custom lim
 - [ ] Add only the local plywood retention needed to keep an edge or seam quiet and flat.
 - [ ] Refit modules with temporary bolts and verify alignment, service access, and battery extraction.
 
-### 4. Dry-fit and install Lonseal
+### 4. Lonseal glue-down — completed / curing
 
-- [ ] Acclimate and cut in shade on a clean, flat sacrificial surface near the installation temperature; Lonseal's vehicle guide identifies `65-85°F` as the optimal controlled range and recommends rough-cutting slightly large before final trimming.
-- [ ] Before marking, verify the `72 x 96 in` sheet covers the fully assembled three-panel floor in the chosen grain direction. The `96 in` roll length has little nominal spare, so center front/rear coverage first.
-- [ ] Use the existing fitted plywood panels as the primary full-size template: lay the Lonseal face-down, place the plywood bond faces down against the backing in exact truck order/seam spacing, mark `FRONT`, `REAR`, `DRIVER`, `PASSENGER`, and trace the exact outline.
-- [ ] If a wheel-well or corner-pillar detail is not fully represented by the plywood edge, make a local kraft-paper/cardboard patch in the truck, label its `TOP` and two panel-edge/datum references, then flip it top-side-down onto the sheet backing with the plywood master. Do not assume left/right symmetry.
-- [ ] Mark a second rough-cut line that leaves about `1/2-1 in` extra material everywhere practical. At a wheel-well/pillar opening, that means initially cutting the opening smaller so extra material remains on the `KEEP` side. Mark that side, use smooth radiused inside corners, and make multiple light knife passes over sacrificial backing.
-- [ ] Move the rough-cut sheet into the truck unglued. Align centerline/front-rear references, make only the relief cuts needed to let it settle, and trim each wheel well/pillar in small increments. Finish with slight perimeter relief rather than jamming the sheet tightly against vertical metal.
-- [ ] Preserve the hardpoint-hole recovery map and center marks, but do not punch/cut rivnut holes until the sheet's final position is registered.
-- [ ] Confirm the plywood bond face is dry, smooth, dust-free, and untreated.
-- [ ] Fill/sand only the joints, fastener depressions, or blemishes that would telegraph through the vinyl.
-- [ ] Stage the correct trowel, roller method, mixer, blades, masking, cleanup supplies, protection, and a second person if useful.
-- [ ] Follow the #650 product directions for complete A/B mixing, spread/open time, rolling, rerolling, and cure before heavy module reinstall.
+- [x] Cut and dry-fit the one-piece Lonseal over the assembled three-panel floor.
+- [x] Glue the sheet to the plywood with the complete Lonseal #650 unit on the evening of `2026-07-15`.
+- [~] Hold lifted perimeter areas with bolted boards through cure.
+- [ ] Back out/clean/reinstall temporary clamp bolts one at a time before adhesive-contaminated threads become permanent; do not use impact force or spin a rivnut.
+- [ ] Keep heavy modules/furniture out for `72 hr` after the actual adhesive completion time; evening `2026-07-18` is only the earliest planning estimate.
+- [ ] Remove cure boards and complete the documented edge/hollow/raised-area/hardpoint inspection before loading the floor.
+- [ ] Record accepted cosmetic waviness vs any localized repair area; do not reopen the full floor merely to chase a non-growing cosmetic bump.
 
 ### 5. Reinstall and prove
 
@@ -138,12 +146,12 @@ BOM owner: `bom/bom_estimated_items.csv`.
 - `217`: `5/8 in` stainless spacer/compression sleeves — purchased; valley/EPS use only where the measured gap fits.
 - `147`: `3/4 in` birch base plywood — purchased and height-locked.
 - `148`: TotalBoat Halcyon edge/bottom sealer — purchased.
-- `149`: Lonwood Madera Topseal sheet — purchased/in hand, unglued.
-- `150`: Lonseal #650 `0.5 gal` — purchased/in hand, unmixed.
+- `149`: Lonwood Madera Topseal sheet — purchased and permanently glued to the three-panel floor on `2026-07-15`.
+- `150`: Lonseal #650 `0.5 gal` — complete unit mixed/used for the `2026-07-15` glue-down; floor curing.
 - `174`: exact-notch trowel — purchased.
-- `175`: compact roller method — confirm physically before glue-down.
+- `175`: compact roller method — glue-down is complete; exact as-built rolling method/result is not separately recorded.
 - `177`: polyurethane sealant — purchased/partially used.
-- `178`: Gorilla Waterproof Patch & Seal Tape — two-roll/$28 scope; one used, one planned for the remaining practical bed-sealing pass.
+- `178`: Gorilla Waterproof Patch & Seal Tape — bed cavity is now closed by the permanent floor; inspect only if later dust/moisture evidence justifies destructive access.
 
 Do not maintain a second hand-calculated flooring total here; the BOM CSV owns quantity, price, and purchase status.
 

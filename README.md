@@ -1,6 +1,6 @@
 # Hiatus Truck Bed Camper Project
 
-This is the single workspace map and update guide for the Hiatus/F-350 camper build. The repo is now in the **flooring-foundation / restrained-reinstall** phase: use it to keep measured module geometry, flooring, hardpoints, electrical/plumbing modules, payload, and 80/20/panel decisions aligned without creating parallel notes.
+This is the single workspace map and update guide for the Hiatus/F-350 camper build. The repo is now in the **floor-cure / utilities-first restrained-reinstall** phase: use it to keep the permanent floor, electrical/battery order, tank/wet-spine work, shell penetrations, payload, and 80/20/panel decisions aligned without creating parallel notes.
 
 ## Open in Obsidian
 - Start at [00 Home](00%20Home.md) for the shortest navigation path.
@@ -13,14 +13,14 @@ This is the single workspace map and update guide for the Hiatus/F-350 camper bu
 - Camper status: Hiatus shell is in hand/installed; May 7, 2026 install readiness is now historical context
 - Primary use: Financial Analyst remote work (typical 9-5, Monday-Friday) with occasional subsidiary flights
 
-## Current project posture — 2026-07-12
-- Current focus: close the flooring foundation once, then reinstall modules on registered hardpoints before final routes/skins.
-- Module geometry: Galley, Desk/storage, Bench, and electrical modules are reinforced/test-fit well enough to preserve their real feet, service access, and two-datum hardpoint map.
-- Hardpoint state: the stainless rivnuts are installed across mixed bed geometry: rib highs, valleys, and a few rib-edge transitions. Hand-test/map every active insert during the plywood dry fit; relocate or retire any angled insert that cannot accept a square, serviceable load path.
-- Sealing posture: Gorilla Patch & Seal tape is being used pragmatically where it adheres to the bed liner as a dust/splash barrier. Inspect adhesion and rework actual lifted edges or known ingress paths before closure.
-- Flooring posture: the three-panel `3/4 in` plywood is the height-locked final substrate. No added underlayment; correct real rocking or moving seams before glue-down.
-- Restraint posture: plywood is not the furniture anchor. Use registered bed rivnuts for positively retained modules; use local plywood retention only where needed to keep a floor edge or seam flat.
-- Electrical state: first-live `48V` checkpoint passed; AC-out/GFCI, alternator commissioning, final battery install, and road restraint remain separate gates.
+## Current project posture — 2026-07-16
+- Current focus: protect the one-piece Lonseal/#650 installation through its `72 hr` heavy-furniture cure, inspect the floor and hardpoint threads, then reinstall in dependency order rather than putting every module back at once.
+- Flooring state: the Lonseal was glued to the three-piece `3/4 in` plywood floor on the evening of `2026-07-15`. The single sheet now ties the three removable plywood sections together; future floor removal requires cutting the vinyl at the plywood seams and is not part of the active plan.
+- Finish condition: owner reports mild waviness/bumps and some edge lift. Boards are bolted over the edges for cure pressure, and temporary bolts preserved thread paths where #650 entered hardpoint holes. Treat repair as a post-cure inspection decision, not a reason to disturb the floor during cure.
+- Reinstall order: hard-mount the electrical module first; install and wire/fuse the `3x 48V` bank with the bench open; then add the battery-bench bridge/lid and remaining furniture without burying extraction, disconnect, fuse, or service access.
+- Water order: map the purchased `36 gal` wheel-well tank, existing molded ports, KUS sender, fill, vent, outlet, and drain on the workbench, then perform one bare-tank in-truck dry fit before drilling or locking fittings. Install the tank/restraint/wet-spine before the passenger-side furniture closes access.
+- Penetration order: cut the shore inlet only after the hard-mounted electrical endpoint and full inside cable path are physically proven; cut the gravity-fill/vent opening only after the final tank orientation, port map, hose fall, and service path are proven.
+- Electrical state: first-live `48V` and limited AC-in checkpoints passed; AC-out/GFCI, final bank installation, road restraint, and alternator commissioning remain separate gates.
 - Payload posture: legal payload still depends on the door sticker/scale tickets; water, batteries, bumpers, spare, 80/20, panels, tools, and tech remain active weight risks.
 
 ## First-stop update map

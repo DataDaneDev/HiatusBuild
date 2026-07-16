@@ -9,7 +9,7 @@ status: active
 
 # Docs Map
 
-Use this folder map when deciding where a document belongs. Current repo posture is **flooring foundation plus corrosion-compatible/restrained module reinstall** (`2026-07-10`): keep active truth in the owner docs below, and treat pre-install/readiness plans as historical references unless explicitly refreshed.
+Use this folder map when deciding where a document belongs. Current repo posture is **permanent-floor cure plus utilities-first restrained module reinstall** (`2026-07-16`): keep active truth in the owner docs below, and treat pre-install/readiness plans as historical references unless explicitly refreshed.
 
 ## Obsidian navigation
 - Start with [00 Home](../00%20Home.md) for daily navigation.
@@ -51,13 +51,13 @@ Use this folder map when deciding where a document belongs. Current repo posture
 - [ELECTRICAL_Mechman_WS500_APM48_install_guide](implementation/ELECTRICAL_Mechman_WS500_APM48_install_guide.md): detailed shop guide for Mechman `48V` alternator, WS500, APM-48, staged-install/drivability gates, first-run tests, and shutdown/fault handling.
 - [ELECTRICAL_AC_BOM](implementation/ELECTRICAL_AC_BOM.md): purchased Phase 1 AC hardware and Branch A/B outlet intent.
 - [ELECTRICAL_bench_layout_and_test_guide](implementation/ELECTRICAL_bench_layout_and_test_guide.md): staged electrical commissioning, first-live results, hard-mounting/access checks, and post-live wiring/strain-relief validation.
-- [FLOORING_subfloor_build_process](implementation/FLOORING_subfloor_build_process.md): subfloor/EPS/Lonseal gates and finish-floor hold conditions.
+- [FLOORING_subfloor_build_process](implementation/FLOORING_subfloor_build_process.md): permanent floor as-built state, cure/post-cure checks, hardpoint recovery, and finish-floor serviceability.
 - Rule: implementation docs may expand the core baseline, but they should not silently redefine it.
 
 ## Plans
 - [plans](plans/): active execution plans, procurement aids, WIP carts, and historical references.
-- [LIVE_BUILD_CHECKLIST](plans/LIVE_BUILD_CHECKLIST.md): live running build checklist and foundation-gate tracker; update whenever practical build state, blockers, or next shop actions change.
-- [PROJECT_build_order_of_operations](plans/PROJECT_build_order_of_operations.md): active flooring-foundation through restrained-reinstall sequence.
+- [LIVE_BUILD_CHECKLIST](plans/LIVE_BUILD_CHECKLIST.md): live running build checklist and cure/integration-gate tracker; update whenever practical build state, blockers, or next shop actions change.
+- [PROJECT_build_order_of_operations](plans/PROJECT_build_order_of_operations.md): active floor-cure, tank/electrical dependency, penetration, and restrained-reinstall sequence.
 - [PROCUREMENT_purchase_list_2026-05-26](plans/PROCUREMENT_purchase_list_2026-05-26.md): dated procurement snapshot; `bom/bom_estimated_items.csv` owns current item/status truth.
 - [TNUTZ_80_20_HARDWARE_MODEL_2026-06-01](plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md): consolidated WIP TNUTZ `10-series` cart, hardware model, visual-aid owner, and pointer to dated module cut-list workbooks under `plans/assets/module-cutlists/`.
 - [INTERIOR_LIGHTING_PLAN_2026-05-31](plans/INTERIOR_LIGHTING_PLAN_2026-05-31.md): deferred desired `12V` QuinLED/WLED interior lighting design with hardwired buttons; supersedes the prior `24V`/MiBoxer worksheet and is not near-term procurement.

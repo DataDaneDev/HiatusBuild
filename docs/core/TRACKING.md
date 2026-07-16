@@ -499,6 +499,15 @@ related:
 - Result: finish the remaining tape/seal pass, hand-test/map the installed stainless rivnuts, relocate or retire poor angled locations, use the on-hand `5/8 in` sleeves only as measured under-plywood valley/EPS spacers, settle the existing EPS and `3/4 in` plywood until flat/quiet, dry-fit Lonseal with hole recovery planned, then install/cure and reinstall modules on the registered hardpoints. Product documents remain relevant for adhesive handling and cure, not as a mandate to alter the height-locked floor.
 - Follow-up: record the final rivnut map and sealing completion, verify the plywood panels do not rock or move at seams, choose the Lonseal perimeter treatment, and record first-drive inspection evidence in `logs/LOG.md`.
 
+- ID: D-053
+- Date: 2026-07-16
+- Decision: Treat the glued Lonseal floor as permanent and sequence the next build around open access to electrical batteries and the water tank before furniture closure.
+- Context: Owner glued the one-piece Lonseal to the three-piece `3/4 in` plywood floor on the evening of `2026-07-15`. The sheet now bridges both plywood seams, so removing the floor as three sections requires cutting the vinyl. Owner reports mild waviness/bumps, some lifted edges held with bolted boards, and #650 contamination in some hardpoint holes; temporary bolts were installed to preserve threads. The empty truck also makes tank and battery work materially easier before all modules return.
+- Options considered: reinstall every furniture module immediately after cure; complete all tank fitting work on the garage floor before checking installed geometry; or use a utilities-first staged reinstall with the electrical/battery bay open and one required in-truck tank dry fit before drilling.
+- Decision drivers: #650's `72 hr` heavy-furniture cure, avoiding permanent bolt/thread capture, preserving battery terminal/fuse/extraction access, preserving tank fitting/sender/service access, and proving shore/water-fill routes from their inside endpoints before exterior cuts.
+- Result: floor removal is no longer an active branch. During cure, preserve hardpoint threads and map the tank on the workbench. After post-cure floor inspection, hard-mount the electrical module first, install/wire/fuse the `3x 48V` bank with the bench open, then add the bench structure. For water, inventory ports and mock fittings on the workbench, perform one bare-tank in-truck dry fit, freeze the port/restraint/service map, then drill/install/bench-test and hard-mount the tank/wet spine. Shore and water-fill/vent penetrations follow physically proven inside routes.
+- Follow-up: recover the actual adhesive completion time if possible; inspect and photograph the floor after cure; log bolt/rivnut condition; record the final tank port map and fitting method; keep final cabinetry removable until electrical/plumbing functional tests pass.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -612,19 +621,19 @@ related:
 - Risk: Remaining bed gaps, lifted tape, or poorly sealed hardpoint areas can admit dust or splash under the EPS/plywood.
 - Impact (1-5): 5
 - Likelihood (1-5): 3
-- Mitigation: Finish the practical tape/seal pass, hard-roll and inspect edges, keep hardpoint threads/bearing faces clear, and inspect known paths after the first dusty/wet drive. Rework actual failures rather than creating unnecessary sealing work.
+- Mitigation: The bed cavity is now closed by the permanent floor. Do not reopen it speculatively; monitor known perimeter/hardpoint paths after the first dusty/wet drives and investigate only actual dust trails, dampness, odor, swelling, or floor movement that justifies destructive access.
 - Trigger: Lifted tape, an obvious open path, unexplained dampness/dust trail, or first-drive evidence of ingress.
 - Owner: Sunny
-- Status: Open; one tape roll used, second planned, final sealing pass pending
+- Status: Accepted/monitoring after permanent floor closure; underfloor rework is evidence-triggered only
 
 - ID: R-014
-- Risk: Premature Lonseal glue-down can trap unresolved hardpoints/penetrations or telegraph a rocking/high/moving plywood joint, causing avoidable teardown.
+- Risk: The permanent Lonseal installation may retain cosmetic waviness/bumps, edge lift, adhesive-contaminated hardpoint holes, or hidden substrate conditions that are no longer cheaply serviceable.
 - Impact (1-5): 5
 - Likelihood (1-5): 3
-- Mitigation: Keep the height-locked `3/4 in` floor; hold glue-down until rivnuts are registered/tested, panel seams are flat and stable, the perimeter is chosen, and #650 mixing/spread/rolling/cure conditions are ready.
-- Trigger: Any decision to cut/apply Lonseal adhesive or permanently bury base-floor fasteners/joints.
+- Mitigation: Keep heavy modules off for `72 hr` after actual adhesive completion; remove/clean/reinstall temporary clamp bolts carefully during cure; remove boards and photograph/inspect all edges, hardpoints, and raised/hollow areas after cure; accept stable cosmetic irregularity or define a localized repair before modules hide it. Protect the floor during every reinstall.
+- Trigger: Binding/spinning hardpoint bolt, loose/expanding edge or hollow area, board/washer imprinting, moisture, substrate movement, or damage during module reinstall.
 - Owner: Sunny
-- Status: Open / practical floor-prep hold
+- Status: Realized/monitoring; glue-down completed `2026-07-15`, post-cure inspection pending
 
 - ID: R-015
 - Risk: Modules can rack, shift, or create service problems if rivnuts are poorly set, bolts are inaccessible, clamp load crosses unsupported EPS, or heavy assemblies are left visibly loose.
@@ -657,17 +666,19 @@ related:
 - Risk: Passenger-side lofted fridge/wet-spine plumbing can become unserviceable, freeze-prone, or hazardous to adjacent batteries if the `36 gal` tank fittings, pump, accumulator, manifold, graywater cassette, fill/vent lines, low-point drains, future hot-water stubs, or leak paths are buried behind fixed cabinetry.
 - Impact (1-5): 5
 - Likelihood (1-5): 3
-- Mitigation: Build around an under-fridge removable/swing-out service board, visible tank shutoff, flex shock/load loops, strainer access, pressure gauge, winterization pickup, blowout Schrader, low-point drains, leak tray/sensor, quick-disconnect unions, rear/aisle service access, and physical wet/dry separation from battery enclosures before final skins.
+- Mitigation: Inventory and label all molded tank ports on the workbench, mock sender/fill/vent/outlet/drain/wet-spine geometry, then require one bare-tank in-truck dry fit before drilling. Use a manufacturer-compatible high-side/top gravity-fill fitting with continuous hose fall, a separate highest-point vent without a trapped low loop, a backed/gasketed top sender location, and an under-fridge removable/swing-out service board with visible shutoff, flex loops, strainer, gauge, winterization/blowout/low-point controls, leak tray/sensor, quick unions, and hard wet/dry separation.
 - Trigger: Building passenger-side lofted fridge skeleton, galley cabinetry, tank restraint, pump board, battery bench partition, graywater cassette, or rear shower/fill/vent hatch.
 - Owner: Sunny
 - Status: Open
 
 ## Open questions
-- Finish the remaining practical tape/seal work and record any known dust/splash paths worth revisiting after the first drive.
-- Set the stainless rivnuts; confirm firm collapse/no spin, bolt engagement, and a preserved location map before flooring covers them.
-- Dry-fit the height-locked `3/4 in` plywood panels and resolve only real rocking, high joints, loose edges, or moving seams.
-- Confirm the battery bench, electrical module, and full `36 gal` tank are positively retained and serviceable after reinstall; add practical tabs/tie-ins only where real movement or load sharing calls for them.
-- Decide flat-trim vs flash-cove Lonseal perimeter and whether Lonseal #400/contact-adhesive materials are required for vertical surfaces.
+- Recover the actual `2026-07-15` #650 completion time if possible; otherwise keep evening `2026-07-18` as an earliest-only heavy-furniture planning estimate.
+- During cure, back out/clean/reinstall the temporary edge-board bolts one at a time and record any binding, galling, or spinning rivnut.
+- After cure, photograph/classify the mild waviness/bumps and lifted edges: stable cosmetic condition vs localized loose/raised/hollow repair area.
+- Confirm the electrical module hardpoint/anti-rack method, then install/wire/fuse the `3x 48V` bank with the bench open and prove battery extraction plus emergency fuse/disconnect access before adding upper bench structure.
+- Create the final `36 gal` tank port map from physical inspection: existing molded ports, KUS sender location/backing, gravity-fill port, highest-point vent, pump outlet, low drain, spare/plug ports, and manufacturer-compatible fitting methods.
+- Perform one bare-tank in-truck dry fit before drilling; verify wheel-well fit, bracket/plusnut and any secondary restraint, fridge/extrusion overlap, hose bends/fall, sender removal clearance, pump-board access, and leak path.
+- Lock shore inlet and water-fill/vent exterior locations only after their full inside routes/endpoints, backing, service access, strain relief/hose support, and sealing details are physically proven.
 - Lock Nick black-walnut commission details: exact Galley counter length/width (`~4 ft x 19 in` target pending confirmation), `1.5 in` vs `2 in` thickness, last `~15 in` live-edge curve, Desk dimensions, L-shaped Bench/lid hinge/support/gas-strut geometry, finish sample, price, and delivery timing.
 - Verify electrical-module road-restraint details after the floor load-path decision: bench/desk tie-in, panels/diagonals, fastener witness marks, anti-rattle interfaces, strain relief, and emergency disconnect/fuse access.
 - Log parallel-bank current-sharing/voltage behavior under controlled charge/load; use similar total loop resistance per battery path rather than forcing equal positive-only leads.

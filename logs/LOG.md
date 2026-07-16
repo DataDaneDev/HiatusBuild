@@ -1,3 +1,22 @@
+## 2026-07-16 — Permanent Lonseal floor installed; systems-integration sequence reset
+
+### Owner-reported physical state
+- On the evening of `2026-07-15`, the one-piece Lonwood Madera Topseal sheet was glued to the three-piece `3/4 in` plywood subfloor with Lonseal #650.
+- The sheet now bridges both plywood seams. The floor is intentionally permanent; removing the plywood as three sections would require cutting the vinyl along the seams.
+- Owner reports mild waviness/bumps and some edge lift. Boards were placed over the perimeter and bolted down for cure pressure.
+- #650 entered some hardpoint holes. Temporary bolts were driven into the installed stainless rivnuts to preserve the thread paths; those bolts need controlled removal/cleaning during cure so they do not become permanent.
+
+### Cure and inspection gate
+- #650 basis remains no foot traffic for `24 hr` and no heavy furniture/modules for `72 hr` after actual adhesive completion.
+- Exact completion time was not captured; evening `2026-07-18` is only the earliest planning estimate for heavy-module reinstall.
+- After cure: remove edge boards, photograph the full floor, inspect edges/hardpoints/raised or hollow areas, and distinguish stable cosmetic waviness from any localized loose-area repair.
+
+### Next-sequence decision
+- Do not reinstall every module at once.
+- Hard-mount the electrical module first, then install/wire/fuse the `3x 48V` bank with the bench open; add the battery-bench bridge/lid only after extraction and emergency service access pass.
+- Map the `36 gal` tank ports, KUS sender, gravity fill, highest-point vent, outlet, drain, restraint, and wet-spine components on the workbench. Perform one bare-tank in-truck dry fit before drilling; then add fittings, bench leak-test, and hard-mount tank/wet spine.
+- Cut the shore inlet only after the installed electrical endpoint and inside AC-in route are proven. Cut the water-fill/vent opening only after the installed tank orientation, fill/vent geometry, hose fall/rise, backing, and service path are proven.
+
 ## 2026-07-13 — Lonseal template and rough-cut method locked
 
 - Owner reported the one-piece Lonseal is ready for driveway layout and needs wheel-well plus four corner-pillar cuts.

@@ -21,11 +21,11 @@ related:
 
 # Interior Furniture Layout and Galley Design Concepts
 
-As-of date: `2026-07-05`
+As-of date: `2026-07-16`
 
 Purpose: capture the active furniture/layout direction for the Hiatus/F-350 camper before final cuts. This document owns the interior **layout concept**, driver-side electrical-module/bench/desk integration, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, galley/plumbing service strategy, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`; the finish/paneling/storage feature-design detail now lives in `docs/implementation/INTERIOR_finish_paneling_and_feature_choices.md`.
 
-Status: **draft implementation baseline for active module buildout**, refreshed after the `2026-07-05` black-walnut surface commission direction. The electrical backer has been trimmed to inset into the `80/20` electrical frame; components were shifted for real MultiPlus depth without changing the core electrical architecture. Owner reported on `2026-07-04` that the Galley/cooler/Bench/electrical tie-ins are complete enough that the interior now behaves as one large in-truck module, with active focus shifting to the Desk/workstation module. Current construction direction: finish measured Desk geometry, convert the Galley/desk/Bench top surfaces into plywood templates/dimension packets for Nick, protect the entry with a controlled inward-curving live-edge/`45°`-compatible Galley end if it passes the physical sweep test, then use the integrated fit to validate removable panels, wet-spine access, and storage features. Keep final skins, exact drawer slides, permanent penetrations, and finish-floor glue-down gated on integrated fit/service access.
+Status: **draft implementation baseline for utilities-first module reinstall**, refreshed `2026-07-16` after the permanent Lonseal floor installation. The Galley/Bench/Electrical/Desk system was integrated/test-fit and then removed for flooring. After the `72 hr` floor cure and inspection, hard-mount the electrical module first, install/wire/fuse the `3x 48V` bank with the bench open, and add the bench bridge/remaining furniture only after extraction and service gates pass. In parallel, map the `36 gal` tank on the workbench, perform one bare in-truck dry fit before drilling, then install the tank restraint and wet spine before the passenger-side exoskeleton closes access. Keep final skins, exact drawer slides, exterior shore/water penetrations, and premium walnut cuts gated on installed route/service validation.
 
 Orientation convention throughout:
 
@@ -401,6 +401,17 @@ Implications:
 - Add a fill-level load label near the fill hatch.
 - Verify bracket/plusnut locations and decide whether a secondary floor/tie-down path is needed.
 - Keep dense pantry/tools away from the high passenger wall if the water tank is full; use lighter/bulkier storage above the tank.
+
+### Tank workbench-to-install sequence (`2026-07-16`)
+
+1. **Inventory before cutting:** photograph every molded opening and cap, measure threads/neck IDs/ODs, and label only temporary candidate functions (`fill`, `vent`, `pump outlet`, `drain`, `sender`, `spare`). Do not infer function from port size alone.
+2. **Workbench mockup:** place the empty tank in its installed orientation on blocks; lay out the KUS sender, gravity-fill hose, vent hose, pump-outlet flex loop, drain, restraint brackets, and removable wet-spine board. Verify sender length against internal depth at the actual proposed location.
+3. **Mandatory bare-tank truck dry fit:** after the floor cure gate, protect the Lonseal and place only the empty tank in the truck. Check wheel-well contact, extrusion/fridge envelope, plusnut/bracket reach, sender-removal clearance, fill/vent bend radius, continuous hose fall/rise, pump-board service access, low drain, and where a leak would travel.
+4. **Freeze the port map:** use an existing manufacturer-provided top/high-side fitting where possible. Gravity fill does **not** have to enter the literal top surface; it needs a manufacturer-compatible high-side/top entry that accepts the fill hose with continuous downhill fall from the exterior hatch. Route a separate vent from the highest practical tank point continuously upward to the hatch vent nipple without a trapped low loop.
+5. **Choose fitting methods:** use tank-manufacturer-approved molded, spin-weld, or properly backed bulkhead/under-ring methods appropriate to the polyethylene wall and access. For the SAE five-hole KUS sender, use the gasket and prefer a backing/under-ring where the thin tank wall cannot reliably hold the screw pattern; do not treat sealant or self-tapping screws alone as structure.
+6. **Cut and test on the bench:** capture/remove all chips, deburr without thinning the sealing land, install fittings without distorting the wall, then fill and leak-test the tank/fittings before the extrusion locks access.
+7. **Install wet-side first:** hard-mount the tank restraint and wet-spine service board before passenger-side furniture closure. Keep tank shutoff, strainer, pump, accumulator, gauge, manifold, winterization pickup, blowout point, low drain, and unions visible/removable from the aisle/rear.
+8. **Cut the exterior fill/vent last:** physically prove the installed tank endpoints, hose fall/vent rise, backing, service access, and spill/overflow path from both sides before cutting the camper/bed-side interface.
 
 ### Countertop and appliance strategy
 Use convertible surfaces:

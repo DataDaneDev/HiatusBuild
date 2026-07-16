@@ -13,9 +13,9 @@ Start here when opening the project in Obsidian.
 
 ## Active Now
 - [Project](docs/core/PROJECT.md) - scope, milestones, fixed constraints, near-term priorities.
-- [Build order of operations](docs/plans/PROJECT_build_order_of_operations.md) - active flooring-foundation through restrained-reinstall sequence.
+- [Build order of operations](docs/plans/PROJECT_build_order_of_operations.md) - active floor-cure, tank/electrical dependency, penetration, and restrained-reinstall sequence.
 - [Live build checklist](docs/plans/LIVE_BUILD_CHECKLIST.md) - running execution gates and hold points.
-- [Flooring subfloor build process](docs/implementation/FLOORING_subfloor_build_process.md) - aluminum-box sealing/drainage, substrate, hardpoints, Lonseal, and reinstall owner.
+- [Flooring subfloor build process](docs/implementation/FLOORING_subfloor_build_process.md) - permanent as-built floor state, cure/post-cure checks, hardpoints, and reinstall owner.
 - [Interior furniture and galley](docs/implementation/INTERIOR_furniture_layout_and_galley.md) - current office-first passenger-side lofted fridge/wet-spine, separated battery bench, and 10-series/overlay-panel furniture direction.
 - [Electrical bench layout and test guide](docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md) - staged electrical commissioning, post-live cleanup, hard-mounting, and strain-relief discipline.
 - [Estimated BOM](bom/bom_estimated_items.csv) - current procurement quantity/status owner.
