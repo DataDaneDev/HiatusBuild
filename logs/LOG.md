@@ -17,6 +17,12 @@
 - Map the `36 gal` tank ports, KUS sender, gravity fill, highest-point vent, outlet, drain, restraint, and wet-spine components on the workbench. Perform one bare-tank in-truck dry fit before drilling; then add fittings, bench leak-test, and hard-mount tank/wet spine.
 - Cut the shore inlet only after the installed electrical endpoint and inside AC-in route are proven. Cut the water-fill/vent opening only after the installed tank orientation, fill/vent geometry, hose fall/rise, backing, and service path are proven.
 
+### Tank-port and plumbing-route clarification
+- Owner confirms the `36 gal` tank presents four molded ports on each end, with two visibly large and two smaller ports per end, and no obvious/open top port. Exact model/thread sizes remain unconfirmed; inspect for a membrane-covered top boss before making a separate KUS sender opening.
+- Provisional role map is upper large end port for gravity fill, highest suitable upper small end port for unrestricted vent/overflow, low north-end outlet toward the north pump bay, and a separate low tank drain. Final assignment remains dry-fit and measurement gated.
+- Current route concept is tank/sink in the middle, pump/strainer/accumulator/manifold to the north, and heater/drain/service interfaces to the south. Fixed `1/2 in` PEX starts after pump flex; cold branches feed the middle sink and south heater/washdown, while a future hot return runs from south to the sink with an optional short south shower branch.
+- Keep three outlets distinct: gravity fresh-tank drain, sink gray drain, and pump-pressurized ambient-water washdown. The sink pull-out can support a temporary out-window shower, but a south shower branch avoids carrying heated water north to the sink only to route it south/outside again.
+
 ## 2026-07-13 — Lonseal template and rough-cut method locked
 
 - Owner reported the one-piece Lonseal is ready for driveway layout and needs wheel-well plus four corner-pillar cuts.

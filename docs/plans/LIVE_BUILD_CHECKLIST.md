@@ -254,11 +254,12 @@ Goal: build the galley datum so cooler/fridge/plumbing fitment stops being guess
 
 Goal: cold-water-first, hot-ready later, serviceable and leak-testable.
 
-- [ ] Photograph/inventory every existing molded tank port and temporarily label candidate functions: gravity fill, highest-point vent, pump outlet, drain, sender, spare/plug.
+- [x] Record owner-confirmed physical geometry: four molded ports on each end, two visibly large and two smaller per end, with no obvious/open top port.
+- [ ] Photograph/inventory the eight end ports, identify exact threads/model markings, inspect for a membrane-covered top boss, and temporarily label candidate functions: gravity fill, highest-point vent, pump outlet, drain, sender, spare/plug.
 - [ ] Measure internal sender clearance at the exact KUS location and confirm a flat top area over the deepest unobstructed section; do not rely on the nominal `16 in` exterior depth alone.
 - [ ] Lay out the gravity-fill hose, vent hose, pump outlet, drain, KUS sender, restraint brackets, and wet-spine board around the empty tank on the workbench.
 - [ ] Perform one bare-tank in-truck dry fit before cutting any new hole; verify wheel-well fit, bracket/plusnut reach, extrusion/fridge overlap, fill/vent bends, sender removal clearance, pump-board access, and leak path.
-- [ ] Freeze the tank port map after dry fit. Gravity fill may enter a manufacturer-compatible high-side or top fitting; require continuous downhill fill-hose routing and a separate vent that rises from the highest practical tank point without a trapped low loop.
+- [ ] Freeze the tank port map after dry fit. Current default is upper large end port for gravity fill, highest suitable upper small end port for unrestricted vent/overflow, low north port for pump suction, and a separate low tank drain; require continuous downhill fill-hose routing and continuous vent rise without a trapped low loop.
 - [ ] Select a polyethylene-tank-compatible fitting method/backing for each new opening. For the SAE 5-hole KUS sender on thin tank wall, prefer a backing/under-ring plus the supplied gasket rather than self-tapping screws and sealant alone.
 - [ ] Cut/drill only after the map is frozen; capture/remove chips, install fittings without distorting the tank wall, and bench leak-test before truck installation.
 - [ ] Confirm vent hose size for the gravity-fill vent nipple: preferred `10 mm ID`; `3/8 in ID` warmed/clamped fallback.

@@ -334,25 +334,31 @@ Non-obvious feature: make the fridge skeleton do double duty as the wet-spine se
 
 Build a **cold-water-first wet spine** and reserve hot-water capability with capped stubs. Do not let water-heater uncertainty block the sink/tank/pump/faucet/drain build.
 
-```text
-Fresh tank
-  -> tank outlet shutoff
-  -> flexible shock/load loop
-  -> strainer
-  -> pump
-  -> flex loop
-  -> accumulator + pressure gauge
-  -> cold manifold
-      -> sink cold
-      -> exterior shower cold QD
-      -> optional drinking filter/spigot
-      -> capped future heater feed
+Current north/middle/south routing concept (`2026-07-16`; fitting sizes remain measurement-gated):
 
-Future heater return / hot side
-  -> capped hot stub at manifold
-  -> faucet hot side
-  -> exterior shower hot QD cap
+```text
+MIDDLE: fresh tank
+  -> north-end low outlet + tank shutoff
+  -> short reinforced potable-water flex / shock loop
+  -> NORTH: strainer -> pump -> flex -> accumulator + gauge
+  -> NORTH cold manifold
+      -> MIDDLE: sink cold
+      -> SOUTH: isolated/capped future-heater cold feed
+      -> SOUTH: pressurized ambient-water washdown QD
+      -> optional drinking filter/spigot
+
+SOUTH: future outdoor/listed heater interface
+  -> isolated hot return in 1/2 in PEX
+  -> MIDDLE: faucet hot
+  -> optional short SOUTH tempered-shower branch/QD
+
+Separate unpressurized paths
+  -> high end-port gravity fill + high end-port vent
+  -> low tank drain for emptying the fresh tank
+  -> sink gray drain/graywater cassette
 ```
+
+Do not use rigid PEX between the tank, strainer, and vibrating pump. Start the fixed `1/2 in` PEX distribution after the pump outlet flex section. Keep the fresh-tank drain, sink gray drain, and pressurized cold washdown as three distinct functions; a gravity tank drain is not a useful pressure wash outlet.
 
 ### Wet spine cassette
 
@@ -388,6 +394,17 @@ Use a stainless clamp, avoid kinking the vent line, and re-check after the first
 
 ### Tank-specific notes
 
+Owner-confirmed physical port geometry (`2026-07-16`): the tank has four molded ports on each end, with two visibly large and two smaller ports per end, and no obvious/open top port. Exact model and thread sizes remain unconfirmed. The pattern resembles common wheel-well tanks advertised with `1.5 in` and `1/2 in` female NPT end ports, but that resemblance is not sufficient to order fittings. Inspect for a membrane-covered top boss, model/logo markings, and supplied plugs; verify each selected thread physically before procurement.
+
+Provisional role map, subject to the installed-orientation dry fit:
+
+- Upper large end port nearest the exterior hatch: gravity fill.
+- Upper small end port that remains highest in normal fill orientation: unrestricted vent/overflow to the hatch vent nipple.
+- Low port nearest the north pump bay: tank suction through a shutoff and short reinforced flex run.
+- Low south/service-side port: gravity tank drain, with the valve and hose weight supported by the structure rather than cantilevered from the polyethylene boss.
+- KUS sender: new mechanically backed/gasketed top opening over the deepest unobstructed tank section unless physical inspection reveals a suitable top boss.
+- Unused ports: leave their membranes intact where applicable or reinstall manufacturer-compatible plugs with potable-water/plastic-compatible thread sealant.
+
 Water mass planning values:
 
 - `10 gal`: about `83.5 lb`
@@ -407,7 +424,7 @@ Implications:
 1. **Inventory before cutting:** photograph every molded opening and cap, measure threads/neck IDs/ODs, and label only temporary candidate functions (`fill`, `vent`, `pump outlet`, `drain`, `sender`, `spare`). Do not infer function from port size alone.
 2. **Workbench mockup:** place the empty tank in its installed orientation on blocks; lay out the KUS sender, gravity-fill hose, vent hose, pump-outlet flex loop, drain, restraint brackets, and removable wet-spine board. Verify sender length against internal depth at the actual proposed location.
 3. **Mandatory bare-tank truck dry fit:** after the floor cure gate, protect the Lonseal and place only the empty tank in the truck. Check wheel-well contact, extrusion/fridge envelope, plusnut/bracket reach, sender-removal clearance, fill/vent bend radius, continuous hose fall/rise, pump-board service access, low drain, and where a leak would travel.
-4. **Freeze the port map:** use an existing manufacturer-provided top/high-side fitting where possible. Gravity fill does **not** have to enter the literal top surface; it needs a manufacturer-compatible high-side/top entry that accepts the fill hose with continuous downhill fall from the exterior hatch. Route a separate vent from the highest practical tank point continuously upward to the hatch vent nipple without a trapped low loop.
+4. **Freeze the port map:** with the reported end-port-only geometry, default the gravity fill to an upper large end port and the vent to the highest suitable upper small end port. Neither needs a literal top-surface penetration if both communicate with the tank airspace and the fill hose falls continuously from the exterior hatch while the unrestricted vent rises continuously to its nipple. Verify whether a membrane-covered top boss exists before cutting a separate KUS sender opening.
 5. **Choose fitting methods:** use tank-manufacturer-approved molded, spin-weld, or properly backed bulkhead/under-ring methods appropriate to the polyethylene wall and access. For the SAE five-hole KUS sender, use the gasket and prefer a backing/under-ring where the thin tank wall cannot reliably hold the screw pattern; do not treat sealant or self-tapping screws alone as structure.
 6. **Cut and test on the bench:** capture/remove all chips, deburr without thinning the sealing land, install fittings without distorting the wall, then fill and leak-test the tank/fittings before the extrusion locks access.
 7. **Install wet-side first:** hard-mount the tank restraint and wet-spine service board before passenger-side furniture closure. Keep tank shutoff, strainer, pump, accumulator, gauge, manifold, winterization pickup, blowout point, low drain, and unions visible/removable from the aisle/rear.
