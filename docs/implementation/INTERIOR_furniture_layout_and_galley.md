@@ -439,27 +439,25 @@ low north tank pickup
   -> tank shutoff
   -> short service/flex transition
   -> strainer -> pump -> flex -> accumulator
-  -> one 1/2 in cold trunk south behind the tank
-  -> central accessible cold manifold under/near the sink
-       -> sink cold
-       -> rear pressurized cold washdown
-       -> isolated south heater feed
-
-south heater feed
-  -> three-valve heater isolation/bypass reservation
-  -> future heater
-  -> tempering/mixing protection when required by heater class
-  -> local rear shower/sprayer branch
-  -> one hot return north to the sink
+  -> accessible north service/manifold zone
+       -> one 1/2 in cold trunk south behind the tank
+            -> sink cold
+            -> rear pressurized cold washdown
+       -> three-valve north-heater isolation/bypass
+            -> north-cubby electric storage heater
+            -> thermostatic tempering/mixing valve
+            -> one insulated hot trunk south
+                 -> sink hot
+                 -> rear hot shower/sprayer
 ```
 
-Route the long cold trunk low along the bed-wall side behind the tank, supported independently and protected from chafe, rather than across the tank top. Use a continuous length with **no concealed joints or valves** behind the installed tank; keep every union, shutoff, manifold, filter, pump component, and drain serviceable from the aisle/rear. This preserves tank-top storage without burying failure points.
+Route the parallel cold and insulated hot trunks low along the bed-wall side behind the tank, supported independently and protected from chafe, rather than across the tank top. Use continuous lengths with **no concealed joints or valves** behind the installed tank; keep every union, shutoff, bypass, manifold, filter, pump component, and drain serviceable from the aisle/rear. This preserves tank-top storage without burying failure points.
 
 Keep three south functions distinct:
 
 1. The low south tank port remains a gravity fresh-tank drain with its own supported valve and capped/hose-ready outlet.
 2. Rear cold washdown comes from the pressurized cold manifold.
-3. Rear hot shower/sprayer comes from the heater output or a hot/cold exterior mixer. Tee this locally at the rear instead of routing hot water north to the sink and back south.
+3. Rear hot shower/sprayer comes from the north heater's insulated hot trunk through a local rear mixer/branch; the middle sink tees from the same southbound hot trunk.
 
 Do not cross-connect the gravity drain into the pressure/hot circuit. The separate pressurized rear branch provides the desired hot sprayer without backflow paths, confusing valve choreography, or loss of a simple emergency tank drain.
 
@@ -467,12 +465,22 @@ The stated zero-setup goal changes the heater decision. Standard exterior-vented
 
 The planned Flame King YSNAZ132 also cannot become the compact permanent workaround. Its official manual says it is for non-potable water, temporary point-of-use heating, not a permanent inlet-water connection, and not a distribution system supplying multiple outlets; it is also outdoor-use-only and must remain above `33°F`. Preserve it only as an optional temporary outdoor shower appliance, not as the sink/hot-manifold heater.
 
-Mock these two electric/marine storage envelopes before choosing capacity:
+The owner identified a candidate north cubby with an internal bounding envelope of `27 x 15 x 16 in`; record which dimension is actually vertical before purchase because the affordable mini-tank classes require upright installation. Current electric-only comparison, using observed `2026-07-17` pricing and manufacturer dimensions:
 
-- `4.2 gal` Slim Square class (`~22.25 x 7.2 x 15.75 in`): when stored around `145°F` and tempered with `50°F` inlet water to `105°F`, the ideal mixing calculation yields about `7.25 gal` of shower-temperature water. Heating the tank through that full `95°F` rise is about `0.98 kWh`, or `~6.4%` of the `15.36 kWh` nominal bank before normal losses; that is approximately `5.5-7.3 min` at `1.32-1.0 GPM`.
-- `6.6 gal` slim-cylinder class (`~30.1 in` long x `11.6 in` diameter): the same calculation yields about `11.4 gal` mixed at `105°F`, uses about `1.53 kWh` (`~10%` nominal bank), and gives approximately `8.6-11.4 min` at `1.32-1.0 GPM`. Representative full water-plus-heater mass is about `81.5 lb`, so its restraint/load path matters.
+| Candidate | Capacity / power | Manufacturer envelope | Observed price | Cubby result / posture |
+| --- | --- | --- | ---: | --- |
+| Bosch Tronic 3000T ES4 | `4 gal`, `1440W`, max `145°F` | `13.75 x 13.75 x 13.5 in` | `~$214-239` | Fits with any cubby axis vertical; quality compact fallback, but only about `6.9 gal` ideally mixed from `145°F` storage to `105°F` with `50°F` inlet. |
+| Camplux ME40B | `4 gal`, `1440W`, max `140°F` | `14.5 x 14.5 x 12.9 in` | `~$189-240` | Fits upright; lower warranty/support confidence and only about `6.5 gal` ideally mixed at `105°F`. The small savings versus a six-gallon unit are not compelling. |
+| EcoSmart ECO MINI 6 | `6 gal`, `1440W`, `12A`, max `140°F` | `20.83 H x 13.86 W x 14.19 D in` | `~$215` | **Best value if the `27 in` cubby axis is vertical.** Manufacturer explicitly markets it for RV use; plug-in, listed/low-lead compliant, included T&P valve, replaceable element/anode, `6 yr` leak/`2 yr` parts warranty. About `9.8 gal` ideally mixed at `105°F`; roughly `1.32 kWh` / `8.6%` of nominal bank for a `50->140°F` full-tank heat. |
+| Richmond 6MT6-1 / Eemax EMT6 | `6 gal`, `~1400-1440W`, max `140°F` | about `21 x 14 x 14.25 in` | `~$200-259` | Same vertical-axis requirement and performance class as EcoSmart; viable price/availability substitutes, not a better package. |
+| A.O. Smith Signature E6-6C15SV | `6 gal`, `1500W`, `120V` | `15.25 H x 14.25 in dia` | `~$319` | **Best lowboy if the `16 in` cubby axis is vertical.** Hardwired, top/side connection options, more serviceable short tank, `6 yr` warranty. Costs about `$104` more than EcoSmart but solves the short-cubby geometry. |
+| Stiebel Eltron SHC 6 | `6 gal`, `1300W`, max `140°F` | `20.5 x 15.125 x 15 in` | `~$299` | Bounding box only barely fits and leaves no practical clearance on the `15 in` axis; reject for this cubby. |
+| Camplux ME60 | `6 gal`, `1440W`, max `149°F` | `21 x 15.75 x 15.5 in` | `~$240` | Fails the exact `15 in` cubby axis; reject unless the measured opening is materially larger. |
+| Bosch ES8 / Eccotemp EM-7.0 | `7-7.1 gal`, `1440W` | at least `17 x 17 x 14.5 in` | `~$259-445` | Fails the `15 x 16 in` cross-section; reject. |
 
-The `6.6 gal` slim-cylinder electric/marine class is now the preferred capacity to test physically if its long envelope fits south of/alongside the tank without harming barn-door service access. The `4.2 gal` class remains the compact fallback and is materially more useful than its nominal volume suggests once stored hot and tempered. A marine unit with an engine-coolant heat exchanger can preserve a future drive-heating option, but do not route truck coolant until that truck-critical loop, isolation, bleeding, and protection package is separately approved. Both electric sizes still need manual/load-shed control, heater bypass, drain, T&P discharge, tempering, low-point/winterization provisions, and a pressure/thermal-expansion design based on the selected manual.
+Do not use a cheap electric tankless unit for the Hiatus shower. The available `120V / 3.5kW` class draws about `29A`, exceeds the current `20A` branch and the MultiPlus `48/3000` continuous inverter class, yet raises `1.0 GPM` only about `24°F`. Cheap `240V` units are also incompatible with the current `30A/125V` shore inlet and `120V` inverter; even a `6.5kW` unit raises `1.0 GPM` only about `44°F`, while an actually adequate `11-13kW` shower unit needs roughly `46-54A at 240V` and a wholesale electrical redesign.
+
+Current purchase gate: if `27 in` is vertical and the cubby has a removable/serviceable front, use the **EcoSmart ECO MINI 6** value baseline. If `16 in` is vertical, use the **A.O. Smith E6-6C15SV lowboy** with side connections. If only `15 in` is vertical, step down to the **Bosch ES4**. In every case, prove the actual opening/door sweep, manufacturer access, upright orientation, restraint for roughly `77-85 lb` full mass, wet/electrical separation, leak tray/sensor, T&P discharge, drain/winterization, listed tempering valve, and thermal-expansion path before purchase or PEX cuts.
 
 For sink graywater, start with a removable under-sink vessel before adding an under-truck tank. Mock `2.5 gal` (`~20.9 lb` water) and `5 gal` (`~41.7 lb` water) sizes with the actual sink drain. The baseline should include a compact waterless trap, vented container connection, positive travel retention, removable spill tray/leak-sensor point, and a lift path that works when full. An under-truck gray tank remains a post-shakedown option because it adds a bed penetration, external vent/dump hardware, road-debris protection, freeze exposure, and legal-dump discipline; its dump valve should not be treated as a normally open drain.
 
@@ -488,7 +496,7 @@ Use convertible surfaces:
 - Dedicated low cubby for the Ninja SP151 air-fryer/toaster oven with positive travel restraint, heat clearance, crumb-cleanout access, and a plug/service path that does not cross the wet bay.
 - Cutting board / sink cover slot.
 - Collapsible dish tub instead of a deep domestic sink if vertical volume is tight.
-- Low appliance bay can remain flexible around the Ninja SP151: future `2.5-4 gal` electric tank, dry food bins, or removable appliance crate only if they do not compromise heat clearance, graywater access, or wet/dry separation.
+- Low appliance bay can remain flexible around the Ninja SP151 for dry food bins or a removable appliance crate only if they do not compromise heat clearance, graywater access, or wet/dry separation. The heater candidate has moved to the north cubby and should not be duplicated under the galley.
 - Graywater slide cassette under sink with waterless trap or removable drain approach.
 
 Avoid:
@@ -502,7 +510,7 @@ Avoid:
 
 ## 10) Hot water decision tree
 
-Current best posture: **cold-first now, hot-ready later**.
+Current best posture: **finish the cold system first, but preserve the north-cubby six-gallon electric branch**.
 
 ### Option A: Cold-first + kettle/induction
 
@@ -513,9 +521,9 @@ Use for phase 1.
 - Dishwater can come from induction/kettle.
 - Lowest risk and least plumbing delay.
 
-### Option B: Outdoor propane shower module
+### Option B: Temporary outdoor propane shower module
 
-Use if the priority is rear/outdoor showering.
+Use only as temporary standalone outdoor shower equipment, not as the permanent potable distribution heater.
 
 - Keep appliance outside.
 - Feed with cold QD from pump/manifold.
@@ -523,14 +531,16 @@ Use if the priority is rear/outdoor showering.
 - Hot output either goes to exterior shower only or to a deliberate temporary hot return QD.
 - No indoor combustion, no concealed propane joints, no casual cubby propane without proper standards.
 
-### Option C: Small electric tanked heater later
+### Option C: North-cubby six-gallon electric storage heater
 
-Plausible, but treat it as a managed load and a winterization object.
+Preferred permanent class once the cubby's vertical axis and service opening are measured; treat it as a managed load and a winterization object.
 
 Energy reference:
 
 - `2.5 gal` at `60°F` rise: about `367 Wh`
 - `4.0 gal` at `60°F` rise: about `587 Wh`
+- `6.0 gal` at `60°F` rise: about `880 Wh`; a full `50->140°F` cycle is about `1.32 kWh`
+- `6.0 gal` stored at `140°F`, tempered to `105°F` with `50°F` inlet: about `9.8 gal` ideal mixed output
 
 Power conflict examples:
 
@@ -540,7 +550,7 @@ Power conflict examples:
 
 If electric tanked hot water is added:
 
-- Put it low/mid, not high.
+- Put it low in the north cubby: EcoSmart ECO MINI 6 if `27 in` is vertical, A.O. Smith E6-6C15SV lowboy if `16 in` is vertical, or Bosch ES4 only if the cubby's vertical limit is `15 in`.
 - Add drain pan and visible drain/relief path.
 - Add bypass/winterization valves.
 - Put it on a labeled manual switch or load-shed relay.

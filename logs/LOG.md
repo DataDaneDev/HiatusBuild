@@ -1,3 +1,10 @@
+## 2026-07-17 — Affordable north-cubby electric hot water comparison
+
+- Owner rejected the expensive marine/hydronic path and standard exterior-vented RV propane packaging as too costly/complex for the actual Hiatus need, then identified a candidate north cubby with an unordered internal envelope of `27 x 15 x 16 in`.
+- Current comparison result is conditional on which cubby dimension is vertical because the electric mini-tanks require upright installation: EcoSmart ECO MINI 6 (`~$215`, `20.83H x 13.86W x 14.19D`, `1440W`) is the best value if `27 in` is vertical; A.O. Smith E6-6C15SV lowboy (`~$319`, `15.25H x 14.25 in dia`, `1500W`, side/top connections) is the best six-gallon fit if `16 in` is vertical; Bosch ES4 (`4 gal`, `13.75 x 13.75 x 13.5 in`) is the fallback if only `15 in` is vertical.
+- A six-gallon tank at `140°F`, tempered with `50°F` inlet to `105°F`, yields about `9.8 gal` ideal mixed output and uses about `1.32 kWh` for a full `50->140°F` heat cycle. Cheap electric tankless is rejected: `120V / 3.5kW` exceeds the existing branch/inverter continuous class yet adds only about `24°F` at `1.0 GPM`, and adequate `240V` units require a new shore/inverter architecture.
+- Plumbing mockup moved the heater to the north service zone: split after pump/accumulator into a joint-free cold trunk south and a heater isolation/bypass; send one insulated hot trunk south to the middle sink and rear shower mixer. Heater selection remains on hold until cubby `height x width x depth`, front opening, service extraction, restraint, wet/electrical separation, T&P discharge, drain pan, tempering, and expansion path are physically proven.
+
 ## 2026-07-16 — Permanent Lonseal floor installed; systems-integration sequence reset
 
 ### Owner-reported physical state
