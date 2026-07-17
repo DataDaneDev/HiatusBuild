@@ -20,7 +20,7 @@ related:
 
 # Live Build Checklist — Permanent Floor Cure + Systems Integration
 
-As-of: `2026-07-16`
+As-of: `2026-07-17`
 
 Owner: Sunny / Dane
 
@@ -513,23 +513,50 @@ Run this before assuming a weekend task is blocked.
 
 # Near-term priority queue
 
-## Friday `2026-07-17` — cure-window bench/mockup day
+## Friday `2026-07-17` — calls, cure-window measurements, and bench mockups
 
-1. Keep heavy modules and furniture out of the camper. Record the best available #650 completion time; evening `2026-07-18` is only the earliest planning estimate for the `72 hr` heavy-load release. If any temporary edge-board bolts are still sitting in adhesive-contaminated holes, back out/clean/reinstall them one at a time now; stop on binding or insert movement, and leave the cure boards/clamping load otherwise undisturbed.
-2. Unbox the Sarlai sink and FORIOUS faucet/soap dispenser completely. Inventory every clip, nut, hose, adapter, drain part, gasket, and template; photograph the labels and both sides of every connection.
-3. Measure four separate sink/faucet envelopes: exterior flange, actual cutout/template, below-counter bowl/clip/drain envelope, and faucet shank/nut/pull-out-hose sweep. Record the faucet supply-thread and sink drain/tailpiece sizes from markings or direct measurement rather than assumption.
-4. Make a full-scale scrap-plywood/cardboard galley-top mockup with the real sink and faucet. Draw the `10-series` rails below it and prove faucet, clip, drain, manifold, gray-jug, drawer/bin, and extraction clearances; do not cut the final walnut or lock the final rail geometry.
-5. On the garage floor, tape/string the plumbing baseline without cutting PEX: low north tank pickup -> shutoff/flex/strainer/pump/flex/accumulator -> accessible north service/manifold zone. From there mock one continuous cold trunk south to sink/rear washdown and a north-cubby heater isolation/bypass feeding one insulated hot trunk south to the sink and rear shower mixer. Keep both behind-tank trunks joint-free and service every valve/union from the aisle/rear.
-6. Mock both a removable `2.5 gal` and `5 gal` graywater vessel under the sink, including the drain bend/waterless trap, vent, retention/tray, full-container lift path, and cap/handle access. Prefer the smallest vessel that is genuinely easy to remove; defer an under-truck tank until shakedown proves the handling burden justifies another bed penetration and freeze-exposed system.
-7. Measure the candidate north cubby as `height x width x depth`, including the actual front opening, door/removable-panel sweep, plumbing/electrical intrusion, and extraction path; do not rely on the unordered `27 x 15 x 16 in` bounding box. Mock an EcoSmart ECO MINI 6 block (`20.83 H x 13.86 W x 14.19 D in`) if `27 in` is vertical, an A.O. Smith E6-6C15SV lowboy (`15.25 H x 14.25 in dia`) if `16 in` is vertical, and the Bosch ES4 cube (`13.75 x 13.75 x 13.5 in`) only if `15 in` is vertical. Also prove top/side connection space, service extraction, full-mass restraint, wet/electrical separation, drain pan/sensor, T&P discharge, and bypass/tempering/expansion hardware.
-8. End the day with measured photos and a marked route sketch. No tank drilling, PEX cuts, sink/countertop cuts, exterior penetrations, propane mounting, or propane hose specification yet.
+1. **Call Expedition One during `09:00-17:00 Mountain`:** `877-366-3099` (alternate `801-627-2921`; `info@expeditionone.biz`). Identify the truck as a `2021 F-350` with their `2017-2022 RangeMax Ultra HD` front bumper and ask whether they will fabricate/install or sell a centered `2 in` receiver tied into the frame/winch-plate structure rather than only the bumper skin. Have bumper/order details and front/underside/winch-cavity photos ready.
+   - State the exact intended carrier use and loaded weight: carrier + bike/cargo, plus receiver-pin-to-load-center distance. Do not ask only whether a receiver can be welded in; ask what vertical/tongue load they will approve for that cantilevered use.
+   - Ask whether it can coexist with the winch/fairlead, clevis/recovery mounts, camera/sensors/lights, and radiator/intercooler airflow.
+   - Ask whether they prefer a removable bolt-in winch-plate/frame bracket or welded modification; ask what modification does to bumper warranty and powder coat.
+   - Get fabrication/install price, lead time, truck drop-off requirements, finish/rewarranty posture, and any written load rating or use limitation. If they will not do it, ask for approved attachment points/drawings and a fabricator referral.
+   - Do not authorize work from a vague “should be fine.” The go gate is a defined frame/load path, intended-use approval, loaded-weight capacity, and written quote.
+2. Keep heavy modules and furniture out of the camper. Record the best available #650 completion time; evening `2026-07-18` is only the earliest planning estimate for the `72 hr` heavy-load release. If any temporary edge-board bolts are still sitting in adhesive-contaminated holes, back out/clean/reinstall them one at a time now; stop on binding or insert movement, and leave the cure boards/clamping load otherwise undisturbed.
+3. Unbox the Sarlai sink and FORIOUS faucet/soap dispenser completely. Inventory and photograph every clip, nut, hose, adapter, drain part, gasket, template, label, and connection.
+4. Measure the sink exterior flange, actual cutout/template, below-counter bowl/clip/drain envelope, faucet shank/nut/pull-out-hose sweep, faucet supply thread, and sink drain/tailpiece. Put the real fixtures in a full-scale scrap-plywood/cardboard galley mockup; prove rail, clip, drain, manifold, gray-jug, drawer/bin, and extraction clearances. Do not cut the walnut.
+5. Measure the north cubby in ordered `H x W x D`, plus the actual front opening, door/panel sweep, internal intrusions, and extraction path. Make the A.O. Smith E6-6C15SV lowboy mockup first (`15.25 H x 14.25 in dia`) if `16 in` is vertical. Put the **real** pump, strainer, accumulator, flex loops, and fittings beside it and prove service access, not merely shell fit.
+   - Preserve room to remove the strainer bowl and pump head, reach the heater electrical/service panel, route T&P discharge, and pull the heater for anode/service.
+   - If the package is too tight, relocate or initially omit the accumulator before dropping from a six-gallon heater to a four-gallon heater. Do not bury the pump/strainer to save the accumulator location.
+6. Inventory and photograph all eight tank ports/model markings, inspect for any membrane-covered top boss, measure KUS sender depth at the proposed flat location, and arrange the fill elbow, vent elbow/hose, pump outlet, gravity drain, sender/under-ring, restraint, and wet-spine board around the empty tank. **No tank drilling yet.**
+7. Tape/string the plumbing baseline without cutting PEX: low north tank pickup -> shutoff/flex/strainer/pump/flex/accumulator or direct service zone -> joint-free cold trunk south; north-heater isolation/bypass -> insulated joint-free hot trunk south. Mock sink branches, rear mixer/washdown, and both `2.5 gal` and `5 gal` removable graywater envelopes.
+8. End the day with measured photos, a marked route sketch, and a short `fits / conflicts / missing` list. No PEX cuts, sink/countertop cuts, exterior penetrations, or heater purchase yet.
 
-## After the `72 hr` floor gate passes
+## Saturday `2026-07-18` — finish bench work; release the floor only after the cure gate
 
-1. Remove boards and do the documented full-floor/hardpoint inspection before moving a module.
-2. Protect the floor and hard-mount/brace the electrical module first.
-3. Install/wire/fuse/cover the `3x 48V` bank with the battery bench open; prove extraction, disconnect, Class T, Lynx/shunt, and cable-clamp access before adding upper bench structure.
-4. Perform one bare-tank in-truck dry fit; freeze restraint, sender, fill, vent, outlet, drain, and wet-spine geometry before drilling.
+1. Before the estimated evening release, continue only garage/bench tasks: clean and label fittings, assemble cardboard/service-board layouts, inventory clamps/unions/valves/PEX support, and prepare clean floor protection and module-moving hardware.
+2. Do not buy the water heater until ordered cubby dimensions and the real pump/strainer/accumulator mockup prove the shell, fittings, service, and extraction path.
+3. At or after the best-supported `72 hr` point, remove cure boards without dragging hardware across the Lonseal. Photograph the entire floor before loading anything.
+4. Inspect every edge, seam area, hardpoint, board/washer imprint, raised/hollow area, and temporary bolt. Distinguish stable cosmetic waviness from a truly loose area. If the floor does not pass, stop module loading and define only the localized repair.
+5. If it passes, cover travel paths with clean hardboard/cardboard/blankets and stage electrical-module fasteners/tools for Sunday. Do not celebrate the release by reinstalling every module.
+
+## Sunday `2026-07-19` — utilities-first reinstall if the floor passes
+
+1. Move in and hard-mount/brace the electrical module first. Verify registered hardpoints, anti-rack tie-in, MultiPlus/service clearances, floor protection, fastener support, and no cable abrasion.
+2. With the battery bench fully open, install the `3x 48V` bank with individual Class T protection, disconnect/Lynx/shunt path, terminal covers, cable clamps, labels, and extraction access. Prove emergency fuse/disconnect reach before adding any bridge/lid or upper frame.
+3. Perform one **bare empty tank** in-truck dry fit. Freeze wheel-well orientation, restraint/bracket reach, sender-removal space, fill/vent bends, low pump pickup/drain, north wet-service board, heater cubby, graywater path, and where a leak would travel.
+4. Photograph and mark final datums before removing the empty tank. Do not drill merely because the tank is now near the truck; drill only after the complete port/restraint/service map passes.
+5. End with a written next-shop-block punch list. Do not close the bench, skin modules, or cut shore/water exterior penetrations.
+
+## Following shop blocks — in dependency order
+
+1. **Tank bench completion:** freeze port labels; install the KUS sender with the purchased FLS-U method and one `60 mm / 2-3/8 in` opening; install approved fill/vent/outlet/drain fittings; capture chips; bench fill/leak test; verify drain/fill/vent behavior.
+2. **Wet-spine build:** mount restraint and accessible service board/tray; install shutoff, reinforced flex, strainer, pump, accumulator only if retained, gauge/manifold, winterization pickup, blowout, low points, unions, leak sensor, and electrical connector.
+3. **Fixture/plumbing rough-in:** after purchased fittings arrive and full-scale geometry is proven, cut/support PEX; run joint-free cold/hot trunks; connect sink cold/hot, rear cold washdown/hot mixer, and removable graywater cassette; pressure/leak test before closure.
+4. **Heater decision:** buy the A.O. Smith lowboy only if the north-cubby mockup passes with the actual pump equipment and service envelope. Preserve isolation/bypass and hot trunk even if heater purchase waits.
+5. **Module structure:** reinstall/tie in Bench, Desk, Galley, and lofted fridge skeleton only after utilities remain serviceable; add fridge restraint/ventilation and wet/dry partition before cosmetic panels.
+6. **Exterior interfaces last:** cut the shore inlet after the hard-mounted AC endpoint/cable path/backing/strain relief are proven; cut the water-fill/vent hatch after installed tank endpoints and continuous fill fall/vent rise are physically proven.
+7. **Closeout before driving:** covers/dead-fronts, GFCI/DC tests, extinguisher/detectors, emergency shutdown label, travel latches/restraint, torque/witness marks, then a low-consequence shakedown and leak/abrasion/fastener reinspection.
+8. **Keep parallel but non-blocking:** obtain the Expedition One receiver answer/quote and schedule fabrication if approved, but do not let the front-hitch lane interrupt floor release, electrical restraint, battery access, or tank/plumbing critical path.
 
 ## Do not prioritize next unless the gate above is already green
 
