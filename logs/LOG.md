@@ -23,6 +23,11 @@
 - Current route concept is tank/sink in the middle, pump/strainer/accumulator/manifold to the north, and heater/drain/service interfaces to the south. Fixed `1/2 in` PEX starts after pump flex; cold branches feed the middle sink and south heater/washdown, while a future hot return runs from south to the sink with an optional short south shower branch.
 - Keep three outlets distinct: gravity fresh-tank drain, sink gray drain, and pump-pressurized ambient-water washdown. The sink pull-out can support a temporary out-window shower, but a south shower branch avoids carrying heated water north to the sink only to route it south/outside again.
 
+### Tank-plumbing procurement and sender backing
+- Owner purchased the final immediate tank transition hardware: SharkBite `UP120A5` five-pack of `1/2 in MNPT x 1/2 in PEX` straight adapters, Banjo `HB150-90` `1-1/2 in MNPT x 1-1/2 in barb` gravity-fill elbow, and Green Leaf `EL1238` `1/2 in MPT x 3/8 in barb` vent elbow. Existing fill-hose clamps and the accumulator's two supplied female-swivel-to-PEX adapters cover those interfaces without duplicate purchases.
+- Owner purchased the KUS/Wema `FLS-U` stainless SAE five-hole C-ring under-ring from eBay item `406787629362`: `$17.55` unit price and `$28.81` owner-reported delivered total.
+- Sender cut guidance is corrected to the selected backing method: the official FLS-U manual requires one `60 mm` tank opening, which maps to a `2-3/8 in` hole saw. The earlier sender-alone `36-42 mm`/`1-1/2 in` opening guidance does **not** leave room to rotate the C-ring through the tank wall. Wait for the ring, preassemble the sender/gasket/screws/C-ring as shown, rotate the ring through that one opening, and tighten the screws into the under-ring; do not drill five separate pilot holes through the tank top. Bench leak-test afterward.
+
 ## 2026-07-13 — Lonseal template and rough-cut method locked
 
 - Owner reported the one-piece Lonseal is ready for driveway layout and needs wheel-well plus four corner-pillar cuts.
