@@ -513,21 +513,23 @@ Run this before assuming a weekend task is blocked.
 
 # Near-term priority queue
 
-## If energy is low
+## Friday `2026-07-17` — cure-window bench/mockup day
 
-1. Record the best available #650 completion time and calculate the `72 hr` heavy-furniture release from that time.
-2. Back out/clean/reinstall temporary edge-board bolts one at a time; stop on binding or insert movement.
-3. Photograph and label every molded tank port, the KUS sender, gravity-fill hardware, vent nipple, pump/strainer/accumulator, hose/PEX stock, and likely drain parts.
-4. Draw a paper tank port map with `fill`, `vent`, `pump outlet`, `drain`, `sender`, and `spare` before holding a hole saw.
-5. Inventory floor protection, P-clamps/loom/labels, tank fittings/backing ring, fill/vent hose, PEX fittings, drain parts, and shore-inlet sealing/strain-relief hardware.
+1. Keep heavy modules and furniture out of the camper. Record the best available #650 completion time; evening `2026-07-18` is only the earliest planning estimate for the `72 hr` heavy-load release. If any temporary edge-board bolts are still sitting in adhesive-contaminated holes, back out/clean/reinstall them one at a time now; stop on binding or insert movement, and leave the cure boards/clamping load otherwise undisturbed.
+2. Unbox the Sarlai sink and FORIOUS faucet/soap dispenser completely. Inventory every clip, nut, hose, adapter, drain part, gasket, and template; photograph the labels and both sides of every connection.
+3. Measure four separate sink/faucet envelopes: exterior flange, actual cutout/template, below-counter bowl/clip/drain envelope, and faucet shank/nut/pull-out-hose sweep. Record the faucet supply-thread and sink drain/tailpiece sizes from markings or direct measurement rather than assumption.
+4. Make a full-scale scrap-plywood/cardboard galley-top mockup with the real sink and faucet. Draw the `10-series` rails below it and prove faucet, clip, drain, manifold, gray-jug, drawer/bin, and extraction clearances; do not cut the final walnut or lock the final rail geometry.
+5. On the garage floor, tape/string the plumbing baseline without cutting PEX: low north tank pickup -> shutoff/flex/strainer/pump/flex/accumulator -> one protected `1/2 in` cold trunk behind the tank with no hidden joints -> central under-sink cold manifold -> sink cold, rear cold washdown, and isolated south heater feed. Mock a south hot-water footprint, local rear shower branch, and hot return to the sink.
+6. Mock both a removable `2.5 gal` and `5 gal` graywater vessel under the sink, including the drain bend/waterless trap, vent, retention/tray, full-container lift path, and cap/handle access. Prefer the smallest vessel that is genuinely easy to remove; defer an under-truck tank until shakedown proves the handling burden justifies another bed penetration and freeze-exposed system.
+7. Make two heater envelope blocks: a `4-4.2 gal` electric/marine storage heater and an exterior-vented RV propane tankless. Do not let the planned portable outdoor heater or a moving swingout propane hose become the permanent no-setup architecture by default.
+8. End the day with measured photos and a marked route sketch. No tank drilling, PEX cuts, sink/countertop cuts, exterior penetrations, propane mounting, or propane hose specification yet.
 
-## If energy is high
+## After the `72 hr` floor gate passes
 
-1. Complete the tank workbench layout: measure the KUS location, assign every existing port, mock fill/vent/outlet/drain bends, and identify the exact missing fitting/backing list.
-2. After the `72 hr` cure gate, remove boards and do the documented full-floor/hardpoint inspection before moving a module.
-3. Protect the floor and hard-mount/brace the electrical module first.
-4. Install/wire/fuse/cover the `3x 48V` bank with the battery bench open; prove extraction, disconnect, Class T, Lynx/shunt, and cable-clamp access before adding upper bench structure.
-5. Perform one bare-tank in-truck dry fit; freeze restraint, sender, fill, vent, outlet, drain, and wet-spine geometry before drilling.
+1. Remove boards and do the documented full-floor/hardpoint inspection before moving a module.
+2. Protect the floor and hard-mount/brace the electrical module first.
+3. Install/wire/fuse/cover the `3x 48V` bank with the battery bench open; prove extraction, disconnect, Class T, Lynx/shunt, and cable-clamp access before adding upper bench structure.
+4. Perform one bare-tank in-truck dry fit; freeze restraint, sender, fill, vent, outlet, drain, and wet-spine geometry before drilling.
 
 ## Do not prioritize next unless the gate above is already green
 
@@ -549,6 +551,9 @@ Run this before assuming a weekend task is blocked.
 - [HOLD] No heavy module/furniture loading until `72 hr` after actual #650 completion and the post-cure floor/hardpoint inspection passes.
 - [HOLD] No road travel with freestanding/lightly restrained electrical module.
 - [HOLD] No tank sender/fill/vent hole until the empty tank has a complete port map and passes one bare in-truck dry fit.
+- [HOLD] No PEX cuts until the purchased tank adapters arrive and the real sink/faucet/drain geometry plus manifold/heater-bypass route are mocked at full scale.
+- [HOLD] Do not merge the low south gravity tank drain with the pressurized cold/hot shower system; create a separate rear washdown/shower branch from the manifolds.
+- [HOLD] No propane cylinder mount, moving swingout hose, shell cutout, regulator/hose specification, or permanent heater mount until the exact heater class/model and its listing/manual/clearances are frozen.
 - [HOLD] No battery-bench bridge/lid or obstructing upper structure until the `3x 48V` bank is installed, individually protected/connected as designed, covered, labeled, and removable with emergency access preserved.
 - [HOLD] No alternator first-charge until APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior are ready.
 - [HOLD] No final countertop sink cutout until faucet/drain/rail clearance is physically proven.

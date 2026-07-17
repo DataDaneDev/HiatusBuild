@@ -430,6 +430,46 @@ Implications:
 7. **Install wet-side first:** hard-mount the tank restraint and wet-spine service board before passenger-side furniture closure. Keep tank shutoff, strainer, pump, accumulator, gauge, manifold, winterization pickup, blowout point, low drain, and unions visible/removable from the aisle/rear.
 8. **Cut the exterior fill/vent last:** physically prove the installed tank endpoints, hose fall/vent rise, backing, service access, and spill/overflow path from both sides before cutting the camper/bed-side interface.
 
+### Provisional cold/hot routing baseline (`2026-07-16`)
+
+This is the recommended full-scale mockup baseline, not frozen cut geometry. Preserve the tank's assigned functions: upper south ports for gravity fill and unrestricted vent, low north `1/2 in` port for pump pickup, and low south `1/2 in` port as a dedicated gravity tank drain.
+
+```text
+low north tank pickup
+  -> tank shutoff
+  -> short service/flex transition
+  -> strainer -> pump -> flex -> accumulator
+  -> one 1/2 in cold trunk south behind the tank
+  -> central accessible cold manifold under/near the sink
+       -> sink cold
+       -> rear pressurized cold washdown
+       -> isolated south heater feed
+
+south heater feed
+  -> three-valve heater isolation/bypass reservation
+  -> future heater
+  -> tempering/mixing protection when required by heater class
+  -> local rear shower/sprayer branch
+  -> one hot return north to the sink
+```
+
+Route the long cold trunk low along the bed-wall side behind the tank, supported independently and protected from chafe, rather than across the tank top. Use a continuous length with **no concealed joints or valves** behind the installed tank; keep every union, shutoff, manifold, filter, pump component, and drain serviceable from the aisle/rear. This preserves tank-top storage without burying failure points.
+
+Keep three south functions distinct:
+
+1. The low south tank port remains a gravity fresh-tank drain with its own supported valve and capped/hose-ready outlet.
+2. Rear cold washdown comes from the pressurized cold manifold.
+3. Rear hot shower/sprayer comes from the heater output or a hot/cold exterior mixer. Tee this locally at the rear instead of routing hot water north to the sink and back south.
+
+Do not cross-connect the gravity drain into the pressure/hot circuit. The separate pressurized rear branch provides the desired hot sprayer without backflow paths, confusing valve choreography, or loss of a simple emergency tank drain.
+
+The stated zero-setup goal changes the heater decision. A portable outdoor propane heater plus a cylinder/hose crossing a bumper swingout is not the clean permanent baseline: portable heaters remain outdoor-use systems, and a hose spanning a moving pivot creates avoidable setup, abrasion, pinch, and inspection problems. Mock these two permanent classes before committing:
+
+- `4-4.2 gal` electric/marine storage heater: lowest gas-system complexity, compatible with the current `48/3000` electrical architecture under manual/load-shed control, and roughly `4%` of the `15.36 kWh` nominal bank for a representative heat cycle from cold to shower temperature. Preserve bypass, drain, T&P discharge, and tempering provisions.
+- Listed exterior-vented RV propane tankless: best continuous-hot-water comfort if the owner accepts the exterior cutout, fixed stationary LP supply, `12V` controls, combustion/vent clearances, detector package, leak testing, and winterization required by the exact manual. Do not finalize a cylinder mount until that appliance is selected; avoid a permanently connected supply hose across a swingout pivot.
+
+For sink graywater, start with a removable under-sink vessel before adding an under-truck tank. Mock `2.5 gal` (`~20.9 lb` water) and `5 gal` (`~41.7 lb` water) sizes with the actual sink drain. The baseline should include a compact waterless trap, vented container connection, positive travel retention, removable spill tray/leak-sensor point, and a lift path that works when full. An under-truck gray tank remains a post-shakedown option because it adds a bed penetration, external vent/dump hardware, road-debris protection, freeze exposure, and legal-dump discipline; its dump valve should not be treated as a normally open drain.
+
 ### Countertop and appliance strategy
 Use convertible surfaces:
 
