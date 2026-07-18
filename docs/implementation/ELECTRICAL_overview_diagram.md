@@ -377,7 +377,7 @@ Retired from active architecture:
 | `C-19B` | 12V buffer battery `-` -> 12V fuse block integrated `-` bus / main `-` stud | `12V` | Buffer battery return path | N/A (paired with `C-19A`) | `4 AWG` planned | `2.5 ft` (`ASSUMED`) |
 | `C-20` | 12V panel -> Starlink PSU | `12V` | Branch load | `F-10` `10A` | `14 AWG duplex` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-21` | 12V panel -> Fridge | `12V` | Branch load | `F-10` `15A` | `14 AWG duplex` | `12 ft` (`ASSUMED`, far-load branch) |
-| `C-22` | 12V panel -> Diesel heater | `12V` | Branch load | `F-10` `15A` | `14 AWG duplex` | `8 ft` (`ASSUMED`, near-load branch) |
+| `C-22` | 12V panel -> LF Bros diesel-heater harness | `12V` | Startup/cooldown branch; keep energized through controller-commanded shutdown | `F-10` `15A` (retain any supplied harness fuse; verify coordination) | `14 AWG duplex` only for verified short run; otherwise `12 AWG` | `8 ft` (`ASSUMED`; measure before final cable landing) |
 | `C-23` | 12V panel -> Water pump | `12V` | Branch load | `F-10` `10A` | `14 AWG duplex` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-24` | 12V panel -> CO + propane detector | `12V` | Branch load | `F-10` `3A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-25` | 12V panel -> LED lights + dimmer (Hiatus pre-installed) | `12V` | Branch load | `F-10` `5A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
@@ -437,7 +437,7 @@ Calculation basis for drop screening:
 | `C-19B` | Buffer battery `-` | Fuse block integrated `-` bus / main `-` stud | N/A | `50A` design | `4 AWG` | `2.5 ft` | `0.52%` @ `12V` | Row `30` (`4 AWG black`) | PASS |
 | `C-20` | 12V fuse panel | Starlink PSU | `F-10 10A` | `8A` | `14 AWG duplex` | `8 ft` | `2.69%` @ `12V` | Row `32` (`14 AWG duplex`) | PASS (near 3%) |
 | `C-21` | 12V fuse panel | Fridge | `F-10 15A` | `7A` | `14 AWG duplex` | `12 ft` | `3.54%` @ `12V` | Row `32` (`14 AWG duplex`) | WARN (shorten run or move to `12 AWG`) |
-| `C-22` | 12V fuse panel | Diesel heater | `F-10 15A` | `10A` startup screen | `14 AWG duplex` | `8 ft` | `3.37%` @ `12V` | Row `32` (`14 AWG duplex`) | WARN (startup drop margin tight) |
+| `C-22` | 12V fuse panel | LF Bros diesel-heater harness | `F-10 15A` + supplied harness fuse if present | `10A` startup screen | `14 AWG duplex` short-run candidate; `12 AWG` fallback | `8 ft` assumed | `3.37%` @ `12V` with 14 AWG | Row `32` (`14 AWG duplex`) / planned 12 AWG stock if required | WARN (measure one-way run and test startup voltage; preserve cooldown power) |
 | `C-23` | 12V fuse panel | Water pump | `F-10 10A` | `7A` | `14 AWG duplex` | `8 ft` | `2.36%` @ `12V` | Row `32` (`14 AWG duplex`) | PASS |
 | `C-24` | 12V fuse panel | CO+propane detector | `F-10 3A` | `0.2A` | `18/2` | `8 ft` | `0.17%` @ `12V` | Row `33` (`18/2`) | PASS |
 | `C-25` | 12V fuse panel | LED lights + dimmer (Hiatus pre-installed) | `F-10 5A` | `5A` | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |

@@ -397,7 +397,12 @@ Goal: enough utility for a workday without derailing core structure.
 - [ ] Add temporary task light if final lighting is deferred.
 - [ ] Add red/amber night strip only if the wiring path is already clean and non-blocking.
 - [ ] Confirm fan/window/vent access remains usable after modules are placed.
-- [ ] Confirm heater location/service path remains preserved, even if commissioning is later.
+- [ ] Freeze the LF Bros heater envelope before final battery-cable landing: body horizontal/upright, at least `4 in` clear at rear cabin-air intake, unrestricted front warm-air outlet, and every clamp/plug serviceable without battery removal.
+- [ ] Reject the electrical-backer exhaust route. Dry-fit a sealed metal floor turret/plate directly beneath the heater, inspect both sides for bed ribs/crossmembers/vehicle lines/wiring, and let that physical part control the layered-floor cut. LF Bros' simple-flat-metal reference is `2x 30 mm` combustion holes plus four stud holes, not an automatic Hiatus cut pattern.
+- [ ] Mock the entire outside combustion path before drilling: exhaust with slight continuous fall and broad sweeps, muffler entirely outside, separate combustion intake protected from spray, intake/exhaust ends facing different directions, and metal stand-offs/shielding from fuel, wiring, plastic, undercoating, and openings.
+- [ ] Mount the supplied `10 L` tank upright outside the open battery/electrical bay or in sealed externally vented spill containment. Drill only `7-8 mm` through the center of its molded lower boss for the supplied pull-through nozzle—do not cut out the apparent `3/4-1 in` pad and do not put the pump in the tank.
+- [ ] Mock fuel order `tank -> filter -> external pump -> heater`; rubber-mount the pump close to tank, within `2 m` of heater, outlet toward heater and about `45 degrees` upward. Preserve filter, pump, clamps, and bottom-tank fitting access.
+- [ ] Route the harness branches before closing the battery bay: main heater plug, pump two-pin lead, T4S controller lead, and fused `12V +/-`. The remote is wireless/no-cut; mount T4S away from the hot outlet. Preserve 12V power through commanded cooldown and verify actual `C-22` length/startup voltage before retaining short-run `14 AWG / 15A` or upgrading to `12 AWG`.
 - [ ] [DEFER] Final QuinLED/WLED lighting install unless core modules are stable.
 - [ ] [DEFER] Camper audio package; do not spend July 4 sprint time on it.
 
