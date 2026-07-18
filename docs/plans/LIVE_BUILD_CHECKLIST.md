@@ -43,7 +43,7 @@ It does **not** replace the owner docs:
 
 - Owner-reported `2026-07-06`: Desk/storage and Galley modules were reinforced and test-installed; the Galley rear stretch was rebuilt as one continuous `2010` member and the integrated layout was verified well enough to enter the floor teardown/reinstall gate.
 - Owner-reported `2026-07-15`: the one-piece Lonseal was glued to the three-piece `3/4 in` plywood floor with #650. The sheet bridges both plywood seams, so the floor is now intentionally permanent and removal would require cutting the vinyl.
-- The floor is in the published `72 hr` heavy-furniture cure window. Exact completion time is not recorded; evening `2026-07-18` is only the earliest planning estimate.
+- Owner direction `2026-07-17`: treat the floor as cured Saturday morning, give it a quick visual check, protect it, and resume module loading unless an area is actually loose.
 - Mild waviness/bumps and some lifted edges are reported. Bolted boards are holding perimeter pressure. #650 entered some hardpoint holes, and temporary bolts were installed to preserve threads; remove/clean/reinstall them carefully one at a time before they become permanent.
 - The next physical sequence is not “put all furniture back.” It is floor release -> electrical module hard mount -> open-access `3x 48V` bank install -> bench closure, plus tank workbench map -> one bare-tank in-truck dry fit -> tank/restraint/wet-spine install.
 - Shore and water-fill/vent penetrations follow their physically installed inside endpoints. The shore inlet waits for the electrical route; the gravity-fill hatch waits for tank orientation, fill/vent port map, hose fall/vent rise, and service access.
@@ -80,7 +80,7 @@ As of `2026-07-04`, the Galley/cooler/Bench/electrical tie-in has moved from tar
 
 ### Systems-integration priority ladder — `2026-07-16`
 
-1. **Release the floor:** protect cure time, preserve hardpoint threads, remove cure boards after `72 hr`, photograph the full surface, and classify edge/raised/hollow areas before loading it.
+1. **Release the floor:** remove the cure boards Saturday morning, make a quick visual check, protect the surface, and proceed unless an area is actually loose.
 2. **Map the tank while the truck is empty:** inventory molded ports, verify KUS sender clearance, and lay out fill/vent/outlet/drain/wet-spine parts on the garage floor.
 3. **Install electrical before closing the bench:** hard-mount/brace the electrical module; install, individually protect, connect, cover, and label the `3x 48V` bank with full access; prove extraction and emergency service.
 4. **Dry-fit then prepare the tank:** place the bare tank in the truck once before drilling, freeze orientation/restraint/port/service geometry, add manufacturer-compatible fittings, then bench leak-test.
@@ -159,7 +159,7 @@ Goal: build the structure that braces the electrical module and controls battery
 
 Goal: turn the freestanding live-proven electrical module into a restrained mobile module.
 
-- [ ] Wait for the floor's `72 hr` heavy-furniture cure and post-cure inspection; protect the Lonseal before moving the module.
+- [ ] Remove the cure boards Saturday morning, make a quick visual check, and protect the Lonseal before moving the module.
 - [ ] Hard-mount the electrical module before the battery bench or remaining furniture closes side/fastener access.
 - [ ] Place electrical module against the bench/desk structure in its intended installed position.
 - [ ] Confirm MultiPlus depth and service clearance are still acceptable.
@@ -334,7 +334,7 @@ Goal: release the permanent floor from cure, preserve the hardpoints, and protec
 - [x] Accept that the finish now bridges both plywood seams; floor removal requires cutting the vinyl and is not part of the active plan.
 - [~] Hold lifted perimeter areas with bolted boards during cure.
 - [ ] Back out/clean/reinstall each temporary clamp bolt one at a time with hand/low-speed control before adhesive-contaminated threads become permanent; stop if a rivnut spins or stainless threads bind.
-- [ ] Keep heavy furniture/modules off for `72 hr` after actual adhesive completion. With no exact finish time recorded, evening `2026-07-18` is only the earliest planning estimate.
+- [ ] Owner accepts Saturday-morning module loading; protect the surface and stop only if an area is actually loose.
 - [ ] After cure, remove boards and photograph the complete floor before loading it.
 - [ ] Inspect every edge and hardpoint; classify stable cosmetic waviness vs raised/hollow/loose areas, and check board/washer imprinting.
 - [ ] Do not cut/inject/heat/aggressively reroll during cure. After cure, accept stable cosmetic irregularity or define a localized repair before modules hide it.
@@ -513,50 +513,16 @@ Run this before assuming a weekend task is blocked.
 
 # Near-term priority queue
 
-## Friday `2026-07-17` — calls, cure-window measurements, and bench mockups
+## Saturday `2026-07-18`
 
-1. **Call Expedition One during `09:00-17:00 Mountain`:** `877-366-3099` (alternate `801-627-2921`; `info@expeditionone.biz`). Identify the truck as a `2021 F-350` with their `2017-2022 RangeMax Ultra HD` front bumper and ask whether they will fabricate/install or sell a centered `2 in` receiver tied into the frame/winch-plate structure rather than only the bumper skin. Have bumper/order details and front/underside/winch-cavity photos ready.
-   - State the exact intended carrier use and loaded weight: carrier + bike/cargo, plus receiver-pin-to-load-center distance. Do not ask only whether a receiver can be welded in; ask what vertical/tongue load they will approve for that cantilevered use.
-   - Ask whether it can coexist with the winch/fairlead, clevis/recovery mounts, camera/sensors/lights, and radiator/intercooler airflow.
-   - Ask whether they prefer a removable bolt-in winch-plate/frame bracket or welded modification; ask what modification does to bumper warranty and powder coat.
-   - Get fabrication/install price, lead time, truck drop-off requirements, finish/rewarranty posture, and any written load rating or use limitation. If they will not do it, ask for approved attachment points/drawings and a fabricator referral.
-   - Do not authorize work from a vague “should be fine.” The go gate is a defined frame/load path, intended-use approval, loaded-weight capacity, and written quote.
-2. Keep heavy modules and furniture out of the camper. Record the best available #650 completion time; evening `2026-07-18` is only the earliest planning estimate for the `72 hr` heavy-load release. If any temporary edge-board bolts are still sitting in adhesive-contaminated holes, back out/clean/reinstall them one at a time now; stop on binding or insert movement, and leave the cure boards/clamping load otherwise undisturbed.
-3. Unbox the Sarlai sink and FORIOUS faucet/soap dispenser completely. Inventory and photograph every clip, nut, hose, adapter, drain part, gasket, template, label, and connection.
-4. Measure the sink exterior flange, actual cutout/template, below-counter bowl/clip/drain envelope, faucet shank/nut/pull-out-hose sweep, faucet supply thread, and sink drain/tailpiece. Put the real fixtures in a full-scale scrap-plywood/cardboard galley mockup; prove rail, clip, drain, manifold, gray-jug, drawer/bin, and extraction clearances. Do not cut the walnut.
-5. Measure the north cubby in ordered `H x W x D`, plus the actual front opening, door/panel sweep, internal intrusions, and extraction path. Make the A.O. Smith E6-6C15SV lowboy mockup first (`15.25 H x 14.25 in dia`) if `16 in` is vertical. Put the **real** pump, strainer, accumulator, flex loops, and fittings beside it and prove service access, not merely shell fit.
-   - Preserve room to remove the strainer bowl and pump head, reach the heater electrical/service panel, route T&P discharge, and pull the heater for anode/service.
-   - If the package is too tight, relocate or initially omit the accumulator before dropping from a six-gallon heater to a four-gallon heater. Do not bury the pump/strainer to save the accumulator location.
-6. Inventory and photograph all eight tank ports/model markings, inspect for any membrane-covered top boss, measure KUS sender depth at the proposed flat location, and arrange the fill elbow, vent elbow/hose, pump outlet, gravity drain, sender/under-ring, restraint, and wet-spine board around the empty tank. **No tank drilling yet.**
-7. Tape/string the plumbing baseline without cutting PEX: low north tank pickup -> shutoff/flex/strainer/pump/flex/accumulator or direct service zone -> joint-free cold trunk south; north-heater isolation/bypass -> insulated joint-free hot trunk south. Mock sink branches, rear mixer/washdown, and both `2.5 gal` and `5 gal` removable graywater envelopes.
-8. End the day with measured photos, a marked route sketch, and a short `fits / conflicts / missing` list. No PEX cuts, sink/countertop cuts, exterior penetrations, or heater purchase yet.
+1. Pull the cure boards in the morning, give the floor a quick look, protect it, and start loading unless something is actually loose.
+2. Put the electrical module in and hard-mount it, then wire/install the batteries while the bench area is still open.
+3. Reinstall the Bench, Desk, and Galley around the electrical system once the access-critical work is finished.
+4. Rough-fit the tank, sink, faucet, pump, accumulator, and heater space; measure the north cubby and choose the `6 gal` electric heater or propane path based on what physically fits.
+5. When the missing plumbing pieces arrive, mark/drill the tank, cut the PEX, assemble the wet spine, and leak-test it.
+6. Call Expedition One Monday during `09:00-17:00 Mountain` at `877-366-3099` and ask whether they can add a centered `2 in` front receiver with an approved carrier/load rating.
 
-## Saturday `2026-07-18` — finish bench work; release the floor only after the cure gate
-
-1. Before the estimated evening release, continue only garage/bench tasks: clean and label fittings, assemble cardboard/service-board layouts, inventory clamps/unions/valves/PEX support, and prepare clean floor protection and module-moving hardware.
-2. Do not buy the water heater until ordered cubby dimensions and the real pump/strainer/accumulator mockup prove the shell, fittings, service, and extraction path.
-3. At or after the best-supported `72 hr` point, remove cure boards without dragging hardware across the Lonseal. Photograph the entire floor before loading anything.
-4. Inspect every edge, seam area, hardpoint, board/washer imprint, raised/hollow area, and temporary bolt. Distinguish stable cosmetic waviness from a truly loose area. If the floor does not pass, stop module loading and define only the localized repair.
-5. If it passes, cover travel paths with clean hardboard/cardboard/blankets and stage electrical-module fasteners/tools for Sunday. Do not celebrate the release by reinstalling every module.
-
-## Sunday `2026-07-19` — utilities-first reinstall if the floor passes
-
-1. Move in and hard-mount/brace the electrical module first. Verify registered hardpoints, anti-rack tie-in, MultiPlus/service clearances, floor protection, fastener support, and no cable abrasion.
-2. With the battery bench fully open, install the `3x 48V` bank with individual Class T protection, disconnect/Lynx/shunt path, terminal covers, cable clamps, labels, and extraction access. Prove emergency fuse/disconnect reach before adding any bridge/lid or upper frame.
-3. Perform one **bare empty tank** in-truck dry fit. Freeze wheel-well orientation, restraint/bracket reach, sender-removal space, fill/vent bends, low pump pickup/drain, north wet-service board, heater cubby, graywater path, and where a leak would travel.
-4. Photograph and mark final datums before removing the empty tank. Do not drill merely because the tank is now near the truck; drill only after the complete port/restraint/service map passes.
-5. End with a written next-shop-block punch list. Do not close the bench, skin modules, or cut shore/water exterior penetrations.
-
-## Following shop blocks — in dependency order
-
-1. **Tank bench completion:** freeze port labels; install the KUS sender with the purchased FLS-U method and one `60 mm / 2-3/8 in` opening; install approved fill/vent/outlet/drain fittings; capture chips; bench fill/leak test; verify drain/fill/vent behavior.
-2. **Wet-spine build:** mount restraint and accessible service board/tray; install shutoff, reinforced flex, strainer, pump, accumulator only if retained, gauge/manifold, winterization pickup, blowout, low points, unions, leak sensor, and electrical connector.
-3. **Fixture/plumbing rough-in:** after purchased fittings arrive and full-scale geometry is proven, cut/support PEX; run joint-free cold/hot trunks; connect sink cold/hot, rear cold washdown/hot mixer, and removable graywater cassette; pressure/leak test before closure.
-4. **Heater decision:** buy the A.O. Smith lowboy only if the north-cubby mockup passes with the actual pump equipment and service envelope. Preserve isolation/bypass and hot trunk even if heater purchase waits.
-5. **Module structure:** reinstall/tie in Bench, Desk, Galley, and lofted fridge skeleton only after utilities remain serviceable; add fridge restraint/ventilation and wet/dry partition before cosmetic panels.
-6. **Exterior interfaces last:** cut the shore inlet after the hard-mounted AC endpoint/cable path/backing/strain relief are proven; cut the water-fill/vent hatch after installed tank endpoints and continuous fill fall/vent rise are physically proven.
-7. **Closeout before driving:** covers/dead-fronts, GFCI/DC tests, extinguisher/detectors, emergency shutdown label, travel latches/restraint, torque/witness marks, then a low-consequence shakedown and leak/abrasion/fastener reinspection.
-8. **Keep parallel but non-blocking:** obtain the Expedition One receiver answer/quote and schedule fabrication if approved, but do not let the front-hitch lane interrupt floor release, electrical restraint, battery access, or tank/plumbing critical path.
+**Build order:** electrical -> batteries/furniture -> tank/heater mockup -> plumbing -> exterior pass-throughs -> shakedown.
 
 ## Do not prioritize next unless the gate above is already green
 
@@ -575,7 +541,7 @@ Run this before assuming a weekend task is blocked.
 
 ## Hard holds
 
-- [HOLD] No heavy module/furniture loading until `72 hr` after actual #650 completion and the post-cure floor/hardpoint inspection passes.
+- [HOLD] Do not load over an actually loose floor area; otherwise protect the Lonseal and proceed Saturday morning.
 - [HOLD] No road travel with freestanding/lightly restrained electrical module.
 - [HOLD] No tank sender/fill/vent hole until the empty tank has a complete port map and passes one bare in-truck dry fit.
 - [HOLD] No PEX cuts until the purchased tank adapters arrive and the real sink/faucet/drain geometry plus manifold/heater-bypass route are mocked at full scale.
