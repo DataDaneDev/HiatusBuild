@@ -465,22 +465,21 @@ The stated zero-setup goal changes the heater decision. Standard exterior-vented
 
 The planned Flame King YSNAZ132 also cannot become the compact permanent workaround. Its official manual says it is for non-potable water, temporary point-of-use heating, not a permanent inlet-water connection, and not a distribution system supplying multiple outlets; it is also outdoor-use-only and must remain above `33°F`. Preserve it only as an optional temporary outdoor shower appliance, not as the sink/hot-manifold heater.
 
-The owner identified a candidate north cubby with an internal bounding envelope of `27 x 15 x 16 in`; record which dimension is actually vertical before purchase because the affordable mini-tank classes require upright installation. Current electric-only comparison, using observed `2026-07-17` pricing and manufacturer dimensions:
+The owner identified a candidate north cubby with an internal bounding envelope of `27 x 15 x 16 in`; record which dimension is actually vertical before purchase because these heaters must stay upright. Live purchase shortlist checked `2026-07-17`; prices are before tax and can move:
 
-| Candidate | Capacity / power | Manufacturer envelope | Observed price | Cubby result / posture |
-| --- | --- | --- | ---: | --- |
-| Bosch Tronic 3000T ES4 | `4 gal`, `1440W`, max `145°F` | `13.75 x 13.75 x 13.5 in` | `~$214-239` | Fits with any cubby axis vertical; quality compact fallback, but only about `6.9 gal` ideally mixed from `145°F` storage to `105°F` with `50°F` inlet. |
-| Camplux ME40B | `4 gal`, `1440W`, max `140°F` | `14.5 x 14.5 x 12.9 in` | `~$189-240` | Fits upright; lower warranty/support confidence and only about `6.5 gal` ideally mixed at `105°F`. The small savings versus a six-gallon unit are not compelling. |
-| EcoSmart ECO MINI 6 | `6 gal`, `1440W`, `12A`, max `140°F` | `20.83 H x 13.86 W x 14.19 D in` | `~$215` | **Best value if the `27 in` cubby axis is vertical.** Manufacturer explicitly markets it for RV use; plug-in, listed/low-lead compliant, included T&P valve, replaceable element/anode, `6 yr` leak/`2 yr` parts warranty. About `9.8 gal` ideally mixed at `105°F`; roughly `1.32 kWh` / `8.6%` of nominal bank for a `50->140°F` full-tank heat. |
-| Richmond 6MT6-1 / Eemax EMT6 | `6 gal`, `~1400-1440W`, max `140°F` | about `21 x 14 x 14.25 in` | `~$200-259` | Same vertical-axis requirement and performance class as EcoSmart; viable price/availability substitutes, not a better package. |
-| A.O. Smith Signature E6-6C15SV | `6 gal`, `1500W`, `120V` | `15.25 H x 14.25 in dia` | `~$319` | **Best lowboy if the `16 in` cubby axis is vertical.** Hardwired, top/side connection options, more serviceable short tank, `6 yr` warranty. Costs about `$104` more than EcoSmart but solves the short-cubby geometry. |
-| Stiebel Eltron SHC 6 | `6 gal`, `1300W`, max `140°F` | `20.5 x 15.125 x 15 in` | `~$299` | Bounding box only barely fits and leaves no practical clearance on the `15 in` axis; reject for this cubby. |
-| Camplux ME60 | `6 gal`, `1440W`, max `149°F` | `21 x 15.75 x 15.5 in` | `~$240` | Fails the exact `15 in` cubby axis; reject unless the measured opening is materially larger. |
-| Bosch ES8 / Eccotemp EM-7.0 | `7-7.1 gal`, `1440W` | at least `17 x 17 x 14.5 in` | `~$259-445` | Fails the `15 x 16 in` cross-section; reject. |
+| Class | Candidate / buy link | Capacity / power | Manufacturer envelope | Live price | Best use |
+| --- | --- | --- | --- | ---: | --- |
+| Six-gallon lowboy | [A.O. Smith E6-6C15SV — Lowe's](https://www.lowes.com/pd/A-O-Smith-Signature-6-Gallon-Regular-6-year-Limited-1500-watt-1-Element-Point-of-Use-Electric-Water-Heater/1000216841) | `6 gal`, `1500W`, `120V` | `15.5 H x 14.25 in dia` | `~$319` | Best six-gallon fit when the short cubby axis is vertical. |
+| Six-gallon budget | [Camplux ME60 — Amazon](https://www.amazon.com/dp/B07CV789V4) | `6 gal`, `1440W`, `120V` | `21 H x 15.75 W x 15.5 D in` | `$229.99` | Cheaper six-gallon option, but only if the measured cubby is wider than the reported `15 in`. |
+| Four-gallon budget | [ThermoMate ES400B — Amazon](https://www.amazon.com/dp/B0CCJ3PS9J) | `4 gal`, `1440W`, `120V` | `14.5 H x 14.5 W x 12.9 D in` | `$161.49` | Current value pick if six gallons will not fit. |
+| Four-gallon alternate | [Camplux ME40B — Amazon](https://www.amazon.com/dp/B08BJXMMNT) | `4 gal`, `1440W`, `120V` | `14.5 H x 14.5 W x 12.9 D in` | `$188.99` | Same basic package size as ThermoMate; buy only if preferred availability/support justifies the extra cost. |
+| Four-gallon compact | [Bosch Tronic 3000T ES4 — Amazon](https://www.amazon.com/dp/B0148O65IE) | `4 gal`, `1440W`, `120V` | `13.75 H x 13.75 W x 13.5 D in` | `$259.00` | Smallest body here and the strongest fit fallback, but poor value at the current Amazon price. |
+
+At `50°F` inlet and `140°F` storage tempered to `105°F`, the ideal comparison is about `9.8 gal` mixed water from a six-gallon tank versus `6.5 gal` from a four-gallon tank. That is about `12.2` versus `8.1` minutes through a `0.8 GPM` showerhead before real-world losses.
 
 Do not use a cheap electric tankless unit for the Hiatus shower. The available `120V / 3.5kW` class draws about `29A`, exceeds the current `20A` branch and the MultiPlus `48/3000` continuous inverter class, yet raises `1.0 GPM` only about `24°F`. Cheap `240V` units are also incompatible with the current `30A/125V` shore inlet and `120V` inverter; even a `6.5kW` unit raises `1.0 GPM` only about `44°F`, while an actually adequate `11-13kW` shower unit needs roughly `46-54A at 240V` and a wholesale electrical redesign.
 
-Current purchase gate: if `27 in` is vertical and the cubby has a removable/serviceable front, use the **EcoSmart ECO MINI 6** value baseline. If `16 in` is vertical, use the **A.O. Smith E6-6C15SV lowboy** with side connections. If only `15 in` is vertical, step down to the **Bosch ES4**. In every case, prove the actual opening/door sweep, manufacturer access, upright orientation, restraint for roughly `77-85 lb` full mass, wet/electrical separation, leak tray/sensor, T&P discharge, drain/winterization, listed tempering valve, and thermal-expansion path before purchase or PEX cuts.
+Current purchase order: **A.O. Smith first if it fits; ThermoMate ES400B if six gallons does not fit; Bosch ES4 only if the extra inch of compactness is what makes the installation work.** The Camplux ME60 is the cheaper six-gallon alternative only if tomorrow's measurement proves at least a `15.75 x 15.5 in` cross-section plus plumbing room.
 
 For sink graywater, start with a removable under-sink vessel before adding an under-truck tank. Mock `2.5 gal` (`~20.9 lb` water) and `5 gal` (`~41.7 lb` water) sizes with the actual sink drain. The baseline should include a compact waterless trap, vented container connection, positive travel retention, removable spill tray/leak-sensor point, and a lift path that works when full. An under-truck gray tank remains a post-shakedown option because it adds a bed penetration, external vent/dump hardware, road-debris protection, freeze exposure, and legal-dump discipline; its dump valve should not be treated as a normally open drain.
 
@@ -550,7 +549,7 @@ Power conflict examples:
 
 If electric tanked hot water is added:
 
-- Put it low in the north cubby: EcoSmart ECO MINI 6 if `27 in` is vertical, A.O. Smith E6-6C15SV lowboy if `16 in` is vertical, or Bosch ES4 only if the cubby's vertical limit is `15 in`.
+- Put it low in the north cubby: A.O. Smith E6-6C15SV if the short six-gallon lowboy fits; ThermoMate ES400B if the layout must step down to four gallons; Bosch ES4 only if its smaller body is what makes the fit work.
 - Add drain pan and visible drain/relief path.
 - Add bypass/winterization valves.
 - Put it on a labeled manual switch or load-shed relay.
