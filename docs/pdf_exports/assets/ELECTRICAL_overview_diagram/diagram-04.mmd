@@ -7,6 +7,7 @@ flowchart LR
     BTEMP["Battery temp sensor"]
     SHUNT_PWR["SmartShunt fused + lead\n(factory harness)"]
     CERBO_PWR["CERBO-PWR Cerbo GX fused 48V power\n1A-3A inline"]
+    KUS["KUS SSS/SSL fresh-water sender\n240-30 ohm, two-wire"]
     UP3["Ford Upfitter Switch #3"]
     F15["F-15 3A inline fuse"]
     WS500["WS500 regulator"]
@@ -19,5 +20,6 @@ flowchart LR
     BTEMP -. "temp input" .- MULTI
     SHUNT_PWR -. "power/sense harness" .- SHUNT
     CERBO_PWR -. "48V system-side feed\nred/black duplex" .-> CERBO
+    KUS -. "Tank 1 paired input\n18-22 AWG duplex; no external power" .-> CERBO
     UP3 -. "factory switched 12V" .-> F15 -. "brown ignition/enable" .-> WS500
     FEAT -. "future-only reserve" .- WS500

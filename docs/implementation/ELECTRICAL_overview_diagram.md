@@ -305,6 +305,7 @@ flowchart LR
     BTEMP["Battery temp sensor"]
     SHUNT_PWR["SmartShunt fused + lead\n(factory harness)"]
     CERBO_PWR["CERBO-PWR Cerbo GX fused 48V power\n1A-3A inline"]
+    KUS["KUS SSS/SSL fresh-water sender\n240-30 ohm, two-wire"]
     UP3["Ford Upfitter Switch #3"]
     F15["F-15 3A inline fuse"]
     WS500["WS500 regulator"]
@@ -317,6 +318,7 @@ flowchart LR
     BTEMP -. "temp input" .- MULTI
     SHUNT_PWR -. "power/sense harness" .- SHUNT
     CERBO_PWR -. "48V system-side feed\nred/black duplex" .-> CERBO
+    KUS -. "Tank 1 paired input\n18-22 AWG duplex; no external power" .-> CERBO
     UP3 -. "factory switched 12V" .-> F15 -. "brown ignition/enable" .-> WS500
     FEAT -. "future-only reserve" .- WS500
 ```
@@ -401,6 +403,7 @@ Retired from active architecture:
 | `C-45` | KMC2 remote turn-on output -> PTRTP10 remote input | `12V` low-current control | Remote amp/sub enable | KMC2/source branch protected | `18 AWG` | `8 ft` (`ASSUMED`) |
 | `C-46` | KMC2 RCA line-out -> PTRTP10 RCA input | low-level audio signal | Subwoofer signal | N/A | shielded 2-channel RCA | measured route (`~4m` planning cable) |
 | `C-47L/R` | KMC2 front speaker outputs -> left/right Kicker `CSC67` speakers | speaker-level audio | One `4 ohm` speaker per KMC2 channel | KMC2 internal protection / `AUDIO-HU` source branch | `16 AWG` marine speaker wire | `10-12 ft` each (`ASSUMED`) |
+| `C-48` | KUS SSS/SSL sender black signal + pink return -> matching signal/negative pair in Cerbo GX MK2 `Tank 1` column | Cerbo low-current resistive-sender excitation | Fresh-water level, US `240-30 ohm` | No external fuse or power feed; do not share chassis return | `18-22 AWG` tinned duplex, ferrules at Cerbo, sealed pigtail splices at sender | Measure after tank/Cerbo endpoints are installed (`ASSUMED <10 ft`) |
 
 ## Wiring Validation Worksheet (Estimate Pass, 2026-02-18)
 Calculation basis for drop screening:

@@ -34,7 +34,7 @@ flowchart LR
 
     subgraph AC_LOADS["Planned AC Loads"]
         IND["Induction cooktop"]
-        MW["Microwave"]
+        OVEN["Ninja SP151 air fryer/toaster oven"]
         MON["External monitor + office chargers"]
         OFFICE_REC["Office/driver GFCI receptacle"]
         GALLEY_REC["Galley/passenger GFCI receptacle"]
@@ -54,7 +54,7 @@ flowchart LR
     BR_A --> MON
     BR_B --> GALLEY_REC
     BR_B --> IND
-    BR_B --> MW
+    BR_B --> OVEN
     OUT2PROT -. "future activation only" .-> SHORE_ONLY
 
     BR_A -. "if AC USB outlets selected" .-> PD_AC
