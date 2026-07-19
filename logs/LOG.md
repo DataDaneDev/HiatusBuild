@@ -1,3 +1,23 @@
+## 2026-07-19 — Electrical module hard-mounted; battery harnesses complete
+
+### Owner-reported physical progress
+- Electrical module is hard-mounted through the permanent Lonseal/plywood floor to truck-bed hardpoints. It fits cleanly and is stable enough for continued stationary installation; the planned Bench tie-in should materially increase stiffness and remains required before road travel.
+- MultiPlus and combined AC breaker enclosure were removed before lifting to reduce module weight. The earlier embedded pronged/spiked T-nut choice proved successful: both heavy components can be remounted directly from the front without reaching loose nuts behind the electrical backer.
+- All three `48V` batteries' positive and negative `2/0 AWG` branch cables were cut, lugged, adhesive-heat-shrunk, and landed at the battery-side busbars.
+- Batteries are not yet paralleled. Battery 2 and Battery 3 still need individual charging through the MultiPlus; after rest, all three must be within `0.1V` before final parallel connection and `15.36 kWh` bank commissioning.
+- The `12V` buffer-battery branch is close to completion. Locked routing remains `4 AWG battery + -> F-11 100A ANL -> SW-12V-BATT -> fuse-panel main +` and `4 AWG battery - -> fuse-panel main -` directly.
+
+### Immediate electrical clarification
+- Orion input uses exactly one standalone inline `F-06` on the `48V` positive lead: final `20A/80V` Littelfuse FKS/ATO fuse plus matching holder purchased in BOM row `182`.
+- Identify the physically X-marked/misrated Lynx fuse by slot rather than assuming it is for Orion: Slot 2 requires `F-03 60A/80V` MEGA for the MPPT; Slot 4 / `F-05` stays open. No `32V`-rated fuse remains on an energized `48V` branch.
+- Orion `12V` output retains separate `F-07 60A/80V` MEGA protection before the `12V` panel main positive stud; the `12V` buffer battery retains separate `F-11 100A` ANL protection near its positive post.
+
+### Next execution path
+- Remount MultiPlus and AC enclosure; prove/cut/seal the L5-30 shore inlet and protected `10/3` path into the AC-in breaker.
+- Charge/rest/match Batteries 2 and 3, parallel all three only at `<=0.1V`, then run final polarity/protection/SmartShunt/current-sharing checks.
+- Finish Orion `F-06` and the `12V` battery branch, then commission the six factory pod lights, Maxxair fan, and first two DC charging outlets.
+- After the owner's four-day vacation and expected fitting arrivals, assemble and bench/driveway test the tank, KUS sender, fill/vent/drain, pump, strainer, accumulator, and manifold before hard-mounting plumbing and Galley components.
+
 ## 2026-07-17 — Affordable north-cubby electric hot water comparison
 
 - Owner rejected the expensive marine/hydronic path and standard exterior-vented RV propane packaging as too costly/complex for the actual Hiatus need, then identified a candidate north cubby with an unordered internal envelope of `27 x 15 x 16 in`.

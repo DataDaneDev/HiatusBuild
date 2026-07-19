@@ -479,7 +479,7 @@ related:
 - Options considered: bolt the freestanding electrical module into the truck now; pause and wait for the pending 80/20 nut/hardware shipment; continue building the bench/desk/galley modules and integrate them before road use.
 - Decision drivers: road vibration/projectile risk, module racking control, practical use of on-hand extrusion/angle/hardware, and the need to validate the bench/desk/galley as one physical system.
 - Result: next build sequence is bench/battery/step structure first, desk desktop/workstation support next, then galley/wet-spine counter/appliance module around the purchased sink/faucet, induction cooktop, and Ninja SP151 cubby. Do not drive with the electrical module freestanding.
-- Follow-up: verify hardpoints, panels/diagonals/anti-rattle retention, fastener witness marks, strain relief, and emergency electrical access before road shakedown.
+- Follow-up: `2026-07-19` physical status: the electrical module is now hard-mounted through the finished floor to truck-bed hardpoints and fits cleanly. Final Bench tie-in/panels or diagonals, anti-rattle retention, fastener witness marks, strain relief, and emergency electrical access remain required before road shakedown.
 
 - ID: D-051
 - Date: 2026-07-05
@@ -506,7 +506,7 @@ related:
 - Options considered: reinstall every furniture module immediately after cure; complete all tank fitting work on the garage floor before checking installed geometry; or use a utilities-first staged reinstall with the electrical/battery bay open and one required in-truck tank dry fit before drilling.
 - Decision drivers: #650's `72 hr` heavy-furniture cure, avoiding permanent bolt/thread capture, preserving battery terminal/fuse/extraction access, preserving tank fitting/sender/service access, and proving shore/water-fill routes from their inside endpoints before exterior cuts.
 - Result: floor removal is no longer an active branch. During cure, preserve hardpoint threads and map the tank on the workbench. After post-cure floor inspection, hard-mount the electrical module first, install/wire/fuse the `3x 48V` bank with the bench open, then add the bench structure. For water, inventory ports and mock fittings on the workbench, perform one bare-tank in-truck dry fit, freeze the port/restraint/service map, then drill/install/bench-test and hard-mount the tank/wet spine. Shore and water-fill/vent penetrations follow physically proven inside routes.
-- Follow-up: recover the actual adhesive completion time if possible; inspect and photograph the floor after cure; log bolt/rivnut condition; record the final tank port map and fitting method; keep final cabinetry removable until electrical/plumbing functional tests pass.
+- Follow-up: `2026-07-19` status: controlled module loading and the electrical hard-mount gate have passed; retain the final floor-condition photo/inspection and bolt/rivnut evidence as open closeout. Record the final tank port map and fitting method, bench-test the complete wet spine, and keep final cabinetry removable until electrical/plumbing functional tests pass.
 
 ## Risk register
 - ID: R-001

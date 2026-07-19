@@ -15,7 +15,7 @@ related:
 
 # Electrical Fuse Schedule (Implementation - Lynx Topology)
 
-As-of date: `2026-06-17`
+As-of date: `2026-07-19`
 
 Purpose: define each required fuse by circuit, protected conductor/device, holder/housing method, physical placement, and linked wire-gauge assumptions for the approved Phase 1 Lynx architecture with a battery-backed 12V bus and dedicated 48V secondary alternator branch.
 
@@ -35,6 +35,7 @@ Related docs:
 2. SmartSolar `150/45`
 3. Dedicated `48V` secondary alternator branch (Mechman/WS500 path)
 4. Slot 4 / `F-05` open spare — Orion-Tr `48/12-30` input is **not** a Lynx fused branch; it uses standalone source-side `F-06` from a Lynx `48V+` bus tap.
+- Current shop identification note: do not infer the purpose of the physically X-marked/misrated Lynx fuse from the X alone. Identify its slot. Slot 2 requires `F-03 60A/80V` MEGA for the MPPT; Slot 4 remains empty. No `32V`-rated fuse is acceptable on an energized `48V` branch.
 - Alternator path lock for this pass:
 1. `F-04` is locked to `150A` MEGA (`58V/80V`) in Lynx Slot 3 at the house-bank/Lynx end of the alternator positive run.
 2. Obsolete pre-Mechman charger/fuse paths are removed from active architecture and primary layout planning.

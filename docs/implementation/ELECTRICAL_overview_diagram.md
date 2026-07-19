@@ -15,7 +15,7 @@ related:
 
 # Electrical Topology Diagram (Implementation v6)
 
-As-of date: `2026-06-01`
+As-of date: `2026-07-19`
 
 Purpose: provide a complete, install-level electrical topology for the current build scope, including all major electrical components, fuse IDs, fuse housings, planned wire gauges, and estimated one-way run lengths for procurement planning.
 
@@ -46,6 +46,20 @@ Related docs:
 - Cerbo GX access point/remote-console workflow active; Cerbo is powered from a small inline fused `48V` feed and connected to MultiPlus via `VE.Bus` RJ45.
 - Short AC-in shore-charge test passed at household-source current limits: about `1294W` shore input and about `54.3V x 21.6A` battery charging in bulk.
 - Hold open: MultiPlus LiFePO4 charge profile is now programmed/owner-verified by supervised first-battery behavior; AC-out branch/GFCI, alternator commissioning, Cerbo hard-mounting, and final strain-relief/abrasion-control remain future gates.
+
+## Current Physical Installation Snapshot (`2026-07-19`)
+- The electrical module is hard-mounted through the finished Lonseal/plywood floor into registered truck-bed hardpoints. It fits cleanly and is sufficiently stable for continued stationary installation; the planned Bench tie-in remains required for final anti-rack stiffness and road restraint.
+- The MultiPlus and combined AC breaker enclosure were removed before lifting to reduce module weight. Embedded pronged/spiked T-nuts in the plywood backer allow direct front-side remounting without loose nuts behind the board.
+- All three batteries' positive and negative `2/0 AWG` branch cables are cut, lugged, heat-shrunk, and landed at the battery-side busbars. The batteries remain electrically isolated from one another until Batteries 2 and 3 are individually charged, rested, and matched within `0.1V` before paralleling.
+- The `12V` buffer-battery branch is near physical completion; keep its negative direct to the fuse-panel main negative stud, not through `SW-12V-BATT`. The positive path remains `F-11 -> SW-12V-BATT -> panel main +`.
+
+### Orion fuse discriminator — do not combine these positions
+- `F-06`: **one standalone inline fuse on Orion `48V` input positive**, final `20A/80V` Littelfuse FKS/ATO fuse and matching holder; existing `30A/58V` MIDI is interim only.
+- Lynx Slot 2 / `F-03`: **MPPT branch**, `60A/80V` MEGA. If the physically X-marked/misrated Lynx fuse is in Slot 2, replace it with the purchased Victron `60A/80V` MEGA; it is not the Orion input fuse.
+- Lynx Slot 4 / `F-05`: **open spare**. If the X-marked position is Slot 4, remove/leave it empty; it is not a second Orion input fuse.
+- `F-07`: **Orion `12V` output positive**, `60A/80V` MEGA in the separate Victron holder near the Orion.
+- `F-11`: **`12V` buffer-battery positive**, `100A` ANL near the battery, upstream of `SW-12V-BATT`.
+- No `32V`-rated fuse is acceptable on any energized `48V` branch. Identify the physical X-marked fuse by Lynx slot before replacing or discarding it.
 
 ## Length Estimation Defaults Used In This Pass
 1. Cabinet internal interconnect default: `2.5 ft` one-way (`ASSUMED`).

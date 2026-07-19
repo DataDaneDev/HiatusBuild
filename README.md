@@ -1,6 +1,6 @@
 # Hiatus Truck Bed Camper Project
 
-This is the single workspace map and update guide for the Hiatus/F-350 camper build. The repo is now in the **floor-cure / utilities-first restrained-reinstall** phase: use it to keep the permanent floor, electrical/battery order, tank/wet-spine work, shell penetrations, payload, and 80/20/panel decisions aligned without creating parallel notes.
+This is the single workspace map and update guide for the Hiatus/F-350 camper build. The repo is now in the **hard-mounted electrical / utilities commissioning** phase: use it to keep the permanent floor, battery-bank closeout, `12V` commissioning, shore inlet, tank/wet-spine work, payload, and 80/20/panel decisions aligned without creating parallel notes.
 
 ## Open in Obsidian
 - Start at [00 Home](00%20Home.md) for the shortest navigation path.
@@ -13,14 +13,14 @@ This is the single workspace map and update guide for the Hiatus/F-350 camper bu
 - Camper status: Hiatus shell is in hand/installed; May 7, 2026 install readiness is now historical context
 - Primary use: Financial Analyst remote work (typical 9-5, Monday-Friday) with occasional subsidiary flights
 
-## Current project posture — 2026-07-16
-- Current focus: protect the one-piece Lonseal/#650 installation through its `72 hr` heavy-furniture cure, inspect the floor and hardpoint threads, then reinstall in dependency order rather than putting every module back at once.
-- Flooring state: the Lonseal was glued to the three-piece `3/4 in` plywood floor on the evening of `2026-07-15`. The single sheet now ties the three removable plywood sections together; future floor removal requires cutting the vinyl at the plywood seams and is not part of the active plan.
-- Finish condition: owner reports mild waviness/bumps and some edge lift. Boards are bolted over the edges for cure pressure, and temporary bolts preserved thread paths where #650 entered hardpoint holes. Treat repair as a post-cure inspection decision, not a reason to disturb the floor during cure.
-- Reinstall order: hard-mount the electrical module first; install and wire/fuse the `3x 48V` bank with the bench open; then add the battery-bench bridge/lid and remaining furniture without burying extraction, disconnect, fuse, or service access.
-- Water order: map the purchased `36 gal` wheel-well tank, existing molded ports, KUS sender, fill, vent, outlet, and drain on the workbench, then perform one bare-tank in-truck dry fit before drilling or locking fittings. Install the tank/restraint/wet-spine before the passenger-side furniture closes access.
-- Penetration order: cut the shore inlet only after the hard-mounted electrical endpoint and full inside cable path are physically proven; cut the gravity-fill/vent opening only after the final tank orientation, port map, hose fall, and service path are proven.
-- Electrical state: first-live `48V` and limited AC-in checkpoints passed; AC-out/GFCI, final bank installation, road restraint, and alternator commissioning remain separate gates.
+## Current project posture — 2026-07-19
+- Current focus: remount the MultiPlus and combined AC breaker enclosure, install the shore inlet/`10/3` AC-in route, finish the final Orion input-fuse swap and `12V` battery branch, then equalize and commission the `3x 48V` bank.
+- Flooring/module state: the permanent Lonseal floor has progressed into controlled module loading. The electrical module is now hard-mounted to registered truck-bed hardpoints through the finished floor; it fits cleanly and is stable enough for continued work, with the Bench tie-in still required for final anti-rack stiffness and road restraint.
+- Electrical backer state: the MultiPlus and AC breaker enclosure were temporarily removed to reduce lift weight. Embedded pronged/spiked T-nuts in the plywood backer preserved simple front-side remounting without loose rear nuts.
+- Battery state: all three batteries' `2/0 AWG` branch cables are cut, lugged, heat-shrunk, and landed at the positive/negative battery-side busbars. The batteries remain isolated from one another until Batteries 2 and 3 are individually charged, rested, and within `0.1V` of the matched bank before paralleling.
+- `12V` state: the Orion and fuse panel are mounted/wired; the buffer-battery `4 AWG` branch is close to completion. Final topology remains `battery + -> F-11 100A ANL -> SW-12V-BATT -> panel main +` and `battery - -> panel main -`. Orion input still needs the final standalone `F-06 20A/80V` inline fuse/holder swap; Lynx Slot 4 remains empty.
+- Water order after the electrical closeout: use the arriving fittings to complete the tank/pump/accumulator manifold on the bench/driveway, run a full fill/pressure/leak/function test—including the `12V` pump—then hard-mount the proven tank/wet spine and Galley without burying service access.
+- Electrical commissioning state: first-live `48V` and limited AC-in checkpoints passed. Permanent shore inlet, full parallel bank, factory pod-light/Maxxair branches, DC outlets, AC-out/GFCI, road restraint, and alternator commissioning remain separate gates.
 - Payload posture: legal payload still depends on the door sticker/scale tickets; water, batteries, bumpers, spare, 80/20, panels, tools, and tech remain active weight risks.
 
 ## First-stop update map

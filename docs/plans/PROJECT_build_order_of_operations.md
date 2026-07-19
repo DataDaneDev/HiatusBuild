@@ -18,13 +18,13 @@ related:
 - Define a practical order of operations that still supports parallel workstreams.
 - Prioritize measured, reversible post-install module work: validate real camper envelopes first, then build systems and furniture modules without burying service access.
 
-## Planning assumptions (as-of 2026-07-16)
+## Planning assumptions (as-of 2026-07-19)
 - Hiatus install readiness/travel planning is historical; the real camper shell is available for physical measurements and mockups.
 - Major Galley/Bench/Electrical/Desk modules have been test-fit as one system, removed, and preserved for reinstall.
-- The one-piece Lonseal was glued to the three-piece `3/4 in` plywood floor on the evening of `2026-07-15`. The floor is permanent and currently in the `72 hr` heavy-furniture cure window; routine removal of the three plywood pieces is no longer possible without cutting the vinyl at both seams.
-- Mild waviness/bumps and some lifted edges are owner-reported. Bolted boards are holding perimeter pressure, and temporary bolts preserved rivnut threads where adhesive entered hardpoint holes. Cure and inspect before deciding whether any localized repair is justified.
+- The one-piece Lonseal was glued to the three-piece `3/4 in` plywood floor on the evening of `2026-07-15`. The floor is permanent, controlled module loading has begun, and routine removal of the three plywood pieces is no longer possible without cutting the vinyl at both seams.
+- The electrical module is now hard-mounted through the finished floor to truck-bed hardpoints. MultiPlus/AC-panel remount, final Bench anti-rack tie-in, full-bank commissioning, and service/road-restraint checks remain open.
 - Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline, with the first live `48V`/MultiPlus/Cerbo/shore checkpoint passed. Do not drill around connected/live electrical equipment and do not road-travel until final restraint/access gates pass.
-- The active dependency order is electrical module -> open-access `3x 48V` bank installation -> bench closure, plus tank workbench map -> bare-tank in-truck dry fit -> fittings/restraint/wet spine. The shore and water-fill penetrations follow their physically proven inside endpoints.
+- The active dependency order is MultiPlus/AC-panel remount -> shore inlet/AC-in -> open-access `3x 48V` bank matching/commissioning -> `12V`/Orion closeout -> tank/pump bench test -> tank/restraint/wet spine/Galley installation -> Bench tie-in and closure. The water-fill penetration still follows its physically proven inside endpoint.
 - Interior/furniture assumptions in `docs/implementation/INTERIOR_furniture_layout_and_galley.md` remain the current baseline. Black-walnut finish surfaces stay template-gated; lighting remains deferred behind core flooring, furniture, plumbing, and electrical integration.
 - Active post-install tracker: `docs/plans/LIVE_BUILD_CHECKLIST.md`. Update it whenever practical sequence, blockers, or completed physical work changes.
 
@@ -107,13 +107,13 @@ The current build has already completed the floor step out of this generic order
 - Freeze service map from real shell dimensions before penetrations, final cable cuts, Lonseal glue-down, or permanent module skins.
 - Place top-off orders based on real measurements and update logs/tracking.
 
-5. Current floor-cure and systems-integration phase (updated `2026-07-16`)
-- **`2026-07-16` to `2026-07-18` — cure + bench work:** preserve/clean hardpoint threads one bolt at a time, keep edge boards in service as needed, keep heavy modules off the floor, photograph tank ports, measure the KUS sender location, and lay out fill/vent/outlet/drain/wet-spine parts on the garage floor.
-- **`2026-07-19` to `2026-07-23` — floor release + electrical first:** remove cure boards, inspect/accept or localize floor defects, protect the finish, hard-mount/brace the electrical module, then install and wire/fuse the `3x 48V` bank while the battery bench is open. Prove extraction and emergency service before adding the bench bridge/lid.
-- **`2026-07-19` to `2026-07-26` — tank two-stage fit:** perform one bare-tank in-truck dry fit before drilling; freeze tank orientation, restraint, KUS sender, gravity-fill, highest-point vent, pump outlet, drain, and service-board geometry; then add manufacturer-compatible fittings and bench leak-test.
-- **`2026-07-24` to `2026-07-31` — installed endpoints + penetrations:** install tank/restraint/wet-spine and the hard-mounted electrical endpoints. Only then prove and cut the water fill/vent and L5-30 shore inlet locations, with backing, service loops, hose fall/vent rise, strain relief, and sealing planned from both sides.
-- **`2026-08-01` to `2026-08-09` — remaining modules + tests:** reinstall the bench bridge, Galley/fridge, Desk/storage, and removable service panels; pressure/leak-test plumbing, commission AC-out/GFCI when ready, cover/label/torque/witness-mark systems, then run a local shakedown.
-- This is an aggressive four-week baseline, not a promise. Missing tank fittings, failed floor inspection, unusable hardpoints, or a route that cannot be serviced pauses its dependent step rather than being worked around permanently.
+5. Current electrical-to-wet-spine integration phase (updated `2026-07-19`)
+- **Completed physical gate:** permanent floor is carrying controlled work; electrical module is hard-mounted and all three battery branch harnesses are cut, lugged, heat-shrunk, and landed at the battery-side busbars.
+- **Next electrical session:** remount MultiPlus/AC enclosure, prove/cut/seal the shore inlet and `10/3` route, then charge Batteries 2 and 3 individually. After rest, parallel all three only at `<=0.1V` difference and complete polarity/protection/SmartShunt/current-sharing checks.
+- **Parallel `12V` closeout:** locate/install final `F-06 20A/80V`, complete `F-11 -> SW-12V-BATT -> panel`, verify `F-07`, then prove factory pod lights, Maxxair fan, and the first two DC outlets.
+- **After-return plumbing session:** with the remaining fittings in hand, assemble and fill/pressure/leak/function-test the tank, KUS sender, pump, strainer, accumulator, manifold, fill/vent, and drain in the driveway before permanent mounting.
+- **Installed closeout:** hard-mount tank/restraint/wet spine and Galley; add the Bench/electrical anti-rack tie-in; keep panels removable until AC/DC and plumbing tests pass; then torque/witness-mark and run a local shakedown.
+- Missing fittings, failed voltage matching, an unsafe shore route, or a leaking bench assembly pauses its dependent step rather than being worked around permanently.
 
 ## Deferred / purchase-later rows (keep out of current critical path unless triggered)
 - Optional 12V expansion path: row `118`.

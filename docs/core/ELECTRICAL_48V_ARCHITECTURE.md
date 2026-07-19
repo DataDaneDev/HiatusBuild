@@ -23,7 +23,7 @@ related:
 - Keep unresolved vendor gates, risk state, and follow-up closure items in `docs/core/TRACKING.md`.
 - Keep broad project sequencing and day-to-day execution framing in `docs/core/PROJECT.md` or the active plan docs.
 
-As-of date: `2026-05-28`
+As-of date: `2026-07-19`
 
 Purpose: hold the finalized, concise `48V` house and alternator architecture in one place so wiring, protection, shutdown behavior, and BOM references are easy to understand without re-reading the historical trade studies.
 
@@ -43,14 +43,16 @@ Related docs:
 - `Upfitter #3` is a low-current control signal only. It does not carry alternator output current.
 - `WS500` white `Feature-In` is reserved for future fault-interlock work, not required in Phase 1.
 
-## Current commissioning state (`2026-06-01`)
+## Current commissioning state (`2026-07-19`)
 - `48V` bus has been live-tested: owner measured `55.5V` throughout the system, including at the MultiPlus.
 - MultiPlus-II DC/inverter mode has been switched on with inverter light illuminated, slight normal hum, and no reported error lights.
 - SmartShunt and Orion-Tr Smart are visible in VictronConnect.
 - Cerbo GX access point/remote-console workflow is active; Cerbo power is a small inline fused feed from the `48V` system side and MultiPlus communication is via `VE.Bus` RJ45.
 - Shore charging has been tested through the MultiPlus at household-outlet current limits. The first short test proved basic AC-in/charger function; later owner verification redid the settings and confirmed first-battery behavior entered bulk, then quickly transitioned to absorption at/near `100%` as planned.
 - MultiPlus LiFePO4 charge-profile programming/verification is treated as closed for the current shore-charger setup. Current target is `56.8V` absorption/charge, `54.0V` float, short absorption dwell, equalization off, conservative LiFePO4 storage behavior, and source-current limit matched to the actual shore circuit. The Dumfume manual's `58.4V +/-0.2V` value is documented, but because the same manual also lists `58.4V` as charge-limit/over-charge protection voltage, it is not the active routine charger target. `DVCC` remains disabled unless a documented BMS/GX control path is added.
-- AC-out branch/GFCI commissioning, secondary-alternator commissioning, final Cerbo mounting, and board strain-relief/abrasion-control closeout are still separate future gates.
+- The electrical module is now hard-mounted through the finished floor to registered truck-bed hardpoints. The MultiPlus and AC breaker enclosure were removed for the lift and are pending easy front-side remount into embedded pronged T-nuts; final Bench tie-in still supplies the anti-rack/road-restraint path.
+- All three batteries' `2/0 AWG` branch leads are cut, lugged, heat-shrunk, and landed at the battery-side positive/negative busbars. The three batteries are not yet paralleled: Batteries 2 and 3 remain on the individual-charge/rest/`<=0.1V` matching gate.
+- Permanent shore inlet/AC-in, full parallel-bank commissioning, `12V` branch closeout, AC-out branch/GFCI commissioning, secondary-alternator commissioning, final Cerbo mounting, and board strain-relief/abrasion-control remain separate future gates.
 
 ## Locked component set
 | Function | Locked baseline | BOM row(s) |

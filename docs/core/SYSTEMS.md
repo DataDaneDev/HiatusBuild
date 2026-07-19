@@ -34,14 +34,21 @@ related:
 - Solar option screening matrix (stringing + MPPT fit flags): [SOLAR_configuration_matrix](../studies/SOLAR_configuration_matrix.md)
 - Electrical decisions, risks, and unresolved items: [TRACKING](TRACKING.md)
 
-### Planning snapshot (base model as-of `2026-07-10`)
+### Planning snapshot (base model as-of `2026-07-19`)
 - Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).
 - House architecture: `48V` core with Orion-Tr Smart `48V->12V` charging/step-down feeding a shared battery-backed `12V` junction.
 - Inverter/charger: Victron MultiPlus-II `48/3000/35-50`, DC/inverter mode live-tested with no observed errors.
 - Charge sources in current BOM: solar MPPT, dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48` migration baseline), shore AC charger path.
 - Monitoring and protection: Cerbo GX, SmartShunt, battery temp sensing, Class T primary fuse + branch fusing.
 - AC protection chain is purchased/locked for Phase 1 (`shore source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> single 6-way AC DIN enclosure -> 30A AC-in breaker -> MultiPlus -> 30A AC-out main -> two 20A GFCI branches`). AC-in/MultiPlus charging has passed a short limited-current live test; AC-out branch/GFCI commissioning remains pending.
-- Current build phase: the one-piece Lonseal/#650 floor was glued to the three-piece `3/4 in` plywood substrate on the evening of `2026-07-15` and is now intentionally permanent. Protect it through the `72 hr` heavy-furniture cure, clean/preserve hardpoint threads, inspect reported waviness/bumps and lifted edges after cure, then hard-mount the electrical module first, install the `3x 48V` bank with the bench open, and add bench/remaining modules only after service/extraction gates pass.
+- Current build phase: the permanent Lonseal floor has entered controlled module loading. The electrical module is hard-mounted to truck-bed hardpoints and fits cleanly; it still needs the planned Bench tie-in for final anti-rack/road stiffness. The MultiPlus and AC breaker enclosure are temporarily off the backer for easier lifting and will remount into embedded pronged T-nuts. All three `2/0 AWG` battery branch cable sets are cut, lugged, heat-shrunk, and landed at the battery-side busbars, but the batteries remain isolated pending individual charge/rest/voltage matching. Immediate closeout is shore AC-in -> full-bank parallel/commissioning -> `12V` battery/Orion fuse cleanup -> factory lights/Maxxair/DC outlet proof, followed by tank/pump bench testing and installed wet-spine work.
+
+### Physical integration snapshot (`2026-07-19`)
+- Electrical module is positively hard-mounted through the finished floor to the truck bed. Its present stationary stiffness is acceptable; the Bench tie-in remains part of final mobile restraint.
+- MultiPlus and combined AC breaker enclosure were removed before the lift and remain ready to reinstall from the front through embedded pronged/spiked T-nuts in the plywood backer.
+- Three `48V` battery branch harnesses are physically complete and landed at the positive/negative battery-side busbars. Battery 2 and Battery 3 still need individual shore charging and a rested-voltage match within `0.1V` before the three batteries are paralleled.
+- `12V` buffer branch remains `4 AWG`: `battery + -> F-11 100A ANL -> SW-12V-BATT -> fuse-panel main +`; `battery - -> fuse-panel main -`. Orion output uses `6 AWG` to the same junction through `F-07 60A/80V` on output positive.
+- Orion input protection is one standalone inline `F-06` on the `48V` positive lead: final `20A/80V` Littelfuse FKS/ATO fuse and matching holder. Lynx Slot 4 remains open. Identify any physically X-marked Lynx fuse by slot: Slot 2 requires `F-03 60A/80V` for the MPPT; Slot 4 remains empty. No `32V`-rated fuse stays on the energized `48V` bus.
 
 ### Commissioning snapshot (`2026-05-27`)
 - Owner confirmed `55.5V` at the `48V` bus and at the MultiPlus after pre-charge/energization.

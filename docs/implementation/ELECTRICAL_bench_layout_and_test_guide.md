@@ -13,7 +13,7 @@ related:
 
 # Electrical Bench Layout + Test Guide
 
-As-of date: `2026-06-01`
+As-of date: `2026-07-19`
 
 Purpose: provide a practical, print-friendly game plan for building, hard-mounting, post-live cleanup, and staged validation of the electrical module before mobile install or permanent enclosure/panel closeout.
 
@@ -40,14 +40,15 @@ Related docs:
 
 ## 2) Recommended sequence (ground build -> test fit -> hard mount)
 
-Current owner status (`2026-06-01`): the electrical module has passed the first live checkpoint. Owner confirmed `55.5V` throughout the `48V` system, MultiPlus inverter mode on with no errors, SmartShunt and Orion online in VictronConnect, Cerbo remote-console/AP workflow active, and shore charging behavior verified after settings were redone. Major board hardware is hard-mounted except the Cerbo.
+Current owner status (`2026-07-19`): the electrical module has passed the first-live checkpoint and is now hard-mounted through the finished floor to truck-bed hardpoints. The MultiPlus and combined AC breaker enclosure were removed for the lift and will remount into embedded pronged T-nuts. All three battery branch harnesses are cut, lugged, heat-shrunk, and landed at the battery-side busbars, but the batteries remain isolated pending individual charge/rest/voltage matching.
 
 Immediate priority:
-1. Preserve the current working topology; do not add alternator or AC-out branch complexity until cleanup checks pass.
-2. If finishing the board, photograph/label the current layout, remove hardware once, route/sand/seal/paint, then reinstall before wiring gets more permanent.
-3. Hard-mount the Cerbo.
-4. Add/verify labels, covers, torque witness marks, J-clamp strain relief, cable protection, and service access around the energized layout.
-5. Keep AC-out branch/GFCI validation and Mechman/WS500 alternator commissioning as separate later gates.
+1. Remount the MultiPlus and AC breaker enclosure; prove/protect the full L5-30/`10/3` shore-inlet path before cutting and energizing it.
+2. Charge Batteries 2 and 3 individually, rest/record all three voltages, and parallel only when maximum-to-minimum difference is `<=0.1V`.
+3. Locate/install final Orion `F-06 20A/80V`; identify any X-marked Lynx fuse by slot (`F-03 60A/80V` in Slot 2, Slot 4 empty), then complete the `12V` battery branch and prove factory loads.
+4. Preserve the current working topology; do not add alternator or AC-out branch complexity until these cleanup checks pass.
+5. Add/verify labels, covers, torque witness marks, J-clamp strain relief, cable protection, and service access around the energized layout.
+6. Keep AC-out branch/GFCI validation and Mechman/WS500 alternator commissioning as separate later gates.
 
 ### Phase L1: Build the two backer boards on the ground
 1. Rip the `1/2"` sheet into Board A + Board B to your target envelope.
@@ -124,6 +125,7 @@ Exit criteria:
 ## 4) Wiring layout rules (before you crimp anything)
 
 - Keep parallel battery paths balanced by similar total loop resistance. Equal positive-only leads are not required if short/medium/long positives are offset by long/medium/short negatives.
+- Before paralleling, charge/rest/measure each battery separately and require maximum-to-minimum terminal-voltage difference `<=0.1V`; do not use the final parallel bus to equalize a larger mismatch.
 - Keep `48V` high-current paths short and direct.
 - Keep AC and DC routing physically separated; cross at `90` degrees only when unavoidable.
 - Use abrasion protection at every edge pass-through.

@@ -21,11 +21,11 @@ related:
 
 # Interior Furniture Layout and Galley Design Concepts
 
-As-of date: `2026-07-16`
+As-of date: `2026-07-19`
 
 Purpose: capture the active furniture/layout direction for the Hiatus/F-350 camper before final cuts. This document owns the interior **layout concept**, driver-side electrical-module/bench/desk integration, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, galley/plumbing service strategy, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`; the finish/paneling/storage feature-design detail now lives in `docs/implementation/INTERIOR_finish_paneling_and_feature_choices.md`.
 
-Status: **draft implementation baseline for utilities-first module reinstall**, refreshed `2026-07-16` after the permanent Lonseal floor installation. The Galley/Bench/Electrical/Desk system was integrated/test-fit and then removed for flooring. After the `72 hr` floor cure and inspection, hard-mount the electrical module first, install/wire/fuse the `3x 48V` bank with the bench open, and add the bench bridge/remaining furniture only after extraction and service gates pass. In parallel, map the `36 gal` tank on the workbench, perform one bare in-truck dry fit before drilling, then install the tank restraint and wet spine before the passenger-side exoskeleton closes access. Keep final skins, exact drawer slides, exterior shore/water penetrations, and premium walnut cuts gated on installed route/service validation.
+Status: **draft implementation baseline for hard-mounted electrical and wet-spine integration**, refreshed `2026-07-19`. The electrical module is now hard-mounted through the permanent Lonseal floor; the MultiPlus/AC enclosure remount, shore inlet, battery-bank matching/commissioning, `12V` closeout, and Bench anti-rack tie-in remain open. Keep the Bench service volume accessible while those gates close. In parallel, map and bench/driveway test the `36 gal` tank, KUS sender, fill, vent, pump outlet, drain, and wet-spine hardware, with one bare in-truck dry fit before drilling or final fitting lock. Keep final skins, exact drawer slides, the water penetration, and premium walnut cuts gated on installed route/service validation.
 
 Orientation convention throughout:
 
@@ -101,18 +101,20 @@ Owner-provided installed-camper photo/mockup confirms these current physical env
 
 Practical implication: the next design artifact should be a measured block-envelope sketch from this taped mockup: datum, battery extraction path, step-box projection, desk/wheel-well notch, fridge slide/vent/lid sweep, pump-service access, and final aisle width after panel/handle allowances. Do not treat the photos as sufficient for exact extrusion lengths.
 
-### Electrical module integration update — 2026-06-27
+### Electrical module integration update — 2026-07-19
 
-Owner-provided build update confirms the electrical module has moved from board/mockup work into physical `80/20` module integration:
+Owner-provided build update confirms the electrical module has moved from freestanding mockup into hard-mounted physical integration:
 
 - The electrical backer was trimmed to inset cleanly into the `80/20` electrical frame.
 - Component positions were adjusted for actual MultiPlus depth; the change is a packaging/mechanical fit correction, not a change to the active `48V` electrical architecture.
-- The electrical module is freestanding and ready to tie into the bench/desk structure, but it is too wobbly for road use as a standalone object.
-- Near-term module strategy is now integrated construction rather than isolated electrical work: bench/battery/step structure first, desk desktop/workstation support next, then galley/wet-spine counter/appliance module.
+- The module is hard-mounted through the permanent finished floor to registered truck-bed hardpoints. Fit is clean and current stationary stiffness is acceptable; it will stiffen further when tied into the Bench, and that tie-in remains required before road use.
+- The MultiPlus and combined AC breaker enclosure were removed before the lift to reduce module weight. Embedded pronged/spiked T-nuts in the plywood backer preserve easy front-side remounting and avoid loose through-bolt nuts behind the board.
+- All three batteries' branch cable sets are cut, lugged, heat-shrunk, and landed at the battery-side busbars while the bay remains open. Batteries stay isolated until individual charge/rest/voltage matching is complete.
+- Near-term module strategy is electrical closeout first: remount heavy AC equipment, install/prove shore AC-in, commission the matched `3x 48V` bank and `12V` junction, then bench-test and install the tank/wet spine before closing the Bench/Galley around either service zone.
 - Available extra material includes two extra sticks, one `2010` extra-thick two-slot/two-bar stick, and regular angle stock; use these as fit/brace/prototype material before waiting on perfect final hardware.
 - Pending dedicated `80/20` nuts/hardware should not block mock-fit, but final travel configuration should use the correct fastener standard, witness marks, and anti-rattle/retention hardware.
 
-Travel rule: **do not drive with the electrical module freestanding**. Drive only after it is tied into the bench/desk/galley structure or otherwise braced to verified hardpoints, with panels/diagonals/latches installed enough to control racking and cargo/projectile risk.
+Travel rule: **the floor hard-mount alone is not the final road-restraint gate**. Drive only after the electrical module is tied into the Bench/adjacent structure or otherwise given verified anti-rack bracing, with panels/diagonals/latches installed enough to control racking and cargo/projectile risk.
 
 ### Black walnut surface commission update — 2026-07-05
 
@@ -229,7 +231,7 @@ The driver-side electrical/desk zone and adjacent battery bench have to solve th
 5. Preserve a cushioned bench/lid surface that can be covered by Hiatus bed cushions when the bed is not in use.
 
 ### Recommended construction concept
-- **Electrical module tie-in:** treat the current freestanding electrical tower as a braced part of the bench/desk system, not an independent road-travel object. The bench/step frame should give it lateral restraint, anti-rack support, and hardpoint paths while preserving service access to disconnects, fuses, Cerbo, Orion, AC enclosure, and cable clamps.
+- **Electrical module tie-in:** treat the hard-mounted electrical tower as a braced part of the bench/desk system, not an independent road-travel object. The bench/step frame should add lateral restraint and anti-rack support while preserving service access to disconnects, fuses, Cerbo, Orion, AC enclosure, and cable clamps.
 - **Battery well:** low, restrained, partitioned from wet-service volume, and sized so batteries can be extracted without dismantling the whole interior.
 - **Flat divider board:** separates battery bay below from bench storage/cushion use above; treat this as a protective service boundary, not just a shelf.
 - **Lift/hinged lid:** lid must open for battery/storage access and include mechanical stays, gas struts, or controlled support sized to the actual lid weight; loose lift-off panels become projectiles. If the final L-shaped top is black walnut, verify hinge line, support tabs, strut geometry, closed latch, and service reach before cutting the finished lid.

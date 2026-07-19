@@ -18,9 +18,9 @@ related:
   - "[[TRACKING]]"
 ---
 
-# Live Build Checklist — Permanent Floor Cure + Systems Integration
+# Live Build Checklist — Electrical Commissioning + Wet-Spine Integration
 
-As-of: `2026-07-17`
+As-of: `2026-07-19`
 
 Owner: Sunny / Dane
 
@@ -28,7 +28,7 @@ Maintainer rule: **update this file whenever the practical build state, sequence
 
 ## Purpose
 
-This is the active running checklist for the post-install Hiatus/F-350 camper build. It preserves the July 4 sprint record but now translates permanent-floor cure, utilities-first reinstall, exterior penetrations, and restrained module closeout into shop actions, physical gates, and test checkpoints.
+This is the active running checklist for the post-install Hiatus/F-350 camper build. It preserves the July 4 sprint record but now translates hard-mounted electrical integration, bank/`12V` commissioning, exterior penetrations, wet-spine testing, and restrained module closeout into shop actions, physical gates, and test checkpoints.
 
 It does **not** replace the owner docs:
 
@@ -41,12 +41,12 @@ It does **not** replace the owner docs:
 
 ## Current build posture
 
-- Owner-reported `2026-07-06`: Desk/storage and Galley modules were reinforced and test-installed; the Galley rear stretch was rebuilt as one continuous `2010` member and the integrated layout was verified well enough to enter the floor teardown/reinstall gate.
-- Owner-reported `2026-07-15`: the one-piece Lonseal was glued to the three-piece `3/4 in` plywood floor with #650. The sheet bridges both plywood seams, so the floor is now intentionally permanent and removal would require cutting the vinyl.
-- Owner direction `2026-07-17`: treat the floor as cured Saturday morning, give it a quick visual check, protect it, and resume module loading unless an area is actually loose.
-- Mild waviness/bumps and some lifted edges are reported. Bolted boards are holding perimeter pressure. #650 entered some hardpoint holes, and temporary bolts were installed to preserve threads; remove/clean/reinstall them carefully one at a time before they become permanent.
-- The next physical sequence is not “put all furniture back.” It is floor release -> electrical module hard mount -> open-access `3x 48V` bank install -> bench closure, plus tank workbench map -> one bare-tank in-truck dry fit -> tank/restraint/wet-spine install.
-- Shore and water-fill/vent penetrations follow their physically installed inside endpoints. The shore inlet waits for the electrical route; the gravity-fill hatch waits for tank orientation, fill/vent port map, hose fall/vent rise, and service access.
+- Owner-reported `2026-07-19`: the electrical module is hard-mounted through the permanent Lonseal/plywood floor to truck-bed hardpoints. Fit is clean and it is stable enough for continued stationary work; the Bench tie-in remains required for final anti-rack stiffness and road restraint.
+- The MultiPlus and combined AC breaker enclosure were temporarily removed before lifting. Embedded pronged/spiked T-nuts remain in the electrical backer, making both devices straightforward to remount from the service face.
+- All three `48V` batteries' positive/negative `2/0 AWG` branch leads are cut, lugged, heat-shrunk, and landed at the battery-side busbars. The batteries remain isolated until Batteries 2 and 3 are individually charged, rested, and within `0.1V` before paralleling.
+- The `12V` battery branch is close to completion, and the Orion/fuse panel are already mounted/wired. Final Orion input cleanup is one standalone inline `F-06 20A/80V` FKS/ATO fuse/holder. Identify the X-marked Lynx fuse by slot: Slot 2 uses `F-03 60A/80V` for MPPT, while Slot 4 stays empty. Keep `F-07 60A/80V` on Orion `12V` output and `F-11 100A` ANL on the `12V` battery positive branch.
+- The next physical sequence is electrical closeout first: remount MultiPlus/AC panel -> install shore inlet/AC-in path -> charge/equalize/parallel the `48V` bank -> finish `12V`/Orion and prove lights/fan/DC outlets -> bench-test and install tank/pump/wet spine -> close Bench/Galley around tested systems.
+- The shore inlet may proceed once its complete inside/outside path, hidden structure, backer grommet/strain relief, and sealing surfaces are proven. The water-fill/vent penetration still waits for the installed tank geometry and service path.
 - Final surface direction remains a three-piece Nick black-walnut commission after templates are locked. A temporary Galley plywood counter/template is acceptable before final walnut so sink/faucet geometry can be proven.
 - Plumbing is now active bench/mockup work, but no tank hole is cut before a complete port inventory and bare in-truck dry fit. Build cold-first and hot-ready around a removable wet-spine board.
 - Alternator charging remains a separate commissioning gate. Rough-in/routing with fuses pulled can proceed after floor/module reinstall; first-charge waits for APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior.
@@ -78,15 +78,13 @@ As of `2026-07-04`, the Galley/cooler/Bench/electrical tie-in has moved from tar
 | Mon `2026-07-06` if available | Wire/strain-relief/test + punch-list | safe low-power tests, AC/GFCI if ready, updated blocker list | alternator first-charge unless every prerequisite is green |
 | Week after | Alternator rough-in/commissioning, plumbing pressure test, floor gate | controlled subsystem tests | Lonseal glue-down before hardpoints/penetrations are proven |
 
-### Systems-integration priority ladder — `2026-07-16`
+### Systems-integration priority ladder — `2026-07-19`
 
-1. **Release the floor:** remove the cure boards Saturday morning, make a quick visual check, protect the surface, and proceed unless an area is actually loose.
-2. **Map the tank while the truck is empty:** inventory molded ports, verify KUS sender clearance, and lay out fill/vent/outlet/drain/wet-spine parts on the garage floor.
-3. **Install electrical before closing the bench:** hard-mount/brace the electrical module; install, individually protect, connect, cover, and label the `3x 48V` bank with full access; prove extraction and emergency service.
-4. **Dry-fit then prepare the tank:** place the bare tank in the truck once before drilling, freeze orientation/restraint/port/service geometry, add manufacturer-compatible fittings, then bench leak-test.
-5. **Install endpoints before penetrations:** hard-mount the tank/wet spine and electrical AC-in endpoint; only then prove/cut the water fill/vent hatch and L5-30 shore inlet from both sides.
-6. **Close around tested systems:** reinstall the bench bridge, Galley/fridge, Desk/storage, and removable panels only after electrical/plumbing routes and service actions work.
-7. **Commission and shake down:** pressure/leak-test, AC-out/GFCI-test when ready, torque/witness-mark, drive locally, and inspect floor, fasteners, inserts, hoses, cables, leaks, and movement.
+1. **Restore the electrical backer:** remount the MultiPlus and combined AC breaker enclosure into the embedded T-nuts; add cable protection/support and confirm service clearance.
+2. **Install shore and commission the bank:** prove/cut/seal the L5-30 route, charge Batteries 2 and 3 individually, rest/measure, and parallel all three only at `<=0.1V` difference.
+3. **Finish `12V`:** locate/install final `F-06 20A/80V`, complete `F-11 -> switch -> panel`, then prove the six pod lights, Maxxair fan, and first two DC outlets.
+4. **Bench-test water after return:** assemble the tank fittings, sender, pump, strainer, accumulator, and manifold; fill, pressure-test, cycle the pump, and inspect every joint in the driveway.
+5. **Install and brace tested systems:** hard-mount the proven tank/wet spine and Galley, tie the electrical module into the Bench, then close panels only after service access and shakedown checks pass.
 
 ## Status legend
 
@@ -122,6 +120,10 @@ Goal: keep batteries safe and isolated until physical access, floor hardpoints, 
 
 - [ ] Confirm the currently charged battery count and SOC/voltage.
 - [ ] Bring the `3x 48V` house batteries to a compatible resting voltage/SOC before paralleling; stage the separate `12V` buffer battery independently.
+- [x] Cut, lug, adhesive-heat-shrink, and land all three batteries' positive/negative `2/0 AWG` branch cables at the battery-side busbars while the bay is open.
+- [ ] Charge Battery 2 individually through the proven MultiPlus shore-charge path, then allow it to rest and record voltage/SOC.
+- [ ] Charge Battery 3 individually, then allow it to rest and record voltage/SOC.
+- [ ] Confirm all three rested battery voltages are within `0.1V` before making the parallel connection; do not use the parallel bus to equalize a larger mismatch.
 - [ ] For each `48V` battery, record resting voltage and display SOC after charge/rest.
 - [ ] For the `12V` battery, record resting voltage and display SOC after charge/rest.
 - [ ] Confirm all batteries are above low-temperature charge cutoff before charging.
@@ -131,7 +133,7 @@ Goal: keep batteries safe and isolated until physical access, floor hardpoints, 
 - [ ] Confirm battery extraction path from the bench: no rail, lid, panel, or cable blocks removal.
 - [ ] Add temporary “charged / not charged / do not connect” labels if any battery is out of sync.
 - [ ] Use battery placeholders or no-battery clearance checks during Galley/Bench dry fit; do not let loose heavy batteries become shop obstacles.
-- [ ] [HOLD] Do not final-route, final-cut, or final-torque battery cabling until the floor passes its post-cure inspection, the electrical module is hard-mounted, and battery extraction access is proven with the bench open.
+- [~] Floor release, module hard-mounting, and branch-cable fabrication are complete; hold final battery energization/torque/cover closeout until extraction access, polarity, branch protection, and the `<=0.1V` match are verified with the Bench open.
 
 ## 2. Bench / battery / step module
 
@@ -150,7 +152,7 @@ Goal: build the structure that braces the electrical module and controls battery
 - [ ] Confirm Class T / disconnect / Lynx / shunt / fuse access does not require dismantling the bench.
 - [ ] Confirm emergency service slit/access door for disconnect/fuse inspection.
 - [ ] Confirm no final floor bolt or hardpoint will be hidden under an installed battery or inaccessible galley/bench member.
-- [ ] Install/wire/fuse/cover the `3x 48V` bank before adding any bench bridge, lid support, or upper member that obstructs terminal, fuse, disconnect, cable-clamp, or extraction access.
+- [~] Branch cables are fabricated/landed at the busbars; charge/match/connect/fuse/cover the `3x 48V` bank before adding any Bench bridge, lid support, or upper member that obstructs terminal, fuse, disconnect, cable-clamp, or extraction access.
 - [ ] Add edge protection/scuff plate where the bench doubles as a step.
 - [ ] Mark fasteners for final witness marks after retorque, not during first loose mockup.
 - [ ] Do not install final skins until electrical service and battery extraction pass.
@@ -159,10 +161,11 @@ Goal: build the structure that braces the electrical module and controls battery
 
 Goal: turn the freestanding live-proven electrical module into a restrained mobile module.
 
-- [ ] Remove the cure boards Saturday morning, make a quick visual check, and protect the Lonseal before moving the module.
-- [ ] Hard-mount the electrical module before the battery bench or remaining furniture closes side/fastener access.
-- [ ] Place electrical module against the bench/desk structure in its intended installed position.
-- [ ] Confirm MultiPlus depth and service clearance are still acceptable.
+- [x] Release/protect the Lonseal enough for controlled electrical-module loading; retain the final floor-condition photo/inspection item in Section 10.
+- [x] Hard-mount the electrical module through registered floor/truck-bed hardpoints before the battery Bench or remaining furniture closes side/fastener access.
+- [x] Place the electrical module in its intended installed position; owner reports clean fit and good stationary stability.
+- [~] MultiPlus fit was previously proven, but it is temporarily off the backer; confirm final depth, airflow, terminal, and removal clearance during remount.
+- [x] Preserve easy front-side equipment remounting with embedded pronged/spiked T-nuts in the plywood backer; do not replace them with loose rear nuts.
 - [ ] Confirm Cerbo, SmartShunt, Orion, Lynx, fuses, disconnects, and AC enclosure remain reachable.
 - [ ] Add bench/desk tie-in rails or brackets so the electrical module cannot wobble standalone.
 - [ ] Add anti-rack planes: removable panels, diagonal braces, or shear skins where useful.
@@ -266,6 +269,8 @@ Goal: cold-water-first, hot-ready later, serviceable and leak-testable.
 - [ ] Cut/drill only after the map is frozen. For the selected `FLS-U` method, follow the official manual's single `60 mm` opening requirement (`2-3/8 in` hole saw), not the smaller sender-alone opening guidance. Preassemble the sender, gasket, screws, and C-ring as shown; tilt/rotate the ring through the one opening and tighten the five screws into it—do **not** drill five separate pilot holes through the tank top. Capture/remove chips and bench leak-test before truck installation.
 - [ ] Confirm vent hose size for the gravity-fill vent nipple: preferred `10 mm ID`; `3/8 in ID` warmed/clamped fallback.
 - [ ] Build wet-spine service board/tray layout: tank shutoff, flex loop, strainer, pump, accumulator, pressure gauge, manifold.
+- [ ] After the remaining fittings arrive, assemble the complete tank/pump/accumulator/manifold system in the driveway before permanent truck mounting.
+- [ ] Fill with clean water, verify gravity fill/vent behavior, pressure-cycle the `12V` pump, check accumulator behavior, exercise drain/washout paths, and inspect every fitting/seam for leaks.
 - [ ] Include winterization pickup, blowout Schrader, and low-point drains if practical in MVP.
 - [ ] Add unions/quick disconnects so the pump/strainer can be serviced without dismantling furniture.
 - [ ] Add pump electrical connector and strain relief.
@@ -287,14 +292,21 @@ Goal: make the already-live electrical system safe, labeled, restrained, and tes
 - [ ] Confirm main `48V` disconnect operation and shutdown sequence label.
 - [ ] Confirm MultiPlus `I/O/II` behavior and safe default state.
 - [ ] Confirm SmartShunt/SOC behavior with final battery bank connection.
-- [ ] Confirm Orion `48V -> 12V` feed and standalone `F-06` final cleanup if ready.
-- [ ] Confirm 12V buffer battery connection path, switch, and fuse state.
+- [ ] Remount the MultiPlus and combined AC breaker enclosure into the embedded backer T-nuts; confirm torque/thread engagement, service clearance, cable support, and covers before energizing.
+- [ ] Prove the complete L5-30 inlet-to-AC-in-breaker `10/3` route from both sides; cut/seal the camper penetration and protect the small electrical-backer opening with a fitted grommet/bushing or gland plus independent strain relief.
+- [~] Orion is mounted/wired; locate and install one final standalone inline `F-06 20A/80V` FKS/ATO fuse/holder on Orion `48V` input positive.
+- [ ] Identify the physically X-marked/misrated Lynx fuse by slot before replacement: Slot 2 requires `F-03 60A/80V` for MPPT; Slot 4 / `F-05` remains empty. Remove/quarantine any `32V`-rated fuse from the energized `48V` system.
+- [ ] Verify `F-07 60A/80V` MEGA is in the separate Orion `12V` output holder and is not confused with `F-06` or Lynx Slot 4.
+- [~] Complete/verify the `12V` buffer path: `4 AWG battery + -> F-11 100A ANL -> SW-12V-BATT -> panel main +`; `4 AWG battery - -> panel main -` directly.
 - [ ] Confirm 12V junction loads and branch labeling.
 - [ ] Confirm Cerbo power, VE.Bus/RJ45, Wi-Fi/console access, and source label `Shore power`.
 - [ ] Confirm AC-in path: portable EMS, shore cord, L5-30 inlet, AC-in breaker, MultiPlus.
 - [ ] Commission AC-out branches only when the AC enclosure, breakers, grounding/bonding behavior, and GFCI receptacles are physically ready.
 - [ ] Test GFCI trip/reset on both intended AC branch areas: office and galley.
 - [ ] Test DC USB/PD outlets under realistic laptop/phone/tablet load.
+- [ ] Energize and verify the Hiatus factory six-pod-light circuit/dimmer from `12V-06`.
+- [ ] Energize and verify the factory Maxxair fan from `12V-10`, including all speed/direction/control functions available on the installed model.
+- [ ] Wire and prove the first two DC charging outlets only after their branch fuse values, polarity, and labels are confirmed.
 - [ ] Test fridge/cooler DC outlet/feed if installed.
 - [ ] Test pump circuit with fuse, switch, connector, and dry-run protection awareness.
 - [ ] Add spare fuses in labeled holder/location.

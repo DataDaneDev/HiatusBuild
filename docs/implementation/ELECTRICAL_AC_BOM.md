@@ -13,7 +13,7 @@ related:
 
 # Electrical AC BOM (Phase 1)
 
-As-of date: `2026-07-16`
+As-of date: `2026-07-19`
 
 Purpose: maintain the purchased Phase 1 AC architecture baseline: portable `30A` EMS, `30A` shore inlet/cord, one `6-way` DIN enclosure, `30A` AC-in breaker, `30A` AC-out main breaker, and two active `20A` GFCI-protected AC-out branches. Final physical outlet locations and enclosure access remain measurement-gated in the installed camper.
 
@@ -26,11 +26,12 @@ Related docs:
 ## Historical provenance
 - [INSTALL_MINUS_12_READINESS_PLAN](../plans/INSTALL_MINUS_12_READINESS_PLAN.md) preserves the May 7 install-window AC planning context; this file owns current Phase 1 AC procurement/implementation.
 
-## Physical shore-inlet install gate (`2026-07-16`)
+## Physical shore-inlet install gate (`2026-07-19`)
 
 - The L5-30 inlet remains purchased but not yet cut into the camper/bed-side interface.
-- After the permanent floor's `72 hr` heavy-furniture cure and inspection, hard-mount the electrical module and AC-in enclosure endpoint first.
-- From the installed endpoint, mock the full `10/3` path to the candidate exterior inlet with required bend radius, cable support, drip/water management, service loop, strain relief, and access to both sides of the cut.
+- The electrical module is now hard-mounted. The MultiPlus and combined AC breaker enclosure were removed for the lift and must be remounted into the backer's embedded pronged/spiked T-nuts before the final shore path is terminated.
+- From the remounted AC-in breaker endpoint, mock the full `10/3` path to the candidate exterior inlet with required bend radius, cable support, drip/water management, service loop, strain relief, and access to both sides of the cut.
+- Any small cable opening through the plywood electrical backer requires a correctly sized grommet/bushing or gland plus independent cable support/strain relief; bare `10/3` must not bear on a raw plywood edge.
 - Confirm the exterior cover swing, connector clearance, wall/backing thickness, hidden structure/no-drill zone, butyl bedding land, finish-seal geometry, and a path that does not share the wet-side chase.
 - Cut only after the complete inside and outside route is proven. Do not let the easiest exterior location create an inaccessible cable entry or service-obscuring bend behind the electrical module.
 
