@@ -20,6 +20,10 @@ Purpose: short-term buy list for finishing the live-tested electrical board as a
 
 Scope note: this is a purchase aid, not a final cut list. Do not order final extrusion cuts, drawer slides, panel skins, or cosmetic trim from this document alone.
 
+## Private procurement evidence
+
+When the owner requests reconciliation, Atlas can use a private, read-only Gmail connection to locate Amazon order confirmations, invoices/receipts, shipment notices, returns, and refunds relevant to this build. Mailbox access is task-driven rather than continuous monitoring. Only sanitized build facts may enter this public repo: item, quantity, price, useful order-total components, purchase date, and fulfillment/refund status. Omit the email address, raw message or attachment, order number, delivery address, payment details, and unrelated personal purchases; reconcile extracted facts against the BOM before treating them as project state.
+
 ## Priority order
 
 1. MultiPlus programming/verification is no longer the procurement blocker: settings were redone and first-battery shore-charge behavior matched plan. Keep normal physical safety gates before unattended charging.
