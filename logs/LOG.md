@@ -1,3 +1,11 @@
+## 2026-07-20 — Six-month Amazon Gmail reconciliation completed
+
+- Ran an authorized Gmail read-only review for `2026-01-19` through `2026-07-19`: `42` Amazon order-confirmation messages found. All `23` confirmations through May 31 matched primary order identifiers already present in the canonical Amazon history CSV; `19` newer confirmations were reconciled against the BOM.
+- Extracted `53` named line-item records representing `52` unique product classes from the newer confirmation HTML. Amazon suppressed exact titles for one three-item Home Improvement/Hardware checkout and one single Automotive checkout, so BOM rows `228-229` preserve the paid totals without guessing product identity.
+- Reconciled the final June 5 Amazon hardware/fit-out order as `38` units / `25` product classes, `$952.55` item subtotal and `$1,017.34` gross checkout across two suborders. The returned BLCCLOY 8-set T-shape kit is excluded from inventory; its `$21.44` refund leaves `$995.90` net checkout cost.
+- Updated canonical BOM rows `46`, `49`, `50`, `52`, `99`, `208`, `212`, `219`, and `220`; added rows `222-229`. Major corrections include the purchased ARES WING monitor arm, repeat 10-series hardware/washer stock, Sarlai sink price, Banjo/Green Leaf plumbing-fitting prices, belt-service tool, 2 AWG splice kit, flooring tools, and truck/RV cleaning tools.
+- Added `bom/amazon_gmail_reconciliation_2026-07-20.md` and refreshed the TNUTZ hardware owner with the final purchase/return state. Private order identifiers, Gmail message IDs, addresses, and private order URLs were intentionally excluded from repository artifacts.
+
 ## 2026-07-19 — Electrical module hard-mounted; battery harnesses complete
 
 ### Owner-reported physical progress

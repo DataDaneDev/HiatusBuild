@@ -15,11 +15,20 @@ related:
 
 # TNUTZ 10-Series Hardware Model — Hiatus Interior Buildout
 
-_As of `2026-06-25`. Status: WIP TNUTZ shopping-cart / visual-aid worksheet with current dated cut-list workbook artifact. Consolidated order owner, not final fabrication geometry._
+_As of `2026-07-20`. Status: purchased-order and inventory owner with historical cart review plus the current dated cut-list workbook artifact. Consolidated hardware owner, not final fabrication geometry._
 
-Freshness note `2026-06-01`: this file is the detailed owner for the current TNUTZ/80-20 order consolidation. The owner still needs to review the visual aids and WIP cart before submitting any order. Use [PROCUREMENT_purchase_list_2026-05-26](PROCUREMENT_purchase_list_2026-05-26.md) only as the short procurement summary.
+Freshness note `2026-07-20`: the June 5 TNUTZ and Amazon order waves are purchased. This file now owns the reconciled 10-series inventory and structural-use posture; the earlier cart review remains historical decision context. Use [PROCUREMENT_purchase_list_2026-05-26](PROCUREMENT_purchase_list_2026-05-26.md) only as the short procurement summary.
 
 Current cut-list artifact `2026-07-04`: the current best module assignment / garage cut-list workbook is [`assets/module-cutlists/2026-07-04_module-cutlist-and-assignments.xlsx`](assets/module-cutlists/2026-07-04_module-cutlist-and-assignments.xlsx). Date-led filenames in this folder are the convention going forward; rename the file when a material module-assignment revision changes the current shop artifact.
+
+## Amazon purchase reconciliation — `2026-07-20`
+
+- Gmail read-only evidence confirms the final June 5 Amazon checkout contained `38` units across `25` product classes, not the earlier `31`-item / `$747.94` pre-submit snapshot.
+- Extracted item subtotals total `$952.55`; two checkout suborders total `$1,017.34` with tax. The BLCCLOY 8-set T-shape kit was returned for a `$21.44` refund, leaving `$932.56` of kept item subtotal and `$995.90` net checkout cost.
+- BOM allocation avoids double-counting: monitor-arm row `99` carries `$179.99`; row `222` carries the remaining kept June item subtotal of `$752.57` plus the July 5 `$21.66` FORRCKY repeat. The July washer repeat is carried in row `46`.
+- Final-order additions versus the pasted pre-submit cart included 20A duplex-receptacle stock, the RVSPARK dual USB-C outlets, 100W USB-C/5AC desktop grommet, 9/32 in drill bits, 1/4-20 tap/#7 drill set, and a second edge-trim product. The Ravinte folding shelf brackets shown in the pre-submit cart were not present in the final Gmail-confirmed order.
+- Purchased AC parts are inventory, not automatic installation approval. Permanent use still depends on the locked AC architecture, GFCI protection, enclosure/cable fit, and listing requirements.
+- Detailed evidence and the privacy boundary are in [`bom/amazon_gmail_reconciliation_2026-07-20.md`](../../bom/amazon_gmail_reconciliation_2026-07-20.md).
 
 ## Combined cart review — `2026-06-05`
 
