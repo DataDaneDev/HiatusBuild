@@ -7,7 +7,7 @@
 - Amazon evidence reviewed: order confirmations, shipment/delivery notices, and return/refund notices.
 - Coverage result: `42` Amazon order-confirmation messages were found. The `23` confirmations through `2026-05-31` all had a primary order identifier already present in `references/amazon_order_history.csv` (`23/23`), so the prior `2026-06-01` reconciliation remains the historical baseline.
 - New period: `19` confirmations from `2026-06-02` through `2026-07-19`.
-- Full HTML extraction recovered `53` named line-item records representing `52` unique product classes from the new confirmations. Two newer Amazon privacy-category confirmations exposed no product title/link: one checkout for `3` Home Improvement/Hardware items and one checkout for `1` Automotive item. Those four items remain explicit paid-cost placeholders rather than guessed products.
+- Full HTML extraction recovered `53` named line-item records representing `52` unique product classes from the new confirmations. Amazon's privacy-category emails initially suppressed four titles, but owner-provided Amazon order screenshots on `2026-07-20` resolved all four without exposing private order identifiers in the repo.
 
 Privacy boundary: this repository artifact intentionally omits Amazon order numbers, message IDs, account/address data, and private order URLs. Product descriptions, dates, quantities, and prices are retained only where they are relevant to the build BOM.
 
@@ -42,8 +42,8 @@ The canonical BOM continues to use item-subtotal pricing where item detail is av
 | 2026-07-12 | KUS 14.5 in sender + 1/4-20 x 2 and x 2-1/2 in flat-head screw packs | `$77.48` item / `$83.10` shipped total | KUS remains row `212`; screw packs added to row `46` |
 | 2026-07-13 | POWERTEC long-handle J-roller + Bates paint/mud mixer | `$23.98` item / `$25.72` checkout | Added row `226` |
 | 2026-07-16 | SharkBite PEX adapters + Banjo fill elbow + Green Leaf vent elbow | `$34.14` item / `$36.62` checkout | Rows `218-220`; Banjo and vent-elbow prices corrected |
-| 2026-07-18 | 3 Home Improvement/Hardware items; exact titles suppressed by Amazon | `$44.95` checkout | Added unresolved row `228`; no guessed subsystem assignment |
-| 2026-07-19 | 1 Automotive item; exact title suppressed by Amazon | `$8.57` checkout/shipped total | Added unresolved row `229`; no guessed product identity |
+| 2026-07-18 | 3M heavy-duty double-sided tape; Sanuke 10-piece 4 AWG x 3/8 in/M10 lug set; TKDMR 10-piece 2/0 AWG x 5/16 in lug set | `$41.91` item / `$44.95` checkout | Screenshot-resolved into rows `96`, `37`, and `35`; row `228` reduced to a zero-dollar reconciliation bridge |
+| 2026-07-19 | Sixzoo car sun-visor vanity mirror | `$7.99` item / `$8.57` checkout/shipped total | Screenshot-resolved row `229` |
 
 ## Final June 5 hardware/fit-out inventory
 
@@ -63,7 +63,7 @@ Safety note: purchased inventory is not automatic installation approval. The des
 
 ## BOM changes
 
-- Updated existing rows: `46`, `49`, `50`, `52`, `99`, `208`, `212`, `219`, and `220`.
+- Updated existing rows during the Gmail pass: `46`, `49`, `50`, `52`, `99`, `208`, `212`, `219`, and `220`. Owner screenshots then resolved rows `35`, `37`, `96`, `228`, and `229`.
 - Added rows: `222-229`.
-- Exact corrected prices include the Sarlai sink (`$179.00`), Banjo fill elbow (`$13.33`), Green Leaf vent elbow (`$12.97`), monitor arm (`$179.99`), and repeat hardware/supply buys.
+- Exact corrected prices include the Sarlai sink (`$179.00`), Banjo fill elbow (`$13.33`), Green Leaf vent elbow (`$12.97`), monitor arm (`$179.99`), 3M tape (`$20.99`), repeated 4 AWG and 2/0 lug stock, the `$7.99` visor mirror, and other repeat hardware/supply buys.
 - No private Amazon identifiers were copied into the BOM or this reconciliation report.
