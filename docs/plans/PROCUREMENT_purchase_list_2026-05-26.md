@@ -119,8 +119,8 @@ Posture: not a blocker. Re-measure before buying. Carry-extra-fuel is acceptable
 - **Orion final `F-06` input fuse cleanup**
   - Purchased `2026-06-01` Mouser order, total `$38.79`.
   - Fuse stock: `3x` Mouser `576-166.7000.5202` / Littelfuse `166.7000.5202` FKS/ATO fuse, `20A`, `80VDC`, `$7.88` each / `$23.64` extended.
-  - Holder stock: `3x` Mouser `576-178.6150.0001` / Littelfuse `178.6150.0001` fuse holder housing for FKH/ATO-FKS holder, `80VDC` listing owner-confirmed, `$1.51` each / `$4.53` extended.
-  - Allocation: install `1x` fuse/holder for final Orion `48V` input `F-06`; retain `2x` spare fuses/holders. Existing `30A 58V` MIDI remains acceptable interim protection on the short `6 AWG` Orion input branch until the swap.
+  - Housing stock: `3x` Mouser `576-178.6150.0001` / Littelfuse `178.6150.0001`, `$1.51` each / `$4.53` extended. Correction: these are empty housings with no contacts or leads, not install-ready holders; the matching contacts accept only `1.5-2.5 mm²`, not `6 AWG`.
+  - Final install shortfall: obtain `1x` Littelfuse `178.6152.2501` complete holder with `200 mm`, `2.5 mm²` wire loop plus `2x` purpose-built adhesive-lined reducer butt splices for `6 AWG -> 14-16 AWG` (Ancor `309106` class). Cut the loop at midpoint, splice to the existing `6 AWG`, install `1x` purchased `166.7000.5202` fuse, and retain `2x` correct fuses as spares. Existing `30A 58V` MIDI remains acceptable interim protection on the short `6 AWG` Orion input branch until the swap.
 
 - **WS500 low-current fuse/holder pieces**
   - Buy only after confirming the harness/manual voltage-rating need: `F-12` regulator power lead baseline `10A` and `F-13` positive voltage-sense lead `3A`.

@@ -1,3 +1,10 @@
+## 2026-07-24 — Orion F-06 purchased-holder correction
+
+- Revalidated the Orion-Tr Smart `48/12-30` against Victron's current manual: external battery protection remains `20A` on the `48V` side and `60A` on the `12V` side; `6 AWG` is within the Orion terminal maximum and remains conservative for both short cabinet runs.
+- Corrected a procurement mistake: purchased Littelfuse `166.7000.5202` FKS/ATO fuses are the correct `20A/80VDC` final F-06 fuse, but purchased `178.6150.0001` parts are empty housings with no contacts/leads, not complete holders. The compatible loose contacts only accept `1.5-2.5 mm²`, not the installed `6 AWG`.
+- Final low-rework install path is `1x` Littelfuse `178.6152.2501` complete holder with `200 mm`, `2.5 mm²` loop. Cut the loop at midpoint and join its two pigtails to the existing `6 AWG` positive lead with `2x` rated adhesive-lined `6 AWG -> 14-16 AWG` reducer butt splices such as Ancor `309106`; crimp, heat-seal, tug-test, mount/support, and keep the unfused Lynx-to-holder lead short.
+- Lynx Slot 4 / legacy `40A` MEGA remains open/spare and is not in the Orion branch. Orion uses exactly one standalone source-side F-06 input fuse. The existing `30A/58V` MIDI remains interim-only until the final holder/splices are installed; if the physically installed inline device instead carries only a `48VDC` maximum rating, do not energize it on this bank.
+
 ## 2026-07-20 — Six-month Amazon Gmail reconciliation completed
 
 - Ran an authorized Gmail read-only review for `2026-01-19` through `2026-07-19`: `42` Amazon order-confirmation messages found. All `23` confirmations through May 31 matched primary order identifiers already present in the canonical Amazon history CSV; `19` newer confirmations were reconciled against the BOM.
@@ -16,7 +23,7 @@
 - The `12V` buffer-battery branch is close to completion. Locked routing remains `4 AWG battery + -> F-11 100A ANL -> SW-12V-BATT -> fuse-panel main +` and `4 AWG battery - -> fuse-panel main -` directly.
 
 ### Immediate electrical clarification
-- Orion input uses exactly one standalone inline `F-06` on the `48V` positive lead: final `20A/80V` Littelfuse FKS/ATO fuse plus matching holder purchased in BOM row `182`.
+- Orion input uses exactly one standalone inline `F-06` on the `48V` positive lead: final `20A/80V` Littelfuse FKS/ATO fuse. Correction recorded `2026-07-24`: the purchased row `182` fuse is correct, but purchased `178.6150.0001` is only the empty housing; complete holder `178.6152.2501` and rated reducer splices remain to buy.
 - Identify the physically X-marked/misrated Lynx fuse by slot rather than assuming it is for Orion: Slot 2 requires `F-03 60A/80V` MEGA for the MPPT; Slot 4 / `F-05` stays open. No `32V`-rated fuse remains on an energized `48V` branch.
 - Orion `12V` output retains separate `F-07 60A/80V` MEGA protection before the `12V` panel main positive stud; the `12V` buffer battery retains separate `F-11 100A` ANL protection near its positive post.
 

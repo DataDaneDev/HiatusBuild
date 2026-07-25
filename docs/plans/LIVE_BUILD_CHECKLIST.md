@@ -294,7 +294,7 @@ Goal: make the already-live electrical system safe, labeled, restrained, and tes
 - [ ] Confirm SmartShunt/SOC behavior with final battery bank connection.
 - [ ] Remount the MultiPlus and combined AC breaker enclosure into the embedded backer T-nuts; confirm torque/thread engagement, service clearance, cable support, and covers before energizing.
 - [ ] Prove the complete L5-30 inlet-to-AC-in-breaker `10/3` route from both sides; cut/seal the camper penetration and protect the small electrical-backer opening with a fitted grommet/bushing or gland plus independent strain relief.
-- [~] Orion is mounted/wired; locate and install one final standalone inline `F-06 20A/80V` FKS/ATO fuse/holder on Orion `48V` input positive.
+- [~] Orion is mounted/wired; install one final standalone inline `F-06 20A/80V` FKS/ATO fuse/holder on Orion `48V` input positive. Use the purchased `166.7000.5202` fuse, but not the purchased `178.6150.0001` housing by itself. Obtain complete holder `178.6152.2501`, cut its `200 mm` loop at midpoint, and join both `2.5 mm²` pigtails to the existing `6 AWG` with purpose-built `6 AWG -> 14-16 AWG` adhesive-lined reducer splices; crimp, heat-seal, tug-test, support, and keep the unfused source-side lead short.
 - [ ] Identify the physically X-marked/misrated Lynx fuse by slot before replacement: Slot 2 requires `F-03 60A/80V` for MPPT; Slot 4 / `F-05` remains empty. Remove/quarantine any `32V`-rated fuse from the energized `48V` system.
 - [ ] Verify `F-07 60A/80V` MEGA is in the separate Orion `12V` output holder and is not confused with `F-06` or Lynx Slot 4.
 - [~] Complete/verify the `12V` buffer path: `4 AWG battery + -> F-11 100A ANL -> SW-12V-BATT -> panel main +`; `4 AWG battery - -> panel main -` directly.

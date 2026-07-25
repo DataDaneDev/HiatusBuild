@@ -54,7 +54,7 @@ Related docs:
 - The `12V` buffer-battery branch is near physical completion; keep its negative direct to the fuse-panel main negative stud, not through `SW-12V-BATT`. The positive path remains `F-11 -> SW-12V-BATT -> panel main +`.
 
 ### Orion fuse discriminator — do not combine these positions
-- `F-06`: **one standalone inline fuse on Orion `48V` input positive**, final `20A/80V` Littelfuse FKS/ATO fuse and matching holder; existing `30A/58V` MIDI is interim only.
+- `F-06`: **one standalone inline fuse on Orion `48V` input positive**, final `20A/80V` Littelfuse FKS/ATO fuse in a complete compatible holder; existing `30A/58V` MIDI is interim only. Purchased `178.6150.0001` is housing-only; final install uses complete `178.6152.2501` plus rated `6 AWG -> 14-16 AWG` reducer splices.
 - Lynx Slot 2 / `F-03`: **MPPT branch**, `60A/80V` MEGA. If the physically X-marked/misrated Lynx fuse is in Slot 2, replace it with the purchased Victron `60A/80V` MEGA; it is not the Orion input fuse.
 - Lynx Slot 4 / `F-05`: **open spare**. If the X-marked position is Slot 4, remove/leave it empty; it is not a second Orion input fuse.
 - `F-07`: **Orion `12V` output positive**, `60A/80V` MEGA in the separate Victron holder near the Orion.
@@ -119,7 +119,7 @@ flowchart LR
         MULTI["MultiPlus-II\n48/3000/35-50"]
         ORION["Orion-Tr Smart 48/12-30\nIsolated charger"]
         SLOT4["Lynx Slot 4\nopen spare fused position\n(no Orion MEGA installed)"]
-        F06["F-06 Orion 48V input fuse\ninterim 30A 58V MIDI; final 20A 80V FKS/ATO"]
+        F06["F-06 Orion 48V input fuse\ninterim 30A 58V MIDI; final 20A 80V FKS/ATO\ncomplete 178.6152.2501 holder + reducers"]
     end
 
     BATA -- "2/0 AWG +, ~2.5 ft" --> F01A --> POSBUS
@@ -347,7 +347,7 @@ flowchart LR
 | `F-03` | `60A MEGA` (`80V` Victron replacement stock) | Lynx integrated slot holder | Lynx Slot 2 |
 | `F-04` | `150A MEGA` | Lynx integrated slot holder | Lynx Slot 3 (dedicated alternator branch) |
 | `F-05` | Not installed / open spare position | Lynx integrated slot holder left blank | Lynx Slot 4; reserve for future branch, not Orion |
-| `F-06` | Orion `48V` input fuse: interim `30A 58V` MIDI; final `20A 80V` FKS/ATO | Current build uses existing MIDI holder/fuse from a Lynx `48V+` bus tap; final cleanup stock purchased `2026-06-01`: `3x` Mouser `576-166.7000.5202` fuses + `3x` `576-178.6150.0001` holders | Electrical cabinet between Lynx bus tap and Orion `48V +`; keep source-side unfused lead short |
+| `F-06` | Orion `48V` input fuse: interim `30A 58V` MIDI; final `20A 80V` FKS/ATO | Current build uses existing MIDI holder/fuse from a Lynx `48V+` bus tap. Correct final fuse stock is `3x` Mouser `576-166.7000.5202`; purchased `3x` `576-178.6150.0001` are empty housings. Final install needs `1x` complete `178.6152.2501` holder + `2x` rated `6 AWG -> 14-16 AWG` reducer splices. | Electrical cabinet between Lynx bus tap and Orion `48V +`; keep source-side unfused lead short |
 | `F-07` | `60A MEGA` (`80V` Victron replacement stock) | Victron MEGA fuse holder | Electrical cabinet at Orion `12V +` source end |
 | `F-09A/B/C` | `15A gPV` each | `10x38` touch-safe fuse holders in PV combiner | Roof-entry combiner enclosure |
 | `F-10` | Per branch (`ATO/ATC`) | Integrated blade sockets in generic 12V fuse block | Electrical cabinet |
@@ -443,7 +443,7 @@ Calculation basis for drop screening:
 | `C-11` | Secondary alternator `B+` | Lynx Slot 3 via APM-48 | `F-04 150A` | `150A` design | `2/0 AWG` | `20 ft` | `0.80%` @ `58.4V` | Row `28` (`2/0 red`) | PASS |
 | `C-12` | Secondary alternator `B-` | Lynx `-` bus (dedicated return) | `F-04` paired | `150A` design | `2/0 AWG` | `20 ft` | `0.80%` @ `58.4V` | Row `28` (`2/0 black`) | PASS |
 | `C-13` | Lynx `48V +` bus tap | `F-06` source side | Interim `F-06 30A 58V` MIDI; final `20A 80VDC` FKS/ATO | `30A` interim / `20A` final | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS |
-| `C-14` | Orion input protection point | Orion `48V +` | Interim `F-06 30A 58V` MIDI; final `20A 80VDC` FKS/ATO | `30A` interim / `20A` final | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS; final holder `576-178.6150.0001` confirmed `80VDC` by owner listing |
+| `C-14` | Orion input protection point | Orion `48V +` | Interim `F-06 30A 58V` MIDI; final `20A 80VDC` FKS/ATO | `30A` interim / `20A` final | `6 AWG` with two short `2.5 mm²` holder pigtails | `2.5 ft` | `~0.12%` at `20A` / `51.2V` for mixed pigtail + `6 AWG` path | Row `29` (`6 AWG red`) + complete holder/reducer-splice shortfall | PASS electrically; procurement hold until complete `178.6152.2501` holder and reducer splices are on hand. Purchased `178.6150.0001` is housing-only. |
 | `C-15` | Orion `48V -` | Lynx `-` bus | Orion input positive protection paired | `30A` interim / `20A` final fuse basis | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG black`) | PASS |
 | `C-18` | Orion `12V +` | Fuse block main `+` stud | `F-07 60A/80V` Victron row `188` | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG red`) | PASS |
 | `C-19` | Orion `12V -` | Fuse block integrated `-` bus / main `-` stud | `F-07` paired | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG black`) | PASS |
