@@ -62,7 +62,7 @@ Related docs:
 | Main fused distribution | Victron Lynx Distributor `M10` | `6` |
 | Battery branch protection | `F-01A/B/C` `200A` Class T; manual-backed battery limit is `200A` max continuous discharge per battery, with terminal/manufacturer fuse guidance still not separately specified; owner confirmed `3` holders and `4` slow-blow Class T fuses total | `7` |
 | Inverter/charger | MultiPlus-II `48/3000/35-50` | `12` |
-| 48V to 12V charger | Orion-Tr Smart `48/12-30`; fed from Lynx `48V+` bus tap through standalone `F-06` (`30A 58V` MIDI interim, `20A 80V` FKS/ATO final); Lynx Slot 4 remains open | `20`, `11`, `133`, `182` |
+| 48V to 12V charger | Orion-Tr Smart `48/12-30`; fed from Lynx `48V+` bus tap through standalone `F-06` (Mersen `USM1` DIN holder + `ATM20 20A/600VDC` fuse, direct `6 AWG`); Lynx Slot 4 remains open | `20`, `11`, `230` |
 | Monitoring | Cerbo GX + SmartShunt `300A` | `22`, `23` |
 | Alternator kit | Mechman `48V` secondary alternator kit with `WS500` | `168` |
 | Load-dump clamp | Balmar `APM-48` | `169` |
@@ -106,7 +106,7 @@ flowchart LR
     LYNX --> MULTI["MultiPlus-II 48/3000\nSlot 1 / F-02 125A"]
     LYNX --> MPPT["SmartSolar 150/45\nSlot 2 / F-03 60A"]
     LYNX --> SLOT4["Lynx Slot 4 / F-05\nopen spare"]
-    LYNX --> F06["F-06 inline Orion input fuse\n30A 58V MIDI interim\n20A 80V FKS/ATO final"]
+    LYNX --> F06["F-06 Orion input fuse\nUSM1 DIN holder\nATM20 20A 600VDC"]
     F06 --> ORION["Orion 48/12-30"]
 ```
 
@@ -138,7 +138,7 @@ flowchart LR
 | `F-01A/B/C` | Battery branch positive protection | `200A` Class T provisional | `2/0 AWG` |
 | `F-04` | Alternator branch into Lynx Slot 3 | `150A` MEGA (`58V/80V`) | `2/0 AWG` |
 | `F-05` | Lynx Slot 4 | Open/blank spare fused position; not used for Orion | N/A |
-| `F-06` | Orion `48V` input from Lynx bus tap | `30A 58V` MIDI interim; `20A 80V` FKS/ATO final | `6 AWG` planned; keep source-side unfused tap short |
+| `F-06` | Orion `48V` input from Lynx bus tap | Mersen `ATM20`, `20A/600VDC`, in Mersen `USM1` DIN holder | Existing `6 AWG` direct into pressure-plate terminals; keep source-side unfused tap short |
 | `F-12` | WS500 regulator power lead | `10A` baseline (`15A` if required by alternator case); voltage rating must cover the connected alternator/system positive voltage | harness lead |
 | `F-13` | WS500 positive voltage-sense lead | `3A`; fuse/holder voltage class must cover the `48V` bank maximum unless proven by WS500 harness documentation | harness lead |
 | `CERBO-PWR` | Cerbo GX low-current power feed | `1A-3A` inline fuse/holder rated for the `48V` bank maximum; system/load side of main disconnect preferred for bench shutdown | `18 AWG` red/black duplex acceptable |

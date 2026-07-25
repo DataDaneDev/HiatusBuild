@@ -1,9 +1,9 @@
-## 2026-07-24 — Orion F-06 purchased-holder correction
+## 2026-07-24 — Orion F-06 direct-termination correction
 
 - Revalidated the Orion-Tr Smart `48/12-30` against Victron's current manual: external battery protection remains `20A` on the `48V` side and `60A` on the `12V` side; `6 AWG` is within the Orion terminal maximum and remains conservative for both short cabinet runs.
-- Corrected a procurement mistake: purchased Littelfuse `166.7000.5202` FKS/ATO fuses are the correct `20A/80VDC` final F-06 fuse, but purchased `178.6150.0001` parts are empty housings with no contacts/leads, not complete holders. The compatible loose contacts only accept `1.5-2.5 mm²`, not the installed `6 AWG`.
-- Final low-rework install path is `1x` Littelfuse `178.6152.2501` complete holder with `200 mm`, `2.5 mm²` loop. Cut the loop at midpoint and join its two pigtails to the existing `6 AWG` positive lead with `2x` rated adhesive-lined `6 AWG -> 14-16 AWG` reducer butt splices such as Ancor `309106`; crimp, heat-seal, tug-test, mount/support, and keep the unfused Lynx-to-holder lead short.
-- Lynx Slot 4 / legacy `40A` MEGA remains open/spare and is not in the Orion branch. Orion uses exactly one standalone source-side F-06 input fuse. The existing `30A/58V` MIDI remains interim-only until the final holder/splices are installed; if the physically installed inline device instead carries only a `48VDC` maximum rating, do not energize it on this bank.
+- Corrected a procurement mistake: purchased Littelfuse `166.7000.5202` FKS/ATO fuses are electrically rated `20A/80VDC`, but purchased `178.6150.0001` parts are empty housings and their contacts cannot directly terminate the installed `6 AWG`.
+- Rejected the proposed pigtail/reducer-splice workaround as needless connection stacking. Final low-rework architecture is one panel-mounted Mersen `USM1` touch-safe `10x38 mm` fuse holder (`30A`, `1000VDC`, pressure-plate terminals accepting `#14-6 AWG`) with one Mersen `ATM20` fuse (`20A`, `600VAC/DC`) on a short `35 mm` DIN-rail segment. Existing `6 AWG` lands directly in the holder; no pigtails, reducers, butt splices, or extra lugs.
+- Lynx Slot 4 / legacy `40A` MEGA remains open/spare and is not in the Orion branch. Orion uses exactly one source-side F-06 input fuse. Do not energize an installed inline fuse/holder whose marked DC rating is below the bank maximum; the documented bank recommendation reaches `58.6V`.
 
 ## 2026-07-20 — Six-month Amazon Gmail reconciliation completed
 
@@ -23,7 +23,7 @@
 - The `12V` buffer-battery branch is close to completion. Locked routing remains `4 AWG battery + -> F-11 100A ANL -> SW-12V-BATT -> fuse-panel main +` and `4 AWG battery - -> fuse-panel main -` directly.
 
 ### Immediate electrical clarification
-- Orion input uses exactly one standalone inline `F-06` on the `48V` positive lead: final `20A/80V` Littelfuse FKS/ATO fuse. Correction recorded `2026-07-24`: the purchased row `182` fuse is correct, but purchased `178.6150.0001` is only the empty housing; complete holder `178.6152.2501` and rated reducer splices remain to buy.
+- Orion input uses exactly one standalone `F-06` on the `48V` positive lead: final Mersen `USM1` DIN-rail holder with `ATM20 20A/600VDC` midget fuse and direct `6 AWG` pressure-plate terminations. Purchased FKS/ATO fuse/housing stock in row `182` is a dead-end for this branch and is not part of the final install.
 - Identify the physically X-marked/misrated Lynx fuse by slot rather than assuming it is for Orion: Slot 2 requires `F-03 60A/80V` MEGA for the MPPT; Slot 4 / `F-05` stays open. No `32V`-rated fuse remains on an energized `48V` branch.
 - Orion `12V` output retains separate `F-07 60A/80V` MEGA protection before the `12V` panel main positive stud; the `12V` buffer battery retains separate `F-11 100A` ANL protection near its positive post.
 
@@ -251,7 +251,7 @@
 
 - Owner purchased Mouser Orion `F-06` final cleanup stock: `3x` Littelfuse `166.7000.5202` / Mouser `576-166.7000.5202` FKS/ATO fuses (`20A`, `80VDC`) and `3x` Littelfuse `178.6150.0001` / Mouser `576-178.6150.0001` holders (`80VDC` listing owner-confirmed).
 - Cost basis: fuses `$7.88` each / `$23.64` extended; holders `$1.51` each / `$4.53` extended; order total `$38.79`, with `$10.62` shipping/tax/remainder over the `$28.17` parts subtotal.
-- Allocation: install `1x` fuse/holder for final Orion `48V` input `F-06`; retain `2x` spare fuse/holder sets. Existing `30A 58V` MIDI remains acceptable interim protection on the short `6 AWG` Orion input run until swapped.
+- Historical allocation was later invalidated: `178.6150.0001` is housing-only and the FKS contact system cannot directly terminate the installed `6 AWG`. The FKS/ATO stock is not final Orion hardware; see the `2026-07-24` direct-termination correction at the top of this log.
 
 ## 2026-06-01 — Camper audio system selected and integrated
 
@@ -280,7 +280,7 @@
 
 - Owner purchased Victron `60A/80V` MEGA fuse 5-pack for MPPT/Orion-output stock: Amazon ASIN `B0F9PKDGWD`, listing/part text `CIP138060020`, observed price `$46.75`.
 - Earlier low-cost `60A` MEGA batch (`6x`, two 3-packs at `$4.99` each / `$9.98` total) was owner-confirmed as misadvertised/not actually `58V`; mark as trash/quarantined and do not use on `48V` paths.
-- Allocation: install `1x` at MPPT battery-side Lynx Slot 2 / `F-03`; install `1x` at Orion `12V` output / `F-07` if that holder needs a `60A` MEGA; retain `3x` spares. Do not use for MultiPlus `F-02` (`125A`), alternator `F-04` (`150A`), or Orion `48V` input `F-06` (MIDI/FKS/ATO path).
+- Allocation: install `1x` at MPPT battery-side Lynx Slot 2 / `F-03`; install `1x` at Orion `12V` output / `F-07` if that holder needs a `60A` MEGA; retain `3x` spares. Do not use for MultiPlus `F-02` (`125A`), alternator `F-04` (`150A`), or Orion `48V` input `F-06` (final `USM1/ATM20` path).
 
 ## 2026-05-30 — MultiPlus charge target lowered after top-end BMS trip theory
 - Revised active MultiPlus-II commissioning profile for the Dumfume `3x 51.2V 100Ah` bank after live symptoms pointed toward top-end BMS charge protection.
@@ -320,7 +320,7 @@
 
 ## 2026-05-25 — Lynx Slot 4 left open; Orion input stays on F-06
 - Locked active topology to leave Lynx Slot 4/`F-05` open/blank. Orion `48V` input now uses a Lynx `48V+` bus tap into standalone `F-06`, not an oversized Lynx MEGA fuse.
-- Updated active electrical docs/BOM to show `F-06` as the single Orion input fuse: existing `30A 58V` MIDI for build/bench/interim use, planned `20A 80V` FKS/ATO cleanup later.
+- Historical hardware path later superseded: `F-06` remains the single Orion input fuse, but the final direct-termination assembly is `USM1/ATM20`; neither the `30A/58V` MIDI nor purchased FKS/ATO housing stock is final hardware.
 - Rebased battery-discharge sizing envelope from old `F-02 + F-05 = 165A` to `F-02 + F-06 = 155A` interim / `145A` final, while keeping the existing `2/0` and `200A Class T` posture conservative.
 
 ## 2026-05-24 — BOJACK 150A MIDI holder purpose resolved
@@ -330,17 +330,17 @@
 
 ## 2026-05-24 — Orion input fuse interim/final decision locked
 - Owner confirmed Mouser `576-178.6150.0001` holder listing says `80V`; final cleanup buy is Mouser `576-166.7000.5202` (`20A 80V` Littelfuse FKS/ATO fuse) plus Mouser `576-178.6150.0001` (`80V` Littelfuse ATO/FKS holder).
-- Current build/interim install will run the existing `30A 58V` MIDI on the short `6 AWG` Orion `48V` input branch. This is acceptable wire protection and does not block bench/build progress.
-- Final cleanup target remains `20A` because it matches the Victron Orion manual value; purchase is deferred until the next Mouser order.
+- Superseded by the `2026-07-24` direct-termination correction: do not treat the `30A/58V` MIDI as final or energize it above its marked rating.
+- Final value remains `20A` because it matches the Victron Orion manual; final holder/fuse pair is Mersen `USM1/ATM20`.
 
 ## 2026-05-24 — Orion input fuse replacement downscoped
-- Corrected the overbuilt `1000VDC` Orion `F-06` recommendation. Practical final target is now a low-cost `20A`, `80VDC` FKS/ATO blade-fuse path, led by Littelfuse `166.7000.5202`, with an ATO/FKS holder that visibly carries an `80VDC` rating.
-- Existing `30A 58V` MIDI stock is no longer labeled obsolete: it is acceptable bench/contingency wire protection for the short `6 AWG` Orion input run, but `20A` remains the preferred final value because it matches the Victron Orion manual.
-- Superseded by owner confirmation above: Mouser `576-178.6150.0001` listing says `80V`, so the prior holder-rating hold is closed.
+- Superseded by the `2026-07-24` direct-termination correction. The FKS/ATO idea failed on mechanical termination: its contacts do not accept the installed `6 AWG`, and the purchased holder item is only an empty housing.
+- The final architecture uses the higher-rated Mersen `USM1/ATM20` family not because the system needs `600-1000V`, but because it provides the correct `20A` fuse value, adequate DC interrupt rating, touch-safe panel mounting, and direct pressure-plate termination of `6 AWG` without splice stacking.
+- Existing `30A/58V` MIDI stock is not final Orion hardware and must not be energized beyond its marked rating.
 
 ## 2026-05-24 — Orion input fuse replacement found (superseded later same day)
-- Superseded by the downscoped practical `20A 80V` FKS/ATO path above. Original note: replaced the unresolved Orion `48V` input protection guidance with a concrete buyable class: Eaton Bussmann `PV-20A10F` 10x38 `gPV` fuse (`20A`, `1000VDC`, `50kAIC`) in Eaton Bussmann `CHPV1U`/`CHPV1IU` holder (`30A`, `1000VDC`).
-- Historical original note, superseded above: this pass had incorrectly labeled existing `30A 58V MIDI` stock obsolete for final `F-06`; later correction keeps it as current/interim use and row `182` as final 20A 80V cleanup purchase.
+- Historical first DIN-fuse concept was directionally sound but used a PV-specific fuse and a holder whose terminal fit was not locked to the installed `6 AWG`. Final direct-termination selection is Mersen `USM1` with non-PV `ATM20 20A/600VDC` fast-acting midget fuse.
+- Existing `30A/58V` MIDI and row `182` FKS/ATO stock are retained only as purchased dead-end inventory, not active/final F-06 hardware.
 - Wire validation remains: planned `6 AWG` Orion `48V` input and `12V` output conductors are conservative for the assumed short electrical-cabinet run.
 
 ## 2026-05-24 — Orion input fuse topology reassessment

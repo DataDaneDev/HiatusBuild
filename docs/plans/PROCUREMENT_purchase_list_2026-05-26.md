@@ -28,7 +28,7 @@ When the owner requests reconciliation, Atlas can use a private, read-only Gmail
 
 1. MultiPlus programming/verification is no longer the procurement blocker: settings were redone and first-battery shore-charge behavior matched plan. Keep normal physical safety gates before unattended charging.
 2. Finish electrical-board hard-mount, protection, labeling, strain-relief, and abrasion-control hardware after checking what is now on hand.
-3. Orion final standalone `F-06` cleanup stock is purchased: current interim remains `30A 58V` MIDI until the convenient swap to `20A 80VDC` FKS/ATO hardware.
+3. Orion final standalone `F-06` hardware remains to buy: Mersen `USM1` touch-safe DIN holder, `ATM20 20A/600VDC` fuse stock, and a short `35 mm` DIN rail if needed. Do not treat the purchased FKS/ATO stock or `30A/58V` MIDI hardware as the final branch.
 4. WIP TNUTZ shopping cart for `10-series` prototype stock/hardware after reviewing the visual aids and current module assumptions; do not treat it as final-cut geometry.
 5. Diesel heater tank later, after physical re-measurement.
 
@@ -120,7 +120,8 @@ Posture: not a blocker. Re-measure before buying. Carry-extra-fuel is acceptable
   - Purchased `2026-06-01` Mouser order, total `$38.79`.
   - Fuse stock: `3x` Mouser `576-166.7000.5202` / Littelfuse `166.7000.5202` FKS/ATO fuse, `20A`, `80VDC`, `$7.88` each / `$23.64` extended.
   - Housing stock: `3x` Mouser `576-178.6150.0001` / Littelfuse `178.6150.0001`, `$1.51` each / `$4.53` extended. Correction: these are empty housings with no contacts or leads, not install-ready holders; the matching contacts accept only `1.5-2.5 mm²`, not `6 AWG`.
-  - Final install shortfall: obtain `1x` Littelfuse `178.6152.2501` complete holder with `200 mm`, `2.5 mm²` wire loop plus `2x` purpose-built adhesive-lined reducer butt splices for `6 AWG -> 14-16 AWG` (Ancor `309106` class). Cut the loop at midpoint, splice to the existing `6 AWG`, install `1x` purchased `166.7000.5202` fuse, and retain `2x` correct fuses as spares. Existing `30A 58V` MIDI remains acceptable interim protection on the short `6 AWG` Orion input branch until the swap.
+  - Final install shortfall: obtain `1x` Mersen `USM1` one-pole touch-safe DIN holder, `3x` Mersen `ATM20` `20A/600VAC/DC` midget fuses (`1` installed + `2` spares), and one short `35 mm` DIN-rail segment if no suitable rail is already mounted. The `USM1` accepts the existing `6 AWG` directly through pressure-plate terminals; no gauge reducers, butt splices, or pigtails.
+  - Treat the purchased FKS/ATO fuse/housing stock as unused/dead-end spare inventory, not final Orion hardware. Do not energize any interim holder/fuse marked below the bank's `58.6V` documented upper recommendation.
 
 - **WS500 low-current fuse/holder pieces**
   - Buy only after confirming the harness/manual voltage-rating need: `F-12` regulator power lead baseline `10A` and `F-13` positive voltage-sense lead `3A`.
