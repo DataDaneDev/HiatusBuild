@@ -1,3 +1,8 @@
+## 2026-07-24 — ThermoMate ES400B fit correction
+
+- Corrected the exact Amazon `B0CCJ3PS9J` ThermoMate ES400B installed envelope from the previously conflated short-body ES400 dimensions to the live listing's `24.3H x 12.6W x 12.4D in`, including valve. It is a tall/narrow four-gallon option, not the short-cubby value fallback.
+- Short four-gallon fallback order is now Camplux ME40B (`14.5H x 14.5W x 12.9D`) first on value, then Bosch ES4 (`13.75H x 13.75W x 13.5D`) only when its smaller shell makes the fit. A.O. Smith E6-6C15SV official shell height is corrected to `15.25 in`.
+
 ## 2026-07-24 — Orion input simplified to Lynx Slot 4
 
 - Stopped refactoring the Orion input around Victron's conservative `20A` table value. Final practical architecture uses one `40A` MEGA fuse body-marked at least `58VDC` in Lynx Slot 4 feeding the existing `6 AWG` Orion input pair directly. Existing verified `58VDC` stock is acceptable under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is replacement fallback only. The `40A` fuse protects the feeder; `6 AWG` is electrically overkill but already installed and needs no replacement.

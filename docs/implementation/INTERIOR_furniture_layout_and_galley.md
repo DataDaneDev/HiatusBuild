@@ -471,17 +471,17 @@ The owner identified a candidate north cubby with an internal bounding envelope 
 
 | Class | Candidate / buy link | Capacity / power | Manufacturer envelope | Live price | Best use |
 | --- | --- | --- | --- | ---: | --- |
-| Six-gallon lowboy | [A.O. Smith E6-6C15SV — Lowe's](https://www.lowes.com/pd/A-O-Smith-Signature-6-Gallon-Regular-6-year-Limited-1500-watt-1-Element-Point-of-Use-Electric-Water-Heater/1000216841) | `6 gal`, `1500W`, `120V` | `15.5 H x 14.25 in dia` | `~$319` | Best six-gallon fit when the short cubby axis is vertical. |
+| Six-gallon lowboy | [A.O. Smith E6-6C15SV — Lowe's](https://www.lowes.com/pd/A-O-Smith-Signature-6-Gallon-Regular-6-year-Limited-1500-watt-1-Element-Point-of-Use-Electric-Water-Heater/1000216841) | `6 gal`, `1500W`, `120V` | `15.25 H x 14.25 in dia` | `~$319` | Best six-gallon shell fit when the short cubby axis is vertical; installed fit still needs connection, T&P, pan, and extraction clearance. |
 | Six-gallon budget | [Camplux ME60 — Amazon](https://www.amazon.com/dp/B07CV789V4) | `6 gal`, `1440W`, `120V` | `21 H x 15.75 W x 15.5 D in` | `$229.99` | Cheaper six-gallon option, but only if the measured cubby is wider than the reported `15 in`. |
-| Four-gallon budget | [ThermoMate ES400B — Amazon](https://www.amazon.com/dp/B0CCJ3PS9J) | `4 gal`, `1440W`, `120V` | `14.5 H x 14.5 W x 12.9 D in` | `$161.49` | Current value pick if six gallons will not fit. |
-| Four-gallon alternate | [Camplux ME40B — Amazon](https://www.amazon.com/dp/B08BJXMMNT) | `4 gal`, `1440W`, `120V` | `14.5 H x 14.5 W x 12.9 D in` | `$188.99` | Same basic package size as ThermoMate; buy only if preferred availability/support justifies the extra cost. |
+| Four-gallon tall/narrow | [ThermoMate ES400B — Amazon](https://www.amazon.com/dp/B0CCJ3PS9J) | `4 gal`, `1440W`, `120V` | `24.3 H x 12.6 W x 12.4 D in`, including valve | `$161.49` | Fits only when the long cubby axis is vertical; do not confuse this exact ASIN/model with the separate short-body ThermoMate ES400 listing. |
+| Four-gallon short-body value | [Camplux ME40B — Amazon](https://www.amazon.com/dp/B08BJXMMNT) | `4 gal`, `1440W`, `120V` | `14.5 H x 14.5 W x 12.9 D in` | `$188.99` | Current value fallback when the six-gallon lowboy will not fit. |
 | Four-gallon compact | [Bosch Tronic 3000T ES4 — Amazon](https://www.amazon.com/dp/B0148O65IE) | `4 gal`, `1440W`, `120V` | `13.75 H x 13.75 W x 13.5 D in` | `$259.00` | Smallest body here and the strongest fit fallback, but poor value at the current Amazon price. |
 
 At `50°F` inlet and `140°F` storage tempered to `105°F`, the ideal comparison is about `9.8 gal` mixed water from a six-gallon tank versus `6.5 gal` from a four-gallon tank. That is about `12.2` versus `8.1` minutes through a `0.8 GPM` showerhead before real-world losses.
 
 Do not use a cheap electric tankless unit for the Hiatus shower. The available `120V / 3.5kW` class draws about `29A`, exceeds the current `20A` branch and the MultiPlus `48/3000` continuous inverter class, yet raises `1.0 GPM` only about `24°F`. Cheap `240V` units are also incompatible with the current `30A/125V` shore inlet and `120V` inverter; even a `6.5kW` unit raises `1.0 GPM` only about `44°F`, while an actually adequate `11-13kW` shower unit needs roughly `46-54A at 240V` and a wholesale electrical redesign.
 
-Current purchase order: **A.O. Smith first if it fits; ThermoMate ES400B if six gallons does not fit; Bosch ES4 only if the extra inch of compactness is what makes the installation work.** The Camplux ME60 is the cheaper six-gallon alternative only if tomorrow's measurement proves at least a `15.75 x 15.5 in` cross-section plus plumbing room.
+Current purchase order: **A.O. Smith first if its installed service envelope fits; Camplux ME40B as the value four-gallon fallback; Bosch ES4 only if its smaller shell is what makes the installation work.** ThermoMate ES400B is viable only when the `24.3 in` installed height can use the long cubby axis. The Camplux ME60 is the cheaper six-gallon alternative only if measurement proves at least a `15.75 x 15.5 in` cross-section plus plumbing room.
 
 For sink graywater, start with a removable under-sink vessel before adding an under-truck tank. Mock `2.5 gal` (`~20.9 lb` water) and `5 gal` (`~41.7 lb` water) sizes with the actual sink drain. The baseline should include a compact waterless trap, vented container connection, positive travel retention, removable spill tray/leak-sensor point, and a lift path that works when full. An under-truck gray tank remains a post-shakedown option because it adds a bed penetration, external vent/dump hardware, road-debris protection, freeze exposure, and legal-dump discipline; its dump valve should not be treated as a normally open drain.
 
@@ -551,7 +551,7 @@ Power conflict examples:
 
 If electric tanked hot water is added:
 
-- Put it low in the north cubby: A.O. Smith E6-6C15SV if the short six-gallon lowboy fits; ThermoMate ES400B if the layout must step down to four gallons; Bosch ES4 only if its smaller body is what makes the fit work.
+- Put it low in the north cubby: A.O. Smith E6-6C15SV if the short six-gallon lowboy fits; Camplux ME40B if the layout must step down to a short four-gallon unit; Bosch ES4 only if its smaller body is what makes the fit work. ThermoMate ES400B requires a `24.3 in` vertical installed envelope and is not a short-cubby substitute.
 - Add drain pan and visible drain/relief path.
 - Add bypass/winterization valves.
 - Put it on a labeled manual switch or load-shed relay.
