@@ -16,7 +16,7 @@ As-of date: `2026-02-18`
 
 Maintenance note (`2026-03-19`): this recalculation remains valid for battery-branch/trunk methodology, but alternator-branch assumptions in this historical pass are superseded by the dedicated `48V` secondary-alternator migration baseline (`F-04` now locked at `150A` in current implementation docs).
 
-Maintenance note (`2026-05-25`): active implementation docs now supersede the `F-05=40A` Orion-discharge assumption. Orion input protection is standalone `F-06` from a Lynx bus tap (`30A` interim, `20A` final), leaving Lynx Slot 4/`F-05` open; use `docs/implementation/ELECTRICAL_overview_diagram.md` and `docs/implementation/ELECTRICAL_fuse_schedule.md` for current sizing.
+Maintenance note (`2026-07-24`): this study is historical. Active implementation docs restore the simple `F-05=40A` Orion feeder-protection path in Lynx Slot 4 (`58VDC` minimum under the locked `56.8V` charge ceiling) and retire standalone `F-06`; use `docs/implementation/ELECTRICAL_overview_diagram.md` and `docs/implementation/ELECTRICAL_fuse_schedule.md` for current sizing.
 
 Purpose: document the decision-complete recalculation used to re-baseline battery branch fusing and major 48V trunk conductor sizing for the current `3x 48V 100Ah` architecture.
 

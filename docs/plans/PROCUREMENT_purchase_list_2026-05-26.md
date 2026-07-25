@@ -28,7 +28,7 @@ When the owner requests reconciliation, Atlas can use a private, read-only Gmail
 
 1. MultiPlus programming/verification is no longer the procurement blocker: settings were redone and first-battery shore-charge behavior matched plan. Keep normal physical safety gates before unattended charging.
 2. Finish electrical-board hard-mount, protection, labeling, strain-relief, and abrasion-control hardware after checking what is now on hand.
-3. Orion final standalone `F-06` hardware remains to buy: Mersen `USM1` touch-safe DIN holder, `ATM20 20A/600VDC` fuse stock, and a short `35 mm` DIN rail if needed. Do not treat the purchased FKS/ATO stock or `30A/58V` MIDI hardware as the final branch.
+3. Orion input cleanup is reduced to one Lynx-compatible fuse: obtain a verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) for Slot 4 if verified stock is not already on hand. No standalone `F-06`, DIN holder, or additional inline fuse hardware is required.
 4. WIP TNUTZ shopping cart for `10-series` prototype stock/hardware after reviewing the visual aids and current module assumptions; do not treat it as final-cut geometry.
 5. Diesel heater tank later, after physical re-measurement.
 
@@ -116,12 +116,12 @@ Posture: not a blocker. Re-measure before buying. Carry-extra-fuel is acceptable
 
 ## Mouser / electrical cleanup list
 
-- **Orion final `F-06` input fuse cleanup**
+- **Orion input-fuse cleanup history and final Slot 4 lock**
   - Purchased `2026-06-01` Mouser order, total `$38.79`.
   - Fuse stock: `3x` Mouser `576-166.7000.5202` / Littelfuse `166.7000.5202` FKS/ATO fuse, `20A`, `80VDC`, `$7.88` each / `$23.64` extended.
   - Housing stock: `3x` Mouser `576-178.6150.0001` / Littelfuse `178.6150.0001`, `$1.51` each / `$4.53` extended. Correction: these are empty housings with no contacts or leads, not install-ready holders; the matching contacts accept only `1.5-2.5 mm²`, not `6 AWG`.
-  - Final install shortfall: obtain `1x` Mersen `USM1` one-pole touch-safe DIN holder, `3x` Mersen `ATM20` `20A/600VAC/DC` midget fuses (`1` installed + `2` spares), and one short `35 mm` DIN-rail segment if no suitable rail is already mounted. The `USM1` accepts the existing `6 AWG` directly through pressure-plate terminals; no gauge reducers, butt splices, or pigtails.
-  - Treat the purchased FKS/ATO fuse/housing stock as unused/dead-end spare inventory, not final Orion hardware. Do not energize any interim holder/fuse marked below the bank's `58.6V` documented upper recommendation.
+  - Final install: one verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) in Lynx Slot 4 feeding the existing `6 AWG` Orion input pair directly. Retire standalone `F-06`; no DIN rail, pigtails, reducers, butt splices, or additional input holder.
+  - Treat the purchased FKS/ATO and `30A/58V` MIDI stock as unused/dead-end inventory, not final Orion hardware.
 
 - **WS500 low-current fuse/holder pieces**
   - Buy only after confirming the harness/manual voltage-rating need: `F-12` regulator power lead baseline `10A` and `F-13` positive voltage-sense lead `3A`.

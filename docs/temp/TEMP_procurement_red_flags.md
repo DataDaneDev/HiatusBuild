@@ -74,7 +74,7 @@ Status date: 2026-05-27
 - `docs/core/TRACKING.md` (open question on final fuse-holder SKU standard)
 - `bom/bom_estimated_items.csv` rows `11`, `105`, `106`
 - Clarification needed:
-- Final SKUs for inline holders covering `F-11`, plus the external Victron MEGA holder for `F-07` and PV combiner hardware standard. `F-06` is now resolved as a standalone Mersen `USM1` DIN holder with `ATM20 20A/600VDC` fuse and direct `6 AWG` terminations from the Lynx bus tap; Lynx Slot 4/`F-05` remains open.
+- Final SKUs for inline holders covering `F-11`, plus the external Victron MEGA holder for `F-07` and PV combiner hardware standard. Orion input no longer requires standalone `F-06`: use one `40A` MEGA body-marked at least `58VDC` in Lynx Slot 4 feeding the existing `6 AWG` pair directly; Victron `CIP138040020 40A/80V` is replacement fallback only.
 - Resolution target:
 - Freeze remaining holder SKU ecosystem and update BOM notes to reflect exact installed hardware.
 - Status: Partially open (`F-06` closed; remaining holder standards still pending)

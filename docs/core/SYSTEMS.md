@@ -48,7 +48,7 @@ related:
 - MultiPlus and combined AC breaker enclosure were removed before the lift and remain ready to reinstall from the front through embedded pronged/spiked T-nuts in the plywood backer.
 - Three `48V` battery branch harnesses are physically complete and landed at the positive/negative battery-side busbars. Battery 2 and Battery 3 still need individual shore charging and a rested-voltage match within `0.1V` before the three batteries are paralleled.
 - `12V` buffer branch remains `4 AWG`: `battery + -> F-11 100A ANL -> SW-12V-BATT -> fuse-panel main +`; `battery - -> fuse-panel main -`. Orion output uses `6 AWG` to the same junction through `F-07 60A/80V` on output positive.
-- Orion input protection is one standalone `F-06` on the `48V` positive lead: Mersen `USM1` touch-safe `10x38 mm` DIN holder with Mersen `ATM20 20A/600VAC/DC` fuse. The holder's pressure-plate terminals accept the existing `6 AWG` directly, avoiding pigtails, reducers, butt splices, and loose inline hardware. Purchased FKS/ATO fuse/housing stock is not part of the final branch. Lynx Slot 4 remains open. Identify any physically X-marked Lynx fuse by slot: Slot 2 requires `F-03 60A/80V` for the MPPT; Slot 4 remains empty. No fuse/holder rated below the bank maximum stays on the energized `48V` bus.
+- Orion input protection is one verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) in Lynx Slot 4 feeding the existing `6 AWG` pair directly. The 6 AWG input is overkill but already installed and safely protected by 40A; no separate inline or DIN input fuse holder is used. This is an explicit practical deviation from Victron's `20A` external-protection table to eliminate redundant connection stacks. Purchased `30A/58V` MIDI and FKS/ATO stock remains unused. Keep `6 AWG` and `F-07 60A/80V` on the Orion 30A 12V output.
 
 ### Commissioning snapshot (`2026-05-27`)
 - Owner confirmed `55.5V` at the `48V` bus and at the MultiPlus after pre-charge/energization.
@@ -75,7 +75,7 @@ related:
 | Alternator charging | Dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) with `Upfitter #3 -> WS500 brown ignition` manual control and Lynx Slot 3 alternator branch fuse lock | `bom/bom_estimated_items.csv` rows `168-171`, `176` + `docs/core/ELECTRICAL_48V_ARCHITECTURE.md` |
 | Obsolete pre-Mechman alternator charger/remote | Returned/obsolete; not part of primary layout, fuse planning, or commissioning | `bom/bom_estimated_items.csv` rows `18` and `26` |
 | Legacy single-12V upgrade path | Mechman `370A` + Big 3 path is deprecated under the dual-`48V` migration baseline | `bom/bom_estimated_items.csv` rows `103` and `104` |
-| DC-DC charger | Orion-Tr Smart `48/12 30A` (`360W`); `48V` input is protected by standalone `F-06` from a Lynx bus tap, Lynx Slot 4 stays open, and `12V` output is separately protected by `F-07` | `bom/bom_estimated_items.csv` row 20 |
+| DC-DC charger | Orion-Tr Smart `48/12 30A` (`360W`); `48V` input is protected by `F-05 40A` MEGA (`>=58VDC`) in Lynx Slot 4 with no second inline fuse, and `12V` output is separately protected by `F-07 60A/80V` | `bom/bom_estimated_items.csv` row 20 |
 | 12V buffer battery | `12V 100Ah LiFePO4` on shared 12V junction (`F-11` + `SW-12V-BATT`) | `bom/bom_estimated_items.csv` rows 21, 124, and 125 |
 | Solar array candidate | Flexible-first placeholder (`~800-1000W` class); prior `9x100W`/`3S3P` concept is modeling-only and must not drive roof holes, combiner count, or procurement until solar is reopened after shore and alternator charging | `bom/bom_estimated_items.csv` row 24 |
 | Solar controller | SmartSolar `MPPT 150/45` | `bom/bom_estimated_items.csv` row 25 |
@@ -193,9 +193,9 @@ Approved architecture for Phase 1:
 - Slot 1: MultiPlus-II `48/3000` (`F-02 125A`)
 - Slot 2: SmartSolar `150/45` (`F-03 60A`)
 - Slot 3: Dedicated `48V` alternator branch output (`F-04 150A`)
-- Slot 4 (`F-05`) is intentionally open/blank; Orion-Tr Smart `48/12` uses a Lynx `48V+` bus tap plus standalone `F-06` inline protection instead of a Lynx MEGA fuse.
-- `1x` Lynx Distributor therefore covers the active branch count with `1` spare fused output, reserved for future expansion rather than Orion.
-- If future branch expansion consumes Slot 4 and more fused outputs are still needed, add a second Lynx module in that phase.
+- Slot 4 (`F-05`) feeds Orion-Tr Smart `48/12` through one `40A` MEGA body-marked at least `58VDC`; standalone `F-06` is retired.
+- `1x` Lynx Distributor covers the current four active branch outputs with no spare fused slot.
+- If another fused `48V` branch is added later, add a second Lynx module or a separately engineered branch in that phase.
 
 Implementation notes:
 - `Lynx Distributor` includes the negative busbar, so a separate standalone negative bus is not required in the Lynx path.
@@ -214,7 +214,7 @@ Current detailed schedule (active reference):
 
 Scope covered:
 1. Main battery protection (`Class T`) quantity, rating, and placement.
-2. Lynx branch fuses for active Lynx fused outputs (MultiPlus, MPPT, dedicated alternator branch) plus standalone `F-06` inline protection for the Orion input bus tap.
+2. Lynx branch fuses for active outputs: MultiPlus, MPPT, dedicated alternator branch, and Orion input (`F-05 40A`, `>=58VDC`, in Slot 4); no standalone Orion input fuse.
 3. WS500 low-current fuse requirements and alternator-branch protection coordination.
 4. Any additional protective devices required by manufacturer manuals for both charge-source and load paths.
 

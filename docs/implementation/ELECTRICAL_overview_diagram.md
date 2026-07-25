@@ -53,10 +53,10 @@ Related docs:
 - All three batteries' positive and negative `2/0 AWG` branch cables are cut, lugged, heat-shrunk, and landed at the battery-side busbars. The batteries remain electrically isolated from one another until Batteries 2 and 3 are individually charged, rested, and matched within `0.1V` before paralleling.
 - The `12V` buffer-battery branch is near physical completion; keep its negative direct to the fuse-panel main negative stud, not through `SW-12V-BATT`. The positive path remains `F-11 -> SW-12V-BATT -> panel main +`.
 
-### Orion fuse discriminator — do not combine these positions
-- `F-06`: **one standalone source-side fuse on Orion `48V` input positive**, final Mersen `USM1` touch-safe DIN holder with `ATM20 20A/600VAC/DC` midget fuse. Both existing `6 AWG` conductors land directly in pressure-plate terminals; no pigtails or reducer splices.
+### Orion fuse discriminator — one input fuse only
+- Lynx Slot 4 / `F-05`: **Orion `48V` input positive**, one verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) feeding the existing `6 AWG` directly. This is the final single input fuse.
+- `F-06`: **retired standalone Orion input-fuse position**. Do not install MIDI, FKS/ATO, DIN, or a second fuse after Slot 4.
 - Lynx Slot 2 / `F-03`: **MPPT branch**, `60A/80V` MEGA. If the physically X-marked/misrated Lynx fuse is in Slot 2, replace it with the purchased Victron `60A/80V` MEGA; it is not the Orion input fuse.
-- Lynx Slot 4 / `F-05`: **open spare**. If the X-marked position is Slot 4, remove/leave it empty; it is not a second Orion input fuse.
 - `F-07`: **Orion `12V` output positive**, `60A/80V` MEGA in the separate Victron holder near the Orion.
 - `F-11`: **`12V` buffer-battery positive**, `100A` ANL near the battery, upstream of `SW-12V-BATT`.
 - No `32V`-rated fuse is acceptable on any energized `48V` branch. Identify the physical X-marked fuse by Lynx slot before replacing or discarding it.
@@ -75,9 +75,9 @@ Related docs:
 - Conservative sizing factors used in this pass:
 1. Parallel-sharing factor `K_share = 1.5`
 2. Continuous margin factor `K_cont = 1.25`
-- Current/interim envelope used for battery-discharge branch sizing in current architecture: `I_total = F-02 + F-06 = 125A + 30A = 155A`; final cleanup envelope after the Orion downsize is `125A + 20A = 145A`.
-- Per-battery design current: interim `I_batt_design = (155A / 3) * 1.5 = 77.5A`; final `I_batt_design = (145A / 3) * 1.5 = 72.5A`.
-- Continuous-adjusted minimum battery branch fuse threshold: interim `77.5A * 1.25 = 96.9A`; final `72.5A * 1.25 = 90.6A`.
+- Current envelope used for battery-discharge branch sizing: `I_total = F-02 + F-05 = 125A + 40A = 165A`.
+- Per-battery design current: `I_batt_design = (165A / 3) * 1.5 = 82.5A`.
+- Continuous-adjusted minimum battery branch fuse threshold: `82.5A * 1.25 = 103.1A`.
 - Provisional battery branch fuse selection: `F-01A/B/C = 200A Class T`, constrained by the provisional battery `<=200A` current-limit listing.
 - Final lock gate: validate true `51.2V` battery datasheet/manual current and terminal limits before permanent fuse lock; if lower limits are confirmed, move to `175A`.
 - Cable procurement remains estimate-based until CAD/field run lengths are frozen. This pass sets a no-padding `2/0` estimate baseline of `77.5 ft` total (`42.5 ft` red, `35.0 ft` black), including the dedicated alternator migration path.
@@ -118,8 +118,7 @@ flowchart LR
         F04["F-04 150A MEGA\nLynx Slot 3 alternator branch"]
         MULTI["MultiPlus-II\n48/3000/35-50"]
         ORION["Orion-Tr Smart 48/12-30\nIsolated charger"]
-        SLOT4["Lynx Slot 4\nopen spare fused position\n(no Orion MEGA installed)"]
-        F06["F-06 Orion 48V input fuse\nMersen USM1 DIN holder\nATM20 20A 600VDC; direct 6 AWG"]
+        F05["F-05 Lynx Slot 4\n40A MEGA, >=58VDC\nOrion input branch"]
     end
 
     BATA -- "2/0 AWG +, ~2.5 ft" --> F01A --> POSBUS
@@ -145,8 +144,7 @@ flowchart LR
     APM48 -. "red to B+; black to B-/case\nnot in series with charge cable" .- ALT48
     ALT48 -- "B- dedicated 2/0 AWG, ~20 ft (ASSUMED)" --> LYNX
 
-    LYNX -. "Slot 4 left open; no Orion MEGA fuse" .- SLOT4
-    LYNX -- "48V+ bus tap: F-06 source fuse\n6 AWG, ~2.5 ft; keep source-side lead short" --> F06 --> ORION
+    LYNX -- "Slot 4: F-05 40A MEGA, >=58VDC\n6 AWG, ~2.5 ft" --> F05 --> ORION
     ORION -- "48V input - (6 AWG, ~2.5 ft)" --> LYNX
 ```
 
@@ -346,8 +344,8 @@ flowchart LR
 | `F-02` | `125A MEGA` | Lynx integrated slot holder | Lynx Slot 1 |
 | `F-03` | `60A MEGA` (`80V` Victron replacement stock) | Lynx integrated slot holder | Lynx Slot 2 |
 | `F-04` | `150A MEGA` | Lynx integrated slot holder | Lynx Slot 3 (dedicated alternator branch) |
-| `F-05` | Not installed / open spare position | Lynx integrated slot holder left blank | Lynx Slot 4; reserve for future branch, not Orion |
-| `F-06` | Orion `48V` input fuse: Mersen `ATM20`, `20A/600VAC/DC`, `10x38 mm` | Mersen `USM1` one-pole touch-safe DIN holder, `30A/1000VDC`, pressure-plate terminals accepting `#14-6 AWG` | Electrical cabinet on secured `35 mm` DIN rail between Lynx bus tap and Orion `48V +`; keep source-side unfused lead short |
+| `F-05` | `40A` MEGA, body-marked `>=58VDC`; Victron `CIP138040020 40A/80V` replacement fallback | Lynx integrated slot holder | Lynx Slot 4; Orion `48V` input feeder |
+| `F-06` | Not installed / retired standalone input-fuse position | No holder | MIDI/FKS/DIN concepts superseded; do not stack after `F-05` |
 | `F-07` | `60A MEGA` (`80V` Victron replacement stock) | Victron MEGA fuse holder | Electrical cabinet at Orion `12V +` source end |
 | `F-09A/B/C` | `15A gPV` each | `10x38` touch-safe fuse holders in PV combiner | Roof-entry combiner enclosure |
 | `F-10` | Per branch (`ATO/ATC`) | Integrated blade sockets in generic 12V fuse block | Electrical cabinet |
@@ -372,8 +370,8 @@ Retired from active architecture:
 | `C-02` | Battery B `+` -> `F-01B` | `48V` | Battery branch, fuse-limited | `F-01B` `200A` provisional | `2/0 AWG` | `2.5 ft` planning placeholder; balance total loop path |
 | `C-02C` | Battery C `+` -> `F-01C` | `48V` | Battery branch, fuse-limited | `F-01C` `200A` provisional | `2/0 AWG` | `2.5 ft` planning placeholder; balance total loop path |
 | `C-03` | Class T outputs -> battery-side `48V +` busbar -> disconnect input | `48V` | Combined trunk current | `F-01A/B/C` | `2/0 AWG` each branch | `2.5 ft each branch` (`ASSUMED`, `4` conductors in rollup) |
-| `C-04` | Disconnect output -> Lynx `+` bus | `48V` | Aggregate discharge design current (`155A` interim = `F-02 125A` + Orion `F-06 30A`; `145A` final after F-06 downsize to `20A`) | Upstream Class T fuses | `2/0 AWG` | `2.5 ft` (`ASSUMED`) |
-| `C-05` | Battery negatives -> battery-side `48V -` busbar -> SmartShunt battery side | `48V` | Mixed-path rollup: `3x` battery-negative branches at `77.5A` interim design each + `NEGBUS_TO_SHUNT` trunk at `155A` interim / `145A` final aggregate | N/A (main negative path) | `2/0 AWG` each branch | `2.5 ft each branch` (`ASSUMED`, `4` conductors in rollup) |
+| `C-04` | Disconnect output -> Lynx `+` bus | `48V` | Aggregate discharge design current (`165A = F-02 125A + Orion F-05 40A`) | Upstream Class T fuses | `2/0 AWG` | `2.5 ft` (`ASSUMED`) |
+| `C-05` | Battery negatives -> battery-side `48V -` busbar -> SmartShunt battery side | `48V` | Mixed-path rollup: `3x` battery-negative branches at `82.5A` design each + `NEGBUS_TO_SHUNT` trunk at `165A` aggregate | N/A (main negative path) | `2/0 AWG` each branch | `2.5 ft each branch` (`ASSUMED`, `4` conductors in rollup) |
 | `C-06` | SmartShunt load side -> Lynx `-` bus | `48V` | Aggregate return current | N/A | `2/0 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-06A` | Lynx positive tap -> SmartShunt positive sense/power lead | `48V` | Shunt electronics supply (very low current) | Factory inline fuse in OEM harness | OEM harness lead | `2.5 ft` (`ASSUMED`) |
 | `C-07` | Lynx Slot 1 (`F-02`) -> MultiPlus `DC+` | `48V` | Inverter branch, fuse-limited | `F-02` `125A` | `2/0 AWG` (manual minimum `AWG 1` on short runs) | `2.5 ft` (`ASSUMED`) |
@@ -382,8 +380,7 @@ Retired from active architecture:
 | `C-10` | MPPT `BAT-` -> Lynx `-` bus | `48V` | Controller return current | `F-03` protects paired positive | `6 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-11` | Secondary alternator `B+` -> APM-48 -> Lynx Slot 3 (`F-04`) | `48V` | Alternator branch design current | `F-04` `150A` | `2/0 AWG` | `20 ft` (`ASSUMED`, one-way) |
 | `C-12` | Secondary alternator `B-` -> Lynx `-` bus (dedicated return) | `48V` | Alternator branch return current | `F-04` paired | `2/0 AWG` | `20 ft` (`ASSUMED`, one-way) |
-| `C-13` | Lynx / `48V +` source -> Orion `48V` input protection point | `48V` | Orion feeder from source, fuse-limited | `F-06 ATM20 20A/600VDC` | `6 AWG` | `2.5 ft` (`ASSUMED`) |
-| `C-14` | `F-06 USM1` load side -> Orion `48V +` input | `48V` | Orion input, fuse-limited | `F-06 ATM20 20A/600VDC` | `6 AWG` direct pressure-plate termination (`8 AWG` minimum per Orion terminal table) | `2.5 ft` (`ASSUMED`) |
+| `C-13/C-14` | Lynx Slot 4 (`F-05`) -> Orion `48V +` input | `48V` | Orion feeder, fuse-limited | `F-05 40A` MEGA, `>=58VDC` | Existing `6 AWG` direct; `10 AWG` adequate if ever replaced | `2.5 ft` (`ASSUMED`) |
 | `C-15` | Orion `48V -` input -> Lynx `-` bus | `48V` | Orion input return current | Orion input positive protection paired | `6 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-18` | Orion `12V +` -> `F-07` -> 12V fuse block main `+` stud | `12V` | Charger output path (`30A` continuous, `60A` fuse) | `F-07` `60A` | `6 AWG` planned (`8 AWG` minimum per Orion table) | `2.5 ft` (`ASSUMED`) |
 | `C-19` | Orion `12V -` -> 12V fuse block integrated `-` bus / main `-` stud | `12V` | Charger output return | `F-07` protects paired positive | `6 AWG` | `2.5 ft` (`ASSUMED`) |
@@ -442,9 +439,8 @@ Calculation basis for drop screening:
 | `C-10` | MPPT `BAT-` | Lynx `-` bus | `F-03` paired | `45A` | `6 AWG` | `2.5 ft` | `0.17%` @ `51.2V` | Row `29` (`6 AWG black`) | PASS |
 | `C-11` | Secondary alternator `B+` | Lynx Slot 3 via APM-48 | `F-04 150A` | `150A` design | `2/0 AWG` | `20 ft` | `0.80%` @ `58.4V` | Row `28` (`2/0 red`) | PASS |
 | `C-12` | Secondary alternator `B-` | Lynx `-` bus (dedicated return) | `F-04` paired | `150A` design | `2/0 AWG` | `20 ft` | `0.80%` @ `58.4V` | Row `28` (`2/0 black`) | PASS |
-| `C-13` | Lynx `48V +` bus tap | `F-06` source side | `F-06 ATM20 20A/600VDC` | `20A` | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS; final holder/fuse procurement pending |
-| `C-14` | `F-06` load side | Orion `48V +` | `F-06 ATM20 20A/600VDC` | `20A` | `6 AWG` direct into `USM1` pressure-plate terminal | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG red`) + final `USM1/ATM20` shortfall | PASS electrically; no gauge transitions or splice stack |
-| `C-15` | Orion `48V -` | Lynx `-` bus | Orion input positive protection paired | `20A` fuse basis | `6 AWG` | `2.5 ft` | `0.08%` @ `51.2V` | Row `29` (`6 AWG black`) | PASS |
+| `C-13/C-14` | Lynx Slot 4 | Orion `48V +` | `F-05 40A` MEGA, `>=58VDC` | `40A` fuse basis | Existing `6 AWG` direct | `2.5 ft` | `0.16%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS; no separate holder or splice stack |
+| `C-15` | Orion `48V -` | Lynx `-` bus | Orion input positive protection paired | `40A` fuse basis | `6 AWG` | `2.5 ft` | `0.16%` @ `51.2V` | Row `29` (`6 AWG black`) | PASS |
 | `C-18` | Orion `12V +` | Fuse block main `+` stud | `F-07 60A/80V` Victron row `188` | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG red`) | PASS |
 | `C-19` | Orion `12V -` | Fuse block integrated `-` bus / main `-` stud | `F-07` paired | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG black`) | PASS |
 | `C-19A` | Buffer battery `+` | Fuse block main `+` stud (via `F-11/SW`) | `F-11 100A` | `50A` design | `4 AWG` | `2.5 ft` | `0.52%` @ `12V` | Row `30` (`4 AWG red`) | PASS |
@@ -482,7 +478,7 @@ Calculation basis for drop screening:
 | --- | --- | --- | --- |
 | `2/0 AWG` red | `42.5 ft` | `C-01`, `C-02`, `C-02C`, `C-03`, `C-04`, `C-07`, `C-11` | `28` |
 | `2/0 AWG` black | `35.0 ft` | `C-05`, `C-06`, `C-08`, `C-12` | `28` |
-| `6 AWG` red | `10.0 ft` | `C-09`, `C-13`, `C-14`, `C-18` | `29` |
+| `6 AWG` red | `7.5 ft` | `C-09`, `C-13/C-14`, `C-18` | `29` |
 | `6 AWG` black | `7.5 ft` | `C-10`, `C-15`, `C-19` | `29` |
 | `4 AWG` red | `10.5 ft` (`2.5 ft` existing + `8 ft` audio sub planning branch) | `C-19A`, `C-43` | `30`, `192` |
 | `4 AWG` black | `10.5 ft` (`2.5 ft` existing + `8 ft` audio sub return) | `C-19B`, `C-44` | `30`, `192` |
@@ -558,7 +554,7 @@ Torque reference (verify against your exact manuals/hardware):
 2. Voltage-drop design intent used here: `<=2%` on major `48V` power runs and `<=3%` on `12V` branch circuits.
 3. `F-09` PV string fuse value (`15A`) remains provisional until final module datasheet max-series-fuse rating is confirmed.
 4. Cerbo GX feed is now a small inline fused `48V` feed (`CERBO-PWR`) from the system/load side of the main disconnect during bench commissioning, so the Cerbo powers down with the house system.
-5. Orion branch uses one source-side `F-06` from a Lynx `48V+` bus tap: Mersen `USM1` DIN holder with `ATM20 20A/600VDC` fuse and direct `6 AWG` terminations. Lynx Slot 4 (`F-05`) remains open/blank; do not add a duplicate Orion MEGA fuse unless the topology is deliberately reopened.
+5. Orion branch uses one source-side fuse only: `F-05 40A` MEGA, body-marked at least `58VDC`, in Lynx Slot 4 feeding the existing `6 AWG` input pair directly. The `58VDC` minimum is tied to the locked `56.8V` charge ceiling; use Victron `CIP138040020 40A/80V` if replacement is needed. Standalone `F-06` is retired; do not add an inline fuse after the Lynx slot.
 6. No low-voltage-disconnect (LVD) automation is included in Phase 1; protection is source fusing plus manual `SW-12V-BATT` isolation.
 7. Alternator architecture lock is dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) with `F-04 150A`; obsolete pre-Mechman engine-bay fuse paths are removed from active layout.
 8. `F-01A/B/C` are provisionally set to `200A` pending final `51.2V` battery datasheet/manual confirmation; if validated limits are lower, shift to `175A`.

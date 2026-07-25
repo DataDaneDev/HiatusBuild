@@ -45,7 +45,7 @@ Current owner status (`2026-07-19`): the electrical module has passed the first-
 Immediate priority:
 1. Remount the MultiPlus and AC breaker enclosure; prove/protect the full L5-30/`10/3` shore-inlet path before cutting and energizing it.
 2. Charge Batteries 2 and 3 individually, rest/record all three voltages, and parallel only when maximum-to-minimum difference is `<=0.1V`.
-3. Locate/install final Orion `F-06 20A/80V`; identify any X-marked Lynx fuse by slot (`F-03 60A/80V` in Slot 2, Slot 4 empty), then complete the `12V` battery branch and prove factory loads.
+3. Install/verify Orion input `F-05 40A` MEGA body-marked at least `58VDC` in Lynx Slot 4 and remove/bypass standalone input `F-06`; identify any X-marked Lynx fuse by slot (`F-03 60A/80V` in Slot 2, `F-05 40A >=58VDC` in Slot 4), then complete the `12V` battery branch and prove factory loads.
 4. Preserve the current working topology; do not add alternator or AC-out branch complexity until these cleanup checks pass.
 5. Add/verify labels, covers, torque witness marks, J-clamp strain relief, cable protection, and service access around the energized layout.
 6. Keep AC-out branch/GFCI validation and Mechman/WS500 alternator commissioning as separate later gates.

@@ -32,8 +32,7 @@ flowchart LR
         F04["F-04 150A MEGA\nLynx Slot 3 alternator branch"]
         MULTI["MultiPlus-II\n48/3000/35-50"]
         ORION["Orion-Tr Smart 48/12-30\nIsolated charger"]
-        SLOT4["Lynx Slot 4\nopen spare fused position\n(no Orion MEGA installed)"]
-        F06["F-06 Orion 48V input fuse\nMersen USM1 DIN holder\nATM20 20A 600VDC; direct 6 AWG"]
+        F05["F-05 Lynx Slot 4\n40A MEGA, >=58VDC\nOrion input branch"]
     end
 
     BATA -- "2/0 AWG +, ~2.5 ft" --> F01A --> POSBUS
@@ -59,6 +58,5 @@ flowchart LR
     APM48 -. "red to B+; black to B-/case\nnot in series with charge cable" .- ALT48
     ALT48 -- "B- dedicated 2/0 AWG, ~20 ft (ASSUMED)" --> LYNX
 
-    LYNX -. "Slot 4 left open; no Orion MEGA fuse" .- SLOT4
-    LYNX -- "48V+ bus tap: F-06 source fuse\n6 AWG, ~2.5 ft; keep source-side lead short" --> F06 --> ORION
+    LYNX -- "Slot 4: F-05 40A MEGA, >=58VDC\n6 AWG, ~2.5 ft" --> F05 --> ORION
     ORION -- "48V input - (6 AWG, ~2.5 ft)" --> LYNX

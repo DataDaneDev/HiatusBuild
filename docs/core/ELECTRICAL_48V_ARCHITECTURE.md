@@ -62,7 +62,7 @@ Related docs:
 | Main fused distribution | Victron Lynx Distributor `M10` | `6` |
 | Battery branch protection | `F-01A/B/C` `200A` Class T; manual-backed battery limit is `200A` max continuous discharge per battery, with terminal/manufacturer fuse guidance still not separately specified; owner confirmed `3` holders and `4` slow-blow Class T fuses total | `7` |
 | Inverter/charger | MultiPlus-II `48/3000/35-50` | `12` |
-| 48V to 12V charger | Orion-Tr Smart `48/12-30`; fed from Lynx `48V+` bus tap through standalone `F-06` (Mersen `USM1` DIN holder + `ATM20 20A/600VDC` fuse, direct `6 AWG`); Lynx Slot 4 remains open | `20`, `11`, `230` |
+| 48V to 12V charger | Orion-Tr Smart `48/12-30`; fed directly from Lynx Slot 4 through one verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) into the existing `6 AWG` input pair; no separate inline/DIN input fuse; keep `6 AWG` and `F-07 60A/80V` on 12V output | `20`, `10`, `11` |
 | Monitoring | Cerbo GX + SmartShunt `300A` | `22`, `23` |
 | Alternator kit | Mechman `48V` secondary alternator kit with `WS500` | `168` |
 | Load-dump clamp | Balmar `APM-48` | `169` |
@@ -105,9 +105,8 @@ flowchart LR
 
     LYNX --> MULTI["MultiPlus-II 48/3000\nSlot 1 / F-02 125A"]
     LYNX --> MPPT["SmartSolar 150/45\nSlot 2 / F-03 60A"]
-    LYNX --> SLOT4["Lynx Slot 4 / F-05\nopen spare"]
-    LYNX --> F06["F-06 Orion input fuse\nUSM1 DIN holder\nATM20 20A 600VDC"]
-    F06 --> ORION["Orion 48/12-30"]
+    LYNX --> F05["Lynx Slot 4 / F-05\n40A MEGA, >=58VDC\nOrion input"]
+    F05 --> ORION["Orion 48/12-30"]
 ```
 
 ## Alternator control path
@@ -137,8 +136,8 @@ flowchart LR
 | --- | --- | --- | --- |
 | `F-01A/B/C` | Battery branch positive protection | `200A` Class T provisional | `2/0 AWG` |
 | `F-04` | Alternator branch into Lynx Slot 3 | `150A` MEGA (`58V/80V`) | `2/0 AWG` |
-| `F-05` | Lynx Slot 4 | Open/blank spare fused position; not used for Orion | N/A |
-| `F-06` | Orion `48V` input from Lynx bus tap | Mersen `ATM20`, `20A/600VDC`, in Mersen `USM1` DIN holder | Existing `6 AWG` direct into pressure-plate terminals; keep source-side unfused tap short |
+| `F-05` | Lynx Slot 4 -> Orion `48V` input | MEGA `40A`, body-marked `>=58VDC`; Victron `CIP138040020 40A/80V` replacement fallback | Existing `6 AWG` direct to Orion; single input fuse |
+| `F-06` | Retired standalone Orion input fuse position | Not installed | MIDI/FKS/DIN concepts superseded; do not stack with `F-05` |
 | `F-12` | WS500 regulator power lead | `10A` baseline (`15A` if required by alternator case); voltage rating must cover the connected alternator/system positive voltage | harness lead |
 | `F-13` | WS500 positive voltage-sense lead | `3A`; fuse/holder voltage class must cover the `48V` bank maximum unless proven by WS500 harness documentation | harness lead |
 | `CERBO-PWR` | Cerbo GX low-current power feed | `1A-3A` inline fuse/holder rated for the `48V` bank maximum; system/load side of main disconnect preferred for bench shutdown | `18 AWG` red/black duplex acceptable |
@@ -150,7 +149,7 @@ flowchart LR
 - Parallel battery-current sharing target is similar **total loop resistance** per battery path, not equal positive-only length. The current bench layout may use short/medium/long positive leads balanced by long/medium/short negative leads; do not add unnecessary cable coils solely to make positive leads identical.
 - Secondary alternator positive path (`ALT B+ -> APM-48 -> F-04 -> Lynx`): `2/0 AWG`, `~20 ft` one-way planning basis.
 - Secondary alternator dedicated negative return (`ALT B- -> Lynx -`): `2/0 AWG`, `~20 ft` one-way planning basis.
-- Orion `48V` feeder and MPPT battery leads: `6 AWG`; Orion positive leaves the Lynx bus through standalone `F-06`, not Lynx Slot 4.
+- Orion `48V` feeder: existing `6 AWG` remains as the no-rework path from Lynx Slot 4 and is protected by `F-05 40A` MEGA (`>=58VDC`); it is electrically overkill, and flexible fine-strand `10 AWG` would be adequate if ever replaced for unrelated reasons. MPPT battery leads and Orion `12V` output remain `6 AWG`.
 - Upfitter #3 control lead to WS500 brown wire: `16 AWG` TXL/GXL planning basis, `~6 ft` one-way assumed until measured.
 
 ## APM-48 wiring intent

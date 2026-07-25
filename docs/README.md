@@ -47,7 +47,7 @@ Use this folder map when deciding where a document belongs. Current repo posture
 - [INTERIOR_driver_side_workstation](implementation/INTERIOR_driver_side_workstation.md): draft driver-side desk, stow-low monitor, electrical-closet/DC-shelf interface, diesel-heater base zone, and storage mechanism design.
 - [CAMPER_audio_system](implementation/CAMPER_audio_system.md): preliminary/future camper-only `12V` audio package, source/sub/speaker selection, fusing, wire sizing, routing, and tuning notes; not near-term procurement.
 - [ELECTRICAL_overview_diagram](implementation/ELECTRICAL_overview_diagram.md): implementation topology, conductor IDs, branch maps, diagrams, and active electrical assumptions.
-- [ELECTRICAL_fuse_schedule](implementation/ELECTRICAL_fuse_schedule.md): fuse IDs, amperages, holder/fuse families, Orion standalone `F-06`, spare policy, and BOM row mapping.
+- [ELECTRICAL_fuse_schedule](implementation/ELECTRICAL_fuse_schedule.md): fuse IDs, amperages, holder/fuse families, Orion Lynx Slot 4 `F-05`, spare policy, and BOM row mapping.
 - [ELECTRICAL_Mechman_WS500_APM48_install_guide](implementation/ELECTRICAL_Mechman_WS500_APM48_install_guide.md): detailed shop guide for Mechman `48V` alternator, WS500, APM-48, staged-install/drivability gates, first-run tests, and shutdown/fault handling.
 - [ELECTRICAL_AC_BOM](implementation/ELECTRICAL_AC_BOM.md): purchased Phase 1 AC hardware and Branch A/B outlet intent.
 - [ELECTRICAL_bench_layout_and_test_guide](implementation/ELECTRICAL_bench_layout_and_test_guide.md): staged electrical commissioning, first-live results, hard-mounting/access checks, and post-live wiring/strain-relief validation.

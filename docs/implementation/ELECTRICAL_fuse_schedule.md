@@ -26,7 +26,7 @@ Related docs:
 - BOM source of truth: `bom/bom_estimated_items.csv`
 
 ## Design Basis
-- Topology: `Victron Lynx Distributor M10` (`LYN060102010`) with `3` active fused `48V` branches and Lynx Slot 4 open/spare.
+- Topology: `Victron Lynx Distributor M10` (`LYN060102010`) with `4` active fused `48V` branches; Slot 4 feeds Orion input.
 - Battery bank assumption: `3x 48V 100Ah` batteries in parallel (`3` separate battery-positive conductors leaving batteries).
 - 12V distribution assumption: 12V fuse block used as the shared junction device (main `+` stud = source combine, integrated negative bus/main `-` = return), fed by Orion-Tr Smart `48/12-30` charger and a `12V 100Ah LiFePO4` buffer battery branch.
 - Parallel-bank safety rule: use one Class T fuse per battery-positive conductor leaving the battery.
@@ -34,8 +34,8 @@ Related docs:
 1. MultiPlus-II `48/3000`
 2. SmartSolar `150/45`
 3. Dedicated `48V` secondary alternator branch (Mechman/WS500 path)
-4. Slot 4 / `F-05` open spare — Orion-Tr `48/12-30` input is **not** a Lynx fused branch; it uses standalone source-side `F-06` from a Lynx `48V+` bus tap.
-- Current shop identification note: do not infer the purpose of the physically X-marked/misrated Lynx fuse from the X alone. Identify its slot. Slot 2 requires `F-03 60A/80V` MEGA for the MPPT; Slot 4 remains empty. No `32V`-rated fuse is acceptable on an energized `48V` branch.
+4. Slot 4 / `F-05` — Orion-Tr `48/12-30` input through one `40A` MEGA body-marked at least `58VDC`; standalone `F-06` is retired.
+- Current shop identification note: do not infer the purpose of the physically X-marked/misrated Lynx fuse from the X alone. Identify its slot. Slot 2 requires `F-03 60A/80V` MEGA for the MPPT; Slot 4 requires `F-05 40A` MEGA marked `>=58VDC` for Orion. No `32V`-rated fuse is acceptable on an energized `48V` branch.
 - Alternator path lock for this pass:
 1. `F-04` is locked to `150A` MEGA (`58V/80V`) in Lynx Slot 3 at the house-bank/Lynx end of the alternator positive run.
 2. Obsolete pre-Mechman charger/fuse paths are removed from active architecture and primary layout planning.
@@ -72,8 +72,8 @@ Lock for this build pass:
 | `F-02` | Lynx Slot 1 -> MultiPlus `DC+` | Main inverter positive feeder | `MEGA`, `58V` or `80V` | `125A` | Integrated Lynx Distributor fuse slot | Lynx Distributor, Slot 1 | `2/0 AWG` planned (`AWG 1` minimum on short run) |
 | `F-03` | Lynx Slot 2 -> SmartSolar `BAT+` | MPPT battery-side positive feeder | `MEGA`, `80V` Victron replacement stock | `60A` | Integrated Lynx Distributor fuse slot | Lynx Distributor, Slot 2 | `6 AWG` |
 | `F-04` | Lynx Slot 3 -> `48V` alternator branch input (`ALT+`) | Alternator-to-house positive charge cable | `MEGA`, `58V` or `80V` | `150A` | Integrated Lynx Distributor fuse slot | Lynx Distributor, Slot 3 | `2/0 AWG` (reuse lock) |
-| `F-05` | Lynx Slot 4 | Open spare fused position; no Orion connection in active topology | N/A | Not installed | Leave blank/open for now; legacy `40A` MEGA stock remains spare-only and is not Orion protection | Lynx Distributor, Slot 4 | N/A |
-| `F-06` | Lynx `48V +` bus tap -> fuse holder -> Orion `48V` input `+` | Orion `48V` input/device lead; this is the one source-side Orion input fuse | Mersen `ATM20`, midget `10x38 mm`, `20A`, `600VAC/DC`, fast acting | `20A` per Victron Orion `48V` external battery-protection recommendation | Mersen `USM1`, one-pole touch-safe DIN holder, `30A`, `1000VDC`, pressure-plate terminals for `#14-6 AWG` copper | Electrical cabinet on a short secured `35 mm` DIN rail close to the Lynx source; keep unfused lead short | Existing `6 AWG` lands directly in holder; no pigtails, reducers, butt splices, or extra lugs |
+| `F-05` | Lynx Slot 4 -> Orion `48V` input `+` | Orion `48V` input feeder | MEGA `40A`, body-marked `>=58VDC`; Victron `CIP138040020 40A/80V` replacement fallback | `40A` deliberate feeder-protection value; above Victron's `20A` table recommendation but safely below installed `6 AWG` ampacity | Integrated Lynx Distributor fuse slot | Lynx Distributor, Slot 4 | Existing `6 AWG` direct to Orion; no second input fuse |
+| `F-06` | Retired standalone Orion input fuse position | Not active | N/A | Not installed | No holder | N/A | Purchased `30A/58V` MIDI and FKS/ATO stock plus proposed DIN hardware remain unused; do not stack with `F-05` |
 | `F-07` | Orion `12V` output `+` -> 12V fuse block main `+` stud | Main `12V` feeder from Orion into shared source-combine point | `MEGA`, `80V` Victron replacement stock | `60A` | Victron MEGA fuse holder (external, non-Lynx) | Electrical cabinet, within ~`7"` of Orion `12V` output stud | `6 AWG` planned (`8 AWG` minimum per Orion cable table) |
 | `F-09A/B/C` | PV string `+` leads -> MPPT PV combiner | Each solar string positive conductor and reverse-current path | `gPV` string fuse (`>=150VDC`) | `15A` each (provisional) | `10x38` touch-safe PV fuse holders in weatherproof combiner enclosure | Roof-entry combiner near gland/pass-through | `10 AWG` PV wire |
 | `F-10` | `12V` fuse block branch circuits -> each `12V` load | Individual `12V` branch conductors and load circuits | ATO/ATC blade fuses (`32V` class) | Per-circuit | Integrated sockets in marine `12V` fuse block | `12V` fuse block in electrical cabinet | Per branch |
@@ -95,8 +95,8 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 | `MEGA 150A` (`58V/80V`) | `1` | `2` | Alternator branch (`F-04`) installed + spare set (row `170`) |
 | `MEGA 125A` (`58V/80V`) | `1` | `4` | MultiPlus branch |
 | `MEGA 60A` (`80V`) | `2` | `3` | Victron 5-pack row `188`: install MPPT (`F-03`) + Orion output (`F-07`), keep 3 spares. Earlier 6x low-cost 60A MEGA batch was owner-confirmed misadvertised/not actually 58V and is quarantined/trash, not 48V install stock. |
-| `MEGA 40A` (`58V/80V`) | `0` active | `3` | Legacy spare stock only; do not use as Orion device protection |
-| Orion `48V` input protection | Final hardware pending: `1x` Mersen `USM1` holder + `3x` Mersen `ATM20 20A/600VDC` fuses | Install `1`; carry `2` spare `ATM20` fuses | Purchased Littelfuse FKS/ATO fuses and empty housings are dead-end spare stock, not final Orion hardware. Do not energize an interim fuse/holder marked below the bank maximum. |
+| `MEGA 40A`, `>=58VDC` | `1` active | `1-2` | Orion input in Lynx Slot 4 (`F-05`); existing body-marked `58VDC` stock is acceptable under the locked `56.8V` charge ceiling; use Victron `CIP138040020 40A/80V` as replacement fallback |
+| Retired Orion standalone input-fuse stock | `0` active | Optional purchased stock only | `30A/58V` MIDI and FKS/ATO parts are not installed; no `USM1/ATM20` purchase required |
 | 12V buffer battery main fuse (`100A` class) | `1` | `3` | Spare pack basis is BOM row `105` |
 | WS500 `PH-VAN` combined regulator power / positive-sense fuse (`F-12/F-13-PHVAN`) | `1` active position | `2` | Carry `15A` spares with holder/fuse voltage rating verified for the `48V` bank maximum |
 | Cerbo GX power fuse (`CERBO-PWR`) | `1` active position | `1` | Carry a spare `1A-3A` fuse/holder rated for the `48V` bank maximum |
@@ -111,9 +111,9 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 | Fuse scope | BOM row(s) |
 | --- | --- |
 | Main battery Class T protection (`F-01A/F-01B/F-01C`) + Class T spares | `bom/bom_estimated_items.csv` row `7` |
-| Lynx branch MEGA fuses (`F-02` to `F-04` installed; Slot 4/`F-05` open) + spare set | `bom/bom_estimated_items.csv` rows `10`, `170`, and `188` |
-| Orion installed fuse-holder hardware (`F-06`, `F-07`) | `bom/bom_estimated_items.csv` row `11` |
-| Orion input fuses (`F-06` active; `F-05` not used in active topology) | `bom/bom_estimated_items.csv` rows `11`, `133`, and `182` |
+| Lynx branch MEGA fuses (`F-02` to `F-05` installed) + spare set | `bom/bom_estimated_items.csv` rows `10`, `170`, and `188` |
+| Orion installed fuse-holder hardware (`F-05` Lynx input, `F-07` external output) | `bom/bom_estimated_items.csv` rows `10` and `11` |
+| Retired Orion standalone input-fuse stock (`F-06`) | `bom/bom_estimated_items.csv` rows `133`, `182`, and `230` |
 | WS500 low-current fuse/holder kit (`F-12/F-13-PHVAN`) | `bom/bom_estimated_items.csv` row `171` |
 | Cerbo GX power feed (`CERBO-PWR`) | `bom/bom_estimated_items.csv` row `22`; small inline fuse/holder may come from low-current install stock |
 | WS500 Upfitter `#3` enable/control path (`F-15`) | `bom/bom_estimated_items.csv` row `176` |
@@ -133,6 +133,6 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 4. `SW-12V-BATT` remains manual-only in Phase 1; no automatic LVD behavior is assumed.
 5. Final lock for `F-11` still requires explicit 12V buffer battery/BMS continuous discharge-current confirmation.
 6. `F-15` exists to protect the smaller-gauge control wire between Ford `Upfitter #3` and the WS500 brown ignition/enable wire; the factory `25A` upfitter circuit protection is not the final wire-protection device for that branch.
-7. Orion `F-05/F-06` lock: the active topology uses `F-06` as the single source-side Orion input fuse from a Lynx `48V+` bus tap. Lynx Slot 4/`F-05` stays open/blank because practical `20A` Lynx/MEGA protection is not available; the existing `40A` Lynx stock is spare-only and must not be installed as Orion device protection. Do not stack a Lynx MEGA fuse plus `F-06` inline fuse for the Orion branch unless the topology is deliberately reopened.
+7. Orion `F-05/F-06` lock: the active topology uses `F-05`, one `40A` MEGA body-marked at least `58VDC` in Lynx Slot 4, feeding the existing `6 AWG` Orion input directly. `F-06` is retired. This deliberately prioritizes simple feeder protection over strict adherence to Victron's `20A` table recommendation; do not stack an inline fuse after the Lynx fuse.
 8. Camper audio `12V` load: KMC2 source branch and PTRTP10 powered-sub branch are downstream 12V loads, not new 48V branches. The PTRTP10 `40A` branch can exceed Orion `30A` continuous output during heavy bass; rely on the 12V buffer battery for transients and validate sustained loud-use behavior before assuming all 12V loads can run at max simultaneously.
-9. Orion holder correction: `178.6150.0001` is housing-only and its contact family cannot receive the existing `6 AWG`. Do not salvage that system with pigtails or gauge-transition splices. Use the Mersen `USM1` pressure-plate holder so both `6 AWG` conductors terminate directly; torque to the current Mersen datasheet (`~15 lb-in` baseline), tug-test, and secure the DIN rail/holder against movement.
+9. Orion holder correction: no standalone input holder is required. The purchased `178.6150.0001` housing-only parts and `30A/58V` MIDI stock remain unused; do not salvage or stack them into the final branch. Torque the Slot 4 MEGA hardware and Orion terminals to current manufacturer values, tug-test, and strain-relieve the existing `6 AWG` pair.

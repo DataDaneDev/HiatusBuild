@@ -1,6 +1,18 @@
-## 2026-07-24 — Orion F-06 direct-termination correction
+## 2026-07-24 — Orion input simplified to Lynx Slot 4
 
-- Revalidated the Orion-Tr Smart `48/12-30` against Victron's current manual: external battery protection remains `20A` on the `48V` side and `60A` on the `12V` side; `6 AWG` is within the Orion terminal maximum and remains conservative for both short cabinet runs.
+- Stopped refactoring the Orion input around Victron's conservative `20A` table value. Final practical architecture uses one `40A` MEGA fuse body-marked at least `58VDC` in Lynx Slot 4 feeding the existing `6 AWG` Orion input pair directly. Existing verified `58VDC` stock is acceptable under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is replacement fallback only. The `40A` fuse protects the feeder; `6 AWG` is electrically overkill but already installed and needs no replacement.
+- Remove/bypass the separate Orion input inline fuse holder rather than stacking two fuses. The purchased `30A/58V` MIDI, FKS/ATO parts, and proposed `USM1/ATM20` DIN assembly remain unused/superseded. No additional Orion input fuse holder is required.
+- This is an explicit practical deviation from Victron's `20A` external-protection table, chosen because `40A` remains safely below the installed `6 AWG` conductor ampacity and eliminates repeated connection/holder rebuilds. Orion `12V` output remains separately protected by `F-07 60A/80V` MEGA.
+
+## 2026-07-24 — Orion 48V input conductor right-sized
+
+- Corrected the prior fixation on preserving `6 AWG` at the Orion `48V` input. Victron's current table calls for `4 mm²` minimum at `1-2 m` on a `48V` connection; for the documented `~2.5 ft / 0.76 m` cabinet run, `10 AWG` (`5.26 mm²`) is the clean US-size default.
+- Superseded by the final Lynx Slot 4 decision above. The existing `6 AWG` input pair is safe but electrically unnecessary; leave it in place as the lowest-rework path. If the pair is ever replaced for unrelated reasons, flexible fine-strand `10 AWG` is adequate for the documented short run.
+- Keep `6 AWG` on the Orion `12V` output: that side carries `30A` continuous and Victron's table calls for `10 mm²` at `1 m`, making `6 AWG` a reasonable common-size choice. The final later decision above uses one `40A` Lynx input fuse rated at least `58VDC` and retains `60A/80V` on 12V output.
+
+## 2026-07-24 — Orion F-06 direct-termination correction (superseded later same day)
+
+- Revalidated the Orion-Tr Smart `48/12-30` against Victron's current manual: external battery protection remains `20A` on the `48V` side and `60A` on the `12V` side. This pass initially preserved installed `6 AWG` on both sides; the later right-sizing note above makes `10 AWG` the default if the 48V input pair is recut while retaining `6 AWG` on the 12V output.
 - Corrected a procurement mistake: purchased Littelfuse `166.7000.5202` FKS/ATO fuses are electrically rated `20A/80VDC`, but purchased `178.6150.0001` parts are empty housings and their contacts cannot directly terminate the installed `6 AWG`.
 - Rejected the proposed pigtail/reducer-splice workaround as needless connection stacking. Final low-rework architecture is one panel-mounted Mersen `USM1` touch-safe `10x38 mm` fuse holder (`30A`, `1000VDC`, pressure-plate terminals accepting `#14-6 AWG`) with one Mersen `ATM20` fuse (`20A`, `600VAC/DC`) on a short `35 mm` DIN-rail segment. Existing `6 AWG` lands directly in the holder; no pigtails, reducers, butt splices, or extra lugs.
 - Lynx Slot 4 / legacy `40A` MEGA remains open/spare and is not in the Orion branch. Orion uses exactly one source-side F-06 input fuse. Do not energize an installed inline fuse/holder whose marked DC rating is below the bank maximum; the documented bank recommendation reaches `58.6V`.
@@ -23,7 +35,7 @@
 - The `12V` buffer-battery branch is close to completion. Locked routing remains `4 AWG battery + -> F-11 100A ANL -> SW-12V-BATT -> fuse-panel main +` and `4 AWG battery - -> fuse-panel main -` directly.
 
 ### Immediate electrical clarification
-- Orion input uses exactly one standalone `F-06` on the `48V` positive lead: final Mersen `USM1` DIN-rail holder with `ATM20 20A/600VDC` midget fuse and direct `6 AWG` pressure-plate terminations. Purchased FKS/ATO fuse/housing stock in row `182` is a dead-end for this branch and is not part of the final install.
+- Orion input uses exactly one standalone `F-06` on the `48V` positive lead: final Mersen `USM1` DIN-rail holder with `ATM20 20A/600VDC` midget fuse. Use `10 AWG` input conductors if recutting; existing clean `6 AWG` may remain as a no-rework choice. Purchased FKS/ATO fuse/housing stock in row `182` is a dead-end for this branch and is not part of the final install.
 - Identify the physically X-marked/misrated Lynx fuse by slot rather than assuming it is for Orion: Slot 2 requires `F-03 60A/80V` MEGA for the MPPT; Slot 4 / `F-05` stays open. No `32V`-rated fuse remains on an energized `48V` branch.
 - Orion `12V` output retains separate `F-07 60A/80V` MEGA protection before the `12V` panel main positive stud; the `12V` buffer battery retains separate `F-11 100A` ANL protection near its positive post.
 
