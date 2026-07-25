@@ -264,7 +264,7 @@ Recommended roles:
 Build direction:
 
 - Mock the fridge, tank, pump, accumulator, battery boxes, bench lid, electrical step box, and `24 in x 48 in` wheel-well desk as one 3D package before buying exact-cut extrusion.
-- Keep the pump strainer, accumulator, pressure gauge, shutoff, winterization pickup, and electrical connector visible through one service opening.
+- Preserve a known cooler/panel/frame removal path to the pump strainer, accumulator, tank shutoff, and pump electrical connector; uncommon service does not require one-opening or quick-disconnect access.
 - Use drip trays, leak sensor, and physical partitions so a plumbing leak cannot run into the battery enclosure.
 - Use overlay/removable panels for finished faces only after the skeleton passes access and interference checks.
 - Do not place the powered audio subwoofer or audio wiring in the wet-service bay. If camper audio uses the planned powered sub, keep it in a dry low bench/toe-kick/electrical-side volume and preserve service access/ventilation.
@@ -312,7 +312,7 @@ The Iceco/fridge has moved back to the passenger side. Current baseline: raise i
 Recommended roles:
 
 - Fridge support tray or fixed lofted shelf with positive travel restraint.
-- Under-fridge plumbing/service bay for pump, accumulator, strainer, shutoff, manifold, and winterization hardware.
+- Under-fridge plumbing bay for the existing pump, accumulator, strainer, shutoff, short flex sections, and only the tees/valves actually required by the final fixture route.
 - Vent chimney / warm-air escape path that does not heat the battery bench, tank bay, or desk electronics.
 - Shallow landing surface or rail only where it does not interfere with lid opening, venting, or service access.
 - Structural/service boundary between wet hardware and adjacent battery enclosures.
@@ -324,9 +324,9 @@ Design requirements:
 - Use positive travel lock plus secondary strap/draw latch if any slide is used.
 - Add hard stops so the fridge cannot overextend into the aisle/rear entry or pull its cord.
 - Provide lower cool-air intake and upper warm-air exhaust path. If boxed, use a small thermostatic `12V` fan and washable dust screen.
-- Keep plumbing service possible with the fridge installed; if the fridge must be removed to clean the pump strainer, inspect a leak tray, or reach winterization fittings, the exoskeleton is wrong.
+- Keep a known access path to the pump, strainer, accumulator, and heater connections. Removing the cooler, a panel, or a documented portion of the 80/20 frame is acceptable; the plumbing does not need quick-disconnect modularity or one-tool daily access.
 
-Non-obvious feature: make the fridge skeleton do double duty as the wet-spine service-panel frame. The same 80/20 that supports the fridge can define removable panels, leak-tray edges, cable clips, and anti-rattle landings.
+Non-obvious feature: make the fridge skeleton do double duty as the hard mounting and wet/dry boundary for the compact plumbing pack. Use the existing 80/20 to support lines, protect them from cargo, define a shallow leak-tray edge, and keep vibration loads off fittings.
 
 ---
 
@@ -334,25 +334,26 @@ Non-obvious feature: make the fridge skeleton do double duty as the wet-spine se
 
 ### Core recommendation
 
-Build a **cold-water-first wet spine** and reserve hot-water capability with capped stubs. Do not let water-heater uncertainty block the sink/tank/pump/faucet/drain build.
+Build a **cold-water-first, minimum-fitting plumbing pack** and reserve hot-water capability with one tee/branch. Do not let water-heater uncertainty block the sink/tank/pump/faucet/drain build, and do not add manifolds, bypass loops, unions, or dedicated valves unless they solve a demonstrated need.
 
-Current north/middle/south routing concept (`2026-07-16`; fitting sizes remain measurement-gated):
+Current north/middle/south routing concept (`2026-07-25`; fitting sizes remain measurement-gated):
 
 ```text
 MIDDLE: fresh tank
   -> north-end low outlet + tank shutoff
   -> short reinforced potable-water flex / shock loop
   -> NORTH: strainer -> pump -> flex -> accumulator + gauge
-  -> NORTH cold manifold
-      -> MIDDLE: sink cold
-      -> SOUTH: isolated/capped future-heater cold feed
-      -> SOUTH: pressurized ambient-water washdown QD
-      -> optional drinking filter/spigot
+  -> NORTH: one ordinary cold tee
+      -> straight: one cold trunk south
+           -> MIDDLE: sink cold tee
+           -> SOUTH: rear shower/washdown cold
+      -> branch: one heater cold-inlet isolation valve
 
-SOUTH: future outdoor/listed heater interface
-  -> isolated hot return in 1/2 in PEX
-  -> MIDDLE: faucet hot
-  -> optional short SOUTH tempered-shower branch/QD
+NORTH/BENCH: future electric storage heater
+  -> optional hot-out isolation valve
+  -> one insulated hot trunk south
+       -> MIDDLE: faucet hot tee
+       -> SOUTH: rear shower hot
 
 Separate unpressurized paths
   -> high end-port gravity fill + high end-port vent
@@ -362,26 +363,25 @@ Separate unpressurized paths
 
 Do not use rigid PEX between the tank, strainer, and vibrating pump. Start the fixed `1/2 in` PEX distribution after the pump outlet flex section. Keep the fresh-tank drain, sink gray drain, and pressurized cold washdown as three distinct functions; a gravity tank drain is not a useful pressure wash outlet.
 
-### Wet spine cassette
+### Compact fixed plumbing pack
 
-Mount the service-intensive plumbing on one removable or swing-out board/tray:
+Hard-mount the existing plumbing compactly in the under-cooler/adjacent bench structure:
 
 - Tank shutoff.
-- Flex shock/load hose loop.
+- Short reinforced suction flex.
 - Strainer.
 - Pump.
+- Short discharge flex.
 - Accumulator.
-- Pressure gauge.
-- Cold manifold.
-- Winterization pickup.
-- Blowout Schrader.
-- Low-point drains.
-- Leak tray/sensor.
-- Quick-disconnect unions and pump electrical connector.
+- One ordinary tee for cold trunk versus heater branch.
+- One heater cold-inlet shutoff when the heater is installed.
+- Supported PEX trunks and a pump electrical connector/strain relief.
 
-Stock wet-tray footnote: any pump/accumulator/strainer area below the lofted fridge should have a shallow removable wet tray or pan with small upturned edges, a visible inspection/leak-sensor point, and a path to lift/wipe/dry it without disassembling the fridge frame. Treat it as early warning and cleanup management, not as primary containment; plumbing joints still need proper unions, clamps, strain relief, and post-drive leak checks.
+A pressure gauge, second heater outlet-isolation valve, blowout tee, or local low-point drain may be added only where it solves a real commissioning, removal, or freeze problem. Do not make quick-disconnect unions, a swing-out board, a manifold rail, an antifreeze pickup, or a three-valve bypass part of the default build.
 
-Service rule: one hatch or one lift-out bin should expose the whole pump/strainer/accumulator/manifold cluster. If you need to remove drawers, unload pantry, or pull the tank to change a pump strainer, the furniture is wrong.
+Stock wet-tray footnote: any pump/accumulator/strainer area below the lofted fridge should have a shallow removable wet tray or pan with small upturned edges, a visible inspection/leak-sensor point, and a path to lift/wipe/dry it through the documented disassembly sequence. Treat it as early warning and cleanup management, not as primary containment; plumbing joints still need proper fittings, clamps, support, strain relief, and post-drive leak checks.
+
+Service rule: preserve a known disassembly path and enough tool access to inspect/tighten the pump-side joints. It is acceptable to remove the cooler, panels, or part of the 80/20 structure for uncommon service; avoid only buried joints that require destroying finished work or removing the water tank.
 
 ### Gravity-fill vent hose sizing
 
@@ -424,15 +424,15 @@ Implications:
 ### Tank workbench-to-install sequence (`2026-07-16`)
 
 1. **Inventory before cutting:** photograph every molded opening and cap, measure threads/neck IDs/ODs, and label only temporary candidate functions (`fill`, `vent`, `pump outlet`, `drain`, `sender`, `spare`). Do not infer function from port size alone.
-2. **Workbench mockup:** place the empty tank in its installed orientation on blocks; lay out the KUS sender, gravity-fill hose, vent hose, pump-outlet flex loop, drain, restraint brackets, and removable wet-spine board. Verify sender length against internal depth at the actual proposed location.
-3. **Mandatory bare-tank truck dry fit:** after the floor cure gate, protect the Lonseal and place only the empty tank in the truck. Check wheel-well contact, extrusion/fridge envelope, plusnut/bracket reach, sender-removal clearance, fill/vent bend radius, continuous hose fall/rise, pump-board service access, low drain, and where a leak would travel.
+2. **Workbench mockup:** place the empty tank in its installed orientation on blocks; lay out the KUS sender, gravity-fill hose, vent hose, pump-outlet flex loop, drain, restraint brackets, and compact fixed pump/accumulator pack. Verify sender length against internal depth at the actual proposed location.
+3. **Mandatory bare-tank truck dry fit:** after the floor cure gate, protect the Lonseal and place only the empty tank in the truck. Check wheel-well contact, extrusion/fridge envelope, plusnut/bracket reach, sender-removal clearance, fill/vent bend radius, continuous hose fall/rise, plumbing-pack access, low drain, and where a leak would travel.
 4. **Freeze the port map:** with the reported end-port-only geometry, default the gravity fill to an upper large end port and the vent to the highest suitable upper small end port. Neither needs a literal top-surface penetration if both communicate with the tank airspace and the fill hose falls continuously from the exterior hatch while the unrestricted vent rises continuously to its nipple. Verify whether a membrane-covered top boss exists before cutting a separate KUS sender opening.
 5. **Choose fitting methods:** use tank-manufacturer-approved molded, spin-weld, or properly backed bulkhead/under-ring methods appropriate to the polyethylene wall and access. The KUS sender method is now selected: purchased KUS/Wema `FLS-U` stainless SAE five-hole C-ring under-ring plus the supplied sender gasket and M5 screws; do not treat sealant or self-tapping screws alone as structure.
 6. **Cut and test on the bench:** for the selected `FLS-U` method, follow the official manual's single `60 mm` opening requirement (`2-3/8 in` hole saw), not the smaller sender-alone opening guidance. Preassemble the sender, gasket, screws, and C-ring as shown; tilt/rotate the ring through the one opening and tighten the five screws into it—do **not** drill five separate pilot holes through the tank top. Capture/remove all chips, deburr without thinning the sealing land, install without distorting the wall, then fill and leak-test the tank/fittings before the extrusion locks access.
-7. **Install wet-side first:** hard-mount the tank restraint and wet-spine service board before passenger-side furniture closure. Keep tank shutoff, strainer, pump, accumulator, gauge, manifold, winterization pickup, blowout point, low drain, and unions visible/removable from the aisle/rear.
+7. **Install wet-side first:** hard-mount the tank restraint and compact pump/accumulator pack before passenger-side furniture closure. Support the flex/PEX transitions, protect the wet/dry boundary, and preserve the documented cooler/panel/frame removal path; do not add fittings solely to make the assembly quick-removable.
 8. **Cut the exterior fill/vent last:** physically prove the installed tank endpoints, hose fall/vent rise, backing, service access, and spill/overflow path from both sides before cutting the camper/bed-side interface.
 
-### Provisional cold/hot routing baseline (`2026-07-16`)
+### Simplified cold/hot routing baseline (`2026-07-25`)
 
 This is the recommended full-scale mockup baseline, not frozen cut geometry. Preserve the tank's assigned functions: upper south ports for gravity fill and unrestricted vent, low north `1/2 in` port for pump pickup, and low south `1/2 in` port as a dedicated gravity tank drain.
 
@@ -441,25 +441,27 @@ low north tank pickup
   -> tank shutoff
   -> short service/flex transition
   -> strainer -> pump -> flex -> accumulator
-  -> accessible north service/manifold zone
-       -> one 1/2 in cold trunk south behind the tank
-            -> sink cold
-            -> rear pressurized cold washdown
-       -> three-valve north-heater isolation/bypass
-            -> north-cubby electric storage heater
-            -> thermostatic tempering/mixing valve
+  -> one ordinary tee
+       -> straight: one 1/2 in cold trunk south behind the tank
+            -> sink cold tee
+            -> rear shower/washdown cold
+       -> branch: one heater cold-inlet isolation valve
+            -> north-cubby/bench electric storage heater
+            -> optional hot-out isolation valve
             -> one insulated hot trunk south
-                 -> sink hot
-                 -> rear hot shower/sprayer
+                 -> sink hot tee
+                 -> rear shower hot
 ```
 
-Route the parallel cold and insulated hot trunks low along the bed-wall side behind the tank, supported independently and protected from chafe, rather than across the tank top. Use continuous lengths with **no concealed joints or valves** behind the installed tank; keep every union, shutoff, bypass, manifold, filter, pump component, and drain serviceable from the aisle/rear. This preserves tank-top storage without burying failure points.
+This parallel branch arrangement keeps cold water available when the heater is off or isolated; a bypass jumper is not required. A three-valve bypass would only make the hot-side fixtures deliver cold water and reduce antifreeze usage during chemical winterization, neither of which justifies the added fittings in the default Hiatus build. Set the selected heater near its normal `120°F` operating range and let the faucet/shower controls mix locally. Add a compact thermostatic mixing valve at the heater only if the final system intentionally stores water around `130-140°F` to stretch a small tank.
+
+Route the parallel cold and insulated hot trunks low along the bed-wall side behind the tank, supported independently and protected from chafe, rather than across the tank top. Use continuous lengths with **no concealed joints or valves** behind the installed tank. The heater's factory T&P relief/discharge and drain path remain required even in this simplified layout.
 
 Keep three south functions distinct:
 
 1. The low south tank port remains a gravity fresh-tank drain with its own supported valve and capped/hose-ready outlet.
-2. Rear cold washdown comes from the pressurized cold manifold.
-3. Rear hot shower/sprayer comes from the north heater's insulated hot trunk through a local rear mixer/branch; the middle sink tees from the same southbound hot trunk.
+2. Rear cold washdown comes from the pressurized cold trunk.
+3. Rear hot shower/sprayer comes from the heater's insulated hot trunk through a local rear mixer/branch; the middle sink tees from the same southbound hot trunk.
 
 Do not cross-connect the gravity drain into the pressure/hot circuit. The separate pressurized rear branch provides the desired hot sprayer without backflow paths, confusing valve choreography, or loss of a simple emergency tank drain.
 

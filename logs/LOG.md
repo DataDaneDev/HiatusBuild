@@ -1,3 +1,9 @@
+## 2026-07-25 — Hot-water plumbing simplified to minimum-fitting parallel branch
+
+- Owner rejected the previously proposed cold/hot manifolds, removable cassette, quick unions, permanent antifreeze pickup, and three-valve heater bypass as overengineered for the real truck-bed-camper space and accepted uncommon service by removing the cooler/panels/part of the 80/20 structure or cutting/capping PEX.
+- New baseline keeps the existing `tank shutoff -> flex -> strainer -> SHURflo pump -> flex -> accumulator` pack, then uses one ordinary tee: straight to the cold trunk and branch through one cold-inlet isolation valve to the future storage heater. Heater hot runs in one insulated trunk; a hot-out isolation valve is optional. No bypass jumper or manifold rail is required for cold-water continuity because the heater is a parallel branch.
+- Default hot-water control is normal heater temperature with local faucet/shower mixing. A central thermostatic valve is added only if the selected heater intentionally stores hotter water to stretch capacity. The heater's factory T&P relief/discharge and drain path remain required.
+
 ## 2026-07-24 — ThermoMate ES400B fit correction
 
 - Corrected the exact Amazon `B0CCJ3PS9J` ThermoMate ES400B installed envelope from the previously conflated short-body ES400 dimensions to the live listing's `24.3H x 12.6W x 12.4D in`, including valve. It is a tall/narrow four-gallon option, not the short-cubby value fallback.

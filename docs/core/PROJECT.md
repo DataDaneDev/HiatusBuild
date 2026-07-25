@@ -107,8 +107,8 @@ Purpose: finish the hard-mounted utilities and close furniture around tested sys
    - Charge Batteries 2 and 3 individually, rest and record all three voltages, parallel only within `0.1V`, then verify branch protection, polarity, disconnect, Lynx/shunt, cable support, covers, extraction, and current sharing with the Bench open.
 3. **`12V` commissioning**
    - Install final Orion `F-06`, complete the `12V` buffer branch, verify `F-07`/`F-11`, then prove factory lights, Maxxair fan, pump branch, and selected DC charging outlets.
-4. **Tank, restraint, and wet-spine test/install**
-   - Add the approved sender/fittings, bench/driveway fill-pressure-leak-function test the tank/pump assembly, then hard-mount its restraint and removable pump/strainer/accumulator/manifold board with wet/dry separation and low-point service access.
+4. **Tank, restraint, and compact plumbing-pack test/install**
+   - Add the approved sender/fittings, bench/driveway fill-pressure-leak-function test the tank/pump assembly, then hard-mount its restraint and the minimum-fitting pump/strainer/accumulator/tee pack with wet/dry separation and a documented cooler/panel/frame removal path.
 5. **Remaining penetrations, modules, and shakedown**
    - Prove/cut the gravity-fill/vent opening only from installed geometry; add Galley/Bench/Desk/fridge modules and the electrical anti-rack tie-in, keep panels removable until tests pass, then torque/witness-mark, drive locally, and inspect for floor damage, leaks, insert spin, abrasion, module movement, and fastener loss.
 

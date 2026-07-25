@@ -508,6 +508,15 @@ related:
 - Result: floor removal is no longer an active branch. During cure, preserve hardpoint threads and map the tank on the workbench. After post-cure floor inspection, hard-mount the electrical module first, install/wire/fuse the `3x 48V` bank with the bench open, then add the bench structure. For water, inventory ports and mock fittings on the workbench, perform one bare-tank in-truck dry fit, freeze the port/restraint/service map, then drill/install/bench-test and hard-mount the tank/wet spine. Shore and water-fill/vent penetrations follow physically proven inside routes.
 - Follow-up: `2026-07-19` status: controlled module loading and the electrical hard-mount gate have passed; retain the final floor-condition photo/inspection and bolt/rivnut evidence as open closeout. Record the final tank port map and fitting method, bench-test the complete wet spine, and keep final cabinetry removable until electrical/plumbing functional tests pass.
 
+- ID: D-054
+- Date: 2026-07-25
+- Decision: Simplify the Hiatus hot-water/plumbing baseline to a fixed minimum-fitting parallel branch rather than a manifold and three-valve bypass module.
+- Context: The previously recommended cold manifold, hot manifold, three-valve bypass, quick unions, winterization pickup, and removable wet-spine cassette consume too much space and introduce too many joints for a truck-bed camper. Owner accepts knowledgeable service that may require removing the cooler, panels, or part of the 80/20 structure and cutting/capping PEX when uncommon component replacement is required.
+- Options considered: retain the full service manifold/bypass cassette; use a compact manifold with three-valve heater bypass; or hard-mount the existing pump/accumulator pack and branch the heater in parallel with ordinary tees and one or two isolation valves.
+- Decision drivers: minimum leak points, vibration/overlanding robustness, actual under-cooler/bench space, cold-water continuity, and avoiding residential/RV service conventions that do not earn their space here.
+- Result: default path is `tank shutoff -> flex -> strainer -> pump -> flex -> accumulator -> one cold tee`; the straight leg is the joint-minimized cold trunk and the branch feeds the storage heater through one cold-inlet valve. Heater hot feeds one insulated trunk; a hot-out valve is optional for clean removal. No cold/hot manifold, three-valve bypass, quick-disconnect plumbing, or permanent antifreeze pickup is required. Keep the heater in parallel so cold remains available. Default to normal heater temperature with local faucet/shower mixing; add a central TMV only if intentionally storing hotter water. Factory T&P relief/discharge and heater drain requirements remain.
+- Follow-up: dry-fit the chosen heater and route, then count exact tees/valves/adapters from real component ports before ordering. Preserve short flex at the pump, support the PEX, pressure/leak-test in the driveway, and recheck after the first drive.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -663,10 +672,10 @@ related:
 - Status: Open
 
 - ID: R-018
-- Risk: Passenger-side lofted fridge/wet-spine plumbing can become unserviceable, freeze-prone, or hazardous to adjacent batteries if the `36 gal` tank fittings, pump, accumulator, manifold, graywater cassette, fill/vent lines, low-point drains, future hot-water stubs, or leak paths are buried behind fixed cabinetry.
+- Risk: Passenger-side lofted fridge/wet-spine plumbing can become inaccessible, freeze-prone, or hazardous to adjacent batteries if the `36 gal` tank fittings, pump, accumulator, graywater cassette, fill/vent lines, heater branches, or leak paths are trapped behind finished work without a known disassembly path.
 - Impact (1-5): 5
 - Likelihood (1-5): 3
-- Mitigation: Owner confirms four molded ports on each end—two visibly large and two smaller—with no obvious/open top port. Measure and label those ports on the workbench, inspect for a membrane-covered top boss, mock sender/fill/vent/outlet/drain/wet-spine geometry, then require one bare-tank in-truck dry fit before drilling. Default to an upper large end-port gravity fill with continuous hose fall, the highest suitable upper small end-port unrestricted vent without a trapped low loop, and a backed/gasketed top sender location only after physical boss/depth inspection. Keep the under-fridge service board removable/swing-out with visible shutoff, flex loops, strainer, gauge, winterization/blowout/low-point controls, leak tray/sensor, quick unions, and hard wet/dry separation.
+- Mitigation: Owner confirms four molded ports on each end—two visibly large and two smaller—with no obvious/open top port. Measure and label those ports on the workbench, inspect for a membrane-covered top boss, mock sender/fill/vent/outlet/drain geometry, then require one bare-tank in-truck dry fit before drilling. Default to an upper large end-port gravity fill with continuous hose fall, the highest suitable upper small end-port unrestricted vent without a trapped low loop, and a backed/gasketed top sender location only after physical boss/depth inspection. Hard-mount a compact minimum-fitting pump/accumulator pack with short flex at the pump, supported PEX, wet/dry separation, leak inspection, and a documented cooler/panel/80/20 removal sequence; do not add manifold/bypass/quick-union complexity by default.
 - Trigger: Building passenger-side lofted fridge skeleton, galley cabinetry, tank restraint, pump board, battery bench partition, graywater cassette, or rear shower/fill/vent hatch.
 - Owner: Sunny
 - Status: Open

@@ -48,7 +48,7 @@ It does **not** replace the owner docs:
 - The next physical sequence is electrical closeout first: remount MultiPlus/AC panel -> install shore inlet/AC-in path -> charge/equalize/parallel the `48V` bank -> finish `12V`/Orion and prove lights/fan/DC outlets -> bench-test and install tank/pump/wet spine -> close Bench/Galley around tested systems.
 - The shore inlet may proceed once its complete inside/outside path, hidden structure, backer grommet/strain relief, and sealing surfaces are proven. The water-fill/vent penetration still waits for the installed tank geometry and service path.
 - Final surface direction remains a three-piece Nick black-walnut commission after templates are locked. A temporary Galley plywood counter/template is acceptable before final walnut so sink/faucet geometry can be proven.
-- Plumbing is now active bench/mockup work, but no tank hole is cut before a complete port inventory and bare in-truck dry fit. Build cold-first and hot-ready around a removable wet-spine board.
+- Plumbing is now active bench/mockup work, but no tank hole is cut before a complete port inventory and bare in-truck dry fit. Build cold-first and hot-ready as a compact fixed pack with minimum fittings; removal of the cooler/panels/part of the 80/20 frame is acceptable for uncommon service.
 - Alternator charging remains a separate commissioning gate. Rough-in/routing with fuses pulled can proceed after floor/module reinstall; first-charge waits for APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior.
 - Solar, hot water, and propane remain discovery/provisioning workstreams until shore, water/fill routing, roof real estate, and exterior mount/pass-through constraints are better proven.
 
@@ -260,7 +260,7 @@ Goal: cold-water-first, hot-ready later, serviceable and leak-testable.
 - [x] Record owner-confirmed physical geometry: four molded ports on each end, two visibly large and two smaller per end, with no obvious/open top port.
 - [ ] Photograph/inventory the eight end ports, identify exact threads/model markings, inspect for a membrane-covered top boss, and temporarily label candidate functions: gravity fill, highest-point vent, pump outlet, drain, sender, spare/plug.
 - [ ] Measure internal sender clearance at the exact KUS location and confirm a flat top area over the deepest unobstructed section; do not rely on the nominal `16 in` exterior depth alone.
-- [ ] Lay out the gravity-fill hose, vent hose, pump outlet, drain, KUS sender, restraint brackets, and wet-spine board around the empty tank on the workbench.
+- [ ] Lay out the gravity-fill hose, vent hose, pump outlet, drain, KUS sender, restraint brackets, and compact pump/accumulator pack around the empty tank on the workbench.
 - [ ] Perform one bare-tank in-truck dry fit before cutting any new hole; verify wheel-well fit, bracket/plusnut reach, extrusion/fridge overlap, fill/vent bends, sender removal clearance, pump-board access, and leak path.
 - [ ] Freeze the tank port map after dry fit. Current default is upper large end port for gravity fill, highest suitable upper small end port for unrestricted vent/overflow, low north port for pump suction, and a separate low tank drain; require continuous downhill fill-hose routing and continuous vent rise without a trapped low loop.
 - [x] Select the KUS sender backing method: purchased KUS/Wema `FLS-U` stainless SAE five-hole C-ring under-ring for use with the supplied sender gasket and M5 screws; do not rely on self-tapping screws or sealant alone.
@@ -268,16 +268,16 @@ Goal: cold-water-first, hot-ready later, serviceable and leak-testable.
 - [ ] Bench-check the sender across its two leads before mounting (`~240 ohm` float down/empty, `~30-33 ohm` float up/full). After wiring, enable `Tank 1` at `Settings -> Integrations -> Tank and Temperature Sensors`, then set `Fresh Water`, `36 US gal`, and the US `240-30 ohm` sender standard; refine the custom tank shape only after measured fills.
 - [ ] Cut/drill only after the map is frozen. For the selected `FLS-U` method, follow the official manual's single `60 mm` opening requirement (`2-3/8 in` hole saw), not the smaller sender-alone opening guidance. Preassemble the sender, gasket, screws, and C-ring as shown; tilt/rotate the ring through the one opening and tighten the five screws into it—do **not** drill five separate pilot holes through the tank top. Capture/remove chips and bench leak-test before truck installation.
 - [ ] Confirm vent hose size for the gravity-fill vent nipple: preferred `10 mm ID`; `3/8 in ID` warmed/clamped fallback.
-- [ ] Build wet-spine service board/tray layout: tank shutoff, flex loop, strainer, pump, accumulator, pressure gauge, manifold.
-- [ ] After the remaining fittings arrive, assemble the complete tank/pump/accumulator/manifold system in the driveway before permanent truck mounting.
+- [ ] Hard-mount the compact plumbing pack: tank shutoff, suction flex, strainer, pump, discharge flex, accumulator, then one ordinary tee for cold trunk versus future heater branch.
+- [ ] After the remaining fittings arrive, assemble the tank/pump/accumulator/tee system in the driveway before permanent truck mounting.
 - [ ] Fill with clean water, verify gravity fill/vent behavior, pressure-cycle the `12V` pump, check accumulator behavior, exercise drain/washout paths, and inspect every fitting/seam for leaks.
-- [ ] Include winterization pickup, blowout Schrader, and low-point drains if practical in MVP.
-- [ ] Add unions/quick disconnects so the pump/strainer can be serviced without dismantling furniture.
+- [ ] Preserve the tank drain and a workable heater-drain/open-fixture winterization path; add a regulated blowout tee or local low-point only if the actual installed geometry needs it.
+- [ ] Do not add a manifold rail, antifreeze pickup, quick-disconnect unions, or three-valve heater bypass by default; preserve a known cooler/panel/frame disassembly path instead.
 - [ ] Add pump electrical connector and strain relief.
 - [ ] Add shallow removable leak tray/pan under pump/strainer/accumulator area.
 - [ ] Add leak sensor or at least a visible inspection point.
 - [ ] Run cold line to sink faucet cold side.
-- [ ] Stub/cap future hot-water feed/return so hot-water uncertainty does not block sink use.
+- [ ] Stub/cap one future heater branch from the post-accumulator cold tee and one hot return; when installed, use one cold-inlet isolation valve and optionally one hot-out isolation valve, with no bypass jumper.
 - [ ] Rough-plan a pump-fed cold spray nozzle/QD near the Galley utility corner; gravity-only spray is acceptable as a fallback drain/rinse concept but should not drive the layout.
 - [ ] Add exterior shower cold QD only if routing does not force premature penetrations.
 - [ ] Build graywater cassette/drain path with winterizable/waterless trap strategy.
