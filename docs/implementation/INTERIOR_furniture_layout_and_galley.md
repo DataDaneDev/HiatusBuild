@@ -336,7 +336,7 @@ Non-obvious feature: make the fridge skeleton do double duty as the hard mountin
 
 Build a **propane-only, parked-deployment hot-water system** around the existing cold-water pack and rear swingout box. The camper and box each use a two-port interface: BLUE pressurized cold out and RED heated-water return. Two short, sleeved jumpers connect box to camper at camp; the box-side water hoses remain attached to the HOTTAP on its articulating arm. No heater, fuel line, or combustion appliance occupies the north cubby.
 
-Current north/middle/south routing concept (`2026-07-25`; fitting sizes remain field-gated at the faucet and service plate):
+Current north/middle/south routing concept (`2026-07-25`; FORIOUS faucet interfaces confirmed at `3/8 in`, while service-plate fit remains field-gated):
 
 ```text
 MIDDLE: fresh tank
@@ -468,7 +468,7 @@ box RED CPC body <-> RED jumper with CPC insert at both ends
 The fixed camper, box interface, and heater-package fitting stack is therefore:
 
 1. One `1/2 in` PEX tee.
-2. Two faucet adapters, expected `1/2 in PEX x 3/8 in OD compression male`; verify the FORIOUS hose nuts before ordering.
+2. Two confirmed faucet adapters: `1/2 in PEX-B barb x 3/8 in OD compression male`. The FORIOUS manual identifies both factory hot/cold supply hoses as `3/8 in`; screw each hose nut directly onto the adapter's male compression seat after removing any loose tube-compression nut/ferrule supplied with the adapter. Do not use PTFE tape on this compression connection.
 3. Two existing full-port `1/2 in` PEX ball valves, one at each rear service port.
 4. Two existing SharkBite `UP120A5` `1/2 in PEX x 1/2 in MNPT` adapters.
 5. Two lead-free `1/2 in FNPT x 1/2 in hose-barb` adapters.
@@ -484,7 +484,7 @@ The fixed camper, box interface, and heater-package fitting stack is therefore:
 15. Correctly sized stainless ear clamps for every internal box hose barb; lock the exact count after the Joolca splitter and connector terminations are in hand.
 16. One thin, backed aluminum camper two-port plate with butyl bedding, perimeter sealant, sealed wall-core sleeve/grommet, BLUE/RED labels, and weather cover.
 17. One recessed/guarded box-floor two-port plate with structural backing, BLUE/RED labels, road/debris protection, and penetrations kept separate from the propane vent openings.
-18. Twelve `1/2 in` PEX cinch clamps downstream of the accumulator: one at the accumulator adapter, three at the tee, one at each faucet adapter, two at each service valve, and one at each `UP120A5` transition.
+18. Twelve `1/2 in` PEX cinch clamps downstream of the accumulator: one at the lead-free `1/2 in PEX-B barb x 1/2 in female-swivel` accumulator adapter, three at the tee, one at each faucet adapter, two at each service valve, and one at each `UP120A5` transition. The accumulator's supplied white swivel fittings are flexible-hose barbs, not PEX-B crimp barbs; the purchased RecPro `30 in` `1/2 in FIP x 1/2 in FIP` braided hose handles the pump-side accumulator connection.
 19. Potable-water-rated PTFE tape or thread sealant on the two `UP120A5` MNPT-to-Anderson FNPT joints only; do not apply thread sealant to compression seats, hose barbs, QD O-rings, or Joolca gasketed/BSP hose swivels unless that fitting's instructions require it.
 
 The selected CPC HFC35 NSF straight-through parts are rated from vacuum through `125 PSI` and from `-40°F` to `280°F`, providing appropriate pressure and temperature margin above the SHURflo's nominal `55 PSI` cutoff. Still measure dead-head/cycling pressure and hot-side flow while commissioning the pump and accumulator, but the QD selection no longer depends on staying below a marginal `60 PSI` ceiling.
