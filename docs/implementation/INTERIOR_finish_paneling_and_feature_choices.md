@@ -28,7 +28,7 @@ Current physical context:
 
 - The Galley `10-series` extrusion frame is cut and built as an exoskeleton.
 - Owner-reported `2026-07-04`: the Galley/cooler/Bench/electrical tie-ins are complete enough that the interior now behaves as one large in-truck module; active build focus has shifted to the Desk/workstation module and final surface dimensions.
-- The passenger-side Galley connects to the Bench/cooler area and will carry the sink/faucet, cold-water-first wet spine, drain/graywater path, cooler/fridge support, and future hot-water provisions.
+- The passenger-side Galley connects to the Bench/cooler area and will carry the sink/faucet, fixed wet spine, drain/graywater path, cooler/fridge support, and the interior BLUE cold-out / RED hot-return plumbing for the selected rear-box HOTTAP; no interior water-heater cubby is reserved.
 - The driver-side workstation should visually relate to the galley without sacrificing real work ergonomics.
 - Available panel stock includes some `1/2 in` and `3/4 in` plywood. Working assumption: `1/2 in` for vertical/front/removable faces; `3/4 in` for tops, bench lids, cooler-bearing surfaces, and other load surfaces.
 - Owner is leaning toward commissioning three final black walnut surfaces from Nick: a live-edge Galley countertop, a dimensional-lumber computer desk top, and a dimensional-lumber L-shaped Bench/lid top.
@@ -49,7 +49,7 @@ The best current default is:
 4. **Feature panels:** use smoked/tinted acrylic or polycarbonate selectively, especially at the `45°` Galley front cupboard/transition, small cubbies, or useful inspection windows.
 5. **Storage:** default to lift-out bins, elastic/shock-cord cubbies, and a few low positive-latched drawers. Do not build every bay as a drawer before the Galley/Bench/cooler geometry is proven.
 6. **Front Galley corner:** default to a physical sweep-tested `45°` chamfer if a square corner clips entry movement. Treat a rounded corner as a later finish detail, not the structural default.
-7. **Hot water:** keep hot-water appliance geometry deferred. Build cold water, sink, drain, spray/QD, and capped future hot stubs first.
+7. **Hot water:** the appliance decision is closed at propane-only Joolca HOTTAP V2. Finish geometry should preserve the faucet hot/cold routes, service valves, rear two-port plate backing/access, and drainability—not an electric mini-tank cubby or capped speculative heater branch.
 
 The target read is **not** “random plywood screwed to aluminum.” It should look like **purpose-built warm cabin furniture integrated with a clean silver mechanical/service skeleton**. Hardware should be consistent and functional, not a decorative feature sprayed everywhere.
 
@@ -538,11 +538,11 @@ Requirements:
 
 Gravity-only spray can remain a fallback idea, but it should not drive the layout if the pump is already nearby.
 
-### 7.7 Hot-water deferral
+### 7.7 Propane hot-water integration boundary
 
-Keep hot water as **capped future stubs**, not a permanent appliance commitment.
+Hot water is now a **selected exterior HOTTAP service system**, not a deferred interior appliance. Keep the Galley volume free of electric storage/tankless equipment and route only the joint-minimized faucet hot/cold trunks plus accessible BLUE/RED service valves toward the rear plate.
 
-No propane hot-water cutout, LP line, vent/combustion plan, or cabinet geometry should be locked until the exact appliance/manual/listing/clearances/LP safety requirements are known.
+The camper/box plate cuts, HOTTAP arm, cylinder cradle/strap, permanent low/high box vents, hose loops, and weather/road guards remain mockup-gated. These exterior gates do not justify preserving an obsolete electric-heater cubby or dedicated AC branch in the furniture.
 
 ---
 
@@ -773,5 +773,5 @@ Avoid:
 - **Use smoked acrylic/polycarbonate as a selective feature.** Best candidate: the `45°` front Galley cupboard/transition.
 - **Favor bins, elastic cubbies, and a few latched drawers.** Drawers are useful but should not dominate before dimensions are stable.
 - **Keep the front Galley corner entry-safe.** A controlled inward-curving live edge over the last `~15 in` is good if it passes the physical sweep test; raw bark/snags are not.
-- **Build cold-water-first and hot-ready.** Do not let hypothetical propane hot water freeze the finished cabinet geometry.
+- **Build the fixed water pack and propane service trunks before cosmetic closure.** The HOTTAP decision is final; preserve BLUE/RED service access and drainability without reserving interior electric-heater space.
 - **Service access beats cosmetic closure.** Beautiful panels are only successful if the camper can still be repaired, winterized, and shaken down without demolition.

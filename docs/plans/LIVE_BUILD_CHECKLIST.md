@@ -231,8 +231,8 @@ Goal: build the galley datum so cooler/fridge/plumbing fitment stops being guess
 - [x] Reinforce Galley rear/back stretch as one continuous `2010` member; owner reports the Galley is now very sturdy as of `2026-07-06`.
 - [x] Modify/add cooler-bench tie-in rails or plates as needed; keep the seam removable and accessible without removing batteries.
 - [ ] Decide the entrance-side Galley front corner shape with a physical sweep test: default `45° chamfer` if square clips entry and round is too fussy for the current 10-series frame.
-- [ ] Keep the front/rear Galley utility corner as a serviceable wet corner candidate: drain path, spray nozzle/QD, future hot-water stub, and removable panel access.
-- [ ] Do not commit to permanent propane hot water in the Galley corner until the exact listed appliance, vent/cutout, combustion air, clearances, LP routing, detectors, and winterization access are proven.
+- [ ] Keep the front/rear Galley utility corner serviceable for the sink drain/graywater path, faucet cold/hot trunks, BLUE/RED service valves, and removable panel access; no interior water-heater volume is reserved.
+- [ ] [HOLD] Do not cut the camper/box BLUE/RED service plates or mount the rear-box propane package until the selected HOTTAP arm, cylinder restraint/venting, hose sweeps, backing, road guard, and deployed clearances are physically proven.
 - [ ] Mock passenger-side fridge/cooler position with real handles, hinge/lid swing, cord bend, and hand clearance.
 - [ ] Confirm raised fridge/cooler height target, currently about `16 in` above floor/service zone.
 - [ ] Confirm relationship to `36 gal` wheel-well tank envelope.
@@ -255,7 +255,7 @@ Goal: build the galley datum so cooler/fridge/plumbing fitment stops being guess
 
 ## 7. Plumbing rough-in and test
 
-Goal: cold-water-first, hot-ready later, serviceable and leak-testable.
+Goal: build and test the fixed cold-water pack plus the selected propane-only BLUE cold-out / RED hot-return interface; keep every joint serviceable and leak-testable.
 
 - [x] Record owner-confirmed physical geometry: four molded ports on each end, two visibly large and two smaller per end, with no obvious/open top port.
 - [ ] Photograph/inventory the eight end ports, identify exact threads/model markings, inspect for a membrane-covered top boss, and temporarily label candidate functions: gravity fill, highest-point vent, pump outlet, drain, sender, spare/plug.
@@ -266,24 +266,25 @@ Goal: cold-water-first, hot-ready later, serviceable and leak-testable.
 - [x] Select the KUS sender backing method: purchased KUS/Wema `FLS-U` stainless SAE five-hole C-ring under-ring for use with the supplied sender gasket and M5 screws; do not rely on self-tapping screws or sealant alone.
 - [ ] Inventory the KUS electrical handoff before tank closure: locate the Cerbo GX MK2 factory `Tank` terminal block, confirm enough `18-22 AWG` duplex from sender to Cerbo, and stage two sealed pigtail splices plus two Cerbo-end ferrules. Wire black signal and pink return to the same numbered Tank-input column; no external power, fuse, chassis ground, analog gauge, or GX Tank 140.
 - [ ] Bench-check the sender across its two leads before mounting (`~240 ohm` float down/empty, `~30-33 ohm` float up/full). After wiring, enable `Tank 1` at `Settings -> Integrations -> Tank and Temperature Sensors`, then set `Fresh Water`, `36 US gal`, and the US `240-30 ohm` sender standard; refine the custom tank shape only after measured fills.
-- [ ] Cut/drill only after the map is frozen. For the selected `FLS-U` method, follow the official manual's single `60 mm` opening requirement (`2-3/8 in` hole saw), not the smaller sender-alone opening guidance. Preassemble the sender, gasket, screws, and C-ring as shown; tilt/rotate the ring through the one opening and tighten the five screws into it—do **not** drill five separate pilot holes through the tank top. Capture/remove chips and bench leak-test before truck installation.
+- [ ] Cut/drill only after the map is frozen. The exact `2-3/8 in` / `60 mm` hole saw is purchased and on order; for the selected `FLS-U` method, follow the official manual's single-opening requirement rather than the smaller sender-alone guidance. Preassemble the sender, gasket, screws, and C-ring as shown; tilt/rotate the ring through the one opening and tighten the five screws into it—do **not** drill five separate pilot holes through the tank top. Capture/remove chips and bench leak-test before truck installation.
 - [ ] Confirm vent hose size for the gravity-fill vent nipple: preferred `10 mm ID`; `3/8 in ID` warmed/clamped fallback.
-- [ ] Hard-mount the compact plumbing pack: tank shutoff, suction flex, strainer, pump, discharge flex, accumulator, then one ordinary tee for cold trunk versus future heater branch.
-- [ ] After the remaining fittings arrive, assemble the tank/pump/accumulator/tee system in the driveway before permanent truck mounting.
+- [ ] Hard-mount the compact plumbing pack: tank shutoff, suction flex, strainer, pump, discharge flex, RecPro double-FIP hose, accumulator, YVSKM female-swivel PEX-B outlet, then one ordinary tee branching to faucet cold while the straight leg continues to the rear BLUE service valve.
+- [ ] When the purchased EFIELD faucet adapters and YVSKM accumulator swivels arrive, inspect gasket/seat/markings, stage the two faucet adapters plus one installed accumulator swivel, and retain the other three swivels as spares. Assemble and cold-pressure-test the tank/pump/accumulator/tee system in the driveway before permanent truck mounting.
 - [ ] Fill with clean water, verify gravity fill/vent behavior, pressure-cycle the `12V` pump, check accumulator behavior, exercise drain/washout paths, and inspect every fitting/seam for leaks.
-- [ ] Preserve the tank drain and a workable heater-drain/open-fixture winterization path; add a regulated blowout tee or local low-point only if the actual installed geometry needs it.
+- [ ] Preserve the dedicated tank drain plus drainable BLUE/RED exterior stubs; the HOTTAP, box service loops, and two short jumpers must drain after freezing-weather use. Add regulated blowout access only if the installed geometry proves gravity draining insufficient.
 - [ ] Do not add a manifold rail, antifreeze pickup, quick-disconnect unions, or three-valve heater bypass by default; preserve a known cooler/panel/frame disassembly path instead.
 - [ ] Add pump electrical connector and strain relief.
 - [ ] Add shallow removable leak tray/pan under pump/strainer/accumulator area.
 - [ ] Add leak sensor or at least a visible inspection point.
-- [ ] Run cold line to sink faucet cold side.
-- [ ] Stub/cap one future heater branch from the post-accumulator cold tee and one hot return; when installed, use one cold-inlet isolation valve and optionally one hot-out isolation valve, with no bypass jumper.
+- [ ] Terminate the faucet cold and hot hoses with the purchased EFIELD `1/2 in PEX-B x 3/8 in OD compression male` adapters; use no PTFE tape at either compression seat.
+- [ ] Build the selected permanent service topology: post-accumulator tee branch to faucet cold, straight leg to BLUE valve/QD, and separate RED valve/QD through insulated `1/2 in` PEX to faucet hot. No electric-heater branch, manifold, or bypass remains.
 - [ ] Rough-plan a pump-fed cold spray nozzle/QD near the Galley utility corner; gravity-only spray is acceptable as a fallback drain/rinse concept but should not drive the layout.
-- [ ] Add exterior shower cold QD only if routing does not force premature penetrations.
+- [ ] Keep the exterior shower on the HOTTAP-side three-way hot splitter; do not add a separate camper-side shower branch or cold QD.
 - [ ] Build graywater cassette/drain path with winterizable/waterless trap strategy.
 - [ ] Pressure/leak test plumbing before panel closure.
 - [ ] Recheck all clamps/unions after first drive.
-- [ ] [DEFER] Hot water decision and permanent heater install.
+- [x] Finalize hot water as propane-only Joolca HOTTAP V2 with parked-only BLUE/RED water jumpers; electric storage/tankless branches are closed.
+- [ ] [HOLD] Buy/drill the remaining HOTTAP/CPC/box hardware only after the real cylinder, arm, two service plates, QD panel thickness, hose lengths, road protection, and deployed clearance envelope pass mockup.
 
 ## 8. AC/DC electrical closeout and tests
 

@@ -1,3 +1,12 @@
+## 2026-07-25 — Amazon web-extension order history reconciled
+
+- Reconciled the owner-provided browser-extension Amazon order-history CSV: `121` line items / `131` units / `$8,644.52` captured item subtotal. The export has no May or June rows despite known purchases in those months, so it is an incomplete YTD capture; prior Gmail/CSV/screenshot records remain authoritative for missing periods. Private order IDs and URLs were excluded from the repo.
+- Added four newly exposed July 24-25 purchases totaling `$88.91`: exact `2-3/8 in` / `60 mm` KUS sender hole saw (`$7.80`), EFIELD faucet-adapter two-pack (`$10.83`), YVSKM accumulator-swivel four-pack (`$11.99`), and Dr.Roc F-350 spare-hoist/lug-wrench extension kit (`$58.29`). BOM rows `233`, `239`, and `240` own those costs/inventory.
+- Enriched earlier reconciled BOM rows with exact ASIN/title data for repeat 2/0 and 4 AWG lugs, July 12 flat-head hardware, 3M foam mounting tape, KUS sender, tank PEX/fill/vent fittings, flooring tools, RV wash brush, and visor mirror without duplicating costs.
+- Updated plumbing owners for the purchased faucet and accumulator adapters. The YVSKM listing says no-lead, but markings, gasket/seat fit, potable documentation, and cold-pressure testing remain acceptance gates; Apollo remains fallback. The purchased hole saw does not clear the tank cut before the sender/port map and flat unobstructed geometry are proven.
+- Closed active electric hot-water remnants: BOM/checklist/finish planning now reserve no electric appliance, dedicated branch, or interior heater cubby. Propane-only Joolca HOTTAP with exact CPC HFC35 NSF BLUE/RED water interface remains the selected path; generic water-QD and propane-QD placeholders are retired.
+- Reconciliation detail: `bom/amazon_order_history_reconciliation_2026-07-25.md`.
+
 ## 2026-07-25 — Propane-only hot water finalized with rear-box package
 
 - Owner closed alternate hot-water branches and selected propane as final. Selected appliance basis is Joolca HOTTAP V2 Essentials: outdoor recreational unit, about `37,500 BTU/hr`, `0.6-1.5 GPM`, recommended `40-60 PSI` / `1.6-3.17 GPM`, and explicitly supported by Joolca for camper-pump input and an existing kitchen faucet. The purchased SHURflo `4008`/SEAFLO pack matches on published values, subject to actual pressure/flow test.
