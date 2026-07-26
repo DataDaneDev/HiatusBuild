@@ -35,6 +35,7 @@ Use this table first whenever you are deciding where to put information.
 | Decisions, risks, assumptions, open questions | [TRACKING](docs/core/TRACKING.md) |
 | Day-by-day progress notes or test evidence | [LOG](logs/LOG.md) |
 | Build procurement line items | [bom_estimated_items.csv](bom/bom_estimated_items.csv) |
+| BOM schema, controlled vocabularies, and editing rules | [BOM data contract](bom/README.md) |
 | Non-build misc/camping shopping items | [bom_misc_items.csv](bom/bom_misc_items.csv) |
 | Electrical load modeling assumptions (Wh) | [load_model_wh.csv](bom/load_model_wh.csv) |
 | Electrical implementation topology details | [ELECTRICAL_overview_diagram](docs/implementation/ELECTRICAL_overview_diagram.md) |
@@ -58,6 +59,7 @@ Use this table first whenever you are deciding where to put information.
 - `docs/temp/` and `docs/legacy/` are non-canonical support layers and must not silently override core docs.
 - Structured inputs own structured facts:
   - [bom_estimated_items.csv](bom/bom_estimated_items.csv) owns current line items and purchase status.
+  - [BOM data contract](bom/README.md) owns the CSV schema and normalization rules.
   - [load_model_wh.csv](bom/load_model_wh.csv) owns load-model inputs and scenario math.
 - [TRACKING](docs/core/TRACKING.md) owns decision, risk, assumption, and open-question status.
 - [LOG](logs/LOG.md) owns dated work evidence, measured outcomes, and test history.

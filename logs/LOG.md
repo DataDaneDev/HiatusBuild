@@ -1,3 +1,10 @@
+## 2026-07-26 — BOM normalized to component-level records
+
+- Audited all `236` legacy BOM rows in separate formatting, lifecycle, duplication, and row-granularity passes. Replaced `77` free-form status strings with `8` controlled values; standardized categories, component wording, ISO purchase dates, and two-decimal costs; and moved lifecycle prefixes out of component names.
+- Split `24` mixed rows into `80` appended component/service records with exact child prices where source evidence existed. The June/July Amazon fit-out order, TNUTZ order, plumbing package, hardware assortments, vehicle electronics, and tooling are now independently filterable. True retail kits and unallocated planning packages remain grouped and are named accordingly.
+- Consolidated duplicate CA-glue and flooring-roller records. Removed `$6.09` of order-level tax and a stale `$46.97` duplicate roller estimate, changing the all-row cost control from `$63,163.64` to `$63,110.58` without dropping any supported component cost.
+- Replaced ambiguous legacy fields with the canonical eight-column contract: `row`, `category`, `component`, `cost`, `cost_basis`, `purchase_date`, `purchase_status`, and `notes`. Added `bom/README.md` plus `scripts/validate-bom.py` to enforce the contract and public-data boundary.
+
 ## 2026-07-26 — HOTTAP direct exterior mount and universal hose ports locked
 
 - Owner selected the Joolca HOTTAP V2, vehicle quick plate, and mounted cover. The heater now stays directly mounted on a structurally backed exterior face of the rear box, protected from dust in travel and outside the propane-cylinder compartment in operation. The articulating arm and box-side water plate are removed from active scope, recovering interior box storage.

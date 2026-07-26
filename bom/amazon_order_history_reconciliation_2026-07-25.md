@@ -30,8 +30,8 @@ All four newly exposed lines are build/truck relevant and are now represented in
 | Date | ASIN | Item | Subtotal | BOM action |
 |---|---|---|---:|---|
 | 2026-07-24 | `B0C8JMH91Q` | `2-3/8 in` / `60 mm` bi-metal hole saw | `$7.80` | Added row `239`; exact KUS `FLS-U` opening tool. Tank cut remains geometry- and port-map-gated. |
-| 2026-07-25 | `B0C7QBNVG9` | EFIELD `1/2 in PEX-B x 3/8 in OD compression male` adapters, 2-pack | `$10.83` | Rolled into row `233`; one for each FORIOUS faucet hose. No PTFE tape at compression seats. |
-| 2026-07-25 | `B0FDFM97HP` | YVSKM `1/2 in PEX-B x 1/2 in female swivel` adapters, 4-pack | `$11.99` | Rolled into row `233`; use one at accumulator outlet and retain three spares. Listing says no-lead, but markings, gasket fit, potable documentation, and pressure test remain acceptance gates. |
+| 2026-07-25 | `B0C7QBNVG9` | EFIELD `1/2 in PEX-B x 3/8 in OD compression male` adapters, 2-pack | `$10.83` | Row `233`; one for each FORIOUS faucet hose. No PTFE tape at compression seats. |
+| 2026-07-25 | `B0FDFM97HP` | YVSKM `1/2 in PEX-B x 1/2 in female swivel` adapters, 4-pack | `$11.99` | Row `319`; use one at accumulator outlet and retain three spares. Listing says no-lead, but markings, gasket fit, potable documentation, and pressure test remain acceptance gates. |
 | 2026-07-25 | `B0GHRQ27J6` | Dr.Roc Super Duty spare-hoist extension/lug-wrench tool kit | `$58.29` | Added row `240`; verify the full assembled extension, spare-hoist drive, lug fit, and stowage on the 2021 F-350 before travel reliance. |
 
 ## Existing lines enriched by the web export
@@ -39,14 +39,14 @@ All four newly exposed lines are build/truck relevant and are now represented in
 No new costs were added for these already-reconciled purchases. The BOM was enriched with exact ASIN/title data where the earlier Gmail or screenshot source had been generic, truncated, or identifier-free:
 
 - TKDMR repeat `2/0 AWG x 5/16 in` lug stock — row `35`, ASIN `B08R6VFF6B`.
-- Sanuke `4 AWG` M8/M10 lug stock — row `37`, ASINs `B092ZM6XY3` and `B092ZN6TGP`.
-- July 12 `1/4-20` flat-head hardware — row `46`, ASINs `B0D6LWGC8X` and `B0D6LW16SD`.
+- Sanuke `4 AWG` lug stock — rows `37` and `242`, ASINs `B092ZM6XY3` and `B092ZN6TGP`.
+- July 12 `1/4-20` flat-head hardware — rows `248-249`, ASINs `B0D6LWGC8X` and `B0D6LW16SD`.
 - `2 in x 10 ft` double-sided foam mounting tape — row `96`, ASIN `B0FPQ29CX1`.
 - KUS `14.5 in` water sender — row `212`, ASIN `B00Y831WYI`.
 - SharkBite PEX adapters and Banjo/Green Leaf fill/vent elbows — rows `218-220`, exact ASINs and item subtotals recorded.
-- Flooring tools, wash-brush kit, and visor mirror — rows `226`, `227`, and `229`, exact ASINs recorded.
+- Flooring roller, paint mixer, wash-brush kit, and visor mirror — rows `175`, `226`, `318`, and `229`, exact ASINs recorded.
 
-Historical lines already owned by rolled-up BOM rows were not duplicated merely to embed every ASIN. Personal consumables and unrelated travel/grooming items remain outside the Hiatus BOM. Exact-ASIN string presence is therefore reconciliation metadata, not the completeness test.
+The `2026-07-26` BOM normalization later split clear multi-item rows into component-level records while preserving this sanitized evidence. Personal consumables and unrelated travel/grooming items remain outside the Hiatus BOM. Exact-ASIN string presence is reconciliation metadata, not the completeness test.
 
 ## Hot-water and plumbing result
 

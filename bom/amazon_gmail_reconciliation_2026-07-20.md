@@ -21,6 +21,8 @@ The canonical BOM continues to use item-subtotal pricing where item detail is av
 - The `2026-06-05` Amazon hardware/fit-out checkout contained two suborders totaling `$1,017.34` gross. Extracted item subtotals total `$952.55` across `38` units / `25` product classes. Removing the returned `$19.99` item leaves `$932.56` of kept item subtotal; the `$21.44` tax-inclusive refund leaves `$995.90` net checkout cost.
 - To avoid double-counting that order in the BOM, the kept `$932.56` item subtotal is split between monitor-arm row `99` (`$179.99`) and aggregate hardware/fit-out row `222` (`$752.57`). Row `222` also includes the later `$21.66` FORRCKY repeat purchase, bringing that row to `$774.23`; the July washer repeat is tracked in row `46` instead.
 
+Subsequent BOM normalization on `2026-07-26` preserved these reconciliation totals but replaced the aggregate layout with component rows. The `$774.23` hardware subtotal is now carried by rows `222` and `295-316`; the July washer and flat-head screw classes are itemized in rows `243-249`. The historical dispositions in the table below describe how the source evidence was first reconciled, not the current row granularity.
+
 ## New-period reconciliation
 
 | Local purchase date | Confirmed items | Price control | BOM disposition |
