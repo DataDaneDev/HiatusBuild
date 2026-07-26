@@ -13,7 +13,7 @@ related:
 
 # Electrical AC BOM (Phase 1)
 
-As-of date: `2026-07-19`
+As-of date: `2026-07-26`
 
 Purpose: maintain the purchased Phase 1 AC architecture baseline: portable `30A` EMS, `30A` shore inlet/cord, one `6-way` DIN enclosure, `30A` AC-in breaker, `30A` AC-out main breaker, and two active `20A` GFCI-protected AC-out branches. Final physical outlet locations and enclosure access remain measurement-gated in the installed camper.
 
@@ -34,6 +34,7 @@ Related docs:
 - Any small cable opening through the plywood electrical backer requires a correctly sized grommet/bushing or gland plus independent cable support/strain relief; bare `10/3` must not bear on a raw plywood edge.
 - Confirm the exterior cover swing, connector clearance, wall/backing thickness, hidden structure/no-drill zone, butyl bedding land, finish-seal geometry, and a path that does not share the wet-side chase.
 - Cut only after the complete inside and outside route is proven. Do not let the easiest exterior location create an inaccessible cable entry or service-obscuring bend behind the electrical module.
+- A black Safoner aluminum cable pass-through hatch sized for a `3.5 in` opening and 30A/50A RV plugs was purchased `2026-07-26` as BOM row `332`. It is an alternate penetration part, not part of the locked Phase 1 chain. Do not replace the purchased L5-30 inlet in row `107`, pass loose `10/3` through the hatch, or omit listed strain relief/weather sealing unless a deliberate topology and code/listing review proves the complete alternate path. Decide use, reserve, or return before any cut.
 
 ## Locked AC Architecture
 

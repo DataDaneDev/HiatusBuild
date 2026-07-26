@@ -46,11 +46,11 @@ It does **not** replace the owner docs:
 - All three `48V` batteries' positive/negative `2/0 AWG` branch leads are cut, lugged, heat-shrunk, and landed at the battery-side busbars. The batteries remain isolated until Batteries 2 and 3 are individually charged, rested, and within `0.1V` before paralleling.
 - The `12V` battery branch is close to completion, and the Orion/fuse panel are already mounted/wired. Final Orion input cleanup is one verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) in Lynx Slot 4 feeding the existing `6 AWG` input pair directly; remove/bypass the separate inline input fuse and retire `F-06`. Slot 2 remains `F-03 60A/80V` for MPPT. Keep `F-07 60A/80V` on Orion `12V` output and `F-11 100A` ANL on the `12V` battery positive branch.
 - The next physical sequence is electrical closeout first: remount MultiPlus/AC panel -> install shore inlet/AC-in path -> charge/equalize/parallel the `48V` bank -> finish `12V`/Orion and prove lights/fan/DC outlets -> bench-test and install tank/pump/wet spine -> close Bench/Galley around tested systems.
-- The shore inlet may proceed once its complete inside/outside path, hidden structure, backer grommet/strain relief, and sealing surfaces are proven. The water-fill/vent penetration still waits for the installed tank geometry and service path.
+- The shore inlet may proceed once its complete inside/outside path, hidden structure, backer grommet/strain relief, and sealing surfaces are proven. The purchased Safoner `3.5 in` cable hatch is alternate hardware only and does not silently replace the locked L5-30 inlet; decide use, reserve, or return before cutting. The water-fill/vent penetration still waits for the installed tank geometry and service path.
 - Final surface direction remains a three-piece Nick black-walnut commission after templates are locked. A temporary Galley plywood counter/template is acceptable before final walnut so sink/faucet geometry can be proven.
 - Plumbing is now active bench/mockup work, but no tank hole is cut before a complete port inventory and bare in-truck dry fit. Build cold-first and hot-ready as a compact fixed pack with minimum fittings; removal of the cooler/panels/part of the 80/20 frame is acceptable for uncommon service.
 - Alternator charging remains a separate commissioning gate. Rough-in/routing with fuses pulled can proceed after floor/module reinstall; first-charge waits for APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior.
-- Solar remains a discovery/provisioning workstream until charging priority and roof real estate are better proven. Hot water is locked to the propane-only Joolca HOTTAP V2 package: direct exterior box mount on the purchased Quick-Release HOTTAP Bracket under the purchased HOTTAP V2 Mount Cover, cylinder restrained inside the permanently vented box, and two compact self-sealing camper QD3 ports used through removable QD3-to-Joolca adapter keys. Bracket backing, cylinder fit/vents, adapter fit, port backing/caps, flow, drainability, and operating clearances remain open.
+- Solar remains a discovery/provisioning workstream until charging priority and roof real estate are better proven. Hot water is locked to the propane-only Joolca HOTTAP V2 package: direct exterior box mount on the purchased Quick-Release HOTTAP Bracket under the purchased HOTTAP V2 Mount Cover, with the purchased Flame King cylinder in an approved restraint inside the permanently vented box. The camper-port layer remains pre-drill; lead prototype is a direct all-metal Joolca/GARDENA-profile plug on a compact stainless bulkhead behind an accessible valve, with QD3 only as fallback. The purchased generic wall-bracket/strap pack is mockup hardware rather than an approved travel restraint, and the purchased pressure gauge is not the default LP path. Bracket backing, cylinder fit/vents, approved restraint, real-hose adapter fit, port backing/caps, flow, drainability, and operating clearances remain open.
 
 ## Historical July 4 sprint strategy
 
@@ -272,7 +272,7 @@ Goal: build and test the fixed cold-water pack plus the selected propane-only BL
 - [ ] Hard-mount the compact plumbing pack: tank shutoff, suction flex, strainer, pump, discharge flex, RecPro double-FIP hose, accumulator, YVSKM female-swivel PEX-B outlet, then one ordinary tee branching to faucet cold while the straight leg continues to the rear BLUE service valve.
 - [ ] When the purchased EFIELD faucet adapters and YVSKM accumulator swivels arrive, inspect gasket/seat/markings, stage the two faucet adapters plus one installed accumulator swivel, and retain the other three swivels as spares. Assemble and cold-pressure-test the tank/pump/accumulator/tee system in the driveway before permanent truck mounting.
 - [ ] Fill with clean water, verify gravity fill/vent behavior, pressure-cycle the `12V` pump, check accumulator behavior, exercise drain/washout paths, and inspect every fitting/seam for leaks.
-- [ ] Preserve the dedicated tank drain plus drainable BLUE/RED QD3 transitions; both supplied Joolca hoses, removable adapter keys, and the HOTTAP must drain after freezing-weather use. Add regulated blowout access only if the installed geometry proves gravity draining insufficient.
+- [ ] Preserve the dedicated tank drain plus drainable BLUE/RED direct-profile transitions; both supplied Joolca hoses and the HOTTAP must drain after freezing-weather use. Add regulated blowout access only if the installed geometry proves gravity draining insufficient.
 - [ ] Do not add a manifold rail, antifreeze pickup, quick-disconnect unions, or three-valve heater bypass by default; preserve a known cooler/panel/frame disassembly path instead.
 - [ ] Add pump electrical connector and strain relief.
 - [ ] Add shallow removable leak tray/pan under pump/strainer/accumulator area.
@@ -284,9 +284,10 @@ Goal: build and test the fixed cold-water pack plus the selected propane-only BL
 - [ ] Build graywater cassette/drain path with winterizable/waterless trap strategy.
 - [ ] Pressure/leak test plumbing before panel closure.
 - [ ] Recheck all clamps/unions after first drive.
-- [x] Finalize hot water as propane-only Joolca HOTTAP V2 directly mounted outside the rear box, using two compact camper QD3 female no-spill ports, removable QD3-to-Joolca adapter keys, and the supplied parked-only `1 m`/`4 m` hoses; electric storage/tankless branches are closed.
+- [x] Finalize hot water as propane-only Joolca HOTTAP V2 directly mounted outside the rear box with the supplied parked-only `1 m`/`4 m` hoses; electric storage/tankless branches are closed. The camper-port hardware remains a pre-drill prototype decision.
 - [x] Purchase one HOTTAP V2 Essentials, one Quick-Release HOTTAP Bracket, and one HOTTAP V2 Mount Cover (`2026-07-26`); receipt, inspection, and physical fit remain open.
-- [ ] [HOLD] Prototype one `QD3-FT10-P` / `QD3-MTN14` port-key set before buying the second or drilling. Prove the actual Joolca hose fit, automatic shutoff, hot flow, drainability, adapter-key rigidity, nominal `M18` panel cut, backing/locknut access, short inside-hose route, simple rubber-cap fit, and operating-clearance envelope. No large hatch, service box, Sea-Dog body, or travel-exposed Melnor adapter is in scope.
+- [ ] [HOLD] When the HOTTAP arrives, bring one actual hose and its supplied double-male coupler to the hardware store. Use Melnor plastic hardware as the profile control; test GARDENA `39004-G`, Melnor brass `15409`, Morvat, and any stocked all-metal Original-GARDENA-profile tap adapter. Also test the double-male coupler in a Melnor `4MQC` water-stop socket. Buy no two-port set and cut no camper hole until latch, seal, play, release, cap, hot-flow, drain, valve-access, panel-thickness, and backing tests pass.
+- [ ] [HOLD] Mock one direct port as `PEX-B -> accessible valve -> UP120A5 -> RAINPAL SSBF020 candidate bulkhead -> verified metal male tap adapter`. If the separate valve/short PEX/UP120 depth or joint count is materially worse, compare one Legend `T-805MNL` PEX-B x MNPT combination valve. Keep QD3 as fallback only if a clean direct-profile prototype fails or automatic shutoff proves worth the key/cost.
 
 ## 8. AC/DC electrical closeout and tests
 
@@ -536,13 +537,13 @@ Run this before assuming a weekend task is blocked.
 
 # Near-term priority queue
 
-## Next shop sequence — after `2026-07-26` HOTTAP procurement
+## Next shop sequence — after `2026-07-26` rear-box procurement
 
-1. Remount the MultiPlus/AC enclosure, complete the shore-inlet route, and commission the battery/`12V` sequence while the Bench service volume is open.
+1. Remount the MultiPlus/AC enclosure, keep the locked L5-30 inlet unless the Safoner alternate passes a deliberate topology/listing review, complete the shore-inlet route, and commission the battery/`12V` sequence while the Bench service volume is open.
 2. Inventory the tank ports and perform the bare-tank in-truck dry fit; prove sender, fill, vent, outlet, drain, restraint, fridge overlap, and service access before drilling.
 3. Receive and inspect the purchased EFIELD faucet adapters, YVSKM accumulator swivels, and exact KUS hole saw; reject any fitting with wrong threads, damaged/missing gasket seats, suspect markings, or unresolved potable-use documentation.
 4. Bench-build and cold-pressure-test the tank/pump/strainer/accumulator/tee pack, then terminate the faucet with the purchased adapters and preserve BLUE/RED service trunks to the rear plate.
-5. Receive, inspect, and mock the purchased rear-box HOTTAP core package—heater, Quick-Release HOTTAP Bracket/backing, HOTTAP V2 Mount Cover—together with the still-open Flame King cylinder restraint/vents, one QD3 port/key prototype, parked-only supplied hoses, regulator service hatch, two simple capped port locations, and operating clearances before any permanent mount or penetration.
+5. Receive, inspect, and mock the purchased rear-box package—HOTTAP heater, Quick-Release HOTTAP Bracket/backing, HOTTAP V2 Mount Cover, Flame King cylinder, and generic bracket/strap candidates—together with the still-open rigid foot capture, approved primary restraint, permanent vents, one direct-profile BLUE/RED port prototype, parked-only supplied hoses, regulator service hatch, two simple capped port locations, and operating clearances before any permanent mount or penetration. Leave the add-on pressure gauge out of the default LP path and keep QD3 as fallback only.
 6. Install and brace only the proven wet-spine/package interfaces, then run local shakedown and post-drive leak/fastener checks.
 
 **Build order:** electrical closeout -> tank/port dry fit -> adapter inspection and cold-water bench test -> wet-spine install -> rear-box HOTTAP package mockup/install -> shakedown.
@@ -555,7 +556,7 @@ Run this before assuming a weekend task is blocked.
 - Shore or water-fill exterior holes before their complete inside routes/endpoints are physically proven.
 - Alternator first-charge.
 - Final solar purchase or roof penetration.
-- Permanent Quick-Release HOTTAP Bracket mount, cylinder cradle/vents, or BLUE/RED service-plate cuts before their package mockup passes.
+- Permanent Quick-Release HOTTAP Bracket mount, cylinder cradle/vents, generic restraint-bracket acceptance, or BLUE/RED service-plate cuts before their package mockup and structural/load-path gates pass.
 - Cosmetic skins everywhere.
 - Permanent monitor mechanism perfection.
 - Final lighting design.
