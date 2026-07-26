@@ -6,14 +6,14 @@ Source at reconciliation time: owner-provided Amazon order-history export. The t
 - Amazon CSV item rows parsed: 138 (duplicate header row skipped)
 - Unit-price sum, ignoring quantity: $8100.30
 - Quantity-extended item subtotal: $9266.68
-- Included in Hiatus/F-350 BOM: $9057.08
-- Excluded as personal/motorcycle/unrelated maintenance/cosmetic: $209.60
+- Included in Hiatus/F-350 BOM: $9067.07
+- Excluded as personal/motorcycle/unrelated maintenance/cosmetic: $199.61
 - Included + excluded cross-check: $9266.68
 
 Interpretation: the Amazon export appears to provide unit/item prices, not extended line totals; quantity must be multiplied. Tax/shipping are not available in this CSV, so Amazon-sourced BOM prices here are item subtotals unless another invoice/order total is documented elsewhere.
 
 ## Files updated
-- `bom/bom_estimated_items.csv` — updated Amazon-verified rows to penny-level item subtotals and added missing build/tool/vehicle rows 194-205.
+- `bom/bom_estimated_items.csv` — updated Amazon-verified rows to penny-level item subtotals and added missing build/tool/vehicle rows 194-205 plus owner-retained truck-accessory row 241.
 - This report — sanitized mapping/audit trail.
 
 ## Mapped Amazon rows
@@ -25,6 +25,7 @@ Interpretation: the Amazon export appears to provide unit/item prices, not exten
 - A006 → BOM row 186: 2026-05-27; qty 1; unit $12.34; ext $12.34; ASIN B09ZV5K198; MIKEDE 10 Pack Strong Neodymium Cup Magnets, 70Lbs+ Holding Force Heavy Duty Round Base Cup Magnets with Coun…
 - A007 → BOM row 183: 2026-05-27; qty 1; unit $59.44; ext $59.44; ASIN B0BNBVKSTH; Victron Energy MK3-USB-C Interface – VE.Bus to USB-C Cable for GX Device Configuration
 - A008 → BOM row 187: 2026-05-27; qty 1; unit $10.99; ext $10.99; ASIN B07MQK7SQH; Silicone Tubing, Home Brewing and Winemaking Silicone Tubing, 10mm(3/8 inch) ID x 13mm(1/2 inch) OD, 10 ft, H…
+- A009 → BOM row 241: 2026-05-27; qty 1; unit $9.99; ext $9.99; ASIN B0D53MGWSF; TFNUO Magnetic Gun Mount for Car Truck with trigger-guard protection — owner-confirmed retained as an F-350/travel accessory.
 - A010 → BOM row 184: 2026-05-27; qty 1; unit $16.31; ext $16.31; ASIN B01CPWVTS2; Victron Energy VE.Direct Cable, 5.90 ft
 - A011 → BOM row 115: 2026-05-27; qty 1; unit $22.99; ext $22.99; ASIN B0FN7H6CR3; Acegoo 118W 12V USB Outlet 100W Type-C Laptop Car Charger,18W QC3.0 USB-A Dual Port Fast Charging Socket, Rep…
 - A012 → BOM row 184: 2026-05-27; qty 1; unit $16.13; ext $16.13; ASIN B01F9ESFZS; Victron Energy VE.Direct Cable, 2.95 ft
@@ -145,7 +146,6 @@ Interpretation: the Amazon export appears to provide unit/item prices, not exten
 - A138 → BOM row 204: 2026-01-17; qty 1; unit $12.99; ext $12.99; ASIN B0C77R7MXQ; BRCOVAN 1'' Ball Mount Base with Aluminum Alloy 4-Hole AMPS Square Plate Compatible with RAM Mounts B Size 1 …
 
 ## Excluded Amazon rows
-- A009: 2026-05-27; qty 1; unit $9.99; ext $9.99; sensitive non-build accessory — excluded from the tracked reference and public build BOM; identifying details intentionally suppressed.
 - A031: 2026-04-21; qty 1; unit $21.08; ext $21.08; ASIN B01AT2A08U; Hiflofiltro HiFlo Motorcycle Air Filter for KTM 1190 1290 HFA6301 — Motorcycle maintenance, not Hiatus/F-350 camper BOM.
 - A032: 2026-04-21; qty 1; unit $61.23; ext $61.23; ASIN B001GMAL0K; Motorex Power Synthetic 4T Motor Oil 10W-50 4 Liter — Motorcycle maintenance, not Hiatus/F-350 camper BOM.
 - A033: 2026-04-21; qty 1; unit $11.99; ext $11.99; ASIN B07MWD8ZVJ; K&N Motorcycle Oil Filter: High Performance, Premium, Designed to be used with Synthetic or Conventional Oils… — Motorcycle maintenance, not Hiatus/F-350 camper BOM.

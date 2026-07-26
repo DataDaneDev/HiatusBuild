@@ -2,7 +2,7 @@
 
 - Closed the delayed read-only audit findings against the pushed Amazon reconciliation. Active `PROJECT`, `SYSTEMS`, `TRACKING`, interior-layout, and live-checklist guidance now treats propane-only Joolca HOTTAP V2 as selected; remaining work is physical rear-box cylinder/vent, arm/travel-latch, BLUE/RED service-plate, hose, road-protection, deployed-clearance, leak-test, and freeze-drain validation rather than heater selection.
 - Converted remaining faucet/accumulator language from sourcing to receipt/inspection/test gates for the purchased EFIELD two-pack and YVSKM four-pack. Split KUS hole-saw procurement from the still-open tank-cut gate and added the Dr.Roc spare-hoist/lug-wrench fit-and-function test before travel reliance.
-- Sanitized the tracked Amazon reference to `126` build/truck lines totaling `$9,057.08`: removed account-scoped order fields, normalized item links to public ASIN URLs, and omitted `12` personal/motorcycle/unrelated/sensitive lines totaling `$209.60`. The original source was retained in the owner-only local cache.
+- Sanitized the tracked Amazon reference to `127` retained build/truck lines totaling `$9,067.07`: removed account-scoped order fields, normalized item links to public ASIN URLs, and omitted `11` personal/motorcycle/unrelated maintenance/cosmetic lines totaling `$199.61`. The owner explicitly retained the TFNUO magnetic gun mount as an F-350/travel accessory in BOM row `241`.
 - Added a narrow public-repo rule: invoices, raw account-order pages, order IDs, account-scoped URLs, addresses, and payment data stay out; sanitized purchase facts remain allowed. Refreshed the active `2026-07-25` posture and regenerated `PROJECT.pdf` and `SYSTEMS.pdf` from their owning source docs.
 
 ## 2026-07-25 — Amazon web-extension order history reconciled
@@ -303,7 +303,7 @@
 ## 2026-06-01 — Amazon order-history BOM reconciliation
 
 - Reconciled `references/amazon_order_history.csv` against `bom/bom_estimated_items.csv` using quantity-extended item subtotals from the export; duplicate embedded CSV header row was ignored.
-- Amazon CSV arithmetic: `138` item rows, `$9,266.68` quantity-extended item subtotal, `$9,057.08` mapped into the Hiatus/F-350 BOM, and `$209.60` excluded as non-build/personal/motorcycle/unrelated maintenance/cosmetic.
+- Amazon CSV arithmetic: `138` item rows, `$9,266.68` quantity-extended item subtotal, `$9,067.07` mapped into the Hiatus/F-350 BOM, and `$199.61` excluded as personal/motorcycle/unrelated maintenance/cosmetic.
 - Added sanitized audit trail at `bom/amazon_order_history_reconciliation_2026-06-01.md`; raw private order fields were not copied into the report.
 
 ## 2026-06-01 — MultiPlus profile verification blocker closed and board finish gate clarified
