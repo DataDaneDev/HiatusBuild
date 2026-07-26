@@ -481,7 +481,7 @@ Every permanent inline fitting after the accumulator is therefore:
 
 The CPC HFC12 NSF parts are rated to `60 PSI`; that is close to the SHURflo's `55 PSI` nominal cutoff. Verify actual dead-head pressure with a gauge after accumulator setup. Do not commission this coupling set if measured pressure exceeds `60 PSI`; substitute a higher-rated potable coupling family rather than accepting an overpressure condition.
 
-Use straight-through/non-valved QDs, not hidden automatic checks. Operating sequence is close both interior valves, make both exterior connections, open BLUE then RED, run the faucet until air clears, and then use hot water. Shutdown is close propane, close BLUE, open the faucet to relieve pressure, close RED, disconnect, drain both hoses and the HOTTAP, cap the ports, and stow dry. In freezing weather, perform that drain sequence after every use.
+Use straight-through/non-valved QDs, not hidden automatic checks. Operating sequence is close both interior valves, make both exterior connections, open RED then BLUE, run the faucet until air clears, and then use hot water. Shutdown is close propane, close BLUE, open the faucet to relieve pressure, close RED, disconnect, drain both hoses and the HOTTAP, cap the ports, and stow dry. In freezing weather, perform that drain sequence after every use.
 
 Keep three rear functions distinct:
 
