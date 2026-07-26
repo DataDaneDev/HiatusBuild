@@ -1,9 +1,9 @@
-## 2026-07-25 — Post-reconciliation audit and public-boundary cleanup
+## 2026-07-25 — Post-reconciliation audit and source cleanup
 
 - Closed the delayed read-only audit findings against the pushed Amazon reconciliation. Active `PROJECT`, `SYSTEMS`, `TRACKING`, interior-layout, and live-checklist guidance now treats propane-only Joolca HOTTAP V2 as selected; remaining work is physical rear-box cylinder/vent, arm/travel-latch, BLUE/RED service-plate, hose, road-protection, deployed-clearance, leak-test, and freeze-drain validation rather than heater selection.
 - Converted remaining faucet/accumulator language from sourcing to receipt/inspection/test gates for the purchased EFIELD two-pack and YVSKM four-pack. Split KUS hole-saw procurement from the still-open tank-cut gate and added the Dr.Roc spare-hoist/lug-wrench fit-and-function test before travel reliance.
-- Sanitized the tracked Amazon reference to `126` build/truck lines totaling `$9,057.08`: removed all account-scoped order fields, normalized item links to public ASIN URLs, and omitted `12` personal/motorcycle/unrelated/sensitive lines totaling `$209.60`. The original private evidence was retained outside the public repo with owner-only file permissions.
-- Added a repo-agent rule forbidding raw order histories/invoices with account or personal fields, refreshed the active `2026-07-25` posture, and regenerated `PROJECT.pdf` and `SYSTEMS.pdf` from their owning source docs.
+- Sanitized the tracked Amazon reference to `126` build/truck lines totaling `$9,057.08`: removed account-scoped order fields, normalized item links to public ASIN URLs, and omitted `12` personal/motorcycle/unrelated/sensitive lines totaling `$209.60`. The original source was retained in the owner-only local cache.
+- Refreshed the active `2026-07-25` posture and regenerated `PROJECT.pdf` and `SYSTEMS.pdf` from their owning source docs.
 
 ## 2026-07-25 — Amazon web-extension order history reconciled
 

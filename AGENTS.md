@@ -24,7 +24,6 @@ This repo is Dane/Sunny's public Hiatus/F-350 camper build source of truth. Keep
 
 - Run `git diff --check`.
 - Scan changed text for secrets/private data and accidental public exposure.
-- Never commit raw order-history or invoice exports containing order IDs, account-scoped URLs, addresses, payment data, or unrelated personal items. Track only sanitized build/truck fields needed for BOM evidence.
 - Check markdown sanity for changed files: balanced code fences, no malformed headings, no broken local links introduced.
 - If changed docs have tracked PDF exports in `docs/pdf_exports/`, regenerate the affected PDFs/assets with `scripts/export-doc-pdfs.mjs` before commit.
 - Review `git diff --stat` and enough context to catch stale-date replacements, duplicated sections, or historical text accidentally reactivated as current guidance.
