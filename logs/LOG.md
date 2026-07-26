@@ -7,6 +7,12 @@
 - Repaired active-doc drift: Lynx tracked price and four-slot count, Orion Slot 4 `F-05` topology, retired standalone `F-06`, electrical-module restraint language, battery-bank commissioning gates, AC breaker row references, and fuse-inventory references.
 - Completed a repository-wide row-reference pass for every split parent. Canonical/current documents now point to child rows where the original aggregate meaning changed; historical plans, decision records, and reconciliation tables retain their dated facts, with explicit current-row mapping notes where an unannotated old reference would be misleading.
 
+## 2026-07-26 — HOTTAP camper ports corrected to compact no-spill QD3
+
+- Owner rejected the Sea-Dog `513120-1` plus permanent Melnor `2MQC` wall stack: the plastic adapter was visually bulky/vulnerable, the Sea-Dog and male garden plug were straight-through, and using the Sea-Dog cap required screwing the adapter on/off every camp. A large protective hatch or RV spray-port fixture is explicitly out of scope.
+- Replaced only the camper-port layer with two Koolance `QD3-FT10-P` female no-spill panel couplings and removable adapter keys. QD3 automatically obstructs both disconnected halves, leaving the existing BLUE/RED ball valves for service/winterization instead of routine setup. The exterior remains two small capped nubs; the direct-mount HOTTAP, supplied `1 m`/`4 m` hose modes, and no-arm/no-box-plate/no-splitter decisions remain unchanged.
+- Prototype one key before duplicating: `QD3-MTN14` -> `1/4 in FNPT x 3/4 in MGHT` reducer -> Melnor brass `15409` fit-test adapter. If `15409` does not mate with the actual Joolca female socket, use verified-profile `2MQC` only on the removable key. No camper cut occurs before port projection, backed-panel/locknut access, hose fit, shutoff, hot flow, drainability, and simple stretch-cap fit are proven.
+
 ## 2026-07-26 — BOM normalized to component-level records
 
 - Audited all `236` legacy BOM rows in separate formatting, lifecycle, duplication, and row-granularity passes. Replaced `77` free-form status strings with `8` controlled values; standardized categories, component wording, ISO purchase dates, and two-decimal costs; and moved lifecycle prefixes out of component names.

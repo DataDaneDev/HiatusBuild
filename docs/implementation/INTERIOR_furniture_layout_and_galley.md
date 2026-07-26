@@ -334,7 +334,7 @@ Non-obvious feature: make the fridge skeleton do double duty as the hard mountin
 
 ### Core recommendation
 
-Build a **propane-only, parked-connection hot-water system** around the existing cold-water pack, one camper BLUE/RED plate, and a HOTTAP mounted directly to the exterior side of the rear swingout box. Joolca's vehicle quick plate and mounted cover keep the heater outside the propane compartment, protected from road dust, and out of the box's storage volume. No articulating arm, box-side water plate, heater cubby, or permanent three-way splitter remains.
+Build a **propane-only, parked-connection hot-water system** around the existing cold-water pack, two compact self-sealing camper ports, and a HOTTAP mounted directly to the exterior side of the rear swingout box. Joolca's vehicle quick plate and mounted cover keep the heater outside the propane compartment, protected from road dust, and out of the box's storage volume. No articulating arm, box-side water plate, heater cubby, permanent three-way splitter, Sea-Dog washdown body, or travel-exposed plastic faucet adapter remains.
 
 Current north/middle/south routing concept (`2026-07-26`; FORIOUS faucet interfaces confirmed at `3/8 in`; exact faucet and accumulator adapters purchased; camper service-plate fit remains field-gated):
 
@@ -345,25 +345,27 @@ MIDDLE: fresh tank
   -> NORTH: strainer -> pump -> flex -> accumulator
   -> one 1/2 in PEX cold tee
       -> branch: faucet cold
-      -> straight: rear BLUE service valve -> UP120A5 -> Sea-Dog 513120-1
-                   -> Melnor 2MQC male QuickConnect (BLUE cold out)
+      -> straight: rear BLUE service valve -> UP120A5
+                   -> 1/2 in FNPT x 3/8 in hose barb -> short reinforced hose
+                   -> QD3-FT10-P female no-spill panel coupling (BLUE cold out)
 
 Separate RED path:
 faucet hot <- insulated 1/2 in PEX <- RED service valve
-           <- UP120A5 <- Sea-Dog 513120-1
-           <- Melnor 2MQC male QuickConnect (RED hot return)
+           <- UP120A5 <- 1/2 in FNPT x 3/8 in hose barb
+           <- short reinforced hose <- QD3-FT10-P female no-spill panel coupling
+                                          (RED hot return)
 
 Parked hose modes using the supplied Joolca female/female hoses:
 HOT SHOWER:
-  camper BLUE -> supplied 1 m hose -> HOTTAP inlet
+  camper BLUE QD3 -> BLUE adapter key -> supplied 1 m hose -> HOTTAP inlet
   HOTTAP outlet -> supplied 4 m hose -> shower handle/head
 
 SINK HOT:
-  camper BLUE -> supplied 1 m hose -> HOTTAP inlet
-  HOTTAP outlet -> supplied 4 m hose -> camper RED -> faucet hot
+  camper BLUE QD3 -> BLUE adapter key -> supplied 1 m hose -> HOTTAP inlet
+  HOTTAP outlet -> supplied 4 m hose -> RED adapter key -> camper RED QD3 -> faucet hot
 
 COLD MOTO SPRAYER:
-  camper BLUE -> supplied 4 m hose -> shower handle/head
+  camper BLUE QD3 -> BLUE adapter key -> supplied 4 m hose -> shower handle/head
   HOTTAP and LP remain disconnected
 
 Separate unpressurized paths
@@ -372,7 +374,7 @@ Separate unpressurized paths
   -> sink gray drain/graywater cassette
 ```
 
-Opening the faucet hot side in sink mode creates flow through the pump, BLUE port/hose, heater, RED hose/port, and faucet; the HOTTAP ignites once flow exceeds approximately `0.6 GPM`. The purchased SHURflo `4008` is nominally `3.0 GPM` / `55 PSI`, below Melnor's published `80 PSI` QuickConnect maximum, subject to actual dead-head/cycling-pressure test. One-outlet-at-a-time operation deliberately swaps the supplied `4 m` hose between the shower handle/head and camper RED rather than permanently adding a splitter and another hose.
+Opening the faucet hot side in sink mode creates flow through the pump, BLUE port/hose, heater, RED hose/port, and faucet; the HOTTAP ignites once flow exceeds approximately `0.6 GPM`. One-outlet-at-a-time operation deliberately swaps the supplied `4 m` hose between the shower handle/head and camper RED rather than permanently adding a splitter and another hose. Each camper QD3 female body and each matching QD3 male adapter key automatically obstructs flow when disconnected, so the interior BLUE/RED ball valves remain service/winterization isolation rather than camp-setup controls.
 
 The Joolca shower is modular at both connections: the shower head quick-connects to the handle, and the handle/head assembly quick-connects to the long hose. For camper RED service, disconnect the entire handle/head assembly from the `4 m` hose, leaving the hose's female socket free to snap onto the RED male plug. Do not assume the bare shower head replaces the handle; preserve the handle's control/connection role.
 
@@ -389,14 +391,15 @@ Hard-mount the existing plumbing compactly in the under-cooler/adjacent bench st
 - Short discharge flex.
 - Accumulator.
 - One ordinary `1/2 in` PEX tee: faucet cold branch plus continued cold-out trunk.
-- One accessible full-port `1/2 in` PEX ball valve immediately inside each rear service port.
-- Two existing `UP120A5` `1/2 in PEX x 1/2 in MNPT` adapters directly into the Sea-Dog bodies' `1/2 in FIP` backs.
-- Two Sea-Dog `513120-1` 316-stainless straight-through bulkhead outlets, each fitted outside with one Melnor `2MQC` faucet adapter.
+- One accessible full-port `1/2 in` PEX ball valve immediately inside each rear service port, retained for service/winterization but not routine setup.
+- Two existing `UP120A5` `1/2 in PEX x 1/2 in MNPT` adapters, each feeding a `1/2 in FNPT x 3/8 in` hose barb and short supported length of hot-water-capable reinforced `3/8 in ID` hose.
+- Two Koolance `QD3-FT10-P` female no-spill panel couplings. Each uses a single `M18 x 1.0` panel shank/retaining nut, a `10 mm / 3/8 in ID` rear barb, and automatic shutoff on disconnection.
+- Two permanently assembled removable adapter keys: Koolance `QD3-MTN14` male no-spill coupling -> `1/4 in FNPT x 3/4 in MGHT` brass reducer -> proven Joolca-compatible male garden QuickConnect adapter. Melnor brass `15409` is the preferred all-metal fit-test candidate; the verified-profile plastic `2MQC` is fallback only on the removable key if `15409` does not bench-snap to the actual Joolca hose.
 - One insulated, joint-minimized `1/2 in` PEX hot-return trunk from the RED service valve to faucet hot.
 
-The two Sea-Dog outlets mount through one thin aluminum camper service plate, not by crushing the camper sandwich wall between the outlet flanges and backs. Bed the plate with butyl, mechanically fasten it to proven backing, finish-seal its perimeter, sleeve/protect the wall-core penetration, and provide a weather/road cover. The Sea-Dog bodies are straight-through and include threaded MGHT caps; Melnor `2MQC` adapters occupy those same threads. Until measured adapter-on TPU caps or a small protective hatch are proven, remove the `2MQC` adapters for travel and install the Sea-Dog threaded caps. Close both camper ball valves before disconnecting.
+The QD3 bodies mount through one thin, structurally backed aluminum service plate or two locally reinforced thin-panel holes; they do not clamp across the full camper sandwich wall. Koolance's drawing shows a maximum exterior envelope of about `26.1 mm` across the front hex and about `33.1 mm / 1.30 in` projection from the mounting shoulder, with roughly `23 mm` behind the mounting shoulder to the barb tip. Use the actual part and STEP/drawing to lock the nominal `M18` clearance hole and available panel thickness before cutting. Bed/isolate the plated-brass body from aluminum with a thin compatible gasket/isolator and use a simple measured stretch cap over each round coupling for road dust; no large hatch, box, or service-door cover is allowed. The two adapter keys unplug and travel with the hoses.
 
-Do not add a camper-side cold/hot manifold, three-valve bypass, permanent antifreeze pickup, exterior selector, box-side plate, CPC adapters, or permanent hot splitter. The two camper service valves are the only new permanent operational valves. Faucet cold remains available with both service valves closed and the external heater disconnected.
+Do not add a camper-side cold/hot manifold, three-valve bypass, permanent antifreeze pickup, exterior selector, box-side plate, CPC adapters, Sea-Dog/GHT stack, or permanent hot splitter. The two camper service valves remain accessible isolation valves but normally stay in their proven operating positions; the QD3 poppets perform routine connect/disconnect shutoff. Faucet cold remains available with the external heater disconnected.
 
 Stock wet-tray footnote: any pump/accumulator/strainer area below the lofted fridge should have a shallow removable wet tray or pan with small upturned edges, a visible inspection/leak-sensor point, and a path to lift/wipe/dry it through the documented disassembly sequence. Treat it as early warning and cleanup management, not as primary containment; plumbing joints still need proper fittings, clamps, support, strain relief, and post-drive leak checks.
 
@@ -453,7 +456,7 @@ Implications:
 
 ### Propane hot-water routing baseline (`2026-07-26` owner-corrected final direction)
 
-The final architecture is propane-only and uses the existing pump/accumulator, one camper BLUE/RED plate, and the two female/female hoses supplied with HOTTAP Essentials. Preserve the tank's assigned functions: upper south ports for gravity fill and unrestricted vent, low north `1/2 in` port for pump pickup, and low south `1/2 in` port as a dedicated gravity tank drain.
+The final architecture is propane-only and uses the existing pump/accumulator, two compact camper QD3 no-spill ports, two removable QD3-to-Joolca adapter keys, and the two female/female hoses supplied with HOTTAP Essentials. Preserve the tank's assigned functions: upper south ports for gravity fill and unrestricted vent, low north `1/2 in` port for pump pickup, and low south `1/2 in` port as a dedicated gravity tank drain.
 
 ```text
 low north tank pickup
@@ -463,23 +466,26 @@ low north tank pickup
        -> branch: 1/2 in PEX -> faucet-cold adapter -> faucet cold
        -> straight: 1/2 in PEX -> BLUE full-port service valve
                     -> UP120A5 MNPT/PEX adapter
-                    -> BLUE Sea-Dog 513120-1 bulkhead
-                    -> Melnor 2MQC male QuickConnect
+                    -> 1/2 in FNPT x 3/8 in barb -> short reinforced hose
+                    -> BLUE QD3-FT10-P female no-spill panel coupling
 
 HOTTAP mounted directly outside the box on Joolca vehicle quick plate
-camper BLUE -> supplied 1 m female/female hose -> HOTTAP blue inlet
+camper BLUE QD3 -> BLUE adapter key
+  -> supplied 1 m female/female hose -> HOTTAP blue inlet
 
 Shower mode:
 HOTTAP red outlet -> supplied 4 m female/female hose -> shower handle/head
 
 Sink-hot mode:
 HOTTAP red outlet -> supplied 4 m female/female hose
-  -> RED Melnor 2MQC -> Sea-Dog 513120-1 bulkhead
-  -> UP120A5 -> RED full-port service valve -> insulated 1/2 in PEX
+  -> RED adapter key -> RED QD3-FT10-P female no-spill panel coupling
+  -> short reinforced hose -> UP120A5 -> RED full-port service valve
+  -> insulated 1/2 in PEX
   -> faucet-hot adapter -> faucet hot
 
 Cold-sprayer mode:
-camper BLUE -> supplied 4 m female/female hose -> shower handle/head
+camper BLUE QD3 -> BLUE adapter key
+  -> supplied 4 m female/female hose -> shower handle/head
 HOTTAP and LP disconnected
 ```
 
@@ -487,19 +493,19 @@ The fixed camper and heater-package fitting stack is therefore:
 
 1. One `1/2 in` PEX tee.
 2. Two purchased EFIELD faucet adapters: `1/2 in PEX-B barb x 3/8 in OD compression male`, two-pack ASIN `B0C7QBNVG9`, purchased `2026-07-25`. The FORIOUS manual identifies both factory hot/cold supply hoses as `3/8 in`; screw each hose nut directly onto the adapter's male compression seat after removing any loose tube-compression nut/ferrule supplied with the adapter. Do not use PTFE tape on this compression connection.
-3. Two existing full-port `1/2 in` PEX ball valves, one at each rear service port.
+3. Two existing full-port `1/2 in` PEX ball valves, one at each rear service port. Retain them as normally untouched service/winterization isolation; they are not part of routine camp setup.
 4. Two existing SharkBite `UP120A5` `1/2 in PEX x 1/2 in MNPT` adapters.
-5. Two Sea-Dog `513120-1` 316-stainless straight-through washdown outlets, each `1/2 in FIP x 3/4 in MGHT`, mounted on one backed camper plate. Sea-Dog explicitly requires separate valves; the two existing PEX ball valves satisfy that role.
-6. Two Melnor `2MQC` Faucet Adapters, one threaded onto each Sea-Dog MGHT to expose the male QuickConnect profile. The Melnor `65134AMZ` five-piece starter set / Amazon ASIN `B09YT59H2Q` includes one `2MQC`; source one additional adapter or a second kit.
-7. The HOTTAP Essentials supplied hose assembly: one `1 m` and one `4 m` red hose, each with female QuickConnect sockets at both ends. No hose cutting or added barbs/clamps.
-8. One thin, backed aluminum camper two-port plate with butyl bedding, perimeter sealant, protected wall-core sleeve/grommet, BLUE/RED labels, and weather/road protection.
-9. Twelve `1/2 in` PEX cinch clamps downstream of the accumulator: one at the accepted YVSKM accumulator adapter, three at the tee, one at each faucet adapter, two at each service valve, and one at each `UP120A5` transition. The YVSKM four-pack (ASIN `B0FDFM97HP`) was purchased `2026-07-25`; use one and retain three spares. Inspect markings and supplied gaskets, verify fit, and cold-pressure-test; Apollo `APXFB1212S` / `CPXFB1212S` remains the fallback. The purchased RecPro `30 in` double-FIP braided hose handles the pump-side accumulator connection.
-10. Potable-water-rated PTFE tape or thread sealant on the two `UP120A5` MNPT-to-Sea-Dog FIP joints only; do not apply thread sealant to compression seats, Melnor/Joolca QuickConnect O-rings, MGHT washer seats, or Joolca gasketed/BSP connections unless that fitting's instructions require it.
-11. The Sea-Dog threaded caps for initial travel/dust protection with the `2MQC` adapters removed. If adapter-on one-click travel is desired, measure the real male plug and prove a tethered TPU cap or place both ports behind a small protective hatch; Melnor does not publish a matching rubber dust-cap SKU.
+5. Two `1/2 in FNPT x 3/8 in` hose barbs, short supported lengths of hot-water-capable reinforced `3/8 in ID` hose, and proper clamps for the actual hose OD.
+6. Two Koolance `QD3-FT10-P` female no-spill panel couplings. Koolance specifies automatic shutoff, `10 mm / 3/8 in ID` barbs, `M18 x 1.0` panel shanks, EPDM seals, and wetted brass/nickel/stainless materials.
+7. Two removable adapter keys, permanently assembled once: Koolance `QD3-MTN14` male no-spill coupling -> Hooshing `1/4 in FNPT x 3/4 in MGHT` brass reducer (Amazon ASIN `B0CYSL1P28`) -> proven Joolca-compatible male garden QuickConnect. Melnor brass `15409` is the preferred fit-test end; verified-profile plastic `2MQC` is fallback only if `15409` fails the actual Joolca hose test.
+8. The HOTTAP Essentials supplied hose assembly: one `1 m` and one `4 m` red hose, each with female QuickConnect sockets at both ends. No hose cutting is required.
+9. One thin, backed aluminum camper two-port plate or two locally reinforced thin-panel holes with BLUE/RED labels, compatible sealing/isolation, protected wall-core passage, and two simple measured stretch caps. No hatch or service box.
+10. Twelve `1/2 in` PEX cinch clamps downstream of the accumulator: one at the accepted YVSKM accumulator adapter, three at the tee, one at each faucet adapter, two at each service valve, and one at each `UP120A5` transition. The YVSKM four-pack (ASIN `B0FDFM97HP`) was purchased `2026-07-25`; use one and retain three spares. Inspect markings and supplied gaskets, verify fit, and cold-pressure-test; Apollo `APXFB1212S` / `CPXFB1212S` remains the fallback. The purchased RecPro `30 in` double-FIP braided hose handles the pump-side accumulator connection.
+11. Compatible thread sealant on the two `UP120A5` MNPT-to-barb FNPT joints and the adapter keys' NPT joints only; use proper flat washers on GHT seats. Do not apply thread sealant to compression seats, Joolca/Melnor QuickConnect O-rings, GHT washer seats, QD3 coupling faces, or Joolca gasketed/BSP connections unless that fitting's instructions require it.
 
-Melnor publishes an `80 PSI` maximum for the QuickConnect system. The SHURflo's nominal `55 PSI` cutoff should fit, but acceptance requires measuring actual dead-head/cycling pressure and checking for startup transients. Melnor does not publish an NSF potable-water certification or standalone hot-water temperature rating for `2MQC`; Joolca nevertheless explicitly approves Melnor QuickConnect compatibility and routes the same connector profile on its hot-water/faucet system. Treat the BLUE external service hose and the complete heated side as recreational wash hardware, keep drinking water on the untouched interior cold faucet branch, and clean/cap the external connectors.
+Koolance publishes automatic obstruction on both disconnected QD3 halves and approximately `0.2 ml` release at low internal pressure; higher system pressure can release more than that small nominal amount, but the disconnected port does not remain open-flow. Koolance does not publish potable-water or exterior-road certification for QD3. Treat the BLUE external service hose and complete heated side as recreational wash hardware, keep drinking water on the untouched interior cold faucet branch, cap/inspect the exterior sockets, and prove the assembled system physically before drilling.
 
-Use straight-through/non-valved camper ports behind accessible manual valves. One mode is configured at a time: cold sprayer, hot shower, or sink hot. For sink hot, close both valves, connect the `1 m` BLUE feed and `4 m` RED return, connect/leak-check LP, open RED then BLUE, open LP, and run the hot faucet until air clears and ignition stabilizes. For hot shower, RED remains closed and the `4 m` hose goes to the handle/head. For cold spray, LP remains disconnected and the `4 m` hose runs from BLUE to the handle/head. Shutdown is close LP, close BLUE, open the active outlet to relieve pressure, close RED if used, disconnect/drain both hoses, drain the HOTTAP when freezing conditions require it, clean/cap the camper plugs, disconnect LP for travel, and secure the mounted cover.
+One mode is configured at a time: cold sprayer, hot shower, or sink hot. The two adapter keys make the cross-ecosystem transition without any threading at camp. Once the inside service valves are commissioned, routine setup is click-only and the QD3 poppets stop flow when disconnected. Shutdown is close LP, relieve at the active outlet, unplug/drain both hoses and keys, drain the HOTTAP when freezing conditions require it, clean/cap the camper sockets, disconnect LP for travel, and secure the mounted cover.
 
 Keep three rear functions distinct:
 
@@ -521,7 +527,7 @@ The reported shelf opening is `19.5 in`, leaving only `0.25 in` nominal vertical
 
 The HOTTAP manual states that the recreational appliance is not allowed to supply drinking or sanitary water, while Joolca support separately documents connection to an existing kitchen faucet. Resolve that conservatively: use the heated side as recreational sink/shower wash water only, never as drinking water or as a purification step. The cold branch bypasses the heater and remains the drinking-water path.
 
-Current sourcing posture: buy the HOTTAP V2 Essentials, vehicle quick plate, and mounted cover directly from Joolca or an authorized source. Amazon's HOTTAP Nomad kit includes a pump that duplicates the purchased SHURflo system. Use two Sea-Dog `513120-1` outlets (official spec `1/2 in FIP x 3/4 in MGHT`, Amazon ASIN `B01N41352M`) and two Melnor `2MQC` Faucet Adapters. The Melnor `65134AMZ` starter kit / Amazon ASIN `B09YT59H2Q` contains one faucet adapter plus useful test/spare connectors. Optional Joolca `SP026` `2 m` blue Pumping Hose Assembly is fallback only if the included `1 m` hose cannot span camper BLUE to heater without strain. The exact Flame King `YSN10LB-ALM` is Amazon ASIN `B0DRRP9F8G`.
+Current sourcing posture: buy the HOTTAP V2 Essentials, vehicle quick plate, and mounted cover directly from Joolca or an authorized source. Amazon's HOTTAP Nomad kit includes a pump that duplicates the purchased SHURflo system. Prototype one Koolance `QD3-FT10-P`, one `QD3-MTN14`, one brass reducer from the Hooshing ASIN `B0CYSL1P28` two-pack, and one Melnor brass `15409` before duplicating. If `15409` does not click into the actual Joolca hose, substitute verified-profile `2MQC` only on the removable key. The measured camper-to-heater span is about `19 in`, so the supplied `1 m` hose is sufficient and optional Joolca `SP026` is not currently required. The exact Flame King `YSN10LB-ALM` is Amazon ASIN `B0DRRP9F8G`.
 
 For sink graywater, start with a removable under-sink vessel before adding an under-truck tank. Mock `2.5 gal` (`~20.9 lb` water) and `5 gal` (`~41.7 lb` water) sizes with the actual sink drain. The baseline should include a compact waterless trap, vented container connection, positive travel retention, removable spill tray/leak-sensor point, and a lift path that works when full. An under-truck gray tank remains a post-shakedown option because it adds a bed penetration, external vent/dump hardware, road-debris protection, freeze exposure, and legal-dump discipline; its dump valve should not be treated as a normally open drain.
 
@@ -556,28 +562,28 @@ The decision is final: hot water is supplied only by the camp-deployed propane s
 ### Sink mode
 
 1. Remove/open the HOTTAP mounted cover and verify the exterior heater and exhaust zone are clear.
-2. With both camper service valves closed, connect the supplied `1 m` hose from BLUE to the HOTTAP inlet and the supplied `4 m` hose from the HOTTAP outlet to RED.
-3. Disconnect the shower handle/head assembly from the `4 m` hose; the hose's female socket snaps directly onto the RED Melnor male plug.
+2. Leave the commissioned BLUE/RED service valves in their normal positions. Snap the BLUE adapter key into the camper QD3 and the supplied `1 m` hose; connect the other hose end to the HOTTAP inlet.
+3. Disconnect the shower handle/head assembly from the `4 m` hose, snap the RED adapter key into that free female hose socket, connect the other hose end to the HOTTAP outlet, and snap the key into camper RED.
 4. Connect the supplied regulator/hose from the upright, restrained `10 lb` cylinder through the protected service hatch to the exterior heater; route it clear of sharp edges/exhaust and leak-check the disturbed LP connection.
-5. Open RED, then BLUE, then the propane cylinder.
+5. Open the propane cylinder.
 6. Open the faucet hot side fully until air clears and the heater ignites; set temperature at the HOTTAP and minimize cold mixing so heater flow stays above `0.6 GPM`.
 
 ### Shower mode
 
-With RED closed, connect the `1 m` hose from BLUE to the HOTTAP inlet and the `4 m` hose from HOTTAP outlet to the shower handle/head. Connect/leak-check LP, open BLUE and LP, then use the shower control. Sink hot is not simultaneously connected in the minimal configuration.
+Snap the BLUE adapter key between camper BLUE and the `1 m` hose, then connect that hose to the HOTTAP inlet. Connect the `4 m` hose from HOTTAP outlet to the shower handle/head. Camper RED remains automatically sealed with no hose attached. Connect/leak-check LP, open LP, then use the shower control. Sink hot is not simultaneously connected in the minimal configuration.
 
 ### Cold moto-sprayer mode
 
-Keep LP disconnected. With RED closed, connect the `4 m` hose directly from camper BLUE to the shower handle/head, open BLUE, and use the shower control as a pressurized cold sprayer. Clean the hose ends before later connecting to RED/hot service.
+Keep LP disconnected. Snap the BLUE adapter key between camper BLUE and the `4 m` hose, connect the other hose end to the shower handle/head, and use the shower control as a pressurized cold sprayer. Camper RED remains automatically sealed. Clean the hose ends before later connecting to RED/hot service.
 
 ### Shutdown and freeze protection
 
 1. Close the propane cylinder, then disconnect the regulator/hose before travel.
-2. Close the BLUE camper service valve.
-3. Open the active faucet/shower to relieve pressure.
-4. Close the RED camper service valve.
-5. Disconnect and gravity-drain both supplied hoses; clean/cap the camper male plugs and hose sockets.
-6. In freezing conditions, follow the HOTTAP manual's drain/storage procedure after every use and confirm the Sea-Dog exterior stubs can drain with both manual valves accessible.
+2. Open the active faucet/shower control to relieve pressure.
+3. Disconnect and gravity-drain both supplied hoses and removable adapter keys; expect only the QD's small disconnect release rather than an open flowing port.
+4. Clean the recessed camper QD3 sockets and install their measured stretch caps; clean the Joolca hose sockets before storage.
+5. In freezing conditions, use the accessible BLUE/RED ball valves as needed for isolation/blowout and follow the HOTTAP manual's drain/storage procedure after every use; confirm the short QD3-to-PEX transitions drain without trapped low points.
+6. Leave the service valves in the documented winterized or normal-use state rather than treating them as camp-connect controls.
 7. Confirm the exterior heater is dry, LP/water-disconnected, and protected by its mounted cover; confirm the upright cylinder is valve-closed and fully restrained.
 
 ---
