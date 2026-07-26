@@ -2,7 +2,7 @@
 
 - Owner confirmed a five-item purchase: Safoner black aluminum `3.5 in` RV cable pass-through hatch (`$26.99`), CALPOSE QCC1 propane pressure gauge (`$10.99`), AWW grey `23.6 x 15.5 in` foldable stone bath mat (`$29.99`), generic orange cylinder wall-bracket/`59 in` strap two-pack (`$17.99`), and Flame King `YSN10LB-ALM` `10 lb` aluminum cylinder (`$185.86`). Same-day live item listings reconcile exactly to the owner-provided `$271.82` subtotal; no separate tax or shipping amount was provided.
 - BOM rows `332-334` capture the new hatch, bath mat, and bracket pack; rows `70-71` now reflect the purchased cylinder and gauge. The former `$80.00` restraint/vent allowance is split between purchased row `334` (`$17.99`) and a `$62.01` remaining planning allowance in row `256`, preventing duplicate bracket cost. The purchase reconciliation adds `$67.97`; the concurrently reconciled direct camper-port prototype removes `$65.84`, so the combined canonical BOM moves only `$2.13`, from `$63,122.34` to `$63,124.47`.
-- Owner clarified that all five items are for the propane setup. The earlier classification of the Safoner hatch as a shore-power alternative and the AWW mat as shower gear was incorrect and has been removed.
+- Owner clarified the exact roles: the Safoner hatch is a neat propane-hose pass-through through the rear box, and the AWW mat is for outdoor showers. The earlier shore-power interpretation was incorrect.
 
 ## 2026-07-26 — HOTTAP camper-port design simplified before hardware purchase
 

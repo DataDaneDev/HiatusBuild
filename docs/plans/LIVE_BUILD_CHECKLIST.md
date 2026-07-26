@@ -50,7 +50,7 @@ It does **not** replace the owner docs:
 - Final surface direction remains a three-piece Nick black-walnut commission after templates are locked. A temporary Galley plywood counter/template is acceptable before final walnut so sink/faucet geometry can be proven.
 - Plumbing is now active bench/mockup work, but no tank hole is cut before a complete port inventory and bare in-truck dry fit. Build cold-first and hot-ready as a compact fixed pack with minimum fittings; removal of the cooler/panels/part of the 80/20 frame is acceptable for uncommon service.
 - Alternator charging remains a separate commissioning gate. Rough-in/routing with fuses pulled can proceed after floor/module reinstall; first-charge waits for APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior.
-- Solar remains a discovery/provisioning workstream until charging priority and roof real estate are better proven. Hot water is locked to the propane-only Joolca HOTTAP V2 package. The purchased rear-box setup also includes the Flame King cylinder, CALPOSE gauge, Safoner hatch, AWW stone mat, and bracket/strap pack; receive and dry-fit them as one package. The camper-water port layer remains pre-drill, with the direct-profile prototype first and QD3 only as fallback.
+- Solar remains a discovery/provisioning workstream until charging priority and roof real estate are better proven. Hot water is locked to the propane-only Joolca HOTTAP V2 package. The rear-box setup includes the Flame King cylinder, CALPOSE gauge, bracket/strap pack, and Safoner propane-hose pass-through; the AWW stone mat is for the outdoor shower. The camper-water port layer remains pre-drill, with the direct-profile prototype first and QD3 only as fallback.
 
 ## Historical July 4 sprint strategy
 
@@ -543,7 +543,7 @@ Run this before assuming a weekend task is blocked.
 2. Inventory the tank ports and perform the bare-tank in-truck dry fit; prove sender, fill, vent, outlet, drain, restraint, fridge overlap, and service access before drilling.
 3. Receive and inspect the purchased EFIELD faucet adapters, YVSKM accumulator swivels, and exact KUS hole saw; reject any fitting with wrong threads, damaged/missing gasket seats, suspect markings, or unresolved potable-use documentation.
 4. Bench-build and cold-pressure-test the tank/pump/strainer/accumulator/tee pack, then terminate the faucet with the purchased adapters and preserve BLUE/RED service trunks to the rear plate.
-5. Receive, inspect, and dry-fit the complete purchased propane package—HOTTAP heater/bracket/cover, Flame King cylinder, CALPOSE gauge, Safoner hatch, AWW stone mat, and bracket/strap pack—then confirm mounting, ventilation, hose routing, leak-free connections, and operating clearance. Keep QD3 as the camper-water fallback only.
+5. Receive and fit the HOTTAP heater/bracket/cover, Flame King cylinder, CALPOSE gauge, bracket/strap pack, and Safoner propane-hose pass-through. Keep the AWW mat with the outdoor shower gear and QD3 as the camper-water fallback only.
 6. Install and brace only the proven wet-spine/package interfaces, then run local shakedown and post-drive leak/fastener checks.
 
 **Build order:** electrical closeout -> tank/port dry fit -> adapter inspection and cold-water bench test -> wet-spine install -> rear-box HOTTAP package mockup/install -> shakedown.
