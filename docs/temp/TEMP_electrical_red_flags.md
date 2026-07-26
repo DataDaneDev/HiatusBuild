@@ -42,7 +42,7 @@ Status date: 2026-05-27
 - Why this matters: Charge recovery math, shutdown order, wiring, and procurement are now tied to one concrete hardware path.
 - Current references:
 - `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`
-- `bom/bom_estimated_items.csv` (rows `168-171`, `176`)
+- `bom/bom_estimated_items.csv` (rows `168-171`, `176`, `320`)
 - `docs/core/SYSTEMS.md`
 - `docs/core/TRACKING.md` (`D-028`, `D-029`, `D-030`, `D-031`)
 - Resolution completed:
@@ -110,7 +110,7 @@ Status date: 2026-05-27
 - Why this matters: Wrong kit content, incorrect harness polarity, or unsupported battery/BMS behavior can create commissioning risk and possible charging faults.
 - Current references:
 - `docs/core/ELECTRICAL_48V_ARCHITECTURE.md`
-- `bom/bom_estimated_items.csv` (rows `168-171`, `176`)
+- `bom/bom_estimated_items.csv` (rows `168-171`, `176`, `320`)
 - `docs/core/SYSTEMS.md`
 - `docs/core/TRACKING.md` (`R-006`)
 - Clarification needed:

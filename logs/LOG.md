@@ -1,3 +1,12 @@
+## 2026-07-26 — Late parallel-audit findings reconciled after canonical BOM cleanup
+
+- Reconciled three read-only audit lanes against the already-normalized BOM rather than blindly applying every suggested split. Identical packs and true kits remain grouped when procurement identity and lifecycle are shared; battery-bank members, the GFCI two-pack, cable inventory, tool kits, and other true packages were not over-split.
+- Split genuinely divergent inventory and lifecycle lines into rows `323-331`: `125A`/candidate `40A`/quarantined `60A` MEGA stock, active versus retired fuse holders, AC-in/AC-out and branch-1/branch-2 breakers, February versus July lug packs, pump-side versus spare short hoses, and purchased versus conditional USB-C PD stations.
+- Corrected the former fuse-holder batch by `$0.01` to its three direct source amounts. The canonical control is now `324` rows / `$63,110.57`; added `residual_allocation` for the evidence-limited `$40.65` remainder in the former mixed MEGA-fuse batch.
+- Corrected deferred lifecycle state for PV cable, inset-panel foam, drawer slides, and future HOTTAP-included parts; recorded the mechanically installed but electrically disabled Mechman state.
+- Repaired active-doc drift: Lynx tracked price and four-slot count, Orion Slot 4 `F-05` topology, retired standalone `F-06`, electrical-module restraint language, battery-bank commissioning gates, AC breaker row references, and fuse-inventory references.
+- Completed a repository-wide row-reference pass for every split parent. Canonical/current documents now point to child rows where the original aggregate meaning changed; historical plans, decision records, and reconciliation tables retain their dated facts, with explicit current-row mapping notes where an unannotated old reference would be misleading.
+
 ## 2026-07-26 — BOM normalized to component-level records
 
 - Audited all `236` legacy BOM rows in separate formatting, lifecycle, duplication, and row-granularity passes. Replaced `77` free-form status strings with `8` controlled values; standardized categories, component wording, ISO purchase dates, and two-decimal costs; and moved lifecycle prefixes out of component names.

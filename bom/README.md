@@ -48,6 +48,7 @@
 - `purchase_record` — acquired cost is supported, but finer item-vs-delivered allocation is unavailable or unnecessary
 - `delivered_total` — shipping/tax-inclusive delivered amount
 - `order_remainder` — separately stated shipping, packaging, tax, or other order-level remainder
+- `residual_allocation` — arithmetic remainder after evidence-backed children are split from a mixed historical row; not a receipt-level child price
 - `owner_estimate` — owner-provided allowance for an unpurchased line
 - `planning_estimate` — planning estimate, not a purchase record
 - `included` — zero separately counted cost because another line supplies the item
@@ -61,8 +62,9 @@
 3. Split mixed categories, mixed purchase states, or independently replaceable items.
 4. Split shipping/packaging into `Services` when the order evidence provides a separate amount.
 5. Exclude order-level tax rather than allocating it arbitrarily when the rest of the BOM uses pre-tax item subtotals.
-6. A broad planning allowance may stay grouped only while component-level selection and cost allocation are genuinely unknown; name it explicitly as an `allowance` or `package`.
-7. Lifecycle words such as `DEPRECATED`, `OPTIONAL`, `RESOLVED`, and `NOT REQUIRED` do not belong in `component`; use `purchase_status` and `notes`.
+6. If directly evidenced child costs do not fully allocate a mixed legacy total, use `residual_allocation` for the remaining parent cost and explain the arithmetic in `notes`.
+7. A broad planning allowance may stay grouped only while component-level selection and cost allocation are genuinely unknown; name it explicitly as an `allowance` or `package`.
+8. Lifecycle words such as `DEPRECATED`, `OPTIONAL`, `RESOLVED`, and `NOT REQUIRED` do not belong in `component`; use `purchase_status` and `notes`.
 
 ## Style
 

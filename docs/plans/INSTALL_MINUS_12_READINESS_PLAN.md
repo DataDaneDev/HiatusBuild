@@ -235,7 +235,7 @@ Historical order posture:
 - Favor **no extrusion order yet** if the only use case was the old tall/skinny water-tank cage.
 - Use `15-series` only for remaining heavy/dynamic freestanding modules that actually need it after dry fit: electrical cabinet, fridge slide/base, or workstation/desk structure.
 - Use `10-series` or lighter rail/hardware for accessory panels, desk trim, basket/hook mounts, service retainers, and light cabinetry.
-- Keep any bought stock sticks under the BOM row `89` shipping threshold (`under 92 in`) where useful.
+- Keep stock sticks under `92 in` where useful to preserve parcel-shipping eligibility; completed TNUTZ shipping/packaging is now isolated in BOM row `280`, while row `89` owns EX-1010 extrusion only.
 - Preserve hardware flexibility: universal brackets, roll-in/economy T-nuts, button-head bolts, gussets, flat plates, anti-rattle tape, VHB, spacers/shims.
 
 Decision rule:

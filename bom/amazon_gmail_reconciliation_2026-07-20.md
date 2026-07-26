@@ -44,7 +44,7 @@ Subsequent BOM normalization on `2026-07-26` preserved these reconciliation tota
 | 2026-07-12 | KUS 14.5 in sender + 1/4-20 x 2 and x 2-1/2 in flat-head screw packs | `$77.48` item / `$83.10` shipped total | KUS remains row `212`; screw packs added to row `46` |
 | 2026-07-13 | POWERTEC long-handle J-roller + Bates paint/mud mixer | `$23.98` item / `$25.72` checkout | Added row `226` |
 | 2026-07-16 | SharkBite PEX adapters + Banjo fill elbow + Green Leaf vent elbow | `$34.14` item / `$36.62` checkout | Rows `218-220`; Banjo and vent-elbow prices corrected |
-| 2026-07-18 | 3M heavy-duty double-sided tape; Sanuke 10-piece 4 AWG x 3/8 in/M10 lug set; TKDMR 10-piece 2/0 AWG x 5/16 in lug set | `$41.91` item / `$44.95` checkout | Screenshot-resolved into rows `96`, `37`, and `35`; row `228` reduced to a zero-dollar reconciliation bridge |
+| 2026-07-18 | 3M heavy-duty double-sided tape; Sanuke 10-piece 4 AWG x 3/8 in/M10 lug set; TKDMR 10-piece 2/0 AWG x 5/16 in lug set | `$41.91` item / `$44.95` checkout | Screenshot-resolved into rows `96`, `37`, and `328`; row `228` reduced to a zero-dollar reconciliation bridge |
 | 2026-07-19 | Sixzoo car sun-visor vanity mirror | `$7.99` item / `$8.57` checkout/shipped total | Screenshot-resolved row `229` |
 
 ## Final June 5 hardware/fit-out inventory

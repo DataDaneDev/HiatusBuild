@@ -38,7 +38,7 @@ All four newly exposed lines are build/truck relevant and are now represented in
 
 No new costs were added for these already-reconciled purchases. The BOM was enriched with exact ASIN/title data where the earlier Gmail or screenshot source had been generic, truncated, or identifier-free:
 
-- TKDMR repeat `2/0 AWG x 5/16 in` lug stock — row `35`, ASIN `B08R6VFF6B`.
+- TKDMR `2/0 AWG x 5/16 in` lug stock — original row `35` plus July repeat row `328`, ASIN `B08R6VFF6B`.
 - Sanuke `4 AWG` lug stock — rows `37` and `242`, ASINs `B092ZM6XY3` and `B092ZN6TGP`.
 - July 12 `1/4-20` flat-head hardware — rows `248-249`, ASINs `B0D6LWGC8X` and `B0D6LW16SD`.
 - `2 in x 10 ft` double-sided foam mounting tape — row `96`, ASIN `B0FPQ29CX1`.

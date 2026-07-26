@@ -161,6 +161,6 @@ Use this checklist as the continuing acceptance gate before sustained shore char
 ## Procurement Notes
 - DIN rail is a mounting method; breaker listing and rating remain the controlling requirement.
 - Lowest-cost listed policy is acceptable only if each selected device has verifiable NRTL listing (`UL` or `ETL`) for intended use.
-- Purchased SKU lock is recorded in `bom/bom_estimated_items.csv` for rows `13`, `14`, `15`, `41`, `107`, `108`, `109`, `110`, `113`, `114`, `123`, `179`, and `180`. Row `181` was same-order tire-deflator/off-road support hardware and is intentionally outside AC scope.
+- Purchased SKU lock is recorded in `bom/bom_estimated_items.csv` for rows `13`, `327`, `14`, `15`, `41`, `107`, `108`, `109`, `110`, `330`, `113`, `114`, `123`, `179`, and `180`. Rows `13`/`327` are the AC-in/AC-out `30A` pair; rows `110`/`330` are the two `20A` branch breakers. Row `181` was same-order tire-deflator/off-road support hardware and is intentionally outside AC scope.
 - Row `111` is obsolete under the current `2x` GFCI-receptacle plan. Row `112` is only an install-fit box/cover/clamp detail around the two active GFCIs, not an AC design blocker.
 - Current utilization note (`2026-05-16`): AC protection chain and purchase scope are locked for a `30A` system with two active `20A` branches. Do not add a third active AC branch without revisiting the AC-out main/enclosure/feed plan.

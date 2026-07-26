@@ -24,10 +24,10 @@ STATUSES = {
     "Deferred", "Returned", "Retired",
 }
 COST_BASES = {
-    "item_subtotal", "purchase_record", "delivered_total", "order_remainder", "owner_estimate",
+    "item_subtotal", "purchase_record", "delivered_total", "order_remainder", "residual_allocation", "owner_estimate",
     "planning_estimate", "included", "not_applicable", "unknown",
 }
-ACTUAL_DATE_STATUSES = {"Purchased", "Partially Purchased", "Included", "Returned"}
+ACTUAL_DATE_STATUSES = {"Purchased", "Partially Purchased", "Included", "Returned", "Retired"}
 STATUS_PREFIX = re.compile(r"^(?:DEPRECATED|OPTIONAL|OBSOLETE|RESOLVED|NOT REQUIRED|REMOVE|TEMP)\b", re.I)
 ASIN = re.compile(r"\bB0[A-Z0-9]{8}\b")
 PRIVATE_PATTERNS = {
@@ -129,9 +129,12 @@ def validate(path: Path) -> int:
             errors.append(f"{prefix}: blank cost requires cost_basis unknown")
 
         if cost == "0.00":
-            expected = "included" if status == "Included" else "not_applicable"
-            if basis != expected:
-                errors.append(f"{prefix}: zero cost requires cost_basis {expected}")
+            if basis not in {"included", "not_applicable"}:
+                errors.append(f"{prefix}: zero cost requires cost_basis included or not_applicable")
+            if status == "Included" and basis != "included":
+                errors.append(f"{prefix}: Included status requires cost_basis included")
+            if status == "Retired" and basis != "not_applicable":
+                errors.append(f"{prefix}: Retired zero-cost row requires cost_basis not_applicable")
         if basis == "owner_estimate" and status not in {"Selected", "Planned", "Deferred", "Retired"}:
             errors.append(f"{prefix}: owner_estimate is not valid for status {status}")
 

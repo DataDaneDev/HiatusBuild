@@ -111,9 +111,9 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 | Fuse scope | BOM row(s) |
 | --- | --- |
 | Main battery Class T protection (`F-01A/F-01B/F-01C`) + Class T spares | `bom/bom_estimated_items.csv` row `7` |
-| Lynx branch MEGA fuses (`F-02` to `F-05` installed) + spare set | `bom/bom_estimated_items.csv` rows `10`, `170`, and `188` |
-| Orion installed fuse-holder hardware (`F-05` Lynx input, `F-07` external output) | `bom/bom_estimated_items.csv` rows `10` and `11` |
-| Retired Orion standalone input-fuse stock (`F-06`) | `bom/bom_estimated_items.csv` rows `133`, `182`, `321`, and `230` |
+| Lynx branch MEGA fuses (`F-02` to `F-05` installed) + spare set | `bom/bom_estimated_items.csv` rows `10`, `170`, `188`, and `323` |
+| Orion installed fuse-holder hardware (`F-05` Lynx input, `F-07` external output) | `bom/bom_estimated_items.csv` rows `6` and `11` |
+| Retired Orion standalone input-fuse stock (`F-06`) | `bom/bom_estimated_items.csv` rows `133`, `182`, `321`, `326`, and `230` |
 | WS500 regulator-power and voltage-sense protection (`F-12/F-13-PHVAN`) | `bom/bom_estimated_items.csv` rows `171` and `320` |
 | Cerbo GX power feed (`CERBO-PWR`) | `bom/bom_estimated_items.csv` row `22`; small inline fuse/holder may come from low-current install stock |
 | WS500 Upfitter `#3` enable/control path (`F-15`) | `bom/bom_estimated_items.csv` row `176` |
