@@ -1,3 +1,9 @@
+## 2026-07-26 — HOTTAP direct exterior mount and universal hose ports locked
+
+- Owner selected the Joolca HOTTAP V2, vehicle quick plate, and mounted cover. The heater now stays directly mounted on a structurally backed exterior face of the rear box, protected from dust in travel and outside the propane-cylinder compartment in operation. The articulating arm and box-side water plate are removed from active scope, recovering interior box storage.
+- Verified the Joolca connection topology from official setup/support and current spare-part imagery: both supplied red hoses (`1 m` and `4 m`) have female quick-connect sockets at both ends; the shower handle/head disconnects from the long hose; and Joolca explicitly documents Melnor QuickConnect compatibility and existing-faucet connection. One hose can therefore serve the shower, camper hot return, or cold moto sprayer, one mode at a time.
+- Replaced the doubled CPC HFC35 interface with one camper BLUE/RED plate based on two Sea-Dog `513120-1` 316-stainless straight-through washdown outlets (`1/2 in FIP x 3/4 in MGHT`) and two Melnor `2MQC` faucet adapters. The existing `UP120A5` PEX/MNPT adapters and two camper ball valves remain useful. The included `1 m` hose is the default BLUE-to-heater feed if reach passes; the included `4 m` hose connects heater-to-shower or heater-to-RED hot return. Bench compatibility, pressure, flow, hot wash, dust-cap/hatch, drain, and elevation tests remain pre-drill gates.
+
 ## 2026-07-25 — Post-reconciliation audit and source cleanup
 
 - Closed the delayed read-only audit findings against the pushed Amazon reconciliation. Active `PROJECT`, `SYSTEMS`, `TRACKING`, interior-layout, and live-checklist guidance now treats propane-only Joolca HOTTAP V2 as selected; remaining work is physical rear-box cylinder/vent, arm/travel-latch, BLUE/RED service-plate, hose, road-protection, deployed-clearance, leak-test, and freeze-drain validation rather than heater selection.

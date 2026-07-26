@@ -20,7 +20,7 @@ related:
 
 # Live Build Checklist — Electrical Commissioning + Wet-Spine Integration
 
-As-of: `2026-07-25`
+As-of: `2026-07-26`
 
 Owner: Sunny / Dane
 
@@ -50,7 +50,7 @@ It does **not** replace the owner docs:
 - Final surface direction remains a three-piece Nick black-walnut commission after templates are locked. A temporary Galley plywood counter/template is acceptable before final walnut so sink/faucet geometry can be proven.
 - Plumbing is now active bench/mockup work, but no tank hole is cut before a complete port inventory and bare in-truck dry fit. Build cold-first and hot-ready as a compact fixed pack with minimum fittings; removal of the cooler/panels/part of the 80/20 frame is acceptable for uncommon service.
 - Alternator charging remains a separate commissioning gate. Rough-in/routing with fuses pulled can proceed after floor/module reinstall; first-charge waits for APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior.
-- Solar remains a discovery/provisioning workstream until charging priority and roof real estate are better proven. Hot water is locked to the propane-only rear-box Joolca HOTTAP V2 package; its cylinder restraint/venting, arm/travel latch, water service plates, hose sweeps, road protection, and deployed clearances remain physical mockup gates rather than selection questions.
+- Solar remains a discovery/provisioning workstream until charging priority and roof real estate are better proven. Hot water is locked to the propane-only Joolca HOTTAP V2 package: direct exterior box mount on Joolca's vehicle quick plate under its mounted cover, cylinder restrained inside the permanently vented box, and one camper BLUE/RED Joolca/Melnor-compatible service plate. Bracket backing, cylinder fit/vents, supplied-hose reach, port protection, pressure/flow, drainability, and operating clearances remain physical mockup gates rather than selection questions.
 
 ## Historical July 4 sprint strategy
 
@@ -232,7 +232,7 @@ Goal: build the galley datum so cooler/fridge/plumbing fitment stops being guess
 - [x] Modify/add cooler-bench tie-in rails or plates as needed; keep the seam removable and accessible without removing batteries.
 - [ ] Decide the entrance-side Galley front corner shape with a physical sweep test: default `45° chamfer` if square clips entry and round is too fussy for the current 10-series frame.
 - [ ] Keep the front/rear Galley utility corner serviceable for the sink drain/graywater path, faucet cold/hot trunks, BLUE/RED service valves, and removable panel access; no interior water-heater volume is reserved.
-- [ ] [HOLD] Do not cut the camper/box BLUE/RED service plates or mount the rear-box propane package until the selected HOTTAP arm, cylinder restraint/venting, hose sweeps, backing, road guard, and deployed clearances are physically proven.
+- [ ] [HOLD] Do not cut the single camper BLUE/RED service plate or mount the rear-box propane package until the HOTTAP exterior quick-plate backing/cover, cylinder restraint/venting, regulator service hatch, supplied-hose reach, port protection, and operating clearances are physically proven.
 - [ ] Mock passenger-side fridge/cooler position with real handles, hinge/lid swing, cord bend, and hand clearance.
 - [ ] Confirm raised fridge/cooler height target, currently about `16 in` above floor/service zone.
 - [ ] Confirm relationship to `36 gal` wheel-well tank envelope.
@@ -272,20 +272,20 @@ Goal: build and test the fixed cold-water pack plus the selected propane-only BL
 - [ ] Hard-mount the compact plumbing pack: tank shutoff, suction flex, strainer, pump, discharge flex, RecPro double-FIP hose, accumulator, YVSKM female-swivel PEX-B outlet, then one ordinary tee branching to faucet cold while the straight leg continues to the rear BLUE service valve.
 - [ ] When the purchased EFIELD faucet adapters and YVSKM accumulator swivels arrive, inspect gasket/seat/markings, stage the two faucet adapters plus one installed accumulator swivel, and retain the other three swivels as spares. Assemble and cold-pressure-test the tank/pump/accumulator/tee system in the driveway before permanent truck mounting.
 - [ ] Fill with clean water, verify gravity fill/vent behavior, pressure-cycle the `12V` pump, check accumulator behavior, exercise drain/washout paths, and inspect every fitting/seam for leaks.
-- [ ] Preserve the dedicated tank drain plus drainable BLUE/RED exterior stubs; the HOTTAP, box service loops, and two short jumpers must drain after freezing-weather use. Add regulated blowout access only if the installed geometry proves gravity draining insufficient.
+- [ ] Preserve the dedicated tank drain plus drainable BLUE/RED Sea-Dog exterior stubs; both supplied Joolca hoses and the HOTTAP must drain after freezing-weather use. Add regulated blowout access only if the installed geometry proves gravity draining insufficient.
 - [ ] Do not add a manifold rail, antifreeze pickup, quick-disconnect unions, or three-valve heater bypass by default; preserve a known cooler/panel/frame disassembly path instead.
 - [ ] Add pump electrical connector and strain relief.
 - [ ] Add shallow removable leak tray/pan under pump/strainer/accumulator area.
 - [ ] Add leak sensor or at least a visible inspection point.
 - [ ] Terminate the faucet cold and hot hoses with the purchased EFIELD `1/2 in PEX-B x 3/8 in OD compression male` adapters; use no PTFE tape at either compression seat.
 - [ ] Build the selected permanent service topology: post-accumulator tee branch to faucet cold, straight leg to BLUE valve/QD, and separate RED valve/QD through insulated `1/2 in` PEX to faucet hot. No electric-heater branch, manifold, or bypass remains.
-- [ ] Rough-plan a pump-fed cold spray nozzle/QD near the Galley utility corner; gravity-only spray is acceptable as a fallback drain/rinse concept but should not drive the layout.
-- [ ] Keep the exterior shower on the HOTTAP-side three-way hot splitter; do not add a separate camper-side shower branch or cold QD.
+- [x] Use the camper BLUE port plus supplied `4 m` Joolca hose and shower handle/head as the pump-fed cold moto sprayer; no separate cold-spray branch is required.
+- [x] Keep the exterior shower removable: supplied `4 m` hose from HOTTAP outlet to handle/head in shower mode, or from camper BLUE directly to handle/head in cold-spray mode. No permanent hot splitter or additional camper branch.
 - [ ] Build graywater cassette/drain path with winterizable/waterless trap strategy.
 - [ ] Pressure/leak test plumbing before panel closure.
 - [ ] Recheck all clamps/unions after first drive.
-- [x] Finalize hot water as propane-only Joolca HOTTAP V2 with parked-only BLUE/RED water jumpers; electric storage/tankless branches are closed.
-- [ ] [HOLD] Buy/drill the remaining HOTTAP/CPC/box hardware only after the real cylinder, arm, two service plates, QD panel thickness, hose lengths, road protection, and deployed clearance envelope pass mockup.
+- [x] Finalize hot water as propane-only Joolca HOTTAP V2 directly mounted outside the rear box, using one camper BLUE/RED Joolca/Melnor-compatible plate and the supplied parked-only `1 m`/`4 m` hoses; electric storage/tankless branches are closed.
+- [ ] [HOLD] Buy/drill the remaining HOTTAP/Sea-Dog/Melnor hardware only after the real cylinder, quick-plate/cover, one service plate, camper backing/backside clearance, supplied-hose reach, port protection, pump pressure, and operating-clearance envelope pass mockup.
 
 ## 8. AC/DC electrical closeout and tests
 
@@ -541,7 +541,7 @@ Run this before assuming a weekend task is blocked.
 2. Inventory the tank ports and perform the bare-tank in-truck dry fit; prove sender, fill, vent, outlet, drain, restraint, fridge overlap, and service access before drilling.
 3. Receive and inspect the purchased EFIELD faucet adapters, YVSKM accumulator swivels, and exact KUS hole saw; reject any fitting with wrong threads, damaged/missing gasket seats, suspect markings, or unresolved potable-use documentation.
 4. Bench-build and cold-pressure-test the tank/pump/strainer/accumulator/tee pack, then terminate the faucet with the purchased adapters and preserve BLUE/RED service trunks to the rear plate.
-5. Mock the selected rear-box HOTTAP package—Flame King cylinder restraint/vents, Joolca arm/travel latch, service plates, parked-only jumpers, hose loops, road protection, and deployed clearances—before any permanent mount or penetration.
+5. Mock the selected rear-box HOTTAP package—Flame King cylinder restraint/vents, exterior Joolca quick plate/backing and mounted cover, one Sea-Dog/Melnor camper plate, parked-only supplied hoses, regulator service hatch, port protection, and operating clearances—before any permanent mount or penetration.
 6. Install and brace only the proven wet-spine/package interfaces, then run local shakedown and post-drive leak/fastener checks.
 
 **Build order:** electrical closeout -> tank/port dry fit -> adapter inspection and cold-water bench test -> wet-spine install -> rear-box HOTTAP package mockup/install -> shakedown.
@@ -554,7 +554,7 @@ Run this before assuming a weekend task is blocked.
 - Shore or water-fill exterior holes before their complete inside routes/endpoints are physically proven.
 - Alternator first-charge.
 - Final solar purchase or roof penetration.
-- Permanent HOTTAP arm, cylinder cradle/vents, or BLUE/RED service-plate cuts before their package mockup passes.
+- Permanent HOTTAP quick-plate mount, cylinder cradle/vents, or BLUE/RED service-plate cuts before their package mockup passes.
 - Cosmetic skins everywhere.
 - Permanent monitor mechanism perfection.
 - Final lighting design.
@@ -567,8 +567,8 @@ Run this before assuming a weekend task is blocked.
 - [HOLD] No road travel with freestanding/lightly restrained electrical module.
 - [HOLD] No tank sender/fill/vent hole until the empty tank has a complete port map and passes one bare in-truck dry fit.
 - [HOLD] No final PEX cuts until the purchased EFIELD/YVSKM adapters are received and accepted, and the real sink/faucet/drain plus minimum-fitting pump/tee geometry are mocked at full scale.
-- [HOLD] Do not merge the low south gravity tank drain with the pressurized BLUE/RED system; keep it a separate drain/rinse path, with the exterior shower on the HOTTAP-side three-way hot splitter rather than a camper manifold.
-- [HOLD] No permanent HOTTAP arm, cylinder cradle, box vents, service-plate cut, regulator/hose closeout, or travel latch until the selected Joolca/Flame King package passes physical box/deployed-clearance mockup and manual/listing review.
+- [HOLD] Do not merge the low south gravity tank drain with the pressurized BLUE/RED system; keep it a separate drain path. Exterior shower/cold spray uses the removable Joolca `4 m` hose and handle/head rather than a camper manifold.
+- [HOLD] No permanent HOTTAP quick-plate mount, cylinder cradle, box vents, service-plate cut, regulator service hatch, or cover closeout until the selected Joolca/Flame King package passes physical box/operating-clearance mockup and manual/listing review.
 - [HOLD] No battery-bench bridge/lid or obstructing upper structure until the `3x 48V` bank is installed, individually protected/connected as designed, covered, labeled, and removable with emergency access preserved.
 - [HOLD] No alternator first-charge until APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior are ready.
 - [HOLD] No final countertop sink cutout until faucet/drain/rail clearance is physically proven.
@@ -576,4 +576,4 @@ Run this before assuming a weekend task is blocked.
 - [HOLD] No final panels over electrical/plumbing until labels, strain relief, leak/functional tests, and service access pass.
 - [HOLD] No shore inlet cut until the hard-mounted electrical endpoint, inside AC-in path, backing, bend radius, service access, and strain relief are physically proven.
 - [HOLD] No water-fill/vent cut until final tank orientation, fill and highest-point vent ports, continuous hose fall/vent rise, service access, backing, and overflow/spill path are physically proven.
-- [HOLD] No HOTTAP water-service or roof/solar exterior penetration until both exterior geometry and inside service/routing/strain-relief paths are physically proven; no propane line enters the camper in the selected rear-box package.
+- [HOLD] No HOTTAP water-service or roof/solar exterior penetration until both exterior geometry and inside service/routing/strain-relief paths are physically proven; no propane line enters the camper in the selected exterior-heater/rear-box-cylinder package.

@@ -20,7 +20,7 @@ related:
 - Keep exact topology, fuse, conductor, and bench procedure detail in `docs/implementation/`.
 
 ## Snapshot
-- As-of date: 2026-07-25
+- As-of date: 2026-07-26
 - Phase: hard-mounted electrical integration, bank/shore/12V commissioning, then wet-spine installation
 - Install milestone: May 7, 2026 Hiatus install is historical context; the real camper shell and integrated module fit now control physical decisions
 - Mission: build a reliable off-grid camper workspace suitable for full-time professional use
@@ -47,7 +47,7 @@ related:
 - Treat the water tank as a two-stage job: workbench measurement/mockup followed by one bare-tank in-truck dry fit before any new sender/fill/vent hole is cut. Lock tank restraint and wet-spine service access before the passenger-side frame closes around it.
 - Shore and water-fill penetrations stay downstream of their installed inside endpoints. Prove the complete inside route, bend radius/fall, backing, service access, and strain relief before cutting the shell/bed-side interface.
 - Use registered bed rivnuts rather than plywood alone for modules needing positive retention. Electrical, battery, and full-tank loads must remain visibly restrained and serviceable.
-- Electrical system status remains live-proven at the system level, but permanent shore AC-in, AC-out/GFCI, full-bank commissioning, road restraint, and alternator first-charge remain separate gates. Factory pod lighting, Maxxair fan, and initial DC outlets move into the immediate `12V` proof pass; solar and audio remain later workstreams. Hot water is selected as the propane-only rear-box Joolca HOTTAP V2 package, with physical cylinder/arm/service-plate/clearance gates still open.
+- Electrical system status remains live-proven at the system level, but permanent shore AC-in, AC-out/GFCI, full-bank commissioning, road restraint, and alternator first-charge remain separate gates. Factory pod lighting, Maxxair fan, and initial DC outlets move into the immediate `12V` proof pass; solar and audio remain later workstreams. Hot water is selected as the propane-only rear-box Joolca HOTTAP V2 package: heater directly outside-mounted on Joolca's vehicle quick plate under its mounted cover, cylinder restrained inside the permanently vented box, and one camper BLUE/RED Joolca/Melnor-compatible service plate. Bracket backing, cylinder fit/vents, port geometry, hose reach, pressure/flow, drainability, and operating clearances remain physical gates.
 - Black-walnut Galley/Desk/Bench finish surfaces remain template-gated after final floor height and module geometry are proven.
 
 ## Scope
@@ -69,7 +69,7 @@ related:
 ## Scope clarifications from workbook
 - In scope for Phase 1 includes office-first electrical architecture, Starlink support, cabinetry/workstation, and core plumbing.
 - Truck mechanical upgrades listed as "skip for now" remain out of scope for Phase 1.
-- Solar and diesel-heater routing decisions remain pending and tracked in `docs/core/TRACKING.md`; shore hardware is selected, with inlet/cable-support details handled during physical install. The HOTTAP LP path stays within the rear box/outdoor deployed package—no propane passthrough into the camper—while the BLUE/RED water service plates remain geometry-gated.
+- Solar and diesel-heater routing decisions remain pending and tracked in `docs/core/TRACKING.md`; shore hardware is selected, with inlet/cable-support details handled during physical install. The HOTTAP LP path stays within the cylinder box/outdoor heater package—no propane passthrough into the camper—while the single camper BLUE/RED service plate remains geometry-gated.
 
 ## Milestone plan (draft)
 - M0: requirements baseline frozen
