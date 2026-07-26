@@ -334,7 +334,7 @@ Non-obvious feature: make the fridge skeleton do double duty as the hard mountin
 
 ### Core recommendation
 
-Build a **propane-only, parked-deployment hot-water system** around the existing cold-water pack. The permanent camper plumbing uses two isolated rear service ports: BLUE pressurized cold out to the heater and RED heated-water return to the faucet. No heater, fuel line, or combustion appliance occupies the north cubby.
+Build a **propane-only, parked-deployment hot-water system** around the existing cold-water pack and rear swingout box. The camper and box each use a two-port interface: BLUE pressurized cold out and RED heated-water return. Two short, sleeved jumpers connect box to camper at camp; the box-side water hoses remain attached to the HOTTAP on its articulating arm. No heater, fuel line, or combustion appliance occupies the north cubby.
 
 Current north/middle/south routing concept (`2026-07-25`; fitting sizes remain field-gated at the faucet and service plate):
 
@@ -347,11 +347,14 @@ MIDDLE: fresh tank
       -> branch: faucet cold
       -> straight: rear BLUE service valve -> BLUE cold-out bulkhead
 
-Rear deployed heater:
-BLUE cold-out -> drainable cold hose -> Joolca HOTTAP V2 inlet
-HOTTAP outlet -> either outdoor shower hose OR hot-return hose
-hot-return hose -> RED hot-return bulkhead -> RED service valve
-                -> insulated 1/2 in PEX -> faucet hot
+Parked box-to-camper interface:
+camper BLUE body <-> short BLUE double-ended CPC jumper <-> box BLUE body
+box BLUE body -> drainable internal service-loop hose -> Joolca HOTTAP V2 inlet
+HOTTAP outlet -> Joolca-compatible three-way hot splitter
+  -> branch A: supplied outdoor shower hose/head
+  -> branch B: internal hot-return service loop -> box RED body
+box RED body <-> short RED double-ended CPC jumper <-> camper RED body
+camper RED body -> RED service valve -> insulated 1/2 in PEX -> faucet hot
 
 Separate unpressurized paths
   -> high end-port gravity fill + high end-port vent
@@ -359,7 +362,7 @@ Separate unpressurized paths
   -> sink gray drain/graywater cassette
 ```
 
-Opening the faucet hot side creates flow through the pump, cold-out umbilical, heater, hot-return umbilical, and faucet; the HOTTAP ignites once flow exceeds its approximately `0.6 GPM` operating minimum. The purchased SHURflo `4008` (`3.0 GPM`, `55 PSI`) fits Joolca's published `40-60 PSI` and `1.6-3.17 GPM` recommended source range. Use the heater's direct shower hose or the faucet-return hose one at a time; no outside tee or selector is required.
+Opening the faucet hot side creates flow through the pump, both BLUE connections, heater, both RED connections, and faucet; the HOTTAP ignites once flow exceeds its approximately `0.6 GPM` operating minimum. The purchased SHURflo `4008` (`3.0 GPM`, `55 PSI`) fits Joolca's published `40-60 PSI` and `1.6-3.17 GPM` recommended source range. Joolca's own Faucet Plumbing architecture uses a three-way splitter so the shower and kitchen outlet can remain connected; the closed shower head or closed faucet controls which branch flows. Routine setup therefore does not require swapping water fittings at the heater.
 
 Do not use rigid PEX between the tank, strainer, and vibrating pump. Start the fixed `1/2 in` PEX distribution after the pump outlet flex section. Keep the fresh-tank drain, sink gray drain, and pressurized cold-out service port as distinct functions; a gravity tank drain is not a useful pressure wash outlet.
 
@@ -378,9 +381,9 @@ Hard-mount the existing plumbing compactly in the under-cooler/adjacent bench st
 - Two short reinforced-hose vibration/service links from PEX adapters to the thin-panel quick-disconnect bodies.
 - One insulated, joint-minimized `1/2 in` PEX hot-return trunk from the RED service valve to faucet hot.
 
-The two rear couplings mount through a thin aluminum service plate, not by crushing the camper sandwich wall between panel-mount nuts. Bed the plate with butyl, mechanically fasten it to a proven backer, finish-seal its perimeter, protect the wall-core penetration, and provide a weather cover. Keep both CPC HFC35 NSF couplings straight-through/non-valved so the exterior stubs and hoses drain; close the interior ball valves before disconnecting.
+The two camper couplings mount through a thin aluminum service plate, not by crushing the camper sandwich wall between panel-mount nuts. Bed the plate with butyl, mechanically fasten it to a proven backer, finish-seal its perimeter, protect the wall-core penetration, and provide a weather cover. A matching recessed/guarded two-port plate mounts downward through the bumper-box floor and stays separate from the propane vents. Keep all four CPC HFC35 NSF couplings straight-through/non-valved so the exterior stubs, jumpers, and box-side service loops can drain; close the two camper-side ball valves before disconnecting.
 
-Do not add a cold/hot manifold, three-valve bypass, permanent antifreeze pickup, exterior selector, or concealed check valve. The two service valves are the only new operational valves. Faucet cold remains available with both service valves closed and the heater stowed.
+Do not add a camper-side cold/hot manifold, three-valve bypass, permanent antifreeze pickup, exterior selector, or concealed check valve. The two camper service valves are the only new permanent operational valves; the Joolca-compatible hot splitter lives with the removable heater package. Faucet cold remains available with both service valves closed and the heater stowed.
 
 Stock wet-tray footnote: any pump/accumulator/strainer area below the lofted fridge should have a shallow removable wet tray or pan with small upturned edges, a visible inspection/leak-sensor point, and a path to lift/wipe/dry it through the documented disassembly sequence. Treat it as early warning and cleanup management, not as primary containment; plumbing joints still need proper fittings, clamps, support, strain relief, and post-drive leak checks.
 
@@ -435,7 +438,7 @@ Implications:
 7. **Install wet-side first:** hard-mount the tank restraint and compact pump/accumulator pack before passenger-side furniture closure. Support the flex/PEX transitions, protect the wet/dry boundary, and preserve the documented cooler/panel/frame removal path; do not add fittings solely to make the assembly quick-removable.
 8. **Cut the exterior fill/vent last:** physically prove the installed tank endpoints, hose fall/vent rise, backing, service access, and spill/overflow path from both sides before cutting the camper/bed-side interface.
 
-### Propane hot-water routing baseline (`2026-07-25` final direction)
+### Propane hot-water routing baseline (`2026-07-25` owner-corrected final direction)
 
 The final architecture is propane-only and uses the existing pump/accumulator plus two parked-only rear water connections. Preserve the tank's assigned functions: upper south ports for gravity fill and unrestricted vent, low north `1/2 in` port for pump pickup, and low south `1/2 in` port as a dedicated gravity tank drain.
 
@@ -449,19 +452,20 @@ low north tank pickup
                     -> PEX/MNPT adapter -> FNPT/hose-barb adapter
                     -> short reinforced flex -> BLUE CPC panel body
 
-Joolca deployed at camp
-BLUE CPC insert -> cold umbilical -> HOTTAP blue inlet
-HOTTAP red outlet -> choose one:
-  A. supplied shower hose/head
-  B. dedicated red hot-return hose -> RED CPC insert
-
-RED CPC panel body -> short reinforced flex
+Parked box-to-camper jumpers and permanently connected box service loops
+camper BLUE CPC body <-> BLUE jumper with CPC insert at both ends
+  <-> box BLUE CPC body -> internal flex loop -> HOTTAP blue inlet
+HOTTAP red outlet -> Joolca-compatible three-way splitter
+  -> supplied shower hose/head
+  -> internal hot-return flex loop -> box RED CPC body
+box RED CPC body <-> RED jumper with CPC insert at both ends
+  <-> camper RED CPC body -> short reinforced flex
   -> hose-barb/FNPT adapter -> MNPT/PEX adapter
   -> RED full-port service valve -> insulated 1/2 in PEX
   -> faucet-hot adapter -> faucet hot
 ```
 
-Every permanent inline fitting after the accumulator is therefore:
+The fixed camper, box interface, and heater-package fitting stack is therefore:
 
 1. One `1/2 in` PEX tee.
 2. Two faucet adapters, expected `1/2 in PEX x 3/8 in OD compression male`; verify the FORIOUS hose nuts before ordering.
@@ -470,19 +474,22 @@ Every permanent inline fitting after the accumulator is therefore:
 5. Two lead-free `1/2 in FNPT x 1/2 in hose-barb` adapters.
 6. Two short pieces of `1/2 in ID` reinforced potable/hot-water hose.
 7. Four correctly sized stainless ear clamps for the two internal flex links, one at each barb.
-8. Two CPC `HFC16835 NSF` / ordering number `86600` straight-through panel-mount bodies with `1/2 in` hose barbs.
-9. Two CPC `HFC22835 NSF` / ordering number `83100` straight-through inserts with `1/2 in` hose barbs, one per removable umbilical.
-10. Two CPC `HFC312L` tethered dust plugs for the panel bodies; these are contamination covers, not pressure shutoffs.
-11. One custom cold umbilical: CPC insert, `1/2 in ID` reinforced hose, clamp at the CPC barb, and the Joolca-compatible blue/Melnor inlet connector at the heater end.
-12. One custom hot-return umbilical: Joolca red outlet connector or spare hose assembly, `1/2 in ID` reinforced hose, CPC insert, and the adapters/clamps proven by the in-hand Joolca fitting. The supplied shower hose remains unmodified for shower mode.
-13. At least four additional correctly sized ear clamps for the two umbilicals if both heater-end connectors terminate in hose barbs; lock the exact count after the Joolca connectors are in hand.
-14. One thin aluminum two-port service plate, backing, butyl bedding, perimeter sealant, a sealed wall-core sleeve/grommet, BLUE/RED labels, weather cover, and two clean loose-hose caps for storage.
-15. Twelve `1/2 in` PEX cinch clamps downstream of the accumulator: one at the accumulator adapter, three at the tee, one at each faucet adapter, two at each service valve, and one at each `UP120A5` transition.
-16. Potable-water-rated PTFE tape or thread sealant on the two `UP120A5` MNPT-to-Anderson FNPT joints only; do not apply thread sealant to compression seats, hose barbs, QD O-rings, or Joolca gasketed/BSP hose swivels unless that fitting's instructions require it.
+8. Four CPC `HFC16835 NSF` / ordering number `86600` straight-through panel-mount bodies with `1/2 in` hose barbs: BLUE/RED on the camper and BLUE/RED under the box.
+9. Four CPC `HFC22835 NSF` / ordering number `83100` straight-through inserts with `1/2 in` hose barbs: one at each end of each short removable jumper.
+10. Four CPC `HFC312L` tethered dust plugs for the panel bodies; these are contamination covers, not pressure shutoffs.
+11. One short BLUE jumper and one short RED jumper, each built as `CPC insert -> 1/2 in ID reinforced hose -> CPC insert`; use four correctly sized ear clamps total and cap all four loose insert ends for storage.
+12. One permanently connected box cold service loop: backside of box BLUE panel body -> `1/2 in ID` reinforced hose -> Joolca-compatible blue/Melnor inlet connector. Give it enough supported slack for full arm travel.
+13. One Joolca-compatible three-way hot splitter at the HOTTAP red outlet. One branch retains the unmodified supplied shower hose/head; the other takes the dedicated hot-return service loop.
+14. One permanently connected box hot-return service loop: splitter/spare Joolca hose -> `1/2 in ID` reinforced hose -> backside of box RED panel body. Give it the same supported arm-travel loop.
+15. Correctly sized stainless ear clamps for every internal box hose barb; lock the exact count after the Joolca splitter and connector terminations are in hand.
+16. One thin, backed aluminum camper two-port plate with butyl bedding, perimeter sealant, sealed wall-core sleeve/grommet, BLUE/RED labels, and weather cover.
+17. One recessed/guarded box-floor two-port plate with structural backing, BLUE/RED labels, road/debris protection, and penetrations kept separate from the propane vent openings.
+18. Twelve `1/2 in` PEX cinch clamps downstream of the accumulator: one at the accumulator adapter, three at the tee, one at each faucet adapter, two at each service valve, and one at each `UP120A5` transition.
+19. Potable-water-rated PTFE tape or thread sealant on the two `UP120A5` MNPT-to-Anderson FNPT joints only; do not apply thread sealant to compression seats, hose barbs, QD O-rings, or Joolca gasketed/BSP hose swivels unless that fitting's instructions require it.
 
 The selected CPC HFC35 NSF straight-through parts are rated from vacuum through `125 PSI` and from `-40°F` to `280°F`, providing appropriate pressure and temperature margin above the SHURflo's nominal `55 PSI` cutoff. Still measure dead-head/cycling pressure and hot-side flow while commissioning the pump and accumulator, but the QD selection no longer depends on staying below a marginal `60 PSI` ceiling.
 
-Use straight-through/non-valved QDs, not hidden automatic checks. Operating sequence is close both interior valves, make both exterior connections, open RED then BLUE, run the faucet until air clears, and then use hot water. Shutdown is close propane, close BLUE, open the faucet to relieve pressure, close RED, disconnect, drain both hoses and the HOTTAP, cap the ports, and stow dry. In freezing weather, perform that drain sequence after every use.
+Use straight-through/non-valved QDs, not hidden automatic checks. Operating sequence is close both camper service valves, snap the BLUE and RED double-ended jumpers between the camper and box plates, swing the heater fully outside, connect LP, open RED then BLUE, run the faucet or shower until air clears, and then use hot water. Shutdown is close propane, close BLUE, open the active outlet to relieve pressure, close RED, disconnect and drain both jumpers, drain the box service loops and HOTTAP when freezing conditions require it, cap all four panel bodies and four loose hose ends, latch the heater/arm in its travel cradle, and stow dry.
 
 Keep three rear functions distinct:
 
@@ -490,17 +497,21 @@ Keep three rear functions distinct:
 2. The BLUE service port is pressurized cold water out to the deployed heater.
 3. The RED service port accepts heated water back from the deployed heater and feeds only the faucet hot side.
 
-Do not cross-connect the gravity drain into the pressure/hot circuit. The exterior shower connects directly to the heater's red outlet instead of using an additional permanent camper branch.
+Do not cross-connect the gravity drain into the pressure/hot circuit. The exterior shower remains a box-side appliance branch at the Joolca-compatible three-way hot splitter instead of becoming an additional permanent camper branch.
 
 The selected appliance is the **Joolca HOTTAP V2 Essentials**. It is a portable outdoor-use propane heater rated about `37,500 BTU/hr`, `0.6-1.5 GPM`, and approximately `17.7 x 11.4 x 6.6 in`; it uses a supplied four-foot QCC1 regulator/hose and accepts a standard `4.5-20 lb` vapor-withdrawal cylinder. Joolca's support documentation explicitly permits a camper-trailer pump source and connection to an existing kitchen faucet. The purchased SHURflo `4008` (`3.0 GPM`, `55 PSI`) falls inside Joolca's recommended `40-60 PSI` and `1.6-3.17 GPM` source range. Joolca also says the HOTTAP continues to operate at high elevation but loses efficiency/output as air thins; it publishes no hard numeric altitude ceiling, so prove ignition and useful temperature rise at the intended Colorado elevation while the heater remains returnable.
 
-The heater stores inside the bumper box but operates outside its storage envelope. Use Joolca's removable bracket, supplied feet, or a positively locked outboard arm so the unit is vertical in free air. Joolca's published operating-clearance baseline is at least `39 in` above, `23.6 in` behind, and `19.7 in` at the front and both sides. The quick-release bracket is approved for mounting the unit to a vehicle or flat surface, but Joolca separately says the clearance instructions on the unit still apply during use; do not assume the box skin or open lid is a bracket-specific rear-clearance exception without written Joolca confirmation. Therefore the default proof path is feet/stand or an outboard arm that physically passes the clearance envelope. No heater, water, or connected LP hose crosses the moving swingout pivot during travel.
+The heater's articulating-arm base remains inside the bumper box, so the HOTTAP is mounted and protected without becoming an inside-box burner. Joolca explicitly permits vehicle mounting and publishes an official swing-out-TV-bracket example. Through-bolt or weld the metal arm base to structural backing near the opening, attach the Joolca quick-release bracket through a suitable VESA adapter plate, and add a separate positive travel cradle/latch so road loads do not depend on the TV arm's hinge friction or the Joolca bungees. The LP and water service loops must pass the complete stow/deploy cycle without kinking, pinching, rubbing, touching the exhaust area, or carrying arm load.
 
-Use one upright `5 lb` DOT cylinder with QCC1/Type-1 valve; the selected basis is Flame King `YSN5LB`. Do not add a separate regulator or gauge: the HOTTAP includes the correct regulator/hose, and an inline pressure gauge adds a leak path without accurately measuring remaining propane. NFPA 1192 says an RV propane container shall not be mounted on the exterior rear wall or bumper. The conservative travel baseline is therefore a disconnected, valve-closed, upright restraint **forward of the camper's rear plane** on a frame/bed-structure-tied open-air bracket, or another appropriate open cargo location accepted by the applicable RV/vehicle authority. The rear swingout box is not the default filled-cylinder travel location. At camp, remove the cylinder to a stable ground cradle, keep the LP hose fully outdoors, and do not place the cylinder below the heater or in its exhaust/clearance envelope. If no compliant travel location can be proven, the cylinder-transport architecture remains blocked even though the heater and water architecture are selected.
+Before ignition, open the box door and swing the heater vertical and fully beyond the opening. Joolca's published operating-clearance baseline is at least `39 in` above, `23.6 in` behind, and `19.7 in` at the front and both sides. Measure those distances from the deployed heater faces to the nearest box, door, camper, cylinder, or stored object; a nominal arm-extension dimension by itself proves nothing. Do not operate the HOTTAP while its burner body remains inside the open-front box. A portable fan can reduce residual bay heat after shutdown, but it does not change the appliance's outdoor-use classification or clearance envelope and is not part of the ignition permission logic.
+
+Use one upright Flame King `YSN10LB-ALM` DOT/TC aluminum cylinder with OPD QCC1/Type-1 valve. Flame King lists `10 lb` / `2.5 gal` propane capacity, `9.6 lb` empty weight, and `9 x 9 x 19.25 in` dimensions; nominal filled mass is about `19.6 lb`. The owner-selected location is inside the exterior rear swingout box. Treat it as a removable cylinder cargo package rather than permanent installed LP plumbing: travel valve closed and regulator/hose disconnected, then connect the supplied four-foot Joolca regulator/hose only when parked with the box open and heater deployed.
+
+The reported shelf opening is `19.5 in`, leaving only `0.25 in` nominal vertical clearance over the listed cylinder. Thin top/bottom EPDM pads can prevent chafe, but a compression fit is not the primary restraint and must not load the valve guard/collar. Capture the foot ring in a rigid bolted/welded cup or ring and use a rated body strap to structural backing; a rubber strap is useful as a secondary anti-rattle restraint. Dry-fit the actual cylinder and prove shelf tolerance, pad thickness, valve/collar access, QCC1 connector sweep, removal path, and no contact with the relief valve. Provide a permanent low vent opening flush with the box floor/drain path plus a fixed high vent for crossflow when the door is closed; keep both clear of the cylinder cradle and water-QD plate.
 
 The HOTTAP manual states that the recreational appliance is not allowed to supply drinking or sanitary water, while Joolca support separately documents connection to an existing kitchen faucet. Resolve that conservatively: use the heated side as recreational sink/shower wash water only, never as drinking water or as a purification step. The cold branch bypasses the heater and remains the drinking-water path.
 
-Current sourcing posture: buy the HOTTAP V2 Essentials directly from Joolca or an authorized source when stocked. Amazon currently surfaces the more expensive HOTTAP Nomad kit with a pump that duplicates the purchased SHURflo system, so do not pay for that duplicate hardware merely to keep the heater purchase on Amazon. Amazon remains appropriate for the `5 lb` cylinder and standard plumbing consumables; use an authorized fluid-handling distributor for exact NSF-numbered CPC couplings if Amazon cannot prove the NSF part number.
+Current sourcing posture: buy the HOTTAP V2 Essentials, quick-release bracket, and compatible three-way splitter/second outlet hose directly from Joolca or an authorized source when stocked. Amazon currently surfaces the more expensive HOTTAP Nomad kit with a pump that duplicates the purchased SHURflo system, so do not pay for that duplicate hardware merely to keep the heater purchase on Amazon. The exact Flame King `YSN10LB-ALM` is Amazon ASIN `B0DRRP9F8G`; the observed price during this pass was `$185.86`. Use an authorized fluid-handling distributor for exact NSF-numbered CPC couplings if Amazon cannot prove the NSF part number.
 
 For sink graywater, start with a removable under-sink vessel before adding an under-truck tank. Mock `2.5 gal` (`~20.9 lb` water) and `5 gal` (`~41.7 lb` water) sizes with the actual sink drain. The baseline should include a compact waterless trap, vented container connection, positive travel retention, removable spill tray/leak-sensor point, and a lift path that works when full. An under-truck gray tank remains a post-shakedown option because it adds a bed penetration, external vent/dump hardware, road-debris protection, freeze exposure, and legal-dump discipline; its dump valve should not be treated as a normally open drain.
 
@@ -534,28 +545,29 @@ The decision is final: hot water is supplied only by the camp-deployed propane s
 
 ### Sink mode
 
-1. Open and latch the bumper swingout and deploy the HOTTAP vertically outside the storage box.
-2. Place the upright `5 lb` cylinder on stable ground away from the heater exhaust and connect the supplied QCC1 regulator/hose.
-3. Connect the BLUE cold umbilical from the camper service plate to the heater inlet.
-4. Connect the dedicated RED hot-return umbilical from the heater outlet to the camper service plate.
-5. Open the RED hot-return service valve, then the BLUE cold-out service valve.
-6. Open the propane cylinder and use leak-detection solution on the disturbed LP connection.
+1. Open and latch the bumper swingout and box door.
+2. Release the arm's travel latch and swing the HOTTAP vertically outside the box; verify the deployment stop and full clearance envelope.
+3. Snap the short BLUE and RED double-ended jumper hoses between the matching camper and box plates. The internal box hoses, hot splitter, shower hose, and faucet-return branch remain connected.
+4. Connect the supplied QCC1 regulator/hose from the upright, restrained `10 lb` cylinder to the deployed heater, route it clear of the arm pivots/exhaust, and leak-check the disturbed LP connection.
+5. Open the RED camper service valve, then the BLUE camper service valve.
+6. Open the propane cylinder.
 7. Open the faucet hot side fully until air clears and the heater ignites; set temperature at the HOTTAP and minimize cold mixing so heater flow stays above `0.6 GPM`.
 
 ### Shower mode
 
-Use the same deployed heater, cylinder, and BLUE cold umbilical. Connect the supplied red shower hose/head to the HOTTAP outlet instead of the faucet-return hose. The appliance serves one outlet at a time; no exterior tee or selector valve is required.
+Use the same deployment and both box-to-camper jumpers. The supplied shower hose/head remains attached to one branch of the Joolca-compatible hot splitter and the faucet-return hose remains on the other. Keep the faucet closed to use the shower; keep the shower head closed to use the faucet. Do not intentionally demand both outlets until the measured pump/heater flow test shows useful temperature and stable ignition.
 
 ### Shutdown and freeze protection
 
-1. Close the propane cylinder.
-2. Close the BLUE cold-out service valve.
+1. Close the propane cylinder, then disconnect the regulator/hose before travel.
+2. Close the BLUE camper service valve.
 3. Open the active faucet/shower to relieve pressure.
-4. Close the RED hot-return valve if sink mode was used.
-5. Disconnect both water hoses, open/drain them, and follow the HOTTAP manual's drain/storage procedure.
-6. Cap the BLUE and RED camper ports and stow the dry heater and disconnected cylinder upright.
+4. Close the RED camper service valve.
+5. Disconnect and drain both short jumpers; cap all four panel bodies and all four loose jumper ends.
+6. In freezing conditions, also gravity-drain the box-side service loops and follow the HOTTAP manual's drain/storage procedure after every use.
+7. Swing the dry heater into its independent travel cradle, engage the positive arm/heater latch, and confirm the upright cylinder remains valve-closed, LP-disconnected, and fully restrained.
 
-Keep the removable hoses as short as the measured rear-wall-to-box geometry allows. A `4 ft`, `1/2 in ID` hot-return hose contains only about `0.04 gal`, so the purge delay should be a few seconds rather than the earlier long-umbilical estimate.
+Keep both removable jumpers as short as the measured camper-to-box gap allows and bundle them in a split sleeve so they handle as one water harness. Keep internal box service loops only long enough for unstrained full arm travel. A `4 ft`, `1/2 in ID` total hot path contains only about `0.04 gal`, so the purge delay should remain a few seconds rather than the earlier long-umbilical estimate.
 
 ---
 
