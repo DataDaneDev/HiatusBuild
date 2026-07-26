@@ -21,11 +21,11 @@ related:
 
 # Interior Furniture Layout and Galley Design Concepts
 
-As-of date: `2026-07-19`
+As-of date: `2026-07-25`
 
 Purpose: capture the active furniture/layout direction for the Hiatus/F-350 camper before final cuts. This document owns the interior **layout concept**, driver-side electrical-module/bench/desk integration, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, galley/plumbing service strategy, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`; the finish/paneling/storage feature-design detail now lives in `docs/implementation/INTERIOR_finish_paneling_and_feature_choices.md`.
 
-Status: **draft implementation baseline for hard-mounted electrical and wet-spine integration**, refreshed `2026-07-19`. The electrical module is now hard-mounted through the permanent Lonseal floor; the MultiPlus/AC enclosure remount, shore inlet, battery-bank matching/commissioning, `12V` closeout, and Bench anti-rack tie-in remain open. Keep the Bench service volume accessible while those gates close. In parallel, map and bench/driveway test the `36 gal` tank, KUS sender, fill, vent, pump outlet, drain, and wet-spine hardware, with one bare in-truck dry fit before drilling or final fitting lock. Keep final skins, exact drawer slides, the water penetration, and premium walnut cuts gated on installed route/service validation.
+Status: **draft implementation baseline for hard-mounted electrical and wet-spine integration**, refreshed `2026-07-25`. The electrical module is now hard-mounted through the permanent Lonseal floor; the MultiPlus/AC enclosure remount, shore inlet, battery-bank matching/commissioning, `12V` closeout, and Bench anti-rack tie-in remain open. Keep the Bench service volume accessible while those gates close. In parallel, map and bench/driveway test the `36 gal` tank, KUS sender, fill, vent, pump outlet, drain, purchased faucet/accumulator adapters, and wet-spine hardware, with one bare in-truck dry fit before drilling or final fitting lock. Hot water is locked to the propane-only rear-box Joolca HOTTAP V2 package; keep final skins, exact drawer slides, BLUE/RED service-plate cuts, and premium walnut cuts gated on installed route/service validation.
 
 Orientation convention throughout:
 
@@ -669,8 +669,9 @@ Before using the Ninja SP151 air fryer/toaster oven or induction cooktop, write 
 
 1. Induction cooking.
 2. Ninja SP151 air fryer/toaster oven.
-3. Water-heater recovery.
-4. Office loads.
+3. Office loads.
+
+Hot water is propane-only and is not an AC load-sequencing branch.
 
 Pass when: a user can tell which high-draw appliance is allowed from labels/switching, not memory.
 
@@ -685,8 +686,7 @@ Buy/commit later, after mockup:
 - Final panels/skins.
 - Monitor arm/mast exact hardware if roof sweep is unknown.
 - Appliance bay final pocket/restraint for the Ninja SP151.
-- Electric tanked heater.
-- Propane cubby/hot-water hardware.
+- Rear-box HOTTAP arm/travel cradle, Flame King cylinder restraint/vent package, BLUE/RED service plates/jumpers, and road guards until the complete physical mockup passes.
 - Permanent penetrations.
 
 Reasonable low-regret prep:
@@ -715,9 +715,9 @@ Do not buy broad `15-series` because “camper furniture needs extrusion.” Buy
 - Wheel-well tank fitting orientation, fill/vent bend radius, drain access, and restraint path.
 - Pump board location below the lofted fridge: aisle-facing, rear-facing, swing-out, or hybrid removable cassette.
 - Graywater strategy: jug/cassette size, waterless trap, vent, dump path, overflow behavior.
-- Hot-water scope: cold-only phase 1, outdoor propane shower only, sink hot water, or small electric tanked later.
+- Rear-box HOTTAP package geometry: arm pivot/deployed clearances, travel latch, cylinder cradle/vents, BLUE/RED service plates, jumper/service-loop lengths, road protection, and complete freeze drainage.
 - Shower deployment: rear barn doors, passenger access window, or both.
-- Appliance bay identity: Ninja SP151 restraint/storage, electric tank, bins, or swappable crate.
+- Appliance bay identity: Ninja SP151 restraint/storage, bins, or swappable crate; no interior water-heater volume is reserved.
 
 ---
 
@@ -730,6 +730,6 @@ Recommended baseline:
 - **Build the passenger side as a lofted fridge/wet-spine exoskeleton.** Raise the Iceco/fridge about `16 in`, put pump/accumulator below it, and prove the tank overlap/service access physically.
 - **Make the battery bench separated and cushion-compatible.** Batteries low in their own enclosures, flat divider board above, lid access, storage/cushion use kept out of battery volume.
 - **Keep the driver desk shallow but serious.** Preserve knee room; use the driver-side electrical closet/DC shelf for office power without blocking entry or roof closure.
-- **Build plumbing as a service bay, not a hidden nest.** Under-fridge pump/manifold access, graywater cassette, service hatch, leak tray, and wet/dry separation are mandatory.
+- **Build plumbing as a service bay, not a hidden nest.** Under-fridge minimum-fitting pump/strainer/accumulator/tee access, graywater cassette, service hatch, leak tray, and wet/dry separation are mandatory.
 - **Propane-only hot water.** Build the two-port BLUE cold-out / RED hot-return service interface; no alternate heater branch is reserved.
 - **Treat every moving panel like cargo.** Latches, hard stops, anti-rattle, and roof-safe checks are not optional.

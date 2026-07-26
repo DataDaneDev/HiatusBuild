@@ -20,7 +20,7 @@ related:
 
 # Live Build Checklist — Electrical Commissioning + Wet-Spine Integration
 
-As-of: `2026-07-19`
+As-of: `2026-07-25`
 
 Owner: Sunny / Dane
 
@@ -50,7 +50,7 @@ It does **not** replace the owner docs:
 - Final surface direction remains a three-piece Nick black-walnut commission after templates are locked. A temporary Galley plywood counter/template is acceptable before final walnut so sink/faucet geometry can be proven.
 - Plumbing is now active bench/mockup work, but no tank hole is cut before a complete port inventory and bare in-truck dry fit. Build cold-first and hot-ready as a compact fixed pack with minimum fittings; removal of the cooler/panels/part of the 80/20 frame is acceptable for uncommon service.
 - Alternator charging remains a separate commissioning gate. Rough-in/routing with fuses pulled can proceed after floor/module reinstall; first-charge waits for APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior.
-- Solar, hot water, and propane remain discovery/provisioning workstreams until shore, water/fill routing, roof real estate, and exterior mount/pass-through constraints are better proven.
+- Solar remains a discovery/provisioning workstream until charging priority and roof real estate are better proven. Hot water is locked to the propane-only rear-box Joolca HOTTAP V2 package; its cylinder restraint/venting, arm/travel latch, water service plates, hose sweeps, road protection, and deployed clearances remain physical mockup gates rather than selection questions.
 
 ## Historical July 4 sprint strategy
 
@@ -78,12 +78,12 @@ As of `2026-07-04`, the Galley/cooler/Bench/electrical tie-in has moved from tar
 | Mon `2026-07-06` if available | Wire/strain-relief/test + punch-list | safe low-power tests, AC/GFCI if ready, updated blocker list | alternator first-charge unless every prerequisite is green |
 | Week after | Alternator rough-in/commissioning, plumbing pressure test, floor gate | controlled subsystem tests | Lonseal glue-down before hardpoints/penetrations are proven |
 
-### Systems-integration priority ladder — `2026-07-19`
+### Systems-integration priority ladder — `2026-07-25`
 
 1. **Restore the electrical backer:** remount the MultiPlus and combined AC breaker enclosure into the embedded T-nuts; add cable protection/support and confirm service clearance.
 2. **Install shore and commission the bank:** prove/cut/seal the L5-30 route, charge Batteries 2 and 3 individually, rest/measure, and parallel all three only at `<=0.1V` difference.
-3. **Finish `12V`:** locate/install final `F-06 20A/80V`, complete `F-11 -> switch -> panel`, then prove the six pod lights, Maxxair fan, and first two DC outlets.
-4. **Bench-test water after return:** assemble the tank fittings, sender, pump, strainer, accumulator, and manifold; fill, pressure-test, cycle the pump, and inspect every joint in the driveway.
+3. **Finish `12V`:** verify Lynx Slot 4 contains the final `40A` MEGA body-marked at least `58VDC`, remove/bypass the separate input-fuse holder and retire standalone `F-06`, complete `F-11 -> switch -> panel`, then prove the six pod lights, Maxxair fan, and first two DC outlets.
+4. **Bench-test water after receipt/inspection:** assemble the tank fittings, sender, pump, strainer, accumulator, purchased EFIELD/YVSKM adapters, and one post-accumulator tee; fill, pressure-test, cycle the pump, and inspect every joint in the driveway.
 5. **Install and brace tested systems:** hard-mount the proven tank/wet spine and Galley, tie the electrical module into the Bench, then close panels only after service access and shakedown checks pass.
 
 ## Status legend
@@ -266,7 +266,8 @@ Goal: build and test the fixed cold-water pack plus the selected propane-only BL
 - [x] Select the KUS sender backing method: purchased KUS/Wema `FLS-U` stainless SAE five-hole C-ring under-ring for use with the supplied sender gasket and M5 screws; do not rely on self-tapping screws or sealant alone.
 - [ ] Inventory the KUS electrical handoff before tank closure: locate the Cerbo GX MK2 factory `Tank` terminal block, confirm enough `18-22 AWG` duplex from sender to Cerbo, and stage two sealed pigtail splices plus two Cerbo-end ferrules. Wire black signal and pink return to the same numbered Tank-input column; no external power, fuse, chassis ground, analog gauge, or GX Tank 140.
 - [ ] Bench-check the sender across its two leads before mounting (`~240 ohm` float down/empty, `~30-33 ohm` float up/full). After wiring, enable `Tank 1` at `Settings -> Integrations -> Tank and Temperature Sensors`, then set `Fresh Water`, `36 US gal`, and the US `240-30 ohm` sender standard; refine the custom tank shape only after measured fills.
-- [ ] Cut/drill only after the map is frozen. The exact `2-3/8 in` / `60 mm` hole saw is purchased and on order; for the selected `FLS-U` method, follow the official manual's single-opening requirement rather than the smaller sender-alone guidance. Preassemble the sender, gasket, screws, and C-ring as shown; tilt/rotate the ring through the one opening and tighten the five screws into it—do **not** drill five separate pilot holes through the tank top. Capture/remove chips and bench leak-test before truck installation.
+- [x] Purchase the exact `2-3/8 in` / `60 mm` KUS-sender hole saw (BOM row `239`, ordered `2026-07-24`); procurement does not clear the cut gate.
+- [ ] Cut/drill only after the map is frozen and the received hole saw plus flat, unobstructed sender geometry are verified. For the selected `FLS-U` method, follow the official manual's single-opening requirement rather than the smaller sender-alone guidance. Preassemble the sender, gasket, screws, and C-ring as shown; tilt/rotate the ring through the one opening and tighten the five screws into it—do **not** drill five separate pilot holes through the tank top. Capture/remove chips and bench leak-test before truck installation.
 - [ ] Confirm vent hose size for the gravity-fill vent nipple: preferred `10 mm ID`; `3/8 in ID` warmed/clamped fallback.
 - [ ] Hard-mount the compact plumbing pack: tank shutoff, suction flex, strainer, pump, discharge flex, RecPro double-FIP hose, accumulator, YVSKM female-swivel PEX-B outlet, then one ordinary tee branching to faucet cold while the straight leg continues to the rear BLUE service valve.
 - [ ] When the purchased EFIELD faucet adapters and YVSKM accumulator swivels arrive, inspect gasket/seat/markings, stage the two faucet adapters plus one installed accumulator swivel, and retain the other three swivels as spares. Assemble and cold-pressure-test the tank/pump/accumulator/tee system in the driveway before permanent truck mounting.
@@ -443,6 +444,7 @@ Goal: avoid building a beautiful overloaded rattle box.
 - [ ] Retorque and witness-mark structural fasteners after shakedown.
 - [ ] Recheck plumbing for leaks after first fill/drive.
 - [ ] Recheck electrical strain relief and cable rub after first drive.
+- [ ] Before travel reliance, assemble the purchased Dr.Roc spare-hoist/lug-wrench kit, operate the actual F-350 spare hoist by hand, verify lug-socket fit and stowage, and test-raise the measured spare. Do not impact-drive the hoist or work beneath a suspended tire.
 - [ ] Create post-shakedown punch list and sync it back here.
 
 ---
@@ -533,16 +535,16 @@ Run this before assuming a weekend task is blocked.
 
 # Near-term priority queue
 
-## Saturday `2026-07-18`
+## Next shop sequence — after `2026-07-25` procurement
 
-1. Pull the cure boards in the morning, give the floor a quick look, protect it, and start loading unless something is actually loose.
-2. Put the electrical module in and hard-mount it, then wire/install the batteries while the bench area is still open.
-3. Reinstall the Bench, Desk, and Galley around the electrical system once the access-critical work is finished.
-4. Rough-fit the tank, sink, faucet, pump, accumulator, and heater space; measure the north cubby and choose the `6 gal` electric heater or propane path based on what physically fits.
-5. When the missing plumbing pieces arrive, mark/drill the tank, cut the PEX, assemble the wet spine, and leak-test it.
-6. Call Expedition One Monday during `09:00-17:00 Mountain` at `877-366-3099` and ask whether they can add a centered `2 in` front receiver with an approved carrier/load rating.
+1. Remount the MultiPlus/AC enclosure, complete the shore-inlet route, and commission the battery/`12V` sequence while the Bench service volume is open.
+2. Inventory the tank ports and perform the bare-tank in-truck dry fit; prove sender, fill, vent, outlet, drain, restraint, fridge overlap, and service access before drilling.
+3. Receive and inspect the purchased EFIELD faucet adapters, YVSKM accumulator swivels, and exact KUS hole saw; reject any fitting with wrong threads, damaged/missing gasket seats, suspect markings, or unresolved potable-use documentation.
+4. Bench-build and cold-pressure-test the tank/pump/strainer/accumulator/tee pack, then terminate the faucet with the purchased adapters and preserve BLUE/RED service trunks to the rear plate.
+5. Mock the selected rear-box HOTTAP package—Flame King cylinder restraint/vents, Joolca arm/travel latch, service plates, parked-only jumpers, hose loops, road protection, and deployed clearances—before any permanent mount or penetration.
+6. Install and brace only the proven wet-spine/package interfaces, then run local shakedown and post-drive leak/fastener checks.
 
-**Build order:** electrical -> batteries/furniture -> tank/heater mockup -> plumbing -> exterior pass-throughs -> shakedown.
+**Build order:** electrical closeout -> tank/port dry fit -> adapter inspection and cold-water bench test -> wet-spine install -> rear-box HOTTAP package mockup/install -> shakedown.
 
 ## Do not prioritize next unless the gate above is already green
 
@@ -552,7 +554,7 @@ Run this before assuming a weekend task is blocked.
 - Shore or water-fill exterior holes before their complete inside routes/endpoints are physically proven.
 - Alternator first-charge.
 - Final solar purchase or roof penetration.
-- Permanent propane/hot-water appliance mount.
+- Permanent HOTTAP arm, cylinder cradle/vents, or BLUE/RED service-plate cuts before their package mockup passes.
 - Cosmetic skins everywhere.
 - Permanent monitor mechanism perfection.
 - Final lighting design.
@@ -564,9 +566,9 @@ Run this before assuming a weekend task is blocked.
 - [HOLD] Do not load over an actually loose floor area; otherwise protect the Lonseal and proceed Saturday morning.
 - [HOLD] No road travel with freestanding/lightly restrained electrical module.
 - [HOLD] No tank sender/fill/vent hole until the empty tank has a complete port map and passes one bare in-truck dry fit.
-- [HOLD] No PEX cuts until the purchased tank adapters arrive and the real sink/faucet/drain geometry plus manifold/heater-bypass route are mocked at full scale.
-- [HOLD] Do not merge the low south gravity tank drain with the pressurized cold/hot shower system; create a separate rear washdown/shower branch from the manifolds.
-- [HOLD] No propane cylinder mount, moving swingout hose, shell cutout, regulator/hose specification, or permanent heater mount until the exact heater class/model and its listing/manual/clearances are frozen.
+- [HOLD] No final PEX cuts until the purchased EFIELD/YVSKM adapters are received and accepted, and the real sink/faucet/drain plus minimum-fitting pump/tee geometry are mocked at full scale.
+- [HOLD] Do not merge the low south gravity tank drain with the pressurized BLUE/RED system; keep it a separate drain/rinse path, with the exterior shower on the HOTTAP-side three-way hot splitter rather than a camper manifold.
+- [HOLD] No permanent HOTTAP arm, cylinder cradle, box vents, service-plate cut, regulator/hose closeout, or travel latch until the selected Joolca/Flame King package passes physical box/deployed-clearance mockup and manual/listing review.
 - [HOLD] No battery-bench bridge/lid or obstructing upper structure until the `3x 48V` bank is installed, individually protected/connected as designed, covered, labeled, and removable with emergency access preserved.
 - [HOLD] No alternator first-charge until APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior are ready.
 - [HOLD] No final countertop sink cutout until faucet/drain/rail clearance is physically proven.
@@ -574,4 +576,4 @@ Run this before assuming a weekend task is blocked.
 - [HOLD] No final panels over electrical/plumbing until labels, strain relief, leak/functional tests, and service access pass.
 - [HOLD] No shore inlet cut until the hard-mounted electrical endpoint, inside AC-in path, backing, bend radius, service access, and strain relief are physically proven.
 - [HOLD] No water-fill/vent cut until final tank orientation, fill and highest-point vent ports, continuous hose fall/vent rise, service access, backing, and overflow/spill path are physically proven.
-- [HOLD] No propane or roof/solar exterior penetration until both exterior location and inside service/routing/strain-relief paths are physically proven.
+- [HOLD] No HOTTAP water-service or roof/solar exterior penetration until both exterior geometry and inside service/routing/strain-relief paths are physically proven; no propane line enters the camper in the selected rear-box package.

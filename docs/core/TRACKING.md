@@ -538,10 +538,10 @@ related:
 - Status: Open
 
 - ID: R-002
-- Risk: Passthrough routing/service-map decisions (solar, shore, diesel/propane) remain unresolved before final shell penetrations and permanent closeout.
+- Risk: Remaining service-map decisions (solar, shore, diesel, and the selected HOTTAP water-service interface) can still drive bad penetrations or inaccessible closeout geometry.
 - Impact (1-5): 4
 - Likelihood (1-5): 3
-- Mitigation: Consolidate routing questions, validate installed-camper service access, and avoid final penetrations until the service map is frozen.
+- Mitigation: Validate each complete inside/outside route before cutting. For hot water, prove the rear-box cylinder restraint/vents, HOTTAP arm/travel latch, BLUE/RED service plates, hose loops, road protection, and deployed clearances; no propane passthrough enters the camper.
 - Trigger: Any final shell/floor/wall penetration or permanent service-map closeout.
 - Owner: Sunny
 - Status: Open
@@ -559,7 +559,7 @@ related:
 - Risk: Simultaneous high-draw AC loads can exceed inverter continuous output and cause nuisance trips.
 - Impact (1-5): 4
 - Likelihood (1-5): 3
-- Mitigation: Enforce load-sequencing SOP, prioritize propane water heating path, and validate AC branch design in bench testing.
+- Mitigation: Enforce load-sequencing SOP, keep the locked propane-only HOTTAP path off the AC system, and validate AC branch design in bench testing.
 - Trigger: Final appliance mix and first full-load test.
 - Owner: Sunny
 - Status: Open
@@ -592,11 +592,11 @@ related:
 - Status: Partially mitigated by first live `48V` test; inspection closeout pending
 
 - ID: R-008
-- Risk: Propane leak or combustion byproduct exposure (CO) could occur if rear-mount routing, passthrough sealing, detector placement, or appliance listing/venting assumptions are wrong.
+- Risk: Propane leak, box accumulation, or combustion byproduct exposure could occur if the selected rear-box cylinder/HOTTAP package has inadequate restraint/venting, hose protection, deployed clearance, leak testing, or detector coverage.
 - Impact (1-5): 5
 - Likelihood (1-5): 3
-- Mitigation: Keep outdoor-only propane appliances out of enclosed use, require leak/pressure checks after every gas-path change, lock detector layout, and confirm listed venting method before indoor hot-water decisions.
-- Trigger: Propane passthrough fabrication and final water-heater selection.
+- Mitigation: Keep the HOTTAP outdoor-only and never burn it inside the closed box/camper; prove cylinder restraint and permanent low/high vents, arm/travel latch, regulator/hose sweep, operating clearances, water-jumper travel state, LP/CO/smoke detection, and leak testing before first burn.
+- Trigger: Rear-box package fabrication, any LP connection change, first HOTTAP burn, or recurring pre-trip inspection.
 - Owner: Sunny
 - Status: Open
 
@@ -708,7 +708,7 @@ related:
 - Dry-fit purchased `36 gal` wheel-well tank with the passenger-side lofted fridge/wet-spine skeleton; verify body/fitting envelope, bracket orientation, plusnut locations, tank/fridge overlap, pump-board access, leak path, and whether a secondary floor/tie-down restraint path is needed. Gravity-fill vent nipple measurement is captured (`10 mm` OD main land, `11 mm` OD largest barb); replacement vent tube dry-fit remains open.
 - Validate purchased galley fixtures/appliances in the integrated counter module: Sarlai sink cutout, FORIOUS faucet under-counter clearance, drain/graywater path, Duxtop induction use/stow location, and Ninja SP151 cubby heat/retention/plug access.
 - Lock drain/graywater, pump service-valve, and winterization details as discrete procurement rows; sink/faucet are now purchased and logged in BOM rows `207-208`.
-- Mock the purchased SHURflo/SEAFLO pack in the `6 in` cooler-to-battery gap with strainer access, vibration isolation, nonconductive splash separation, and a drained leak path away from battery terminals/cabling. Faucet threads are now confirmed as `3/8 in` supply-hose connections requiring two `1/2 in PEX-B x 3/8 in OD compression male` adapters. The accumulator's included white swivel fittings are hose barbs rather than PEX-B barbs; source one lead-free `1/2 in PEX-B barb x 1/2 in female-swivel` adapter for the accumulator outlet and use the purchased RecPro `30 in` double-FIP braided hose on its pump side. Verify the post-accumulator tee, BLUE/RED valve access, service-plate backer, and continuous PEX routes before cutting the rear wall.
+- Mock the purchased SHURflo/SEAFLO pack in the `6 in` cooler-to-battery gap with strainer access, vibration isolation, nonconductive splash separation, and a drained leak path away from battery terminals/cabling. Two purchased EFIELD `1/2 in PEX-B x 3/8 in OD compression male` adapters terminate the FORIOUS faucet hoses. Install one of the four purchased YVSKM `1/2 in PEX-B x 1/2 in female-swivel` adapters at the accumulator outlet and retain three spares; inspect receipt, markings, gasket/seat fit, and potable-use documentation before acceptance, then cold-pressure-test the assembly. Use the purchased RecPro `30 in` double-FIP braided hose on the pump side and verify the post-accumulator tee, BLUE/RED valve access, service-plate backer, and continuous PEX routes before cutting the rear wall.
 - Propane hot-water direction and rear-box package are locked; physical geometry remains open. Dry-fit the Flame King `YSN10LB-ALM` in the reported `19.5 in` shelf opening and prove valve/QCC1 access, rigid foot capture, rated body restraint, thin EPDM anti-chafe pads, permanent low/high vents, and no blocked drain path. Mount the Joolca bracket to a structurally backed articulating arm near the box opening; provide a separate travel cradle/latch and prove the deployed heater's `39 in` top, `23.6 in` rear, and `19.7 in` front/side clearance envelope. Prove the two short camper-to-box jumper hoses, internal arm service loops, faucet hot-only flow above `0.6 GPM`, and complete freeze draining.
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)
 - Confirm received Mechman dual-48V kit fitment/content for the truck (`2021 F-350 7.3L`) before alternator commissioning

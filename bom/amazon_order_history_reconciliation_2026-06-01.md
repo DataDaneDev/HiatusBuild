@@ -1,6 +1,6 @@
 # Amazon order history to BOM reconciliation — 2026-06-01
 
-Source: `references/amazon_order_history.csv` (this report uses only dates, quantities, prices, ASINs, and truncated item descriptions; raw private fields are omitted).
+Source at reconciliation time: owner-provided Amazon order-history export. The tracked `references/amazon_order_history.csv` is now a sanitized build/truck-only derivative containing dates, quantities, prices, normalized public product URLs, ASINs, and descriptions; account-scoped order fields and excluded items are omitted. Arithmetic below describes the original export.
 
 ## Arithmetic checks
 - Amazon CSV item rows parsed: 138 (duplicate header row skipped)
@@ -145,7 +145,7 @@ Interpretation: the Amazon export appears to provide unit/item prices, not exten
 - A138 → BOM row 204: 2026-01-17; qty 1; unit $12.99; ext $12.99; ASIN B0C77R7MXQ; BRCOVAN 1'' Ball Mount Base with Aluminum Alloy 4-Hole AMPS Square Plate Compatible with RAM Mounts B Size 1 …
 
 ## Excluded Amazon rows
-- A009: 2026-05-27; qty 1; unit $9.99; ext $9.99; ASIN B0D53MGWSF; sensitive non-build accessory — excluded from public build BOM; description intentionally suppressed.
+- A009: 2026-05-27; qty 1; unit $9.99; ext $9.99; sensitive non-build accessory — excluded from the tracked reference and public build BOM; identifying details intentionally suppressed.
 - A031: 2026-04-21; qty 1; unit $21.08; ext $21.08; ASIN B01AT2A08U; Hiflofiltro HiFlo Motorcycle Air Filter for KTM 1190 1290 HFA6301 — Motorcycle maintenance, not Hiatus/F-350 camper BOM.
 - A032: 2026-04-21; qty 1; unit $61.23; ext $61.23; ASIN B001GMAL0K; Motorex Power Synthetic 4T Motor Oil 10W-50 4 Liter — Motorcycle maintenance, not Hiatus/F-350 camper BOM.
 - A033: 2026-04-21; qty 1; unit $11.99; ext $11.99; ASIN B07MWD8ZVJ; K&N Motorcycle Oil Filter: High Performance, Premium, Designed to be used with Synthetic or Conventional Oils… — Motorcycle maintenance, not Hiatus/F-350 camper BOM.

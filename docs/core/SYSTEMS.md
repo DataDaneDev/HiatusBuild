@@ -316,7 +316,7 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 - Condensation controls and climate envelope limits: TBD
 
 ## Safety
-- Purpose: define a practical, build-ready safety baseline for the current architecture (`48V 15.36kWh` house bank, `12V` distribution, `120VAC` shore/inverter path, and propane-supported heating/hot-water concepts).
+- Purpose: define a practical, build-ready safety baseline for the current architecture (`48V 15.36kWh` house bank, `12V` distribution, `120VAC` shore/inverter path, diesel cabin heat, and the selected exterior propane HOTTAP hot-water package).
 - Priority order: prevent ignition and overcurrent faults, preserve safe shutdown paths, detect hazards early, and make isolation/service repeatable.
 - Final install gate: before energizing or using propane in service, verify all items against manufacturer manuals and complete licensed inspection where required.
 
@@ -376,19 +376,17 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 3. GFCI/RCD trip test at each protected branch.
 4. Verify AC-out-2 remains de-energized as a reserve-only capped route in Phase 1.
 
-### Propane safety (rear-mounted tank plus passthrough and hot-water path)
-- Main hazards: leak accumulation, ignition near electrical equipment, CO exposure, and using outdoor-only appliances in enclosed space.
-- Rear-mount tank controls:
-- Keep cylinder upright and externally mounted with impact-resistant bracketry and valve protection.
-- Keep tank shutoff valve accessible from outside without tools.
-- Protect hose/regulator routing from road debris, abrasion, and exhaust heat zones.
-- Propane passthrough controls:
-- Use sealed bulkhead/pass-through hardware with chafe protection at all penetrations.
-- Avoid concealed unions/joints in inaccessible cavities; keep serviceable connections at inspection points.
-- Perform leak tests after any connection change and before each trip phase where propane is used.
-- Appliance selection rule (critical):
-- Treat portable outdoor tankless heaters as outdoor-use-only unless a specific model is explicitly listed for indoor/RV enclosed installation with compliant venting.
-- If an indoor propane water-heating path is pursued, lock to an RV/marine-listed indoor unit with approved venting/combustion-air method and documented install clearances before purchase.
+### Propane safety (rear-box cylinder plus exterior Joolca HOTTAP V2)
+- Main hazards: LP leakage or accumulation in the rear box, ignition near electrical equipment, CO exposure, road damage, and operating an outdoor-only appliance inside an enclosed box or living space.
+- Cylinder/box controls:
+- Keep the Flame King `YSN10LB-ALM` upright in a rigid foot capture plus rated body restraint, with valve/QCC1 access, valve protection, thin anti-chafe pads, permanent unobstructed low/high box vents, and an open drain path.
+- Keep the cylinder shutoff accessible without tools. Protect the regulator/hose sweep from pinch points, arm motion, road debris, abrasion, and exhaust heat.
+- The selected LP path remains `cylinder -> QCC1 regulator/hose -> deployed HOTTAP` entirely within the rear-box/outdoor package; no propane line or union passes into the camper.
+- HOTTAP operating/travel controls:
+- Mount the Joolca bracket to a structurally backed articulating arm, provide a separate positive travel cradle/latch, and prove the manual clearances in the deployed position before operation.
+- Never fire the HOTTAP inside the closed rear box, camper, or any other enclosed space. Deploy it outdoors only, with the box open and the exhaust/combustion zone clear.
+- Connect the BLUE cold-out and RED hot-return water jumpers only while parked; disconnect, cap, and stow them before travel. Preserve full freeze drainage of the heater, splitters, loops, jumpers, and service trunks.
+- Leak-test every disturbed LP connection before operation and define recurring post-service/pre-trip test cadence. Do not use a flame for leak checking.
 - Detection and ventilation controls:
 - Keep an LP detector low in cabin, CO detector in breathing zone, and smoke detector high in cabin.
 - Test detector alarm functions on a recurring schedule and replace by manufacturer expiration date.

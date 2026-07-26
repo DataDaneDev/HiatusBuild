@@ -20,7 +20,7 @@ related:
 - Keep exact topology, fuse, conductor, and bench procedure detail in `docs/implementation/`.
 
 ## Snapshot
-- As-of date: 2026-07-19
+- As-of date: 2026-07-25
 - Phase: hard-mounted electrical integration, bank/shore/12V commissioning, then wet-spine installation
 - Install milestone: May 7, 2026 Hiatus install is historical context; the real camper shell and integrated module fit now control physical decisions
 - Mission: build a reliable off-grid camper workspace suitable for full-time professional use
@@ -47,7 +47,7 @@ related:
 - Treat the water tank as a two-stage job: workbench measurement/mockup followed by one bare-tank in-truck dry fit before any new sender/fill/vent hole is cut. Lock tank restraint and wet-spine service access before the passenger-side frame closes around it.
 - Shore and water-fill penetrations stay downstream of their installed inside endpoints. Prove the complete inside route, bend radius/fall, backing, service access, and strain relief before cutting the shell/bed-side interface.
 - Use registered bed rivnuts rather than plywood alone for modules needing positive retention. Electrical, battery, and full-tank loads must remain visibly restrained and serviceable.
-- Electrical system status remains live-proven at the system level, but permanent shore AC-in, AC-out/GFCI, full-bank commissioning, road restraint, and alternator first-charge remain separate gates. Factory pod lighting, Maxxair fan, and initial DC outlets move into the immediate `12V` proof pass; solar, permanent hot water, propane closeout, and audio remain later workstreams.
+- Electrical system status remains live-proven at the system level, but permanent shore AC-in, AC-out/GFCI, full-bank commissioning, road restraint, and alternator first-charge remain separate gates. Factory pod lighting, Maxxair fan, and initial DC outlets move into the immediate `12V` proof pass; solar and audio remain later workstreams. Hot water is selected as the propane-only rear-box Joolca HOTTAP V2 package, with physical cylinder/arm/service-plate/clearance gates still open.
 - Black-walnut Galley/Desk/Bench finish surfaces remain template-gated after final floor height and module geometry are proven.
 
 ## Scope
@@ -69,7 +69,7 @@ related:
 ## Scope clarifications from workbook
 - In scope for Phase 1 includes office-first electrical architecture, Starlink support, cabinetry/workstation, and core plumbing.
 - Truck mechanical upgrades listed as "skip for now" remain out of scope for Phase 1.
-- Several passthrough decisions (solar and diesel/propane routing) are still pending and tracked in `docs/core/TRACKING.md`; shore hardware is selected, with inlet/cable-support details handled during physical install.
+- Solar and diesel-heater routing decisions remain pending and tracked in `docs/core/TRACKING.md`; shore hardware is selected, with inlet/cable-support details handled during physical install. The HOTTAP LP path stays within the rear box/outdoor deployed package—no propane passthrough into the camper—while the BLUE/RED water service plates remain geometry-gated.
 
 ## Milestone plan (draft)
 - M0: requirements baseline frozen
@@ -81,7 +81,7 @@ related:
 - M6: electrical module first-live checkpoint and truck-bed hard-mount complete; shore inlet, bank/`12V` commissioning, Bench tie-in, and strain-relief closeout underway
 - M7: shakedown and punch-list closure
 
-## Build sequencing baseline (as-of 2026-07-19)
+## Build sequencing baseline (as-of 2026-07-25)
 - The floor-removal branch is closed and the electrical-module hard-mount gate has passed. Build sequencing now keeps the battery bay and backer service face open while the heavy electrical equipment, shore route, battery bank, and `12V` junction are closed out.
 - Canonical sequence: remount MultiPlus/AC enclosure -> prove and install shore inlet/AC-in path -> equalize and parallel the `3x 48V` bank -> finish Orion/`12V` branch and prove lights/fan/DC outlets -> bench/driveway assemble and test tank/pump/wet spine -> hard-mount tank/plumbing/Galley -> add Bench tie-in and remaining modules/panels -> shakedown.
 - Detailed owner docs:
@@ -106,7 +106,7 @@ Purpose: finish the hard-mounted utilities and close furniture around tested sys
 2. **Open-access battery-bank commissioning**
    - Charge Batteries 2 and 3 individually, rest and record all three voltages, parallel only within `0.1V`, then verify branch protection, polarity, disconnect, Lynx/shunt, cable support, covers, extraction, and current sharing with the Bench open.
 3. **`12V` commissioning**
-   - Install final Orion `F-06`, complete the `12V` buffer branch, verify `F-07`/`F-11`, then prove factory lights, Maxxair fan, pump branch, and selected DC charging outlets.
+   - Verify the final Orion input path is Lynx Slot 4 through one `40A` MEGA body-marked at least `58VDC` into the existing `6 AWG` pair with standalone `F-06` retired; complete the `12V` buffer branch, verify `F-07`/`F-11`, then prove factory lights, Maxxair fan, pump branch, and selected DC charging outlets.
 4. **Tank, restraint, and compact plumbing-pack test/install**
    - Add the approved sender/fittings, bench/driveway fill-pressure-leak-function test the tank/pump assembly, then hard-mount its restraint and the minimum-fitting pump/strainer/accumulator/tee pack with wet/dry separation and a documented cooler/panel/frame removal path.
 5. **Remaining penetrations, modules, and shakedown**
