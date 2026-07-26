@@ -50,7 +50,7 @@ It does **not** replace the owner docs:
 - Final surface direction remains a three-piece Nick black-walnut commission after templates are locked. A temporary Galley plywood counter/template is acceptable before final walnut so sink/faucet geometry can be proven.
 - Plumbing is now active bench/mockup work, but no tank hole is cut before a complete port inventory and bare in-truck dry fit. Build cold-first and hot-ready as a compact fixed pack with minimum fittings; removal of the cooler/panels/part of the 80/20 frame is acceptable for uncommon service.
 - Alternator charging remains a separate commissioning gate. Rough-in/routing with fuses pulled can proceed after floor/module reinstall; first-charge waits for APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior.
-- Solar remains a discovery/provisioning workstream until charging priority and roof real estate are better proven. Hot water is locked to the propane-only Joolca HOTTAP V2 package: direct exterior box mount on Joolca's vehicle quick plate under its mounted cover, cylinder restrained inside the permanently vented box, and one camper BLUE/RED Joolca/Melnor-compatible service plate. Bracket backing, cylinder fit/vents, supplied-hose reach, port protection, pressure/flow, drainability, and operating clearances remain physical mockup gates rather than selection questions.
+- Solar remains a discovery/provisioning workstream until charging priority and roof real estate are better proven. Hot water is locked to the propane-only Joolca HOTTAP V2 package: direct exterior box mount on Joolca's vehicle quick plate under its mounted cover, cylinder restrained inside the permanently vented box, and two compact self-sealing camper QD3 ports used through removable QD3-to-Joolca adapter keys. Bracket backing, cylinder fit/vents, adapter fit, port backing/caps, flow, drainability, and operating clearances remain physical gates.
 
 ## Historical July 4 sprint strategy
 
@@ -272,7 +272,7 @@ Goal: build and test the fixed cold-water pack plus the selected propane-only BL
 - [ ] Hard-mount the compact plumbing pack: tank shutoff, suction flex, strainer, pump, discharge flex, RecPro double-FIP hose, accumulator, YVSKM female-swivel PEX-B outlet, then one ordinary tee branching to faucet cold while the straight leg continues to the rear BLUE service valve.
 - [ ] When the purchased EFIELD faucet adapters and YVSKM accumulator swivels arrive, inspect gasket/seat/markings, stage the two faucet adapters plus one installed accumulator swivel, and retain the other three swivels as spares. Assemble and cold-pressure-test the tank/pump/accumulator/tee system in the driveway before permanent truck mounting.
 - [ ] Fill with clean water, verify gravity fill/vent behavior, pressure-cycle the `12V` pump, check accumulator behavior, exercise drain/washout paths, and inspect every fitting/seam for leaks.
-- [ ] Preserve the dedicated tank drain plus drainable BLUE/RED Sea-Dog exterior stubs; both supplied Joolca hoses and the HOTTAP must drain after freezing-weather use. Add regulated blowout access only if the installed geometry proves gravity draining insufficient.
+- [ ] Preserve the dedicated tank drain plus drainable BLUE/RED QD3 transitions; both supplied Joolca hoses, removable adapter keys, and the HOTTAP must drain after freezing-weather use. Add regulated blowout access only if the installed geometry proves gravity draining insufficient.
 - [ ] Do not add a manifold rail, antifreeze pickup, quick-disconnect unions, or three-valve heater bypass by default; preserve a known cooler/panel/frame disassembly path instead.
 - [ ] Add pump electrical connector and strain relief.
 - [ ] Add shallow removable leak tray/pan under pump/strainer/accumulator area.
@@ -284,8 +284,8 @@ Goal: build and test the fixed cold-water pack plus the selected propane-only BL
 - [ ] Build graywater cassette/drain path with winterizable/waterless trap strategy.
 - [ ] Pressure/leak test plumbing before panel closure.
 - [ ] Recheck all clamps/unions after first drive.
-- [x] Finalize hot water as propane-only Joolca HOTTAP V2 directly mounted outside the rear box, using one camper BLUE/RED Joolca/Melnor-compatible plate and the supplied parked-only `1 m`/`4 m` hoses; electric storage/tankless branches are closed.
-- [ ] [HOLD] Buy/drill the remaining HOTTAP/Sea-Dog/Melnor hardware only after the real cylinder, quick-plate/cover, one service plate, camper backing/backside clearance, supplied-hose reach, port protection, pump pressure, and operating-clearance envelope pass mockup.
+- [x] Finalize hot water as propane-only Joolca HOTTAP V2 directly mounted outside the rear box, using two compact camper QD3 female no-spill ports, removable QD3-to-Joolca adapter keys, and the supplied parked-only `1 m`/`4 m` hoses; electric storage/tankless branches are closed.
+- [ ] [HOLD] Prototype one `QD3-FT10-P` / `QD3-MTN14` port-key set before buying the second or drilling. Prove the actual Joolca hose fit, automatic shutoff, hot flow, drainability, adapter-key rigidity, nominal `M18` panel cut, backing/locknut access, short inside-hose route, simple rubber-cap fit, and operating-clearance envelope. No large hatch, service box, Sea-Dog body, or travel-exposed Melnor adapter is in scope.
 
 ## 8. AC/DC electrical closeout and tests
 
@@ -541,7 +541,7 @@ Run this before assuming a weekend task is blocked.
 2. Inventory the tank ports and perform the bare-tank in-truck dry fit; prove sender, fill, vent, outlet, drain, restraint, fridge overlap, and service access before drilling.
 3. Receive and inspect the purchased EFIELD faucet adapters, YVSKM accumulator swivels, and exact KUS hole saw; reject any fitting with wrong threads, damaged/missing gasket seats, suspect markings, or unresolved potable-use documentation.
 4. Bench-build and cold-pressure-test the tank/pump/strainer/accumulator/tee pack, then terminate the faucet with the purchased adapters and preserve BLUE/RED service trunks to the rear plate.
-5. Mock the selected rear-box HOTTAP package—Flame King cylinder restraint/vents, exterior Joolca quick plate/backing and mounted cover, one Sea-Dog/Melnor camper plate, parked-only supplied hoses, regulator service hatch, port protection, and operating clearances—before any permanent mount or penetration.
+5. Mock the selected rear-box HOTTAP package—Flame King cylinder restraint/vents, exterior Joolca quick plate/backing and mounted cover, one QD3 port/key prototype, parked-only supplied hoses, regulator service hatch, two simple capped port locations, and operating clearances—before any permanent mount or penetration.
 6. Install and brace only the proven wet-spine/package interfaces, then run local shakedown and post-drive leak/fastener checks.
 
 **Build order:** electrical closeout -> tank/port dry fit -> adapter inspection and cold-water bench test -> wet-spine install -> rear-box HOTTAP package mockup/install -> shakedown.
