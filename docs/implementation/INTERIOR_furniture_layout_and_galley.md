@@ -476,6 +476,8 @@ Every permanent inline fitting after the accumulator is therefore:
 11. One custom hot-return umbilical: Joolca red outlet connector or spare hose assembly, `1/2 in ID` reinforced hose, CPC insert, and the adapters/clamps proven by the in-hand Joolca fitting. The supplied shower hose remains unmodified for shower mode.
 12. At least four additional correctly sized ear clamps for the two umbilicals if both heater-end connectors terminate in hose barbs; lock the exact count after the Joolca connectors are in hand.
 13. One thin aluminum two-port service plate, backing, butyl bedding, perimeter sealant, a sealed wall-core sleeve/grommet, labels, and a weather cover.
+14. Twelve `1/2 in` PEX cinch clamps downstream of the accumulator: one at the accumulator adapter, three at the tee, one at each faucet adapter, two at each service valve, and one at each `UP120A5` transition.
+15. Potable-water-rated PTFE tape or thread sealant on the two `UP120A5` MNPT-to-Anderson FNPT joints only; do not apply thread sealant to compression seats, hose barbs, QD O-rings, or Joolca gasketed/BSP hose swivels unless that fitting's instructions require it.
 
 The CPC HFC12 NSF parts are rated to `60 PSI`; that is close to the SHURflo's `55 PSI` nominal cutoff. Verify actual dead-head pressure with a gauge after accumulator setup. Do not commission this coupling set if measured pressure exceeds `60 PSI`; substitute a higher-rated potable coupling family rather than accepting an overpressure condition.
 
