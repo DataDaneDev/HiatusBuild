@@ -1,3 +1,9 @@
+## 2026-07-26 — HOTTAP V2 core package purchased
+
+- Owner confirmed purchase of one HOTTAP V2 Essentials (`$399.00`), one HOTTAP V2 Mount Cover (`$95.00`), and one Quick-Release HOTTAP Bracket (`$95.00`). Item subtotal was `$589.00`, shipping was free, estimated tax was `$44.49`, and checkout total was `$633.49`.
+- BOM rows `72`, `255`, and `69` now carry the three item subtotals as purchased on `2026-07-26`; included hose/battery rows `232` and `237` are activated pending receipt verification. Consistent with the BOM contract, order-level tax remains excluded rather than being allocated across item rows.
+- Procurement is closed for the HOTTAP core package, but installation is not cleared: inspect the shipment, verify bracket/cover compatibility, prove structural backing and road-load behavior, and validate manual operating clearances before drilling or first ignition.
+
 ## 2026-07-26 — Late parallel-audit findings reconciled after canonical BOM cleanup
 
 - Reconciled three read-only audit lanes against the already-normalized BOM rather than blindly applying every suggested split. Identical packs and true kits remain grouped when procurement identity and lifecycle are shared; battery-bank members, the GFCI two-pack, cable inventory, tool kits, and other true packages were not over-split.

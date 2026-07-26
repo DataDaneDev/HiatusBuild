@@ -25,7 +25,7 @@ As-of date: `2026-07-25`
 
 Purpose: capture the active furniture/layout direction for the Hiatus/F-350 camper before final cuts. This document owns the interior **layout concept**, driver-side electrical-module/bench/desk integration, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, galley/plumbing service strategy, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`; the finish/paneling/storage feature-design detail now lives in `docs/implementation/INTERIOR_finish_paneling_and_feature_choices.md`.
 
-Status: **draft implementation baseline for hard-mounted electrical and wet-spine integration**, refreshed `2026-07-26`. The electrical module is now hard-mounted through the permanent Lonseal floor; the MultiPlus/AC enclosure remount, shore inlet, battery-bank matching/commissioning, `12V` closeout, and Bench anti-rack tie-in remain open. Keep the Bench service volume accessible while those gates close. In parallel, map and bench/driveway test the `36 gal` tank, KUS sender, fill, vent, pump outlet, drain, purchased faucet/accumulator adapters, and wet-spine hardware, with one bare in-truck dry fit before drilling or final fitting lock. Hot water is locked to the propane-only rear-box Joolca HOTTAP V2 package; keep final skins, exact drawer slides, BLUE/RED service-plate cuts, and premium walnut cuts gated on installed route/service validation.
+Status: **draft implementation baseline for hard-mounted electrical and wet-spine integration**, refreshed `2026-07-26`. The electrical module is now hard-mounted through the permanent Lonseal floor; the MultiPlus/AC enclosure remount, shore inlet, battery-bank matching/commissioning, `12V` closeout, and Bench anti-rack tie-in remain open. Keep the Bench service volume accessible while those gates close. In parallel, map and bench/driveway test the `36 gal` tank, KUS sender, fill, vent, pump outlet, drain, purchased faucet/accumulator adapters, and wet-spine hardware, with one bare in-truck dry fit before drilling or final fitting lock. Hot water is locked to the propane-only rear-box Joolca HOTTAP V2 package; the heater, Quick-Release HOTTAP Bracket, and HOTTAP V2 Mount Cover were purchased `2026-07-26`, while receipt and physical integration remain open. Keep final skins, exact drawer slides, BLUE/RED service-plate cuts, and premium walnut cuts gated on installed route/service validation.
 
 Orientation convention throughout:
 
@@ -334,7 +334,7 @@ Non-obvious feature: make the fridge skeleton do double duty as the hard mountin
 
 ### Core recommendation
 
-Build a **propane-only, parked-connection hot-water system** around the existing cold-water pack, two compact self-sealing camper ports, and a HOTTAP mounted directly to the exterior side of the rear swingout box. Joolca's vehicle quick plate and mounted cover keep the heater outside the propane compartment, protected from road dust, and out of the box's storage volume. No articulating arm, box-side water plate, heater cubby, permanent three-way splitter, Sea-Dog washdown body, or travel-exposed plastic faucet adapter remains.
+Build a **propane-only, parked-connection hot-water system** around the existing cold-water pack, two compact self-sealing camper ports, and a HOTTAP mounted directly to the exterior side of the rear swingout box. The purchased Quick-Release HOTTAP Bracket and HOTTAP V2 Mount Cover keep the heater outside the propane compartment, protected from road dust, and out of the box's storage volume. No articulating arm, box-side water plate, heater cubby, permanent three-way splitter, Sea-Dog washdown body, or travel-exposed plastic faucet adapter remains.
 
 Current north/middle/south routing concept (`2026-07-26`; FORIOUS faucet interfaces confirmed at `3/8 in`; exact faucet and accumulator adapters purchased; camper service-plate fit remains field-gated):
 
@@ -469,7 +469,7 @@ low north tank pickup
                     -> 1/2 in FNPT x 3/8 in barb -> short reinforced hose
                     -> BLUE QD3-FT10-P female no-spill panel coupling
 
-HOTTAP mounted directly outside the box on Joolca vehicle quick plate
+HOTTAP mounted directly outside the box on Quick-Release HOTTAP Bracket
 camper BLUE QD3 -> BLUE adapter key
   -> supplied 1 m female/female hose -> HOTTAP blue inlet
 
@@ -515,9 +515,9 @@ Keep three rear functions distinct:
 
 Do not cross-connect the gravity drain into the pressure/hot circuit. The exterior shower is the removable `4 m` hose plus Joolca handle/head, not an additional permanent camper branch.
 
-The selected appliance is the **Joolca HOTTAP V2 Essentials**. Owner-supplied unit specifications are `35,000 BTU`, `2.5-6 L/min` (`0.6-1.6 GPM`), `1.2 m / 3.9 ft` LPG hose, GASKNECT `3/8 SAE` gas coupling, and `1/2 in BSP` water quick-connects. Joolca's support documentation explicitly permits a camper-trailer pump source, Melnor QuickConnect fittings, vehicle mounting, and connection to an existing kitchen faucet. The purchased SHURflo `4008` is nominally `3.0 GPM` / `55 PSI`. Joolca says the HOTTAP continues to operate at high elevation but loses efficiency/output as air thins; it publishes no hard numeric altitude ceiling, so prove ignition and useful temperature rise at intended Colorado elevation while the heater remains returnable.
+The purchased appliance is the **Joolca HOTTAP V2 Essentials**. Owner-supplied unit specifications are `35,000 BTU`, `2.5-6 L/min` (`0.6-1.6 GPM`), `1.2 m / 3.9 ft` LPG hose, GASKNECT `3/8 SAE` gas coupling, and `1/2 in BSP` water quick-connects. Joolca's support documentation explicitly permits a camper-trailer pump source, Melnor QuickConnect fittings, vehicle mounting, and connection to an existing kitchen faucet. The purchased SHURflo `4008` is nominally `3.0 GPM` / `55 PSI`. Joolca says the HOTTAP continues to operate at high elevation but loses efficiency/output as air thins; it publishes no hard numeric altitude ceiling, so prove ignition and useful temperature rise at intended Colorado elevation while the heater remains returnable.
 
-The HOTTAP remains directly mounted to the exterior side of the bumper box. Through-bolt Joolca's vehicle quick plate to structural backing; do not rely on aluminum skin alone for road vibration. Use Joolca's mounted cover for dust/travel protection and remove/open it as required before operation. The external location recovers box storage and physically separates the burner from the cylinder compartment. LP and water stay disconnected for travel.
+The HOTTAP remains directly mounted to the exterior side of the bumper box. Through-bolt the purchased Quick-Release HOTTAP Bracket—previously documented as Joolca's vehicle quick plate—to structural backing; do not rely on aluminum skin alone for road vibration. Use the purchased HOTTAP V2 Mount Cover for dust/travel protection and remove/open it as required before operation. The external location recovers box storage and physically separates the burner from the cylinder compartment. LP and water stay disconnected for travel.
 
 Before ignition, clear/remove the mounted cover and verify that the installed exterior position still satisfies Joolca's current manual clearances. Measure from the heater faces/exhaust to the nearest box wall/door, camper surface, vent opening, stored object, or open cover; marketing photos do not waive the manual. Do not operate the HOTTAP inside the open-front box. A fan does not change the appliance's outdoor-use classification.
 
@@ -527,7 +527,7 @@ The reported shelf opening is `19.5 in`, leaving only `0.25 in` nominal vertical
 
 The HOTTAP manual states that the recreational appliance is not allowed to supply drinking or sanitary water, while Joolca support separately documents connection to an existing kitchen faucet. Resolve that conservatively: use the heated side as recreational sink/shower wash water only, never as drinking water or as a purification step. The cold branch bypasses the heater and remains the drinking-water path.
 
-Current sourcing posture: buy the HOTTAP V2 Essentials, vehicle quick plate, and mounted cover directly from Joolca or an authorized source. Amazon's HOTTAP Nomad kit includes a pump that duplicates the purchased SHURflo system. Prototype one Koolance `QD3-FT10-P`, one `QD3-MTN14`, one brass reducer from the Hooshing ASIN `B0CYSL1P28` two-pack, and one Melnor brass `15409` before duplicating. If `15409` does not click into the actual Joolca hose, substitute verified-profile `2MQC` only on the removable key. The measured camper-to-heater span is about `19 in`, so the supplied `1 m` hose is sufficient and optional Joolca `SP026` is not currently required. The exact Flame King `YSN10LB-ALM` is Amazon ASIN `B0DRRP9F8G`.
+Purchase posture: one HOTTAP V2 Essentials, one Quick-Release HOTTAP Bracket, and one HOTTAP V2 Mount Cover were purchased `2026-07-26`; receipt, inspection, fit, and return-window testing remain open. The HOTTAP Nomad kit is not needed because it duplicates the purchased SHURflo system. Prototype one Koolance `QD3-FT10-P`, one `QD3-MTN14`, one brass reducer from the Hooshing ASIN `B0CYSL1P28` two-pack, and one Melnor brass `15409` before duplicating. If `15409` does not click into the actual Joolca hose, substitute verified-profile `2MQC` only on the removable key. The measured camper-to-heater span is about `19 in`, so the supplied `1 m` hose is sufficient and optional Joolca `SP026` is not currently required. The exact Flame King `YSN10LB-ALM` is Amazon ASIN `B0DRRP9F8G`.
 
 For sink graywater, start with a removable under-sink vessel before adding an under-truck tank. Mock `2.5 gal` (`~20.9 lb` water) and `5 gal` (`~41.7 lb` water) sizes with the actual sink drain. The baseline should include a compact waterless trap, vented container connection, positive travel retention, removable spill tray/leak-sensor point, and a lift path that works when full. An under-truck gray tank remains a post-shakedown option because it adds a bed penetration, external vent/dump hardware, road-debris protection, freeze exposure, and legal-dump discipline; its dump valve should not be treated as a normally open drain.
 
@@ -561,7 +561,7 @@ The decision is final: hot water is supplied only by the camp-deployed propane s
 
 ### Sink mode
 
-1. Remove/open the HOTTAP mounted cover and verify the exterior heater and exhaust zone are clear.
+1. Remove/open the HOTTAP V2 Mount Cover and verify the exterior heater and exhaust zone are clear.
 2. Leave the commissioned BLUE/RED service valves in their normal positions. Snap the BLUE adapter key into the camper QD3 and the supplied `1 m` hose; connect the other hose end to the HOTTAP inlet.
 3. Disconnect the shower handle/head assembly from the `4 m` hose, snap the RED adapter key into that free female hose socket, connect the other hose end to the HOTTAP outlet, and snap the key into camper RED.
 4. Connect the supplied regulator/hose from the upright, restrained `10 lb` cylinder through the protected service hatch to the exterior heater; route it clear of sharp edges/exhaust and leak-check the disturbed LP connection.
@@ -584,7 +584,7 @@ Keep LP disconnected. Snap the BLUE adapter key between camper BLUE and the `4 m
 4. Clean the recessed camper QD3 sockets and install their measured stretch caps; clean the Joolca hose sockets before storage.
 5. In freezing conditions, use the accessible BLUE/RED ball valves as needed for isolation/blowout and follow the HOTTAP manual's drain/storage procedure after every use; confirm the short QD3-to-PEX transitions drain without trapped low points.
 6. Leave the service valves in the documented winterized or normal-use state rather than treating them as camp-connect controls.
-7. Confirm the exterior heater is dry, LP/water-disconnected, and protected by its mounted cover; confirm the upright cylinder is valve-closed and fully restrained.
+7. Confirm the exterior heater is dry, LP/water-disconnected, and protected by its HOTTAP V2 Mount Cover; confirm the upright cylinder is valve-closed and fully restrained.
 
 ---
 
@@ -703,7 +703,7 @@ Buy/commit later, after mockup:
 - Final panels/skins.
 - Monitor arm/mast exact hardware if roof sweep is unknown.
 - Appliance bay final pocket/restraint for the Ninja SP151.
-- Rear-box HOTTAP exterior quick-plate/backing and mounted cover, Flame King cylinder restraint/vent package, single camper BLUE/RED service plate, supplied-hose reach, and port/road protection until the complete physical mockup passes.
+- Rear-box Quick-Release HOTTAP Bracket/backing and HOTTAP V2 Mount Cover, Flame King cylinder restraint/vent package, single camper BLUE/RED service plate, supplied-hose reach, and port/road protection until the complete physical mockup passes.
 - Permanent penetrations.
 
 Reasonable low-regret prep:
@@ -732,7 +732,7 @@ Do not buy broad `15-series` because “camper furniture needs extrusion.” Buy
 - Wheel-well tank fitting orientation, fill/vent bend radius, drain access, and restraint path.
 - Pump board location below the lofted fridge: aisle-facing, rear-facing, swing-out, or hybrid removable cassette.
 - Graywater strategy: jug/cassette size, waterless trap, vent, dump path, overflow behavior.
-- Rear-box HOTTAP package geometry: exterior quick-plate backing/clearances, mounted-cover travel state, cylinder cradle/vents, single BLUE/RED camper plate, supplied `1 m`/`4 m` hose reach, port protection, regulator service hatch, and complete freeze drainage.
+- Rear-box HOTTAP package geometry: Quick-Release HOTTAP Bracket backing/clearances, HOTTAP V2 Mount Cover travel state, cylinder cradle/vents, single BLUE/RED camper plate, supplied `1 m`/`4 m` hose reach, port protection, regulator service hatch, and complete freeze drainage.
 - Shower deployment: rear barn doors, passenger access window, or both.
 - Appliance bay identity: Ninja SP151 restraint/storage, bins, or swappable crate; no interior water-heater volume is reserved.
 

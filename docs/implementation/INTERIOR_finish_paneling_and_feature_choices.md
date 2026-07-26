@@ -540,9 +540,9 @@ Gravity-only spray can remain a fallback idea, but it should not drive the layou
 
 ### 7.7 Propane hot-water integration boundary
 
-Hot water is now a **selected exterior HOTTAP service system**, not a deferred interior appliance. Keep the Galley volume free of electric storage/tankless equipment and route only the joint-minimized faucet hot/cold trunks plus accessible BLUE/RED service valves toward one rear camper plate.
+Hot water is now a **purchased exterior HOTTAP service system**, not a deferred interior appliance. Keep the Galley volume free of electric storage/tankless equipment and route only the joint-minimized faucet hot/cold trunks plus accessible BLUE/RED service valves toward one rear camper plate.
 
-The single camper plate cut, exterior HOTTAP vehicle-quick-plate backing/cover, cylinder cradle/strap, permanent low/high box vents, supplied-hose reach, regulator service hatch, and weather/road protection remain mockup-gated. These exterior gates do not justify preserving an obsolete electric-heater cubby or dedicated AC branch in the furniture.
+The single camper plate cut, purchased Quick-Release HOTTAP Bracket backing/HOTTAP V2 Mount Cover, cylinder cradle/strap, permanent low/high box vents, supplied-hose reach, regulator service hatch, and weather/road protection remain mockup-gated. These exterior gates do not justify preserving an obsolete electric-heater cubby or dedicated AC branch in the furniture.
 
 ---
 

@@ -50,7 +50,7 @@ It does **not** replace the owner docs:
 - Final surface direction remains a three-piece Nick black-walnut commission after templates are locked. A temporary Galley plywood counter/template is acceptable before final walnut so sink/faucet geometry can be proven.
 - Plumbing is now active bench/mockup work, but no tank hole is cut before a complete port inventory and bare in-truck dry fit. Build cold-first and hot-ready as a compact fixed pack with minimum fittings; removal of the cooler/panels/part of the 80/20 frame is acceptable for uncommon service.
 - Alternator charging remains a separate commissioning gate. Rough-in/routing with fuses pulled can proceed after floor/module reinstall; first-charge waits for APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior.
-- Solar remains a discovery/provisioning workstream until charging priority and roof real estate are better proven. Hot water is locked to the propane-only Joolca HOTTAP V2 package: direct exterior box mount on Joolca's vehicle quick plate under its mounted cover, cylinder restrained inside the permanently vented box, and two compact self-sealing camper QD3 ports used through removable QD3-to-Joolca adapter keys. Bracket backing, cylinder fit/vents, adapter fit, port backing/caps, flow, drainability, and operating clearances remain physical gates.
+- Solar remains a discovery/provisioning workstream until charging priority and roof real estate are better proven. Hot water is locked to the propane-only Joolca HOTTAP V2 package: direct exterior box mount on the purchased Quick-Release HOTTAP Bracket under the purchased HOTTAP V2 Mount Cover, cylinder restrained inside the permanently vented box, and two compact self-sealing camper QD3 ports used through removable QD3-to-Joolca adapter keys. Bracket backing, cylinder fit/vents, adapter fit, port backing/caps, flow, drainability, and operating clearances remain open.
 
 ## Historical July 4 sprint strategy
 
@@ -232,7 +232,7 @@ Goal: build the galley datum so cooler/fridge/plumbing fitment stops being guess
 - [x] Modify/add cooler-bench tie-in rails or plates as needed; keep the seam removable and accessible without removing batteries.
 - [ ] Decide the entrance-side Galley front corner shape with a physical sweep test: default `45° chamfer` if square clips entry and round is too fussy for the current 10-series frame.
 - [ ] Keep the front/rear Galley utility corner serviceable for the sink drain/graywater path, faucet cold/hot trunks, BLUE/RED service valves, and removable panel access; no interior water-heater volume is reserved.
-- [ ] [HOLD] Do not cut the single camper BLUE/RED service plate or mount the rear-box propane package until the HOTTAP exterior quick-plate backing/cover, cylinder restraint/venting, regulator service hatch, supplied-hose reach, port protection, and operating clearances are physically proven.
+- [ ] [HOLD] Do not cut the single camper BLUE/RED service plate or mount the rear-box propane package until the purchased Quick-Release HOTTAP Bracket backing and HOTTAP V2 Mount Cover, cylinder restraint/venting, regulator service hatch, supplied-hose reach, port protection, and operating clearances are physically proven.
 - [ ] Mock passenger-side fridge/cooler position with real handles, hinge/lid swing, cord bend, and hand clearance.
 - [ ] Confirm raised fridge/cooler height target, currently about `16 in` above floor/service zone.
 - [ ] Confirm relationship to `36 gal` wheel-well tank envelope.
@@ -285,6 +285,7 @@ Goal: build and test the fixed cold-water pack plus the selected propane-only BL
 - [ ] Pressure/leak test plumbing before panel closure.
 - [ ] Recheck all clamps/unions after first drive.
 - [x] Finalize hot water as propane-only Joolca HOTTAP V2 directly mounted outside the rear box, using two compact camper QD3 female no-spill ports, removable QD3-to-Joolca adapter keys, and the supplied parked-only `1 m`/`4 m` hoses; electric storage/tankless branches are closed.
+- [x] Purchase one HOTTAP V2 Essentials, one Quick-Release HOTTAP Bracket, and one HOTTAP V2 Mount Cover (`2026-07-26`); receipt, inspection, and physical fit remain open.
 - [ ] [HOLD] Prototype one `QD3-FT10-P` / `QD3-MTN14` port-key set before buying the second or drilling. Prove the actual Joolca hose fit, automatic shutoff, hot flow, drainability, adapter-key rigidity, nominal `M18` panel cut, backing/locknut access, short inside-hose route, simple rubber-cap fit, and operating-clearance envelope. No large hatch, service box, Sea-Dog body, or travel-exposed Melnor adapter is in scope.
 
 ## 8. AC/DC electrical closeout and tests
@@ -535,13 +536,13 @@ Run this before assuming a weekend task is blocked.
 
 # Near-term priority queue
 
-## Next shop sequence — after `2026-07-25` procurement
+## Next shop sequence — after `2026-07-26` HOTTAP procurement
 
 1. Remount the MultiPlus/AC enclosure, complete the shore-inlet route, and commission the battery/`12V` sequence while the Bench service volume is open.
 2. Inventory the tank ports and perform the bare-tank in-truck dry fit; prove sender, fill, vent, outlet, drain, restraint, fridge overlap, and service access before drilling.
 3. Receive and inspect the purchased EFIELD faucet adapters, YVSKM accumulator swivels, and exact KUS hole saw; reject any fitting with wrong threads, damaged/missing gasket seats, suspect markings, or unresolved potable-use documentation.
 4. Bench-build and cold-pressure-test the tank/pump/strainer/accumulator/tee pack, then terminate the faucet with the purchased adapters and preserve BLUE/RED service trunks to the rear plate.
-5. Mock the selected rear-box HOTTAP package—Flame King cylinder restraint/vents, exterior Joolca quick plate/backing and mounted cover, one QD3 port/key prototype, parked-only supplied hoses, regulator service hatch, two simple capped port locations, and operating clearances—before any permanent mount or penetration.
+5. Receive, inspect, and mock the purchased rear-box HOTTAP core package—heater, Quick-Release HOTTAP Bracket/backing, HOTTAP V2 Mount Cover—together with the still-open Flame King cylinder restraint/vents, one QD3 port/key prototype, parked-only supplied hoses, regulator service hatch, two simple capped port locations, and operating clearances before any permanent mount or penetration.
 6. Install and brace only the proven wet-spine/package interfaces, then run local shakedown and post-drive leak/fastener checks.
 
 **Build order:** electrical closeout -> tank/port dry fit -> adapter inspection and cold-water bench test -> wet-spine install -> rear-box HOTTAP package mockup/install -> shakedown.
@@ -554,7 +555,7 @@ Run this before assuming a weekend task is blocked.
 - Shore or water-fill exterior holes before their complete inside routes/endpoints are physically proven.
 - Alternator first-charge.
 - Final solar purchase or roof penetration.
-- Permanent HOTTAP quick-plate mount, cylinder cradle/vents, or BLUE/RED service-plate cuts before their package mockup passes.
+- Permanent Quick-Release HOTTAP Bracket mount, cylinder cradle/vents, or BLUE/RED service-plate cuts before their package mockup passes.
 - Cosmetic skins everywhere.
 - Permanent monitor mechanism perfection.
 - Final lighting design.
@@ -568,7 +569,7 @@ Run this before assuming a weekend task is blocked.
 - [HOLD] No tank sender/fill/vent hole until the empty tank has a complete port map and passes one bare in-truck dry fit.
 - [HOLD] No final PEX cuts until the purchased EFIELD/YVSKM adapters are received and accepted, and the real sink/faucet/drain plus minimum-fitting pump/tee geometry are mocked at full scale.
 - [HOLD] Do not merge the low south gravity tank drain with the pressurized BLUE/RED system; keep it a separate drain path. Exterior shower/cold spray uses the removable Joolca `4 m` hose and handle/head rather than a camper manifold.
-- [HOLD] No permanent HOTTAP quick-plate mount, cylinder cradle, box vents, service-plate cut, regulator service hatch, or cover closeout until the selected Joolca/Flame King package passes physical box/operating-clearance mockup and manual/listing review.
+- [HOLD] No permanent Quick-Release HOTTAP Bracket mount, cylinder cradle, box vents, service-plate cut, regulator service hatch, or HOTTAP V2 Mount Cover closeout until the purchased Joolca core package and selected Flame King package pass physical box/operating-clearance mockup and manual/listing review.
 - [HOLD] No battery-bench bridge/lid or obstructing upper structure until the `3x 48V` bank is individually charged/rested, equalized within `0.1V`, electrically paralleled/commissioned, protected, covered, labeled, and removable with emergency access preserved.
 - [HOLD] No alternator first-charge until APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior are ready.
 - [HOLD] No final countertop sink cutout until faucet/drain/rail clearance is physically proven.
