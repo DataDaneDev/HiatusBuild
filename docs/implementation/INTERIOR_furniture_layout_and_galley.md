@@ -334,26 +334,24 @@ Non-obvious feature: make the fridge skeleton do double duty as the hard mountin
 
 ### Core recommendation
 
-Build a **cold-water-first, minimum-fitting plumbing pack** and reserve hot-water capability with one tee/branch. Do not let water-heater uncertainty block the sink/tank/pump/faucet/drain build, and do not add manifolds, bypass loops, unions, or dedicated valves unless they solve a demonstrated need.
+Build a **propane-only, parked-deployment hot-water system** around the existing cold-water pack. The permanent camper plumbing uses two isolated rear service ports: BLUE pressurized cold out to the heater and RED heated-water return to the faucet. No heater, fuel line, or combustion appliance occupies the north cubby.
 
-Current north/middle/south routing concept (`2026-07-25`; fitting sizes remain measurement-gated):
+Current north/middle/south routing concept (`2026-07-25`; fitting sizes remain field-gated at the faucet and service plate):
 
 ```text
 MIDDLE: fresh tank
   -> north-end low outlet + tank shutoff
   -> short reinforced potable-water flex / shock loop
-  -> NORTH: strainer -> pump -> flex -> accumulator + gauge
-  -> NORTH: one ordinary cold tee
-      -> straight: one cold trunk south
-           -> MIDDLE: sink cold tee
-           -> SOUTH: rear shower/washdown cold
-      -> branch: one heater cold-inlet isolation valve
+  -> NORTH: strainer -> pump -> flex -> accumulator
+  -> one 1/2 in PEX cold tee
+      -> branch: faucet cold
+      -> straight: rear BLUE service valve -> BLUE cold-out bulkhead
 
-NORTH/BENCH: future electric storage heater
-  -> optional hot-out isolation valve
-  -> one insulated hot trunk south
-       -> MIDDLE: faucet hot tee
-       -> SOUTH: rear shower hot
+Rear deployed heater:
+BLUE cold-out -> drainable cold hose -> Joolca HOTTAP V2 inlet
+HOTTAP outlet -> either outdoor shower hose OR hot-return hose
+hot-return hose -> RED hot-return bulkhead -> RED service valve
+                -> insulated 1/2 in PEX -> faucet hot
 
 Separate unpressurized paths
   -> high end-port gravity fill + high end-port vent
@@ -361,7 +359,9 @@ Separate unpressurized paths
   -> sink gray drain/graywater cassette
 ```
 
-Do not use rigid PEX between the tank, strainer, and vibrating pump. Start the fixed `1/2 in` PEX distribution after the pump outlet flex section. Keep the fresh-tank drain, sink gray drain, and pressurized cold washdown as three distinct functions; a gravity tank drain is not a useful pressure wash outlet.
+Opening the faucet hot side creates flow through the pump, cold-out umbilical, heater, hot-return umbilical, and faucet; the HOTTAP ignites once flow exceeds its approximately `0.6 GPM` operating minimum. The purchased SHURflo `4008` (`3.0 GPM`, `55 PSI`) fits Joolca's published `40-60 PSI` and `1.6-3.17 GPM` recommended source range. Use the heater's direct shower hose or the faucet-return hose one at a time; no outside tee or selector is required.
+
+Do not use rigid PEX between the tank, strainer, and vibrating pump. Start the fixed `1/2 in` PEX distribution after the pump outlet flex section. Keep the fresh-tank drain, sink gray drain, and pressurized cold-out service port as distinct functions; a gravity tank drain is not a useful pressure wash outlet.
 
 ### Compact fixed plumbing pack
 
@@ -373,11 +373,14 @@ Hard-mount the existing plumbing compactly in the under-cooler/adjacent bench st
 - Pump.
 - Short discharge flex.
 - Accumulator.
-- One ordinary tee for cold trunk versus heater branch.
-- One heater cold-inlet shutoff when the heater is installed.
-- Supported PEX trunks and a pump electrical connector/strain relief.
+- One ordinary `1/2 in` PEX tee: faucet cold branch plus continued cold-out trunk.
+- One accessible full-port `1/2 in` PEX ball valve immediately inside each rear service port.
+- Two short reinforced-hose vibration/service links from PEX adapters to the thin-panel quick-disconnect bodies.
+- One insulated, joint-minimized `1/2 in` PEX hot-return trunk from the RED service valve to faucet hot.
 
-A pressure gauge, second heater outlet-isolation valve, blowout tee, or local low-point drain may be added only where it solves a real commissioning, removal, or freeze problem. Do not make quick-disconnect unions, a swing-out board, a manifold rail, an antifreeze pickup, or a three-valve bypass part of the default build.
+The two rear couplings mount through a thin aluminum service plate, not by crushing the camper sandwich wall between panel-mount nuts. Bed the plate with butyl, mechanically fasten it to a proven backer, finish-seal its perimeter, protect the wall-core penetration, and provide a weather cover. Keep both CPC HFC12 couplings straight-through/non-valved so the exterior stubs and hoses drain; close the interior ball valves before disconnecting.
+
+Do not add a cold/hot manifold, three-valve bypass, permanent antifreeze pickup, exterior selector, or concealed check valve. The two service valves are the only new operational valves. Faucet cold remains available with both service valves closed and the heater stowed.
 
 Stock wet-tray footnote: any pump/accumulator/strainer area below the lofted fridge should have a shallow removable wet tray or pan with small upturned edges, a visible inspection/leak-sensor point, and a path to lift/wipe/dry it through the documented disassembly sequence. Treat it as early warning and cleanup management, not as primary containment; plumbing joints still need proper fittings, clamps, support, strain relief, and post-drive leak checks.
 
@@ -432,59 +435,69 @@ Implications:
 7. **Install wet-side first:** hard-mount the tank restraint and compact pump/accumulator pack before passenger-side furniture closure. Support the flex/PEX transitions, protect the wet/dry boundary, and preserve the documented cooler/panel/frame removal path; do not add fittings solely to make the assembly quick-removable.
 8. **Cut the exterior fill/vent last:** physically prove the installed tank endpoints, hose fall/vent rise, backing, service access, and spill/overflow path from both sides before cutting the camper/bed-side interface.
 
-### Simplified cold/hot routing baseline (`2026-07-25`)
+### Propane hot-water routing baseline (`2026-07-25` final direction)
 
-This is the recommended full-scale mockup baseline, not frozen cut geometry. Preserve the tank's assigned functions: upper south ports for gravity fill and unrestricted vent, low north `1/2 in` port for pump pickup, and low south `1/2 in` port as a dedicated gravity tank drain.
+The final architecture is propane-only and uses the existing pump/accumulator plus two parked-only rear water connections. Preserve the tank's assigned functions: upper south ports for gravity fill and unrestricted vent, low north `1/2 in` port for pump pickup, and low south `1/2 in` port as a dedicated gravity tank drain.
 
 ```text
 low north tank pickup
-  -> tank shutoff
-  -> short service/flex transition
-  -> strainer -> pump -> flex -> accumulator
-  -> one ordinary tee
-       -> straight: one 1/2 in cold trunk south behind the tank
-            -> sink cold tee
-            -> rear shower/washdown cold
-       -> branch: one heater cold-inlet isolation valve
-            -> north-cubby/bench electric storage heater
-            -> optional hot-out isolation valve
-            -> one insulated hot trunk south
-                 -> sink hot tee
-                 -> rear shower hot
+  -> tank shutoff -> reinforced suction flex -> strainer
+  -> SHURflo 4008 pump -> discharge flex -> SEAFLO accumulator
+  -> 1/2 in PEX tee
+       -> branch: 1/2 in PEX -> faucet-cold adapter -> faucet cold
+       -> straight: 1/2 in PEX -> BLUE full-port service valve
+                    -> PEX/MNPT adapter -> FNPT/hose-barb adapter
+                    -> short reinforced flex -> BLUE CPC panel body
+
+Joolca deployed at camp
+BLUE CPC insert -> cold umbilical -> HOTTAP blue inlet
+HOTTAP red outlet -> choose one:
+  A. supplied shower hose/head
+  B. dedicated red hot-return hose -> RED CPC insert
+
+RED CPC panel body -> short reinforced flex
+  -> hose-barb/FNPT adapter -> MNPT/PEX adapter
+  -> RED full-port service valve -> insulated 1/2 in PEX
+  -> faucet-hot adapter -> faucet hot
 ```
 
-This parallel branch arrangement keeps cold water available when the heater is off or isolated; a bypass jumper is not required. A three-valve bypass would only make the hot-side fixtures deliver cold water and reduce antifreeze usage during chemical winterization, neither of which justifies the added fittings in the default Hiatus build. Set the selected heater near its normal `120°F` operating range and let the faucet/shower controls mix locally. Add a compact thermostatic mixing valve at the heater only if the final system intentionally stores water around `130-140°F` to stretch a small tank.
+Every permanent inline fitting after the accumulator is therefore:
 
-Route the parallel cold and insulated hot trunks low along the bed-wall side behind the tank, supported independently and protected from chafe, rather than across the tank top. Use continuous lengths with **no concealed joints or valves** behind the installed tank. The heater's factory T&P relief/discharge and drain path remain required even in this simplified layout.
+1. One `1/2 in` PEX tee.
+2. Two faucet adapters, expected `1/2 in PEX x 3/8 in OD compression male`; verify the FORIOUS hose nuts before ordering.
+3. Two existing full-port `1/2 in` PEX ball valves, one at each rear service port.
+4. Two existing SharkBite `UP120A5` `1/2 in PEX x 1/2 in MNPT` adapters.
+5. Two lead-free `1/2 in FNPT x 1/2 in hose-barb` adapters.
+6. Two short pieces of `1/2 in ID` reinforced potable/hot-water hose.
+7. Four correctly sized stainless ear clamps for the two internal flex links, one at each barb.
+8. Two CPC `HFC16812 NSF` / ordering number `63900` straight-through panel-mount bodies with `1/2 in` hose barbs.
+9. Two CPC `HFC22812 NSF` / ordering number `61300` straight-through inserts with `1/2 in` hose barbs, one per removable umbilical.
+10. One custom cold umbilical: CPC insert, `1/2 in ID` reinforced hose, clamp at the CPC barb, and the Joolca-compatible blue/Melnor inlet connector at the heater end.
+11. One custom hot-return umbilical: Joolca red outlet connector or spare hose assembly, `1/2 in ID` reinforced hose, CPC insert, and the adapters/clamps proven by the in-hand Joolca fitting. The supplied shower hose remains unmodified for shower mode.
+12. At least four additional correctly sized ear clamps for the two umbilicals if both heater-end connectors terminate in hose barbs; lock the exact count after the Joolca connectors are in hand.
+13. One thin aluminum two-port service plate, backing, butyl bedding, perimeter sealant, a sealed wall-core sleeve/grommet, labels, and a weather cover.
 
-Keep three south functions distinct:
+The CPC HFC12 NSF parts are rated to `60 PSI`; that is close to the SHURflo's `55 PSI` nominal cutoff. Verify actual dead-head pressure with a gauge after accumulator setup. Do not commission this coupling set if measured pressure exceeds `60 PSI`; substitute a higher-rated potable coupling family rather than accepting an overpressure condition.
+
+Use straight-through/non-valved QDs, not hidden automatic checks. Operating sequence is close both interior valves, make both exterior connections, open BLUE then RED, run the faucet until air clears, and then use hot water. Shutdown is close propane, close BLUE, open the faucet to relieve pressure, close RED, disconnect, drain both hoses and the HOTTAP, cap the ports, and stow dry. In freezing weather, perform that drain sequence after every use.
+
+Keep three rear functions distinct:
 
 1. The low south tank port remains a gravity fresh-tank drain with its own supported valve and capped/hose-ready outlet.
-2. Rear cold washdown comes from the pressurized cold trunk.
-3. Rear hot shower/sprayer comes from the heater's insulated hot trunk through a local rear mixer/branch; the middle sink tees from the same southbound hot trunk.
+2. The BLUE service port is pressurized cold water out to the deployed heater.
+3. The RED service port accepts heated water back from the deployed heater and feeds only the faucet hot side.
 
-Do not cross-connect the gravity drain into the pressure/hot circuit. The separate pressurized rear branch provides the desired hot sprayer without backflow paths, confusing valve choreography, or loss of a simple emergency tank drain.
+Do not cross-connect the gravity drain into the pressure/hot circuit. The exterior shower connects directly to the heater's red outlet instead of using an additional permanent camper branch.
 
-The stated zero-setup goal changes the heater decision. Standard exterior-vented RV propane tankless units are no longer the lead Hiatus candidate: the common class still consumes roughly a `13 x 13 x 14 in` interior body/cutout envelope, routes LP to the appliance, and uses a large exterior door or vent system. That combustion architecture is valid in a conventional RV cabinet, but it does not solve the owner's Hiatus packaging objection.
+The selected appliance is the **Joolca HOTTAP V2 Essentials**. It is a portable outdoor-use propane heater rated about `37,500 BTU/hr`, `0.6-1.6 GPM`, and approximately `17.7 x 12.2 x 6.7 in`; it uses a supplied four-foot QCC1 regulator/hose and accepts a standard `4.5-20 lb` vapor-withdrawal cylinder. Joolca's support documentation explicitly permits a camper-trailer pump source and connection to an existing kitchen faucet. The purchased SHURflo `4008` (`3.0 GPM`, `55 PSI`) falls inside Joolca's recommended `40-60 PSI` and `1.6-3.17 GPM` source range. Joolca also says the HOTTAP continues to operate at high elevation but loses efficiency/output as air thins; it publishes no hard numeric altitude ceiling, so prove ignition and useful temperature rise at the intended Colorado elevation while the heater remains returnable.
 
-The planned Flame King YSNAZ132 also cannot become the compact permanent workaround. Its official manual says it is for non-potable water, temporary point-of-use heating, not a permanent inlet-water connection, and not a distribution system supplying multiple outlets; it is also outdoor-use-only and must remain above `33°F`. Preserve it only as an optional temporary outdoor shower appliance, not as the permanent sink/shower water heater.
+The heater stores inside the bumper box but operates outside its storage envelope. Use Joolca's removable bracket or feet so the unit is vertical in free air and meets its manual clearances; an open box lid alone is not a clearance substitute. The least-complex implementation is an exterior bracket on the box or a removable hook-on plate: lift the heater from storage, latch it outside, connect cold/hot and LP, then reverse for travel. No heater, water, or connected LP hose crosses the moving swingout pivot during travel.
 
-The owner confirms a hard `17 in` total vertical limit in the north-cubby heater position and has passed a `13.8 in` cardboard cylinder very precisely through the actual `14 in` extrusion-base opening. These heaters must stay upright; raising the base above the extrusion is not viable because only about `16 in` remains below the cooler. The remaining appliance-fit gate is the real Ariston's maximum black bottom-skirt/underside diameter, not the nominal cylindrical body. Live purchase shortlist checked `2026-07-25`; prices are before tax and can move:
+Use one upright `5 lb` DOT cylinder with QCC1/Type-1 valve; the selected basis is Flame King `YSN5LB`. Do not add a separate regulator or gauge: the HOTTAP includes the correct regulator/hose, and an inline gauge adds a leak path without accurately measuring remaining propane. NFPA 1192 says an RV propane container shall not be mounted on the exterior rear wall or bumper. Therefore the conservative rear-box baseline is portable-cylinder cargo only: secure it upright and valve-closed for transport in a ventilated cradle, remove it to stable ground for operation, and confirm the transport arrangement with the applicable RV/vehicle authority. Do not hard-mount or operate the cylinder on the rear swingout as though it were the vehicle's permanent LP supply.
 
-| Class | Candidate / buy link | Capacity / power | Manufacturer envelope | Live price | Best use |
-| --- | --- | --- | --- | ---: | --- |
-| **Six-gallon side-port lead** | [Ariston ARI POU-06 — Amazon](https://www.amazon.com/dp/B0924JBLT2) | `6 gal`, `1500W`, `120V`, `12.5A` | `13.8 in dia`; `15.8 in` shell; `16.175 in` to top water connections | `$283.87` | **Best documented fit under the `17 in` cap.** [Official manual](../../references/Ariston_ARI_POU-06_Use_and_Care_Manual.pdf) confirms top/side `3/4 in NPT` hot/cold, side T&P, and side drain. Use only side plumbing; retain `0.825 in` theoretical top margin. Upright and hardwired; `20A`/`12 AWG` manual requirement. Heater extraction is required for top anode/electrical service. |
-| Six-gallon lowboy fallback | [A.O. Smith E6-6C15SV — Lowe's](https://www.lowes.com/pd/A-O-Smith-Signature-6-Gallon-Regular-6-year-Limited-1500-watt-1-Element-Point-of-Use-Electric-Water-Heater/1000216841) | `6 gal`, `1500W`, `120V` | `15.25 H x 14.25 in dia` shell | `~$319` | Short shell, but do not assume it fits until the complete side-port, T&P, drain, wiring, and restraint envelope is documented as clearly as the Ariston. |
-| Six-gallon budget | [Camplux ME60 — Amazon](https://www.amazon.com/dp/B07CV789V4) | `6 gal`, `1440W`, `120V` | `21 H x 15.75 W x 15.5 D in` | `$229.99` | Cheaper six-gallon option, but only if the measured cubby is wider than the reported `15 in`. |
-| Four-gallon tall/narrow | [ThermoMate ES400B — Amazon](https://www.amazon.com/dp/B0CCJ3PS9J) | `4 gal`, `1440W`, `120V` | `24.3 H x 12.6 W x 12.4 D in`, including valve | `$161.49` | Fits only when the long cubby axis is vertical; do not confuse this exact ASIN/model with the separate short-body ThermoMate ES400 listing. |
-| Four-gallon short-body value | [Camplux ME40B — Amazon](https://www.amazon.com/dp/B08BJXMMNT) | `4 gal`, `1440W`, `120V` | `14.5 H x 14.5 W x 12.9 D in` | `$188.99` | Current value fallback when the six-gallon lowboy will not fit. |
-| Four-gallon compact | [Bosch Tronic 3000T ES4 — Amazon](https://www.amazon.com/dp/B0148O65IE) | `4 gal`, `1440W`, `120V` | `13.75 H x 13.75 W x 13.5 D in` | `$259.00` | Smallest body here and the strongest fit fallback, but poor value at the current Amazon price. |
+The HOTTAP manual states that the recreational appliance is not allowed to supply drinking or sanitary water, while Joolca support separately documents connection to an existing kitchen faucet. Resolve that conservatively: use the heated side as recreational sink/shower wash water only, never as drinking water or as a purification step. The cold branch bypasses the heater and remains the drinking-water path.
 
-At `50°F` inlet and `140°F` storage tempered to `105°F`, the ideal comparison is about `9.8 gal` mixed water from a six-gallon tank versus `6.5 gal` from a four-gallon tank. That is about `12.2` versus `8.1` minutes through a `0.8 GPM` showerhead before real-world losses.
-
-Do not use a cheap electric tankless unit for the Hiatus shower. The available `120V / 3.5kW` class draws about `29A`, exceeds the current `20A` branch and the MultiPlus `48/3000` continuous inverter class, yet raises `1.0 GPM` only about `24°F`. Cheap `240V` units are also incompatible with the current `30A/125V` shore inlet and `120V` inverter; even a `6.5kW` unit raises `1.0 GPM` only about `44°F`, while an actually adequate `11-13kW` shower unit needs roughly `46-54A at 240V` and a wholesale electrical redesign.
-
-Current purchase order: **Ariston ARI POU-06 remains first, but buy only from a returnable source and treat empty-unit insertion as the final gate.** The `13.8 in` cardboard cylinder already passes through the actual `14 in` opening with only `0.1 in` nominal clearance per side. Product photos show a continuous black bottom skirt with no visible feet/nubs and no obvious projection beyond the jacket, but public documentation does not prove its maximum OD or underside. If the earlier `27 x 15 in` horizontal envelope still applies, point the opposing hot/cold and T&P/drain sides along the `27 in` axis; that leaves `13.2 in` total beyond the shell for side hardware. The shell itself leaves only `1.2 in` total in the `15 in` axis. The manual calls for a minimum `15.8 in` pan diameter, so a true `15 in` cross-section needs either a wider local pan pocket or an explicit custom-tray deviation. Use the heater's side hot, side cold, side T&P, and side drain; do not stack plumbing above it. A.O. Smith remains the six-gallon fallback only after equally complete connection geometry is proven. Camplux ME40B is the value four-gallon fallback; Bosch ES4 only wins when its smaller shell is what makes the installation work. ThermoMate ES400B and Camplux ME60 remain too tall/large for the current short-axis geometry.
+Current sourcing posture: buy the HOTTAP V2 Essentials directly from Joolca or an authorized source when stocked. Amazon currently surfaces the more expensive HOTTAP Nomad kit with a pump that duplicates the purchased SHURflo system, so do not pay for that duplicate hardware merely to keep the heater purchase on Amazon. Amazon remains appropriate for the `5 lb` cylinder and standard plumbing consumables; use an authorized fluid-handling distributor for exact NSF-numbered CPC couplings if Amazon cannot prove the NSF part number.
 
 For sink graywater, start with a removable under-sink vessel before adding an under-truck tank. Mock `2.5 gal` (`~20.9 lb` water) and `5 gal` (`~41.7 lb` water) sizes with the actual sink drain. The baseline should include a compact waterless trap, vented container connection, positive travel retention, removable spill tray/leak-sensor point, and a lift path that works when full. An under-truck gray tank remains a post-shakedown option because it adds a bed penetration, external vent/dump hardware, road-debris protection, freeze exposure, and legal-dump discipline; its dump valve should not be treated as a normally open drain.
 
@@ -500,7 +513,7 @@ Use convertible surfaces:
 - Dedicated low cubby for the Ninja SP151 air-fryer/toaster oven with positive travel restraint, heat clearance, crumb-cleanout access, and a plug/service path that does not cross the wet bay.
 - Cutting board / sink cover slot.
 - Collapsible dish tub instead of a deep domestic sink if vertical volume is tight.
-- Low appliance bay can remain flexible around the Ninja SP151 for dry food bins or a removable appliance crate only if they do not compromise heat clearance, graywater access, or wet/dry separation. The heater candidate has moved to the north cubby and should not be duplicated under the galley.
+- Low appliance bay can remain flexible around the Ninja SP151 for dry food bins or a removable appliance crate only if they do not compromise heat clearance, graywater access, or wet/dry separation. No interior water-heater cubby is reserved.
 - Graywater slide cassette under sink with waterless trap or removable drain approach.
 
 Avoid:
@@ -512,53 +525,34 @@ Avoid:
 
 ---
 
-## 10) Hot water decision tree
+## 10) Propane hot-water operating modes
 
-Current best posture: **finish the cold system first, but preserve the north-cubby six-gallon electric branch**.
+The decision is final: hot water is supplied only by the camp-deployed propane system.
 
-### Option A: Cold-first + kettle/induction
+### Sink mode
 
-Use for phase 1.
+1. Open and latch the bumper swingout and deploy the HOTTAP vertically outside the storage box.
+2. Place the upright `5 lb` cylinder on stable ground away from the heater exhaust and connect the supplied QCC1 regulator/hose.
+3. Connect the BLUE cold umbilical from the camper service plate to the heater inlet.
+4. Connect the dedicated RED hot-return umbilical from the heater outlet to the camper service plate.
+5. Open the RED hot-return service valve, then the BLUE cold-out service valve.
+6. Open the propane cylinder and use leak-detection solution on the disturbed LP connection.
+7. Open the faucet hot side fully until air clears and the heater ignites; set temperature at the HOTTAP and minimize cold mixing so heater flow stays above `0.6 GPM`.
 
-- Sink works immediately.
-- Exterior rinse/shower can be cold-only.
-- Dishwater can come from induction/kettle.
-- Lowest risk and least plumbing delay.
+### Shower mode
 
-### Option B: Temporary outdoor propane shower module
+Use the same deployed heater, cylinder, and BLUE cold umbilical. Connect the supplied red shower hose/head to the HOTTAP outlet instead of the faucet-return hose. The appliance serves one outlet at a time; no exterior tee or selector valve is required.
 
-Use only as temporary standalone outdoor shower equipment, not as the permanent potable distribution heater.
+### Shutdown and freeze protection
 
-- Keep appliance outside.
-- Feed with cold QD from pump/manifold.
-- Propane stays rear/exterior.
-- Hot output either goes to exterior shower only or to a deliberate temporary hot return QD.
-- No indoor combustion, no concealed propane joints, no casual cubby propane without proper standards.
+1. Close the propane cylinder.
+2. Close the BLUE cold-out service valve.
+3. Open the active faucet/shower to relieve pressure.
+4. Close the RED hot-return valve if sink mode was used.
+5. Disconnect both water hoses, open/drain them, and follow the HOTTAP manual's drain/storage procedure.
+6. Cap the BLUE and RED camper ports and stow the dry heater and disconnected cylinder upright.
 
-### Option C: North-cubby six-gallon electric storage heater
-
-Preferred permanent class once the cubby's vertical axis and service opening are measured; treat it as a managed load and a winterization object.
-
-Energy reference:
-
-- `2.5 gal` at `60°F` rise: about `367 Wh`
-- `4.0 gal` at `60°F` rise: about `587 Wh`
-- `6.0 gal` at `60°F` rise: about `880 Wh`; a full `50->140°F` cycle is about `1.32 kWh`
-- `6.0 gal` stored at `140°F`, tempered to `105°F` with `50°F` inlet: about `9.8 gal` ideal mixed output
-
-Power conflict examples:
-
-- Induction high + Ninja SP151 air fryer/toaster oven input can exceed `2.4 kW` inverter-continuous class.
-- Ninja SP151 air fryer/toaster oven + common `1440 W` electric heater load can also exceed comfort margin.
-- Induction high + a `1440 W` electric heater is not acceptable as a normal simultaneous load.
-
-If electric tanked hot water is added:
-
-- Put it low in the north cubby: Ariston ARI POU-06 is the current six-gallon lead because its official manual confirms side hot/cold, side T&P, and side drain within a `16.175 in` total height. The nominal `13.8 in` cardboard cylinder passes the real `14 in` extrusion opening; the final fit gate is the physical unit's maximum black bottom-skirt/underside OD and absence of hidden feet/nubs.
-- Use a thin custom catch tray/liner beneath the whole bay, with its curb outside the `14 in` heater pass-through, plus independent visible pan drain and T&P-discharge paths. The heater drain valve is for intentional service/winterization and does not replace leak containment.
-- Keep the simplified parallel branch: `accumulator -> tee`; straight leg to the cold faucet/rear branch, heater leg through one cold-inlet isolation valve. Preserve the accumulator as an open expansion path during heating, but verify closed-system thermal-expansion behavior during commissioning rather than assuming the small `0.75 L` accumulator is automatically sufficient.
-- Put it on a labeled manual switch or load-shed relay.
-- Treat it as a thermal battery preheated from shore/drive/solar surplus, not an unlimited shower source.
+Keep the removable hoses as short as the measured rear-wall-to-box geometry allows. A `4 ft`, `1/2 in ID` hot-return hose contains only about `0.04 gal`, so the purge delay should be a few seconds rather than the earlier long-umbilical estimate.
 
 ---
 
@@ -656,7 +650,7 @@ Pass when: all service actions can be done without unloading the whole galley.
 
 ### Gate I5: load sequencing test
 
-Before using the Ninja SP151 air fryer/toaster oven, induction, or electric hot water, write and label a simple operating hierarchy:
+Before using the Ninja SP151 air fryer/toaster oven or induction cooktop, write and label a simple operating hierarchy:
 
 1. Induction cooking.
 2. Ninja SP151 air fryer/toaster oven.
@@ -722,5 +716,5 @@ Recommended baseline:
 - **Make the battery bench separated and cushion-compatible.** Batteries low in their own enclosures, flat divider board above, lid access, storage/cushion use kept out of battery volume.
 - **Keep the driver desk shallow but serious.** Preserve knee room; use the driver-side electrical closet/DC shelf for office power without blocking entry or roof closure.
 - **Build plumbing as a service bay, not a hidden nest.** Under-fridge pump/manifold access, graywater cassette, service hatch, leak tray, and wet/dry separation are mandatory.
-- **Cold-first, hot-ready.** Add capped future hot stubs; do not commit to propane/electric hot water until service-map freeze.
+- **Propane-only hot water.** Build the two-port BLUE cold-out / RED hot-return service interface; no alternate heater branch is reserved.
 - **Treat every moving panel like cargo.** Latches, hard stops, anti-rattle, and roof-safe checks are not optional.

@@ -517,6 +517,15 @@ related:
 - Result: default path is `tank shutoff -> flex -> strainer -> pump -> flex -> accumulator -> one cold tee`; the straight leg is the joint-minimized cold trunk and the branch feeds the storage heater through one cold-inlet valve. Heater hot feeds one insulated trunk; a hot-out valve is optional for clean removal. No cold/hot manifold, three-valve bypass, quick-disconnect plumbing, or permanent antifreeze pickup is required. Keep the heater in parallel so cold remains available. Default to normal heater temperature with local faucet/shower mixing; add a central TMV only if intentionally storing hotter water. Factory T&P relief/discharge and heater drain requirements remain.
 - Follow-up: dry-fit the chosen heater and route, then count exact tees/valves/adapters from real component ports before ordering. Preserve short flex at the pump, support the PEX, pressure/leak-test in the driveway, and recheck after the first drive.
 
+- ID: D-055
+- Date: 2026-07-25
+- Decision: Finalize propane-only hot water with a deployed Joolca HOTTAP V2 and two-port rear water interface; close the alternate hot-water branches.
+- Context: Owner made the fuel decision final and accepts camp setup. The rear swingout box is directly behind the galley, the camper has a viable service-plate location above the taillight, the existing SHURflo `4008`/SEAFLO accumulator matches Joolca's published source range, and the owner does not want the box rebuilt into isolated internal compartments.
+- Options considered: fixed RV direct-vent heater in the swingout box; generic portable Flame King/Camplux shower unit; Joolca HOTTAP V2 with parked-only cold-out/hot-return hoses; cylinder inside the box during operation; or permanent cylinder mount on the rear swingout.
+- Decision drivers: one appliance for exterior shower and sink washing, no occupied interior heater volume, minimal permanent plumbing, documented camper-pump/faucet support, no duplicate `12V` heater power system, easy winter draining, and no connected LP/water hoses across the moving pivot.
+- Result: select HOTTAP V2 Essentials and one `5 lb` QCC1 cylinder. Permanent camper plumbing is `accumulator -> 1/2 in tee`; branch to faucet cold, straight to BLUE valve/QD; RED QD/valve to insulated faucet hot. Use shower hose or faucet-return hose one at a time. Heater stores in the box but deploys outside it. Cylinder is upright portable cargo for travel and sits on stable ground for operation; it is not hard-mounted as rear-bumper vehicle LP supply. No separate regulator, tank gauge, exterior selector, manifold, bypass, or alternate heater branch.
+- Follow-up: measure the thin service plate/backer and hose length; verify FORIOUS inlet thread; source exact NSF CPC `63900`/`61300` pairs; mock the HOTTAP outside-box bracket/feet; gauge-test pump dead-head below the CPC `60 PSI` limit; pressure/leak/ignition-test in shower and sink modes; drain-test before drilling the final wall opening.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -698,7 +707,8 @@ related:
 - Dry-fit purchased `36 gal` wheel-well tank with the passenger-side lofted fridge/wet-spine skeleton; verify body/fitting envelope, bracket orientation, plusnut locations, tank/fridge overlap, pump-board access, leak path, and whether a secondary floor/tie-down restraint path is needed. Gravity-fill vent nipple measurement is captured (`10 mm` OD main land, `11 mm` OD largest barb); replacement vent tube dry-fit remains open.
 - Validate purchased galley fixtures/appliances in the integrated counter module: Sarlai sink cutout, FORIOUS faucet under-counter clearance, drain/graywater path, Duxtop induction use/stow location, and Ninja SP151 cubby heat/retention/plug access.
 - Lock drain/graywater, pump service-valve, and winterization details as discrete procurement rows; sink/faucet are now purchased and logged in BOM rows `207-208`.
-- Ariston cardboard body gate passed: the `13.8 in` cylinder fits very precisely through the actual `14 in` extrusion-base opening under the hard `17 in` vertical cap; raising it above the extrusion fails the roughly `16 in` cooler clearance. Before permanent purchase/install, prove the real unit's maximum black bottom-skirt/underside OD and absence of feet/nubs, side fitting/T&P/drain sweep, hardwire entry, custom thin catch-tray/drain path, full-mass restraint, and extraction. Mock the purchased SHURflo/SEAFLO pack in the adjacent `6 in` cooler-to-battery gap with strainer access, vibration isolation, nonconductive splash separation, and a drained leak path away from battery terminals/cabling.
+- Mock the purchased SHURflo/SEAFLO pack in the `6 in` cooler-to-battery gap with strainer access, vibration isolation, nonconductive splash separation, and a drained leak path away from battery terminals/cabling. Verify the post-accumulator tee, faucet hose threads, BLUE/RED valve access, service-plate backer, and continuous PEX routes before cutting the rear wall.
+- Propane hot-water direction is locked; installation geometry remains open. Measure the bumper-box storage envelope and rear-wall-to-heater hose length, choose HOTTAP feet versus removable exterior bracket, prove full operating clearances, and verify an upright valve-closed `5 lb` transport cradle plus stable on-ground operating location. Gauge-test SHURflo dead-head below the CPC HFC12 NSF `60 PSI` limit; test faucet hot-only flow above `0.6 GPM`; prove both removable hoses and the heater drain completely for freezing conditions.
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)
 - Confirm received Mechman dual-48V kit fitment/content for the truck (`2021 F-350 7.3L`) before alternator commissioning
 - Confirm Wakespeed support status for the documented `Dumfume 51.2V 100Ah` battery manual (`58.4V` charge voltage, `20-50A` recommended charge current per battery, `1S4P` max expansion) before final commissioning of the `WS500`-controlled alternator path
@@ -728,8 +738,8 @@ related:
 - Final SKU lock for `F-11` holder family and `SW-12V-BATT` switch model/location
 - Confirm acceptable monitoring expectation that Orion is not a direct GX telemetry node in current architecture; current Orion visibility is VictronConnect/BLE
 - Confirm final location/format for measured run-length recordkeeping in implementation docs before final cable closeout
-- Lock final propane water-heater path: outdoor-use-only portable workflow vs listed indoor/RV unit with compliant venting/clearance package
-- Lock propane passthrough hardware standard and no-concealed-joints rule for final routing
+- Prove the selected HOTTAP deployment hardware, `5 lb` cylinder transport/ground-use workflow, and full operating clearances with physical box mockup.
+- Lock the BLUE/RED service-plate geometry and exact NSF coupling purchase after measuring wall/backer thickness, faucet threads, hose length, and actual pump dead-head pressure.
 - Define and document recurring leak-test cadence (post-service, pre-trip, and periodic maintenance interval)
 - Lock final fire detection/suppression layout (LP detector location, CO/smoke detector locations, extinguisher count/placement)
 
