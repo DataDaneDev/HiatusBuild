@@ -357,13 +357,13 @@ faucet hot <- insulated 1/2 in PEX <- RED service valve
            <- verified all-metal Joolca-compatible male tap adapter
               (RED hot return)
 
-Parked hose modes using the supplied Joolca female/female hoses:
+Parked hose modes using one dedicated cold leader plus the supplied Joolca shower assembly:
 HOT SHOWER:
-  camper BLUE male plug -> supplied 1 m hose -> HOTTAP inlet
+  camper BLUE male plug -> dedicated ~30 in cold leader -> HOTTAP inlet
   HOTTAP outlet -> supplied 4 m hose -> shower handle/head
 
 SINK HOT:
-  camper BLUE male plug -> supplied 1 m hose -> HOTTAP inlet
+  camper BLUE male plug -> dedicated ~30 in cold leader -> HOTTAP inlet
   HOTTAP outlet -> supplied 4 m hose -> camper RED male plug -> faucet hot
 
 COLD MOTO SPRAYER:
@@ -376,7 +376,7 @@ Separate unpressurized paths
   -> sink gray drain/graywater cassette
 ```
 
-Opening the faucet hot side in sink mode creates flow through the pump, BLUE port/hose, heater, RED hose/port, and faucet; the HOTTAP ignites once flow exceeds approximately `0.6 GPM`. One-outlet-at-a-time operation deliberately swaps the supplied `4 m` hose between the shower handle/head and camper RED rather than permanently adding a splitter and another hose. A direct male garden-profile plug is straight-through, so each immediately accessible BLUE/RED ball valve is an intentional camp control: connect with the valve closed, open only the active path, then close and relieve pressure before disconnecting. That one valve action is the cost of eliminating the QD3 body, adapter key, reducer, rear hose barb, and second QD standard.
+Opening the faucet hot side in sink mode creates flow through the pump, BLUE port/cold leader, heater, RED hose/port, and faucet; the HOTTAP ignites once flow exceeds approximately `0.6 GPM`. HOTTAP Essentials supplies one `5 m` shower assembly split into `4 m` and `1 m` red female/female sections. Preserve both for hot-side shower duties; use the `1 m` section only as a no-purchase cold-feed trial until a separate roughly `30 in`, BLUE-labeled leader is proven. One-outlet-at-a-time operation deliberately swaps the `4 m` hose between the shower handle/head and camper RED rather than permanently adding a splitter and another hose. A direct male garden-profile plug is straight-through, so each immediately accessible BLUE/RED ball valve is an intentional camp control: connect with the valve closed, open only the active path, then close and relieve pressure before disconnecting. That one valve action is the cost of eliminating the QD3 body, adapter key, reducer, rear hose barb, and second QD standard.
 
 The Joolca shower is modular at both connections: the shower head quick-connects to the handle, and the handle/head assembly quick-connects to the long hose. For camper RED service, disconnect the entire handle/head assembly from the `4 m` hose, leaving the hose's female socket free to snap onto the RED male plug. Do not assume the bare shower head replaces the handle; preserve the handle's control/connection role.
 
@@ -396,7 +396,7 @@ Hard-mount the existing plumbing compactly in the under-cooler/adjacent bench st
 - One accessible full-port `1/2 in` PEX ball valve immediately inside each rear service port, used for camp connection/disconnection as well as service/winterization.
 - Two existing `UP120A5` `1/2 in PEX x 1/2 in MNPT` adapters, each threaded directly into the rear `1/2 in FNPT` of a compact bulkhead after the shortest supported PEX-B run from its valve. This removes the QD3-era `3/8 in` barb, short reinforced hose, and clamps.
 - Two compact `1/2 in FNPT` rear / `3/4 in MGHT` front panel bulkheads. RAINPAL `SSBF020` is the lead physical candidate: seller-listed lead-free `304 stainless`, `27 mm / 1-1/16 in` panel opening, `36 mm` exterior flange, and maximum `6 mm` panel thickness when the exterior GHT must remain usable.
-- Two directly mounted all-metal male tap adapters that physically latch and seal in the actual Joolca female hose socket. First candidate is GARDENA `39004-G` / UPC `066283390047`, a North-American-thread metal Original-GARDENA-System tap adapter. Melnor plastic `2MQC` is the known-profile control, not the installed target; Melnor brass `15409`, Morvat, and any locally stocked metal plug remain bench-test candidates rather than assumed fits.
+- Two directly mounted metal male tap adapters that physically latch and seal in the actual Joolca female hose socket. Test Melnor `15409` first because Joolca explicitly documents compatibility with Melnor QuickConnect hardware. Melnor plastic hardware is the documented-profile control, not the installed target. GARDENA `39004-G` / UPC `066283390047` is the second metal candidate; Orbit/Gilmour/Morvat and other families remain separate-profile bench tests rather than assumed fits.
 - Optional joint-reduction comparison only: one NSF/ANSI `61-G` Legend `T-805MNL` / `101-580NL` `1/2 in F1807 PEX x 1/2 in MNPT` combination ball valve per port can replace the separate purchased valve, short PEX segment, and `UP120A5`. Do not buy it until the in-hand purchased stack is mocked for depth and access.
 - One insulated, joint-minimized `1/2 in` PEX hot-return trunk from the RED service valve to faucet hot.
 
@@ -459,7 +459,7 @@ Implications:
 
 ### Propane hot-water routing baseline (`2026-07-26` owner-corrected final direction)
 
-The final appliance architecture is propane-only and uses the existing pump/accumulator plus the two female/female hoses supplied with HOTTAP Essentials. The camper-port hardware remains pre-drill: lead prototype is a direct metal Joolca/GARDENA-profile plug on a compact stainless GHT bulkhead behind an accessible valve, with QD3 retained only as premium fallback. Preserve the tank's assigned functions: upper south ports for gravity fill and unrestricted vent, low north `1/2 in` port for pump pickup, and low south `1/2 in` port as a dedicated gravity tank drain.
+The final appliance architecture is propane-only and uses the existing pump/accumulator, a dedicated short cold leader, and the `4 m + 1 m` red shower assembly supplied with HOTTAP Essentials. The camper-port hardware remains pre-drill: lead prototype is a direct metal Joolca/Melnor-profile plug on a compact stainless GHT bulkhead behind an accessible valve, with QD3 retained only as premium fallback. Preserve the tank's assigned functions: upper south ports for gravity fill and unrestricted vent, low north `1/2 in` port for pump pickup, and low south `1/2 in` port as a dedicated gravity tank drain.
 
 ```text
 low north tank pickup
@@ -473,7 +473,7 @@ low north tank pickup
                     -> verified all-metal Joolca-compatible male tap adapter
 
 HOTTAP mounted directly outside the box on Quick-Release HOTTAP Bracket
-camper BLUE male plug -> supplied 1 m female/female hose -> HOTTAP blue inlet
+camper BLUE male plug -> dedicated ~30 in female/female cold leader -> HOTTAP blue inlet
 
 Shower mode:
 HOTTAP red outlet -> supplied 4 m female/female hose -> shower handle/head
@@ -497,14 +497,14 @@ The fixed camper and heater-package fitting stack is therefore:
 3. Two existing full-port `1/2 in` PEX ball valves, one immediately accessible behind each rear service port. These are routine connect/disconnect controls as well as service/winterization isolation.
 4. Two existing SharkBite `UP120A5` `1/2 in PEX x 1/2 in MNPT` adapters, each threaded directly into the rear of its bulkhead after the shortest supported PEX-B segment from the valve.
 5. Two compact panel bulkheads with `1/2 in FNPT` rear and `3/4 in MGHT` front. Lead candidate RAINPAL `SSBF020` is seller-listed lead-free `304 stainless` and uses a `27 mm / 1-1/16 in` hole, `36 mm` exterior flange, and at most `6 mm` panel when the outside GHT is occupied.
-6. Two all-metal North-American-thread male tap adapters physically proven against the real Joolca hose. Test GARDENA `39004-G` / UPC `066283390047` first. Use plastic Melnor `2MQC` only as the known-profile control; do not assume Melnor brass `15409` or Morvat fit from appearance.
+6. Two metal male tap adapters physically proven against the real Joolca hose. Test Melnor `15409` first because Joolca explicitly documents compatibility with Melnor QuickConnect hardware. Use plastic Melnor hardware as the documented-profile control. Test GARDENA `39004-G` / UPC `066283390047` second; Orbit/Gilmour/Morvat and other families are separate profiles, not assumed matches.
 7. Optional only after a depth mockup: NSF/ANSI `61-G` Legend `T-805MNL` / `101-580NL` `1/2 in F1807 PEX x 1/2 in MNPT` combination valve can replace each separate valve, short PEX segment, and `UP120A5`. The existing purchased parts remain the zero-new-purchase prototype.
-8. The HOTTAP Essentials supplied hose assembly: one `1 m` and one `4 m` red hose, each with female QuickConnect sockets at both ends. Use the `1 m` hose as the first cold-feed trial. Do not cut it before mounted routing proves whether the approximately `20.4 in` nominal surplus is actually objectionable; if shortening is earned, target roughly `25-29 in` total hose length for the measured `19 in` span and inspect the factory hose-end construction first.
+8. The HOTTAP Essentials supplied hose assembly: one `5 m` shower assembly split into `1 m` and `4 m` red sections, each with female QuickConnect sockets at both ends. Preserve both for hot-side shower duties. After connector fit testing, prototype a separate approximately `30 in`, potable-rated `3/4 in F-GHT x M-GHT` cold leader with Melnor `9MQC` at the female-thread end and `8MQC` water-stop at the male-thread end, producing a female Joolca/Melnor socket at each hose end. Use the `1 m` red section only as the no-purchase route trial; do not cut or reterminate a factory hose without Joolca instructions.
 9. One thin, backed aluminum camper two-port plate or two locally reinforced thin-panel holes with BLUE/RED labels, compatible sealing, protected wall-core passage, and two simple measured stretch caps. No hatch or service box.
 10. Twelve `1/2 in` PEX cinch clamps downstream of the accumulator: one at the accepted YVSKM accumulator adapter, three at the tee, one at each faucet adapter, two at each service valve, and one at each `UP120A5` transition. The YVSKM four-pack (ASIN `B0FDFM97HP`) was purchased `2026-07-25`; use one and retain three spares. Inspect markings and supplied gaskets, verify fit, and cold-pressure-test; Apollo `APXFB1212S` / `CPXFB1212S` remains the fallback. The purchased RecPro `30 in` double-FIP braided hose handles the pump-side accumulator connection.
-11. Compatible thread sealant on the two `UP120A5` MNPT-to-bulkhead FNPT joints only; use proper flat washers on GHT seats. Do not apply thread sealant to compression seats, Joolca/GARDENA/Melnor QuickConnect O-rings, GHT washer seats, or Joolca gasketed/BSP connections unless that fitting's instructions require it.
+11. Compatible thread sealant on the two `UP120A5` MNPT-to-bulkhead FNPT joints only; use proper flat washers on GHT seats. Do not apply thread sealant to compression seats, Joolca/Melnor/GARDENA QuickConnect O-rings, GHT washer seats, or Joolca gasketed/BSP connections unless that fitting's instructions require it.
 
-The direct male tap adapters and compact GHT bulkheads are straight-through; the accessible BLUE/RED valves therefore stop flow before disconnection. The RAINPAL candidate is seller-claimed lead-free `304 stainless`, but neither it nor the GARDENA metal adapter carries a verified whole-assembly NSF/ANSI 61 listing in this review. That does not make the HOTTAP path potable: Joolca's current manual explicitly says the recreational appliance is not allowed to supply drinking or sanitary water. Treat the BLUE external service hose and complete heated side as recreational wash hardware, keep drinking water on the untouched interior cold faucet branch, cap/inspect the exterior plugs, and prove the assembled system physically before drilling.
+The direct male tap adapters and compact GHT bulkheads are straight-through; the accessible BLUE/RED valves therefore stop flow before disconnection. The RAINPAL candidate is seller-claimed lead-free `304 stainless`, but neither it nor the Melnor/GARDENA metal adapters carry a verified whole-assembly NSF/ANSI 61 listing in this review. That does not make the HOTTAP path potable: Joolca's current manual explicitly says the recreational appliance is not allowed to supply drinking or sanitary water. Treat the BLUE external service hose and complete heated side as recreational wash hardware, keep drinking water on the untouched interior cold faucet branch, cap/inspect the exterior plugs, and prove the assembled system physically before drilling.
 
 One mode is configured at a time: cold sprayer, hot shower, or sink hot. Routine water setup is still simple: valve closed, hose click, valve open. Shutdown is close LP, close the active BLUE/RED valve(s), relieve at the faucet/shower, unplug/drain the hoses, drain the HOTTAP when freezing conditions require it, clean/cap the camper plugs, disconnect LP for travel, and secure the mounted cover. QD3 remains the fallback if the owner later decides eliminating that valve action is worth the cost and removable key.
 
@@ -516,7 +516,7 @@ Keep three rear functions distinct:
 
 Do not cross-connect the gravity drain into the pressure/hot circuit. The exterior shower is the removable `4 m` hose plus Joolca handle/head, not an additional permanent camper branch.
 
-The purchased appliance is the **Joolca HOTTAP V2 Essentials**. The purchase plan previously carried an owner-supplied `35,000 BTU` figure, but Joolca's current US product page on `2026-07-26` states `27,000 BTU` and up to `6 L/min / 1.6 GPM`; verify the received data label before locking the burner rating or reusing the older number in thermal calculations. The current manual lists a `1.2 m / 4 ft` LPG hose plus separate `1 m / 3 ft` and `4 m / 13 ft` water hoses. Joolca's support documentation permits a camper-trailer pump source, Melnor QuickConnect fittings, vehicle mounting, and connection to an existing kitchen faucet. The purchased SHURflo `4008` is nominally `3.0 GPM` / `55 PSI`. Joolca says HOTTAP continues to operate at high elevation but loses efficiency/output as air thins; it publishes no hard numeric altitude ceiling, so prove ignition and useful temperature rise at intended Colorado elevation while the heater remains returnable.
+The purchased appliance is the **Joolca HOTTAP V2 Essentials**. The purchase plan previously carried an owner-supplied `35,000 BTU` figure, but Joolca's current US product page on `2026-07-26` states `27,000 BTU` and up to `6 L/min / 1.6 GPM`; verify the received data label before locking the burner rating or reusing the older number in thermal calculations. The current manual lists a `1.2 m / 4 ft` LPG hose plus one `5 m` shower-hose assembly split into `1 m / 3 ft` and `4 m / 13 ft` red water-hose sections. Joolca's support documentation permits a camper-trailer pump source, Melnor QuickConnect fittings, vehicle mounting, and connection to an existing kitchen faucet. The purchased SHURflo `4008` is nominally `3.0 GPM` / `55 PSI`. Joolca says HOTTAP continues to operate at high elevation but loses efficiency/output as air thins; it publishes no hard numeric altitude ceiling, so prove ignition and useful temperature rise at intended Colorado elevation while the heater remains returnable.
 
 The HOTTAP remains directly mounted to the exterior side of the bumper box. Through-bolt the purchased Quick-Release HOTTAP Bracket—previously documented as Joolca's vehicle quick plate—to structural backing; do not rely on aluminum skin alone for road vibration. Use the purchased HOTTAP V2 Mount Cover for dust/travel protection and remove/open it as required before operation. The external location recovers box storage and physically separates the burner from the cylinder compartment. LP and water stay disconnected for travel.
 
@@ -528,7 +528,7 @@ The reported shelf opening is `19.5 in`, leaving `0.25 in` nominal clearance ove
 
 The HOTTAP manual states that the recreational appliance is not allowed to supply drinking or sanitary water, while Joolca support separately documents connection to an existing kitchen faucet. Resolve that conservatively: use the heated side as recreational sink/shower wash water only, never as drinking water or as a purification step. The cold branch bypasses the heater and remains the drinking-water path.
 
-Purchase posture: the `2026-07-26` propane shower setup includes one HOTTAP V2 Essentials, one Quick-Release HOTTAP Bracket, one HOTTAP V2 Mount Cover, one Flame King `YSN10LB-ALM`, one CALPOSE gauge, one Safoner propane-hose pass-through hatch, one bracket/strap two-pack, and one AWW outdoor shower mat. The HOTTAP Nomad kit is not needed because it duplicates the purchased SHURflo system. Buy no QD3 key or two-port set now. When the HOTTAP arrives, test the real hose against the direct-profile camper-water port candidates. The measured camper-to-heater span is about `19 in`; use the supplied `1 m` hose as the cold-feed trial before buying or cutting anything.
+Purchase posture: the `2026-07-26` propane shower setup includes one HOTTAP V2 Essentials, one Quick-Release HOTTAP Bracket, one HOTTAP V2 Mount Cover, one Flame King `YSN10LB-ALM`, one CALPOSE gauge, one Safoner propane-hose pass-through hatch, one bracket/strap two-pack, and one AWW outdoor shower mat. The HOTTAP Nomad kit is not needed because it duplicates the purchased SHURflo system. Buy no QD3 key or two-port set now. When the HOTTAP arrives, test the real hose against Melnor `15409` first and the other direct-profile camper-water candidates second. The measured camper-to-heater span is about `19 in`; use the supplied `1 m` red section only as the route trial, then build a separate roughly `30 in` cold leader if the mockup passes.
 
 The grey AWW foldable `23.6 x 15.5 in` stone mat is for outdoor showers.
 
@@ -565,7 +565,7 @@ The decision is final: hot water is supplied only by the camp-deployed propane s
 ### Sink mode
 
 1. Remove/open the HOTTAP V2 Mount Cover and verify the exterior heater and exhaust zone are clear.
-2. Confirm both camper service valves are closed. Snap the supplied `1 m` hose from camper BLUE directly to the HOTTAP inlet.
+2. Confirm both camper service valves are closed. Snap the dedicated roughly `30 in` cold leader from camper BLUE directly to the HOTTAP inlet; use the supplied `1 m` red section only during the no-purchase route trial.
 3. Disconnect the shower handle/head assembly from the `4 m` hose, connect that hose from the HOTTAP outlet directly to camper RED, then open the BLUE and RED service valves.
 4. Connect the supplied regulator/hose from the upright, restrained `10 lb` cylinder through the protected service hatch to the exterior heater; route it clear of sharp edges/exhaust and leak-check the disturbed LP connection.
 5. Open the propane cylinder.
@@ -573,7 +573,7 @@ The decision is final: hot water is supplied only by the camp-deployed propane s
 
 ### Shower mode
 
-With BLUE and RED valves closed, snap the `1 m` hose from camper BLUE directly to the HOTTAP inlet and connect the `4 m` hose from HOTTAP outlet to the shower handle/head. Open BLUE; leave RED closed. Connect/leak-check LP, open LP, then use the shower control. Sink hot is not simultaneously connected in the minimal configuration.
+With BLUE and RED valves closed, snap the dedicated cold leader from camper BLUE directly to the HOTTAP inlet and connect the `4 m` hose from HOTTAP outlet to the shower handle/head. Open BLUE; leave RED closed. Connect/leak-check LP, open LP, then use the shower control. Sink hot is not simultaneously connected in the minimal configuration.
 
 ### Cold moto-sprayer mode
 
@@ -583,7 +583,7 @@ Keep LP disconnected. With BLUE closed, snap the `4 m` hose from camper BLUE dir
 
 1. Close the propane cylinder, then disconnect the regulator/hose before travel.
 2. Close the active BLUE/RED camper service valve(s), then open the active faucet/shower control to relieve trapped pressure.
-3. Disconnect and gravity-drain both supplied hoses; expect only residual water after the valves are closed and pressure is relieved.
+3. Disconnect and gravity-drain the deployed cold leader and red hose section; expect only residual water after the valves are closed and pressure is relieved.
 4. Clean the exposed camper male plugs and install their measured stretch caps; clean the Joolca hose sockets before storage.
 5. In freezing conditions, follow the HOTTAP manual's drain/storage procedure after every use and confirm the short PEX-to-bulkhead transitions drain without trapped low points.
 6. Leave both camper service valves closed for travel and in the documented winterized state when applicable.
@@ -735,7 +735,7 @@ Do not buy broad `15-series` because “camper furniture needs extrusion.” Buy
 - Wheel-well tank fitting orientation, fill/vent bend radius, drain access, and restraint path.
 - Pump board location below the lofted fridge: aisle-facing, rear-facing, swing-out, or hybrid removable cassette.
 - Graywater strategy: jug/cassette size, waterless trap, vent, dump path, overflow behavior.
-- Rear-box HOTTAP package geometry: Quick-Release HOTTAP Bracket backing/clearances, HOTTAP V2 Mount Cover travel state, cylinder cradle/vents, single BLUE/RED camper plate, supplied `1 m`/`4 m` hose reach, port protection, regulator service hatch, and complete freeze drainage.
+- Rear-box HOTTAP package geometry: Quick-Release HOTTAP Bracket backing/clearances, HOTTAP V2 Mount Cover travel state, cylinder cradle/vents, single BLUE/RED camper plate, dedicated roughly `30 in` cold-leader reach, supplied `4 m + 1 m` shower-assembly reach, port protection, regulator service hatch, and complete freeze drainage.
 - Shower deployment: rear barn doors, passenger access window, or both.
 - Appliance bay identity: Ninja SP151 restraint/storage, bins, or swappable crate; no interior water-heater volume is reserved.
 
