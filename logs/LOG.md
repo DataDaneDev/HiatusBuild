@@ -1,3 +1,8 @@
+## 2026-07-26 — Available brass panel-plug prototype selected
+
+- Melnor `15409` was unavailable. The available HQMPC solid-brass two-set, ASIN `B07FHXLKH5`, supplies two female `3/4 in GHT` to male-QD adapters with visual geometry extremely close to the Melnor reference, plus two unused female-QD/male-GHT couplers. Exact Joolca latch dimensions are not documented, so this is a returnable fit/pressure/pull test rather than assumed compatibility; no camper hole is cleared by the listing alone.
+- The unused female-QD couplers may be repurposed as clicked-on travel protectors by threading lightweight female-GHT caps onto their male-GHT tails. This is acceptable for dust/impact protection behind the closed interior ball valves, but it projects farther and weighs more than a final measured flexible nipple cap and is not the winterization pressure boundary.
+
 ## 2026-07-26 — Interior water system first pressure/function pass
 
 - Owner reports the tank, SHURflo pump, SEAFLO accumulator, and most interior PEX are assembled and functional. The sink remains uninstalled; hot/cold runs currently end at accessible ball valves and final `90` fittings, while the rear bulkheads and several pass-through-area PEX fittings remain open.
