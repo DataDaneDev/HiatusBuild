@@ -428,7 +428,7 @@ Provisional role map, subject to the installed-orientation dry fit:
 - Upper large end port nearest the exterior hatch: gravity fill.
 - Upper small end port that remains highest in normal fill orientation: unrestricted vent/overflow to the hatch vent nipple.
 - Low port nearest the north pump bay: tank suction through a shutoff and short reinforced flex run.
-- Low south/service-side port: gravity tank drain, with the valve and hose weight supported by the structure rather than cantilevered from the polyethylene boss.
+- Low south/service-side port at the camper entry footpath: leave the membrane intact where possible or use only a low-profile compatible plug if already opened. Do not install a projecting drain valve there. Routine tank emptying uses the pump through the fully open BLUE service outlet; removable suction flex upstream of the pump is the dead-pump gravity fallback.
 - KUS sender: new mechanically backed/gasketed top opening over the deepest unobstructed tank section unless physical inspection reveals a suitable top boss.
 - Unused ports: leave their membranes intact where applicable or reinstall manufacturer-compatible plugs with potable-water/plastic-compatible thread sealant.
 
@@ -459,7 +459,7 @@ Implications:
 
 ### Propane hot-water routing baseline (`2026-07-26` owner-corrected final direction)
 
-The final appliance architecture is propane-only and uses the existing pump/accumulator, a dedicated short cold leader, and the `4 m + 1 m` red shower assembly supplied with HOTTAP Essentials. The camper-port hardware remains pre-drill: lead prototype is a direct metal Joolca/Melnor-profile plug on a compact stainless GHT bulkhead behind an accessible valve, with QD3 retained only as premium fallback. Preserve the tank's assigned functions: upper south ports for gravity fill and unrestricted vent, low north `1/2 in` port for pump pickup, and low south `1/2 in` port as a dedicated gravity tank drain.
+The final appliance architecture is propane-only and uses the existing pump/accumulator, a dedicated short cold leader, and the `4 m + 1 m` red shower assembly supplied with HOTTAP Essentials. The camper-port hardware remains pre-drill: lead prototype is a direct metal Joolca/Melnor-profile plug on a compact stainless GHT bulkhead behind an accessible valve, with QD3 retained only as premium fallback. Preserve the tank's assigned functions: upper south ports for gravity fill and unrestricted vent, low north `1/2 in` port for pump pickup, and no projecting fitting at the low south footpath boss. Use pump discharge through BLUE for routine tank emptying.
 
 ```text
 low north tank pickup
@@ -508,13 +508,13 @@ The direct male tap adapters and compact GHT bulkheads are straight-through; the
 
 One mode is configured at a time: cold sprayer, hot shower, or sink hot. Routine water setup is still simple: valve closed, hose click, valve open. Shutdown is close LP, close the active BLUE/RED valve(s), relieve at the faucet/shower, unplug/drain the hoses, drain the HOTTAP when freezing conditions require it, clean/cap the camper plugs, disconnect LP for travel, and secure the mounted cover. QD3 remains the fallback if the owner later decides eliminating that valve action is worth the cost and removable key.
 
-Keep three rear functions distinct:
+Keep the three rear interfaces distinct:
 
-1. The low south tank port remains a gravity fresh-tank drain with its own supported valve and capped/hose-ready outlet.
-2. The BLUE service port is pressurized cold water out to the deployed heater.
+1. The separate gravity-fill hatch feeds the tank fill/vent path only.
+2. The BLUE service port is pressurized cold water out to the deployed heater and the normal pump-assisted tank-emptying outlet.
 3. The RED service port accepts heated water back from the deployed heater and feeds only the faucet hot side.
 
-Do not cross-connect the gravity drain into the pressure/hot circuit. The exterior shower is the removable `4 m` hose plus Joolca handle/head, not an additional permanent camper branch.
+The low south tank boss stays unopened or low-profile plugged at the entry footpath; do not add an exposed gravity-drain valve there. The exterior shower is the removable `4 m` hose plus Joolca handle/head, not an additional permanent camper branch.
 
 The purchased appliance is the **Joolca HOTTAP V2 Essentials**. The purchase plan previously carried an owner-supplied `35,000 BTU` figure, but Joolca's current US product page on `2026-07-26` states `27,000 BTU` and up to `6 L/min / 1.6 GPM`; verify the received data label before locking the burner rating or reusing the older number in thermal calculations. The current manual lists a `1.2 m / 4 ft` LPG hose plus one `5 m` shower-hose assembly split into `1 m / 3 ft` and `4 m / 13 ft` red water-hose sections. Joolca's support documentation permits a camper-trailer pump source, Melnor QuickConnect fittings, vehicle mounting, and connection to an existing kitchen faucet. The purchased SHURflo `4008` is nominally `3.0 GPM` / `55 PSI`. Joolca says HOTTAP continues to operate at high elevation but loses efficiency/output as air thins; it publishes no hard numeric altitude ceiling, so prove ignition and useful temperature rise at intended Colorado elevation while the heater remains returnable.
 

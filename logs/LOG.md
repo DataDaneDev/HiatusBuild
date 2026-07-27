@@ -1,3 +1,9 @@
+## 2026-07-26 — Interior water system first pressure/function pass
+
+- Owner reports the tank, SHURflo pump, SEAFLO accumulator, and most interior PEX are assembled and functional. The sink remains uninstalled; hot/cold runs currently end at accessible ball valves and final `90` fittings, while the rear bulkheads and several pass-through-area PEX fittings remain open.
+- The first pump/accumulator/ball-valve test found no visible leaks, including a soap-solution inspection, but intentional discharge from the open ball valves soaked the area. Treat this as a successful function pass rather than final leak proof; repeat with the compartment dry, paper indicators at joints, all outlets closed, and no unexplained pump cycling.
+- Reconfirmed the rear service topology after the prior connector churn: one separate gravity-fill hatch plus only two pressurized service ports—BLUE cold out and RED hot return. The installed manual ball valves make automatic panel shutoff unnecessary, and the exterior/heated path may remain recreational wash hardware. The lead panel stack remains `PEX-B -> installed valve -> UP120A5 -> RAINPAL SSBF020 -> permanently threaded Melnor 15409`; routine setup uses click connections only, not garden-thread assembly.
+
 ## 2026-07-26 — Rear-box propane setup purchased
 
 - Owner confirmed a five-item purchase: Safoner black aluminum `3.5 in` RV cable pass-through hatch (`$26.99`), CALPOSE QCC1 propane pressure gauge (`$10.99`), AWW grey `23.6 x 15.5 in` foldable stone bath mat (`$29.99`), generic orange cylinder wall-bracket/`59 in` strap two-pack (`$17.99`), and Flame King `YSN10LB-ALM` `10 lb` aluminum cylinder (`$185.86`). Same-day live item listings reconcile exactly to the owner-provided `$271.82` subtotal; no separate tax or shipping amount was provided.
