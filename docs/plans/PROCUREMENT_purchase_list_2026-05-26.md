@@ -119,13 +119,13 @@ Posture: not a blocker. Re-measure before buying. Carry-extra-fuel is acceptable
 - **Orion input-fuse cleanup history and final Slot 4 lock**
   - Purchased `2026-06-01` Mouser order, total `$38.79`.
   - Fuse stock: `3x` Mouser `576-166.7000.5202` / Littelfuse `166.7000.5202` FKS/ATO fuse, `20A`, `80VDC`, `$7.88` each / `$23.64` extended.
-  - Housing stock: `3x` Mouser `576-178.6150.0001` / Littelfuse `178.6150.0001`, `$1.51` each / `$4.53` extended. Correction: these are empty housings with no contacts or leads, not install-ready holders; the matching contacts accept only `1.5-2.5 mm²`, not `6 AWG`.
+  - Housing stock: `3x` Mouser `576-178.6150.0001` / Littelfuse `178.6150.0001`, `$1.51` each / `$4.53` extended. Correction: these are empty housings with no contacts or leads, not install-ready holders; the matching contacts accept only `1.5-2.5 mm²`, not `6 AWG`. They remain unusable for Orion but may be candidates for the low-current WS500 `PH-VAN` red lead only after exact contact, wire-gauge, and `80V` marking verification.
   - Final install: one verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) in Lynx Slot 4 feeding the existing `6 AWG` Orion input pair directly. Retire standalone `F-06`; no DIN rail, pigtails, reducers, butt splices, or additional input holder.
-  - Treat the purchased FKS/ATO and `30A/58V` MIDI stock as unused/dead-end inventory, not final Orion hardware.
+  - Treat the purchased `20A` FKS fuse and `30A/58V` MIDI stock as unused/dead-end Orion inventory. Do not substitute the `20A` FKS fuse for the required `15A` WS500 value; only the empty `80V` housing may be repurposed if properly completed and physically validated.
 
 - **WS500 low-current fuse/holder pieces**
-  - Buy only after confirming the harness/manual voltage-rating need: `F-12` regulator power lead baseline `10A` and `F-13` positive voltage-sense lead `3A`.
-  - Requirement: holder/fuse voltage rating must cover the actual `48V` bank/alternator maximum unless the supplied harness documentation proves otherwise.
+  - Confirmed `PH-VAN` harness: one short red lead combines regulator power and positive voltage sense at the house/main bus.
+  - Inventory or buy one `15A` sealed inline fuse/holder rated above the actual `48V` bank maximum (`F-12/F-13-PHVAN`, active row `171`) plus desired spares. Existing row `321` empty `80V` FKS housings are candidates only after the correct contacts and `PH-VAN` red-lead wire-gauge fit are verified; existing `20A` fuses are the wrong current rating. Do not buy the retired separate `3A` row `320` hardware.
 
 ## TNutz / 80/20 posture
 

@@ -116,7 +116,7 @@ The current build has already completed the floor step out of this generic order
 - Missing fittings, failed voltage matching, an unsafe shore route, or a leaking bench assembly pauses its dependent step rather than being worked around permanently.
 
 ## Deferred / purchase-later rows (keep out of current critical path unless triggered)
-- Optional 12V expansion path: row `118`.
+- No additional `48V->12V` converter is active; inactive row `118` is retired under the Orion plus `12V` buffer-battery architecture. Reopen only from measured sustained-load evidence.
 
 ## Critical hold points (do not skip)
 - Hold 1: No heavy module/furniture loading until `72 hr` after actual #650 completion and the post-cure floor/hardpoint inspection passes.

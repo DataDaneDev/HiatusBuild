@@ -30,7 +30,7 @@ Related docs:
 - Keeps alternator charging architecture on the dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48` baseline); obsolete pre-Mechman charger paths are removed from primary topology.
 - Keeps Lynx Slot 3 branch to alternator input with `F-04 150A` (`58V/80V` MEGA).
 - Removes obsolete pre-Mechman engine-bay fuse/conductor placeholders from active architecture.
-- Clarifies WS500 fused-lead visibility (`F-12/F-13`) and treats current-sense high/low as an unfused twisted sense pair per current Wakespeed manual.
+- Clarifies the confirmed `PH-VAN` harness as one `15A` fused combined power/positive-sense red lead (`F-12/F-13-PHVAN`) and treats current-sense high/low as an unfused twisted sense pair.
 - Adds Ford `Upfitter #3 -> F-15 -> WS500 brown ignition` manual alternator-control path.
 - Adds the detailed Mechman/WS500/APM-48 install guide as the shop reference for staged installation, first-run checks, and load-dump/shutdown handling.
 - Defines APM-48 as a parallel surge clamp at the alternator rather than a series charge-current device.
@@ -92,7 +92,7 @@ flowchart LR
         UP3["Ford Upfitter Switch #3\n(factory relay output)"]
         F15["F-15 3A inline fuse\nWS500 ignition/enable control"]
         ALT48 -. "field/stator/sense harness" .- WS500
-        WS500 -. "F-12/F-13 fused leads; current-sense pair unfused" .- ALT48
+        WS500 -. "PH-VAN one 15A fused power/sense lead; current-sense pair unfused" .- ALT48
         UP3 -. "12V control feed" .-> F15 -. "brown ignition/enable wire" .-> WS500
     end
 
@@ -352,8 +352,7 @@ flowchart LR
 | `AUDIO-HU` / `12V-12` | `15A` source/head-unit branch; KMC2 harness also contains a `15A ATM` fuse | 12V fuse block branch plus KMC2 harness fuse | Electrical cabinet to driver-side DC shelf/source face |
 | `AUDIO-SUB` | `40A` external fuse for Kicker PTRTP10 powered sub branch | Inline/MRBF/AFS/ANL-class holder matched to selected 4 AWG kit; use `40A`, not a generic `100A` kit fuse | Within about `18 in` of the 12V source takeoff feeding the powered sub |
 | `F-11` | `100A` class (12V buffer battery main) | Sealed inline MIDI/AMI/ANL holder | Within ~`7"` of 12V buffer battery positive post |
-| `F-12` | `10A/15A` WS500 regulator power fuse | Sealed inline holder; voltage rating must cover actual source voltage | Near WS500 power lead source |
-| `F-13` | `3A` WS500 positive voltage-sense fuse | Fuse/holder must be rated for actual `48V` bank max voltage unless the WS500 harness rating proves otherwise | Near WS500 positive-sense source |
+| `F-12/F-13-PHVAN` | `15A` WS500 combined regulator-power / positive-sense fuse | Sealed inline holder rated above actual `48V` bank maximum | At the house/main positive bus feeding the short `PH-VAN` red lead; do not extend |
 | `CERBO-PWR` | `1A-3A` Cerbo GX power fuse | Small inline holder rated for the `48V` bank maximum | Electrical cabinet near `48V` system-positive takeoff; system side of disconnect preferred for bench shutdown |
 | WS500 current-sense pair | No fuse; purple/grey high/low sense pair to shunt/current-sense point | Twist pair if extended; route away from noise | Shunt/current-sense source point |
 | `F-15` | `3A` WS500 ignition/enable control fuse | Sealed inline ATC/ATO holder; 12V control circuit | Near Ford upfitter blunt-cut wire / WS500 control-wire handoff |
@@ -404,8 +403,8 @@ Retired from active architecture:
 | `C-35` | 12V panel -> USB PD station branch (galley zone) | `12V` | Galley charging branch (`65W` class USB-C plus USB-A/C loads) | `F-10` branch fuse (`15A`) | `14 AWG duplex` baseline | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-36` | 12V panel -> Maxxair fan (Hiatus pre-installed) | `12V` | Roof ventilation branch | `F-10` branch fuse (`10A`) | `14 AWG duplex` baseline | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-37` | 12V panel -> DC ambient/cabinet LED strips (planned Govee) | `12V` | Branch load | `F-10` branch fuse (`5A`) | `18/2` baseline | `8 ft` (`ASSUMED`, near-load branch) |
-| `C-38` | WS500 regulator power source -> WS500 regulator input | `48V`-referenced unless harness docs prove otherwise | Regulator electronics feed | `F-12` (`10A`/`15A`) | Harness lead | `8 ft` (`ASSUMED`) |
-| `C-39` | WS500 battery positive-sense lead -> WS500 | `48V` sense lead | Regulator voltage sense | `F-13` (`3A`) | Harness lead | `8 ft` (`ASSUMED`) |
+| `C-38` | House/main positive bus -> WS500 `PH-VAN` short red lead | `48V` bank | Combined regulator-power / positive-voltage-sense feed | `F-12/F-13-PHVAN` (`15A`) | Short harness lead; do not extend | Local at house bus |
+| `C-39` | Retired separate WS500 positive-sense conductor | N/A | Not installed with confirmed `PH-VAN` harness | None | N/A | N/A |
 | `C-40` | WS500 current-sense high/low pair to selected shunt/current-sense point | low-current sense | Regulator current feedback | No fuse per current Wakespeed manual; twist pair if extended | Harness lead | `8 ft` (`ASSUMED`) |
 | `C-41` | Ford Upfitter `#3` output -> `F-15` -> WS500 brown ignition/enable wire | `12V` control lead | Manual alternator-enable signal only | `F-15` (`3A`) | `16 AWG` TXL/GXL | `6 ft` (`ASSUMED`) |
 | `C-42` | 12V panel -> Kicker `46KMC2` media center/source unit | `12V` | Source/head-unit branch (`15A` max; KMC2 manual shows `15A ATM`) | `F-10`/`AUDIO-HU` `15A` branch plus KMC2 harness fuse | `12 AWG duplex` if kept near `5 ft`; use `10 AWG` if longer | `5 ft` (`ASSUMED`, driver-side DC shelf) |
@@ -463,8 +462,8 @@ Calculation basis for drop screening:
 | `C-35` | 12V fuse panel | Galley USB PD station | `F-10 15A` | `8A` expected | `14 AWG duplex` | `8 ft` | `2.69%` @ `12V` | Row `116` (`12 AWG + 14 AWG USB set`) | PASS (near 3%; if sustained current rises, move to `12 AWG`) |
 | `C-36` | 12V fuse panel | Maxxair fan (Hiatus pre-installed) | `F-10 10A` | `4A` expected | `14 AWG duplex` | `8 ft` | `1.35%` @ `12V` | Row `32` (`14 AWG duplex`) | PASS |
 | `C-37` | 12V fuse panel | DC ambient/cabinet LED strips (planned Govee) | `F-10 5A` | `5A` design cap | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |
-| `C-38` | WS500 regulator power source | WS500 regulator input | `F-12 10A/15A` | low-current electronics feed; likely `48V`-referenced in this build | Harness lead | `8 ft` | N/A (harness-limited) | Row `171` (fuse kit) | VERIFY holder/fuse voltage rating |
-| `C-39` | WS500 positive voltage-sense source | WS500 voltage-sense input | `F-13 3A` | low-current `48V` sense lead; fuse/holder voltage class must be verified | Harness lead | `8 ft` | N/A (harness-limited) | Row `320` (voltage-sense fuse/holder) | VERIFY holder/fuse voltage rating |
+| `C-38` | House/main positive bus | WS500 `PH-VAN` short red lead | `F-12/F-13-PHVAN 15A` | combined regulator-power / voltage-sense feed at `48V` bank voltage | Short harness lead | Local | N/A (harness-limited) | Active row `171` | VERIFY one holder/fuse rated above bank maximum |
+| `C-39` | Retired separate positive-sense source | Not installed | None | superseded by confirmed `PH-VAN` combined lead | N/A | N/A | N/A | Inactive row `320` | RETIRED |
 | `C-40` | WS500 current-sense high/low pair | WS500 current-sense input | No fuse per current manual | low-current sense; twist pair if extended | Harness lead | `8 ft` | N/A (harness-limited) | Harness kit | PASS after routing/noise check |
 | `C-41` | Ford Upfitter `#3` output | WS500 brown ignition/enable input via `F-15` | `F-15 3A` | manual low-current control only | `16 AWG` TXL/GXL | `6 ft` | N/A (control circuit) | Row `176` (upfitter control kit) | PASS |
 | `C-42` | 12V panel | Kicker `46KMC2` media center | `AUDIO-HU 15A` branch + KMC2 `15A ATM` harness fuse | `15A` max fuse basis | `12 AWG duplex` | `5 ft` | `1.99%` @ `12V` | Row `192/193` audio wiring | PASS if kept short; use `10 AWG` if longer |
@@ -489,7 +488,7 @@ Calculation basis for drop screening:
 | `10/3 shore + AC-in/out feed` | `13 ft` | `C-28`, `C-29`, `C-30` | `114` |
 | USB/audio branch mix (`12 AWG` + `14 AWG`) | USB: `5 ft` (`12 AWG`) + `8 ft` (`14 AWG`); audio source: `5 ft` `12 AWG` short-run assumption | `C-34`, `C-35`, `C-42` | `116`, `193` |
 | Camper audio signal/speaker/control wiring | RCA measured route, `18 AWG` remote, and `16 AWG` marine speaker wire runs | `C-45`, `C-46`, `C-47L/R` | `193` |
-| WS500 harness/sense leads | Included in selected kit/harness set | `C-38`, `C-39`, `C-40` | `168`, `171` |
+| WS500 harness/sense leads | Included in selected kit/harness set; `C-39` is retired under `PH-VAN` | `C-38`, `C-40` | `168`, `171` |
 | `16 AWG` TXL/GXL control wire | `6 ft` | `C-41` | `176` |
 
 Notes:
@@ -540,9 +539,9 @@ Torque reference (verify against your exact manuals/hardware):
 - Portable EMS in source-side shore path before camper inlet
 - Single combined 6-way AC DIN enclosure with isolated AC-in and AC-out neutral paths plus common equipment grounding/PE handling
 - AC-out `30A` main breaker plus `20A`/`20A` branch breaker and GFCI receptacle hardware
-- Receptacle boxes + `120V` outlets (current purchased baseline `2` GFCI receptacles; row `112` remains planned/confirm-on-hand for boxes/covers)
+- Receptacle boxes + `120V` outlets (current purchased baseline `2` GFCI receptacles/covers in row `15`; inactive row `112` records the closed separate box/faceplate allowance)
 - AC-out-2 reserve-only capped route (no energized Phase 1 branch hardware)
-- USB PD station branch hardware (`2` stations: office + galley)
+- USB PD station branch hardware (`2` stations reported on hand for office + galley; row `115` owns the exact purchased Acegoo unit, while the second unit's details remain untracked and inactive row `331` confirms no further purchase)
 - Camper audio hardware: Kicker `46KMC2` source branch, Kicker `49PTRTP10` powered sub branch, `AUDIO-HU` 15A source protection, `AUDIO-SUB` 40A source fuse, RCA/speaker/remote wiring
 - Battery temperature sensor wiring to inverter/monitoring path
 - SmartShunt fused positive sense/power lead (factory harness)

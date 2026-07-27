@@ -6,7 +6,7 @@ flowchart LR
         UP3["Ford Upfitter Switch #3\n(factory relay output)"]
         F15["F-15 3A inline fuse\nWS500 ignition/enable control"]
         ALT48 -. "field/stator/sense harness" .- WS500
-        WS500 -. "F-12/F-13 fused leads; current-sense pair unfused" .- ALT48
+        WS500 -. "PH-VAN one 15A fused power/sense lead; current-sense pair unfused" .- ALT48
         UP3 -. "12V control feed" .-> F15 -. "brown ignition/enable wire" .-> WS500
     end
 

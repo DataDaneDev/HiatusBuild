@@ -88,7 +88,7 @@ These rows unblock safe MultiPlus shore charging and should not wait on final re
 | DIN accessory kit | `1` kit | Neutral isolation hardware, PE/ground bus support, ferrules, labels/blanks as needed | `14`, `41` | Purchased / labels-blanks confirm on hand |
 | GFCI receptacles | `2` | `20A` self-test GFCI receptacles, one per active branch | `15` | Purchased |
 | Standard downstream receptacles | `0` in current scope | Prior downstream non-GFCI receptacle plan is obsolete | `111` | Obsolete |
-| Outlet boxes + covers/faceplates + clamps | `2` sets | Two active GFCI receptacles have covers/plates; final boxes/clamps are install-fit details using on-hand hardware as needed | `112` | Install-fit detail / not a first-charge blocker |
+| Outlet boxes + covers/faceplates + clamps | `2` sets | Two active GFCI receptacles have covers/plates; owner confirms no separate purchase remains and final boxes/clamps use on-hand install-fit hardware | inactive `112` | Closed / no separate purchase |
 | AC branch cable | `30 ft` purchased | `12/3` stranded triplex branch cable (`C-31/C-32`) | `113` | Purchased |
 | Shore + AC-in/AC-out feeder cable | `20 ft` purchased | `10/3` stranded triplex for `C-28/C-29/C-30` (`30A` paths) | `114` | Purchased |
 | Strain relief/cable glands | per enclosure entries | Use assorted on-hand entry hardware sized during physical layout | `44` | On-hand fitment stock |
@@ -161,5 +161,5 @@ Use this checklist as the continuing acceptance gate before sustained shore char
 - DIN rail is a mounting method; breaker listing and rating remain the controlling requirement.
 - Lowest-cost listed policy is acceptable only if each selected device has verifiable NRTL listing (`UL` or `ETL`) for intended use.
 - Purchased SKU lock is recorded in `bom/bom_estimated_items.csv` for rows `13`, `327`, `14`, `15`, `41`, `107`, `108`, `109`, `110`, `330`, `113`, `114`, `123`, `179`, and `180`. Rows `13`/`327` are the AC-in/AC-out `30A` pair; rows `110`/`330` are the two `20A` branch breakers. Row `181` was same-order tire-deflator/off-road support hardware and is intentionally outside AC scope.
-- Inactive BOM row `111` preserves the obsolete downstream-receptacle concept. Active row `112` is only an install-fit box/cover/clamp detail around the two active GFCIs, not an AC design blocker.
+- Inactive BOM rows `111` and `112` preserve the obsolete downstream-receptacle concept and closed separate box/faceplate allowance. The two active GFCIs/covers are purchased in row `15`; no separate box/faceplate procurement remains.
 - Current utilization note (`2026-05-16`): AC protection chain and purchase scope are locked for a `30A` system with two active `20A` branches. Do not add a third active AC branch without revisiting the AC-out main/enclosure/feed plan.

@@ -17,7 +17,7 @@ related:
 
 # Mechman `48V` Alternator + WS500 + APM-48 Install Guide
 
-As-of date: `2026-06-17`
+As-of date: `2026-07-27`
 
 Purpose: one shop-reference document for installing and commissioning the Hiatus dedicated `48V` secondary alternator path: Mechman `48V` alternator/bracket, Wakespeed `WS500`, Balmar `APM-48`, Ford Upfitter `#3` enable, and the existing `48V` house bank/Lynx architecture.
 
@@ -207,12 +207,12 @@ Do not use chassis-only return for the `48V` alternator branch.
 3. `16 AWG` TXL/GXL control lead to WS500 brown ignition/enable wire.
 4. Upfitter `#3 ON` allows WS500 to run; Upfitter `#3 OFF` disables WS500 field control.
 
-### WS500 sense/protection path
+### WS500 `PH-VAN` sense/protection path
 
-- `F-12`: WS500 red regulator power lead, `10A` baseline or `15A` if Mechman/WS500 guidance for this alternator requires extra-large-case value.
-- `F-13`: WS500 red/yellow positive voltage sense lead, `3A`.
-- Purple/grey current-sense pair to the Wakespeed analog shunt/current-sense point.
-- Alternator and battery temperature sensors installed before first charging run.
+- The confirmed `PH-VAN` harness joins regulator power and positive voltage sense on one short red lead at the house/main positive bus; do not extend it.
+- Protect that red lead with one `15A` fuse/holder rated above the `48V` bank maximum (`F-12/F-13-PHVAN`, active BOM row `171`). The former separate `3A F-13` concept in inactive row `320` is not installed on this harness.
+- Purple/grey current-sense pair runs to the Wakespeed analog shunt/current-sense point without another inline fuse.
+- Alternator and battery temperature sensors are installed before first charging run.
 
 ## Installation phases
 
@@ -567,8 +567,7 @@ Electrical install:
 WS500:
 
 - [ ] Brown enable from Upfitter `#3` through `F-15 3A`.
-- [ ] Red regulator power through `F-12`.
-- [ ] Red/yellow positive sense through `F-13 3A`.
+- [ ] `PH-VAN` short red combined power/positive-sense lead through one `F-12/F-13-PHVAN 15A` bank-voltage-rated fuse/holder at the house/main positive bus; do not extend.
 - [ ] Negative sense correct.
 - [ ] Shunt current sense correct and sign checked.
 - [ ] Alternator temp sensor installed.

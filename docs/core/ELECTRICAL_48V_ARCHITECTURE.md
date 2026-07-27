@@ -67,7 +67,7 @@ Related docs:
 | Alternator kit | Mechman `48V` secondary alternator kit with `WS500` | `168` |
 | Load-dump clamp | Balmar `APM-48` | `169` |
 | Alternator branch fuse | `F-04` `150A` MEGA (`58V/80V`) in Lynx Slot 3 | `170` |
-| WS500 low-current fuse set | `F-12` regulator power + `F-13` positive voltage sense; current-sense pair is unfused per current manual | `171` |
+| WS500 `PH-VAN` combined power/sense protection | One `15A` bank-voltage-rated fuse/holder on the short red combined regulator-power/positive-sense lead; current-sense pair is unfused | `171` |
 | WS500 Upfitter #3 control kit | `F-15` + control wire + holder/terminals | `176` |
 
 ## Battery manual limits and charger-programming baseline
@@ -138,8 +138,7 @@ flowchart LR
 | `F-04` | Alternator branch into Lynx Slot 3 | `150A` MEGA (`58V/80V`) | `2/0 AWG` |
 | `F-05` | Lynx Slot 4 -> Orion `48V` input | MEGA `40A`, body-marked `>=58VDC`; Victron `CIP138040020 40A/80V` replacement fallback | Existing `6 AWG` direct to Orion; single input fuse |
 | `F-06` | Retired standalone Orion input fuse position | Not installed | MIDI/FKS/DIN concepts superseded; do not stack with `F-05` |
-| `F-12` | WS500 regulator power lead | `10A` baseline (`15A` if required by alternator case); voltage rating must cover the connected alternator/system positive voltage | harness lead |
-| `F-13` | WS500 positive voltage-sense lead | `3A`; fuse/holder voltage class must cover the `48V` bank maximum unless proven by WS500 harness documentation | harness lead |
+| `F-12/F-13-PHVAN` | WS500 `PH-VAN` combined regulator-power / positive-voltage-sense red lead | One `15A` fuse/holder rated above the `48V` bank maximum; former separate `3A` position is not installed | short harness lead at house/main positive bus; do not extend |
 | `CERBO-PWR` | Cerbo GX low-current power feed | `1A-3A` inline fuse/holder rated for the `48V` bank maximum; system/load side of main disconnect preferred for bench shutdown | `18 AWG` red/black duplex acceptable |
 | WS500 current-sense pair | Purple/grey current-sense high/low to shunt/current-sense point | No separate fuse position in current Wakespeed manual; twist pair if extended and route away from noise | harness lead |
 | `F-15` | Upfitter #3 to WS500 brown ignition wire | `3A` inline ATO/ATC on 12V control circuit | `16 AWG` TXL/GXL control wire |
@@ -147,7 +146,7 @@ flowchart LR
 ### Major conductors
 - Battery branch and main `48V` trunk wiring: `2/0 AWG`.
 - Parallel battery-current sharing target is similar **total loop resistance** per battery path, not equal positive-only length. The current bench layout may use short/medium/long positive leads balanced by long/medium/short negative leads; do not add unnecessary cable coils solely to make positive leads identical.
-- Secondary alternator positive path (`ALT B+ -> APM-48 -> F-04 -> Lynx`): `2/0 AWG`, `~20 ft` one-way planning basis.
+- Secondary alternator positive path (`ALT B+ -> F-04 -> Lynx`): `2/0 AWG`, `~20 ft` one-way planning basis. The `APM-48` is wired in parallel across alternator `B+` and `B-`/case; it is not in series with this conductor.
 - Secondary alternator dedicated negative return (`ALT B- -> Lynx -`): `2/0 AWG`, `~20 ft` one-way planning basis.
 - Orion `48V` feeder: existing `6 AWG` remains as the no-rework path from Lynx Slot 4 and is protected by `F-05 40A` MEGA (`>=58VDC`); it is electrically overkill, and flexible fine-strand `10 AWG` would be adequate if ever replaced for unrelated reasons. MPPT battery leads and Orion `12V` output remain `6 AWG`.
 - Upfitter #3 control lead to WS500 brown wire: `16 AWG` TXL/GXL planning basis, `~6 ft` one-way assumed until measured.
@@ -183,10 +182,9 @@ Reason:
 - The real hazard is a cascade where the second and third battery also disconnect under active alternator charge.
 
 ## What is still not fully closed
-- Final Mechman kit fitment/content confirmation for the exact truck.
-- Final `WS500` harness polarity confirmation (`PH` vs `NH`).
+- Physical inventory/procurement confirmation for `F-04` `150A` high-voltage MEGA stock, the one `15A` `PH-VAN` red-lead fuse/holder, and the `F-15` `3A` Upfitter-control hardware.
+- Exact Mechman field-voltage/WS500 derate setting and alternator negative/case-isolation behavior in the installed kit.
 - Official vendor confirmation that the documented Dumfume battery/BMS behavior is acceptable with the `WS500`.
-- Exact alternator negative/case isolation behavior in the installed Mechman kit.
 - Whether future automatic fault-interlock logic should be added on the WS500 `Feature-In` or through an external relay.
 
 ## Rule for future edits

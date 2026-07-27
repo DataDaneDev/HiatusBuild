@@ -15,7 +15,7 @@ related:
 
 # Electrical Fuse Schedule (Implementation - Lynx Topology)
 
-As-of date: `2026-07-19`
+As-of date: `2026-07-27`
 
 Purpose: define each required fuse by circuit, protected conductor/device, holder/housing method, physical placement, and linked wire-gauge assumptions for the approved Phase 1 Lynx architecture with a battery-backed 12V bus and dedicated 48V secondary alternator branch.
 
@@ -98,7 +98,7 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 | `MEGA 40A`, `>=58VDC` | `1` active | `1-2` | Orion input in Lynx Slot 4 (`F-05`); existing body-marked `58VDC` stock is acceptable under the locked `56.8V` charge ceiling; use Victron `CIP138040020 40A/80V` as replacement fallback |
 | Retired Orion standalone input-fuse stock | `0` active | Optional purchased stock only | `30A/58V` MIDI and FKS/ATO parts are not installed; no `USM1/ATM20` purchase required |
 | 12V buffer battery main fuse (`100A` class) | `1` | `3` | Spare pack basis is BOM row `105` |
-| WS500 `PH-VAN` combined regulator power / positive-sense fuse (`F-12/F-13-PHVAN`) | `1` active position | `2` | Carry `15A` spares with holder/fuse voltage rating verified for the `48V` bank maximum |
+| WS500 `PH-VAN` combined regulator power / positive-sense fuse (`F-12/F-13-PHVAN`) | `1` required position | `2` after procurement | Carry `15A` spares with holder/fuse voltage rating verified for the `48V` bank maximum |
 | Cerbo GX power fuse (`CERBO-PWR`) | `1` active position | `1` | Carry a spare `1A-3A` fuse/holder rated for the `48V` bank maximum |
 | WS500 ignition/enable fuse (`F-15`) | `1` active position | `2` | Carry spare `3A` mini/ATO fuse and one spare sealed holder; 12V control circuit |
 | PV string fuse `15A gPV` | `3` | `3` | One spare per string |
@@ -113,8 +113,8 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 | Main battery Class T protection (`F-01A/F-01B/F-01C`) + Class T spares | `bom/bom_estimated_items.csv` row `7` |
 | Lynx branch MEGA fuses (`F-02` to `F-05` installed) + spare set | `bom/bom_estimated_items.csv` rows `10`, `170`, `188`, and `323` |
 | Orion installed fuse-holder hardware (`F-05` Lynx input, `F-07` external output) | `bom/bom_estimated_items.csv` rows `6` and `11` |
-| Retired Orion standalone input-fuse stock (`F-06`) | Purchased stock: active BOM rows `133`, `182`, and `321`; retired holder/bridge history: inactive BOM rows `326` and `230` |
-| WS500 regulator-power and voltage-sense protection (`F-12/F-13-PHVAN`) | `bom/bom_estimated_items.csv` rows `171` and `320` |
+| Retired Orion standalone input-fuse stock (`F-06`) | Purchased stock: active BOM rows `133`, `182`, and `321`; inactive rows `326` and `230` preserve retired holder/bridge history. Row `321` empty `80V` FKS housings remain unusable for Orion but may be candidates for row `171` only after correct-contact and `PH-VAN` red-lead wire-gauge verification; row `133` `20A` fuses are not the required `15A` value. |
+| WS500 regulator-power and voltage-sense protection (`F-12/F-13-PHVAN`) | Active BOM row `171`; inactive row `320` preserves the retired separate-`3A` concept |
 | Cerbo GX power feed (`CERBO-PWR`) | `bom/bom_estimated_items.csv` row `22`; small inline fuse/holder may come from low-current install stock |
 | WS500 Upfitter `#3` enable/control path (`F-15`) | `bom/bom_estimated_items.csv` row `176` |
 | 12V buffer battery (`B12`) | `bom/bom_estimated_items.csv` row `21` |

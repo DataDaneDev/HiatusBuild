@@ -135,10 +135,10 @@ Do not finalize these yet:
 ## 3.6 Alternator path execution baseline (now locked)
 - Build around the dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) only; obsolete pre-Mechman charger layout dependencies are removed from active planning.
 - Keep Lynx Slot 3 reserved for the alternator branch (`F-04` now re-baselined in the fuse schedule).
-- Reserve mounting/service access for APM-48, `F-04 150A` bank-end alternator branch fuse access, WS500 `F-12/F-13` low-current fuses, and the unfused twisted WS500 current-sense pair.
+- Reserve mounting/service access for APM-48, `F-04 150A` bank-end alternator branch fuse access, the one `F-12/F-13-PHVAN 15A` combined power/sense fuse, and the unfused twisted WS500 current-sense pair.
 - Reserve a small protected control-wire path from Ford `Upfitter #3` to the WS500 brown ignition/enable lead (`F-15` local inline fuse at the upfitter-to-WS500 handoff).
 - Use existing uncut `2/0` stock for the alternator `+` and dedicated negative run until measured field routing proves otherwise.
-- Do not install/energize alternator charging until Mechman fitment/content, WS500 harness polarity, low-current fuse voltage ratings, APM-48 placement, and shutdown sequence are confirmed.
+- Do not energize alternator charging until the remaining kit inventory, `PH-VAN` fuse/holder voltage rating, field-voltage/derate setting, APM-48 placement, `F-04` protection, and shutdown sequence are confirmed.
 
 ---
 

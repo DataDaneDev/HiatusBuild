@@ -136,7 +136,7 @@ Solar remains deferred until shore charging and alternator charging are working.
 #### Alternator charging (dedicated `48V` secondary alternator path)
 - Active migration baseline: Mechman dual-alternator kit + WS500 regulator + APM-48 protection module.
 - `Lynx Slot 3` alternator branch fuse (`F-04`) is locked at `150A` (`58V/80V MEGA` class) at the house-bank/Lynx end of the alternator positive run. Mechman guidance requires the alternator positive cable fuse within `12 in` of the battery-bank connection; if final layout places the Lynx farther away, add a bank-end fuse holder rather than leaving the branch unfused at the bank end.
-- WS500 fused low-current leads are `F-12` (`10A` baseline / `15A` if required for extra-large alternator case) for regulator power and `F-13` (`3A`) for positive voltage sense. Both are treated as `48V`-bank-referenced on this build unless the final harness documentation proves otherwise, so holder/fuse voltage rating must cover the `58.4V` charge-voltage system.
+- The owner-confirmed `PH-VAN` harness combines regulator power and positive voltage sense on one short red lead at the house/main positive bus. Protect that lead with one `15A` fuse/holder rated above the bank maximum (`F-12/F-13-PHVAN`, active BOM row `171`); the former separate `3A` positive-sense position in inactive row `320` is not installed.
 - WS500 current-sense high/low wires are not a separate fuse position in the current Wakespeed manual; route as a twisted low-current sense pair to the selected shunt/current-sense point and keep them away from noise.
 - Manual charge-enable/disable path is locked to Ford `Upfitter Switch #3` feeding the WS500 brown ignition/enable wire through local inline fuse `F-15` (`3A`, 12V control circuit).
 - `WS500` white `Feature-In` is reserved for future automatic fault-interlock work and is not required in Phase 1.
@@ -360,7 +360,7 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 - Maintain branch-level fuse-to-conductor coordination per `docs/implementation/ELECTRICAL_fuse_schedule.md`.
 - Keep always-on detector branch (`12V-05`) protected but never switch-controlled.
 - Keep ambient/cabinet strip lighting on the dedicated DC branch (`12V-11`) so low-light use does not require inverter operation. Desired future path is `12V` QuinLED/WLED analog PWM control, not the superseded `24V` converter/MiBoxer worksheet; verify final fuse/conductor sizing once selected strip wattage and expansion channels are known.
-- If sustained `12V` demand exceeds Orion headroom, treat additional `48V->12V` charger capacity (`BOM row 118`) as a safety action, not a convenience upgrade.
+- No additional `48V->12V` converter is planned: the Orion plus `12V` buffer battery is the active architecture. If measured sustained `12V` demand later exceeds Orion headroom, engineer a new expansion line then rather than carrying inactive BOM row `118` as current procurement.
 
 ### 120VAC shore/inverter safety
 - Main hazards: shock from miswired neutral/ground, ground-fault exposure at outlets, and overcurrent heating from undersized branch protection.
