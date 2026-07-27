@@ -1,3 +1,8 @@
+## 2026-07-27 — Water and rear-service hardware order recap
+
+- Owner confirmed the `3-1/4 in` IZTOR camper-fill cutter, `1-1/2 in` tank-boss membrane field-fit cutter, supplemental PEX-B `90` and cinch-clamp packs, RAINPAL stainless bulkhead two-pack, HQMPC brass QD two-set, and GHT travel caps are acquired. Exact line prices were not supplied except the owner-provided `$16.99` HQMPC listing; no unsupported total was reconstructed.
+- The two BLUE/RED service ports each require a `27 mm / 1-1/16 in` backed opening. The existing marked step bit is acceptable if it includes that exact step; do not jump to `1-1/8 in` by default. The remaining procurement/stock checks are fill-hose clamps if not included with the purchased hose, compatible NPT sealant, local backing/support hardware, propane leak-detection solution, and the listed detection/extinguisher safety layer before first propane burn. The supplied `1 m` Joolca hose can commission the cold feed; a dedicated approximately `30 in` leader remains a post-fit convenience purchase.
+
 ## 2026-07-26 — Available brass panel-plug prototype selected
 
 - Melnor `15409` was unavailable. The available HQMPC solid-brass two-set, ASIN `B07FHXLKH5`, supplies two female `3/4 in GHT` to male-QD adapters with visual geometry extremely close to the Melnor reference, plus two unused female-QD/male-GHT couplers. Exact Joolca latch dimensions are not documented, so this is a returnable fit/pressure/pull test rather than assumed compatibility; no camper hole is cleared by the listing alone.
@@ -7,7 +12,7 @@
 
 - Owner reports the tank, SHURflo pump, SEAFLO accumulator, and most interior PEX are assembled and functional. The sink remains uninstalled; hot/cold runs currently end at accessible ball valves and final `90` fittings, while the rear bulkheads and several pass-through-area PEX fittings remain open.
 - The first pump/accumulator/ball-valve test found no visible leaks, including a soap-solution inspection, but intentional discharge from the open ball valves soaked the area. Treat this as a successful function pass rather than final leak proof; repeat with the compartment dry, paper indicators at joints, all outlets closed, and no unexplained pump cycling.
-- Reconfirmed the rear service topology after the prior connector churn: one separate gravity-fill hatch plus only two pressurized service ports—BLUE cold out and RED hot return. The installed manual ball valves make automatic panel shutoff unnecessary, and the exterior/heated path may remain recreational wash hardware. The lead panel stack remains `PEX-B -> installed valve -> UP120A5 -> RAINPAL SSBF020 -> permanently threaded Melnor 15409`; routine setup uses click connections only, not garden-thread assembly.
+- Reconfirmed the rear service topology after the prior connector churn: one separate gravity-fill hatch plus only two pressurized service ports—BLUE cold out and RED hot return. The installed manual ball valves make automatic panel shutoff unnecessary, and the exterior/heated path may remain recreational wash hardware. The lead panel stack remains `PEX-B -> installed valve -> UP120A5 -> RAINPAL SSBF020 -> permanently threaded male QD`; the later same-day HQMPC entry supersedes unavailable Melnor `15409` as the physical test part. Routine setup uses click connections only, not garden-thread assembly.
 
 ## 2026-07-26 — Rear-box propane setup purchased
 
