@@ -1,17 +1,24 @@
 # BOM data contract
 
-`bom_estimated_items.csv` is the canonical component-level bill of materials for the Hiatus build. The CSV is intended to remain directly usable in a spreadsheet without hidden interpretation rules.
+The component-level BOM is split into two directly usable CSVs:
+
+- `bom_estimated_items.csv` — active build scope: acquired items plus unresolved `Selected`, `Planned`, and `Deferred` lines.
+- `bom_inactive_items.csv` — stable-ID archive for `Returned` and `Retired` lines that must not affect the active build total or buy-list review.
+
+The two files share one schema and one global row-ID namespace. Moving a line between them never changes its `row` identifier. Their union is the complete historical row registry.
+
+Only `bom_estimated_items.csv` is summed as the current build total. Costs in `bom_inactive_items.csv` are retained as historical estimate, purchase, sunk-stock, or return evidence; they are excluded from the active total rather than erased or silently zeroed.
 
 ## Columns
 
 | Column | Rule |
 |---|---|
-| `row` | Stable numeric BOM identifier. Do not renumber existing IDs; append new IDs. Gaps are allowed. |
+| `row` | Stable numeric BOM identifier across both CSVs. Do not renumber or reuse existing IDs; append new IDs. Gaps are allowed. |
 | `category` | One canonical category from the list below. |
 | `component` | One component, SKU class, true retail kit, or explicit planning allowance. Use sentence case except for proper names and acronyms. |
 | `cost` | Numeric line cost with two decimal places. Blank means unknown; `0.00` means intentionally no separately counted cost. Do not include `$` or thousands separators. |
 | `cost_basis` | Describes what the cost represents; see the controlled vocabulary below. |
-| `purchase_date` | Actual purchase/source date in `YYYY-MM-DD`. Leave blank for unpurchased, selected, deferred, or retired lines. Target dates belong in planning docs, not this field. |
+| `purchase_date` | Actual purchase/source date in `YYYY-MM-DD`. Leave blank for unpurchased `Selected`, `Planned`, or `Deferred` lines and for retired lines that were never acquired. Retired stock may retain its actual acquisition date. Target dates belong in planning docs, not this field. |
 | `purchase_status` | Procurement/scope state from the controlled vocabulary below. Installation and commissioning gates belong in `notes` or the owning implementation document. |
 | `notes` | Concise source, quantity, role, and remaining-gate context. Keep implementation procedures in the owning docs. Maximum 500 characters. |
 
@@ -39,8 +46,8 @@
 - `Selected` — exact direction/item is locked but not acquired
 - `Planned` — requirement exists but selection or purchase remains open
 - `Deferred` — deliberately outside the current build phase
-- `Returned` — purchased and then returned/refunded
-- `Retired` — superseded, removed, reconciled, or no longer required
+- `Returned` — purchased and then returned/refunded; store in `bom_inactive_items.csv`
+- `Retired` — superseded, removed, reconciled, or no longer required; store in `bom_inactive_items.csv`
 
 ### Cost basis
 
@@ -73,4 +80,4 @@
 - Start notes with the evidence or decision, then give the item role and only the unresolved gate.
 - Store only sanitized product facts and public product URLs. Raw order IDs, account-scoped links, addresses, payment data, and invoice exports stay out of the public repository.
 
-Run `python3 scripts/validate-bom.py` after editing the CSV.
+Run `python3 scripts/validate-bom.py` after editing either CSV. The default validation checks both files together for schema compliance, lifecycle placement, globally unique IDs/components/ASINs, and separate active/inactive totals.

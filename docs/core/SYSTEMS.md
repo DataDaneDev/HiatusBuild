@@ -61,7 +61,7 @@ related:
 - Normal shutdown/de-energize for the current bench system: MultiPlus `O`, disable Orion if needed, de-energize/unplug shore, wait briefly, then open the main `48V` disconnect. Residual voltage on the Lynx/load side with the disconnect open is expected from device capacitance but must be treated as live until metered near zero.
 
 ### Modeling rules (procurement-first plus full-load)
-- Primary procurement source of truth is `bom/bom_estimated_items.csv`.
+- Primary active-procurement source of truth is `bom/bom_estimated_items.csv`; returned/retired stable-ID history is in `bom/bom_inactive_items.csv` and is excluded from the active total.
 - Load model is maintained in `bom/load_model_wh.csv` (model v5) and includes BOM-sourced installed loads, owner-supplied work electronics (kept out of BOM cost totals), and a conservative preliminary/future camper-audio listening profile. Audio is not near-term procurement.
 - Legacy workbook WH model assumptions are retired and not used.
 - Voltage convention: use `48V` as architecture label, but use `51.2V` nominal for battery Wh accounting.
@@ -73,8 +73,8 @@ related:
 | Battery bank | `3x Dumfume 51.2V 100Ah` (`1S3P`; manual allows up to `1S4P`). Per battery: charge voltage `58.4V +/-0.2V`; recommended charge current `20A`; max continuous charge `100A`; recommended discharge `50A`; max continuous discharge `200A`; over-discharge protect/recover `36.8V`/`43.2V`; discharge overcurrent `600A`; short-circuit `1800A`; low-temp charge protection approx `41F-50F`, recovery at `50F`; high-temp protection `157F`/`140F`. | `bom/bom_estimated_items.csv` row 3 + `references/Dunfume_36V_48V_100Ah_Battery_-_User_Manual.pdf` |
 | Inverter/charger | MultiPlus-II `48/3000/35-50` | `bom/bom_estimated_items.csv` row 12 |
 | Alternator charging | Dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) with `Upfitter #3 -> WS500 brown ignition` manual control and Lynx Slot 3 alternator branch fuse lock | `bom/bom_estimated_items.csv` rows `168-171`, `176`, `320` + `docs/core/ELECTRICAL_48V_ARCHITECTURE.md` |
-| Obsolete pre-Mechman alternator charger/remote | Returned/obsolete; not part of primary layout, fuse planning, or commissioning | `bom/bom_estimated_items.csv` rows `18` and `26` |
-| Legacy single-12V upgrade path | Mechman `370A` + Big 3 path is deprecated under the dual-`48V` migration baseline | `bom/bom_estimated_items.csv` rows `103` and `104` |
+| Obsolete pre-Mechman alternator charger/remote | Returned/obsolete; not part of primary layout, fuse planning, or commissioning | `bom/bom_inactive_items.csv` rows `18` and `26` |
+| Legacy single-12V upgrade path | Mechman `370A` + Big 3 path is deprecated under the dual-`48V` migration baseline | `bom/bom_inactive_items.csv` rows `103` and `104` |
 | DC-DC charger | Orion-Tr Smart `48/12 30A` (`360W`); `48V` input is protected by `F-05 40A` MEGA (`>=58VDC`) in Lynx Slot 4 with no second inline fuse, and `12V` output is separately protected by `F-07 60A/80V` | `bom/bom_estimated_items.csv` row 20 |
 | 12V buffer battery | `12V 100Ah LiFePO4` on shared 12V junction (`F-11` + `SW-12V-BATT`) | `bom/bom_estimated_items.csv` rows 21, 124, and 125 |
 | Solar array candidate | Flexible-first placeholder (`~800-1000W` class); prior `9x100W`/`3S3P` concept is modeling-only and must not drive roof holes, combiner count, or procurement until solar is reopened after shore and alternator charging | `bom/bom_estimated_items.csv` row 24 |
@@ -262,7 +262,7 @@ bulk_charge_hours = energy_to_replace_wh / shore_charge_power_w
 
 ## Camper audio
 - Camper audio implementation owner: [CAMPER_audio_system](../implementation/CAMPER_audio_system.md). Status: preliminary/future-roadmap, not near-term procurement. Draft package is a DC-first `2.1` camper-only system: Samsung `S11 Ultra` tablet -> Kicker `46KMC2` marine media receiver -> Kicker `CSC67` `4 ohm` speaker pair plus Kicker `49PTRTP10` powered down-firing 10 in subwoofer.
-- BOM rows `189-193` track deferred/preliminary source unit, speaker pair, powered sub, 4 AWG sub power/fuse kit, RCA/speaker wiring, mounts, and install consumables. Row `101` is now only a deprecated sound-system placeholder.
+- Active BOM rows `189-193` track deferred/preliminary source unit, speaker pair, powered sub, 4 AWG sub power/fuse kit, RCA/speaker wiring, mounts, and install consumables. Inactive BOM row `101` preserves the deprecated sound-system placeholder.
 - Electrical posture: KMC2 uses a `15A` source/head-unit branch from the `12V` fuse panel; PTRTP10 uses a separate `40A` source fuse near the `12V` source takeoff with `4 AWG` positive and matching `4 AWG` return to the `12V` negative bus/main stud. Audio returns should not use shell/chassis as the normal current path.
 - 12V headroom note: the selected audio system can theoretically peak around `55A` at `12V` (`15A` source unit + `40A` powered sub branch), above the Orion `30A` continuous 12V feed. The `12V` buffer battery supports peaks and short loud sessions, but sustained high-volume use should be watched on the `12V` battery voltage/SOC while other 12V loads are running.
 - Physical placement default: KMC2 in the driver-side electrical/workstation/DC-shelf face; powered sub low in a dry driver-side toe-kick/step-box or dry bench volume near the `12V` junction; speaker cutouts/pods wait for wall panel thickness, roof-down sweep, and furniture-service checks.

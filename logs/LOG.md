@@ -1,3 +1,9 @@
+## 2026-07-27 — Active/inactive BOM split for manual procurement review
+
+- Split the stable-ID BOM into active `bom/bom_estimated_items.csv` and historical `bom/bom_inactive_items.csv`. All `25` existing `Retired` rows and `4` existing `Returned` rows moved to the inactive file without renumbering or changing their recorded evidence.
+- The active BOM now contains `301` rows totaling `$60,902.18`; the inactive archive contains `29` rows with `$2,284.95` of preserved historical estimates, returned purchases, and retired stock. The combined evidence control remains `330` rows / `$63,187.13`, but inactive amounts are excluded from the active build total.
+- No unresolved active line changed status in this pass. Manual owner review remains open for `30` `Planned` rows totaling `$7,753.01` plus `15` `Deferred` rows totaling `$2,321.00`; blank unknown costs remain outside those numeric subtotals.
+
 ## 2026-07-27 — Water and rear-service hardware order recap
 
 - The follow-up Amazon CSV supplies exact purchase evidence for the `2026-07-26` water hardware: `$38.93` for the RAINPAL bulkhead two-pack, HQMPC brass QD two-set, and GHT cap four-pack; `$24.18` for the `27 mm / 1-1/16 in`, `1-1/2 in`, and `3-1/4 in` cutters; and `$10.48` for the PEX-B elbow and cinch-clamp packs. These eight lines total `$73.59`; their ASINs and item subtotals now replace the prior estimate/unknown values in BOM rows `231`, `336`, and `337`.

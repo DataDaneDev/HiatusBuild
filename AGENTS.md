@@ -23,7 +23,7 @@ This repo is Dane/Sunny's public Hiatus/F-350 camper build source of truth. Keep
 ## Verification before commit
 
 - Run `git diff --check`.
-- Run `python3 scripts/validate-bom.py` whenever `bom/bom_estimated_items.csv` changes.
+- Run `python3 scripts/validate-bom.py` whenever `bom/bom_estimated_items.csv` or `bom/bom_inactive_items.csv` changes; row IDs are globally stable across both files.
 - Scan changed text for secrets/private data and accidental public exposure.
 - This repo is public: do not commit invoices, raw account-order pages, order IDs, account-scoped URLs, addresses, or payment data. Sanitized purchase facts such as item, date, quantity, price, and ASIN are allowed when useful to the build.
 - Check markdown sanity for changed files: balanced code fences, no malformed headings, no broken local links introduced.

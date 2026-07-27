@@ -18,7 +18,8 @@ Start here when opening the project in Obsidian.
 - [Flooring subfloor build process](docs/implementation/FLOORING_subfloor_build_process.md) - permanent as-built floor state, cure/post-cure checks, hardpoints, and reinstall owner.
 - [Interior furniture and galley](docs/implementation/INTERIOR_furniture_layout_and_galley.md) - current office-first passenger-side lofted fridge/wet-spine, separated battery bench, and 10-series/overlay-panel furniture direction.
 - [Electrical bench layout and test guide](docs/implementation/ELECTRICAL_bench_layout_and_test_guide.md) - staged electrical commissioning, post-live cleanup, hard-mounting, and strain-relief discipline.
-- [Estimated BOM](bom/bom_estimated_items.csv) - current procurement quantity/status owner.
+- [Active BOM](bom/bom_estimated_items.csv) - current procurement quantity/status owner and active-total basis.
+- [Inactive BOM](bom/bom_inactive_items.csv) - stable-ID returned/retired history excluded from the active total.
 - [TNUTZ 80/20 hardware model](docs/plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md) - consolidated WIP `10-series` cart, visual aids, and current dated module cut-list workbook pointer.
 - [Tracking](docs/core/TRACKING.md) - decisions, risks, assumptions, open questions.
 - [Project Log](logs/LOG.md) - dated work evidence, measurements, tests, and follow-ups.
@@ -48,7 +49,8 @@ Start here when opening the project in Obsidian.
 - [Archived temporary trackers](docs/temp/) - compatibility/provenance only; do not use as live routing unless refreshed at the top.
 
 ## Structured Sources
-- [Estimated BOM](bom/bom_estimated_items.csv)
+- [Active BOM](bom/bom_estimated_items.csv)
+- [Inactive BOM](bom/bom_inactive_items.csv)
 - [Misc items](bom/bom_misc_items.csv)
 - [Load model](bom/load_model_wh.csv)
 - [References](references/)

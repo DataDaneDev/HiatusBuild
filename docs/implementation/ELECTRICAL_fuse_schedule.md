@@ -61,7 +61,7 @@ Resistance and drop screen (`V_drop = I * (2 * L * R_per_ft)`):
 Lock for this build pass:
 - Keep the planned alternator branch fuse at `150A` (`F-04`, Lynx Slot 3).
 - Reuse existing uncut `2/0` inventory for alternator `+` and dedicated negative run.
-- Row `173` contingency purchase is removed from scope unless field measurement proves an actual shortfall.
+- Inactive BOM row `173` preserves the removed contingency estimate; open a new active line only if field measurement proves an actual shortfall.
 
 ## Required Fuse Map (Start-to-Finish, With Housing)
 | Fuse ID | Circuit (source -> load) | Protected wire/device | Fuse type and voltage class | Amperage | Holder or housing method | Physical location | Planned conductor gauge |
@@ -113,7 +113,7 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 | Main battery Class T protection (`F-01A/F-01B/F-01C`) + Class T spares | `bom/bom_estimated_items.csv` row `7` |
 | Lynx branch MEGA fuses (`F-02` to `F-05` installed) + spare set | `bom/bom_estimated_items.csv` rows `10`, `170`, `188`, and `323` |
 | Orion installed fuse-holder hardware (`F-05` Lynx input, `F-07` external output) | `bom/bom_estimated_items.csv` rows `6` and `11` |
-| Retired Orion standalone input-fuse stock (`F-06`) | `bom/bom_estimated_items.csv` rows `133`, `182`, `321`, `326`, and `230` |
+| Retired Orion standalone input-fuse stock (`F-06`) | Purchased stock: active BOM rows `133`, `182`, and `321`; retired holder/bridge history: inactive BOM rows `326` and `230` |
 | WS500 regulator-power and voltage-sense protection (`F-12/F-13-PHVAN`) | `bom/bom_estimated_items.csv` rows `171` and `320` |
 | Cerbo GX power feed (`CERBO-PWR`) | `bom/bom_estimated_items.csv` row `22`; small inline fuse/holder may come from low-current install stock |
 | WS500 Upfitter `#3` enable/control path (`F-15`) | `bom/bom_estimated_items.csv` row `176` |
