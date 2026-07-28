@@ -1,3 +1,9 @@
+## 2026-07-28 — Water bench function pass and in-camper fitment gate
+
+- Owner reports the tank, `12V` pump, accumulator, interior hot/cold PEX, and rear endpoints all operated correctly in the outside-camper bench setup. The received sink/faucet fittings can now be proved on a temporary plywood counter rather than waiting for the final black-walnut surface.
+- The KUS sender remains the isolated water-system failure: the first `FLS-U` ring has a free-spinning/seized screw and the sender gasket leaks heavily. The empty leaking tank may be used as a geometry block, but water service and final restraint remain on hold until the failed screw head/ring are recovered without enlarging the `60 mm` opening, the replacement ring/main gasket/matched screws are installed, and a dry-area leak test passes.
+- Near-term sequence is sender recovery -> temporary empty tank/plumbing-pack/Galley dry fit -> freeze and, only if physically proven, drill fill/vent and hot/cold penetrations -> temporary sink/faucet mockup -> structural Galley/electrical tie-in. The shore route may be mocked in parallel, but its exterior penetration waits until the MultiPlus/AC enclosure can sit in its final supported position and the complete inside/outside cable path is proven.
+
 ## 2026-07-27 — KUS sender under-ring thread failure and leak-test hold
 
 - Owner reports the new `60 mm / 2-3/8 in` sender opening is cut and the KUS SSS/SSL sender was assembled with the main gasket and `FLS-U` C-ring. While backing the long sender screws out to revisit screw-head sealing hardware, at least one stainless under-ring thread stripped or galled; one screw is now seized or free-spinning without axial movement or clamp load.
