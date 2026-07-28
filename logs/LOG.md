@@ -1,3 +1,9 @@
+## 2026-07-27 — KUS sender under-ring thread failure and leak-test hold
+
+- Owner reports the new `60 mm / 2-3/8 in` sender opening is cut and the KUS SSS/SSL sender was assembled with the main gasket and `FLS-U` C-ring. While backing the long sender screws out to revisit screw-head sealing hardware, at least one stainless under-ring thread stripped or galled; one screw is now seized or free-spinning without axial movement or clamp load.
+- An inverted water test pours through the sender gasket. The tank is on hold for installation/use; top-side location and atmospheric operation do not make a gross slosh leak acceptable.
+- Official KUS hardware evidence distinguishes the two screw sets: the separate gasket-mounting kit includes short screws with bonded metal/rubber sealing washers, while the `FLS-U` kit/manual uses its longer under-ring screws and does not depict transplanted loose rubber pieces. Repair default is to recover/remove the failed screw, rotate the damaged C-ring out through the existing opening, replace the ring/main gasket/all matched long screws, inspect the tank sealing land and sender flange, then hand-tighten in a star pattern and repeat the static wetting/inverted test. No oversize tap, thread insert, power-driver tightening, or RTV clamp substitute is accepted.
+
 ## 2026-07-27 — Owner BOM review and WS500 PH-VAN fuse correction
 
 - Owner review moved active BOM rows `56`, `88`, `95`, `97`, `112`, `118`, `211`, `236`, `285`, `320`, and `331` to the inactive file as `Retired`; stable IDs and historical estimates remain intact. Camper audio rows `189-193`, the larger diesel tank row `65`, WLED/QuinLED row `98`, and chair row `100` remain active but `Deferred`. The Morimoto headlight package row `211` is inactive; the separate Diode Dynamics bumper-pod row `213` remains active pending an explicit owner decision.
