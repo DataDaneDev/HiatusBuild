@@ -1,3 +1,9 @@
+## 2026-07-31 — Weekend integration sprint reset
+
+- Owner reports the Standard 4 X kit is now in hand and an additional in-truck water leak/function pass has been completed without a new leak report. Final water acceptance still follows the replacement KUS mount, BLUE/RED bulkheads, fill/vent closeout, sink terminations, and one dry-compartment pressure/dwell test because those operations change the circuit.
+- Immediate Friday dependency is pump-draining the tank and making one minimum low-speed on-property truck reposition before the MultiPlus/AC enclosure is remounted. The loose tank, Galley, batteries, and shop gear must be removed or positively restrained for that move; public-road travel remains held until integrated Galley/Bench/electrical road restraint is complete.
+- Weekend critical path is stationary MultiPlus/AC remount -> protected Battery 1 / Orion / `12V` proof -> individual Battery 2/3 charge and `<=0.1V` rested matching -> KUS/rear-port/sink completion as delivered parts permit -> Galley/electrical road restraint. Starlink gets a bench test and measured fan/Starlink/solar roof-layout pass only; solar procurement, roof holes, and alternator first-charge remain held.
+
 ## 2026-07-28 — Water bench function pass and in-camper fitment gate
 
 - Owner reports the tank, `12V` pump, accumulator, interior hot/cold PEX, and rear endpoints all operated correctly in the outside-camper bench setup. The received sink/faucet fittings can now be proved on a temporary plywood counter rather than waiting for the final black-walnut surface.

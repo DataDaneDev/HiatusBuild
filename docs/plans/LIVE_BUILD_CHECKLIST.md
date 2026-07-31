@@ -20,7 +20,7 @@ related:
 
 # Live Build Checklist — Electrical Commissioning + Wet-Spine Integration
 
-As-of: `2026-07-28`
+As-of: `2026-07-31`
 
 Owner: Sunny / Dane
 
@@ -45,13 +45,13 @@ It does **not** replace the owner docs:
 - The MultiPlus and combined AC breaker enclosure were temporarily removed before lifting. Embedded pronged/spiked T-nuts remain in the electrical backer, making both devices straightforward to remount from the service face.
 - All three `48V` batteries' positive/negative `2/0 AWG` branch leads are cut, lugged, heat-shrunk, and landed at the battery-side busbars. The batteries remain isolated until Batteries 2 and 3 are individually charged, rested, and within `0.1V` before paralleling.
 - The `12V` battery branch is close to completion, and the Orion/fuse panel are already mounted/wired. Final Orion input cleanup is one verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) in Lynx Slot 4 feeding the existing `6 AWG` input pair directly; remove/bypass the separate inline input fuse and retire `F-06`. Slot 2 remains `F-03 60A/80V` for MPPT. Keep `F-07 60A/80V` on Orion `12V` output and `F-11 100A` ANL on the `12V` battery positive branch.
-- The water bench topology has passed an open-end function test from the tank/pump/accumulator through both hot and cold runs to the rear endpoints. The gravity-fill hatch penetration was installed successfully on `2026-07-28`; final fill-hose/vent routing and wet testing remain open. The two BLUE/RED service-port holes still wait for the `27 mm` cutter **and** the actual Joolca/HQMPC latch-flow fit, bulkhead backing/thickness, and installed route—not the cutter alone.
+- The water bench topology has passed an open-end function test from the tank/pump/accumulator through both hot and cold runs to the rear endpoints, and the owner reports an additional in-truck leak/function pass. That is useful interim evidence, but final acceptance still follows the replacement KUS mount, BLUE/RED bulkheads, fill/vent closeout, and one dry-compartment pressure/dwell test because those operations change the circuit. The gravity-fill hatch penetration was installed successfully on `2026-07-28`; final fill-hose/vent routing remains open. The two BLUE/RED service-port holes still wait for the inbound `27 mm` cutter **and** the actual Joolca/HQMPC latch-flow fit, bulkhead backing/thickness, and installed route—not the cutter alone.
 - The Galley remains intentionally free-floating so the tank can come back out for the replacement KUS backing ring and the rear service holes can be worked without obstruction. Stationary MultiPlus/AC-enclosure remount and battery charging may proceed after all errands are complete, but the truck is a no-drive worksite until the Galley/Bench/electrical anti-rack tie and road restraint are complete.
 - With the MultiPlus and AC enclosure remounted in their final backer locations, the shore inlet may proceed once its complete inside/outside path, hidden structure, backer grommet/strain relief, bend radius, and sealing surfaces are proven; the Galley tie is a road-restraint gate, not a blocker to stationary shore-route proof.
 - Final surface direction remains a three-piece Nick black-walnut commission after templates are locked. A temporary Galley plywood counter/template is acceptable before final walnut so sink/faucet geometry can be proven.
 - Plumbing is active fitment work. The tank/pump/accumulator and hot/cold runs worked correctly outside the camper through the rear endpoints, but the first KUS/`FLS-U` installation still has one stripped/galled free-spinning screw and a major sender-gasket leak. The empty leaking tank remains acceptable as a dry-fit geometry block, but hold water service and final tank restraint until the failed hardware is removed, the `FLS-U` ring/main gasket/matched screws are replaced, and a dry-area leak test passes. Whole-Galley removal is accepted for uncommon tank service; preserve accessible frame seams and a documented disassembly path rather than adding quick disconnects.
 - Alternator charging remains a separate commissioning gate. Rough-in/routing with fuses pulled can proceed after floor/module reinstall; first-charge waits for APM, fusing, WS500 config, sensors, bank readiness, and shutdown behavior.
-- Solar remains a discovery/provisioning workstream, but the owner-confirmed Standard 4 X purchase on `2026-07-28` now clears hardware-class uncertainty and reopens the roof layout around the fan, Starlink mount zone, roof-weight cap, panel shadows, and cable service route. Keep panel procurement and roof penetrations held until the actual Starlink/mount and final panel/string layout are proven. Hot water remains the propane-only Joolca HOTTAP V2 package.
+- Solar remains a discovery/provisioning workstream, but the Standard 4 X is now in hand as of owner report `2026-07-31`. Bench-activate it and measure the actual terminal, cable, connector, router/power-supply, and candidate mount envelope before drafting the combined fan/Starlink/solar roof plan. Keep panel procurement and roof penetrations held until the actual mount, popup service loop, shadows, roof-weight cap, cable route, and final panel/string layout are proven. Hot water remains the propane-only Joolca HOTTAP V2 package.
 
 ## Historical July 4 sprint strategy
 
@@ -79,13 +79,13 @@ As of `2026-07-04`, the Galley/cooler/Bench/electrical tie-in has moved from tar
 | Mon `2026-07-06` if available | Wire/strain-relief/test + punch-list | safe low-power tests, AC/GFCI if ready, updated blocker list | alternator first-charge unless every prerequisite is green |
 | Week after | Alternator rough-in/commissioning, plumbing pressure test, floor gate | controlled subsystem tests | Lonseal glue-down before hardpoints/penetrations are proven |
 
-### Systems-integration priority ladder — `2026-07-28`
+### Systems-integration priority ladder — `2026-07-31`
 
-1. **Recover the failed sender hardware:** remove the free screws first; if the failed screw still spins, protect the polyethylene, capture debris, and remove only the screw head so the sender and damaged ring can come out through the existing `60 mm` opening.
-2. **Dry-fit the real wet-side assembly:** install the empty tank, pump pack, Galley frame, fill/vent hose, and hot/cold trunks with only one or two accessible temporary Galley bolts; prove restraint, service, leak, bend, and whole-Galley removal paths without road travel.
-3. **Freeze the plumbing penetrations:** route the stiff gravity-fill hose and continuously rising vent first, then hot/cold service lines; inspect both sides and drill only when the real fittings, support, bend radius, and sealing land all fit.
-4. **Mock the sink without waiting for walnut:** use a scrap-plywood counter template with the real sink, faucet, received adapters, drain, and hose sweep to prove the under-counter envelope and final PEX endpoints.
-5. **Close the structural/electrical dependency:** tie the Galley into the electrical module, remount the MultiPlus/AC enclosure, then prove the complete L5-30 inside/outside route before cutting the shore penetration. Local labeling, grommets, clamps, and route mockups near the electrical backer can proceed now; final module-dependent cable cuts cannot.
+1. **Clear the truck-position dependency once:** pump-drain the tank, isolate/cover batteries, and remove or positively strap the loose tank, Galley, and shop gear before the minimum low-speed on-property turn. Do this before remounting the heavy MultiPlus/AC equipment; no public-road travel in the current free-floating Galley state.
+2. **Finish the stationary electrical core:** remount the MultiPlus and AC enclosure, verify covers/support/service clearance, then close the Orion input and `12V` buffer branches. Battery 1 may power the protected `48V` bus for controlled Orion/`12V` proof, with normal pre-charge and branch-isolation checks; do not parallel unmatched batteries.
+3. **Charge and match the house bank in parallel with other shop work:** charge Batteries 2 and 3 individually, rest/record all three, and parallel only when maximum-to-minimum rested voltage is `<=0.1V`.
+4. **Clear the hardware-dependent wet side:** rebuild and bench-prove the KUS mount when the replacement ring arrives; mock the real sink/faucet; prove Joolca/HQMPC latch/flow plus bulkhead backing before cutting BLUE/RED holes; then finish fill/vent and run the final dry-area pressure/dwell test.
+5. **Close structure before optional roof work:** after KUS and rear-port access no longer require the Galley loose, tie Galley/Bench/electrical together for road restraint. Bench-test and measure Starlink, then draft the integrated roof layout; solar procurement and roof holes remain downstream.
 
 ## Status legend
 
@@ -286,7 +286,7 @@ Goal: build and test the fixed cold-water pack plus the selected propane-only BL
 - [x] Use the camper BLUE port plus supplied `4 m` Joolca hose and shower handle/head as the pump-fed cold moto sprayer; no separate cold-spray branch is required.
 - [x] Keep the exterior shower removable: supplied `4 m` hose from HOTTAP outlet to handle/head in shower mode, or from camper BLUE directly to handle/head in cold-spray mode. No permanent hot splitter or additional camper branch.
 - [ ] Build graywater cassette/drain path with winterizable/waterless trap strategy.
-- [~] Initial pressure test found no visible leaks, but open-valve discharge prevented a conclusive dry inspection. Before panel closure, dry the compartment completely, pressurize to pump cutoff with every outlet closed, place dry paper indicators at each joint, verify no unexplained pump cycling, and repeat inspection after dwell and pressure cycles.
+- [~] Owner reports an additional in-truck leak/function test, with no new leak reported. Treat it as interim evidence only: after the KUS rebuild, BLUE/RED bulkheads, fill/vent closeout, and sink terminations change the circuit, dry the compartment completely, pressurize to pump cutoff with every outlet closed, place dry paper indicators at each joint, verify no unexplained pump cycling, and repeat inspection after dwell and pressure cycles.
 - [ ] Recheck all clamps/unions after first drive.
 - [x] Finalize hot water as propane-only Joolca HOTTAP V2 directly mounted outside the rear box; electric storage/tankless branches are closed. Preserve the supplied `5 m` shower assembly (`4 m + 1 m` red sections) and prototype a separate roughly `30 in` cold-feed leader after the connector fit is proven. The camper-port hardware remains a pre-drill prototype decision.
 - [x] Purchase one HOTTAP V2 Essentials, one Quick-Release HOTTAP Bracket, and one HOTTAP V2 Mount Cover (`2026-07-26`); receipt, inspection, and physical fit remain open.
@@ -413,7 +413,7 @@ Goal: no daily-use build without basic emergency controls.
 
 Goal: enough utility for a workday without derailing core structure.
 
-- [~] Standard 4 X purchased and inbound as of `2026-07-28`. Stage its router/power-supply location in the ventilated tech cubby, initially plan around the supplied AC path, and wait for the actual kit before locking cable, direct-DC conversion, or permanent roof-mount details.
+- [~] Standard 4 X is in hand as of owner report `2026-07-31`. Bench-activate it on the supplied AC path, inventory/measure the real terminal/cable/connector/router/power-supply stack, and stage the indoor equipment in the ventilated tech cubby before locking direct-DC conversion or permanent roof-mount details.
 - [ ] Confirm cable route from office electronics to DC/AC power without knee snags.
 - [ ] Add temporary task light if final lighting is deferred.
 - [ ] Add red/amber night strip only if the wiring path is already clean and non-blocking.
@@ -432,7 +432,7 @@ Goal: enough utility for a workday without derailing core structure.
 Goal: keep solar out of the critical path until roof/module constraints are real.
 
 - [~] Reopen solar layout work now; keep final panel procurement/string lock downstream of the measured Starlink/fan/mount roof layout, MPPT validation, cable/service path, and charging-priority review.
-- [~] Reopen the roof layout now that Standard 4 X is purchased: map the fan, side rails, actual Starlink/mount service envelope, shadows, cable exit, popup service loop, flexible-panel trays, drainage, and the `75 lb` roof-panel cap as one system.
+- [~] Reopen the roof layout now that Standard 4 X is in hand: map the fan, side rails, measured Starlink/mount service envelope, shadows, cable exit, popup service loop, flexible-panel trays, drainage, and the `75 lb` roof-panel cap as one system.
 - [ ] Confirm roof real estate and shadow/hinge/fan constraints.
 - [ ] Confirm flexible vs rigid/stand-off approach, cable gland, combiner/fuse count, and service path.
 - [ ] Confirm MPPT `150/45` fit for selected stringing.
@@ -543,25 +543,24 @@ Run this before assuming a weekend task is blocked.
 
 # Near-term priority queue
 
-## Wednesday `2026-07-29` through Sunday `2026-08-02`
+## Friday `2026-07-31` through Sunday `2026-08-02`
 
 | Window | Primary objective | Realistic output | Do not get sucked into |
 | --- | --- | --- | --- |
-| Wed `2026-07-29` | Finish haircut/groceries/weekend procurement before immobilizing the truck; remount MultiPlus + AC enclosure afterward | MultiPlus/AC mechanically remounted and supported for stationary work; steering-wheel/key `DO NOT DRIVE` control in place; full shore route marked; Battery 2 charge started only if covers, profile, branch isolation, and strain relief pass | Driving after the heavy equipment is remounted; final long cable cuts |
-| Thu `2026-07-30` | Battery 2 + Orion/12V closeout | Battery 2 charged, isolated, and resting; Orion input is one `40A` MEGA `>=58VDC` in Lynx Slot 4 with the extra inline fuse retired; `F-07 60A/80V` output and `F-11 100A` buffer branch verified; local labels/grommets/clamps added | Alternator first-charge; cosmetic wire perfection |
-| Fri `2026-07-31` | Battery 3 + weekend staging | Battery 3 charged, isolated, and resting; received hole saw/KUS/Joolca/propane/Starlink items inventoried; sink plywood template, KUS extraction tools, rear-port backing, and electrical consumables staged; shore inlet cut only if the installed endpoint and complete route pass | Drilling BLUE/RED holes merely because the cutter arrived; solar shopping spiral |
-| Sat `2026-08-01` | Commission core DC and clear wet-side blockers | Compare all three rested `48V` batteries and parallel only at `<=0.1V`; prove Orion charging the `12V` buffer, then lights, fan, pump, and a properly fused fridge branch; repair KUS on the bench if the ring arrives; build the real sink/faucet plywood mockup | First alternator charge; hard-mounting Galley before KUS/rear-port access is cleared |
-| Sun `2026-08-02` | Integrate only what passed, then reopen roof layout | If KUS passes and Joolca/QD/backing geometry passes, cut/install BLUE/RED bulkheads, finish fill/vent and sink plumbing, pressure-test dry, then hard-mount/tie Galley and electrical module; otherwise leave them removable and finish shore/12V work. Bench-activate/test Starlink if received and map the roof as Starlink + fan + solar. Mechman/APM/WS500 dead rough-in is stretch work only | Roof holes, final solar purchase, HOTTAP permanent cuts, or any road travel before restraint gates pass |
+| Fri evening `2026-07-31` | Clear truck position, then establish protected `48V -> Orion -> 12V` power | Pump-drain tank; isolate/cover electrical; remove or strap loose tank/Galley/gear; make the minimum on-property truck turn; remount MultiPlus/AC enclosure only after the truck is parked; record `12V` battery voltage and prove Orion charging from isolated Battery 1 if needed | Public-road travel; moving after heavy equipment is remounted; paralleling unmatched batteries |
+| Sat morning `2026-08-01` | Close out the stationary electrical core | Verify Orion `F-05 40A >=58VDC` in Lynx Slot 4, remove the extra inline input fuse, verify `F-07 60A/80V` output and `F-11 100A` buffer branch, then test lights, fan, pump, DC outlets, and fridge branch one at a time | Alternator first-charge; cosmetic wire perfection; final long shell-dependent cable cuts |
+| Sat afternoon/evening `2026-08-01` | Charge/match batteries while clearing reversible wet-side work | Charge Battery 2 and Battery 3 individually as needed; rest/record all three; build the real sink/faucet plywood mockup; test Joolca/HQMPC latch/retention/flow; bench-test/measure Starlink; stage KUS tools and bulkhead backing | Hard-mounting Galley before KUS/rear-port access clears; solar shopping spiral |
+| Sun `2026-08-02` | Integrate only the systems that passed | Parallel the `3x 48V` bank only at `<=0.1V`; rebuild/bench-prove KUS if the ring arrives; cut/install BLUE/RED only if cutter, Joolca/QD, backing, and route all pass; finish fill/vent and final dry leak test; then tie Galley/Bench/electrical for road restraint. Draft the measured fan + Starlink + solar roof layout only after those gates | Roof holes, final solar purchase, HOTTAP permanent cuts, or public-road travel before restraint gates pass |
 
 ### Sunday-night win condition
 
-1. MultiPlus/AC enclosure is remounted, covered, and usable for controlled shore charging.
-2. Batteries 2 and 3 are charged/rested; the bank is paralleled only if the `<=0.1V` gate passes.
-3. Orion demonstrably charges the `12V` buffer and the fan/lights/pump/fridge branches are individually fused and function-tested.
-4. Gravity fill is connected/testable; KUS, BLUE/RED ports, sink, and Galley are completed only where delivered hardware and physical tests actually clear them.
-5. The truck either has complete integrated road restraint or remains explicitly immobilized; Starlink/solar has a measured roof layout, not new unproven roof holes.
+1. Truck is parked in the workable orientation; MultiPlus/AC enclosure is remounted, covered, and usable for controlled shore charging.
+2. Orion demonstrably charges the `12V` buffer and the fan/lights/pump/DC/fridge branches are individually fused and function-tested.
+3. Batteries 2 and 3 are charged/rested; the bank is paralleled only if the `<=0.1V` gate passes.
+4. KUS, BLUE/RED ports, fill/vent, sink, and Galley are completed only where delivered hardware and physical tests clear them; otherwise the blocked interface is left removable and documented.
+5. The truck either has complete integrated road restraint or remains explicitly immobilized; Starlink has passed a bench test and the roof work ends at a measured fan + Starlink + solar layout, not new holes.
 
-**Build order:** stationary electrical remount -> individual battery charging -> Orion/12V proof -> KUS/rear-port/sink completion as parts permit -> Galley/electrical road restraint -> Starlink/solar roof-layout decision -> Mechman rough-in only as stretch work.
+**Build order:** drain/secure/turn truck -> stationary electrical remount -> Orion/`12V` proof -> individual battery charging/matching -> KUS/rear-port/sink completion as parts permit -> Galley/electrical road restraint -> Starlink/solar roof-layout decision -> Mechman dead rough-in only as stretch work.
 
 ## Do not prioritize next unless the gate above is already green
 
@@ -581,7 +580,7 @@ Run this before assuming a weekend task is blocked.
 ## Hard holds
 
 - [HOLD] Do not load over an actually loose floor area; otherwise protect the Lonseal and proceed Saturday morning.
-- [HOLD] No road travel until the hard-mounted electrical module also has its integrated anti-rack/final road-restraint path complete, torqued, witness-marked, and inspected.
+- [HOLD] No public-road travel until the hard-mounted electrical module also has its integrated anti-rack/final road-restraint path complete, torqued, witness-marked, and inspected. One minimum low-speed on-property reposition is acceptable only before remounting the heavy MultiPlus/AC equipment and after the tank is drained, batteries are isolated/covered, and the loose tank, Galley, and shop gear are removed or positively strapped.
 - [HOLD] The sender hole has been cut, but no final tank installation, closure, or water service proceeds until the seized screw and damaged `FLS-U` ring are removed, the sender is rebuilt with a new main gasket and matched hardware, the sealing land/flange pass inspection, and a static wetting/inverted bench test shows no leakage. The installed gravity-fill hatch still requires final tank orientation, fill/vent hose geometry, backing inspection, and overflow/leak testing before service.
 - [HOLD] No final sink/faucet terminal cuts or rear service-port shell holes until the purchased EFIELD/YVSKM adapters are accepted; the actual Joolca hose passes the HQMPC latch/retention/flow test; and the real sink/faucet/drain, RAINPAL bulkheads, backer thickness, and minimum-fitting geometry are mocked at full scale.
 - [HOLD] Do not install a projecting gravity-drain valve on the low south tank boss in the entry footpath. Leave it unopened or low-profile plugged; use BLUE as the pump-assisted emptying outlet and removable upstream suction flex as the failed-pump gravity fallback. Exterior shower/cold spray uses the removable Joolca `4 m` hose and handle/head rather than a camper manifold.
