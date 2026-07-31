@@ -310,6 +310,9 @@ Goal: make the already-live electrical system safe, labeled, restrained, and tes
 - [ ] Confirm 12V junction loads and branch labeling.
 - [ ] Confirm Cerbo power, VE.Bus/RJ45, Wi-Fi/console access, and source label `Shore power`.
 - [ ] Confirm AC-in path: portable EMS, shore cord, L5-30 inlet, AC-in breaker, MultiPlus.
+- [ ] Before sustained shore charging or AC-out use, bond the MultiPlus external `M6 PE` lug to a verified truck-chassis point with `10 AWG` green stranded copper (`4 mm²` manual minimum). Add a separate corrosion-compatible aluminum-shell bond to the same equipment-ground network; do not leave the MultiPlus PE open or use shell/80/20 as its only path.
+- [ ] Keep AC and DC grounding roles separate: no jumper from MultiPlus case/PE to Lynx negative or the `12V` negative bus, and no fixed downstream neutral-ground bond. Leave the MultiPlus internal ground relay enabled for normal inverter/shore transfer behavior.
+- [ ] After Mechman ground style is physically identified, verify whether its case-ground plus dedicated `2/0` negative establishes the house-negative/chassis reference and confirm no parallel chassis path bypasses the SmartShunt.
 - [ ] Commission AC-out branches only when the AC enclosure, breakers, grounding/bonding behavior, and GFCI receptacles are physically ready.
 - [ ] Test GFCI trip/reset on both intended AC branch areas: office and galley.
 - [ ] Test DC USB/PD outlets under realistic laptop/phone/tablet load.

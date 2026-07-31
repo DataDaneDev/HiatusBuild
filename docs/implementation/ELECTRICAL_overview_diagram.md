@@ -291,8 +291,9 @@ flowchart LR
 - Upstream shore protection chain before MultiPlus AC-in: shore source/adapters -> portable EMS -> shore cord -> shore inlet -> `30A` AC input breaker/disconnect.
 - AC-out protection chain: MultiPlus AC-out-1 -> `10/3` feeder -> `30A` AC-out main breaker -> `20A` branch breakers -> GFCI receptacles.
 - Single-enclosure DIN architecture with isolated AC-in and AC-out neutral paths and no neutral mixing.
-- Continuous equipment grounding path from shore inlet through MultiPlus and branch circuits, plus chassis bond in mobile install context.
-- Neutral/ground handling must follow MultiPlus relay behavior; do not add an always-bonded downstream neutral-ground bond in branch receptacle wiring.
+- Continuous equipment grounding path from shore inlet through MultiPlus and branch circuits. The MultiPlus external `M6 PE` lug gets at least `4 mm²`, selected as `10 AWG` green stranded copper, to a verified truck-chassis bond point; the aluminum shell gets a separate corrosion-compatible bond into the same equipment-ground network and is not the only PE path.
+- Neutral/ground handling follows the MultiPlus internal relay: AC-out neutral bonds to chassis in inverter mode and opens that bond when shore is accepted. Do not add an always-bonded downstream neutral-ground bond in branch receptacle wiring.
+- Keep PE and DC return roles separate: no MultiPlus case/PE jumper to Lynx or `12V` negative. Confirm whether the Mechman is isolated- or case-grounded and prove no chassis path bypasses the SmartShunt before alternator commissioning.
 
 ### AC Reference Basis (Manufacturer Guidance)
 - Victron MultiPlus-II `120V` installation guidance (`AC-in` breaker sizing, UL943-class residual-current protection on outputs, and AC-out-2 shore-only behavior): `https://www.victronenergy.com/media/pg/MultiPlus-II_120V/en/installation.html`

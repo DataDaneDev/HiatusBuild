@@ -151,6 +151,12 @@ flowchart LR
 - Orion `48V` feeder: existing `6 AWG` remains as the no-rework path from Lynx Slot 4 and is protected by `F-05 40A` MEGA (`>=58VDC`); it is electrically overkill, and flexible fine-strand `10 AWG` would be adequate if ever replaced for unrelated reasons. MPPT battery leads and Orion `12V` output remain `6 AWG`.
 - Upfitter #3 control lead to WS500 brown wire: `16 AWG` TXL/GXL planning basis, `~6 ft` one-way assumed until measured.
 
+### Grounding and bonding separation
+- **AC protective earth:** the MultiPlus external `M6 PE` lug is mandatory in this mobile installation. Bond it with at least the Victron-manual `4 mm²` conductor; current build default is `10 AWG` green stranded copper to a verified truck-chassis bond point. Do not use the aluminum camper shell or 80/20 as the only protective-earth conductor.
+- **Exposed aluminum shell:** add a separate corrosion-compatible bonding jumper from the Hiatus shell to the chassis/equipment-ground network and verify low-resistance continuity. Mechanical shell/bed mounting contact is not accepted as proof of a durable bond.
+- **AC neutral:** do not add a fixed neutral-ground bond downstream. The MultiPlus internal ground relay remains enabled: AC-out neutral bonds to chassis in inverter mode and that bond opens when external AC is accepted.
+- **DC negatives:** do not jumper MultiPlus PE/case to Lynx negative or the `12V` negative bus. Keep normal `48V`/`12V` current on dedicated returns. The Mechman branch still uses dedicated `2/0` negative to the Lynx/load side of the SmartShunt; physically confirm isolated-ground versus case-ground behavior before commissioning. If the alternator is case-grounded, treat that as the likely deliberate house-negative/chassis reference and verify there is no second path that bypasses the SmartShunt.
+
 ## APM-48 wiring intent
 - Mount the `APM-48` at the alternator end of the `48V` branch, as close to the alternator output/ground points as practical.
 - Treat the APM-48 as a parallel surge/load-dump clamp across the alternator, not a series device in the alternator charge-current path.

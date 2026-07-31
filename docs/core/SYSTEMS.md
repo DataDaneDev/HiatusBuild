@@ -172,6 +172,8 @@ Solar remains deferred until shore charging and alternator charging are working.
 - Positive path sequence: battery -> Class T fuse (near source) -> disconnect -> Lynx Distributor -> fused branch feeds
 - Negative path sequence: battery -> SmartShunt -> Lynx Distributor negative bus -> all load returns on load side of shunt
 - Dedicated alternator branch grounding rule set: run equal-or-larger dedicated negative cable from secondary alternator to house-bank return path and avoid sheet-metal return paths.
+- MultiPlus mobile-installation protective earth is mandatory: external `M6 PE` lug -> `10 AWG` green stranded copper (`4 mm²` Victron minimum) -> verified truck-chassis bond point. Bond the aluminum Hiatus shell separately into the same equipment-ground network; do not use shell/80/20 as the only PE conductor.
+- Keep AC PE, AC neutral, and DC negatives distinct. Do not jumper MultiPlus case/PE to Lynx or `12V` negative and do not add a fixed downstream neutral-ground bond; leave the MultiPlus internal ground relay enabled. Confirm Mechman case-ground behavior and verify no chassis path bypasses the SmartShunt before alternator commissioning.
 - If the truck uses an RVC ground-sensor loop, route the upgraded ground path through the loop per vehicle requirements.
 - Battery thermal strategy: insulated battery box, ducted warm-air branch, thermostat/relay enable logic
 - Wiring practices: grommets, loom, glands, abrasion protection, and bend-radius validation

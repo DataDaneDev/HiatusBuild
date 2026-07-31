@@ -565,6 +565,14 @@ related:
 - Result: Active row `171` now owns one `15A` `F-12/F-13-PHVAN` fuse/holder; row `320` is inactive. Row `170` remains planned for one `150A` high-voltage MEGA at Lynx Slot 3 and row `176` remains planned for the local `3A` Upfitter #3 enable circuit until physical inventory closes them.
 - Follow-up: Verify the exact fuse/holder markings and fit before energizing. The purchased row `321` empty `80V` FKS housings are candidates only if the matching contacts and actual `PH-VAN` red-lead wire gauge are compatible; the purchased `20A` FKS fuse stock is not the required `15A` fuse.
 
+- ID: D-060
+- Date: 2026-07-31
+- Decision: Make the MultiPlus external chassis/PE connection mandatory and keep AC protective earth, AC neutral bonding, and DC negative references as three separate design roles.
+- Context: The MultiPlus had been live-tested during earlier bench work, but the final mobile-installation chassis lug, aluminum-shell bond, and interaction with the future case-grounded or isolated-ground Mechman path had remained vague. The current official Victron MultiPlus-II 120V manual identifies the exterior `M6` as the primary PE connection, requires at least `4 mm²` grounding conductor, requires the casing to be connected to the vehicle chassis when shore unplugging removes source earth, and documents the internal neutral-to-chassis ground relay.
+- Decision drivers: manufacturer instructions, uninterrupted fault-current return with shore disconnected, correct GFCI operation in both inverter and shore modes, avoidance of an unreliable aluminum-shell-only path, and prevention of a DC return that bypasses the SmartShunt.
+- Result: run `10 AWG` green stranded copper from MultiPlus `M6 PE` to a verified truck-chassis bond point; add a separate corrosion-compatible shell bond into the same equipment-ground network; do not add a MultiPlus case/PE-to-DC-negative jumper or fixed downstream neutral-ground bond; leave the internal MultiPlus ground relay enabled. Add BOM row `339` for measured bonding wire/lugs/hardware.
+- Follow-up: measure the routes, inventory/buy row `339`, install and continuity-test both bonds, test both GFCIs in inverter and accepted-shore modes, physically confirm Mechman isolated-vs-case-ground behavior, and prove no chassis path bypasses the SmartShunt before alternator commissioning.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.

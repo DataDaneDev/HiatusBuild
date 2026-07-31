@@ -50,8 +50,10 @@ Related docs:
 - AC-in and AC-out neutral termination paths remain isolated.
 - Separate AC-in neutral pass-through/termination and AC-out neutral bar are required inside the combined enclosure.
 - Common equipment grounding/PE bus is acceptable; do not use it as a neutral.
-- Continuous equipment ground path and chassis bond are required end-to-end.
-- Do not add an always-bonded downstream neutral-ground bond in branch receptacle wiring.
+- Continuous equipment ground path and chassis bond are required end-to-end. The installed MultiPlus-II `48/3000/35-50 120V` is a Class I device; its official manual identifies the external `M6` connection as the primary PE point, requires at least `4 mm²` grounding conductor, and explicitly requires the casing to be connected to the vehicle chassis in a mobile shore-power installation. Use `10 AWG` green stranded copper from the MultiPlus external `M6 PE` lug to a verified truck-chassis bond point; do not leave the lug open and do not use the aluminum Hiatus shell or 80/20 as the only protective-earth path.
+- Bond the aluminum camper shell separately into the same chassis/equipment-ground network with a corrosion-compatible connection. Treat shell hardware/body contact as unproven until low-resistance continuity is measured; use compatible/tinned terminals and antioxidant/isolation practice appropriate to the aluminum interface.
+- Do not jumper the MultiPlus case/PE lug to Lynx negative or the `12V` negative bus. The `48V` and `12V` DC return paths remain on their dedicated conductors/buses; Mechman case-ground behavior is a separate commissioning check that may establish the single deliberate house-negative-to-chassis reference through the alternator and its dedicated `2/0` return.
+- Do not add an always-bonded downstream neutral-ground bond in branch receptacle wiring. Leave the MultiPlus internal ground relay enabled for the normal single-unit topology: it bonds AC-out neutral to chassis in inverter mode and opens that bond when shore AC is accepted.
 
 ### AC-out-2 policy
 - `AC-out-2` is **reserve-only** in Phase 1.
@@ -86,6 +88,7 @@ These rows unblock safe MultiPlus shore charging and should not wait on final re
 | Combined DIN enclosure | `1` | `6-way` DIN enclosure with slot plan: `30A in`, `30A out`, `20A`, `20A`, `2x` blank/spare | `109` | Purchased |
 | AC-out branch breaker set | `2` active | DIN-mount `UL 489` branch breakers: `20A` + `20A` | `110` | Purchased |
 | DIN accessory kit | `1` kit | Neutral isolation hardware, PE/ground bus support, ferrules, labels/blanks as needed | `14`, `41` | Purchased / labels-blanks confirm on hand |
+| MultiPlus/chassis and shell bonding materials | field-measured | `10 AWG` green stranded copper minimum for MultiPlus `M6 PE` to verified truck chassis; separate shell bond jumper; M6/tinned lugs, protected chassis attachment, compatible aluminum-interface hardware/compound | `51`, `339` | Inventory/buy |
 | GFCI receptacles | `2` | `20A` self-test GFCI receptacles, one per active branch | `15` | Purchased |
 | Standard downstream receptacles | `0` in current scope | Prior downstream non-GFCI receptacle plan is obsolete | `111` | Obsolete |
 | Outlet boxes + covers/faceplates + clamps | `2` sets | Two active GFCI receptacles have covers/plates; owner confirms no separate purchase remains and final boxes/clamps use on-hand install-fit hardware | inactive `112` | Closed / no separate purchase |
@@ -134,8 +137,11 @@ Use this checklist as the continuing acceptance gate before sustained shore char
 - Confirm AC-in and AC-out neutral paths are isolated.
 - Confirm input and output neutral paths are separately landed/passed through inside the combined enclosure.
 - Confirm the equipment grounding/PE path is common and continuous.
-- Confirm continuous equipment grounding and chassis bond are documented.
+- Confirm the MultiPlus external `M6 PE` lug is bonded to a verified truck-chassis point with at least `4 mm²` / selected `10 AWG` green stranded copper; the aluminum shell/80/20 is not the sole return.
+- Confirm the aluminum shell has its own corrosion-compatible bond to the chassis/equipment-ground network and verify low-resistance continuity after final assembly.
+- Confirm no intentional jumper exists from MultiPlus case/PE to Lynx negative or the `12V` negative bus, and confirm no chassis path bypasses the SmartShunt after the Mechman ground style is physically identified.
 - Confirm no fixed downstream neutral-ground bond is added in branch receptacle wiring.
+- Confirm the MultiPlus internal ground relay remains enabled for this normal single-unit mobile topology; test both GFCI branches in inverter mode and on accepted shore power before routine use.
 
 ### 4) Procurement completeness
 - Confirm every required AC component class has a BOM row mapping.
