@@ -13,9 +13,9 @@ related:
 
 # Electrical AC BOM (Phase 1)
 
-As-of date: `2026-07-26`
+As-of date: `2026-08-01`
 
-Purpose: maintain the purchased Phase 1 AC architecture baseline: portable `30A` EMS, `30A` shore inlet/cord, one `6-way` DIN enclosure, `30A` AC-in breaker, `30A` AC-out main breaker, and two active `20A` GFCI-protected AC-out branches. Final physical outlet locations and enclosure access remain measurement-gated in the installed camper.
+Purpose: maintain the purchased Phase 1 AC architecture baseline: portable `30A` EMS, `30A` shore inlet/locking cord with a modular `25 ft` TT-30 extension, one `6-way` DIN enclosure, `30A` AC-in breaker, `30A` AC-out main breaker, and two active `20A` GFCI-protected AC-out branches. Final physical outlet locations and enclosure access remain measurement-gated in the installed camper.
 
 Related docs:
 - `docs/implementation/ELECTRICAL_overview_diagram.md`
@@ -37,9 +37,10 @@ Related docs:
 ## Locked AC Architecture
 
 ### AC-in chain (shore to inverter)
-- `shore source/adapters -> portable 30A EMS -> 30A shore cord -> L5-30 shore inlet -> combined 6-way AC DIN enclosure -> 30A UL489 AC-in breaker/disconnect -> MultiPlus AC-in (L/N/PE)`
+- `shore source/adapters -> portable 30A EMS -> optional 25 ft TT-30 extension -> 30A locking shore cord -> L5-30 shore inlet -> combined 6-way AC DIN enclosure -> 30A UL489 AC-in breaker/disconnect -> MultiPlus AC-in (L/N/PE)`
 - AC-in conductors are `10 AWG` / `10/3` on the protected AC-in path (`30A` hardware basis).
 - MultiPlus input current limit is set to actual source when adapters are used. Use `10A` for first household tests and `12A` maximum policy on a normal `15A` outlet; do not leave the limit at `50A` on adapter/household shore.
+- Use the modular extension only when the extra reach is needed. Fully seat, elevate, and weather-protect the TT-30 midpoint connection, and uncoil both cords under load.
 
 ### AC-out chain (inverter-backed branch distribution)
 - `MultiPlus AC-out-1 -> 10/3 feeder -> combined 6-way AC DIN enclosure -> 30A UL489 AC-out main breaker -> 20A Branch A + 20A Branch B -> GFCI receptacle per branch`
@@ -68,7 +69,7 @@ These rows unblock safe MultiPlus shore charging and should not wait on final re
 | Component class | Qty | Rating/listing requirement | BOM row(s) | Phase 1 status |
 | --- | --- | --- | --- | --- |
 | Shore inlet | `1` | `30A 125V` L5-30 shore inlet with exterior cover | `107` | Purchased |
-| Shore cord + household adapter | `1` cord + `1` dogbone | `30A` TT-30P-to-L5-30R cord plus `15A` household dogbone adapter | `108` | Purchased |
+| Shore cord, modular extension + household adapter | `1` locking cord + `1` extension + `1` dogbone | `30A` TT-30P-to-L5-30R cord, `25 ft` TT-30P-to-TT-30R extension, and `15A` household dogbone adapter | `108`, `340`, `281` | Purchased |
 | Portable EMS/surge protector | `1` | Portable `30A` EMS with open-neutral/polarity/voltage protection | `123` | Purchased |
 | AC-in breaker/disconnect | `1 of 2` | DIN-mount `UL 489` `1-pole 30A 120VAC` | `13` | Purchased |
 | Combined AC DIN enclosure and bus hardware | `1` enclosure + accessories | `6-way` DIN enclosure; physically isolate AC-in and AC-out neutrals | `109`, `14` | Purchased |
@@ -81,12 +82,12 @@ These rows unblock safe MultiPlus shore charging and should not wait on final re
 | Component class | Qty | Rating/listing requirement | BOM row(s) | Phase 1 status |
 | --- | --- | --- | --- | --- |
 | Shore inlet | `1` | `30A 125V` L5-30 shore inlet with exterior cover | `107` | Purchased |
-| Shore cord + household adapter | `1` cord + `1` dogbone | `30A` TT-30P-to-L5-30R cord plus `15A` household dogbone adapter | `108` | Purchased |
+| Shore cord, modular extension + household adapter | `1` locking cord + `1` extension + `1` dogbone | `30A` TT-30P-to-L5-30R cord, `25 ft` TT-30P-to-TT-30R extension, and `15A` household dogbone adapter | `108`, `340`, `281` | Purchased |
 | Portable EMS/surge protector | `1` | Portable `30A` EMS used source-side before the shore cord | `123` | Purchased |
 | AC-in breaker/disconnect | `1` | DIN-mount `UL 489` `1-pole 30A 120VAC` | `13` | Purchased |
-| AC-out main breaker | `1` | DIN-mount `UL 489` `1-pole 30A 120VAC`, ahead of branch breakers | `13` | Purchased |
+| AC-out main breaker | `1` | DIN-mount `UL 489` `1-pole 30A 120VAC`, ahead of branch breakers | `327` | Purchased |
 | Combined DIN enclosure | `1` | `6-way` DIN enclosure with slot plan: `30A in`, `30A out`, `20A`, `20A`, `2x` blank/spare | `109` | Purchased |
-| AC-out branch breaker set | `2` active | DIN-mount `UL 489` branch breakers: `20A` + `20A` | `110` | Purchased |
+| AC-out branch breaker set | `2` active | DIN-mount `UL 489` branch breakers: `20A` + `20A` | `110`, `330` | Purchased |
 | DIN accessory kit | `1` kit | Neutral isolation hardware, PE/ground bus support, ferrules, labels/blanks as needed | `14`, `41` | Purchased / labels-blanks confirm on hand |
 | MultiPlus/chassis and shell bonding materials | field-measured | `10 AWG` green stranded copper minimum for MultiPlus `M6 PE` to verified truck chassis; separate shell bond jumper; M6/tinned lugs, protected chassis attachment, compatible aluminum-interface hardware/compound | `51`, `339` | Inventory/buy |
 | GFCI receptacles | `2` | `20A` self-test GFCI receptacles, one per active branch | `15` | Purchased |
@@ -112,7 +113,7 @@ These rows unblock safe MultiPlus shore charging and should not wait on final re
 ## Manual AC Validation Checklist
 
 ### 0) AC-in-only initial charger validation
-- Confirm AC-in physical order: `shore source/adapters -> portable EMS -> shore cord -> inlet -> AC-in breaker/disconnect -> MultiPlus AC-in`.
+- Confirm AC-in physical order: `shore source/adapters -> portable EMS -> optional TT-30 extension -> locking shore cord -> inlet -> AC-in breaker/disconnect -> MultiPlus AC-in`.
 - Confirm AC-out breakers/loads are disconnected or not yet installed for the first battery-charge test.
 - Confirm MultiPlus input current limit is set to actual source (`10A` first household test, `12A` max on normal `15A`, actual rating for `20A`/`30A`).
 - Confirm AC Input 1 is labeled/configured as `Shore power`.

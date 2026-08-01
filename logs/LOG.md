@@ -1,3 +1,8 @@
+## 2026-08-01 — Modular 30A shore extension purchased
+
+- Owner confirmed purchase of one Nilight `25 ft` `30A 125V` RV extension cord, `TT-30P` to `TT-30R`, `10/3` pure-copper STW, with a UL/ETL listing claim, for `$55.64` item subtotal; public product identifier is ASIN `B0DLKVHPTZ`.
+- New BOM row `340` records the purchase. It extends the existing `25 ft` Camco TT-30P-to-L5-30R locking cord to `50 ft` only when needed; normal shore topology keeps the portable EMS source-side and requires the TT-30 midpoint to be fully seated, elevated/weather-protected, and the cords uncoiled under load.
+
 ## 2026-07-31 — Weekend integration sprint reset
 
 - Owner reports the Standard 4 X kit is now in hand and an additional in-truck water leak/function pass has been completed without a new leak report. Final water acceptance still follows the replacement KUS mount, BLUE/RED bulkheads, fill/vent closeout, sink terminations, and one dry-compartment pressure/dwell test because those operations change the circuit.
