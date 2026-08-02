@@ -52,7 +52,9 @@ related:
 - Confirm terminal torque marks, busbar covers, and abrasion protection on all high-current runs.
 - Confirm `48V` disconnect operation and expected de-energization behavior.
 - Confirm `F-11` (`12V` buffer battery main fuse) is installed at source and matches planned amp class.
-- Confirm `SW-12V-BATT` switching behavior and labeling (closed = NORMAL operation, open = SERVICE battery isolation).
+- Confirm `SW-12V-BATT` switching behavior and labeling (closed = NORMAL operation, open = SERVICE battery isolation). This switch isolates only the buffer battery; because the Orion output lands on the same fuse-panel main stud, the panel can remain energized while the Orion is enabled.
+- Replace the Orion's always-on jumper with a maintained SPST dry-contact switch between remote pins `L` and `H`. Normal shutdown is active `12V` loads off -> Orion remote off and status confirmed -> `SW-12V-BATT` open. Normal startup is `SW-12V-BATT` closed -> Orion remote on -> loads on.
+- Treat any independently measured `12V` bus voltage above the configured `14.20V` absorption target as a stop condition. With the Orion disabled, verify the buffer battery directly at its posts using a known-good meter; after re-enabling, compare battery-post, Orion-output, and VictronConnect readings before leaving charging unattended.
 - Confirm 12V fuse-block main `+`/`-` stud terminations are tight, protected, and not over-stacked beyond hardware guidance.
 - Confirm no solder-spliced high-current source joins are present in the 12V source-combine path.
 - Confirm Ford `Upfitter #3` is labeled as the manual `WS500` alternator-charge enable/disable control.
@@ -79,9 +81,9 @@ Bench-test intent: validate wiring correctness and basic device behavior (shunt,
 - Functional checks: verify SmartShunt reads voltage correctly, Orion outputs stable `12V` under load, MultiPlus inverts correctly into a small known load, and MultiPlus charges correctly when AC-in is applied. For the current build, SmartShunt and Orion have been verified in VictronConnect and MultiPlus inverter/limited shore-charge behavior has passed a first-live check.
 - Alternator-control check (when the secondary alternator path is installed): confirm `Upfitter #3 ON` enables the WS500 brown ignition/enable wire and `Upfitter #3 OFF` disables regulator output before using the main `48V` disconnect as a service step.
 - 12V mode checks:
-1. Orion-only mode (service validation): open `SW-12V-BATT`, keep Orion active, and verify 12V panel remains stable under expected baseline load.
-2. Battery-backed mode (normal operation): close `SW-12V-BATT` and verify shared-junction stability under office + galley USB station loads.
-3. Service isolation mode: open `SW-12V-BATT` and verify 12V battery branch is fully isolated while Orion path remains testable.
+1. Battery-backed mode (normal operation): close `SW-12V-BATT`, enable the Orion, and verify shared-junction stability under representative fan/light/office/galley loads.
+2. Service isolation mode: turn active loads off, disable the Orion and confirm off/not charging, then open `SW-12V-BATT`; verify the battery branch is isolated and the fuse-panel bus is de-energized before service.
+3. Do not use routine Orion-charger operation with the destination battery disconnected as a normal operating mode. The shared bus can remain powered if `SW-12V-BATT` is opened while the Orion is enabled, so the battery switch alone is not a full-panel disconnect.
 - Shutdown check: open `48V` disconnect and confirm the system de-energizes as expected; verify no unintended return paths bypass shunt measurement.
 - Alternator-fault shutdown rule: if a battery pack trips or alternator charging fault is suspected while the engine is running, switch `Upfitter #3 OFF` first, wait for alternator charge current to collapse, then open the main `48V` disconnect only if full house shutdown is still required.
 
@@ -93,12 +95,13 @@ Bench-test intent: validate wiring correctness and basic device behavior (shunt,
 4. Verify SmartShunt/Cerbo values and check for abnormal heat/smell/noise.
 
 ### Normal power-down / de-energize for bench storage
-1. Turn MultiPlus switch to `O`.
-2. Disable Orion if needed for the test/storage state.
-3. De-energize/unplug shore source if connected.
-4. Wait `30-60s`.
-5. Open the main `48V` disconnect.
-6. Treat Lynx/load-side voltage as live until the meter shows near zero; residual voltage after disconnect-open can be normal capacitor bleed-down.
+1. Turn active `12V` fan/lights/loads off.
+2. Disable the Orion with its remote switch or VictronConnect and confirm off/not charging.
+3. Open `SW-12V-BATT` if the `12V` battery/panel must be isolated.
+4. Turn MultiPlus switch to `O`.
+5. De-energize/unplug shore source if connected.
+6. Wait `30-60s`, then open the main `48V` disconnect.
+7. Treat both `12V` and Lynx/load-side conductors as live until a known-good meter shows near zero; residual voltage after disconnect-open can be normal capacitor bleed-down.
 
 ### Shore connect/disconnect
 - Connect order: RV/load side and EMS path first, then energize the shore source.

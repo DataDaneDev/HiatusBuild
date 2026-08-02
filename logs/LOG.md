@@ -1,3 +1,9 @@
+## 2026-08-01 — BLUE/RED ports operational; Orion isolation control clarified
+
+- Owner reports both RAINPAL/HQMPC direct camper water pass-throughs are installed and working. The fittings project substantially, but the owner-designed clicked-on quick-disconnect travel caps fit and operate correctly. The BLUE cold source has an accessible ball valve; RED intentionally has no valve because the removable HOTTAP return hose is its disconnect and the fixed leg terminates only at faucet hot. The rear fiberglass was relieved for locknut access after the original `27 mm / 1-1/16 in` shank cuts; final backing/edge-seal/witness-mark and post-drive looseness checks remain.
+- Owner reports the Orion is charging the `12V` buffer battery while the camper fan and lights operate from the shared fuse-panel junction. Existing multimeter reported an implausible `18V` while VictronConnect reported about `13.5V`; independent voltage verification is required before unattended charging.
+- Clarified the installed isolation behavior: `SW-12V-BATT` opens only the buffer-battery positive branch and does not de-energize the shared fuse panel while Orion remains enabled. Normal sequence is loads off -> Orion disabled/status confirmed -> battery switch open; startup closes the battery switch before enabling Orion. Victron's approved remote method is a maintained dry-contact switch between the Orion `L-H` pins in place of the always-on jumper.
+
 ## 2026-08-01 — Modular 30A shore extension purchased
 
 - Owner confirmed purchase of one Nilight `25 ft` `30A 125V` RV extension cord, `TT-30P` to `TT-30R`, `10/3` pure-copper STW, with a UL/ETL listing claim, for `$55.64` item subtotal; public product identifier is ASIN `B0DLKVHPTZ`.

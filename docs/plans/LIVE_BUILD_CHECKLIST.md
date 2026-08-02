@@ -232,8 +232,8 @@ Goal: build the galley datum so cooler/fridge/plumbing fitment stops being guess
 - [x] Reinforce Galley rear/back stretch as one continuous `2010` member; owner reports the Galley is now very sturdy as of `2026-07-06`.
 - [x] Modify/add cooler-bench tie-in rails or plates as needed; keep the seam removable and accessible without removing batteries.
 - [ ] Decide the entrance-side Galley front corner shape with a physical sweep test: default `45° chamfer` if square clips entry and round is too fussy for the current 10-series frame.
-- [ ] Keep the front/rear Galley utility corner serviceable for the sink drain/graywater path, faucet cold/hot trunks, BLUE/RED service valves, and removable panel access; no interior water-heater volume is reserved.
-- [ ] [HOLD] Do not cut the single camper BLUE/RED service plate or mount the rear-box propane package until the purchased Quick-Release HOTTAP Bracket backing and HOTTAP V2 Mount Cover, cylinder restraint/venting, regulator service hatch, supplied-hose reach, port protection, and operating clearances are physically proven.
+- [ ] Keep the front/rear Galley utility corner serviceable for the sink drain/graywater path, faucet cold/hot trunks, the BLUE source valve, unvalved RED hot return, and removable panel access; no interior water-heater volume is reserved.
+- [~] The separate BLUE/RED camper penetrations and direct QDs are installed. Continue to hold the rear-box HOTTAP/propane package until the purchased Quick-Release HOTTAP Bracket backing and HOTTAP V2 Mount Cover, cylinder restraint/venting, regulator service hatch, supplied-hose reach, and operating clearances are physically proven.
 - [ ] Mock passenger-side fridge/cooler position with real handles, hinge/lid swing, cord bend, and hand clearance.
 - [ ] Confirm raised fridge/cooler height target, currently about `16 in` above floor/service zone.
 - [ ] Confirm relationship to `36 gal` wheel-well tank envelope.
@@ -282,16 +282,16 @@ Goal: build and test the fixed cold-water pack plus the selected propane-only BL
 - [ ] Add shallow removable leak tray/pan under pump/strainer/accumulator area.
 - [ ] Add leak sensor or at least a visible inspection point.
 - [~] Hot/cold PEX reaches the sink zone and terminates at accessible ball valves/final `90` fittings. Before the final countertop exists, make a scrap-plywood counter template and mount the real sink/faucet long enough to prove bowl, clips, drain, shank/nut, pull-out-hose sweep, and adapter clearance. Terminate the faucet hoses with the received EFIELD `1/2 in PEX-B x 3/8 in OD compression male` adapters; use no PTFE tape at either compression seat.
-- [~] Interior service topology is substantially assembled: post-accumulator tee branch to faucet cold, straight leg to the accessible BLUE ball valve, and separate RED ball valve/hot-return run to faucet hot. Add only the final rear bulkheads/adapters and sink connections; no electric-heater branch, manifold, or bypass remains.
+- [x] Interior service topology now has the direct BLUE cold-out and RED hot-return bulkheads/QDs installed and working. The BLUE source retains its accessible ball valve; RED intentionally runs without a valve because the removable heater-return hose is its disconnect and the fixed leg terminates only at faucet hot. No electric-heater branch, manifold, or bypass remains.
 - [x] Use the camper BLUE port plus supplied `4 m` Joolca hose and shower handle/head as the pump-fed cold moto sprayer; no separate cold-spray branch is required.
 - [x] Keep the exterior shower removable: supplied `4 m` hose from HOTTAP outlet to handle/head in shower mode, or from camper BLUE directly to handle/head in cold-spray mode. No permanent hot splitter or additional camper branch.
 - [ ] Build graywater cassette/drain path with winterizable/waterless trap strategy.
 - [~] Owner reports an additional in-truck leak/function test, with no new leak reported. Treat it as interim evidence only: after the KUS rebuild, BLUE/RED bulkheads, fill/vent closeout, and sink terminations change the circuit, dry the compartment completely, pressurize to pump cutoff with every outlet closed, place dry paper indicators at each joint, verify no unexplained pump cycling, and repeat inspection after dwell and pressure cycles.
 - [ ] Recheck all clamps/unions after first drive.
-- [x] Finalize hot water as propane-only Joolca HOTTAP V2 directly mounted outside the rear box; electric storage/tankless branches are closed. Preserve the supplied `5 m` shower assembly (`4 m + 1 m` red sections) and prototype a separate roughly `30 in` cold-feed leader after the connector fit is proven. The camper-port hardware remains a pre-drill prototype decision.
+- [x] Finalize hot water as propane-only Joolca HOTTAP V2 directly mounted outside the rear box; electric storage/tankless branches are closed. Preserve the supplied `5 m` shower assembly (`4 m + 1 m` red sections). The direct camper-port prototype is now installed and working.
 - [x] Purchase one HOTTAP V2 Essentials, one Quick-Release HOTTAP Bracket, and one HOTTAP V2 Mount Cover (`2026-07-26`); receipt, inspection, and physical fit remain open.
-- [~] [HOLD] RAINPAL `SSBF020` bulkheads, HQMPC brass two-set ASIN `B07FHXLKH5`, and GHT travel caps are acquired. Test one actual Joolca hose on one HQMPC nipple before drilling: full collar return, positive latch, pull/twist retention, low radial play, clean release, O-ring seal, hot flow, drainage, and travel-cap fit. Melnor plastic remains the documented-profile control if needed.
-- [ ] [HOLD] Mock one direct port as `PEX-B -> accessible valve -> UP120A5 -> RAINPAL SSBF020 -> HQMPC female-GHT/male-QD adapter`. Use a backed `27 mm / 1-1/16 in` opening and verify total panel thickness stays within the fitting limit. Keep QD3 as fallback only if the clean direct-profile prototype fails.
+- [x] RAINPAL `SSBF020` bulkheads and HQMPC brass male QDs are installed; owner reports correct quick-disconnect operation. Projection is substantial but accepted because the owner-designed clicked-on travel caps latch and release correctly.
+- [~] The `27 mm / 1-1/16 in` shank openings and enlarged rear-fiberglass access relief are complete. Confirm the final local aluminum load backing, exposed laminate/core edge seal, locknut witness marks, and no looseness after hose pull/cycle testing and the first drive.
 - [ ] [HOLD] After the HQMPC/Joolca fit passes, mock one approximately `30 in` potable-rated `3/4 in F-GHT x M-GHT` cold leader with verified female QD sockets at both ends. Verify a relaxed service loop, BLUE labeling, flow/ignition, drainability, and cold-pressure integrity; do not cut the supplied red hose.
 
 ## 8. AC/DC electrical closeout and tests
@@ -307,6 +307,8 @@ Goal: make the already-live electrical system safe, labeled, restrained, and tes
 - [ ] Identify the physically X-marked/misrated Lynx fuse by slot before replacement: Slot 2 requires `F-03 60A/80V` for MPPT; Slot 4 / `F-05` requires `40A` MEGA body-marked at least `58VDC` for Orion. Remove/quarantine any `32V`-rated fuse from the energized `48V` system.
 - [ ] Verify `F-07 60A/80V` MEGA remains in the separate Orion `12V` output holder and is not confused with Lynx Slot 4 input protection.
 - [~] Complete/verify the `12V` buffer path: `4 AWG battery + -> F-11 100A ANL -> SW-12V-BATT -> panel main +`; `4 AWG battery - -> panel main -` directly.
+- [ ] Replace the Orion always-on remote jumper with a maintained SPST dry-contact switch between `L-H`. Label the operating sequence: loads off -> Orion remote off/status confirmed -> `SW-12V-BATT` open; startup reverses the source order by closing `SW-12V-BATT` before enabling Orion.
+- [ ] Resolve the voltage-instrument discrepancy before unattended charging: existing meter reported `18V` while VictronConnect reported about `13.5V`. Disable Orion, replace the meter battery or use a known-good second meter, verify at the battery posts, then compare battery-post/Orion-output/app readings after re-enabling. Any verified value above the configured `14.20V` absorption target is a stop condition.
 - [ ] Confirm 12V junction loads and branch labeling.
 - [ ] Confirm Cerbo power, VE.Bus/RJ45, Wi-Fi/console access, and source label `Shore power`.
 - [ ] Confirm AC-in path: portable EMS, shore cord, L5-30 inlet, AC-in breaker, MultiPlus.
@@ -316,8 +318,8 @@ Goal: make the already-live electrical system safe, labeled, restrained, and tes
 - [ ] Commission AC-out branches only when the AC enclosure, breakers, grounding/bonding behavior, and GFCI receptacles are physically ready.
 - [ ] Test GFCI trip/reset on both intended AC branch areas: office and galley.
 - [ ] Test DC USB/PD outlets under realistic laptop/phone/tablet load.
-- [ ] Energize and verify the Hiatus factory six-pod-light circuit/dimmer from `12V-06`.
-- [ ] Energize and verify the factory Maxxair fan from `12V-10`, including all speed/direction/control functions available on the installed model.
+- [~] Owner confirms the camper lights operate from the live `12V` junction; still verify final branch/fuse label and dimmer behavior on `12V-06`.
+- [~] Owner confirms the camper fan operates from the live `12V` junction; still verify the `12V-10` branch/fuse label and all installed speed/direction/control functions.
 - [ ] Wire and prove the first two DC charging outlets only after their branch fuse values, polarity, and labels are confirmed.
 - [ ] Test fridge/cooler DC outlet/feed if installed.
 - [ ] Test pump circuit with fuse, switch, connector, and dry-run protection awareness.

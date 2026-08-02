@@ -69,7 +69,7 @@ related:
 ## Scope clarifications from workbook
 - In scope for Phase 1 includes office-first electrical architecture, Starlink support, cabinetry/workstation, and core plumbing.
 - Truck mechanical upgrades listed as "skip for now" remain out of scope for Phase 1.
-- Solar and diesel-heater routing decisions remain pending and tracked in `docs/core/TRACKING.md`; shore hardware is selected, with inlet/cable-support details handled during physical install. The HOTTAP LP path stays within the cylinder box/outdoor heater package—no propane passthrough into the camper—while the single camper BLUE/RED service plate remains geometry-gated.
+- Solar and diesel-heater routing decisions remain pending and tracked in `docs/core/TRACKING.md`; shore hardware is selected, with inlet/cable-support details handled during physical install. The HOTTAP LP path stays within the cylinder box/outdoor heater package—no propane passthrough into the camper. The separate direct BLUE/RED camper water ports are installed; rear-box heater/cylinder integration and operating-clearance proof remain open.
 
 ## Milestone plan (draft)
 - M0: requirements baseline frozen

@@ -208,7 +208,8 @@ flowchart LR
 - Orion-Tr Smart `48/12-30` is the primary `12V` charger/feed source.
 - `SW-12V-BATT` is **normally closed** in operation; open is service/isolation mode only.
 - With `SW-12V-BATT` closed, Orion output at the fuse-block main `+` stud maintains/charges the `12V` buffer battery through the shared-junction path.
-- With `SW-12V-BATT` open, the buffer battery is isolated from the main `+` stud; this mode is for service/troubleshooting only and not the default operating state.
+- With `SW-12V-BATT` open, the buffer battery is isolated from the main `+` stud, but the fuse-panel bus can remain powered from the Orion while the Orion is enabled. For service isolation, turn active loads off, disable the Orion and confirm off/not charging, then open `SW-12V-BATT` and meter the bus before work.
+- Replace the Orion's always-on L-H jumper with a maintained SPST dry-contact remote switch. Startup closes `SW-12V-BATT` before enabling the Orion; normal shutdown disables the Orion before opening the battery switch.
 - The buffer battery remains in the active operating path during normal use and is intended to absorb transients/peaks on the `12V` rail.
 - The fuse block is the `12V` junction device in this baseline: main `+` stud is the source-combine point, and the integrated negative bus/main `-` is the shared return point.
 - Do not solder-splice high-current source conductors; terminate with crimped lugs on rated studs/junction hardware.
