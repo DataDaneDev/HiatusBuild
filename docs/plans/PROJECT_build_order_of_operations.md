@@ -107,23 +107,23 @@ The current build has already completed the floor step out of this generic order
 - Freeze service map from real shell dimensions before penetrations, final cable cuts, Lonseal glue-down, or permanent module skins.
 - Place top-off orders based on real measurements and update logs/tracking.
 
-5. Current electrical-to-wet-spine integration phase (updated `2026-07-19`)
-- **Completed physical gate:** permanent floor is carrying controlled work; electrical module is hard-mounted and all three battery branch harnesses are cut, lugged, heat-shrunk, and landed at the battery-side busbars.
-- **Next electrical session:** remount MultiPlus/AC enclosure, prove/cut/seal the shore inlet and `10/3` route, then charge Batteries 2 and 3 individually. After rest, parallel all three only at `<=0.1V` difference and complete polarity/protection/SmartShunt/current-sharing checks.
-- **Parallel `12V` closeout:** verify Lynx Slot 4 `F-05` is one body-marked `40A` MEGA rated at least `58VDC` and feeds Orion directly, keep standalone `F-06` retired, complete `F-11 -> SW-12V-BATT -> panel`, verify `F-07`, then prove factory pod lights, Maxxair fan, and the first two DC outlets.
-- **After-return plumbing session:** with the remaining fittings in hand, assemble and fill/pressure/leak/function-test the tank, KUS sender, pump, strainer, accumulator, manifold, fill/vent, and drain in the driveway before permanent mounting.
-- **Installed closeout:** hard-mount tank/restraint/wet spine and Galley; add the Bench/electrical anti-rack tie-in; keep panels removable until AC/DC and plumbing tests pass; then torque/witness-mark and run a local shakedown.
-- Missing fittings, failed voltage matching, an unsafe shore route, or a leaking bench assembly pauses its dependent step rather than being worked around permanently.
+5. Current electrical-to-wet-spine integration phase (updated `2026-08-02`)
+- **Completed physical gates:** permanent floor carries controlled work; electrical module is hard-mounted; all three battery branch harnesses are landed; the driver-rear shore inlet/cable route and all three passenger-rear water penetrations are installed; Orion charging of the `12V` buffer and camper `12V` operation are owner-reported good.
+- **Next electrical session:** finish the one accessible, enclosed, conductor/gauge-rated shore `L/N/PE` splice; dead-check topology, PE continuity, polarity, and neutral isolation; run one supervised `10A` household-source test through the EMS; then charge Batteries 1, 2, and 3 individually. After rest, parallel all three only at `<=0.1V` maximum-to-minimum difference and complete polarity/protection/SmartShunt/current-sharing checks.
+- **`12V` operating baseline:** Lynx Slot 4 `F-05` remains one body-marked `40A` MEGA rated at least `58VDC` feeding Orion directly, standalone `F-06` remains retired, and the buffer branch remains `F-11 -> SW-12V-BATT -> panel` with `F-07` on Orion output. `SW-12V-BATT` isolates only the battery while Orion is disabled.
+- **Remaining plumbing acceptance:** gravity fill plus BLUE/RED shell pass-throughs are installed. Repair/leak-prove the KUS sender, finish fill/vent and sink terminations, then run one dry-compartment pressure/dwell inspection after every disturbed joint is closed.
+- **Installed closeout:** use removable plywood Galley/Desk templates to prove fixture/service geometry; hard-mount tank/restraint/wet spine and Galley; add the Bench/electrical anti-rack tie-in; keep panels removable until AC/DC and plumbing tests pass; then torque/witness-mark and run a local shakedown.
+- Failed voltage matching, unsafe AC dead checks, a leaking wet assembly, or blocked service access pauses its dependent step rather than being worked around permanently.
 
 ## Deferred / purchase-later rows (keep out of current critical path unless triggered)
 - No additional `48V->12V` converter is active; inactive row `118` is retired under the Orion plus `12V` buffer-battery architecture. Reopen only from measured sustained-load evidence.
 
 ## Critical hold points (do not skip)
 - Hold 1: No heavy module/furniture loading until `72 hr` after actual #650 completion and the post-cure floor/hardpoint inspection passes.
-- Hold 2: No tank sender/fill/vent hole until the empty tank has a complete port map and has passed one bare in-truck dry fit against wheel well, extrusion, hose bends, service access, and restraint.
+- Hold 2 (sender/fill cuts closed): No final tank installation or water service until the damaged KUS under-ring/main gasket/matched screws are replaced, the sender opening passes a leak test, and final fill/vent hose geometry remains serviceable without trapped loops.
 - Hold 3: No battery-bench bridge/lid or service-obscuring frame until the `3x 48V` bank is restrained, individually protected/connected as designed, covered, labeled, and removable with emergency fuse/disconnect access preserved.
-- Hold 4: No shore inlet cut until the hard-mounted electrical module, AC-in enclosure endpoint, inside cable path, backing, bend radius, strain relief, and exterior location are proven together.
-- Hold 5: No water-fill/vent exterior cut until the final tank orientation, fill port, highest-point vent port, continuous hose fall/vent rise, service access, and spill/overflow path are proven together.
+- Hold 4 (shell cut closed `2026-08-02`): No energization through the installed shore inlet until the remaining `L/N/PE` splice is enclosed/strain-relieved and dead checks prove the locked breaker path, polarity, PE continuity, AC-in/AC-out neutral isolation, and no unintended neutral-ground bond.
+- Hold 5 (shell cuts closed `2026-08-02`): No water-service acceptance until KUS repair, fill/vent hose geometry, sink termination, spill/overflow path, and the final dry pressure/dwell inspection all pass.
 - Hold 6: No final cabinetry/panel closeout until fridge/tank/electrical envelopes and service access pass installed functional tests.
 - Hold 7: No road travel with the electrical/heavy modules until integrated anti-rack and restraint paths are complete, torqued, witness-marked, and inspected.
 - Hold 8: No field deployment until the low-consequence shakedown defects and post-drive floor/fastener/moisture/leak inspection are closed.

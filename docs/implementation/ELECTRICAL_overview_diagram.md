@@ -39,19 +39,19 @@ Related docs:
 - Updated 12V topology to a shared 12V junction fed by an Orion-Tr Smart `48/12-30` charger and a `12V 100Ah` buffer battery branch, with `F-11` source fuse plus `SW-12V-BATT` manual isolation.
 - Added a full-circuit estimated run-length validation pass (`C-01` through `C-40`) and purchase-ready wire rollup totals.
 
-## Current Commissioning Snapshot (`2026-05-27`)
+## Current Commissioning Snapshot (`2026-08-02`)
 - `48V` bus live-tested at `55.5V` throughout the system, including at the MultiPlus.
 - MultiPlus-II inverter mode tested with inverter light on, slight normal hum, and no reported errors.
 - SmartShunt and Orion-Tr Smart connected in VictronConnect.
 - Cerbo GX access point/remote-console workflow active; Cerbo is powered from a small inline fused `48V` feed and connected to MultiPlus via `VE.Bus` RJ45.
 - Short AC-in shore-charge test passed at household-source current limits: about `1294W` shore input and about `54.3V x 21.6A` battery charging in bulk.
-- Hold open: MultiPlus LiFePO4 charge profile is now programmed/owner-verified by supervised first-battery behavior; AC-out branch/GFCI, alternator commissioning, Cerbo hard-mounting, and final strain-relief/abrasion-control remain future gates.
+- MultiPlus LiFePO4 charge profile is programmed/owner-verified by supervised first-battery behavior. Owner reports the Orion/`12V` buffer path now charges and operates correctly. Hold open: permanent-path shore dead checks/first-use acceptance, full-bank charge/rest/match/parallel closeout, AC-out branch/GFCI, alternator commissioning, Cerbo hard-mounting, and final strain-relief/abrasion-control.
 
-## Current Physical Installation Snapshot (`2026-07-19`)
+## Current Physical Installation Snapshot (`2026-08-02`)
 - The electrical module is hard-mounted through the finished Lonseal/plywood floor into registered truck-bed hardpoints. It fits cleanly and is sufficiently stable for continued stationary installation; the planned Bench tie-in remains required for final anti-rack stiffness and road restraint.
-- The MultiPlus and combined AC breaker enclosure were removed before lifting to reduce module weight. Embedded pronged/spiked T-nuts in the plywood backer allow direct front-side remounting without loose nuts behind the board.
-- All three batteries' positive and negative `2/0 AWG` branch cables are cut, lugged, heat-shrunk, and landed at the battery-side busbars. The batteries remain electrically isolated from one another until Batteries 2 and 3 are individually charged, rested, and matched within `0.1V` before paralleling.
-- The `12V` buffer-battery branch is near physical completion; keep its negative direct to the fuse-panel main negative stud, not through `SW-12V-BATT`. The positive path remains `F-11 -> SW-12V-BATT -> panel main +`.
+- The driver-rear shore inlet and exterior-to-module cable route are installed. One accessible, enclosed, conductor/gauge-rated three-wire `L/N/PE` splice into the AC-input side remains before dead checks and controlled energization.
+- All three batteries' positive and negative `2/0 AWG` branch cables are cut, lugged, heat-shrunk, and landed at the battery-side busbars. The batteries remain electrically isolated from one another until they are individually charged, rested, and matched within `0.1V` before paralleling.
+- The `12V` buffer-battery/Orion branch is owner-reported operational. Keep its negative direct to the fuse-panel main negative stud, not through `SW-12V-BATT`; the positive path remains `F-11 -> SW-12V-BATT -> panel main +`.
 
 ### Orion fuse discriminator — one input fuse only
 - Lynx Slot 4 / `F-05`: **Orion `48V` input positive**, one verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) feeding the existing `6 AWG` directly. This is the final single input fuse.
