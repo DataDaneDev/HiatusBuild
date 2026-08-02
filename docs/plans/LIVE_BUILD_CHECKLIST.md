@@ -520,6 +520,7 @@ These do not need to be perfect for the July 4 sprint, but they are real blocker
 - [ ] Confirm graywater removal workflow without spilling into electrical/battery zones.
 - [ ] Confirm daily tools/spares location separate from battery bay and wet bay.
 - [ ] Confirm doors/windows/fan can be operated after modules and bedding are in place.
+- [ ] Build measured removable bug screens for the full rear barn-door opening and passenger-side lift hatch: soft no-see-um mesh with bound edges, attachment only to fixed surfaces outside gasket/compression paths, a two-zip center portal at the rear, and a weighted/magnetic lower skirt used only as the bottom seal; template both openings and pass a hatch/door closure-thickness test before buying final fasteners.
 - [ ] Confirm privacy/curtain/window-cover minimum viable setup if first overnight is near.
 - [ ] Confirm workday setup/teardown checklist: desk, chair, monitor, Starlink/router, power, lighting, ventilation.
 
