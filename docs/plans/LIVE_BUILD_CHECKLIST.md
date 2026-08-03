@@ -119,10 +119,11 @@ As of `2026-07-04`, the Galley/cooler/Bench/electrical tie-in has moved from tar
 
 Goal: keep batteries safe and isolated until physical access, floor hardpoints, and service path are proven enough for final in-truck wiring.
 
-- [ ] Confirm the currently charged battery count and SOC/voltage.
+- [~] Current individual-charge state: Battery 1 completed the corrected `20A`-cap cycle through `56.8V` absorption and `54.0V` float without a BMS trip; Battery 2 is charging; Battery 3 remains pending. SmartShunt SOC is stale across physical battery swaps and should not be used as the per-battery charge gate.
 - [ ] Bring the `3x 48V` house batteries to a compatible resting voltage/SOC before paralleling; stage the separate `12V` buffer battery independently.
 - [x] Cut, lug, adhesive-heat-shrink, and land all three batteries' positive/negative `2/0 AWG` branch cables at the battery-side busbars while the bay is open.
-- [ ] Charge Battery 2 individually through the proven MultiPlus shore-charge path, then allow it to rest and record voltage/SOC.
+- [x] Charge Battery 1 individually through the proven MultiPlus shore-charge path; it reached about `56.76V` / `0A` in absorption and then `54.06V` float without an observed BMS protection event. Allow it to rest and record terminal voltage.
+- [~] Charge Battery 2 individually through the proven MultiPlus shore-charge path, then allow it to rest and record terminal voltage; owner reports about `53.75V` / `19A` in bulk with normal behavior.
 - [ ] Charge Battery 3 individually, then allow it to rest and record voltage/SOC.
 - [ ] Confirm all three rested battery voltages are within `0.1V` before making the parallel connection; do not use the parallel bus to equalize a larger mismatch.
 - [ ] For each `48V` battery, record resting voltage and display SOC after charge/rest.
