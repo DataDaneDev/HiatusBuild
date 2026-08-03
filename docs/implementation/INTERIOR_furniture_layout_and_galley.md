@@ -21,11 +21,11 @@ related:
 
 # Interior Furniture Layout and Galley Design Concepts
 
-As-of date: `2026-07-27`
+As-of date: `2026-08-03`
 
 Purpose: capture the active furniture/layout direction for the Hiatus/F-350 camper before final cuts. This document owns the interior **layout concept**, driver-side electrical-module/bench/desk integration, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, galley/plumbing service strategy, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`; the finish/paneling/storage feature-design detail now lives in `docs/implementation/INTERIOR_finish_paneling_and_feature_choices.md`.
 
-Status: **draft implementation baseline for hard-mounted electrical and wet-spine integration**, refreshed `2026-07-27`. The electrical module is now hard-mounted through the permanent Lonseal floor; the MultiPlus/AC enclosure remount, shore inlet, battery-bank matching/commissioning, `12V` closeout, and Bench anti-rack tie-in remain open. Keep the Bench service volume accessible while those gates close. The `36 gal` tank's `60 mm` KUS sender opening is now cut, but the first `FLS-U` installation stripped/galled a backing-ring thread, left one screw without clamp load, and failed an inverted water test; sender recovery, replacement ring/gasket/hardware, inspection, and retest are the immediate water gate. Hot water is locked to the propane-only rear-box Joolca HOTTAP V2 package; the heater, Quick-Release HOTTAP Bracket, and HOTTAP V2 Mount Cover were purchased `2026-07-26`, while receipt and physical integration remain open. Keep final skins, exact drawer slides, BLUE/RED service-plate cuts, and premium walnut cuts gated on installed route/service validation.
+Status: **draft implementation baseline for hard-mounted electrical and wet-spine integration**, refreshed `2026-08-03`. The electrical module, Galley/cooler support, water tank, and returned Bench extrusion are now owner-reported hard-mounted and extremely stiff as an integrated structure. The open physical gates are positive battery/cooler travel restraint, isolated Battery 2/3 charge/rest/matching, plywood Galley counter/sink/faucet build, and wiring while the Desk/storage modules remain out of the way. The `36 gal` tank's first `FLS-U` installation still requires sender recovery, replacement ring/gasket/hardware, inspection, and leak retest before water service. Hot water remains locked to the propane-only rear-box Joolca HOTTAP V2 package. Keep final skins, Desk/storage reinstall, and premium walnut cuts gated on installed wiring and service validation.
 
 Orientation convention throughout:
 
@@ -115,6 +115,13 @@ Owner-provided build update confirms the electrical module has moved from freest
 - Pending dedicated `80/20` nuts/hardware should not block mock-fit, but final travel configuration should use the correct fastener standard, witness marks, and anti-rattle/retention hardware.
 
 Travel rule: **the floor hard-mount alone is not the final road-restraint gate**. Drive only after the electrical module is tied into the Bench/adjacent structure or otherwise given verified anti-rack bracing, with panels/diagonals/latches installed enough to control racking and cargo/projectile risk.
+
+### Integrated structure update — 2026-08-02
+
+- Owner reports the electrical module, Galley/cooler support, and reinstalled Bench extrusion are hard-mounted together and the resulting assembly is extremely stiff.
+- The `36 gal` wheel-well tank is physically hard-mounted with two metal straps into the truck-bed-wall plusnut locations. The KUS sender remains a service/leak gate, not a reason to treat the tank as loose; preserve sender-opening access and the documented frame/tank disassembly path.
+- The remaining road-restraint work is specific: low perimeter/divider capture plus individual over-case straps for the `3x 48V` batteries and separate `12V` battery, plus foot-level restraint and lateral hard stops for the ICECO cooler.
+- Plywood Galley countertop/sink/faucet work is now the next useful fabrication layer. Pull Galley DC/AC/data wiring after fixture locations are proven, and keep Desk/storage modules out until their hidden wire routes are installed.
 
 ### Black walnut surface commission update — 2026-07-05
 
@@ -232,7 +239,7 @@ The driver-side electrical/desk zone and adjacent battery bench have to solve th
 
 ### Recommended construction concept
 - **Electrical module tie-in:** treat the hard-mounted electrical tower as a braced part of the bench/desk system, not an independent road-travel object. The bench/step frame should add lateral restraint and anti-rack support while preserving service access to disconnects, fuses, Cerbo, Orion, AC enclosure, and cable clamps.
-- **Battery well:** low, restrained, partitioned from wet-service volume, and sized so batteries can be extracted without dismantling the whole interior.
+- **Battery well:** low, restrained, partitioned from wet-service volume, and sized so batteries can be extracted without dismantling the whole interior. Use a low extrusion perimeter with dividers/hard stops to prevent fore/aft and side-to-side movement, then strap each battery down individually to anchored extrusion/T-slot points. Tie the cage into the hard-mounted Bench/electrical frame or through-bolted structural plywood with backing; wood screws into plywood alone are not the primary dynamic load path. Keep straps off terminals, displays, and sharp edges.
 - **Flat divider board:** separates battery bay below from bench storage/cushion use above; treat this as a protective service boundary, not just a shelf.
 - **Lift/hinged lid:** lid must open for battery/storage access and include mechanical stays, gas struts, or controlled support sized to the actual lid weight; loose lift-off panels become projectiles. If the final L-shaped top is black walnut, verify hinge line, support tabs, strut geometry, closed latch, and service reach before cutting the finished lid.
 - **Electrical closet:** use a vertical backer/closet face for serviceable fuses, disconnects, Lynx/Shunt/12V hardware, and labels, with dead-front protection where daily furniture users can touch it.
@@ -456,6 +463,8 @@ Implications:
 6. **Recover and retest the cut sender opening:** owner report `2026-07-27` confirms the `60 mm / 2-3/8 in` opening was cut and the first assembly attempted, but backing out the long screws damaged at least one ring thread. One screw is seized or spins without axial movement/clamp load, and an inverted water test pours through the main gasket. Remove the other screws; try gentle upward load while backing out a free-spinning screw, then remove only the failed screw head if necessary while protecting the polyethylene, tethering the C-ring, and capturing all swarf. Lift the sender, rotate the damaged ring/shank out through the opening, and replace the ring, main gasket, and all matched long screws rather than tapping oversize, installing a thread insert, or using RTV as a clamp substitute. Inspect the tank sealing land and sender flange for gouge, crack, bend, or distortion. Hand-start every screw and tighten incrementally in a star pattern with a hand driver; stop on any premature binding. Repeat a static wetting/inverted leak test before the extrusion locks access.
 7. **Install wet-side first:** hard-mount the tank restraint and compact pump/accumulator pack before passenger-side furniture closure. Support the flex/PEX transitions, protect the wet/dry boundary, and preserve the documented cooler/panel/frame removal path; do not add fittings solely to make the assembly quick-removable.
 8. **Cut the exterior fill/vent last:** physically prove the installed tank endpoints, hose fall/vent rise, backing, service access, and spill/overflow path from both sides before cutting the camper/bed-side interface.
+
+Current execution update (`2026-08-02`): step 7 has progressed through tank restraint—the tank is strapped to the truck-bed-wall plusnut locations inside the hard-mounted Galley structure. The KUS under-ring/gasket repair, final fill/vent hookup, sink/faucet termination, and dry pressure/dwell test remain the water-service acceptance gates.
 
 ### Propane hot-water routing baseline (`2026-08-01` installed camper ports)
 

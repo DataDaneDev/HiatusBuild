@@ -47,10 +47,10 @@ Related docs:
 - Short AC-in shore-charge test passed at household-source current limits: about `1294W` shore input and about `54.3V x 21.6A` battery charging in bulk.
 - MultiPlus LiFePO4 charge profile is programmed/owner-verified by supervised first-battery behavior. Owner reports the Orion/`12V` buffer path now charges and operates correctly. Hold open: permanent-path shore dead checks/first-use acceptance, full-bank charge/rest/match/parallel closeout, AC-out branch/GFCI, alternator commissioning, Cerbo hard-mounting, and final strain-relief/abrasion-control.
 
-## Current Physical Installation Snapshot (`2026-08-02`)
-- The electrical module is hard-mounted through the finished Lonseal/plywood floor into registered truck-bed hardpoints. It fits cleanly and is sufficiently stable for continued stationary installation; the planned Bench tie-in remains required for final anti-rack stiffness and road restraint.
+## Current Physical Installation Snapshot (`2026-08-03`)
+- The electrical module is hard-mounted through the finished Lonseal/plywood floor into registered truck-bed hardpoints and tied into the hard-mounted Bench/Galley extrusion structure. Owner reports the integrated assembly is extremely stiff; remaining mobile restraint is battery/cooler capture plus terminal/cable protection.
 - The driver-rear shore inlet and exterior-to-module cable route are installed. One accessible, enclosed, conductor/gauge-rated three-wire `L/N/PE` splice into the AC-input side remains before dead checks and controlled energization.
-- All three batteries' positive and negative `2/0 AWG` branch cables are cut, lugged, heat-shrunk, and landed at the battery-side busbars. The batteries remain electrically isolated from one another until they are individually charged, rested, and matched within `0.1V` before paralleling.
+- All three batteries' positive and negative `2/0 AWG` branch cables are cut, lugged, heat-shrunk, and landed at the battery-side busbars. Battery 1 completed the corrected isolated charge cycle, Battery 2 remained in normal upper-`54V` bulk at the overnight `2026-08-02/03` checkpoint, and Battery 3 remains pending; keep all three isolated until their rested voltages are matched within `0.1V` before paralleling.
 - The `12V` buffer-battery/Orion branch is owner-reported operational. Keep its negative direct to the fuse-panel main negative stud, not through `SW-12V-BATT`; the positive path remains `F-11 -> SW-12V-BATT -> panel main +`.
 
 ### Orion fuse discriminator — one input fuse only
