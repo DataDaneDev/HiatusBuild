@@ -164,7 +164,7 @@ flowchart LR
     PUMP["12V-04 Water pump\n10A / 14 AWG"]
     DET["12V-05 CO+Propane detector\n3A / 18/2"]
     LED["12V-06 LED lights + dimmer\n5A / 18/2 (Hiatus pre-installed)"]
-    USB_OFFICE["12V-08 Office USB PD station\n20A / 12 AWG"]
+    USB_OFFICE["12V-08 Office USB PD station\n15A / 12 AWG"]
     USB_GALLEY["12V-09 Galley USB PD station\n15A / 12 AWG"]
     MAXXAIR["12V-10 Maxxair fan\n10A / 14 AWG (Hiatus pre-installed)"]
     LED_AMBIENT["12V-11 DC ambient/cabinet LED strips\n5A / 18/2 (planned Govee)"]
@@ -401,7 +401,7 @@ Retired from active architecture:
 | `C-31` | Branch A -> office/driver GFCI receptacle | `120VAC` | Branch load (office monitor/chargers/general outlet use) | `20A` branch breaker + GFCI receptacle | `12/3` stranded AC branch cable | `15 ft` (`ASSUMED`, branch leg default) |
 | `C-32` | Branch B -> galley/passenger GFCI receptacle | `120VAC` | Branch load (galley/general high-draw outlet; induction/Ninja SP151 sequenced) | `20A` branch breaker + GFCI receptacle | `12/3` stranded AC branch cable | `15 ft` (`ASSUMED`, branch leg default) |
 | `C-33` | MultiPlus AC-out-2 (reserve-only) -> capped route for future shore-only branch | `120VAC` | N/A in Phase 1 (route reserved only) | N/A in Phase 1 (no energized branch hardware) | `12 AWG` stranded AC conductors (reserve path only) | `15 ft` (`ASSUMED`, reserve route default) |
-| `C-34` | 12V panel -> USB PD station branch (office zone) | `12V` | High-demand office charging branch (`100W + 65W` class station budget) | `F-10` branch fuse (`20A`) | `12 AWG duplex` baseline | `5 ft` (`ASSUMED`, short-run requirement) |
+| `C-34` | 12V panel -> USB PD station branch (office zone) | `12V` | One Acegoo `118W` station | `F-10` branch fuse (`15A`) | `12 AWG duplex` baseline | `5 ft` (`ASSUMED`, short-run requirement) |
 | `C-35` | 12V panel -> USB PD station branch (galley zone) | `12V` | Galley charging branch (`65W` class USB-C plus USB-A/C loads) | `F-10` branch fuse (`15A`) | `12 AWG duplex` baseline | `8 ft` (`ASSUMED`; standardized with the office PD/fridge rough-in for voltage-drop margin) |
 | `C-36` | 12V panel -> Maxxair fan (Hiatus pre-installed) | `12V` | Roof ventilation branch | `F-10` branch fuse (`10A`) | `14 AWG duplex` baseline | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-37` | 12V panel -> DC ambient/cabinet LED strips (planned Govee) | `12V` | Branch load | `F-10` branch fuse (`5A`) | `18/2` baseline | `8 ft` (`ASSUMED`, near-load branch) |
@@ -460,7 +460,7 @@ Calculation basis for drop screening:
 | `C-31` | Branch A | Office/driver receptacle chain | `20A` branch OCP | `20A` | `12 AWG AC` | `15 ft` | `0.79%` @ `120VAC` | Row `113` (`12 AWG AC branch`) | PASS |
 | `C-32` | Branch B | Galley/passenger receptacle chain | `20A` branch OCP | `20A` | `12 AWG AC` | `15 ft` | `0.79%` @ `120VAC` | Row `113` (`12 AWG AC branch`) | PASS |
 | `C-33` | MultiPlus AC-out-2 | Reserve-only capped route | N/A in Phase 1 | N/A | `12 AWG AC` (reserve path only) | `15 ft` | `0.60%` @ `120VAC` (future-use screen) | N/A (not procured in Phase 1) | RESERVE |
-| `C-34` | 12V fuse panel | Office USB PD station | `F-10 20A` | `20A` design cap | `12 AWG duplex` | `5 ft` | `2.65%` @ `12V` | Row `116` (`12 AWG USB branch stock`) | PASS (keep `<=5 ft` or upsize) |
+| `C-34` | 12V fuse panel | Office USB PD station | `F-10 15A` | `15A` design cap | `12 AWG duplex` | `5 ft` | `1.99%` @ `12V` | Row `116` (`12 AWG USB branch stock`) | PASS |
 | `C-35` | 12V fuse panel | Galley USB PD station | `F-10 15A` | `8A` expected | `12 AWG duplex` | `8 ft` | `1.69%` @ `12V` | Row `116` (`12 AWG USB branch stock`) | PASS |
 | `C-36` | 12V fuse panel | Maxxair fan (Hiatus pre-installed) | `F-10 10A` | `4A` expected | `14 AWG duplex` | `8 ft` | `1.35%` @ `12V` | Row `32` (`14 AWG duplex`) | PASS |
 | `C-37` | 12V fuse panel | DC ambient/cabinet LED strips (planned Govee) | `F-10 5A` | `5A` design cap | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |
