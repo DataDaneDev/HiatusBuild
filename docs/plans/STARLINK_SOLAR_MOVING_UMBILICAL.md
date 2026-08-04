@@ -1,6 +1,6 @@
 # Starlink + solar moving-roof umbilical
 
-Status: **measurement-gated; removable twin-coil architecture is the current lead**  
+Status: **measurement-gated; removable twin-coil architecture is the current lead; fixed sidewall entry not selected**
 Last current-source check: `2026-08-03 10:03 MDT`
 
 ## Decision
@@ -69,9 +69,10 @@ The selected moving jumper must provide more free extension than measured roof t
 | ZBLZGP 3 m stretched Cat6A retractile cable | [Amazon `B0H286KLWZ`](https://www.amazon.com/dp/B0H286KLWZ) — `$35.00`, two in stock/Prime at check | **Budget prototype only.** PUR, dual shield, pure-copper claim, but 26 AWG and no established review history. STARGEAR recommends 23 AWG or larger for third-party PoE runs, so this is not accepted until a loaded Starlink heat/dropout test passes. |
 | L-com `TRD815SZ-CH-1-6F` industrial coil | [L-com product page](https://www.l-com.com/category-5e-ethernet-coil-cord-rj45-rj45-180d-tangents-f-utp-foil-shielded-26awg-high-flex-industrial-zero-halogen-tpu-teal-1-to-6f) | Higher-confidence industrial construction and useful `1-6 ft` geometry, but current retail price/stock could not be verified without vendor challenge and prior pricing was poor. Do not buy unless the Amazon prototype fails or a distributor price is acceptable. |
 | One-cable fixed-body entry | [Seaview retro-fit cable gland, Amazon `B077PQ4FGG`](https://www.amazon.com/dp/B077PQ4FGG) — `$29.00`, in stock/Prime at check | **Value entry** if only the stationary Starlink pigtail crosses here. Split/retrofit design accepts existing connectors. |
-| Shared multi-cable fixed-body entry | [Scanstrut `DS-H-MULTI-BLK`, Amazon `B0CSTC4D3C`](https://www.amazon.com/dp/B0CSTC4D3C) — `$53.34`, in stock at check | **Lead shared entry** only if Starlink and the fixed PV conductors actually enter through one horizontal location. Not a moving-cable manager or quick disconnect. |
+| Prior shared-entry candidate | [Scanstrut `DS-H-MULTI-BLK`, Amazon `B0CSTC4D3C`](https://www.amazon.com/dp/B0CSTC4D3C) — `$53.34` at prior check | **Withdrawn for the proposed vertical sidewall geometry.** It is a horizontal cable-entry/deck-seal product, not the desired straight through-bulkhead wall entry. Do not rotate its hood/opening upward into roof runoff or forward-facing spray. |
+| Straight sidewall candidate | [Scanstrut `TBH-4`](https://www.scanstrut.com/marine/cable-seal/bulkhead/tbh-4) | **Geometry candidate, not released to buy.** This is the correct product class: straight IP67 through-bulkhead routing/anchoring for up to four cables, without an upward/downward entry hood, and published for `10-35 mm` bulkhead thickness. Measure the Hiatus wall and actual coil connector/boot OD first; do not assume a terminated molded RJ45 end fits the bore/seal. It is a cable seal, not a quick disconnect. |
 
-Observed base hardware total is `$122.99` with the Seaview entry or `$147.33` with the Scanstrut entry, before clamps, caps, sealant, and any short interior patch lead.
+Do not use the prior package totals as a purchase lock because the fixed-body entry has been reopened. Buy or bench-test the adapter/coil layer separately; keep the complete OEM cable and ground-deployed kit as recovery paths. Ground deployment through the existing truck-bed service route is accepted for the first camping/work trip and is preferable to rushing a sidewall hole.
 
 ## Neutrik etherCON path
 
@@ -127,7 +128,7 @@ Selection gates:
 | --- | --- | --- |
 | DIHOOL 30 A, 2-pole, 12-400 V AC/DC breaker in IP65 three-way DIN enclosure | [Amazon `B0B5QXYCTS`](https://www.amazon.com/dp/B0B5QXYCTS) — `$19.99`, in stock at check | **Practical compact budget candidate after array sizing.** Seller claims non-polarized thermal-magnetic interruption, glands, and `48-400 VDC`; current page does not establish a third-party PV certification. Inspect body markings before acceptance. |
 | Generic Amazon 32 A rotary PV isolators | Approximately `$36-50` in current search | **Do not select by title alone.** Accept only if the actual unit/datasheet shows `IEC 60947-3`, `DC-PV2`, the necessary voltage/current topology, and a credible manufacturer. |
-| IMO `SI32-PEL64R-2` class enclosed rotary PV isolator | Distributor sourcing pending | Preferred rotary product class if a current US seller and sane delivered price can be confirmed. |
+| IMO `SI32-PEL64R-2` enclosed rotary PV isolator | [US Solar Supplier](https://ussolarsupplier.com/products/imo-enclosed-dc-switch-ip66-32a-600vdc) — `$87.15`, listed available with `2026-08-11` to `2026-08-18` expected ship window at `2026-08-03` check; [FactoryMation technical listing](https://www.factorymation.com/SI32-PEL64R-2) | **Lead rotary service disconnect.** One-string, two-pole, lockable OFF, `32A`, `600VDC` UL508 listing / `DC-PV2` and IEC 60947-3 supplier claims, IP66/NEMA-class enclosure. Mount on the fixed body before the MPPT and open both PV conductors. Do not order until final cold `Voc`, array/string `Isc`, conductor OD/glands, and stringing prove fit; this is a service load-break, not string OCP. |
 
 ## Measurements needed before purchase lock
 

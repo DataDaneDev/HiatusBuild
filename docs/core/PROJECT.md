@@ -82,7 +82,7 @@ related:
 
 ## Build sequencing baseline (as-of 2026-08-03)
 - The permanent floor and integrated electrical/Bench/Galley/tank hard-mount gates have passed. Keep the battery bay, Galley counter underside, KUS opening, and hidden Desk/storage wire routes open while the remaining restraint, charging, plumbing, and wiring gates close.
-- Canonical sequence: finish Battery 2/3 charge/rest and match -> build battery/cooler restraint -> parallel and commission the `3x 48V` bank -> plywood Galley counter/sink/faucet -> Galley/Desk rough-in and terminations -> KUS/fill/vent/water acceptance -> Desk/storage reinstall -> shore/AC-out and alternator closeout -> shakedown.
+- Canonical sequence: insulate/temporarily mount the live ICECO switch -> terminate/configure KUS -> wire/test pump -> pull every access-dependent Galley/Desk AC/DC/control branch -> build individual battery/cooler restraint -> finish Battery 3 charge/rest and match -> parallel and commission the `3x 48V` bank -> finish KUS/fill/vent/sink water acceptance -> reinstall Desk/storage -> mid-September `2026` final-walnut installation -> shore/AC-out and alternator closeout -> shakedown. Full temporary tops are dropped.
 - Detailed owner docs:
   - [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md)
   - [FLOORING_subfloor_build_process](../implementation/FLOORING_subfloor_build_process.md)
@@ -90,25 +90,28 @@ related:
 
 ## Immediate next decisions
 - **Battery/cooler restraint:** build low battery perimeter/divider capture tied into anchored extrusion or through-bolted structural plywood with backing, then strap each battery individually without crossing terminals/displays. Use the ICECO foot-level tie points with a low-stretch cam strap plus an aisle-side hard stop and soft wall bumper.
-- **Electrical/battery order:** finish Batteries 2 and 3 individually; record all three rested voltages; parallel only at `<=0.1V` spread; then verify polarity, branch protection, SmartShunt synchronization, disconnect, current sharing, covers, and cable support.
-- **Galley/Desk order:** prove and cut the plywood sink/faucet layout at the hard-mounted Galley datum, then pull Galley/Desk DC/AC/data routes before reinstalling the Desk/storage modules.
-- **KUS/water service:** keep top sender access open; replace the damaged under-ring/main gasket/matched hardware and pass the leak test before first fill or water service.
-- **Starlink transition:** route the fixed run through the existing front bed opening, mock the roof travel with temporary cord, and choose a protected permanent service loop before an exposed quick-disconnect. If a coil is required, prove all-eight-conductor continuity, shielding, Starlink PoE behavior, weather sealing, and repeated popup geometry.
+- **Immediate electrical endpoints:** individually insulate and temporarily hard-mount the ICECO switch, terminate/configure KUS, wire/test the `14 AWG / 10A` pump branch, then pull every access-dependent Galley/Desk AC/DC/control route while the modules remain open.
+- **Battery order:** finish Battery 2's cycle and Battery 3 individually; record all three rested voltages; parallel only at `<=0.1V` spread; then verify polarity, branch protection, SmartShunt synchronization, disconnect, current sharing, covers, and cable support.
+- **Galley/Desk order:** skip full temporary tops. Preserve and record the sink/faucet/support/no-drill geometry for the mid-September `2026` final-walnut target; reinstall Desk/storage only after hidden routes are pulled.
+- **KUS/water service:** replacement under-ring/main gasket/matched hardware are installed. Keep top sender access open through Cerbo setup and the final fill/pressure/dwell leak proof.
+- **Starlink transition:** ground deployment through the existing truck-bed service route is accepted for the first trip. Bench-test the Type-4/RJ45 adapter and retractile coil, measure popup travel/wall thickness/connector OD, and do not cut a sidewall hole until the fixed-entry part is proven. `DS-H-MULTI-BLK` is withdrawn for the proposed wall geometry; `TBH-4` is only a measurement-gated candidate.
 - **Payload:** capture door-sticker payload and staged scale weights. Treat total payload, rear axle load, rear tire load, and left/right balance as active constraints.
 
 ## Electrical-to-shakedown sequence
 Purpose: finish the hard-mounted utilities and close furniture around tested systems without rebuilding access twice.
 
-1. **Open-access battery-bank commissioning and restraint**
-   - Finish Batteries 2 and 3 individually, rest and record all three voltages, add perimeter/divider capture plus individual straps, parallel only within `0.1V`, then verify branch protection, polarity, disconnect, Lynx/shunt, covers, extraction, and current sharing.
-2. **Galley fixtures and hidden rough-in**
-   - Fit/cut/install the plywood counter, sink, and faucet at the hard-mounted datum; pull Galley and Desk DC/AC/data routes while the Desk/storage modules are still out.
-3. **Wet-side acceptance**
-   - Repair/leak-prove the KUS sender, finish fill/vent and sink plumbing, then run the dry pressure/dwell test with the service openings still accessible.
-4. **Communications and AC closeout**
-   - Mock the front-bed-opening Starlink route through full popup cycles; finish the shore `L/N/PE` splice/dead checks and AC-out/GFCI acceptance without burying either service path.
-5. **Module closure and shakedown**
-   - Reinstall the Desk/storage modules, finish panels/retainers and terminal protection, torque/witness-mark, drive locally, and inspect for floor damage, leaks, insert spin, abrasion, module movement, and fastener loss.
+1. **Open-access 12V/sender endpoints**
+   - Protect and mount the ICECO switch, finish the KUS-to-Cerbo pair, and wire/prove the SHURflo branch before moving the Desk/storage modules back in.
+2. **Hidden rough-in**
+   - Pull Galley and Desk DC/AC/control/data routes while access is open. Use a temporary switch/service plate where needed; final decorative paneling follows tested wiring rather than leading it.
+3. **Battery-bank commissioning and restraint**
+   - Finish Battery 2's cycle and Battery 3 individually, rest and record all three voltages, add hard perimeter/divider capture plus individual cam straps, parallel only within `0.1V`, then verify branch protection, polarity, disconnect, Lynx/shunt, covers, extraction, and current sharing.
+4. **Wet-side acceptance**
+   - Configure/sanity-check the installed KUS sender, finish fill/vent and sink plumbing, then run the dry pressure/dwell test with the service openings still accessible.
+5. **Communications and AC closeout**
+   - Use ground-deployed Starlink as the first-trip fallback while the retractile route is bench/geometry tested; finish the shore `L/N/PE` splice/dead checks and AC-out/GFCI acceptance without burying either service path.
+6. **Module closure, final tops, and shakedown**
+   - Reinstall the Desk/storage modules after hidden wiring, prepare the final templates for the mid-September `2026` walnut target, finish panels/retainers and terminal protection, torque/witness-mark, drive locally, and inspect for floor damage, leaks, insert spin, abrasion, module movement, and fastener loss.
 
 ### Cabinetry approach (recommended)
 - Treat 80/20 as the *structure* and simple panels as the *skins*.

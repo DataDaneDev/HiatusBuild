@@ -50,8 +50,10 @@ Related docs:
 ## Current Physical Installation Snapshot (`2026-08-03`)
 - The electrical module is hard-mounted through the finished Lonseal/plywood floor into registered truck-bed hardpoints and tied into the hard-mounted Bench/Galley extrusion structure. Owner reports the integrated assembly is extremely stiff; remaining mobile restraint is battery/cooler capture plus terminal/cable protection.
 - The driver-rear shore inlet and exterior-to-module cable route are installed. One accessible, enclosed, conductor/gauge-rated three-wire `L/N/PE` splice into the AC-input side remains before dead checks and controlled energization.
-- All three batteries' positive and negative `2/0 AWG` branch cables are cut, lugged, heat-shrunk, and landed at the battery-side busbars. Battery 1 completed the corrected isolated charge cycle, Battery 2 remained in normal upper-`54V` bulk at the overnight `2026-08-02/03` checkpoint, and Battery 3 remains pending; keep all three isolated until their rested voltages are matched within `0.1V` before paralleling.
+- All three batteries' positive and negative `2/0 AWG` branch cables are cut, lugged, heat-shrunk, and landed at the battery-side busbars. Battery 1 completed the corrected isolated charge cycle, Battery 2 resumed and reached absorption on `2026-08-03`, and Battery 3 remains pending; keep all three isolated until their rested voltages are matched within `0.1V` before paralleling.
 - The `12V` buffer-battery/Orion branch is owner-reported operational. Keep its negative direct to the fuse-panel main negative stud, not through `SW-12V-BATT`; the positive path remains `F-11 -> SW-12V-BATT -> panel main +`.
+- Owner report `2026-08-03`: the ICECO appliance lead is landed on `12V-02`, protected by a `15A` blade fuse, and switched. Its appliance pigtail is `16 AWG`; exposed positive switch terminals still require individual insulation and temporary hard mounting before normal powered work. Verify connector polarity and voltage drop before appliance acceptance.
+- The installed KUS sender pair is routed to the Cerbo but not yet terminated. On one numbered Cerbo Tank column, connect KUS black/signal to the upper `DATA` terminal and KUS pink/return to the lower `GND` terminal. The owner's red extension is mapped to KUS pink and therefore lands on `GND`. For `18 AWG`, use a `1.0 mm²` ferrule with a `>=10 mm` pin or `10-11 mm` of untinned exposed stranded copper; standard `8 mm` ferrules are too short for the Cerbo manual's `10 mm+` insertion requirement.
 
 ### Orion fuse discriminator — one input fuse only
 - Lynx Slot 4 / `F-05`: **Orion `48V` input positive**, one verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) feeding the existing `6 AWG` directly. This is the final single input fuse.
@@ -305,7 +307,7 @@ flowchart LR
 - AC input protection: portable EMS + combined DIN enclosure + `30A` AC input breaker/disconnect upstream of MultiPlus AC-in.
 - AC-out-1 distribution: `30A` AC-out main plus two protected `20A` branches with GFCI-at-first-outlet strategy.
 - Receptacle plan: current purchased baseline is `2` total `120V` GFCI receptacles, one per active branch: Branch A = office/driver side, Branch B = galley/passenger side. Prior downstream non-GFCI receptacles are obsolete unless a later layout revision reopens them.
-- USB charging plan: `2` DC-fed USB PD station assemblies on `12V` branches (`1` office, `1` galley) with branch baselines of `20A` (office) and `15A` (galley).
+- USB charging plan: `2` DC-fed USB PD station assemblies on dedicated `12V` branches (`1` office, `1` galley), each standardized to `15A / 12 AWG` for the current rough-in.
 - AC-out-2 remains reserve-only in Phase 1 (labeled capped route; no energized branch hardware procured).
 
 ## Monitoring and Control Topology
@@ -319,7 +321,7 @@ flowchart LR
     BTEMP["Battery temp sensor"]
     SHUNT_PWR["SmartShunt fused + lead\n(factory harness)"]
     CERBO_PWR["CERBO-PWR Cerbo GX fused 48V power\n1A-3A inline"]
-    KUS["KUS SSS/SSL fresh-water sender\n240-30 ohm, two-wire"]
+    KUS["KUS SSS/SSL fresh-water sender\nblack -> upper DATA\npink/red extension -> lower GND\n240-33 ohm, two-wire"]
     UP3["Ford Upfitter Switch #3"]
     F15["F-15 3A inline fuse"]
     WS500["WS500 regulator"]
@@ -332,7 +334,7 @@ flowchart LR
     BTEMP -. "temp input" .- MULTI
     SHUNT_PWR -. "power/sense harness" .- SHUNT
     CERBO_PWR -. "48V system-side feed\nred/black duplex" .-> CERBO
-    KUS -. "Tank 1 paired input\n18-22 AWG duplex; no external power" .-> CERBO
+    KUS -. "one numbered Tank column\nupper DATA + lower GND\n18-22 AWG duplex; no external power" .-> CERBO
     UP3 -. "factory switched 12V" .-> F15 -. "brown ignition/enable" .-> WS500
     FEAT -. "future-only reserve" .- WS500
 ```
