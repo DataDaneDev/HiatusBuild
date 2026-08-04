@@ -1,3 +1,10 @@
+## 2026-08-03 — KUS rebuild installed; pre-countertop wiring rough-in starts
+
+- Owner reports the replacement KUS `FLS-U` under-ring, main gasket, and matched long hardware are installed and look correctly seated. This closes the failed-hardware replacement step, not the sender/full-system leak proof; keep the sender visible through the next fill/pressure/dwell test before countertop closure.
+- Battery 2 resumed the prior charge and reached absorption. During the low-current absorption period the Progressive Industries portable EMS briefly stopped passing AC, displayed the tail of its automatic reconnect countdown, clicked back on, and the MultiPlus returned to absorption. The EMS now shows `E0` and retained no `PE#` previous error; treat this as a one-off incoming-power/local-connection interruption unless it recurs, and do not bypass the EMS.
+- Before the Galley countertop, rough in two `120VAC` outlet branches (`12/3`, `20A` breaker each), the ICECO branch (`12 AWG duplex`, `15A`), SHURflo pump (`14 AWG duplex`, `10A`), office PD (`12 AWG duplex`, `20A`), Galley PD (`12 AWG duplex`, `15A`), and KUS-to-Cerbo sender pair (`18-22 AWG` duplex, no external fuse). Useful access-now provisions are the LF Bros heater (`12 AWG`, `15A`, preserve controller cooldown power) and listed CO alarm (`18 AWG`, `3A`, always-on).
+- Any pulled-but-unconnected branch remains de-energized: AC conductors individually capped inside a listed outlet box with the branch breaker off; DC conductors individually capped/labeled with the source fuse removed. Preserve service loops, abrasion protection, strain relief, and labels at both ends.
+
 ## 2026-08-03 — Integrated structure hard-mounted; restraint and Starlink route narrowed
 
 - Overnight report covering the `2026-08-02` work: the electrical module, Galley/cooler support, water tank, and the returned Bench extrusion between the electrical and Galley modules are hard-mounted. Owner reports the integrated structure is extremely stiff. The tank is retained by two metal straps into the truck-bed-wall plusnut locations; KUS replacement hardware, fill/vent, sink termination, and dry wet-side acceptance remain open.

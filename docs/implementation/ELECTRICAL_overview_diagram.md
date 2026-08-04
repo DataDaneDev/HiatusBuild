@@ -158,14 +158,14 @@ flowchart LR
     F11["F-11 100A class\nbattery main fuse"]
     SW12["SW-12V-BATT\nmanual battery disconnect"]
 
-    STAR["12V-01 Starlink PSU\n10A / 14 AWG"]
-    FRIDGE["12V-02 Fridge\n15A / 14 AWG"]
-    HEATER["12V-03 Diesel heater\n15A / 14 AWG"]
+    STAR["12V-01 Starlink direct-DC reserve\nno active fuse/wire"]
+    FRIDGE["12V-02 Fridge\n15A / 12 AWG"]
+    HEATER["12V-03 Diesel heater\n15A / 12 AWG"]
     PUMP["12V-04 Water pump\n10A / 14 AWG"]
     DET["12V-05 CO+Propane detector\n3A / 18/2"]
     LED["12V-06 LED lights + dimmer\n5A / 18/2 (Hiatus pre-installed)"]
     USB_OFFICE["12V-08 Office USB PD station\n20A / 12 AWG"]
-    USB_GALLEY["12V-09 Galley USB PD station\n15A / 14 AWG"]
+    USB_GALLEY["12V-09 Galley USB PD station\n15A / 12 AWG"]
     MAXXAIR["12V-10 Maxxair fan\n10A / 14 AWG (Hiatus pre-installed)"]
     LED_AMBIENT["12V-11 DC ambient/cabinet LED strips\n5A / 18/2 (planned Govee)"]
     AUDIO_HU["12V-12 Kicker KMC2 media center\n15A / 12 AWG short-run"]
@@ -387,9 +387,9 @@ Retired from active architecture:
 | `C-19` | Orion `12V -` -> 12V fuse block integrated `-` bus / main `-` stud | `12V` | Charger output return | `F-07` protects paired positive | `6 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-19A` | 12V buffer battery `+` -> `F-11` -> `SW-12V-BATT` -> 12V fuse block main `+` stud | `12V` | Buffer source path and service isolation path | `F-11` `100A` class | `4 AWG` planned | `2.5 ft` (`ASSUMED`) |
 | `C-19B` | 12V buffer battery `-` -> 12V fuse block integrated `-` bus / main `-` stud | `12V` | Buffer battery return path | N/A (paired with `C-19A`) | `4 AWG` planned | `2.5 ft` (`ASSUMED`) |
-| `C-20` | 12V panel -> Starlink PSU | `12V` | Branch load | `F-10` `10A` | `14 AWG duplex` | `8 ft` (`ASSUMED`, near-load branch) |
-| `C-21` | 12V panel -> Fridge | `12V` | Branch load | `F-10` `15A` | `14 AWG duplex` | `12 ft` (`ASSUMED`, far-load branch) |
-| `C-22` | 12V panel -> LF Bros diesel-heater harness | `12V` | Startup/cooldown branch; keep energized through controller-commanded shutdown | `F-10` `15A` (retain any supplied harness fuse; verify coordination) | `14 AWG duplex` only for verified short run; otherwise `12 AWG` | `8 ft` (`ASSUMED`; measure before final cable landing) |
+| `C-20` | Reserved 12V panel -> future Starlink direct-DC conversion | `12V` | Not active; Standard 4 X remains on its supplied AC power path | No fuse installed until exact converter/input is selected | No conductor committed | Pull string/conduit only if useful while access is open |
+| `C-21` | 12V panel -> Fridge | `12V` | Branch load | `F-10` `15A` | `12 AWG duplex` | `12 ft` (`ASSUMED`, far-load branch; upsize avoids the prior voltage-drop warning) |
+| `C-22` | 12V panel -> LF Bros diesel-heater harness | `12V` | Startup/cooldown branch; keep energized through controller-commanded shutdown | `F-10` `15A` (retain any supplied harness fuse; verify coordination) | `12 AWG duplex` | `8 ft` (`ASSUMED`; measure before final cable landing) |
 | `C-23` | 12V panel -> Water pump | `12V` | Branch load | `F-10` `10A` | `14 AWG duplex` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-24` | 12V panel -> CO + propane detector | `12V` | Branch load | `F-10` `3A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-25` | 12V panel -> LED lights + dimmer (Hiatus pre-installed) | `12V` | Branch load | `F-10` `5A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
@@ -402,7 +402,7 @@ Retired from active architecture:
 | `C-32` | Branch B -> galley/passenger GFCI receptacle | `120VAC` | Branch load (galley/general high-draw outlet; induction/Ninja SP151 sequenced) | `20A` branch breaker + GFCI receptacle | `12/3` stranded AC branch cable | `15 ft` (`ASSUMED`, branch leg default) |
 | `C-33` | MultiPlus AC-out-2 (reserve-only) -> capped route for future shore-only branch | `120VAC` | N/A in Phase 1 (route reserved only) | N/A in Phase 1 (no energized branch hardware) | `12 AWG` stranded AC conductors (reserve path only) | `15 ft` (`ASSUMED`, reserve route default) |
 | `C-34` | 12V panel -> USB PD station branch (office zone) | `12V` | High-demand office charging branch (`100W + 65W` class station budget) | `F-10` branch fuse (`20A`) | `12 AWG duplex` baseline | `5 ft` (`ASSUMED`, short-run requirement) |
-| `C-35` | 12V panel -> USB PD station branch (galley zone) | `12V` | Galley charging branch (`65W` class USB-C plus USB-A/C loads) | `F-10` branch fuse (`15A`) | `14 AWG duplex` baseline | `8 ft` (`ASSUMED`, near-load branch) |
+| `C-35` | 12V panel -> USB PD station branch (galley zone) | `12V` | Galley charging branch (`65W` class USB-C plus USB-A/C loads) | `F-10` branch fuse (`15A`) | `12 AWG duplex` baseline | `8 ft` (`ASSUMED`; standardized with the office PD/fridge rough-in for voltage-drop margin) |
 | `C-36` | 12V panel -> Maxxair fan (Hiatus pre-installed) | `12V` | Roof ventilation branch | `F-10` branch fuse (`10A`) | `14 AWG duplex` baseline | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-37` | 12V panel -> DC ambient/cabinet LED strips (planned Govee) | `12V` | Branch load | `F-10` branch fuse (`5A`) | `18/2` baseline | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-38` | House/main positive bus -> WS500 `PH-VAN` short red lead | `48V` bank | Combined regulator-power / positive-voltage-sense feed | `F-12/F-13-PHVAN` (`15A`) | Short harness lead; do not extend | Local at house bus |
@@ -446,9 +446,9 @@ Calculation basis for drop screening:
 | `C-19` | Orion `12V -` | Fuse block integrated `-` bus / main `-` stud | `F-07` paired | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG black`) | PASS |
 | `C-19A` | Buffer battery `+` | Fuse block main `+` stud (via `F-11/SW`) | `F-11 100A` | `50A` design | `4 AWG` | `2.5 ft` | `0.52%` @ `12V` | Row `30` (`4 AWG red`) | PASS |
 | `C-19B` | Buffer battery `-` | Fuse block integrated `-` bus / main `-` stud | N/A | `50A` design | `4 AWG` | `2.5 ft` | `0.52%` @ `12V` | Row `30` (`4 AWG black`) | PASS |
-| `C-20` | 12V fuse panel | Starlink PSU | `F-10 10A` | `8A` | `14 AWG duplex` | `8 ft` | `2.69%` @ `12V` | Row `32` (`14 AWG duplex`) | PASS (near 3%) |
-| `C-21` | 12V fuse panel | Fridge | `F-10 15A` | `7A` | `14 AWG duplex` | `12 ft` | `3.54%` @ `12V` | Row `32` (`14 AWG duplex`) | WARN (shorten run or move to `12 AWG`) |
-| `C-22` | 12V fuse panel | LF Bros diesel-heater harness | `F-10 15A` + supplied harness fuse if present | `10A` startup screen | `14 AWG duplex` short-run candidate; `12 AWG` fallback | `8 ft` assumed | `3.37%` @ `12V` with 14 AWG | Row `32` (`14 AWG duplex`) / planned 12 AWG stock if required | WARN (measure one-way run and test startup voltage; preserve cooldown power) |
+| `C-20` | 12V fuse panel | Future Starlink direct-DC conversion | None active | N/A | No conductor committed | N/A | N/A | Conditional BOM row `27` | RESERVE; use supplied AC power path until exact converter is selected |
+| `C-21` | 12V fuse panel | Fridge | `F-10 15A` | `7A` | `12 AWG duplex` | `12 ft` | `2.23%` @ `12V` | Row `116` / field `12 AWG duplex` stock | PASS |
+| `C-22` | 12V fuse panel | LF Bros diesel-heater harness | `F-10 15A` + supplied harness fuse if present | `10A` startup screen | `12 AWG duplex` | `8 ft` assumed | `2.12%` @ `12V` | Field `12 AWG duplex` stock | PASS; measure final run, test startup voltage, and preserve cooldown power |
 | `C-23` | 12V fuse panel | Water pump | `F-10 10A` | `7A` | `14 AWG duplex` | `8 ft` | `2.36%` @ `12V` | Row `32` (`14 AWG duplex`) | PASS |
 | `C-24` | 12V fuse panel | CO+propane detector | `F-10 3A` | `0.2A` | `18/2` | `8 ft` | `0.17%` @ `12V` | Row `33` (`18/2`) | PASS |
 | `C-25` | 12V fuse panel | LED lights + dimmer (Hiatus pre-installed) | `F-10 5A` | `5A` | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |
@@ -460,8 +460,8 @@ Calculation basis for drop screening:
 | `C-31` | Branch A | Office/driver receptacle chain | `20A` branch OCP | `20A` | `12 AWG AC` | `15 ft` | `0.79%` @ `120VAC` | Row `113` (`12 AWG AC branch`) | PASS |
 | `C-32` | Branch B | Galley/passenger receptacle chain | `20A` branch OCP | `20A` | `12 AWG AC` | `15 ft` | `0.79%` @ `120VAC` | Row `113` (`12 AWG AC branch`) | PASS |
 | `C-33` | MultiPlus AC-out-2 | Reserve-only capped route | N/A in Phase 1 | N/A | `12 AWG AC` (reserve path only) | `15 ft` | `0.60%` @ `120VAC` (future-use screen) | N/A (not procured in Phase 1) | RESERVE |
-| `C-34` | 12V fuse panel | Office USB PD station | `F-10 20A` | `20A` design cap | `12 AWG duplex` | `5 ft` | `2.65%` @ `12V` | Row `116` (`12 AWG + 14 AWG USB set`) | PASS (keep `<=5 ft` or upsize) |
-| `C-35` | 12V fuse panel | Galley USB PD station | `F-10 15A` | `8A` expected | `14 AWG duplex` | `8 ft` | `2.69%` @ `12V` | Row `116` (`12 AWG + 14 AWG USB set`) | PASS (near 3%; if sustained current rises, move to `12 AWG`) |
+| `C-34` | 12V fuse panel | Office USB PD station | `F-10 20A` | `20A` design cap | `12 AWG duplex` | `5 ft` | `2.65%` @ `12V` | Row `116` (`12 AWG USB branch stock`) | PASS (keep `<=5 ft` or upsize) |
+| `C-35` | 12V fuse panel | Galley USB PD station | `F-10 15A` | `8A` expected | `12 AWG duplex` | `8 ft` | `1.69%` @ `12V` | Row `116` (`12 AWG USB branch stock`) | PASS |
 | `C-36` | 12V fuse panel | Maxxair fan (Hiatus pre-installed) | `F-10 10A` | `4A` expected | `14 AWG duplex` | `8 ft` | `1.35%` @ `12V` | Row `32` (`14 AWG duplex`) | PASS |
 | `C-37` | 12V fuse panel | DC ambient/cabinet LED strips (planned Govee) | `F-10 5A` | `5A` design cap | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |
 | `C-38` | House/main positive bus | WS500 `PH-VAN` short red lead | `F-12/F-13-PHVAN 15A` | combined regulator-power / voltage-sense feed at `48V` bank voltage | Short harness lead | Local | N/A (harness-limited) | Active row `171` | VERIFY one holder/fuse rated above bank maximum |
@@ -484,11 +484,11 @@ Calculation basis for drop screening:
 | `4 AWG` red | `10.5 ft` (`2.5 ft` existing + `8 ft` audio sub planning branch) | `C-19A`, `C-43` | `30`, `192` |
 | `4 AWG` black | `10.5 ft` (`2.5 ft` existing + `8 ft` audio sub return) | `C-19B`, `C-44` | `30`, `192` |
 | `10 AWG pair-equivalent` (PV) | placeholder only | `C-27` final module/string topology deferred until solar workstream; do not buy combiner/fuse count or cut roof entries from the old `3S3P` model | `31` |
-| `14 AWG duplex` | `52 ft` | `C-20`, `C-21`, `C-22`, `C-23`, `C-35`, `C-36` | `32` |
+| `14 AWG duplex` | `16 ft` | `C-23`, `C-36` | `32` |
 | `18/2` | `24.0 ft` plus separate Cerbo low-current duplex | `C-24`, `C-25`, `C-37`; Cerbo `C-26` uses 48V fused low-current duplex | `33` / low-current stock |
 | `12 AWG AC branch cable` | `30 ft` (`C-33` excluded in Phase 1) | `C-31`, `C-32` | `113` |
 | `10/3 shore + AC-in/out feed` | `13 ft` | `C-28`, `C-29`, `C-30` | `114` |
-| USB/audio branch mix (`12 AWG` + `14 AWG`) | USB: `5 ft` (`12 AWG`) + `8 ft` (`14 AWG`); audio source: `5 ft` `12 AWG` short-run assumption | `C-34`, `C-35`, `C-42` | `116`, `193` |
+| `12 AWG` fridge/heater/USB/audio branch mix | Fridge: `12 ft`; heater: `8 ft`; USB: `5 ft` office + `8 ft` Galley; audio source: `5 ft` short-run assumption | `C-21`, `C-22`, `C-34`, `C-35`, `C-42` | `116`, `193` / field stock |
 | Camper audio signal/speaker/control wiring | RCA measured route, `18 AWG` remote, and `16 AWG` marine speaker wire runs | `C-45`, `C-46`, `C-47L/R` | `193` |
 | WS500 harness/sense leads | Included in selected kit/harness set; `C-39` is retired under `PH-VAN` | `C-38`, `C-40` | `168`, `171` |
 | `16 AWG` TXL/GXL control wire | `6 ft` | `C-41` | `176` |
