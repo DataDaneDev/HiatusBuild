@@ -449,11 +449,11 @@ Goal: enough utility for a workday without derailing core structure.
 Goal: keep solar out of the critical path until roof/module constraints are real.
 
 - [~] Reopen solar layout work now; keep final panel procurement/string lock downstream of the measured Starlink/fan/mount roof layout, MPPT validation, cable/service path, and charging-priority review.
-- [~] Reopen the roof layout now that Standard 4 X is in hand: map the fan, side rails, measured Starlink/mount service envelope, shadows, cable exit, popup service loop, flexible-panel trays, drainage, and the `75 lb` roof-panel cap as one system.
+- [~] Reopen the roof layout now that Standard 4 X is in hand: map the fan, side rails, measured Starlink/mount service envelope, shadows, cable exit, popup service loop, direct-bond CIGS and low-profile track-cassette envelopes, drainage, branch-contact paths, and the `75 lb` roof cap as one system. Do not assume a full extrusion rack is required.
 - [ ] Confirm roof real estate and shadow/hinge/fan constraints.
-- [ ] Confirm flexible vs rigid/stand-off approach, cable gland, combiner/fuse count, and service path.
+- [ ] Choose between vendor-approved adhesive CIGS directly on compatible Hiatus gelcoat/fiberglass and removable `1/2-3/4 in` vented panel cassettes on Yakima Anchor Plate A hardware. Treat honeycomb bonded flat to the roof as a stiff spacer, not cooling; a true cooling path needs open underside airflow. Keep ordinary mono-flex direct-bond and a solar-only full roof rack out of the lead path.
 - [ ] Confirm MPPT `150/45` fit for selected stringing.
-- [ ] Confirm roof penetration method and sealant/backing strategy.
+- [ ] Confirm roof penetration method and sealant/backing strategy; ask Hiatus whether the stated `75 lb` limit includes all moving-roof accessories/mounting mass and whether the roof laminate/gelcoat accepts the selected adhesive and removal process.
 - [ ] [DEFER] Pull trigger on panels until layout and charging-priority gates are green.
 
 ## 15. Weight, payload, balance, and shakedown
