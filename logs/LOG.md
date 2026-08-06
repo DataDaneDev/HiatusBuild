@@ -1,7 +1,13 @@
-## 2026-08-05 — Rear and passenger-side bug-screen geometry locked
+## 2026-08-05 — Rear and passenger-hatch bug screens ordered
 
-- Owner-confirmed inside fixed-opening measurements are rear barn-door entry `55.5 in W x 44.25 in H` and passenger-side lift hatch `57.5 in W x 19.75 in H`. Target removable screen envelopes are rear `59.5 in W x 46.25 in H` and side `61.5 in W x 21.75 in H`, giving `2 in` overlap on both vertical sides and the top with the bottom flush.
-- Current design direction is a center magnetic split with full-frame hook-and-loop or adhesive-backed snap attachment on fixed surfaces outside door/hatch compression paths. The passenger-side hatch has paired gas-strut/bracket obstructions centered on both vertical edges that project about `1.5 in`; template reinforced reliefs/gussets before ordering a non-returnable custom screen rather than assuming the mesh can simply bow around them without edge gaps.
+- Ordered one Yotache custom rear-entry magnetic screen in finished `60 in W x 46 in H`, black thickened mesh with middle magnetic opening. Owner-provided single-item order total is `$113.67`; item/tax split was not supplied. Expected arrival is `2026-08-24` through `2026-09-01`.
+- Ordered one Risareyi black thickened reinforced-polyester magnetic screen in actual `24 in x 64 in` at an owner-provided single-item order total of `$28.95`; item/tax split was not supplied. Install it rotated `90 degrees` as `64 in W x 24 in H`, turning the center seam into a horizontal hatch opening. Expected arrival is `2026-08-27`.
+- Combined recorded purchase total is `$142.62`. Rear nominal overlap is `2.25 in` per side and `1.75 in` at top with the bottom flush. The rotated passenger screen provides `3.25 in` nominal side overlap; after the estimated `1.5 in` bracket contour, about `1.75 in` per side remains for fixed hook-and-loop attachment. Receipt, adhesive compatibility, full hatch travel, gasket clearance, and installed fit remain acceptance gates.
+
+## 2026-08-05 — Initial rear and passenger-side bug-screen geometry study (superseded)
+
+- Owner-confirmed inside fixed-opening measurements are rear barn-door entry `55.5 in W x 44.25 in H` and passenger-side lift hatch `57.5 in W x 19.75 in H`. The initial target envelopes were rear `59.5 in W x 46.25 in H` and side `61.5 in W x 21.75 in H`, giving `2 in` overlap on both vertical sides and the top with the bottom flush.
+- This initial two-custom-screen direction was superseded later on `2026-08-05` by the purchase record above: rear Yotache custom `60 in W x 46 in H`, plus a premade Risareyi `24 in x 64 in` screen rotated to `64 in W x 24 in H` for a horizontal passenger-hatch opening and additional strut-bracket contour allowance.
 
 ## 2026-08-03 — KUS routed, ICECO branch live, September walnut install scheduled
 
