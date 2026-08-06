@@ -1,3 +1,12 @@
+## 2026-08-06 — Starlink package buy list locked; physical-fit and bench gates remain
+
+- Owner selected the TRIO Gen 3 Standard Speedmount, one fixed `NE8FDX-P6-W` panel feedthrough, a matching outdoor Neutrik cable connector, and a budget Amazon `12V` converter with the factory AC supply/inverter retained as fallback.
+- Final cable-side preference is `NE8MXR1-B-TOP-D`, not indoor `NE8MX-B-1`: it includes the matched Cat6A plug/wire manager, accepts `5.5-8.0 mm` cable OD and AWG `24/7-27/7` stranded conductors, retracts for ordinary RJ45 access, and forms the IP65 normal-road connection when correctly mated to the selected TOP-compatible panel connector. Bare `NE8MX-B-TOP` would work but requires a separately selected compatible RJ45 plug.
+- Selected budget moving-jumper prototype is the 3 m / 9.8 ft stretched ZBLZGP 26 AWG shielded PUR coil. A 6 ft maximum-stretch coil was rejected because the current geometry already totals about 56 in before drip-loop, tangent, and strain-relief reserve. Measure the prototype's actual OD before cutting, then continuity/shield/load/heat/dropout test before wall installation.
+- Yakima-track mounting lead is two black 10-series 1020 crossbars using eight Yakima `8810074` Anchor Plate A inserts, eight compact angle brackets, M6 track hardware, 1/4-20 extrusion/T-nut hardware, reusable vibration control, and an independent tether. Prove one anchor plate in the actual track and dry-fit the TRIO hole pattern before cutting extrusion.
+- Router power lead is the Amazon EAZUSE `10-36V` to `57V 4.5A` converter on a dedicated fused branch. Use a `20A` branch fuse; use `12 AWG` only for about `6 ft` or less one-way and `10 AWG` for the more likely longer Desk route. Mount ventilated/noncombustible and reject for heat, reboot, or voltage instability.
+- Added the full planning buy list and current allowances to the Starlink planning doc/BOM. Nothing is marked purchased; panel cut, coil termination, and crossbar lengths remain measurement/bench-test gated.
+
 ## 2026-08-05 — DC/AC branch progress; one-panel Starlink architecture selected
 
 - Owner reports the pump, ICECO/fridge feed, and KUS sender circuit are wired; three separate `12 AWG / 15A` USB-PD branches are routed (`1x` Desk, `2x` Galley); and the Desk and Galley GFCIs are wired on separate breakers. Final fuse/slot labels, DC polarity/load tests, KUS configuration, AC LINE/LOAD/PE proof, and GFCI trip/reset remain open.
