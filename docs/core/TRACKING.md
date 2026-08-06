@@ -597,8 +597,17 @@ related:
 - Context: Owner wants the roof cable to disconnect cleanly at the camper, wants an ordinary long Ethernet cord to support ground deployment, and is concerned that the current bare mobility mount leaves the terminal edges exposed to branches.
 - Options considered: existing service opening with inline coupler, large multi-cable through-bulkhead gland, two-panel etherCON route, purpose-built consumer wall socket, bare corner mounts, full protective enclosure, and a protective edge frame.
 - Decision drivers: rugged PoE Type 4 interface, weather protection when mated/capped, ordinary RJ45 fallback compatibility, minimum panel cuts/interfaces, four-screw serviceability, edge protection, kickstand retention, and clear tight-trail removal.
-- Result: select the Neutrik `NE8FDX-P6-W` as the fixed panel interface; use a compatible rugged Neutrik cable-side termination on the removable retractile jumper after OD verification; use the black TRIO Gen 3 Standard Speedmount across two extrusion crossbars with four reusable fasteners/captured T-nuts. Keep the complete OEM cable as direct recovery. Solar remains a later electrically/mechanically separate route.
+- Result: select the Neutrik `NE8FDX-P6-W` as the fixed panel interface; use a compatible rugged Neutrik cable-side termination on the removable retractile jumper after OD verification; use a TRIO Gen 3 Standard Speedmount as the protective/removable terminal frame. The initial crossbar-only/color posture is superseded by D-064. Keep the complete OEM cable as direct recovery. Solar remains a later electrically/mechanically separate route.
 - Follow-up: verify camper wall stack/interior clearance, coil tangent OD/conductors, exact cable-side part compatibility, crossbar profile/spacing, roof travel, strain relief, and loaded Starlink performance before cutting the wall or premade coil.
+
+- ID: D-064
+- Date: 2026-08-06
+- Decision: Preserve both removable magnetic and extrusion hard-mount paths for the TRIO-framed Starlink terminal.
+- Context: Owner purchased the white Gen 3 Standard Speedmount and intentionally included both TRIO's rubber-coated magnet/VHB-disc package and the `75 mm` stainless through-bolting option.
+- Options considered: magnet/disc package only, crossbar hard mount only, or buy both attachment packages before the roof/contact mockup.
+- Decision drivers: removal speed, no immediate irreversible roof commitment, existing roof-track/extrusion fallback, and the small incremental cost of retaining both factory-supported attachment paths.
+- Result: TRIO order placed for the white Speedmount with `75 mm` through-hardware at `$285`, magnets at `$40`, and VHB-backed discs at `$40`; `$365` total with free shipping. The `75 mm` hardware attaches frame to extrusion and does not replace separate roof-track-to-extrusion T-bolts.
+- Follow-up: on receipt, prove terminal/frame fit, roof-disc full contact, removal ergonomics, supplied fastener diameter/stack, crossbar span/stock, and independent tether geometry before bonding discs or drilling extrusion.
 
 ## Risk register
 - ID: R-001
