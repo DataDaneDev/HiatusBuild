@@ -1,18 +1,15 @@
 # Starlink + solar moving-roof umbilical
 
-Status: **measurement-gated; removable twin-coil architecture is the current lead; fixed sidewall entry not selected**
-Last current-source check: `2026-08-03 10:03 MDT`
+Status: **one-panel Starlink architecture selected; mount/cable package remains measurement- and bench-test-gated; solar deferred**
+Last current-source check: `2026-08-05 22:35 MDT`
 
 ## Decision
 
-Use two electrically separate retractile jumpers mounted side by side between the fixed camper body and moving roof:
+Complete Starlink as its own pathway now. Install one dedicated rugged shielded RJ45 bulkhead in the fixed camper body near the Desk/router service zone, then bridge the pop-up movement with one removable shielded retractile Ethernet/PoE jumper. The same bulkhead must accept either the normal roof jumper or a long ground-deployment cable.
 
-1. shielded Ethernet/PoE jumper for Starlink Standard 4 X;
-2. correctly sized PV-rated jumper for solar.
+Solar is not part of this penetration or purchase. When the panel model, stringing, cold `Voc`, `Isc`, conductor size, and roof layout are real, add a separate PV-rated route and two-pole load-break disconnect. It may eventually sit beside the Starlink route, but it does not share conductors, connectors, or a guessed oversize gland.
 
-The jumpers may share a mounting area and visual route but do not share conductors or a hybrid connector. The cable's own spring coil stores slack. Install independent strain-relief anchors so spring force is carried by the structure rather than the electrical connectors.
-
-This supersedes the prior chain-first and guided-loose-loop recommendations.
+This supersedes the prior no-new-hole/existing-service-route baseline, twin-coil-now, chain-first, guided-loose-loop, and shared-entry recommendations. The existing truck-bed service route and complete factory cable remain recovery paths, not the normal finished installation.
 
 ## Why the other two moving-section concepts lost
 
@@ -32,34 +29,51 @@ A route is sheltered only if an existing rigid camper feature projects outward f
 
 No exterior always-connected cable is branch-proof. Normal-road mode keeps the coils attached; tight-trail mode powers/isolate the circuits, removes the coils, and caps the fixed ends.
 
-## Lead physical layout
+## Selected Starlink physical layout
 
 ```text
-MOVING ROOF / ROOF HARNESS
-  Starlink terminal -- short Type-4/RJ45 adapter pigtail -- weatherproof RJ45 joint
-                                                        |
-                                                  shielded coil
-                                                        |
-  PV roof harness ------------------------------- PV-rated coil
-                                                        |
+MOVING ROOF / REMOVABLE MOUNT
+  Standard 4 X terminal in protective edge frame
+    -> upper Type-4/RJ45 adapter -> weatherproof RJ45 joint
+    -> removable shielded retractile jumper
+    -> rugged locking/weather-sealed cable-side connector
+
 FIXED CAMPER BODY
-  Starlink lower adapter/body entry -> router/power supply
-  PV disconnect -> fixed PV cable -> MPPT 150/45
+  one shielded RJ45 panel bulkhead with captive cap
+    -> fixed interior shielded Cat6A
+    -> lower Type-4/RJ45 adapter
+    -> Gen 3 router / factory AC power in ventilated Desk service zone
 ```
 
-Mount the upper and lower strain-relief anchors vertically aligned. Keep the two coils separated enough that they cannot wind into one another. The exact side/front location, anchor spacing, free extension, tangent lengths, and down-state coil length wait for measurements.
+Put the panel bulkhead in rigid fixed-body structure below the folding/moving seam and near enough to the Desk/router that the interior patch cable remains serviceable. Put the upper structural anchor directly above it on moving-roof structure/rail. Add a P-clamp behind the upper adapter joint and strain relief at the panel so neither electrical connector carries spring tension. The exact panel location, wall stack, anchor spacing, interior cable length, free extension, tangent lengths, and down-state coil projection still require a physical mockup.
 
 The selected moving jumper must provide more free extension than measured roof travel plus endpoint routing and strain-relief reserve. Do not use `36 in` as the purchase length merely because `36 in` is the current lift assumption.
 
-## Starlink: practical no-Ethernet-tool path
+## Starlink cable, panel, and deployment topology
 
-### Topology
+### Cable and panel topology
 
-- Remove and retain the factory Starlink cable as the unmodified recovery spare.
+- Establish a working baseline with the complete factory Starlink cable, then remove and retain that cable as the unmodified direct recovery spare.
 - Use one third-party Type-4-to-RJ45 adapter at the Standard 4 X terminal and one at the Gen 3 router/power end.
-- Connect the two adapters with a removable shielded retractile Ethernet cable.
-- Use the adapters' threaded IP67-style RJ45 glands for the exterior joints.
-- Put structural P-clamps/anchors behind both joints; do not let the connectors carry coil tension.
+- From the router adapter, run a field-measured shielded pure-copper Cat6A patch cable to the rear of one [Neutrik `NE8FDX-P6-W`](https://www.neutrik.com/en/product/ne8fdx-p6-w) shielded feedthrough panel connector. Neutrik publishes Cat6A/10 Gbit/s, PoE Type 4 Class 8 / `100W`, `>1000` mating cycles, and IP65 both when correctly mated and when its captive cap is closed.
+- Fit the lower end of the selected retractile jumper with the compatible Neutrik rugged cable carrier/termination. Current dimensional lead is `NE8MX-B-TOP` for `5-8 mm` cable OD; confirm the actual jumper OD/conductor geometry and exact intermateability before buying or cutting. The panel accepts an ordinary RJ45 plug for dry-weather ground deployment, but a plain RJ45 connection is not the weather-sealed/locked normal-road interface.
+- Join the jumper's upper end to the terminal adapter using the adapter's threaded weatherproof RJ45 gland.
+- Put structural P-clamps/anchors behind the upper exterior joint and beside the panel; do not let the Starlink socket, RJ45 contacts, or panel connector carry coil tension.
+- Keep the Gen 3 router and factory AC power supply in an accessible ventilated Desk/service cubby. Feed it from a fixed GFCI-protected receptacle; do not power Starlink through the plug-in desktop pop-up module.
+
+### Roof / ground mode
+
+- **Roof mode:** protective-framed dish stays on the extrusion crossbars; retractile jumper stays connected at the dish and locks into the panel connector. Disconnect/cap at the panel before removing the dish or entering tight brush.
+- **Ground mode:** remove the dish plus protective frame from the two crossbars, retain the usable factory kickstand, unplug the roof jumper from the terminal adapter, and connect a field-length outdoor shielded pure-copper Cat6A cord from the panel to the terminal adapter. An ordinary RJ45 cord is electrically/physically compatible with the panel for dry conditions; add a second compatible rugged carrier or use a purpose-built weather-sealed ground lead for rain/snow.
+- Preserve the complete OEM Starlink cable for direct router-to-terminal recovery if any adapter, bulkhead, reterminated plug, or retractile jumper fails.
+
+## Roof mount and branch-protection direction
+
+Current lead: [TRIO Gen 3 Standard Speedmount](https://www.trioflatmount.com/products/gen3speedmount), black, current listed price `$275`. It is explicitly compatible with Standard 4, wraps/protects all four dish edges, is `1.85 in` high, is sold for permanent/temporary highway use, and leaves the factory kickstand usable.
+
+Mount the complete TRIO-framed dish across two movable extrusion crossbars carried by the existing longitudinal roof tracks. Use the four corner through-bolt points with stainless button-head screws into captured roll-in T-nuts sized to the actual crossbar profile. This makes the full dish/frame assembly removable with one power-driver bit and four screws; do not design a separate loose plate unless the real hole/crossbar spacing proves it necessary. Use vibration-resistant reusable hardware and one independent secondary retention tether; do not rely on hand-tight thumb knobs for highway retention.
+
+The protective frame improves side/edge survival but does not make the terminal branch-proof. For tight, brushy routes, disconnect at the panel, remove the four screws, and stow/ground-deploy the dish. A thick limb contacting the face or using the frame as a lever is still a no-go for roof carriage.
 
 ### Current-source shortlist
 
@@ -68,27 +82,30 @@ The selected moving jumper must provide more free extension than measured roof t
 | `2x` STARGEAR Standard 4/4X/Gen 3 Type-4-to-RJ45 adapters | [Amazon `B0D9NB1SQC`](https://www.amazon.com/dp/B0D9NB1SQC) — `$58.99`, in stock/Prime at check | **Lead adapter pair.** Third-party/non-OEM; seller claims 24 AWG copper pigtails, full shielding and IP67 RJ45 coupling. Bench-test before vehicle install. |
 | ZBLZGP 3 m stretched Cat6A retractile cable | [Amazon `B0H286KLWZ`](https://www.amazon.com/dp/B0H286KLWZ) — `$35.00`, two in stock/Prime at check | **Budget prototype only.** PUR, dual shield, pure-copper claim, but 26 AWG and no established review history. STARGEAR recommends 23 AWG or larger for third-party PoE runs, so this is not accepted until a loaded Starlink heat/dropout test passes. |
 | L-com `TRD815SZ-CH-1-6F` industrial coil | [L-com product page](https://www.l-com.com/category-5e-ethernet-coil-cord-rj45-rj45-180d-tangents-f-utp-foil-shielded-26awg-high-flex-industrial-zero-halogen-tpu-teal-1-to-6f) | Higher-confidence industrial construction and useful `1-6 ft` geometry, but current retail price/stock could not be verified without vendor challenge and prior pricing was poor. Do not buy unless the Amazon prototype fails or a distributor price is acceptable. |
-| One-cable fixed-body entry | [Seaview retro-fit cable gland, Amazon `B077PQ4FGG`](https://www.amazon.com/dp/B077PQ4FGG) — `$29.00`, in stock/Prime at check | **Value entry** if only the stationary Starlink pigtail crosses here. Split/retrofit design accepts existing connectors. |
-| Prior shared-entry candidate | [Scanstrut `DS-H-MULTI-BLK`, Amazon `B0CSTC4D3C`](https://www.amazon.com/dp/B0CSTC4D3C) — `$53.34` at prior check | **Withdrawn for the proposed vertical sidewall geometry.** It is a horizontal cable-entry/deck-seal product, not the desired straight through-bulkhead wall entry. Do not rotate its hood/opening upward into roof runoff or forward-facing spray. |
-| Straight sidewall candidate | [Scanstrut `TBH-4`](https://www.scanstrut.com/marine/cable-seal/bulkhead/tbh-4) | **Geometry candidate, not released to buy.** This is the correct product class: straight IP67 through-bulkhead routing/anchoring for up to four cables, without an upward/downward entry hood, and published for `10-35 mm` bulkhead thickness. Measure the Hiatus wall and actual coil connector/boot OD first; do not assume a terminated molded RJ45 end fits the bore/seal. It is a cable seal, not a quick disconnect. |
+| Fixed-body RJ45 bulkhead | [Neutrik `NE8FDX-P6-W`](https://www.neutrik.com/en/product/ne8fdx-p6-w) / [Amazon `B01H6Z3KPI`](https://www.amazon.com/dp/B01H6Z3KPI) — `$29.83` at check | **Selected panel connector.** Shielded Cat6A feedthrough, PoE Type 4 Class 8 / `100W`, `>1000` cycles, rugged latch, captive cap, and IP65 correctly mated/capped. One standard D-size panel cut only; verify wall stack and service access first. |
+| Roof-jumper cable carrier | [Neutrik `NE8MX-B-TOP`](https://www.neutrik.com/en/product/ne8mx-b-top) | **Dimensional lead, not released.** Rugged locking/weather-sealed shell for conventional RJ45 termination and `5-8 mm` cable OD. Confirm the selected coil's real OD/conductor construction and panel intermateability before cutting/reterminating. |
+| Protective removable dish frame | [TRIO Gen 3 Standard Speedmount](https://www.trioflatmount.com/products/gen3speedmount) — `$275` at check | **Mount lead.** Standard 4 compatible; protects all four edges; kickstand remains usable. Through-bolt four corners to two extrusion crossbars with reusable stainless fasteners/captured T-nuts. |
+| Lower exterior inline RJ45 joint | [trueCABLE Cat6A shielded waterproof coupler](https://www.truecable.com/products/cat6a-waterproof-couplers-shielded) / [Amazon `B0949S87V7`](https://www.amazon.com/dp/B0949S87V7) | **Fallback only.** No longer needed if the one-panel Neutrik interface and compatible cable carrier are accepted. |
+| One-cable fixed-body entry | [Seaview retro-fit cable gland, Amazon `B077PQ4FGG`](https://www.amazon.com/dp/B077PQ4FGG) | **Withdrawn from the normal path.** The selected interface is a panel connector, not a through-cable gland. |
+| Prior shared-entry candidate | [Scanstrut `DS-H-MULTI-BLK`, Amazon `B0CSTC4D3C`](https://www.amazon.com/dp/B0CSTC4D3C) — `$53.34` at prior check | **Withdrawn.** It is a horizontal cable-entry/deck-seal product, not the desired straight panel quick-disconnect. |
+| Straight sidewall candidate | [Scanstrut `TBH-4`](https://www.scanstrut.com/marine/cable-seal/bulkhead/tbh-4) | **Withdrawn from this route.** It is a cable seal, not a detachable panel connector, and its larger multi-cable cut is not justified by deferred solar. |
 
-Do not use the prior package totals as a purchase lock because the fixed-body entry has been reopened. Buy or bench-test the adapter/coil layer separately; keep the complete OEM cable and ground-deployed kit as recovery paths. Ground deployment through the existing truck-bed service route is accepted for the first camping/work trip and is preferable to rushing a sidewall hole.
+Immediate bench/fit package is the STARGEAR adapter pair, ZBLZGP 3 m coil, Neutrik panel connector plus compatible cable-side termination after the coil OD check, and a field-measured fixed Cat6A run. The `26 AWG` coil is accepted only after retermination inspection and the loaded heat/dropout test. The TRIO frame and four-fastener crossbar geometry can be dry-fit independently. Do not cut the camper wall or coil until the connector mockup, wall stack, panel interior clearance, and crossbar spacing are physically proven.
 
-## Neutrik etherCON path
+## Why the one-panel Neutrik path now wins
 
-The Neutrik hardware is rugged and attractive, but it does not remove the need to adapt Starlink's Type-4 ports to RJ45.
+The prior rejection applied to a two-panel layout, which added unnecessary chassis connectors and RJ45 interfaces. The selected layout uses only one fixed-body `NE8FDX-P6-W`: it provides the solid panel quick-disconnect Dane asked for, is explicitly rated for `100W` 802.3bt Type 4, protects the normal roof connection when correctly mated, caps cleanly when disconnected, and still accepts an ordinary RJ45 ground-deployment cord. The upper dish end continues to use the Type-4 adapter's own weatherproof gland, so a second panel connector adds no value.
 
-- [Neutrik `NE8FDX-P6-W`](https://www.neutrik.com/en/product/ne8fdx-p6-w) is a sealed Cat6A feedthrough chassis connector. It is female RJ45 on the rear, so the panel part itself needs no punch-down or crimp tool. Current Amazon listing: [Amazon `B01H6Z3KPI`](https://www.amazon.com/dp/B01H6Z3KPI), `$29.83` at check.
-- `NE8MC-B-TOP` is not the current manufacturer part number; Neutrik's current TOP cable-carrier family uses `NE8MX...` names.
-- [Neutrik `NE8MX-B-TOP`](https://www.neutrik.com/en/product/ne8mx-b-top) fits approximately `5-8 mm` cable but is for non-preassembled cable. Installing it on a premade coil requires cutting an RJ45 end off and reterminating it with a compatible shielded stranded-conductor plug and Ethernet crimper.
-- [Neutrik `NE8MX6-T`](https://www.neutrik.com/en/product/ne8mx6-t) is the Cat6A/PoE++ self-termination connector and does not use a conventional modular-plug crimper, but its published `7-9.5 mm` cable-OD range must match the selected coil. Current Amazon listing: [Amazon `B07B1F4Y9X`](https://www.amazon.com/dp/B07B1F4Y9X), `$17.65` plus `$9.95` delivery at check—reasonable only if combined shipping or another seller improves the delivered cost.
+- [Neutrik `NE8FDX-P6-W`](https://www.neutrik.com/en/product/ne8fdx-p6-w) is female RJ45 on the rear, so the panel part itself needs no punch-down/crimp tool. Current Amazon listing: [Amazon `B01H6Z3KPI`](https://www.amazon.com/dp/B01H6Z3KPI), `$29.83` at check.
+- [Neutrik `NE8MX-B-TOP`](https://www.neutrik.com/en/product/ne8mx-b-top) fits approximately `5-8 mm` cable but is for non-preassembled cable. Installing it on a premade coil requires cutting one RJ45 end and reterminating it with a compatible shielded stranded-conductor plug.
+- [Neutrik `NE8MX6-T`](https://www.neutrik.com/en/product/ne8mx6-t) is the Cat6A/PoE++ self-termination alternative, but its published `7-9.5 mm` cable-OD range must match the selected coil.
 - [Neutrik `NE8MX-B`](https://www.neutrik.com/en/product/ne8mx-b) accepts a preassembled RJ45 cable without retermination, but it is not the exterior `TOP` weather-sealed solution.
 
-**Recommendation:** do not buy Neutrik parts until the chosen coil's actual outside diameter and termination construction are known. A full two-panel Neutrik route adds two chassis connectors, two cable connectors, two panel holes, and four extra RJ45 interfaces. It protects the ends, not the cable midspan. Use it only if the physical panel/latch quality is worth that complexity after the simple adapter-and-threaded-gland prototype succeeds.
+**Release gate:** measure the actual coil tangent OD and inspect its shield/conductors before choosing the cable-side part. Do not drill the D-size panel opening or cut the premade coil merely because the chassis connector itself is selected.
 
-## Solar moving jumper
+## Solar moving jumper — intentionally deferred
 
-The solar jumper remains sizing-gated because the panel model, string arrangement, cold `Voc`, array `Isc`, total moving length, and exact roof travel are not locked.
+Do not buy, route, or pre-drill for the solar jumper yet. It remains sizing-gated because the panel model, string arrangement, cold `Voc`, array `Isc`, total moving length, and exact roof travel are not locked. Future PV stays electrically and mechanically separate from Starlink even if its anchors later share the same general area.
 
 Required cable properties:
 

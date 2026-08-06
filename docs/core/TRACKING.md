@@ -583,6 +583,23 @@ related:
 - Result: retain the installed stack. BLUE closes before hose changes; RED depressurizes by shutting down the HOTTAP and opening faucet hot, then drains/blows toward the sink with regulated low-pressure air as needed. QD3, GARDENA, and Legend substitution paths are inactive fallbacks.
 - Follow-up: verify local aluminum backing/load spread, seal exposed laminate/core edges, witness-mark locknuts, complete a dry pressure/dwell test after final sink/sender work, and inspect for looseness after pull/cycle testing and the first drive.
 
+- ID: D-062
+- Date: 2026-08-05
+- Decision: Treat the physically routed USB-PD baseline as three independent `12 AWG / 15A` branches—one Desk and two Galley—and reopen a small field-fit number of downstream AC receptacles behind the two first-in-chain GFCIs.
+- Context: Owner reports all three PD routes, pump, fridge, and KUS wiring are in place and both first GFCIs are wired on separate breakers; earlier planning documented only two PD stations and treated downstream receptacles as obsolete.
+- Decision drivers: match the physical build, preserve branch independence, use the already-installed GFCI architecture correctly, and avoid inventing the third fuse-panel position from stale planning.
+- Result: Electrical overview, AC implementation, README posture, live checklist, and log now reflect three PD branches and optional downstream devices from GFCI `LOAD` only. D-022's shared `12V` source architecture remains valid, but its two-PD-branch quantity is superseded.
+- Follow-up: identify/label the actual third PD fuse-panel slot, measure the final run, prove polarity/load/voltage drop, and inventory/lock downstream AC device count before procurement or closeout.
+
+- ID: D-063
+- Date: 2026-08-05
+- Decision: Use one rugged fixed-body RJ45 panel bulkhead for both roof and ground Starlink deployment, and carry the Standard 4 X in a four-fastener protective frame on movable extrusion crossbars.
+- Context: Owner wants the roof cable to disconnect cleanly at the camper, wants an ordinary long Ethernet cord to support ground deployment, and is concerned that the current bare mobility mount leaves the terminal edges exposed to branches.
+- Options considered: existing service opening with inline coupler, large multi-cable through-bulkhead gland, two-panel etherCON route, purpose-built consumer wall socket, bare corner mounts, full protective enclosure, and a protective edge frame.
+- Decision drivers: rugged PoE Type 4 interface, weather protection when mated/capped, ordinary RJ45 fallback compatibility, minimum panel cuts/interfaces, four-screw serviceability, edge protection, kickstand retention, and clear tight-trail removal.
+- Result: select the Neutrik `NE8FDX-P6-W` as the fixed panel interface; use a compatible rugged Neutrik cable-side termination on the removable retractile jumper after OD verification; use the black TRIO Gen 3 Standard Speedmount across two extrusion crossbars with four reusable fasteners/captured T-nuts. Keep the complete OEM cable as direct recovery. Solar remains a later electrically/mechanically separate route.
+- Follow-up: verify camper wall stack/interior clearance, coil tangent OD/conductors, exact cable-side part compatibility, crossbar profile/spacing, roof travel, strain relief, and loaded Starlink performance before cutting the wall or premade coil.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -597,7 +614,7 @@ related:
 - Risk: Remaining service-map decisions (solar, shore, diesel, and the selected HOTTAP water-service interface) can still drive bad penetrations or inaccessible closeout geometry.
 - Impact (1-5): 4
 - Likelihood (1-5): 3
-- Mitigation: Validate each complete inside/outside route before cutting. For hot water, prove the rear-box cylinder restraint/vents, purchased Quick-Release HOTTAP Bracket backing and HOTTAP V2 Mount Cover, single BLUE/RED camper plate, supplied-hose reach, port protection, and operating clearances; no propane passthrough enters the camper.
+- Mitigation: Validate each complete inside/outside route before cutting. For Starlink, mock the selected Neutrik panel wall stack, interior cable/service access, retractile-jumper travel/strain relief, and four-fastener protective crossbar mount; preserve the OEM cable as the no-cut recovery path. For hot water, prove the rear-box cylinder restraint/vents, purchased Quick-Release HOTTAP Bracket backing and HOTTAP V2 Mount Cover, single BLUE/RED camper plate, supplied-hose reach, port protection, and operating clearances; no propane passthrough enters the camper.
 - Trigger: Any final shell/floor/wall penetration or permanent service-map closeout.
 - Owner: Sunny
 - Status: Open
@@ -753,7 +770,7 @@ related:
 - Build and prove positive restraint for the `3x 48V` batteries, separate `12V` battery, and ICECO cooler while the service bay remains open; preserve battery extraction and emergency fuse/disconnect access.
 - Create the final `36 gal` tank port map from physical inspection: verify the reported four end ports per side (two large/two small), identify exact thread sizes and any membrane-covered top boss, then lock KUS sender location/backing, upper-end gravity fill/vent, low north pump outlet, low tank drain, spare/plug ports, and manufacturer-compatible fitting methods.
 - Verify the newly tightened tank-strap plusnut screws achieved clean full thread engagement; witness-mark the hardware and recheck after the first loaded drive.
-- Finish the installed shore inlet's enclosed `L/N/PE` splice/dead checks. Separately, mock the Starlink fixed route through the existing front bed opening and the protected front popup transition through full raised/lowered cycles before choosing a service loop, coil, bulkhead, or roof penetration.
+- Finish the installed shore inlet's enclosed `L/N/PE` splice/dead checks. Separately, locate/mock the selected Starlink `NE8FDX-P6-W` panel interface in fixed-body structure below the moving seam, verify rear service access and wall stack, measure the candidate coil OD and popup travel, and dry-fit the TRIO frame/four-fastener extrusion-crossbar geometry before cutting the wall or cable.
 - Lock Nick black-walnut commission details: exact Galley counter length/width (`~4 ft x 19 in` target pending confirmation), `1.5 in` vs `2 in` thickness, last `~15 in` live-edge curve, Desk dimensions, L-shaped Bench/lid hinge/support/gas-strut geometry, finish sample, price, and delivery timing.
 - Verify the now-integrated electrical/Bench/Galley structure's remaining road details: battery/cooler capture, terminal covers, fastener witness marks, anti-rattle interfaces, strain relief, and emergency disconnect/fuse access.
 - Log parallel-bank current-sharing/voltage behavior under controlled charge/load; use similar total loop resistance per battery path rather than forcing equal positive-only leads.

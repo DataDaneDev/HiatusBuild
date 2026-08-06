@@ -1,3 +1,11 @@
+## 2026-08-05 — DC/AC branch progress; one-panel Starlink architecture selected
+
+- Owner reports the pump, ICECO/fridge feed, and KUS sender circuit are wired; three separate `12 AWG / 15A` USB-PD branches are routed (`1x` Desk, `2x` Galley); and the Desk and Galley GFCIs are wired on separate breakers. Final fuse/slot labels, DC polarity/load tests, KUS configuration, AC LINE/LOAD/PE proof, and GFCI trip/reset remain open.
+- Owner plans a few downstream receptacles. They remain field-count gated and must continue from the first GFCI's `LOAD` terminals with the same `12 AWG` branch conductors, accessible listed boxes, proper restraint, and whole-chain trip testing. The circular Desk outlet/USB/PD module stays a removable plug-in device on a fixed GFCI-protected receptacle; Starlink does not plug through that module.
+- Selected the finished Starlink interface direction: one Neutrik `NE8FDX-P6-W` shielded Cat6A / PoE Type 4 panel bulkhead on the fixed body, one removable retractile roof jumper with a compatible rugged cable-side connector, and a long outdoor shielded Cat6A ground-deployment alternative. The complete OEM cable remains the direct recovery path.
+- Mount lead is the black TRIO Gen 3 Standard Speedmount across two movable extrusion crossbars using four reusable stainless fasteners into captured T-nuts. It protects the terminal edges and preserves kickstand use, but the full framed dish is removed for tight brush because no roof mount is branch-proof.
+- Solar is deliberately deferred. Do not drill a shared/oversize Starlink/PV gland or buy a PV coil/disconnect until the actual panels, stringing, cold `Voc`, `Isc`, conductor size, and roof route are known; future PV remains separate from Starlink.
+
 ## 2026-08-05 — Rear and passenger-hatch bug screens ordered
 
 - Ordered one Yotache custom rear-entry magnetic screen in finished `60 in W x 46 in H`, black thickened mesh with middle magnetic opening. Owner-provided single-item order total is `$113.67`; item/tax split was not supplied. Expected arrival is `2026-08-24` through `2026-09-01`.

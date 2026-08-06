@@ -18,13 +18,13 @@ related:
 - Define a practical order of operations that still supports parallel workstreams.
 - Prioritize measured, reversible post-install module work: validate real camper envelopes first, then build systems and furniture modules without burying service access.
 
-## Planning assumptions (as-of 2026-08-03)
+## Planning assumptions (as-of 2026-08-05)
 - Hiatus install readiness/travel planning is historical; the real camper shell is available for physical measurements and mockups.
 - The electrical module, Galley/cooler support, water tank, and returned Bench extrusion are owner-reported hard-mounted and extremely stiff as an integrated structure. Desk/storage modules remain out intentionally for wiring access.
 - The one-piece Lonseal was glued to the three-piece `3/4 in` plywood floor on the evening of `2026-07-15`. The floor is permanent, controlled module loading has begun, and routine removal of the three plywood pieces is no longer possible without cutting the vinyl at both seams.
 - Battery 1 completed the corrected isolated charge cycle; Battery 2 reached absorption and Battery 3 remains pending. Positive individual battery/cooler travel restraint, full-bank commissioning, and terminal/cable protection remain open.
 - Electrical architecture and BOM assumptions in `docs/core/SYSTEMS.md` remain the active baseline, with the first live `48V`/MultiPlus/Cerbo/shore checkpoint passed. Do not drill around connected/live electrical equipment and do not road-travel until final restraint/access gates pass.
-- The active dependency order is ICECO switch insulation/temporary mount -> KUS termination -> pump branch -> access-dependent Galley/Desk wiring -> individual battery/cooler restraint -> Battery 3 charge/rest -> `3x 48V` match/parallel/commission -> KUS/fill/vent/sink water acceptance -> Desk/storage reinstall -> mid-September `2026` final-walnut installation -> shakedown. Full temporary tops are dropped.
+- Owner reports the pump, fridge, KUS sender circuit, three independent USB-PD branches, and the Desk/Galley first-in-chain GFCIs are wired/routed. The active dependency order is ICECO switch insulation/temporary mount -> labels/protection/polarity/LINE-LOAD-PE/GFCI/KUS/DC load proof -> decide/rough in only the downstream receptacles that survive real fit -> Starlink panel/jumper/mount bench and geometry mockup -> individual battery/cooler restraint -> Battery 3 charge/rest -> `3x 48V` match/parallel/commission -> KUS/fill/vent/sink water acceptance -> Desk/storage reinstall -> mid-September `2026` final-walnut installation -> shakedown. Solar remains deferred and does not block this sequence.
 - Interior/furniture assumptions in `docs/implementation/INTERIOR_furniture_layout_and_galley.md` remain the current baseline. Black-walnut finish surfaces stay template-gated; lighting remains deferred behind core flooring, furniture, plumbing, and electrical integration.
 - Active post-install tracker: `docs/plans/LIVE_BUILD_CHECKLIST.md`. Update it whenever practical sequence, blockers, or completed physical work changes.
 

@@ -53,7 +53,7 @@ Related docs:
 - All three batteries' positive and negative `2/0 AWG` branch cables are cut, lugged, heat-shrunk, and landed at the battery-side busbars. Battery 1 completed the corrected isolated charge cycle, Battery 2 resumed and reached absorption on `2026-08-03`, and Battery 3 remains pending; keep all three isolated until their rested voltages are matched within `0.1V` before paralleling.
 - The `12V` buffer-battery/Orion branch is owner-reported operational. Keep its negative direct to the fuse-panel main negative stud, not through `SW-12V-BATT`; the positive path remains `F-11 -> SW-12V-BATT -> panel main +`.
 - Owner report `2026-08-03`: the ICECO appliance lead is landed on `12V-02`, protected by a `15A` blade fuse, and switched. Its appliance pigtail is `16 AWG`; exposed positive switch terminals still require individual insulation and temporary hard mounting before normal powered work. Verify connector polarity and voltage drop before appliance acceptance.
-- The installed KUS sender pair is routed to the Cerbo but not yet terminated. On one numbered Cerbo Tank column, connect KUS black/signal to the upper `DATA` terminal and KUS pink/return to the lower `GND` terminal. The owner's red extension is mapped to KUS pink and therefore lands on `GND`. For `18 AWG`, use a `1.0 mm²` ferrule with a `>=10 mm` pin or `10-11 mm` of untinned exposed stranded copper; standard `8 mm` ferrules are too short for the Cerbo manual's `10 mm+` insertion requirement.
+- Owner report `2026-08-05`: the pump, ICECO/fridge feed, and KUS sender circuit are wired; three separate `12 AWG / 15A` USB-PD branches are routed (`1x` Desk and `2x` Galley); and the Desk and Galley GFCIs are wired on separate breakers. Commissioning remains open for exact fuse/slot labels, polarity/load tests, KUS configuration/sanity check, AC LINE/LOAD/PE proof, and GFCI trip/reset. The third PD branch's actual source slot must be audited and labeled rather than inferred from this document.
 
 ### Orion fuse discriminator — one input fuse only
 - Lynx Slot 4 / `F-05`: **Orion `48V` input positive**, one verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) feeding the existing `6 AWG` directly. This is the final single input fuse.
@@ -167,7 +167,8 @@ flowchart LR
     DET["12V-05 CO+Propane detector\n3A / 18/2"]
     LED["12V-06 LED lights + dimmer\n5A / 18/2 (Hiatus pre-installed)"]
     USB_OFFICE["12V-08 Office USB PD station\n15A / 12 AWG"]
-    USB_GALLEY["12V-09 Galley USB PD station\n15A / 12 AWG"]
+    USB_GALLEY["12V-09 Galley USB PD station A\n15A / 12 AWG"]
+    USB_GALLEY_B["12V slot to verify Galley USB PD station B\n15A / 12 AWG"]
     MAXXAIR["12V-10 Maxxair fan\n10A / 14 AWG (Hiatus pre-installed)"]
     LED_AMBIENT["12V-11 DC ambient/cabinet LED strips\n5A / 18/2 (planned Govee)"]
     AUDIO_HU["12V-12 Kicker KMC2 media center\n15A / 12 AWG short-run"]
@@ -186,7 +187,8 @@ flowchart LR
     PANEL -- "18/2, ~8 ft (ASSUMED)" --> DET
     PANEL -- "18/2, ~8 ft (ASSUMED)" --> LED
     PANEL -- "12 AWG duplex, ~5 ft (ASSUMED short run)" --> USB_OFFICE
-    PANEL -- "14 AWG duplex, ~8 ft (ASSUMED)" --> USB_GALLEY
+    PANEL -- "12 AWG duplex, ~8 ft (ASSUMED)" --> USB_GALLEY
+    PANEL -- "12 AWG duplex, field routed; final slot/length to verify" --> USB_GALLEY_B
     PANEL -- "14 AWG duplex, ~8 ft (ASSUMED)" --> MAXXAIR
     PANEL -- "18/2, ~8 ft (ASSUMED)" --> LED_AMBIENT
     PANEL -- "12 AWG duplex, ~5 ft (ASSUMED short run)" --> AUDIO_HU
@@ -200,6 +202,7 @@ flowchart LR
     LED -- "return in 18/2, ~8 ft" --> PANEL
     USB_OFFICE -- "return in duplex, ~5 ft" --> PANEL
     USB_GALLEY -- "return in duplex, ~8 ft" --> PANEL
+    USB_GALLEY_B -- "return in duplex; field length to verify" --> PANEL
     MAXXAIR -- "return in duplex, ~8 ft" --> PANEL
     LED_AMBIENT -- "return in 18/2, ~8 ft" --> PANEL
     AUDIO_HU -- "return in duplex, ~5 ft" --> PANEL
@@ -266,7 +269,7 @@ flowchart LR
     end
 
     subgraph USB_PD["USB/USB-C PD Strategy"]
-        PD_DC["Locked: 12V branch -> USB PD stations\n2 total stations (office + galley)"]
+        PD_DC["Locked: 12V branch -> USB PD stations\n3 total stations (1 office + 2 galley)"]
         PD_AC["Alternative: USB receptacles on AC branch"]
     end
 
@@ -306,8 +309,8 @@ flowchart LR
 - Shore interface: `30A` RV-style inlet baseline with adapter kit for `15A`/`20A` hookups.
 - AC input protection: portable EMS + combined DIN enclosure + `30A` AC input breaker/disconnect upstream of MultiPlus AC-in.
 - AC-out-1 distribution: `30A` AC-out main plus two protected `20A` branches with GFCI-at-first-outlet strategy.
-- Receptacle plan: current purchased baseline is `2` total `120V` GFCI receptacles, one per active branch: Branch A = office/driver side, Branch B = galley/passenger side. Prior downstream non-GFCI receptacles are obsolete unless a later layout revision reopens them.
-- USB charging plan: `2` DC-fed USB PD station assemblies on dedicated `12V` branches (`1` office, `1` galley), each standardized to `15A / 12 AWG` for the current rough-in.
+- Receptacle plan: `2` first-in-chain `120V` GFCI receptacles remain required, one per active branch: Branch A = office/driver side, Branch B = galley/passenger side. Owner reopened a small number of downstream receptacles on `2026-08-05`; final count/locations remain field-fit gated and must continue from each first GFCI's `LOAD` terminals with `12 AWG` conductors, accessible listed boxes, and full-chain trip testing.
+- USB charging plan: `3` DC-fed USB PD station assemblies on separate `12V` branches (`1` office, `2` Galley), each standardized to `15A / 12 AWG`. The third branch's actual fuse-panel slot/label is a field-audit item.
 - AC-out-2 remains reserve-only in Phase 1 (labeled capped route; no energized branch hardware procured).
 
 ## Monitoring and Control Topology
@@ -418,6 +421,7 @@ Retired from active architecture:
 | `C-46` | KMC2 RCA line-out -> PTRTP10 RCA input | low-level audio signal | Subwoofer signal | N/A | shielded 2-channel RCA | measured route (`~4m` planning cable) |
 | `C-47L/R` | KMC2 front speaker outputs -> left/right Kicker `CSC67` speakers | speaker-level audio | One `4 ohm` speaker per KMC2 channel | KMC2 internal protection / `AUDIO-HU` source branch | `16 AWG` marine speaker wire | `10-12 ft` each (`ASSUMED`) |
 | `C-48` | KUS SSS/SSL sender black signal + pink return -> matching signal/negative pair in Cerbo GX MK2 `Tank 1` column | Cerbo low-current resistive-sender excitation | Fresh-water level, US `240-30 ohm` | No external fuse or power feed; do not share chassis return | `18-22 AWG` tinned duplex, ferrules at Cerbo, sealed pigtail splices at sender | Measure after tank/Cerbo endpoints are installed (`ASSUMED <10 ft`) |
+| `C-49` | 12V panel -> second Galley USB PD station | `12V` | Third independent PD branch | `F-10` branch fuse (`15A`); exact panel slot/label to verify in field | `12 AWG duplex` | Owner reports routed `2026-08-05`; measure/record final length |
 
 ## Wiring Validation Worksheet (Estimate Pass, 2026-02-18)
 Calculation basis for drop screening:
@@ -464,6 +468,7 @@ Calculation basis for drop screening:
 | `C-33` | MultiPlus AC-out-2 | Reserve-only capped route | N/A in Phase 1 | N/A | `12 AWG AC` (reserve path only) | `15 ft` | `0.60%` @ `120VAC` (future-use screen) | N/A (not procured in Phase 1) | RESERVE |
 | `C-34` | 12V fuse panel | Office USB PD station | `F-10 15A` | `15A` design cap | `12 AWG duplex` | `5 ft` | `1.99%` @ `12V` | Row `116` (`12 AWG USB branch stock`) | PASS |
 | `C-35` | 12V fuse panel | Galley USB PD station | `F-10 15A` | `8A` expected | `12 AWG duplex` | `8 ft` | `1.69%` @ `12V` | Row `116` (`12 AWG USB branch stock`) | PASS |
+| `C-49` | 12V fuse panel | Second Galley USB PD station | `F-10 15A`; slot to verify | `15A` design cap | `12 AWG duplex` | Field routed; measure | Recalculate from measured length | Field stock | VERIFY label/length/polarity, then load-test |
 | `C-36` | 12V fuse panel | Maxxair fan (Hiatus pre-installed) | `F-10 10A` | `4A` expected | `14 AWG duplex` | `8 ft` | `1.35%` @ `12V` | Row `32` (`14 AWG duplex`) | PASS |
 | `C-37` | 12V fuse panel | DC ambient/cabinet LED strips (planned Govee) | `F-10 5A` | `5A` design cap | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |
 | `C-38` | House/main positive bus | WS500 `PH-VAN` short red lead | `F-12/F-13-PHVAN 15A` | combined regulator-power / voltage-sense feed at `48V` bank voltage | Short harness lead | Local | N/A (harness-limited) | Active row `171` | VERIFY one holder/fuse rated above bank maximum |
@@ -490,7 +495,7 @@ Calculation basis for drop screening:
 | `18/2` | `24.0 ft` plus separate Cerbo low-current duplex | `C-24`, `C-25`, `C-37`; Cerbo `C-26` uses 48V fused low-current duplex | `33` / low-current stock |
 | `12 AWG AC branch cable` | `30 ft` (`C-33` excluded in Phase 1) | `C-31`, `C-32` | `113` |
 | `10/3 shore + AC-in/out feed` | `13 ft` | `C-28`, `C-29`, `C-30` | `114` |
-| `12 AWG` fridge/heater/USB/audio branch mix | Fridge: `12 ft`; heater: `8 ft`; USB: `5 ft` office + `8 ft` Galley; audio source: `5 ft` short-run assumption | `C-21`, `C-22`, `C-34`, `C-35`, `C-42` | `116`, `193` / field stock |
+| `12 AWG` fridge/heater/USB/audio branch mix | Fridge: `12 ft`; heater: `8 ft`; USB: `5 ft` office + `8 ft` Galley A + measured Galley B field run; audio source: `5 ft` short-run assumption | `C-21`, `C-22`, `C-34`, `C-35`, `C-49`, `C-42` | `116`, `193` / field stock |
 | Camper audio signal/speaker/control wiring | RCA measured route, `18 AWG` remote, and `16 AWG` marine speaker wire runs | `C-45`, `C-46`, `C-47L/R` | `193` |
 | WS500 harness/sense leads | Included in selected kit/harness set; `C-39` is retired under `PH-VAN` | `C-38`, `C-40` | `168`, `171` |
 | `16 AWG` TXL/GXL control wire | `6 ft` | `C-41` | `176` |
@@ -545,7 +550,7 @@ Torque reference (verify against your exact manuals/hardware):
 - AC-out `30A` main breaker plus `20A`/`20A` branch breaker and GFCI receptacle hardware
 - Receptacle boxes + `120V` outlets (current purchased baseline `2` GFCI receptacles/covers in row `15`; inactive row `112` records the closed separate box/faceplate allowance)
 - AC-out-2 reserve-only capped route (no energized Phase 1 branch hardware)
-- USB PD station branch hardware (`2` stations reported on hand for office + galley; row `115` owns the exact purchased Acegoo unit, while the second unit's details remain untracked and inactive row `331` confirms no further purchase)
+- USB PD station branch hardware (`3` stations / independent routes owner-reported `2026-08-05`: `1x` office and `2x` Galley; row `115` owns the exact purchased Acegoo evidence while the additional station purchase provenance remains untracked)
 - Camper audio hardware: Kicker `46KMC2` source branch, Kicker `49PTRTP10` powered sub branch, `AUDIO-HU` 15A source protection, `AUDIO-SUB` 40A source fuse, RCA/speaker/remote wiring
 - Battery temperature sensor wiring to inverter/monitoring path
 - SmartShunt fused positive sense/power lead (factory harness)

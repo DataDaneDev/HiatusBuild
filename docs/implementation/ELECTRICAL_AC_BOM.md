@@ -13,7 +13,7 @@ related:
 
 # Electrical AC BOM (Phase 1)
 
-As-of date: `2026-08-01`
+As-of date: `2026-08-05`
 
 Purpose: maintain the purchased Phase 1 AC architecture baseline: portable `30A` EMS, `30A` shore inlet/locking cord with a modular `25 ft` TT-30 extension, one `6-way` DIN enclosure, `30A` AC-in breaker, `30A` AC-out main breaker, and two active `20A` GFCI-protected AC-out branches. Final physical outlet locations and enclosure access remain measurement-gated in the installed camper.
 
@@ -44,7 +44,8 @@ Related docs:
 
 ### AC-out chain (inverter-backed branch distribution)
 - `MultiPlus AC-out-1 -> 10/3 feeder -> combined 6-way AC DIN enclosure -> 30A UL489 AC-out main breaker -> 20A Branch A + 20A Branch B -> GFCI receptacle per branch`
-- Current purchased receptacle plan is `2` active GFCI receptacles total: Branch A = office/driver side, Branch B = galley/passenger side. Prior downstream non-GFCI receptacle locations are obsolete unless a later layout revision reopens them.
+- The two first-in-chain receptacles remain `20A` self-test GFCIs: Branch A = office/driver side, Branch B = Galley/passenger side. Owner reports both are wired on separate breakers as of `2026-08-05`; electrical commissioning remains open.
+- A small number of downstream standard receptacles is reopened as a field-fit plan, not yet a purchase lock. Continue each chain only from the corresponding first GFCI's `LOAD` terminals with `12 AWG` conductors, listed accessible boxes/clamps, and downstream GFCI-protected labeling/testing. More outlets do not increase the `20A` branch capacity.
 - AC-out branch hardware is not required to perform the initial AC-in-only battery charging test, but it is now included in the purchased Phase 1 cart.
 
 ### Neutral and ground handling
@@ -91,8 +92,8 @@ These rows unblock safe MultiPlus shore charging and should not wait on final re
 | DIN accessory kit | `1` kit | Neutral isolation hardware, PE/ground bus support, ferrules, labels/blanks as needed | `14`, `41` | Purchased / labels-blanks confirm on hand |
 | MultiPlus/chassis and shell bonding materials | field-measured | `10 AWG` green stranded copper minimum for MultiPlus `M6 PE` to verified truck chassis; separate shell bond jumper; M6/tinned lugs, protected chassis attachment, compatible aluminum-interface hardware/compound | `51`, `339` | Inventory/buy |
 | GFCI receptacles | `2` | `20A` self-test GFCI receptacles, one per active branch | `15` | Purchased |
-| Standard downstream receptacles | `0` in current scope | Prior downstream non-GFCI receptacle plan is obsolete | `111` | Obsolete |
-| Outlet boxes + covers/faceplates + clamps | `2` sets | Two active GFCI receptacles have covers/plates; owner confirms no separate purchase remains and final boxes/clamps use on-hand install-fit hardware | inactive `112` | Closed / no separate purchase |
+| Standard downstream receptacles | Field count TBD | Reopened `2026-08-05`; standard receptacles only downstream of the first GFCI `LOAD`, same branch conductor gauge, accessible listed boxes | inactive historical `111`; add new active procurement only if inventory is short | Measure/inventory before buy |
+| Outlet boxes + covers/faceplates + clamps | `2` first-GFCI sets plus field-count downstream sets | First GFCI hardware was already closed; each added downstream device needs its own listed accessible box, cover/plate, and cable restraint | inactive historical `112`; use on-hand stock or add new evidence | Inventory/fit gate |
 | AC branch cable | `30 ft` purchased | `12/3` stranded triplex branch cable (`C-31/C-32`) | `113` | Purchased |
 | Shore + AC-in/AC-out feeder cable | `20 ft` purchased | `10/3` stranded triplex for `C-28/C-29/C-30` (`30A` paths) | `114` | Purchased |
 | Strain relief/cable glands | per enclosure entries | Use assorted on-hand entry hardware sized during physical layout | `44` | On-hand fitment stock |
