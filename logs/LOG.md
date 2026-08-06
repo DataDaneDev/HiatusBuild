@@ -1,3 +1,8 @@
+## 2026-08-05 — Rear and passenger-side bug-screen geometry locked
+
+- Owner-confirmed inside fixed-opening measurements are rear barn-door entry `55.5 in W x 44.25 in H` and passenger-side lift hatch `57.5 in W x 19.75 in H`. Target removable screen envelopes are rear `59.5 in W x 46.25 in H` and side `61.5 in W x 21.75 in H`, giving `2 in` overlap on both vertical sides and the top with the bottom flush.
+- Current design direction is a center magnetic split with full-frame hook-and-loop or adhesive-backed snap attachment on fixed surfaces outside door/hatch compression paths. The passenger-side hatch has paired gas-strut/bracket obstructions centered on both vertical edges that project about `1.5 in`; template reinforced reliefs/gussets before ordering a non-returnable custom screen rather than assuming the mesh can simply bow around them without edge gaps.
+
 ## 2026-08-03 — KUS routed, ICECO branch live, September walnut install scheduled
 
 - Owner reports the KUS sender is installed and its two-wire lead is routed to the Cerbo area. Final mapping is one numbered Cerbo Tank column: sender black/signal to upper `DATA`, sender pink/return to lower `GND`. The owner's red extension maps to pink and therefore lands on `GND`. Use `1.0 mm²` ferrules with `>=10 mm` pins on the `18 AWG` extensions, or `10-11 mm` of untinned bare stranded copper if only short ferrules are available.
