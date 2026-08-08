@@ -125,7 +125,7 @@ Posture: not a blocker. Re-measure before buying. Carry-extra-fuel is acceptable
 
 - **WS500 low-current fuse/holder pieces**
   - Confirmed `PH-VAN` harness: one short red lead combines regulator power and positive voltage sense at the house/main bus.
-  - Inventory or buy one `15A` sealed inline fuse/holder rated above the actual `48V` bank maximum (`F-12/F-13-PHVAN`, active row `171`) plus desired spares. Existing row `321` empty `80V` FKS housings are candidates only after the correct contacts and `PH-VAN` red-lead wire-gauge fit are verified; existing `20A` fuses are the wrong current rating. Do not buy the retired separate `3A` row `320` hardware.
+  - Buy only one Littelfuse `166.7000.5152` FKS/ATO `15A/80VDC` fuse or verified equivalent for `F-12/F-13-PHVAN` (active row `171`). Littelfuse confirms the owned row `321` `178.6150.0001` housing accepts FKS fuses at `80VDC`; verify only the correct contacts and `PH-VAN` red-lead fit. Existing `20A` fuses are the wrong current rating. Do not buy commissioning spares, retired row `320` hardware, or `5A` current-sense fuses; the Wakespeed shunt is in the dedicated alternator negative return.
 
 ## TNutz / 80/20 posture
 

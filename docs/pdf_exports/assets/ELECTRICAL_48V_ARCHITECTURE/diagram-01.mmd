@@ -15,11 +15,11 @@ flowchart LR
     NEGBUS --> SHUNT["SmartShunt 300A"]
     SHUNT --> LYNX
 
-    ALT48["Secondary 48V alternator"] --> WSSHUNT["Wakespeed 500A/50mV shunt\nin alternator B+\npurple/grey via 2x 5A fuses"]
-    WSSHUNT --> F04["F-04 150A MEGA"]
+    ALT48["Secondary 48V alternator"] --> F04["F-04 150A MEGA"]
     F04 --> LYNX
     APM48["APM-48\nparallel surge clamp\nat alternator B+/B-"] -. "red to B+; black to B-/case" .- ALT48
-    ALT48 -. "Dedicated 2/0 AWG return" .-> LYNX
+    ALT48 -. "Dedicated 2/0 AWG return" .-> WSSHUNT["WS500 500A/50mV shunt\nnegative alternator branch"]
+    WSSHUNT -. "short 2/0 AWG jumper" .-> LYNX
 
     LYNX --> MULTI["MultiPlus-II 48/3000\nSlot 1 / F-02 125A"]
     LYNX --> MPPT["SmartSolar 150/45\nSlot 2 / F-03 60A"]

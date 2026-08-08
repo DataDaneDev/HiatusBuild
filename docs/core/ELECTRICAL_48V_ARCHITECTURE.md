@@ -67,7 +67,7 @@ Related docs:
 | Alternator kit | Mechman `48V` secondary alternator kit with `WS500` | `168` |
 | Load-dump clamp | Balmar `APM-48` | `169` |
 | Alternator branch fuse | `F-04` `150A` MEGA (`58V/80V`) in Lynx Slot 3 | `170` |
-| WS500 `PH-VAN` and alternator-shunt sense protection | One `15A` bank-voltage-rated fuse/holder on the short red combined regulator-power/positive-sense lead, plus two separate bank-voltage-rated `5A` fuse/holders on purple/grey at the positive alternator shunt | `171`, `351` |
+| WS500 `PH-VAN` and alternator-shunt sensing | One `15A/80VDC` fuse in the short red combined regulator-power/positive-sense lead; separate `500A/50mV` shunt in the dedicated alternator negative return, with no purple/grey sense fuses | `171` |
 | WS500 Upfitter #3 control kit | `F-15` + control wire + holder/terminals | `176` |
 
 ## Battery manual limits and charger-programming baseline
@@ -98,11 +98,11 @@ flowchart LR
     NEGBUS --> SHUNT["SmartShunt 300A"]
     SHUNT --> LYNX
 
-    ALT48["Secondary 48V alternator"] --> WSSHUNT["Wakespeed 500A/50mV shunt\nin alternator B+\npurple/grey via 2x 5A fuses"]
-    WSSHUNT --> F04["F-04 150A MEGA"]
+    ALT48["Secondary 48V alternator"] --> F04["F-04 150A MEGA"]
     F04 --> LYNX
     APM48["APM-48\nparallel surge clamp\nat alternator B+/B-"] -. "red to B+; black to B-/case" .- ALT48
-    ALT48 -. "Dedicated 2/0 AWG return" .-> LYNX
+    ALT48 -. "Dedicated 2/0 AWG return" .-> WSSHUNT["WS500 500A/50mV shunt\nnegative alternator branch"]
+    WSSHUNT -. "short 2/0 AWG jumper" .-> LYNX
 
     LYNX --> MULTI["MultiPlus-II 48/3000\nSlot 1 / F-02 125A"]
     LYNX --> MPPT["SmartSolar 150/45\nSlot 2 / F-03 60A"]
@@ -139,16 +139,16 @@ flowchart LR
 | `F-04` | Alternator branch into Lynx Slot 3 | `150A` MEGA (`58V/80V`) | `2/0 AWG` |
 | `F-05` | Lynx Slot 4 -> Orion `48V` input | MEGA `40A`, body-marked `>=58VDC`; Victron `CIP138040020 40A/80V` replacement fallback | Existing `6 AWG` direct to Orion; single input fuse |
 | `F-06` | Retired standalone Orion input fuse position | Not installed | MIDI/FKS/DIN concepts superseded; do not stack with `F-05` |
-| `F-12/F-13-PHVAN` | WS500 `PH-VAN` combined regulator-power / positive-voltage-sense red lead | One `15A` fuse/holder rated above the `48V` bank maximum; former separate `3A` position is not installed | short harness lead at house/main positive bus; do not extend |
+| `F-12/F-13-PHVAN` | WS500 `PH-VAN` combined regulator-power / positive-voltage-sense red lead | One Littelfuse `166.7000.5152` `15A/80VDC` fuse or verified equivalent; former separate `3A` position is not installed | existing compatible holder at house/main positive bus; short harness lead; do not extend |
 | `CERBO-PWR` | Cerbo GX low-current power feed | `1A-3A` inline fuse/holder rated for the `48V` bank maximum; system/load side of main disconnect preferred for bench shutdown | `18 AWG` red/black duplex acceptable |
-| `WS500-CS-H/L` | Purple/grey current-sense high/low to positive-branch Wakespeed shunt | Separate `5A` fuse in each lead, each holder/fuse rated above bank maximum; mount immediately at shunt | harness leads; twist pair after protection and route away from noise |
+| WS500 current-sense pair | Purple/grey to negative alternator shunt | No fuse on negative-side shunt; grey/low to alternator side, purple/high to Lynx side; twist pair and route away from noise | harness lead |
 | `F-15` | Upfitter #3 to WS500 brown ignition wire | `3A` inline ATO/ATC on 12V control circuit | `16 AWG` TXL/GXL control wire |
 
 ### Major conductors
 - Battery branch and main `48V` trunk wiring: `2/0 AWG`.
 - Parallel battery-current sharing target is similar **total loop resistance** per battery path, not equal positive-only length. The current bench layout may use short/medium/long positive leads balanced by long/medium/short negative leads; do not add unnecessary cable coils solely to make positive leads identical.
-- Secondary alternator positive path (`ALT B+ -> long 2/0 -> separate Wakespeed 500A/50mV alternator shunt -> short 2/0 jumper -> F-04 -> Lynx`): `2/0 AWG`, `~20 ft` one-way planning basis. Purple/current-sense-high lands on the alternator side of the positive shunt; grey/current-sense-low lands on the Lynx side; each lead gets its own bank-voltage-rated `5A` fuse immediately at the shunt. Configure the WS500 for `Shunt at Alternator`; the Victron SmartShunt remains the separate battery/SOC shunt. The `APM-48` is wired in parallel across alternator `B+` and `B-`/case; it is not in series with this conductor.
-- Secondary alternator dedicated negative return (`ALT B- -> Lynx -`): `2/0 AWG`, `~20 ft` one-way planning basis.
+- Secondary alternator positive path (`ALT B+ -> F-04 -> Lynx`): `2/0 AWG`, `~20 ft` one-way planning basis. The `APM-48` is wired in parallel across alternator `B+` and `B-`/case; it is not in series with this conductor.
+- Secondary alternator dedicated negative return (`ALT B-/case -> long 2/0 -> Wakespeed 500A/50mV shunt -> short 2/0 jumper -> Lynx -`): `2/0 AWG`, `~20 ft` one-way planning basis. Configure `Shunt at Alternator`; grey/low faces the alternator and purple/high faces Lynx negative.
 - Orion `48V` feeder: existing `6 AWG` remains as the no-rework path from Lynx Slot 4 and is protected by `F-05 40A` MEGA (`>=58VDC`); it is electrically overkill, and flexible fine-strand `10 AWG` would be adequate if ever replaced for unrelated reasons. MPPT battery leads and Orion `12V` output remain `6 AWG`.
 - Upfitter #3 control lead to WS500 brown wire: `16 AWG` TXL/GXL planning basis, `~6 ft` one-way assumed until measured.
 
@@ -156,7 +156,7 @@ flowchart LR
 - **AC protective earth:** the MultiPlus external `M6 PE` lug is mandatory in this mobile installation. Bond it with at least the Victron-manual `4 mm²` conductor; current build default is `10 AWG` green stranded copper to a verified truck-chassis bond point. Do not use the aluminum camper shell or 80/20 as the only protective-earth conductor.
 - **Exposed aluminum shell:** add a separate corrosion-compatible bonding jumper from the Hiatus shell to the chassis/equipment-ground network and verify low-resistance continuity. Mechanical shell/bed mounting contact is not accepted as proof of a durable bond.
 - **AC neutral:** do not add a fixed neutral-ground bond downstream. The MultiPlus internal ground relay remains enabled: AC-out neutral bonds to chassis in inverter mode and that bond opens when external AC is accepted.
-- **DC negatives:** do not jumper MultiPlus PE/case to Lynx negative or the `12V` negative bus. Keep normal `48V`/`12V` current on dedicated returns. The Mechman branch still uses dedicated `2/0` negative to the Lynx/load side of the SmartShunt; physically confirm isolated-ground versus case-ground behavior before commissioning. If the alternator is case-grounded, treat that as the likely deliberate house-negative/chassis reference and verify there is no second path that bypasses the SmartShunt.
+- **DC negatives:** do not jumper MultiPlus PE/case to Lynx negative or the `12V` negative bus. Keep normal `48V`/`12V` current on dedicated returns. The Mechman branch uses the dedicated `2/0` negative and negative-side Wakespeed shunt to the Lynx/load side of the SmartShunt. With the alternator return disconnected, prove Lynx negative has no stable low-resistance path to chassis; after landing the branch, that deliberate reference must disappear again when either shunt cable is removed. Any parallel bond bypasses the Wakespeed shunt and must be resolved before charging.
 
 ## APM-48 wiring intent
 - Mount the `APM-48` at the alternator end of the `48V` branch, as close to the alternator output/ground points as practical.
@@ -189,7 +189,8 @@ Reason:
 - The real hazard is a cascade where the second and third battery also disconnect under active alternator charge.
 
 ## What is still not fully closed
-- Physical inventory/procurement confirmation for `F-04` `150A` high-voltage MEGA stock, the one `15A` `PH-VAN` red-lead fuse/holder, and the `F-15` `3A` Upfitter-control hardware.
+- Physical inventory/procurement confirmation for `F-04` `150A` high-voltage MEGA stock, one `15A/80VDC` `PH-VAN` red-lead fuse plus correct contacts for the already-owned compatible holder, and the `F-15` `3A` Upfitter-control hardware.
+- De-energized proof that no second `48V` negative-to-chassis path bypasses the selected negative-side Wakespeed shunt.
 - Exact Mechman field-voltage/WS500 derate setting and alternator negative/case-isolation behavior in the installed kit.
 - Official vendor confirmation that the documented Dumfume battery/BMS behavior is acceptable with the `WS500`.
 - Whether future automatic fault-interlock logic should be added on the WS500 `Feature-In` or through an external relay.
