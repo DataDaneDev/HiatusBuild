@@ -211,7 +211,8 @@ Do not use chassis-only return for the `48V` alternator branch.
 
 - The confirmed `PH-VAN` harness joins regulator power and positive voltage sense on one short red lead at the house/main positive bus; do not extend it.
 - Protect that red lead with one `15A` fuse/holder rated above the `48V` bank maximum (`F-12/F-13-PHVAN`, active BOM row `171`). The former separate `3A F-13` concept in inactive row `320` is not installed on this harness.
-- Purple/grey current-sense pair runs to the Wakespeed analog shunt/current-sense point without another inline fuse.
+- Lock the separate Wakespeed `500A/50mV` shunt into the dedicated alternator `B+` branch near the house electrical board, upstream of Lynx Slot 3 / `F-04`, so it measures alternator output and cannot be bypassed by case/chassis return paths. This is the positive-alternator-shunt arrangement shown in Wakespeed's Victron/Cerbo guide; it is not the Victron SmartShunt.
+- Connect purple/current-sense-high to the alternator side of that shunt and grey/current-sense-low to the Lynx/battery side. Because both sense wires are connected to a positive `48V` conductor, protect **each** lead with its own `5A` fuse immediately at the shunt; both fuse/holder assemblies must be rated above the bank maximum. This explicit requirement appears in Wakespeed's `2022` Quick Start Guide even though the simplified `2024` product/Victron diagrams omit the fuse symbols.
 - Alternator and battery temperature sensors are installed before first charging run.
 
 ## Installation phases
@@ -295,7 +296,7 @@ APM steps:
 
 High-current cable routing:
 
-- Positive: alternator `B+` to Lynx Slot 3 / `F-04 150A MEGA` at house-bank end.
+- Positive: alternator `B+` -> long `2/0 AWG` -> Wakespeed `500A/50mV` shunt near the house board -> short `2/0 AWG` jumper -> Lynx Slot 3 / `F-04 150A MEGA` at house-bank end.
 - Negative: alternator `B-`/approved ground to Lynx negative bus with dedicated `2/0 AWG` return.
 - Protect both cables from chafe, heat, steering/suspension movement, hood/engine movement, and sharp pass-throughs.
 - Use grommets/bulkheads/loom/P-clamps/J-clamps where conductors pass through sheet metal or near edges.
@@ -332,7 +333,7 @@ Owner-confirmed harness finding, `2026-06-17`: the supplied Wakespeed harness is
 Run these as separate, labeled, protected looms rather than one messy bundle:
 
 1. **High-current charge pair**
-   - `2/0 AWG` positive from alternator `B+` to Lynx Slot 3 / `F-04 150A` at the house end.
+   - `2/0 AWG` positive from alternator `B+` to the separate Wakespeed shunt near the house board, then a short `2/0 AWG` jumper from the shunt to Lynx Slot 3 / `F-04 150A`.
    - `2/0 AWG` dedicated negative return from alternator `B-` / approved case-ground point to Lynx negative / house return.
    - Keep these physically protected from heat, chafe, steering/suspension movement, and sharp pass-throughs.
 
@@ -348,14 +349,14 @@ Run these as separate, labeled, protected looms rather than one messy bundle:
 4. **WS500 battery/shunt/control leg: local near house bank**
    - `PH-VAN` red combined regulator power / positive voltage sense through the appropriate small fuse to the charged house/main positive bus.
    - `PH-VAN` black combined regulator negative / negative voltage sense to the matching house/main negative bus.
-   - Purple/grey current-sense high/low to the Wakespeed shunt or selected current-sense point; use twisted pair / instrument cable and keep routing quiet. Wakespeed allows the regulator shunt on either the positive or negative alternator line; choose one only, place it in the dedicated alternator branch near the electrical board, connect purple to the high/source side and grey to the low/system-ground side per the Wakespeed diagram, then verify current sign in the WS500 app before trusting readings.
-   - Battery temperature sensor at/near the house battery bank if used by the final profile.
+   - Purple/current-sense-high to the alternator side of the positive-branch Wakespeed shunt; grey/current-sense-low to the Lynx/`F-04` side. Put a separate bank-voltage-rated `5A` fuse in **each** sense lead immediately at the shunt, preserve the pair as twisted/instrument wiring after the fuses, and keep it away from noise.
+   - Battery temperature sensor at/near the house battery bank; the no-BMS-communication LiFePO4 profile requires local current and battery-temperature sensing.
    - Yellow/green CAN connector labeled/protected as unused unless a compatible CAN/BMS integration is later added.
 
 5. **Cab/control leg**
    - Brown ignition/enable from Ford `Upfitter #3` through `F-15 3A` to the WS500.
    - White Feature-In is reserved for future charge-disable / force-float interlock work; rough in a spare control conductor if the chase is open, but do not depend on it for Phase 1.
-   - Orange lamp/alarm is optional; run only if a dash warning lamp/audible alarm is wanted.
+   - `PH-VAN` has no orange lamp/feature-out wire; do not look for or add one.
 
 ### Phase 3 — WS500 harness and control wiring
 
@@ -368,9 +369,9 @@ Minimum required WS500 connections for this build with the confirmed `PH-VAN` ha
 - `PH-VAN` black combined regulator negative / negative voltage sense at the matching house/main negative bus;
 - blue field lead through the provided Mechman one-wire adapter;
 - yellow stator/tach lead remains unused/dead-ended unless Mechman/Wakespeed explicitly require it;
-- purple/grey current-sense pair to Wakespeed shunt/current-sense point;
+- purple/grey current-sense pair through two separate bank-voltage-rated `5A` fuses to the positive-branch Wakespeed shunt: purple on alternator side, grey on Lynx/`F-04` side;
 - alternator temperature sensor;
-- battery temperature sensor if used by profile/config;
+- battery temperature sensor;
 - yellow/green CAN connector protected as unused unless a compatible CAN/BMS integration is later added;
 - CAN/app/config access as needed.
 
@@ -403,6 +404,7 @@ Before first engine run with Upfitter `#3 ON`:
 - Confirm battery bank capacity reflects `3x 100Ah` in parallel (`300Ah`), not one `100Ah` battery.
 - Confirm battery charge voltage/current limits are conservative for Dumfume manual values and internal-BMS/no-CAN risk.
 - Confirm alternator max-current/current-limit settings are conservative for first run.
+- Configure the `500A/50mV` shunt as **Shunt at Alternator**, not Shunt at Battery; it measures gross alternator output while the separate Victron SmartShunt remains the bank/SOC shunt.
 - Consider using DIP `#8` / small-alternator mode or equivalent conservative field/current limit for first commissioning.
 - Confirm field-voltage derate if Mechman alternator uses a `12V` field driven from a `48V` source. Wakespeed's configuration guidance says many `48V` deployments use a `0.25` / `25%` normal derate when a `12V` field is supplied from `48V`; do not apply or remove this blindly without confirming Mechman field spec.
 - Confirm shunt ratio/location and sign before trusting current readings.
@@ -425,6 +427,7 @@ Pre-start checklist:
 - Battery temperatures within allowed charging range.
 - Main `48V` disconnect closed.
 - `F-04` installed and correct.
+- Both positive-shunt current-sense leads have their own `5A` fuse/holder rated above bank maximum, mounted immediately at the shunt.
 - APM-48 installed and green/healthy when live.
 - Alternator positive and negative cables landed, torqued, covered, and strain-relieved.
 - WS500 configured and app/monitor available.

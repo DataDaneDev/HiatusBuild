@@ -30,7 +30,7 @@ Related docs:
 - Keeps alternator charging architecture on the dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48` baseline); obsolete pre-Mechman charger paths are removed from primary topology.
 - Keeps Lynx Slot 3 branch to alternator input with `F-04 150A` (`58V/80V` MEGA).
 - Removes obsolete pre-Mechman engine-bay fuse/conductor placeholders from active architecture.
-- Clarifies the confirmed `PH-VAN` harness as one `15A` fused combined power/positive-sense red lead (`F-12/F-13-PHVAN`) and treats current-sense high/low as an unfused twisted sense pair.
+- Clarifies the confirmed `PH-VAN` harness as one `15A` fused combined power/positive-sense red lead (`F-12/F-13-PHVAN`) and locks the separate Wakespeed `500A/50mV` shunt into alternator `B+`, with one bank-voltage-rated `5A` fuse in each purple/grey sense lead immediately at the shunt.
 - Adds Ford `Upfitter #3 -> F-15 -> WS500 brown ignition` manual alternator-control path.
 - Adds the detailed Mechman/WS500/APM-48 install guide as the shop reference for staged installation, first-run checks, and load-dump/shutdown handling.
 - Defines APM-48 as a parallel surge clamp at the alternator rather than a series charge-current device.
@@ -91,10 +91,12 @@ flowchart LR
         ALT48["Secondary 48V alternator\n(Mechman kit class)"]
         WS500["Wakespeed WS500\nfield regulator"]
         APM48["Balmar APM-48\nparallel load-dump clamp\nat alternator B+/B-"]
+        WSSHUNT["Wakespeed 500A/50mV shunt\nin ALT B+ near house board"]
         UP3["Ford Upfitter Switch #3\n(factory relay output)"]
         F15["F-15 3A inline fuse\nWS500 ignition/enable control"]
         ALT48 -. "field/stator/sense harness" .- WS500
-        WS500 -. "PH-VAN one 15A fused power/sense lead; current-sense pair unfused" .- ALT48
+        WS500 -. "PH-VAN red: one 15A fused power/sense lead" .- ALT48
+        WS500 -. "purple/grey current sense\n2x 5A bank-voltage-rated fuses" .- WSSHUNT
         UP3 -. "12V control feed" .-> F15 -. "brown ignition/enable wire" .-> WS500
     end
 
@@ -142,7 +144,8 @@ flowchart LR
     MPPT -- "BAT+ via Slot 2: F-03 60A/80V MEGA\n6 AWG, ~2.5 ft" --> LYNX
     MPPT -- "BAT- 6 AWG, ~2.5 ft" --> LYNX
 
-    ALT48 -- "B+ 2/0 AWG, ~20 ft (ASSUMED)" --> F04 --> LYNX
+    ALT48 -- "B+ 2/0 AWG, ~20 ft (ASSUMED)" --> WSSHUNT
+    WSSHUNT -- "short 2/0 AWG jumper" --> F04 --> LYNX
     APM48 -. "red to B+; black to B-/case\nnot in series with charge cable" .- ALT48
     ALT48 -- "B- dedicated 2/0 AWG, ~20 ft (ASSUMED)" --> LYNX
 

@@ -609,6 +609,14 @@ related:
 - Result: TRIO order placed for the white Speedmount with `75 mm` through-hardware at `$285`, magnets at `$40`, and VHB-backed discs at `$40`; `$365` total with free shipping. The `75 mm` hardware attaches frame to extrusion and does not replace separate roof-track-to-extrusion T-bolts.
 - Follow-up: on receipt, prove terminal/frame fit, roof-disc full contact, removal ergonomics, supplied fastener diameter/stack, crossbar span/stock, and independent tether geometry before bonding discs or drilling extrusion.
 
+- ID: D-065
+- Date: 2026-08-08
+- Decision: Lock the separate Wakespeed `500A/50mV` shunt into the dedicated alternator positive branch near the house electrical board and configure the WS500 for `Shunt at Alternator`.
+- Context: The current Wakespeed product manual permits either polarity, while Wakespeed's Victron/Cerbo guide specifically places the separate alternator shunt in `B+`; this avoids any case/chassis return bypass and preserves the Victron SmartShunt as the independent battery/SOC shunt. A second review of Wakespeed's `2022` Quick Start Guide also found an explicit `5A` fuse requirement for both purple and grey sense wires when the shunt is on a positive cable.
+- Decision drivers: guaranteed capture of gross alternator output, correct Cerbo alternator reporting, separation from the bank SmartShunt, case-ground immunity, and protection of small conductors attached to the live `48V` branch.
+- Result: high-current order is `ALT B+ -> long 2/0 -> Wakespeed shunt -> short 2/0 jumper -> F-04 150A/Lynx Slot 3`; purple/high goes to the alternator side and grey/low to the Lynx side. Each sense lead gets its own bank-voltage-rated `5A` fuse immediately at the shunt. PH-VAN red remains separately fused at `15A`; Upfitter #3 brown remains separately fused at `3A`.
+- Follow-up: procure/inventory-confirm both `5A` high-voltage fuse positions, install shunt covers and strain relief, set `500A/50mV` plus `Shunt at Alternator`, and verify positive current sign before first charging run.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
@@ -659,7 +667,7 @@ related:
 - Risk: Dedicated `48V` secondary-alternator commissioning could still fail on electrical integration details (`PH`/`NH` harness polarity, field-voltage/derate, grounding/isolation behavior under charge, WS500 profile, and load-dump mitigation closure).
 - Impact (1-5): 4
 - Likelihood (1-5): 2
-- Mitigation: Mechanical/idler/staged-driving concern is closed by owner/Mechman confirmation. Keep live charging gated until harness polarity/accessory set, regulator profile, APM, fusing, dedicated return, shunt/sense wiring, and first-run shutdown behavior are verified.
+- Mitigation: Mechanical/idler/staged-driving concern is closed by owner/Mechman confirmation. Keep live charging gated until harness polarity/accessory set, regulator profile, APM, `F-04`, PH-VAN `15A`, both positive-shunt `5A` sense fuses, Upfitter `3A`, dedicated return, shunt orientation/configuration, temperature sensing, and first-run shutdown behavior are verified.
 - Trigger: WS500 wiring closeout and first alternator charging commissioning.
 - Owner: Sunny
 - Status: Partially mitigated; mechanical/drivability gate closed, electrical commissioning gates open

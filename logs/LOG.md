@@ -1,3 +1,10 @@
+## 2026-08-08 — Alternator rough-in and positive Wakespeed shunt lock
+
+- Owner reports the dedicated alternator `2/0` positive/negative pair and PH-VAN alternator harness are routed from the engine bay to the camper with loom, protected rub points, fixed-frame support, bed-entry strain relief, and interior extrusion-mounted cable clamps. Brown enable is routed toward the Ford Upfitter #3 handoff; electrical termination and commissioning remain open.
+- Double-check against Wakespeed's current product manual and official Victron/Cerbo guide locks the separate `500A/50mV` Wakespeed shunt into the alternator `B+` branch near the house board, separate from the Victron SmartShunt: `ALT B+ -> long 2/0 -> Wakespeed shunt -> short 2/0 jumper -> F-04 150A/Lynx Slot 3`. Purple/high lands on the alternator side; grey/low lands on the Lynx side; configure `Shunt at Alternator` and verify positive current sign.
+- Safety correction: Wakespeed's `2022` Quick Start Guide explicitly requires both purple and grey sense wires to be fused at `5A` when the shunt is in a positive cable. Add two separate fuse/holder positions rated above the `48V` bank maximum immediately at the shunt; generic `32V` holders are not acceptable. Existing PH-VAN red `15A`, Upfitter brown `3A`, and main `F-04 150A` requirements remain separate.
+- Interior PH-VAN lock remains: short red combined regulator-power/positive-sense lead through one bank-voltage-rated `15A` fuse to house positive; short black combined negative/sense to Lynx negative; battery-temperature sensor installed for the no-BMS-communication profile; white reserved/capped; yellow/green CAN capped unless a correct Wakespeed-to-VE.Can crossover/termination is later installed; PH-VAN has no orange lead.
+
 ## 2026-08-06 — Starlink package buy list locked; physical-fit and bench gates remain
 
 - Owner selected the TRIO Gen 3 Standard Speedmount, one fixed `NE8FDX-P6-W` panel feedthrough, a matching outdoor Neutrik cable connector, and a budget Amazon `12V` converter with the factory AC supply/inverter retained as fallback.
