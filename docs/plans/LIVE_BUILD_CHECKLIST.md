@@ -449,12 +449,13 @@ Goal: enough utility for a workday without derailing core structure.
 
 Goal: keep solar out of the critical path until roof/module constraints are real.
 
-- [~] Reopen solar layout work now; keep final panel procurement/string lock downstream of the measured Starlink/fan/mount roof layout, MPPT validation, cable/service path, and charging-priority review.
-- [~] Reopen the roof layout now that Standard 4 X is in hand: map the fan, side rails, measured Starlink/mount service envelope, shadows, cable exit, popup service loop, direct-bond CIGS and low-profile track-cassette envelopes, drainage, branch-contact paths, and the `75 lb` roof cap as one system. Do not assume a full extrusion rack is required.
-- [ ] Confirm roof real estate and shadow/hinge/fan constraints.
-- [ ] Choose between vendor-approved adhesive CIGS directly on compatible Hiatus gelcoat/fiberglass and removable `1/2-3/4 in` vented panel cassettes on Yakima Anchor Plate A hardware. Treat honeycomb bonded flat to the roof as a stiff spacer, not cooling; a true cooling path needs open underside airflow. Keep ordinary mono-flex direct-bond and a solar-only full roof rack out of the lead path.
-- [ ] Confirm MPPT `150/45` fit for selected stringing.
-- [ ] Confirm roof penetration method and sealant/backing strategy; ask Hiatus whether the stated `75 lb` limit includes all moving-roof accessories/mounting mass and whether the roof laminate/gelcoat accepts the selected adhesive and removal process.
+- [~] Solar geometry audit complete; procurement remains downstream of a common-origin field survey, exact SKU templates, manufacturer mounting approval, and final electrical release.
+- [ ] Measure the actual roof and carrier envelope: `134 x 62 in` skin assumption, safe width over/outside edge rails, Yakima track spacing/height, MaxxFan body/open-lid/rear-airflow zone, Starlink/TRIO removal envelope, roof crown, cable exits, drainage, branch-contact paths, and the `75 lb` all-up moving-roof cap.
+- [ ] Prove or reject **`134 x 66 in` safe supported cassette width**. If proven, continue `4x Lensun 130W + 4x Lensun 70W = 800W`, `4S2P`, on shallow removable vented track cassettes. If not, stop forcing the `800W` package and evaluate `4x Solbian SP138 = 552W`, `4S1P`, factory-adhesive direct bond or a formal custom-module package.
+- [ ] Discard the AI planner's `760W` layouts: current Lensun `120W` dimensions differ from the package. Treat `800W` layouts as packing evidence only; they used `0.25 in` edges/gaps and occupied the added fan-louver buffer.
+- [ ] Do not revive `800W` Yuma CIGS on the `62 in` roof: the panel area alone exceeds the complete roof rectangle. Existing `150/45` supports a clean `400W / 4S` Yuma array; physical `500W / 5S` requires a `250V` MPPT and is not the lead path.
+- [ ] Obtain written approval from the selected panel manufacturer for exact substrate/backer, adhesive, ventilation, bend radius, walkability, wind/mobile use, warranty, cable exits, and service/removal method.
+- [ ] Confirm final string cold `Voc`, hot `Vmp`, string/combiner fusing, conductor size, two-pole disconnect, penetration/sealant/backing, and moving PV jumper only after exact SKUs and roof geometry are locked.
 - [ ] [DEFER] Pull trigger on panels until layout and charging-priority gates are green.
 
 ## 15. Weight, payload, balance, and shakedown

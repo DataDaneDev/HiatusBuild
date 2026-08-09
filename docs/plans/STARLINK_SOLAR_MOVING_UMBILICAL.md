@@ -1,7 +1,7 @@
 # Starlink + solar moving-roof umbilical
 
-Status: **one-panel Starlink architecture selected; mount/cable package remains measurement- and bench-test-gated; solar deferred**
-Last current-source check: `2026-08-06 07:31 MDT`
+Status: **one-panel Starlink architecture selected; solar geometry audit complete; all roof procurement remains field-survey- and manufacturer-approval-gated**
+Last current-source check: `2026-08-09`
 
 ## Decision
 
@@ -84,21 +84,63 @@ Preferred known-fit alternative is eight genuine Yakima [`8810074` Anchor Plate 
 
 The protective frame improves side/edge survival but does not make the terminal branch-proof. For tight, brushy routes, disconnect the cable and tether and stow/ground-deploy the dish. A thick limb contacting the face or using the frame as a lever is still a no-go for roof carriage.
 
-## Solar roof-mount simplification posture
+## Solar geometry audit and current recommendation
 
-Do not assume flexible solar requires a full extrusion roof rack. The existing Yakima tracks already provide the structural attachment line, and a full `1010` grid or `1.5-2 in`-high angle framework would add height, joints, visible bulk, and moving-roof mass without helping a panel that only needs distributed support. A full rack is justified only if it will also carry meaningful gear or protect multiple roof systems.
+### Correction to the earlier `800W CIGS` direction
 
-Current ranked paths:
+The earlier repo screening was **electrical- and weight-valid but geometry-invalid**. It should not have promoted `800W` Yuma CIGS before comparing raw panel area with the measured roof envelope.
 
-1. **Lowest/cleanest — adhesive-backed CIGS directly on the accepted roof surface.** BougeRV explicitly sells the Yuma tape-backed CIGS panel for permanent drill-free installation on smooth RV/camper roofs and currently calls the 200 W model walkable. This is the only direct-bond flexible path worth carrying forward; do not treat ordinary mono-flex as equally tolerant of direct hot-roof service. Direct bond trades away under-panel airflow and easy replacement, so final acceptance requires panel-vendor confirmation for the actual Hiatus gelcoat/fiberglass surface, a small adhesion/removal test in a noncritical area, Hiatus confirmation of roof-skin/adhesive compatibility, a one-curvature fit without cell buckling, and owner acceptance that removal may damage gelcoat.
-2. **Best balanced/serviceable — low-profile panel cassettes attached only to the Yakima tracks.** Bond or mechanically retain each flexible panel to a panel-sized carrier, then mount that carrier on short track cleats with approximately `1/2-3/4 in` of open front-to-rear under-cassette airflow. Use only the crossmembers/edge rails each cassette needs; do not build a perimeter cargo rack. A finished aluminum-skinned honeycomb sandwich can give high stiffness for low mass, but it needs sealed edges and potted/hard inserts at every fastener. A thin corrugated/twinwall-polycarbonate backer is cheaper and has commercial precedent for vented flexible-panel mounts, but it is not a walkable primary structure and needs enough distributed support to prevent panel flutter or local cell bending.
-3. **Full rack — hold.** Keep the existing `1010`/angle concept available for Starlink hard-mount fallback or a future multi-use roof system, but do not build it solely because solar exists.
+Using the supplied `134 x 62 in` roof model:
 
-A honeycomb panel bonded flat to the fiberglass and then covered by solar is a stiff thermal spacer, **not a ventilated cooling system**. To shed meaningful heat, ambient air must reach an open underside or channel system; otherwise the carrier mainly isolates the camper roof while the cells remain hot. BougeRV publishes `-0.38%/C` Pmax temperature coefficient for the 200 W Yuma: at `65 C` cell temperature, temperature alone implies about `15.2%` less output than the `25 C` STC rating. That is a real but potentially acceptable trade for a flush, low-snag direct installation.
+- Total roof rectangle: `57.69 sqft` before the fan, Starlink, rails, gaps, crown, drainage, or cable exits.
+- `8x` Yuma 100W Compact panels: `61.53 sqft` by themselves.
+- `4x` Yuma 200W panels: `59.37 sqft` by themselves.
+- Conservative MaxxFan envelope used for layout: `31 x 17 in` (`23 in` outer body plus an `8 in` rear airflow/service buffer).
+- Conservative Starlink/TRIO envelope used by the packages: `25.4 x 17.1 in`; TRIO currently publishes an assembled mount size of about `24.60 x 15.86 in`, so the package is not under-modeling Starlink.
 
-Repeated branch contact changes the decision. “Walkable” establishes distributed compression tolerance, not scratch, edge-peel, cable-snag, or limb-lever resistance. A flush CIGS panel is less likely to catch a branch than a rack, but its laminate and junction/cable exits remain exposed. Keep panels inboard of the existing tracks, put all junction boxes and cable exits inside protected track/roof-feature shadows, and evaluate low rounded sacrificial UHMW/aluminum rub rails on the track lines plus a rounded front deflector. The rub rails should sit slightly above the panel plane without casting routine cell shadows or damming water. Tight brush remains a slow/inspect operating mode; remove the magnet-mounted Starlink before routes where a limb can load the frame.
+Therefore the MaxxFan is **not** what killed `800W` CIGS. Both plausible Yuma `800W` arrays exceed the entire modeled roof area even before the fan and Starlink exist. The MaxxFan package footprint is close to published overall dimensions; its additional `8 in` rear buffer is a planning allowance rather than a located Maxxair minimum-clearance specification.
 
-The solar choice remains layout-gated. Make full-size panel templates around the Maxxair, Starlink removal envelope, track lines, cable exits, shadows, and drainage before selecting chemistry, count, or adhesive. Confirm whether Hiatus's `75 lb` statement applies only to panel nameplate weight or to **all** moving-roof additions; lift effort and roof dynamics see panels, carriers, rack hardware, Starlink, and cables together regardless of BOM category.
+### Audit of the two AI-generated packages
+
+| Package result | Geometry verdict | Electrical / product verdict |
+| --- | --- | --- |
+| Yuma CIGS layouts `A-C`, `400W` | Credible physical starting points on `134 x 62 in`; `A` and `B` preserve the cleanest gaps. | `4S` is the only clean current-`150/45` string. Final release still needs exact cold-`Voc` at the travel minimum temperature. |
+| Yuma CIGS layout `D`, `500W` | Physical fit is credible. A separate integer rectangle-packing check also fit `1x` long + `4x` compact with `1 in` outer edge, `0.5 in` spacing, full fan buffer, and Starlink. | The package correctly calls it physical-only: `5S` is about `152V` at STC and cannot use the `150/45`. A `250V` MPPT makes it electrically possible, but replacing the purchased controller for only `100W` is poor leverage. |
+| Any `600W` Yuma mix on the `62 in` field | No six-panel long/compact mix fit the same conservative model. | A six-panel CIGS array would also need `6S` on a `250V` controller; `3S2P` lacks reliable hot-roof voltage headroom for a `48V` bank. |
+| Planner-v2 Lensun `800W` (`4x130 + 4x70`) | Fits only with `0.25 in` roof edges, `0.25 in` panel gaps, and the `23 in` fan body only. Every supplied `800W` layout occupies the added rear-louver buffer, and the packing is too tolerance-fragile for release as drawn. | The `4S2P` topology is electrically sound on the purchased Victron: `4x130W` and `4x70W` are separate series strings with close operating voltages, then paralleled. Current Lensun pages still list the `130W` and `70W` sizes used by the package. |
+| Planner-v2 Lensun `760W` (`4x120 + 4x70`) | The package clears its conservative fan envelope, but the layout is stale. Lensun's current `120W` page lists `32.3 x 30.5 in`, not the package's `40.9 x 22.1 in`; those four layouts must be discarded and repacked. | Do not procure from the `760W` drawings. |
+
+![Modeled high-output and premium direct-bond candidates](../../media/diagrams/roof-solar-2026-08-09/roof-solar-layout-comparison.svg)
+
+### Ranked architecture
+
+1. **Lead high-output path — minimal track-spanning vented cassettes, not direct-bond CIGS and not a full cargo rack.**
+   - Target `4x Lensun 130W + 4x Lensun 70W = 800W`, wired `4S2P` into the purchased Victron `150/45`.
+   - A fresh packing run with the full `31 x 17 in` fan buffer, Starlink, `1 in` outer edges, and `0.5 in` item spacing was infeasible at `134 x 62 in` but feasible at **`134 x 66 in`**. The difference is only `2 in` of reclaimed support width per side.
+   - Build only shallow panel-specific transverse support/cassettes from the Yakima tracks, with a real open underside airflow path and removable fasteners. Do not resurrect the tall perimeter/grid rack. The carrier must remain inside the actual roof/body envelope and use rounded branch-resistant edges.
+   - Lensun currently permits adhesive/VHB installation in product copy, but its general warranty is only `24 months` and excludes damage associated with improper installation or insufficient ventilation. That makes a removable, ventilated cassette more defensible than permanent fiberglass direct bond. Require written Lensun approval for the final backer, adhesive, bend radius, ventilation, and mobile use before purchase.
+
+2. **Premium durable direct-bond fallback — `4x Solbian SP138 = 552W`, `4S1P`, existing `150/45`.**
+   - The conservative `134 x 62 in` solver fit four transverse `SP138` strips while preserving the full fan buffer, Starlink, `1 in` roof edges, and `0.5 in` spacing.
+   - Solbian's current SP line uses Maxeon IBC cells, carries IEC `61215`/`61730`/`61701` certifications and a `5-year` manufacturing-defect warranty, and explicitly supports manufacturer-supplied structural double-sided adhesive. Its manual requires at least `4 mm` between adjacent panels and says panels are walkable only when fully supported on a rigid smooth surface.
+   - `4S` is `552W`, `97.6V Vmp`, and `116.4V Voc` at STC; Solbian's required `1.25x` preliminary voltage sizing gives `145.5V`, inside but close to the Victron's `150V` absolute input limit. Final release needs an exact minimum-temperature calculation, not the generic multiplier alone.
+
+3. **Lowest-profile/value CIGS fallback — Yuma `400W` on the existing controller, or `500W` only with a controller change.**
+   - This remains the cleanest flush and branch-resistant option, but it does not satisfy the desired energy contribution. At the current model's `68%` harvest factor, `500W` produces about `1.36 kWh` on a `4`-PSH day; `800W` produces about `2.18 kWh`. The modeled core workday is `3.915 kWh`, so neither provides full autonomy, but `800W` materially reduces alternator/shore dependence.
+
+4. **Premium custom inquiry — hold as an option, not an assumption.**
+   - Solbian offers customization. A roof-zone-specific SP design with rear cables, factory adhesive, matched electrical strings, and `700-800W` would beat Lensun on warranty/certification if Solbian will issue a formal drawing, electrical schedule, mounting approval, price, and delivery date. Do not count custom wattage before that written package exists.
+
+### Release gates before any solar purchase
+
+- Measure a common origin grid on the real roof: usable skin width inside the edge rails, total safe carrier width outside/over the rails, exact rail spacing/height, fan body and open-lid projection, Starlink/TRIO removal envelope, crown, seams, drainage paths, cable/junction exits, and safe service/walk lanes.
+- Prove whether **`66 in` of safe supported width** is available. If yes, continue the `800W` cassette path. If no, stop trying to force the current `800W` package and choose the `552W` Solbian direct-bond path or request custom modules.
+- Make full-size templates of the exact current SKUs and their junction boxes. Product-family wattage is not enough; dimensions and cable exits have already changed within Lensun's catalog.
+- Get written panel-manufacturer approval for the exact fiberglass/gelcoat or cassette substrate, adhesive, ventilation, bend radius, walkability, and mobile/wind use.
+- Confirm with Hiatus whether the `75 lb` limit includes **all** moving-roof additions. Panel nameplate weights alone are not the lift/dynamic load; include carriers, crossmembers, fasteners, Starlink/TRIO, cable, glands, and rub protection.
+- Run exact cold-`Voc`, hot-`Vmp`, string-fuse/combiner, conductor, disconnect, and roof-jumper calculations from the final SKU datasheets before releasing the PV route or purchase.
+
+Current source anchors: [Victron `150/35` and `150/45` specifications](https://www.victronenergy.com/media/pg/Manual_SmartSolar_MPPT_150-35__150-45/en/technical-specifications.html), [Solbian SP Series](https://solbian.eu/products/solar-panels/sp-series/), [Solbian installation manual](https://installation-manual.solbian.eu/english), [Lensun 130W](https://lensunsolar.com/products/lensun-130w-black-flexible-solar-panel), [Lensun 120W](https://lensunsolar.com/products/lensun-120w-full-black-flexible-solar-panel), [Lensun 70W](https://lensunsolar.com/products/lensunsolar-70w-black-12v-flexible-solar-panel), [Lensun warranty](https://lensunsolar.com/pages/warranty-policy), [TRIO Gen 3 Standard Speedmount](https://www.trioflatmount.com/products/gen3speedmount), and the downloaded BougeRV Yuma installation manual retained outside the public repo.
 
 ### Current-source shortlist
 

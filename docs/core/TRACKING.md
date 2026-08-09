@@ -634,12 +634,21 @@ related:
 - Supersedes: D-066 only where it placed the Wakespeed shunt after the SmartShunt or selected the `USCC1/ATDR15` DIN-enclosure package. D-066's `Shunt at Battery`, no-`5A`-sense-fuses, and no-bypass requirements remain active.
 - Follow-up: verify Wakespeed-shunt stud fit and jumper length before cable fabrication; commission against a clamp meter and verify positive charging-current sign.
 
+- ID: D-068
+- Date: 2026-08-09
+- Decision: Reject the earlier `800-1200W` Yuma CIGS posture as geometry-invalid and make a field-proven `66 in` shallow track-cassette width the gate for the `800W` high-output path.
+- Context: The historical solar matrix screened electrical compatibility and panel weight but did not compare raw CIGS panel area against the newly supplied `134 x 62 in` roof, MaxxFan, and Starlink envelopes. Two external AI packages then produced only `400-500W` CIGS and tolerance-fragile `760-800W` Lensun layouts.
+- Options considered: force `800W` Yuma CIGS with direct bond, accept `400-500W` CIGS, use premium high-efficiency direct-bond modules, build a full roof rack, or reclaim only the width needed with shallow Yakima-track cassettes.
+- Decision drivers: `57.69 sqft` total modeled roof versus `59.37-61.53 sqft` of Yuma panels alone for `800W`; modeled `3.915 kWh` core workday; existing Victron `150/45`; low roof height/branch exposure; thermal performance; replacement access; and all-up `75 lb` moving-roof uncertainty.
+- Result: Lead high-output candidate is `4x Lensun 130W + 4x Lensun 70W = 800W`, `4S2P`, on removable vented panel-specific cassettes only if field measurements prove `134 x 66 in` safe supported width. Premium direct-bond fallback is `4x Solbian SP138 = 552W`, `4S1P`, on the modeled `134 x 62 in` skin. Yuma CIGS is limited to `400W / 4S` on the purchased controller; the physical `500W` layout requires a `250V` MPPT and is not the preferred leverage point. The `760W` AI layouts are rejected because the current Lensun `120W` dimensions differ from the package.
+- Follow-up: measure the real common-origin roof/rail/fan/Starlink grid; prove or reject `66 in` carrier width; get Hiatus's all-up interpretation of the `75 lb` limit; obtain written manufacturer mounting/ventilation/warranty approval; template exact current SKUs and junction boxes; then run final cold-`Voc`, hot-`Vmp`, fusing, conductor, disconnect, and moving-jumper calculations before procurement.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
 - Impact (1-5): 4
 - Likelihood (1-5): 3
-- Mitigation: Confirm load limits and strut options with Hiatus before panel strategy lock.
+- Mitigation: Confirm with Hiatus whether `75 lb` covers all moving-roof additions; weigh panel/cassette/crossmember/fastener/Starlink/cable hardware as one system and validate lift effort/strut margin before panel release.
 - Trigger: Final solar panel selection.
 - Owner: Sunny
 - Status: Open

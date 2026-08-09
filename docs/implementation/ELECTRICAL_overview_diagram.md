@@ -355,7 +355,7 @@ flowchart LR
 | `F-05` | `40A` MEGA, body-marked `>=58VDC`; Victron `CIP138040020 40A/80V` replacement fallback | Lynx integrated slot holder | Lynx Slot 4; Orion `48V` input feeder |
 | `F-06` | Not installed / retired standalone input-fuse position | No holder | MIDI/FKS/DIN concepts superseded; do not stack after `F-05` |
 | `F-07` | `60A MEGA` (`80V` Victron replacement stock) | Victron MEGA fuse holder | Electrical cabinet at Orion `12V +` source end |
-| `F-09A/B/C` | `15A gPV` each | `10x38` touch-safe fuse holders in PV combiner | Roof-entry combiner enclosure |
+| `F-09` PV string OCP positions | Quantity/rating TBD from final module `Isc`, maximum-series-fuse value, parallel-string count, and applicable PV rules; no `A/B/C` count is active | Listed PV-rated fuse/combiner hardware only if the final design requires it | Roof-entry/service area; location unlocked |
 | `F-10` | Per branch (`ATO/ATC`) | Integrated blade sockets in generic 12V fuse block | Electrical cabinet |
 | `AUDIO-HU` / `12V-12` | `15A` source/head-unit branch; KMC2 harness also contains a `15A ATM` fuse | 12V fuse block branch plus KMC2 harness fuse | Electrical cabinet to driver-side DC shelf/source face |
 | `AUDIO-SUB` | `40A` external fuse for Kicker PTRTP10 powered sub branch | Inline/MRBF/AFS/ANL-class holder matched to selected 4 AWG kit; use `40A`, not a generic `100A` kit fuse | Within about `18 in` of the 12V source takeoff feeding the powered sub |
@@ -400,7 +400,7 @@ Retired from active architecture:
 | `C-24` | 12V panel -> CO + propane detector | `12V` | Branch load | `F-10` `3A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-25` | 12V panel -> LED lights + dimmer (Hiatus pre-installed) | `12V` | Branch load | `F-10` `5A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-26` | `48V` system positive/negative -> `CERBO-PWR` -> Cerbo GX power input | `48V` | Cerbo electronics feed (`~3W`) | `CERBO-PWR` `1A-3A` inline fuse | `18 AWG` red/black duplex acceptable | `2.5 ft` (`ASSUMED`, cabinet internal) |
-| `C-27` | PV strings -> `F-09` combiner -> MPPT PV input | PV string voltage (`3S`) | String current + combiner output current | `F-09A/B/C` `15A` each | `10 AWG` PV wire | `12 ft` trunk + `3x8 ft` string legs (`ASSUMED`) |
+| `C-27` | Final PV strings -> required OCP/combiner or junction -> two-pole load-break disconnect -> MPPT PV input | Exact final string voltage (`4S` candidates under review) | Final string and combined current | `F-09` only if required by final parallel-string/module data | Gauge and PV cable type TBD from final current, voltage drop, connector, and moving-jumper design | Route and lengths unlocked pending roof survey |
 | `C-28` | Shore source/adapters -> portable EMS -> shore cord -> shore inlet -> combined AC DIN enclosure / AC input breaker | `120VAC` | Source-limited shore current (adapter-constrained at source) | `30A` AC input breaker/disconnect baseline with source-current-limit settings policy | `10/3` shore feed to inlet/AC-in area | `8 ft` (`ASSUMED`) |
 | `C-29` | AC input breaker/disconnect -> MultiPlus AC-in | `120VAC` | MultiPlus AC input current (`30A` hardware basis) | Upstream `30A` AC breaker/disconnect (`C-28`) | `10 AWG` stranded AC conductors | `2.5 ft` (`ASSUMED`, cabinet internal) |
 | `C-30` | MultiPlus AC-out-1 -> combined AC DIN enclosure / AC-out main breaker | `120VAC` | Inverter-backed AC-out feeder current (`30A` system cap) | `30A` AC-out main breaker | `10/3` stranded AC feeder | `2.5 ft` (`ASSUMED`, cabinet internal) |
@@ -460,7 +460,7 @@ Calculation basis for drop screening:
 | `C-24` | 12V fuse panel | CO+propane detector | `F-10 3A` | `0.2A` | `18/2` | `8 ft` | `0.17%` @ `12V` | Row `33` (`18/2`) | PASS |
 | `C-25` | 12V fuse panel | LED lights + dimmer (Hiatus pre-installed) | `F-10 5A` | `5A` | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |
 | `C-26` | 48V system feed | Cerbo GX | `CERBO-PWR 1A-3A` | `~3W` | `18 AWG` duplex acceptable | `2.5 ft` | N/A (low-current electronics feed) | Low-current install stock / row `22` device | PASS |
-| `C-27` | PV strings/combiner | MPPT PV input | `F-09A/B/C 15A` | `30A` trunk screen | `10 AWG PV` | `12 ft` trunk + `3x8 ft` string legs | `0.72%` @ `100V` trunk screen | Row `31` (10 AWG pair-equivalent) | PASS (string leg lengths still ASSUMED) |
+| `C-27` | Final PV strings / required OCP-combiner / two-pole disconnect | MPPT PV input | `F-09` quantity/rating TBD; final design may not require individual string fuses | Candidate combined `Isc` and route TBD | PV gauge/type unlocked | Roof and moving-jumper routes unlocked | Recalculate from final SKUs and measured lengths | Row `31` is stock/allowance only | HOLD — `2026-08-09` roof geometry gate and exact electrical release remain open |
 | `C-28` | Shore inlet path | AC input breaker/disconnect | Source-limited AC OCP | `30A` hardware basis | `10/3` | `8 ft` | `0.40%` @ `120VAC` | Row `114` (`10/3 shore + AC-in/out feed`) | PASS |
 | `C-29` | AC input breaker/disconnect | MultiPlus AC-in | Upstream AC OCP | `30A` hardware basis | `10 AWG AC` | `2.5 ft` | `0.12%` @ `120VAC` | Row `114` (`10/3 shore + AC-in/out feed`) | PASS |
 | `C-30` | MultiPlus AC-out-1 | AC-out main breaker | `30A` AC-out main | `30A` hardware basis | `10/3` | `2.5 ft` | `0.12%` @ `120VAC` | Row `114` (`10/3 shore + AC-in/out feed`) | PASS |
@@ -491,7 +491,7 @@ Calculation basis for drop screening:
 | `6 AWG` black | `7.5 ft` | `C-10`, `C-15`, `C-19` | `29` |
 | `4 AWG` red | `10.5 ft` (`2.5 ft` existing + `8 ft` audio sub planning branch) | `C-19A`, `C-43` | `30`, `192` |
 | `4 AWG` black | `10.5 ft` (`2.5 ft` existing + `8 ft` audio sub return) | `C-19B`, `C-44` | `30`, `192` |
-| `10 AWG pair-equivalent` (PV) | placeholder only | `C-27` final module/string topology deferred until solar workstream; do not buy combiner/fuse count or cut roof entries from the old `3S3P` model | `31` |
+| PV cable stock/allowance | placeholder only | `C-27` final module/string topology deferred; do not infer gauge, combiner/fuse count, disconnect, moving-jumper, or roof entry from the retired `3S3P` model | `31` |
 | `14 AWG duplex` | `16 ft` | `C-23`, `C-36` | `32` |
 | `18/2` | `24.0 ft` plus separate Cerbo low-current duplex | `C-24`, `C-25`, `C-37`; Cerbo `C-26` uses 48V fused low-current duplex | `33` / low-current stock |
 | `12 AWG AC branch cable` | `30 ft` (`C-33` excluded in Phase 1) | `C-31`, `C-32` | `113` |

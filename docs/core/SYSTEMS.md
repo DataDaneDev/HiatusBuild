@@ -31,7 +31,7 @@ related:
 - Fuse IDs, locations, housing methods, spares, and BOM mapping: [ELECTRICAL_fuse_schedule](../implementation/ELECTRICAL_fuse_schedule.md)
 - Voltage architecture trade study (`12V` vs `48V`): [ELECTRICAL_12V_vs_48V_trade_study](../studies/ELECTRICAL_12V_vs_48V_trade_study.md)
 - Alternator architecture trade study history (research archive only; final decisions moved to the canonical `48V` architecture doc): [ELECTRICAL_48V_dual_alternator_trade_study](../studies/ELECTRICAL_48V_dual_alternator_trade_study.md)
-- Solar option screening matrix (stringing + MPPT fit flags): [SOLAR_configuration_matrix](../studies/SOLAR_configuration_matrix.md)
+- Solar option screening history (electrical/weight only; current roof-fit posture is in the moving-roof plan): [SOLAR_configuration_matrix](../studies/SOLAR_configuration_matrix.md)
 - Electrical decisions, risks, and unresolved items: [TRACKING](TRACKING.md)
 
 ### Planning snapshot (base model as-of `2026-08-05`)
@@ -82,7 +82,7 @@ related:
 | Legacy single-12V upgrade path | Mechman `370A` + Big 3 path is deprecated under the dual-`48V` migration baseline | `bom/bom_inactive_items.csv` rows `103` and `104` |
 | DC-DC charger | Orion-Tr Smart `48/12 30A` (`360W`); `48V` input is protected by `F-05 40A` MEGA (`>=58VDC`) in Lynx Slot 4 with no second inline fuse, and `12V` output is separately protected by `F-07 60A/80V` | `bom/bom_estimated_items.csv` row 20 |
 | 12V buffer battery | `12V 100Ah LiFePO4` on shared 12V junction (`F-11` + `SW-12V-BATT`) | `bom/bom_estimated_items.csv` rows 21, 124, and 125 |
-| Solar array candidate | Flexible-first placeholder (`~800-1000W` class); prior `9x100W`/`3S3P` concept is modeling-only and must not drive roof holes, combiner count, or procurement until solar is reopened after shore and alternator charging | `bom/bom_estimated_items.csv` row 24 |
+| Solar array candidates | Current high-output target is `800W` high-efficiency mono-flex (`4x130W + 4x70W`, `4S2P`) on shallow vented Yakima-track cassettes **only if** a field survey proves `134 x 66 in` safe supported width. Conservative premium direct-bond fallback is `4x Solbian SP138 = 552W`, `4S1P`, on the modeled `134 x 62 in` skin. Prior `800-1200W` Yuma CIGS guidance is rejected by roof geometry; Yuma is `400W` on the purchased controller or `500W` only with an MPPT change. | `bom/bom_estimated_items.csv` row 24 + `docs/plans/STARLINK_SOLAR_MOVING_UMBILICAL.md` |
 | Solar controller | SmartSolar `MPPT 150/45` | `bom/bom_estimated_items.csv` row 25 |
 | Load profiles (BOM + owner-supplied office loads) | `core_workday`, `winter_workday`, `minimal_idle_day` | `bom/load_model_wh.csv` |
 | Owner-supplied office assumptions | Laptop + 27 inch 1440p monitor + tablet/peripheral charging | `bom/load_model_wh.csv` rows marked `Owner-Supplied` |
@@ -114,29 +114,25 @@ Load totals below are from `bom/load_model_wh.csv` model v5 (BOM loads plus the 
 ### Charging potential
 All values are planning-level and should be replaced with measured charge logs after shakedown tests.
 
-#### Solar charging (placeholder `~900W` flexible model)
-Solar remains deferred until shore charging and alternator charging are working. The prior `900W`/`3S3P` model is only an energy-planning placeholder; final modules, stringing, combiner/fuse count, and roof penetrations stay unlocked. Base planning factor for the target roof setup is `68%` end-to-end harvest efficiency, with sensitivity from `60%` (poor conditions) to `75%` (strong conditions).
+#### Solar charging (geometry-gated `500W / 552W / 800W` cases)
 
-| Derate component | Planning factor | Note |
-| --- | --- | --- |
-| Nameplate realization | `0.95` | Manufacturing variance and real-world rating spread |
-| Thermal factor (flexible with air gap) | `0.90` | Better than bonded-flat flexible, still hotter than rigid stand-off |
-| MPPT + wiring efficiency | `0.96` | Controller and cable losses |
-| Flat-roof angle/azimuth factor | `0.88` | No seasonal tilt optimization |
-| Soiling + mismatch + partial shading allowance | `0.93` | Dirt, string mismatch, and intermittent shade impacts |
-| Combined planning factor | `~0.68` | Product of factors above |
+Solar remains procurement-gated, but it is no longer represented by the stale `900W / 3S3P` placeholder. The `2026-08-09` roof audit established three useful planning cases:
 
-| `900W` array efficiency | 2 PSH day | 4 PSH day | 5 PSH day | Net vs `core_workday` at 4 PSH | Net vs `winter_workday` at 4 PSH |
-| --- | --- | --- | --- | --- | --- |
-| `60%` | `1,080 Wh` | `2,160 Wh` | `2,700 Wh` | `-1,755 Wh/day` | `-2,669 Wh/day` |
-| `68%` (planning base) | `1,224 Wh` | `2,448 Wh` | `3,060 Wh` | `-1,467 Wh/day` | `-2,381 Wh/day` |
-| `75%` | `1,350 Wh` | `2,700 Wh` | `3,375 Wh` | `-1,215 Wh/day` | `-2,129 Wh/day` |
+- `500W`: physical Yuma CIGS ceiling on the modeled `134 x 62 in` roof; requires a `250V` controller for a `5S` string, so the purchased `150/45` limits Yuma to `400W / 4S`.
+- `552W`: `4x Solbian SP138 / 4S1P` premium direct-bond candidate that fits the conservative `134 x 62 in` model and remains electrically compatible with the purchased `150/45`, subject to final cold-`Voc` proof.
+- `800W`: `4x Lensun 130W + 4x Lensun 70W / 4S2P` high-output candidate that needs a field-proven `134 x 66 in` shallow track-cassette field; it does not fit the `62 in` field with realistic edges, spacing, and the full fan buffer.
 
-- Break-even PSH at `900W`:
-- `core_workday` (base `68%`): `3,915 / (900 x 0.68) = 6.40` PSH/day.
-- `winter_workday` (base `68%`): `4,829 / (900 x 0.68) = 7.89` PSH/day.
-- Sensitivity band for `winter_workday`: `7.15` PSH/day (`75%`) to `8.94` PSH/day (`60%`).
-- `MPPT 150/45` is not the bottleneck for the current array range.
+Use the existing `68%` end-to-end planning factor until measured harvest exists. This remains conservative for ventilated cassettes and may be optimistic for hot direct-bond modules; final product-specific modeling must replace it.
+
+| Array case at `68%` | 2 PSH day | 4 PSH day | 5 PSH day | Net vs `core_workday` at 4 PSH | Net vs `winter_workday` at 4 PSH |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `500W` | `680 Wh` | `1,360 Wh` | `1,700 Wh` | `-2,555 Wh/day` | `-3,469 Wh/day` |
+| `552W` | `751 Wh` | `1,501 Wh` | `1,877 Wh` | `-2,414 Wh/day` | `-3,328 Wh/day` |
+| `800W` | `1,088 Wh` | `2,176 Wh` | `2,720 Wh` | `-1,739 Wh/day` | `-2,653 Wh/day` |
+
+- Break-even at the `800W / 68%` case is `7.20 PSH/day` for `core_workday` and `8.88 PSH/day` for `winter_workday`; roof solar reduces charge-source dependence but does not provide guaranteed workday autonomy.
+- The Victron `150/45` current/power capacity is not the bottleneck at `800W`; final module voltage, cold `Voc`, hot `Vmp`, matched string operating voltage, and physical fit are the gates.
+- Current roof-fit owner and source links: `docs/plans/STARLINK_SOLAR_MOVING_UMBILICAL.md`.
 
 #### Alternator charging (dedicated `48V` secondary alternator path)
 - Active migration baseline: Mechman dual-alternator kit + WS500 regulator + APM-48 protection module.
@@ -166,7 +162,7 @@ Solar remains deferred until shore charging and alternator charging are working.
 
 ### Operational implications and constraints
 - Battery capacity now supports roughly `2.5-3.1` office-workdays without charging in the conservative future-audio model, depending on season and reserve policy; actual near-term office-only use may be better.
-- With `900W` flexible solar at the base `68%` factor, `4` PSH leaves a material daily deficit for both `core_workday` and `winter_workday`; the future-audio allowance increases that deficit versus the prior office-only model.
+- At the geometry-gated `800W` case and base `68%` factor, `4` PSH still leaves a material daily deficit for both `core_workday` and `winter_workday`; the `552W` direct-bond and lower CIGS cases increase that deficit further. Roof solar is a charge-source reducer, not guaranteed workday autonomy.
 - Shore charging can materially recover SOC in a single evening (`~6.18h` from `20%` to `100%` in bulk-ideal terms).
 - Alternator recovery potential is expected to materially exceed the obsolete pre-Mechman charger path once the dedicated `48V` alternator path is commissioned.
 - Current execution risk is no longer charger-capacity-limited operation; it is migration/commissioning quality (fitment, regulation, protection, and measured thermal behavior).

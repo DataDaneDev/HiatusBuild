@@ -1,3 +1,10 @@
+## 2026-08-09 — Solar geometry audit rejects 800W CIGS; 66in cassette gate set
+
+- Corrected the earlier solar recommendation: `800W` Yuma CIGS is impossible on the supplied `134 x 62 in` roof model because `8x` compact 100W panels occupy `61.53 sqft` and `4x` 200W panels occupy `59.37 sqft`, both larger than the complete `57.69 sqft` roof before MaxxFan, Starlink, rails, spacing, or drainage.
+- Audited both supplied AI packages. The CIGS package supports `400W / 4S` on the purchased Victron and a physical `500W` layout that needs a `250V` MPPT. The planner-v2 `800W` Lensun layouts rely on `0.25 in` edges/gaps and occupy the added fan-louver buffer; its `760W` layouts are invalid against Lensun's current `120W` dimensions.
+- Repacked current candidates with a `31 x 17 in` MaxxFan body/rear buffer, Starlink, `1 in` outer edge, and `0.5 in` item spacing. `4x Lensun 130W + 4x Lensun 70W = 800W` was infeasible at `134 x 62 in` but feasible at `134 x 66 in`; this sets a real field gate for shallow removable vented Yakima-track cassettes. A premium `4x Solbian SP138 = 552W` direct-bond layout fit the conservative `134 x 62 in` model and remains compatible with the purchased `150/45`, subject to exact cold-`Voc` proof.
+- Solar remains unapproved for purchase. Next evidence is one measured roof/rail/fan/Starlink grid, safe supported-width proof, Hiatus's all-up `75 lb` interpretation, exact SKU templates including junction boxes, written manufacturer mounting/ventilation approval, and final electrical release.
+
 ## 2026-08-09 — SmartShunt hard-mount preserved; PH-VAN protection moved fully in-line
 
 - Owner confirmed the Victron SmartShunt is hard-attached to the Lynx and rejected a bulky DC fuse panel. Corrected the common-negative order to `battery negative combine -> Wakespeed 500A/50mV shunt -> Victron SmartShunt -> Lynx/system negative`; purple/high faces battery negative, grey/low faces SmartShunt/Lynx, and the regulator remains `Shunt at Battery`. Series order changes physical fit, not the current through either shunt.

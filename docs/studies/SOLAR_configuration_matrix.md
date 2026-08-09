@@ -14,6 +14,8 @@ related:
 
 As-of date: `2026-03-20`
 
+> **Historical electrical/weight screen only — not a roof-fit baseline.** The `2026-08-09` measured-envelope audit found that the prior `800-1200W CIGS` recommendations are geometrically impossible on the modeled `134 x 62 in` roof before fan/Starlink clearances. Current solar posture and layout gates live in [`STARLINK_SOLAR_MOVING_UMBILICAL.md`](../plans/STARLINK_SOLAR_MOVING_UMBILICAL.md#solar-geometry-audit-and-current-recommendation). Preserve the tables below as decision history; do not use their `GREEN`/`YELLOW` flags for procurement.
+
 Purpose: re-screen roof solar configurations after updated mechanical constraint:
 - House bank: `48V` nominal (`51.2V` LiFePO4 class)
 - Controller baseline: `Victron SmartSolar MPPT 150/45`
