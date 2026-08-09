@@ -1,3 +1,10 @@
+## 2026-08-08 — Whole-system WS500 review moved shunt to common battery negative
+
+- Superseded the earlier dedicated alternator-negative-shunt plan after comparing all four credible layouts. Final standalone/no-CAN default now follows Wakespeed's PH-VAN/internal-BMS example: `battery negative combine -> Victron SmartShunt -> Wakespeed 500A/50mV shunt -> Lynx/system negative`, with purple/high toward battery and grey/low toward Lynx; configure `Shunt at Battery`.
+- The alternator negative `2/0` now runs directly to Lynx/system negative. This preserves the dedicated return while removing the chassis-bypass dependency that affected an alternator-branch shunt. No purple/grey `5A` fuses are used.
+- Replaced the incomplete Littelfuse housing path with a screw-terminal Mersen `USCC1` Class-CC holder and one `ATDR15 15A/300VDC` time-delay fuse in a separate small DC DIN enclosure. Feed PH-VAN red from the `F-04` alternator/load-side stud through short `14 AWG` pigtails and a sealed step-down splice.
+- Re-baselined `F-04` from `150A` to `200A/80V`: Mechman's published curve reaches about `145.7A`, and the `125%` basis is about `182A`; `200A` is the next standard size and remains inside the installed `2/0 AWG` cable envelope.
+
 ## 2026-08-08 — Wakespeed fuse plan simplified with negative alternator shunt
 
 - Owner rejected the expensive/slow three-small-fuse outcome and requested a proportional re-check. The positive-side Wakespeed shunt would legitimately require separate protection on both full-bank-positive purple/grey sense wires, but positive placement is not mandatory.

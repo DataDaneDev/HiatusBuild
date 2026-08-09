@@ -119,13 +119,15 @@ Posture: not a blocker. Re-measure before buying. Carry-extra-fuel is acceptable
 - **Orion input-fuse cleanup history and final Slot 4 lock**
   - Purchased `2026-06-01` Mouser order, total `$38.79`.
   - Fuse stock: `3x` Mouser `576-166.7000.5202` / Littelfuse `166.7000.5202` FKS/ATO fuse, `20A`, `80VDC`, `$7.88` each / `$23.64` extended.
-  - Housing stock: `3x` Mouser `576-178.6150.0001` / Littelfuse `178.6150.0001`, `$1.51` each / `$4.53` extended. Correction: these are empty housings with no contacts or leads, not install-ready holders; the matching contacts accept only `1.5-2.5 mm²`, not `6 AWG`. They remain unusable for Orion but may be candidates for the low-current WS500 `PH-VAN` red lead only after exact contact, wire-gauge, and `80V` marking verification.
+  - Housing stock: `3x` Mouser `576-178.6150.0001` / Littelfuse `178.6150.0001`, `$1.51` each / `$4.53` extended. Correction: these are empty housings with no contacts or leads, not install-ready holders. They are unused/dead-end stock; do not buy proprietary contacts or build either the Orion or WS500 branch around them.
   - Final install: one verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) in Lynx Slot 4 feeding the existing `6 AWG` Orion input pair directly. Retire standalone `F-06`; no DIN rail, pigtails, reducers, butt splices, or additional input holder.
-  - Treat the purchased `20A` FKS fuse and `30A/58V` MIDI stock as unused/dead-end Orion inventory. Do not substitute the `20A` FKS fuse for the required `15A` WS500 value; only the empty `80V` housing may be repurposed if properly completed and physically validated.
+  - Treat the purchased `20A` FKS fuses, empty FKS housings, and `30A/58V` MIDI stock as unused/dead-end inventory. Do not repurpose them for the final WS500 branch.
 
-- **WS500 low-current fuse/holder pieces**
-  - Confirmed `PH-VAN` harness: one short red lead combines regulator power and positive voltage sense at the house/main bus.
-  - Buy only one Littelfuse `166.7000.5152` FKS/ATO `15A/80VDC` fuse or verified equivalent for `F-12/F-13-PHVAN` (active row `171`). Littelfuse confirms the owned row `321` `178.6150.0001` housing accepts FKS fuses at `80VDC`; verify only the correct contacts and `PH-VAN` red-lead fit. Existing `20A` fuses are the wrong current rating. Do not buy commissioning spares, retired row `320` hardware, or `5A` current-sense fuses; the Wakespeed shunt is in the dedicated alternator negative return.
+- **WS500 alternator purchase package**
+  - `F-04`: Victron `CIP138200020`, `200A/80V` MEGA, five-pack. Install one in Lynx Slot 3 and carry one spare.
+  - `PH-VAN` red: Mersen `USCC1` holder + Mersen `ATDR15` `15A/300VDC` time-delay Class-CC fuse in a separate small DC DIN enclosure. Use short `14 AWG` pigtails and one sealed splice to the `16 AWG` harness. Feed from the alternator/load side of `F-04`.
+  - Common negative: place the Wakespeed `500A/50mV` shunt after the Victron SmartShunt; purple/high faces battery/SmartShunt and grey/low faces Lynx/system. No `5A` sense fuses.
+  - Routing: one `50 ft` roll of `3/4 in` split nylon loom, one `20-pack` of `1 in` cushioned P-clamps, and one correctly fitting red alternator-B+ boot set.
 
 ## TNutz / 80/20 posture
 

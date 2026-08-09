@@ -350,16 +350,17 @@ Goal: rough-in safely first; commission only after all preconditions are green.
 - [ ] Mount APM-48 at alternator: red to `B+`, black to `B-` or clean case ground per alternator style.
 - [ ] Route `2/0 AWG` positive and dedicated `2/0 AWG` negative together along protected frame/bed path.
 - [ ] Add chafe protection, loom, rubber-lined clamps, strain relief, and grommet/pass-through protection.
-- [ ] Land positive at Lynx Slot 3 / `F-04 150A MEGA` house-bank end.
+- [ ] Land positive at Lynx Slot 3 / `F-04 200A/80V MEGA` house-bank end.
 - [ ] Land dedicated negative return to the Lynx/house negative return path; do not rely on sheet metal/chassis only.
+- [ ] Insert Wakespeed `500A/50mV` shunt after the SmartShunt in the common battery-negative path; purple/high battery side, grey/low system side; confirm all returns remain on the system side.
 - [ ] Mount WS500 near house electrical board/battery/shunt area for short sense wiring.
 - [ ] Wire brown ignition/enable from Ford Upfitter `#3` through `F-15 3A`.
-- [ ] Wire PH-VAN red/black locally as combined regulator power/voltage sense through correct small fuse/negative reference.
+- [ ] Wire PH-VAN red from the `F-04` alternator/load-side stud through the Mersen `USCC1/ATDR15` `15A` Class-CC branch; wire PH-VAN black to Lynx/system negative.
 - [ ] Wire blue field lead through Mechman adapter.
 - [ ] Dead-end/protect unused yellow stator/tach unless explicitly required.
 - [ ] Protect unused yellow/green CAN connector unless compatible CAN/BMS integration is later added.
 - [ ] Install alternator temperature sensor and battery temperature sensor if profile requires.
-- [ ] Configure conservative WS500 profile before first enable.
+- [ ] Read and record the Mechman-supplied WS500 profile before changing anything; confirm `500A/50mV`, `Shunt at Battery`, charge ceiling, field derate, and conservative first-run current/field limit.
 - [ ] First run: Upfitter `#3 OFF`, start engine, verify no unexpected charging.
 - [ ] First charge: enable only with meter/app ready and abort plan understood; Upfitter `#3 OFF` must stop current.
 - [ ] Measure charge-path and return-path voltage drop under load; target `<0.1V` each per Mechman first-run guidance.

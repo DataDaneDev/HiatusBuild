@@ -37,9 +37,9 @@ Related docs:
 4. Slot 4 / `F-05` — Orion-Tr `48/12-30` input through one `40A` MEGA body-marked at least `58VDC`; standalone `F-06` is retired.
 - Current shop identification note: do not infer the purpose of the physically X-marked/misrated Lynx fuse from the X alone. Identify its slot. Slot 2 requires `F-03 60A/80V` MEGA for the MPPT; Slot 4 requires `F-05 40A` MEGA marked `>=58VDC` for Orion. No `32V`-rated fuse is acceptable on an energized `48V` branch.
 - Alternator path lock for this pass:
-1. `F-04` is locked to `150A` MEGA (`58V/80V`) in Lynx Slot 3 at the house-bank/Lynx end of the alternator positive run.
+1. `F-04` is locked to `200A/80V` MEGA in Lynx Slot 3 at the house-bank/Lynx end of the alternator positive run. Mechman's published `48V Elite` curve reaches about `145.7A`; the `125%` fuse basis is about `182A`, so `200A` is the next standard size and remains within the installed `2/0 AWG` conductor envelope.
 2. Obsolete pre-Mechman charger/fuse paths are removed from active architecture and primary layout planning.
-3. Confirmed `PH-VAN` harness uses one short red/black pair as combined regulator power and voltage sense at the house/main bus. Treat former separate `F-12` regulator-power and `F-13` positive-sense functions as one `15A/80VDC` fused `PH-VAN` red lead for this install. Put the separate Wakespeed shunt in the dedicated alternator negative return; its grey/low and purple/high sense leads remain unfused.
+3. Confirmed `PH-VAN` harness uses one short red/black pair as combined regulator power and voltage sense. Treat former separate `F-12` regulator-power and `F-13` positive-sense functions as one `15A` Class-CC fused red lead from the `F-04` alternator/load-side stud. Put the Wakespeed shunt in the common battery-negative path after the SmartShunt; its purple/high and grey/low sense leads remain unfused.
 4. Ford `Upfitter Switch #3` is locked as the manual `WS500` enable source through `F-15`.
 
 ## Alternator Branch Fuse + Wire Finalization (`2026-03-19`)
@@ -59,7 +59,7 @@ Resistance and drop screen (`V_drop = I * (2 * L * R_per_ft)`):
 | `2/0 AWG` | `0.47V` | `0.80%` | `0.62V` | `1.07%` | Best margin; inventory already on hand |
 
 Lock for this build pass:
-- Keep the planned alternator branch fuse at `150A` (`F-04`, Lynx Slot 3).
+- Use `F-04 200A/80V` in Lynx Slot 3. This preserves margin above the published `145.7A` curve while protecting the existing `2/0 AWG` run.
 - Reuse existing uncut `2/0` inventory for alternator `+` and dedicated negative run.
 - Inactive BOM row `173` preserves the removed contingency estimate; open a new active line only if field measurement proves an actual shortfall.
 
@@ -71,7 +71,7 @@ Lock for this build pass:
 | `F-01C` | Battery C `+` -> bank positive combine/disconnect input | Battery C positive cable leaving battery | Class T (`>=125VDC`) | `200A` provisional | Blue Sea Class T fuse block (covered stud mount, `110A-200A` family) | Battery compartment, within ~`7"` of Battery C positive post | `2/0 AWG` |
 | `F-02` | Lynx Slot 1 -> MultiPlus `DC+` | Main inverter positive feeder | `MEGA`, `58V` or `80V` | `125A` | Integrated Lynx Distributor fuse slot | Lynx Distributor, Slot 1 | `2/0 AWG` planned (`AWG 1` minimum on short run) |
 | `F-03` | Lynx Slot 2 -> SmartSolar `BAT+` | MPPT battery-side positive feeder | `MEGA`, `80V` Victron replacement stock | `60A` | Integrated Lynx Distributor fuse slot | Lynx Distributor, Slot 2 | `6 AWG` |
-| `F-04` | Lynx Slot 3 -> `48V` alternator branch input (`ALT+`) | Alternator-to-house positive charge cable | `MEGA`, `58V` or `80V` | `150A` | Integrated Lynx Distributor fuse slot | Lynx Distributor, Slot 3 | `2/0 AWG` (reuse lock) |
+| `F-04` | Lynx Slot 3 -> `48V` alternator branch input (`ALT+`) | Alternator-to-house positive charge cable | `MEGA`, `80V` | `200A` | Integrated Lynx Distributor fuse slot | Lynx Distributor, Slot 3 | `2/0 AWG` (reuse lock) |
 | `F-05` | Lynx Slot 4 -> Orion `48V` input `+` | Orion `48V` input feeder | MEGA `40A`, body-marked `>=58VDC`; Victron `CIP138040020 40A/80V` replacement fallback | `40A` deliberate feeder-protection value; above Victron's `20A` table recommendation but safely below installed `6 AWG` ampacity | Integrated Lynx Distributor fuse slot | Lynx Distributor, Slot 4 | Existing `6 AWG` direct to Orion; no second input fuse |
 | `F-06` | Retired standalone Orion input fuse position | Not active | N/A | Not installed | No holder | N/A | Purchased `30A/58V` MIDI and FKS/ATO stock plus proposed DIN hardware remain unused; do not stack with `F-05` |
 | `F-07` | Orion `12V` output `+` -> 12V fuse block main `+` stud | Main `12V` feeder from Orion into shared source-combine point | `MEGA`, `80V` Victron replacement stock | `60A` | Victron MEGA fuse holder (external, non-Lynx) | Electrical cabinet, within ~`7"` of Orion `12V` output stud | `6 AWG` planned (`8 AWG` minimum per Orion cable table) |
@@ -80,7 +80,7 @@ Lock for this build pass:
 | `AUDIO-HU` / `12V-12` | `12V` fuse block -> Kicker `46KMC2` media center/source unit | KMC2 source/head-unit branch conductor and device harness | ATO/ATC branch fuse (`32V` class) plus KMC2 harness `15A ATM` fuse | `15A` | Integrated `12V` fuse block branch plus OEM KMC2 harness fuse | Electrical cabinet to driver-side DC shelf/source face | `12 AWG duplex` if kept around `5 ft`; `10 AWG` if route grows toward `8 ft+` |
 | `AUDIO-SUB` | 12V source/main `+` stud -> external fuse -> Kicker `49PTRTP10` powered sub `+` | Powered-sub positive branch and subwoofer input; manual-required external protection | Inline/MRBF/AFS/ANL-class fuse matched to selected `4 AWG` kit (`32V`+ DC class acceptable on 12V branch) | `40A` | Holder within about `18 in` of 12V source takeoff; if using Kicker `47KMPK4`, fit the PTRTP10-required `40A` fuse rather than the kit generic larger fuse | Near `12V` source/junction, downstream of `SW-12V-BATT` | `4 AWG` positive with matching `4 AWG` return to 12V negative bus/main stud |
 | `F-11` | 12V buffer battery `+` -> 12V fuse block main `+` stud via `SW-12V-BATT` | Buffer battery source cable and downstream junction fault exposure | Inline MIDI/AMI/ANL family rated `>=32VDC` | `100A` class baseline | Sealed inline holder mounted close to battery positive | Within ~`7"` of 12V buffer battery positive post | `4 AWG` planned |
-| `F-12/F-13-PHVAN` | `PH-VAN` WS500 red lead at house/main positive bus | Combined WS500 regulator power and positive voltage-sense lead | Littelfuse FKS/ATO `166.7000.5152`, `15A/80VDC`, or verified equivalent | `15A` | Existing Littelfuse `178.6150.0001` housing is manufacturer-confirmed FKS-compatible at `80VDC`; complete with correct contacts for the harness wire | Electrical panel near WS500/main bus; do not extend the short VAN red/black pair | Harness lead |
+| `F-12/F-13-PHVAN` | `F-04` alternator/load-side stud -> WS500 `PH-VAN` red lead | Combined WS500 regulator power and positive voltage-sense lead | Mersen `ATDR15` time-delay Class CC, `300VDC` | `15A` | Mersen `USCC1` touch-safe `600VDC` holder in a separate small DC DIN enclosure | Electrical panel immediately beside `F-04`; short `14 AWG` pigtails with sealed step-down splice to the `16 AWG` harness | `14 AWG` pigtail / harness lead |
 | `CERBO-PWR` | `48V` system positive -> Cerbo GX power `+` | Cerbo GX low-current electronics feed | Inline fuse/holder rated for `48V` bank maximum voltage | `1A-3A` | Small inline holder close to the positive takeoff | Electrical cabinet, preferably system/load side of main disconnect so Cerbo powers down with the house system during bench shutdown | `18 AWG` red/black duplex acceptable |
 | `F-15` | Ford Upfitter `#3` -> WS500 brown ignition/enable wire | Low-current regulator enable/control wire | Inline ATC/ATO (`32V` class acceptable; 12V control circuit) | `3A` | Sealed inline holder near the Ford upfitter blunt-cut source / splice handoff | Engine bay or control-wire handoff point before small-gauge run to WS500 | `16 AWG` TXL/GXL |
 | `OEM-SHUNT` | Battery-side positive or Lynx/system positive tap -> SmartShunt `Vbatt+` terminal | SmartShunt electronics supply/sense lead | External Victron-supplied red cable with inline low-current fuse; not an internal SmartShunt fuse | OEM value | Inline holder in supplied red cable | Prefer battery-side positive if SOC continuity is desired while the main disconnect is open; system side is acceptable if zero parasitic draw during disconnect-off storage matters more | OEM harness lead |
@@ -92,13 +92,13 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 | Fuse type | Installed qty | Spare qty to carry | Notes |
 | --- | --- | --- | --- |
 | Class T `200A` (provisional installed) | `3` | `1` on hand | Owner confirmed `3` holders and `4` slow-blow Class T fuses total (`3` installed + `1` spare); add more only if the one-spare-per-installed policy is later desired |
-| `MEGA 150A` (`58V/80V`) | `1` | `2` | Alternator branch (`F-04`) installed + spare set (row `170`) |
+| `MEGA 200A/80V` | `1` | `1` minimum | Alternator branch (`F-04`); Amazon Victron stock is commonly sold as a five-pack, so install one and carry one while retaining the remainder as shop stock |
 | `MEGA 125A` (`58V/80V`) | `1` | `4` | MultiPlus branch |
 | `MEGA 60A` (`80V`) | `2` | `3` | Victron 5-pack row `188`: install MPPT (`F-03`) + Orion output (`F-07`), keep 3 spares. Earlier 6x low-cost 60A MEGA batch was owner-confirmed misadvertised/not actually 58V and is quarantined/trash, not 48V install stock. |
 | `MEGA 40A`, `>=58VDC` | `1` active | `1-2` | Orion input in Lynx Slot 4 (`F-05`); existing body-marked `58VDC` stock is acceptable under the locked `56.8V` charge ceiling; use Victron `CIP138040020 40A/80V` as replacement fallback |
 | Retired Orion standalone input-fuse stock | `0` active | Optional purchased stock only | `30A/58V` MIDI and FKS/ATO parts are not installed; no `USM1/ATM20` purchase required |
 | 12V buffer battery main fuse (`100A` class) | `1` | `3` | Spare pack basis is BOM row `105` |
-| WS500 `PH-VAN` combined regulator power / positive-sense fuse (`F-12/F-13-PHVAN`) | `1` required position | `1` optional later | One `15A/80VDC` Littelfuse `166.7000.5152` is sufficient to commission; do not delay the build for multiple expensive spares |
+| WS500 `PH-VAN` combined regulator power / positive-sense fuse (`F-12/F-13-PHVAN`) | `1` required position | `1` optional later | One Mersen `ATDR15` `15A/300VDC` Class-CC fuse in a `USCC1` holder is sufficient to commission; no proprietary automotive contacts are needed |
 | Cerbo GX power fuse (`CERBO-PWR`) | `1` active position | `1` | Carry a spare `1A-3A` fuse/holder rated for the `48V` bank maximum |
 | WS500 ignition/enable fuse (`F-15`) | `1` active position | `2` | Carry spare `3A` mini/ATO fuse and one spare sealed holder; 12V control circuit |
 | PV string fuse `15A gPV` | `3` | `3` | One spare per string |
@@ -113,7 +113,7 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 | Main battery Class T protection (`F-01A/F-01B/F-01C`) + Class T spares | `bom/bom_estimated_items.csv` row `7` |
 | Lynx branch MEGA fuses (`F-02` to `F-05` installed) + spare set | `bom/bom_estimated_items.csv` rows `10`, `170`, `188`, and `323` |
 | Orion installed fuse-holder hardware (`F-05` Lynx input, `F-07` external output) | `bom/bom_estimated_items.csv` rows `6` and `11` |
-| Retired Orion standalone input-fuse stock (`F-06`) | Purchased stock: active BOM rows `133`, `182`, and `321`; inactive rows `326` and `230` preserve retired holder/bridge history. Row `321` empty `80V` FKS housings remain unusable for Orion but may be candidates for row `171` only after correct-contact and `PH-VAN` red-lead wire-gauge verification; row `133` `20A` fuses are not the required `15A` value. |
+| Retired Orion standalone input-fuse stock (`F-06`) | Purchased stock: active BOM rows `133`, `182`, and `321`; inactive rows `326` and `230` preserve retired holder/bridge history. Row `321` empty FKS housings and row `133` `20A` fuses are not used anywhere in the final alternator/Orion topology. |
 | WS500 regulator-power and voltage-sense protection (`F-12/F-13-PHVAN`) | Active BOM row `171`; inactive row `320` preserves the retired separate-`3A` concept |
 | Cerbo GX power feed (`CERBO-PWR`) | `bom/bom_estimated_items.csv` row `22`; small inline fuse/holder may come from low-current install stock |
 | WS500 Upfitter `#3` enable/control path (`F-15`) | `bom/bom_estimated_items.csv` row `176` |
@@ -129,7 +129,7 @@ Obsolete pre-Mechman charger/fuse paths are removed from the active schedule. Do
 ## Assumptions and Open Items
 1. Wire sizing above assumes copper conductors and enclosed vehicle routing.
 2. `F-09A/B/C` and the old `3S3P` fuse count are modeling placeholders only; final PV fusing waits until solar modules/stringing are selected after shore and alternator charging are working.
-3. Littelfuse confirms the owned `178.6150.0001` housing accepts FKS fuses at `80VDC`; confirm matching contacts and wire fit before final install. Buy only one `15A/80VDC` Littelfuse `166.7000.5152` (or verified equivalent) for the combined red lead. The negative-side Wakespeed shunt needs no `5A` sense fuses, but it requires the de-energized no-bypass continuity proof.
+3. Do not complete the owned Littelfuse `178.6150.0001` empty housings. Use the Mersen `USCC1/ATDR15` branch for the PH-VAN red lead. The Wakespeed shunt is on the common battery-negative path after the SmartShunt, uses no `5A` sense fuses, and must be configured `Shunt at Battery`.
 4. `SW-12V-BATT` remains manual-only in Phase 1; no automatic LVD behavior is assumed.
 5. Final lock for `F-11` still requires explicit 12V buffer battery/BMS continuous discharge-current confirmation.
 6. `F-15` exists to protect the smaller-gauge control wire between Ford `Upfitter #3` and the WS500 brown ignition/enable wire; the factory `25A` upfitter circuit protection is not the final wire-protection device for that branch.

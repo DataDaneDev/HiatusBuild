@@ -290,7 +290,7 @@ related:
 - Options considered: keep fuse/wire pending, downsize to new smaller cable now, or lock reuse-first with measured validation.
 - Decision drivers: avoid unnecessary new wire spend, keep installation momentum, and close alternator branch protection ambiguity.
 - Result: locked `F-04` at `150A` (`58V/80V` MEGA), added explicit WS500 low-current fuses (`F-12` `10A/15A`, `F-13` `3A`) with voltage-rating verification, clarified that WS500 current-sense high/low is not a fuse position, and locked reuse of existing uncut `2/0` inventory for the `~20 ft` alternator run baseline. Updated `docs/implementation/ELECTRICAL_fuse_schedule.md` and BOM rows `170-173` accordingly.
-- Follow-up: if measured route reality materially differs, re-run drop/ampacity screen before any gauge downsize. `D-059` supersedes this decision's separate `F-12`/`F-13` low-current fuse assumption for the owner-confirmed `PH-VAN` harness; the `F-04` and `2/0` decisions remain current.
+- Follow-up: if measured route reality materially differs, re-run drop/ampacity screen before any gauge downsize. `D-059` superseded this decision's separate `F-12`/`F-13` low-current-fuse assumption, and `D-066` supersedes its `F-04 150A` value with `200A/80V`; the `2/0` conductor decision remains current.
 
 - ID: D-030
 - Date: 2026-03-20
@@ -616,6 +616,14 @@ related:
 - Decision drivers: The active architecture already prohibits MultiPlus PE/case-to-DC-negative and other parallel `48V` chassis returns; the Mechman dedicated negative cable is intended to be the single normal alternator return. Negative shunt placement therefore removes two fuse/holder assemblies without weakening the required protection on the actual `16 AWG` PH-VAN power lead.
 - Result: `ALT B-/case -> long 2/0 -> Wakespeed shunt -> short 2/0 -> Lynx negative`; grey/current-sense-low on the alternator side, purple/current-sense-high on the Lynx side; configure `Shunt at Alternator`. Buy only one low-cost `15A/80VDC` Littelfuse `166.7000.5152` or verified equivalent for PH-VAN red. Littelfuse confirms the owned `178.6150.0001` housing accepts FKS fuses at `80VDC`; only contacts/wire fit remain open.
 - Follow-up: With all sources isolated and the alternator negative return disconnected, verify Lynx negative has no stable low-resistance continuity to chassis. If a parallel bond exists, stop and remove it or reopen protected positive-shunt placement before charging. Verify positive charge-current sign against an independent clamp meter during first commissioning.
+
+- ID: D-066
+- Date: 2026-08-08
+- Decision: Supersede D-065 with the Wakespeed shunt in the common battery-negative path after the Victron SmartShunt; use `F-04 200A/80V` and a Mersen Class-CC PH-VAN branch.
+- Context: A whole-system re-review compared positive-shunt, dedicated alternator-negative-shunt, no-shunt, and common battery-negative-shunt layouts. Wakespeed's standalone PH-VAN/internal-BMS-no-communication example places the analog shunt in the battery path. The owned Littelfuse blocks are empty housings with proprietary contacts and are not worth completing.
+- Decision drivers: preserve net battery-current feedback without CAN/DVCC, prevent chassis-return geometry from bypassing the measurement, remove both `5A` sense-fuse positions, keep the alternator dedicated negative direct to Lynx, and use obvious screw-terminal protection for PH-VAN red. Mechman's published `48V Elite` curve reaches about `145.7A`; `125%` is about `182A`, making `200A` the next standard MEGA value for the existing `2/0` cable.
+- Result: `battery negative combine -> SmartShunt -> Wakespeed 500A/50mV shunt -> Lynx/system negative`; purple/high faces battery/SmartShunt, grey/low faces Lynx/system, configure `Shunt at Battery`. Alternator `B- -> dedicated 2/0 -> Lynx negative`. `F-04=200A/80V`. PH-VAN red uses Mersen `USCC1 + ATDR15` in a small separate DC DIN enclosure, fed from the `F-04` alternator/load-side stud.
+- Follow-up: read and record the Mechman-supplied WS500 configuration before altering it; confirm shunt stud fit, output/nameplate, charge ceiling, field derate, current sign, temp sensors, APM state, and `<0.1V` charge/return drops during controlled commissioning.
 
 ## Risk register
 - ID: R-001

@@ -28,9 +28,9 @@ Related docs:
 
 ## Sweep Outcomes Included In This Revision
 - Keeps alternator charging architecture on the dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48` baseline); obsolete pre-Mechman charger paths are removed from primary topology.
-- Keeps Lynx Slot 3 branch to alternator input with `F-04 150A` (`58V/80V` MEGA).
+- Keeps Lynx Slot 3 branch to alternator input with `F-04 200A/80V` MEGA.
 - Removes obsolete pre-Mechman engine-bay fuse/conductor placeholders from active architecture.
-- Clarifies the confirmed `PH-VAN` harness as one `15A/80VDC` fused combined power/positive-sense red lead (`F-12/F-13-PHVAN`) and locks the unfused purple/grey pair to a separate shunt in the dedicated alternator negative return.
+- Clarifies the confirmed `PH-VAN` harness as one `15A` Class-CC fused combined power/positive-sense red lead (`F-12/F-13-PHVAN`) and locks the unfused purple/grey pair to the Wakespeed shunt after the SmartShunt in the common battery-negative path.
 - Adds Ford `Upfitter #3 -> F-15 -> WS500 brown ignition` manual alternator-control path.
 - Adds the detailed Mechman/WS500/APM-48 install guide as the shop reference for staged installation, first-run checks, and load-dump/shutdown handling.
 - Defines APM-48 as a parallel surge clamp at the alternator rather than a series charge-current device.
@@ -117,7 +117,7 @@ flowchart LR
         DISC["48V disconnect\nVictron 275A"]
         SHUNT["SmartShunt 300A\nmain negative path"]
         LYNX["Victron Lynx Distributor M10\n+ bus / - bus / 4 MEGA slots"]
-        F04["F-04 150A MEGA\nLynx Slot 3 alternator branch"]
+        F04["F-04 200A/80V MEGA\nLynx Slot 3 alternator branch"]
         MULTI["MultiPlus-II\n48/3000/35-50"]
         ORION["Orion-Tr Smart 48/12-30\nIsolated charger"]
         F05["F-05 Lynx Slot 4\n40A MEGA, >=58VDC\nOrion input branch"]
@@ -133,8 +133,9 @@ flowchart LR
     BATB -- "2/0 AWG -, ~2.5 ft" --> NEGBUS
     BATC -- "2/0 AWG -, ~2.5 ft" --> NEGBUS
     NEGBUS -- "2/0 AWG -, ~2.5 ft" --> SHUNT
-    SHUNT -- "2/0 AWG -, ~2.5 ft" --> LYNX
-    LYNX -. "OEM sense harness, ~2.5 ft" .- SHUNT
+    SHUNT -- "short 2/0 AWG -" --> WSSHUNT["WS500 500A/50mV shunt\ncommon battery negative"]
+    WSSHUNT -- "2/0 AWG -" --> LYNX
+    LYNX -. "OEM Victron sense harness" .- SHUNT
 
     LYNX -- "Slot 1: F-02 125A MEGA\n2/0 AWG +, ~2.5 ft" --> MULTI
     MULTI -- "2/0 AWG -, ~2.5 ft" --> LYNX
@@ -144,8 +145,7 @@ flowchart LR
 
     ALT48 -- "B+ 2/0 AWG, ~20 ft (ASSUMED)" --> F04 --> LYNX
     APM48 -. "red to B+; black to B-/case\nnot in series with charge cable" .- ALT48
-    ALT48 -- "B- dedicated 2/0 AWG, ~20 ft (ASSUMED)" --> WSSHUNT["WS500 500A/50mV shunt\nnegative alternator branch"]
-    WSSHUNT -- "short 2/0 AWG jumper" --> LYNX
+    ALT48 -- "B- dedicated 2/0 AWG, ~20 ft (ASSUMED)" --> LYNX
 
     LYNX -- "Slot 4: F-05 40A MEGA, >=58VDC\n6 AWG, ~2.5 ft" --> F05 --> ORION
     ORION -- "48V input - (6 AWG, ~2.5 ft)" --> LYNX
@@ -351,7 +351,7 @@ flowchart LR
 | `F-01C` | `200A Class T` (provisional) | Blue Sea Class T fuse block (`110A-200A` family) | Battery compartment near Battery C `+` |
 | `F-02` | `125A MEGA` | Lynx integrated slot holder | Lynx Slot 1 |
 | `F-03` | `60A MEGA` (`80V` Victron replacement stock) | Lynx integrated slot holder | Lynx Slot 2 |
-| `F-04` | `150A MEGA` | Lynx integrated slot holder | Lynx Slot 3 (dedicated alternator branch) |
+| `F-04` | `200A/80V MEGA` | Lynx integrated slot holder | Lynx Slot 3 (dedicated alternator branch) |
 | `F-05` | `40A` MEGA, body-marked `>=58VDC`; Victron `CIP138040020 40A/80V` replacement fallback | Lynx integrated slot holder | Lynx Slot 4; Orion `48V` input feeder |
 | `F-06` | Not installed / retired standalone input-fuse position | No holder | MIDI/FKS/DIN concepts superseded; do not stack after `F-05` |
 | `F-07` | `60A MEGA` (`80V` Victron replacement stock) | Victron MEGA fuse holder | Electrical cabinet at Orion `12V +` source end |
@@ -360,9 +360,9 @@ flowchart LR
 | `AUDIO-HU` / `12V-12` | `15A` source/head-unit branch; KMC2 harness also contains a `15A ATM` fuse | 12V fuse block branch plus KMC2 harness fuse | Electrical cabinet to driver-side DC shelf/source face |
 | `AUDIO-SUB` | `40A` external fuse for Kicker PTRTP10 powered sub branch | Inline/MRBF/AFS/ANL-class holder matched to selected 4 AWG kit; use `40A`, not a generic `100A` kit fuse | Within about `18 in` of the 12V source takeoff feeding the powered sub |
 | `F-11` | `100A` class (12V buffer battery main) | Sealed inline MIDI/AMI/ANL holder | Within ~`7"` of 12V buffer battery positive post |
-| `F-12/F-13-PHVAN` | `15A/80VDC` WS500 combined regulator-power / positive-sense fuse; Littelfuse `166.7000.5152` basis | Existing `178.6150.0001` housing is manufacturer-confirmed FKS-compatible at `80VDC`; verify correct contacts and wire fit | At the house/main positive bus feeding the short `PH-VAN` red lead; do not extend |
+| `F-12/F-13-PHVAN` | Mersen `ATDR15`, `15A/300VDC` time-delay Class-CC fuse | Mersen `USCC1` `600VDC` touch-safe holder in a separate small DC DIN enclosure | Immediately beside the Lynx, fed from the `F-04` alternator/load-side stud through short `14 AWG` pigtails; sealed splice to `16 AWG` PH-VAN red |
 | `CERBO-PWR` | `1A-3A` Cerbo GX power fuse | Small inline holder rated for the `48V` bank maximum | Electrical cabinet near `48V` system-positive takeoff; system side of disconnect preferred for bench shutdown |
-| WS500 current-sense pair | No fuse; negative-side shunt with grey/low on alternator side and purple/high on Lynx side | Twist pair if extended; route away from noise | Wakespeed shunt in dedicated alternator `2/0` negative return near house board |
+| WS500 current-sense pair | No fuse; common battery-negative shunt with purple/high on battery/SmartShunt side and grey/low on Lynx/system side | Twist pair if extended; route away from noise; configure `Shunt at Battery` | Wakespeed shunt in series after the SmartShunt |
 | `F-15` | `3A` WS500 ignition/enable control fuse | Sealed inline ATC/ATO holder; 12V control circuit | Near Ford upfitter blunt-cut wire / WS500 control-wire handoff |
 | `SW-12V-BATT` | Manual battery disconnect switch | Sealed rotary DC switch body | Electrical cabinet near 12V fuse-block main `+` stud for service access |
 | `OEM-SHUNT` | External Victron-supplied inline fuse in red SmartShunt `Vbatt+` cable | Inline holder in supplied red cable | Prefer battery-side positive if SOC continuity is desired with the main disconnect open; system side is acceptable for zero disconnect-off parasitic draw |
@@ -385,8 +385,8 @@ Retired from active architecture:
 | `C-08` | MultiPlus `DC-` -> Lynx `-` bus | `48V` | Inverter return current | `F-02` protects paired positive | `2/0 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-09` | MPPT `BAT+` -> Lynx Slot 2 (`F-03`) | `48V` | Controller output (`45A` max) | `F-03` `60A/80V` Victron row `188` | `6 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-10` | MPPT `BAT-` -> Lynx `-` bus | `48V` | Controller return current | `F-03` protects paired positive | `6 AWG` | `2.5 ft` (`ASSUMED`) |
-| `C-11` | Secondary alternator `B+` -> APM-48 -> Lynx Slot 3 (`F-04`) | `48V` | Alternator branch design current | `F-04` `150A` | `2/0 AWG` | `20 ft` (`ASSUMED`, one-way) |
-| `C-12` | Secondary alternator `B-` -> Wakespeed `500A/50mV` negative shunt -> Lynx `-` bus (dedicated return) | `48V` | Alternator branch return current | `F-04` paired; no purple/grey sense fuses on negative shunt | `2/0 AWG` plus short `2/0` shunt-to-Lynx jumper | `20 ft` (`ASSUMED`, one-way) |
+| `C-11` | Secondary alternator `B+` -> APM-48 -> Lynx Slot 3 (`F-04`) | `48V` | Published alternator output reaches about `145.7A` | `F-04` `200A/80V` | `2/0 AWG` | `20 ft` (`ASSUMED`, one-way) |
+| `C-12` | Secondary alternator `B-` -> Lynx `-` bus (dedicated return) | `48V` | Alternator branch return current | `F-04` paired | `2/0 AWG` | `20 ft` (`ASSUMED`, one-way) |
 | `C-13/C-14` | Lynx Slot 4 (`F-05`) -> Orion `48V +` input | `48V` | Orion feeder, fuse-limited | `F-05 40A` MEGA, `>=58VDC` | Existing `6 AWG` direct; `10 AWG` adequate if ever replaced | `2.5 ft` (`ASSUMED`) |
 | `C-15` | Orion `48V -` input -> Lynx `-` bus | `48V` | Orion input return current | Orion input positive protection paired | `6 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-18` | Orion `12V +` -> `F-07` -> 12V fuse block main `+` stud | `12V` | Charger output path (`30A` continuous, `60A` fuse) | `F-07` `60A` | `6 AWG` planned (`8 AWG` minimum per Orion table) | `2.5 ft` (`ASSUMED`) |
@@ -411,9 +411,9 @@ Retired from active architecture:
 | `C-35` | 12V panel -> USB PD station branch (galley zone) | `12V` | Galley charging branch (`65W` class USB-C plus USB-A/C loads) | `F-10` branch fuse (`15A`) | `12 AWG duplex` baseline | `8 ft` (`ASSUMED`; standardized with the office PD/fridge rough-in for voltage-drop margin) |
 | `C-36` | 12V panel -> Maxxair fan (Hiatus pre-installed) | `12V` | Roof ventilation branch | `F-10` branch fuse (`10A`) | `14 AWG duplex` baseline | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-37` | 12V panel -> DC ambient/cabinet LED strips (planned Govee) | `12V` | Branch load | `F-10` branch fuse (`5A`) | `18/2` baseline | `8 ft` (`ASSUMED`, near-load branch) |
-| `C-38` | House/main positive bus -> WS500 `PH-VAN` short red lead | `48V` bank | Combined regulator-power / positive-voltage-sense feed | `F-12/F-13-PHVAN` (`15A`) | Short harness lead; do not extend | Local at house bus |
+| `C-38` | `F-04` alternator/load-side stud -> Mersen `USCC1/ATDR15` -> WS500 `PH-VAN` red lead | `48V` bank | Combined regulator-power / positive-voltage-sense feed | `F-12/F-13-PHVAN` (`15A`) | Short `14 AWG` pigtails, sealed transition to `16 AWG` harness | Local beside Lynx/F-04 |
 | `C-39` | Retired separate WS500 positive-sense conductor | N/A | Not installed with confirmed `PH-VAN` harness | None | N/A | N/A |
-| `C-40` | WS500 current-sense pair to negative alternator shunt: grey/low alternator side, purple/high Lynx side | low-current sense | Gross alternator-output feedback | No fuse on negative-side shunt; twist pair if extended | Harness lead | Local near house board |
+| `C-40` | WS500 current-sense pair to common battery-negative shunt: purple/high battery/SmartShunt side, grey/low Lynx/system side | low-current sense | Net battery-current feedback | No fuse; twist pair if extended; configure `Shunt at Battery` | Harness lead | Local near house board |
 | `C-41` | Ford Upfitter `#3` output -> `F-15` -> WS500 brown ignition/enable wire | `12V` control lead | Manual alternator-enable signal only | `F-15` (`3A`) | `16 AWG` TXL/GXL | `6 ft` (`ASSUMED`) |
 | `C-42` | 12V panel -> Kicker `46KMC2` media center/source unit | `12V` | Source/head-unit branch (`15A` max; KMC2 manual shows `15A ATM`) | `F-10`/`AUDIO-HU` `15A` branch plus KMC2 harness fuse | `12 AWG duplex` if kept near `5 ft`; use `10 AWG` if longer | `5 ft` (`ASSUMED`, driver-side DC shelf) |
 | `C-43` | 12V source/main `+` stud -> `AUDIO-SUB` source fuse -> Kicker `49PTRTP10` powered sub `+` | `12V` | Powered sub branch; PTRTP10 manual external fuse value | `AUDIO-SUB` `40A` | `4 AWG` tinned/OFC | `8 ft` (`ASSUMED`; shorten by placing sub near 12V junction) |
@@ -445,8 +445,8 @@ Calculation basis for drop screening:
 | `C-08` | MultiPlus `DC-` | Lynx `-` bus | `F-02` paired | `125A` | `2/0 AWG` | `2.5 ft` | `0.10%` @ `51.2V` | Row `28` (`2/0 black`) | PASS |
 | `C-09` | MPPT `BAT+` | Lynx Slot 2 | `F-03 60A` (`80V` Victron row `188`) | `45A` | `6 AWG` | `2.5 ft` | `0.17%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS |
 | `C-10` | MPPT `BAT-` | Lynx `-` bus | `F-03` paired | `45A` | `6 AWG` | `2.5 ft` | `0.17%` @ `51.2V` | Row `29` (`6 AWG black`) | PASS |
-| `C-11` | Secondary alternator `B+` | Lynx Slot 3 via APM-48 | `F-04 150A` | `150A` design | `2/0 AWG` | `20 ft` | `0.80%` @ `58.4V` | Row `28` (`2/0 red`) | PASS |
-| `C-12` | Secondary alternator `B-` | Lynx `-` bus (dedicated return) | `F-04` paired | `150A` design | `2/0 AWG` | `20 ft` | `0.80%` @ `58.4V` | Row `28` (`2/0 black`) | PASS |
+| `C-11` | Secondary alternator `B+` | Lynx Slot 3 via APM-48 | `F-04 200A/80V` | `145.7A` published-curve screen | `2/0 AWG` | `20 ft` | `<0.80%` @ `58.4V` | Row `28` (`2/0 red`) | PASS |
+| `C-12` | Secondary alternator `B-` | Lynx `-` bus (dedicated return) | `F-04` paired | `145.7A` published-curve screen | `2/0 AWG` | `20 ft` | `<0.80%` @ `58.4V` | Row `28` (`2/0 black`) | PASS |
 | `C-13/C-14` | Lynx Slot 4 | Orion `48V +` | `F-05 40A` MEGA, `>=58VDC` | `40A` fuse basis | Existing `6 AWG` direct | `2.5 ft` | `0.16%` @ `51.2V` | Row `29` (`6 AWG red`) | PASS; no separate holder or splice stack |
 | `C-15` | Orion `48V -` | Lynx `-` bus | Orion input positive protection paired | `40A` fuse basis | `6 AWG` | `2.5 ft` | `0.16%` @ `51.2V` | Row `29` (`6 AWG black`) | PASS |
 | `C-18` | Orion `12V +` | Fuse block main `+` stud | `F-07 60A/80V` Victron row `188` | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG red`) | PASS |
@@ -472,9 +472,9 @@ Calculation basis for drop screening:
 | `C-49` | 12V fuse panel | Second Galley USB PD station | `F-10 15A`; slot to verify | `15A` design cap | `12 AWG duplex` | Field routed; measure | Recalculate from measured length | Field stock | VERIFY label/length/polarity, then load-test |
 | `C-36` | 12V fuse panel | Maxxair fan (Hiatus pre-installed) | `F-10 10A` | `4A` expected | `14 AWG duplex` | `8 ft` | `1.35%` @ `12V` | Row `32` (`14 AWG duplex`) | PASS |
 | `C-37` | 12V fuse panel | DC ambient/cabinet LED strips (planned Govee) | `F-10 5A` | `5A` design cap | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |
-| `C-38` | House/main positive bus | WS500 `PH-VAN` short red lead | `F-12/F-13-PHVAN 15A/80VDC` | combined regulator-power / voltage-sense feed at `48V` bank voltage | Short harness lead | Local | N/A (harness-limited) | Active row `171`; Littelfuse `166.7000.5152` basis | VERIFY holder contacts and wire fit |
+| `C-38` | `F-04` alternator/load-side stud | WS500 `PH-VAN` short red lead | `F-12/F-13-PHVAN` Mersen `ATDR15 15A/300VDC` | combined regulator-power / voltage-sense feed at `48V` bank voltage | `14 AWG` pigtails to `16 AWG` harness | Local | N/A (harness-limited) | Active row `171`; Mersen `USCC1/ATDR15` | VERIFY enclosure fit, ferrules, sealed splice, and label |
 | `C-39` | Retired separate positive-sense source | Not installed | None | superseded by confirmed `PH-VAN` combined lead | N/A | N/A | N/A | Inactive row `320` | RETIRED |
-| `C-40` | Negative alternator shunt: grey/low alternator side, purple/high Lynx side | WS500 current-sense input | No fuse on negative-side shunt | low-current sense; twist pair if extended | Harness lead | Local | N/A (harness-limited) | Harness kit | VERIFY no-bypass continuity and positive current sign |
+| `C-40` | Common battery-negative Wakespeed shunt: purple/high battery/SmartShunt side, grey/low Lynx/system side | WS500 current-sense input | No fuse | low-current sense; twist pair if extended | Harness lead | Local | N/A (harness-limited) | Harness kit | VERIFY `Shunt at Battery`, no shunt bypass, and positive current sign |
 | `C-41` | Ford Upfitter `#3` output | WS500 brown ignition/enable input via `F-15` | `F-15 3A` | manual low-current control only | `16 AWG` TXL/GXL | `6 ft` | N/A (control circuit) | Row `176` (upfitter control kit) | PASS |
 | `C-42` | 12V panel | Kicker `46KMC2` media center | `AUDIO-HU 15A` branch + KMC2 `15A ATM` harness fuse | `15A` max fuse basis | `12 AWG duplex` | `5 ft` | `1.99%` @ `12V` | Row `192/193` audio wiring | PASS if kept short; use `10 AWG` if longer |
 | `C-43/C-44` | 12V source/main studs | Kicker `49PTRTP10` powered sub | `AUDIO-SUB 40A` external source fuse | `40A` manual fuse basis | `4 AWG` positive + matching return | `8 ft` | `1.33%` @ `12V` | Row `192` audio power kit | PASS; keep branch short and dry |
@@ -565,7 +565,7 @@ Torque reference (verify against your exact manuals/hardware):
 4. Cerbo GX feed is now a small inline fused `48V` feed (`CERBO-PWR`) from the system/load side of the main disconnect during bench commissioning, so the Cerbo powers down with the house system.
 5. Orion branch uses one source-side fuse only: `F-05 40A` MEGA, body-marked at least `58VDC`, in Lynx Slot 4 feeding the existing `6 AWG` input pair directly. The `58VDC` minimum is tied to the locked `56.8V` charge ceiling; use Victron `CIP138040020 40A/80V` if replacement is needed. Standalone `F-06` is retired; do not add an inline fuse after the Lynx slot.
 6. No low-voltage-disconnect (LVD) automation is included in Phase 1; protection is source fusing plus manual `SW-12V-BATT` isolation.
-7. Alternator architecture lock is dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) with `F-04 150A`; obsolete pre-Mechman engine-bay fuse paths are removed from active layout.
+7. Alternator architecture lock is dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) with `F-04 200A/80V`; obsolete pre-Mechman engine-bay fuse paths are removed from active layout.
 8. `F-01A/B/C` are provisionally set to `200A` pending final `51.2V` battery datasheet/manual confirmation; if validated limits are lower, shift to `175A`.
 9. `2/0` cable quantity planning baseline in this pass is `77.5 ft` total no-padding (`42.5 ft` red + `35.0 ft` black); user-applied order padding is intentionally deferred to checkout.
 10. Manual alternator shutdown baseline is Ford `Upfitter #3` feeding the WS500 brown ignition/enable wire through `F-15`; `WS500` white `Feature-In` remains a future-only reserve for automatic interlock work.

@@ -140,9 +140,9 @@ Solar remains deferred until shore charging and alternator charging are working.
 
 #### Alternator charging (dedicated `48V` secondary alternator path)
 - Active migration baseline: Mechman dual-alternator kit + WS500 regulator + APM-48 protection module.
-- `Lynx Slot 3` alternator branch fuse (`F-04`) is locked at `150A` (`58V/80V MEGA` class) at the house-bank/Lynx end of the alternator positive run. Mechman guidance requires the alternator positive cable fuse within `12 in` of the battery-bank connection; if final layout places the Lynx farther away, add a bank-end fuse holder rather than leaving the branch unfused at the bank end.
-- The owner-confirmed `PH-VAN` harness combines regulator power and positive voltage sense on one short red lead at the house/main positive bus. Protect that actual power conductor with one `15A/80VDC` Littelfuse `166.7000.5152` or verified equivalent (`F-12/F-13-PHVAN`, active BOM row `171`). Littelfuse confirms the already-owned `178.6150.0001` housing accepts FKS fuses at `80VDC`; only correct contacts and wire fit remain to verify. The former separate `3A` positive-sense position in inactive row `320` is not installed.
-- Lock the separate Wakespeed `500A/50mV` alternator shunt into the dedicated `2/0` negative return near the house board: `ALT B-/case -> long 2/0 -> Wakespeed shunt -> short 2/0 jumper -> Lynx negative`. On this negative-side layout, grey/current-sense-low lands on the alternator side and purple/current-sense-high lands on the Lynx side; no `5A` sense-wire fuses are installed. Before landing the negative return, prove the disconnected Lynx negative has no stable low-resistance continuity to chassis; a second negative/chassis bond would bypass this shunt and reopens the topology.
+- `Lynx Slot 3` alternator branch fuse (`F-04`) is locked at `200A/80V MEGA` at the house-bank/Lynx end of the alternator positive run. Mechman's published `48V Elite` curve reaches about `145.7A`; `125%` is about `182A`, making `200A` the next standard fuse size while remaining within the installed `2/0 AWG` conductor envelope. Mechman guidance requires the fuse within `12 in` of the battery-bank connection; if final layout places the Lynx farther away, add a bank-end fuse holder rather than leaving the branch unfused at the bank end.
+- The owner-confirmed `PH-VAN` harness combines regulator power and positive voltage sense on one short red lead. Land it on the alternator/load side of `F-04` and protect it immediately with one `15A` high-interrupt DC branch device. Final hardware is a Mersen `USCC1` Class-CC holder (`600VDC`) with one Mersen `ATDR15` (`15A`, time-delay, `300VDC`) fuse in a separate small DC DIN enclosure, using short `14 AWG` pigtails and a sealed `14-to-16 AWG` splice to the harness. The purchased Littelfuse `178.6150.0001` empty housings and `20A` FKS fuses are unused; do not buy contacts or build around them.
+- Put the separate Wakespeed `500A/50mV` shunt in the common battery-negative path, in series with the Victron SmartShunt: `battery negative combine -> SmartShunt -> Wakespeed shunt -> Lynx/system negative`. Purple/current-sense-high faces the battery/SmartShunt; grey/current-sense-low faces Lynx/system negative. Configure `Shunt at Battery`. This follows Wakespeed's standalone `PH-VAN` / internal-BMS-no-communication example, preserves net battery-current feedback, eliminates positive sense-wire fuses, and removes the dedicated-alternator-shunt bypass dependency.
 - Manual charge-enable/disable path is locked to Ford `Upfitter Switch #3` feeding the WS500 brown ignition/enable wire through local inline fuse `F-15` (`3A`, 12V control circuit).
 - `WS500` white `Feature-In` is reserved for future automatic fault-interlock work and is not required in Phase 1.
 - Mechanical-only staged driving with the Mechman alternator installed but unwired/electrically disabled is owner/Mechman-confirmed acceptable after the idler/belt/noise check passes; this does not commission alternator charging.
@@ -175,7 +175,7 @@ Solar remains deferred until shore charging and alternator charging are working.
 
 ### Safety baseline
 - Positive path sequence: battery -> Class T fuse (near source) -> disconnect -> Lynx Distributor -> fused branch feeds
-- Negative path sequence: battery -> SmartShunt -> Lynx Distributor negative bus -> all load returns on load side of shunt
+- Negative path sequence: battery -> SmartShunt -> Wakespeed `500A/50mV` shunt -> Lynx Distributor negative bus -> all load/charge returns on the system side of both shunts
 - Dedicated alternator branch grounding rule set: run equal-or-larger dedicated negative cable from secondary alternator to house-bank return path and avoid sheet-metal return paths.
 - MultiPlus mobile-installation protective earth is mandatory: external `M6 PE` lug -> `10 AWG` green stranded copper (`4 mm²` Victron minimum) -> verified truck-chassis bond point. Bond the aluminum Hiatus shell separately into the same equipment-ground network; do not use shell/80/20 as the only PE conductor.
 - Keep AC PE, AC neutral, and DC negatives distinct. Do not jumper MultiPlus case/PE to Lynx or `12V` negative and do not add a fixed downstream neutral-ground bond; leave the MultiPlus internal ground relay enabled. Confirm Mechman case-ground behavior and verify no chassis path bypasses the SmartShunt before alternator commissioning.
@@ -199,7 +199,7 @@ Approved architecture for Phase 1:
 - Current Lynx fused outputs in use (`4` total):
 - Slot 1: MultiPlus-II `48/3000` (`F-02 125A`)
 - Slot 2: SmartSolar `150/45` (`F-03 60A`)
-- Slot 3: Dedicated `48V` alternator branch output (`F-04 150A`)
+- Slot 3: Dedicated `48V` alternator branch output (`F-04 200A/80V`)
 - Slot 4 (`F-05`) feeds Orion-Tr Smart `48/12` through one `40A` MEGA body-marked at least `58VDC`; standalone `F-06` is retired.
 - `1x` Lynx Distributor covers the current four active branch outputs with no spare fused slot.
 - If another fused `48V` branch is added later, add a second Lynx module or a separately engineered branch in that phase.
