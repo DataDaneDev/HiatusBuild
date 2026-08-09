@@ -125,8 +125,8 @@ Posture: not a blocker. Re-measure before buying. Carry-extra-fuel is acceptable
 
 - **WS500 alternator purchase package**
   - `F-04`: Victron `CIP138200020`, `200A/80V` MEGA, five-pack. Install one in Lynx Slot 3 and carry one spare.
-  - `PH-VAN` red: Mersen `USCC1` holder + Mersen `ATDR15` `15A/300VDC` time-delay Class-CC fuse in a separate small DC DIN enclosure. Use short `14 AWG` pigtails and one sealed splice to the `16 AWG` harness. Feed from the alternator/load side of `F-04`.
-  - Common negative: place the Wakespeed `500A/50mV` shunt after the Victron SmartShunt; purple/high faces battery/SmartShunt and grey/low faces Lynx/system. No `5A` sense fuses.
+  - `PH-VAN` red: Eaton/Bussmann `HEB-AA` water-resistant in-line holder (Amazon ASIN `B000LDA1WI`) + Littelfuse `KLKD015.T` `15A/600VAC/DC` fast-acting midget fuse (Amazon ASIN `B013DDUSOS`). Use short on-hand `14 AWG` pigtails and one sealed splice to the `16 AWG` harness. Feed from the alternator/load side of `F-04`. This is a single in-line loom component; do not add a DC fuse panel, DIN rail, or enclosure.
+  - Common negative: place the Wakespeed `500A/50mV` shunt on the battery side of the hard-mounted Victron SmartShunt: `battery negative combine -> Wakespeed shunt -> SmartShunt -> Lynx`. Purple/high faces battery negative and grey/low faces SmartShunt/Lynx. No `5A` sense fuses.
   - Routing: one `50 ft` roll of `3/4 in` split nylon loom, one `20-pack` of `1 in` cushioned P-clamps, and one correctly fitting red alternator-B+ boot set.
 
 ## TNutz / 80/20 posture

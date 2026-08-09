@@ -31,7 +31,7 @@ This is an implementation guide, not a substitute for the official manuals. Use 
 - House bank: `3x` Dumfume `51.2V 100Ah` LiFePO4 in parallel (`1S3P`), internal BMS, no confirmed CAN/closed-loop Wakespeed integration.
 - House distribution: Victron Lynx Distributor, SmartShunt, MultiPlus-II `48/3000/35-50`, Orion-Tr Smart `48/12-30`.
 - Manual charge enable: Ford `Upfitter Switch #3 -> F-15 3A inline fuse -> WS500 brown ignition/enable wire`.
-- Main alternator branch: `2/0 AWG` positive through `F-04 200A/80V MEGA` at Lynx Slot 3 / house-bank end; dedicated `2/0 AWG` negative direct to Lynx/system negative. The Wakespeed `500A/50mV` shunt sits after the SmartShunt in the common battery-negative path.
+- Main alternator branch: `2/0 AWG` positive through `F-04 200A/80V MEGA` at Lynx Slot 3 / house-bank end; dedicated `2/0 AWG` negative direct to Lynx/system negative. The Wakespeed `500A/50mV` shunt sits on the battery side of the SmartShunt in the common battery-negative path; the SmartShunt remains hard-attached to the Lynx.
 
 ## Current physical/staged-driving status
 
@@ -151,7 +151,7 @@ Owner-confirmed single-generator routing orientation, `2026-06-08`:
 - Red alternator positive / regulator power wire: fuse at `10A`, or `15A` for extra-large-case alternator.
 - Red/yellow positive battery voltage-sense wire: fuse at `3A`.
 - Black/yellow negative sense wire: connect to negative of the bank being charged.
-- Purple/grey shunt-current-sense pair: default `500A/50mV`. For the selected common battery-negative layout, purple/current-sense-high lands on the battery/SmartShunt side and grey/current-sense-low lands on the Lynx/system side; no sense-wire fuses are used. Configure `Shunt at Battery`.
+- Purple/grey shunt-current-sense pair: default `500A/50mV`. For the selected common battery-negative layout, purple/current-sense-high lands on the battery-negative side of the Wakespeed shunt and grey/current-sense-low lands on its SmartShunt/Lynx system side; no sense-wire fuses are used. Configure `Shunt at Battery`.
 - Alternator temp sensor mounts to rear case bolt or alternator ground-terminal bolt.
 - Battery temp sensor is important on LiFePO4 because charging must stop outside battery temperature limits.
 - Power and voltage-sense wires must be fused and must be placed so the regulator does not lose the battery reference while the alternator is still operating.
@@ -195,9 +195,9 @@ The APM-48 is **not** a series device in that path. It is a parallel surge clamp
 
 1. Alternator `B-` / approved negative terminal / approved ground point.
 2. Dedicated `2/0 AWG` negative return cable directly to Lynx/system negative; do not use chassis-only return.
-3. All battery current then passes through `Lynx/system negative -> Wakespeed 500A/50mV shunt -> Victron SmartShunt -> battery negative combine`.
+3. All battery current then passes through `Lynx/system negative -> Victron SmartShunt -> Wakespeed 500A/50mV shunt -> battery negative combine`.
 
-Mount the Wakespeed shunt next to the SmartShunt in the common battery-negative path. Purple/current-sense-high faces the battery/SmartShunt; grey/current-sense-low faces Lynx/system negative. No load or charge return may land on the battery side of either shunt.
+Mount the Wakespeed shunt next to, but on the battery side of, the SmartShunt in the common battery-negative path: `battery negative combine -> Wakespeed shunt -> SmartShunt -> Lynx`. Leave the SmartShunt physically hard-attached to the Lynx. Purple/current-sense-high faces battery negative; grey/current-sense-low faces the SmartShunt/Lynx system side. No load or charge return may land on the battery side of either shunt.
 
 ### Regulator/control path
 
@@ -209,8 +209,8 @@ Mount the Wakespeed shunt next to the SmartShunt in the common battery-negative 
 ### WS500 `PH-VAN` sense/protection path
 
 - The confirmed `PH-VAN` harness joins regulator power and positive voltage sense on one short red lead; do not extend the harness itself.
-- Feed that red lead from the alternator/load side of `F-04` through one Mersen `USCC1` holder and `ATDR15` `15A/300VDC` time-delay Class-CC fuse (`F-12/F-13-PHVAN`, active BOM row `171`). Mount the holder in a separate small DC DIN enclosure beside the Lynx; use short `14 AWG` pigtails and one sealed `14-to-16 AWG` step-down splice. Do not use the incomplete Littelfuse housings or the existing `20A` fuses.
-- Purple/grey current-sense pair runs unfused to the Wakespeed shunt in the common battery-negative path: purple/high on the battery/SmartShunt side and grey/low on the Lynx/system side.
+- Feed that red lead from the alternator/load side of `F-04` through one Eaton/Bussmann `HEB-AA` in-line holder and Littelfuse `KLKD015.T` `15A/600VAC/DC` fast-acting midget fuse (`F-12/F-13-PHVAN`, active BOM row `171`). Secure the single holder in the loom immediately beside `F-04`; use short `14 AWG` pigtails and one sealed `14-to-16 AWG` splice. Do not add a DC fuse panel, DIN rail, or enclosure, and do not use the incomplete Littelfuse housings or existing `20A` fuses.
+- Purple/grey current-sense pair runs unfused to the Wakespeed shunt in the common battery-negative path: purple/high on the battery-negative side and grey/low on the SmartShunt/Lynx system side.
 - Alternator and battery temperature sensors are installed before first charging run.
 
 ## Installation phases
@@ -295,7 +295,7 @@ APM steps:
 High-current cable routing:
 
 - Positive: alternator `B+` to Lynx Slot 3 / `F-04 200A/80V MEGA` at house-bank end.
-- Negative: alternator `B-`/approved ground directly to Lynx negative with dedicated `2/0 AWG`. The Wakespeed shunt is not in this branch; it sits after the SmartShunt in the common battery-negative path.
+- Negative: alternator `B-`/approved ground directly to Lynx negative with dedicated `2/0 AWG`. The Wakespeed shunt is not in this branch; it sits on the battery side of the SmartShunt in the common battery-negative path.
 - Protect both cables from chafe, heat, steering/suspension movement, hood/engine movement, and sharp pass-throughs.
 - Use grommets/bulkheads/loom/P-clamps/J-clamps where conductors pass through sheet metal or near edges.
 - Keep unfused positive exposure as short as practical. Mechman says fuse within `12 in` of battery-bank connection; in this build that protection is the house-end `F-04` branch fuse.
@@ -347,7 +347,7 @@ Run these as separate, labeled, protected looms rather than one messy bundle:
 4. **WS500 battery/shunt/control leg: local near house bank**
    - `PH-VAN` red combined regulator power / positive voltage sense through the appropriate small fuse to the charged house/main positive bus.
    - `PH-VAN` black combined regulator negative / negative voltage sense to the matching house/main negative bus.
-   - Purple/grey current-sense pair to the Wakespeed shunt after the SmartShunt in the common battery-negative path; no inline fuses. Purple/current-sense-high lands on the battery/SmartShunt side and grey/current-sense-low lands on the Lynx/system side. Use twisted pair / instrument cable, keep routing quiet, configure `Shunt at Battery`, and verify positive charging-current sign before trusting readings.
+   - Purple/grey current-sense pair to the Wakespeed shunt on the battery side of the SmartShunt in the common battery-negative path; no inline fuses. Purple/current-sense-high lands on the battery-negative side and grey/current-sense-low lands on the SmartShunt/Lynx system side. Use twisted pair / instrument cable, keep routing quiet, configure `Shunt at Battery`, and verify positive charging-current sign before trusting readings.
    - Battery temperature sensor at/near the house battery bank if used by the final profile.
    - Yellow/green CAN connector labeled/protected as unused unless a compatible CAN/BMS integration is later added.
 
@@ -367,7 +367,7 @@ Minimum required WS500 connections for this build with the confirmed `PH-VAN` ha
 - `PH-VAN` black combined regulator negative / negative voltage sense at the matching house/main negative bus;
 - blue field lead through the provided Mechman one-wire adapter;
 - yellow stator/tach lead remains unused/dead-ended unless Mechman/Wakespeed explicitly require it;
-- purple/grey current-sense pair to the common battery-negative Wakespeed shunt, purple/high battery/SmartShunt side and grey/low Lynx/system side;
+- purple/grey current-sense pair to the common battery-negative Wakespeed shunt, purple/high battery-negative side and grey/low SmartShunt/Lynx system side;
 - alternator temperature sensor;
 - battery temperature sensor if used by profile/config;
 - yellow/green CAN connector protected as unused unless a compatible CAN/BMS integration is later added;
@@ -561,7 +561,7 @@ Electrical install:
 - [ ] APM terminals not under battery cable lugs.
 - [ ] Alternator positive `2/0` routed/protected to `F-04` / Lynx.
 - [ ] Alternator dedicated negative `2/0` routed directly to Lynx/system negative.
-- [ ] Wakespeed shunt installed after the SmartShunt in the common battery-negative path; purple on battery/SmartShunt side, grey on Lynx/system side; no return bypasses either shunt.
+- [ ] Wakespeed shunt installed on the battery side of the hard-mounted SmartShunt in the common battery-negative path; purple on battery-negative side, grey on SmartShunt/Lynx system side; no return bypasses either shunt.
 - [ ] `F-04 200A/80V` installed at house end.
 - [ ] Cable covers/boots/strain relief installed.
 

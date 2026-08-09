@@ -352,10 +352,10 @@ Goal: rough-in safely first; commission only after all preconditions are green.
 - [ ] Add chafe protection, loom, rubber-lined clamps, strain relief, and grommet/pass-through protection.
 - [ ] Land positive at Lynx Slot 3 / `F-04 200A/80V MEGA` house-bank end.
 - [ ] Land dedicated negative return to the Lynx/house negative return path; do not rely on sheet metal/chassis only.
-- [ ] Insert Wakespeed `500A/50mV` shunt after the SmartShunt in the common battery-negative path; purple/high battery side, grey/low system side; confirm all returns remain on the system side.
+- [ ] Insert Wakespeed `500A/50mV` shunt on the battery side of the hard-mounted SmartShunt in the common battery-negative path: `battery -> Wakespeed shunt -> SmartShunt -> Lynx`; purple/high battery side, grey/low SmartShunt/Lynx side; confirm all returns remain on the system side.
 - [ ] Mount WS500 near house electrical board/battery/shunt area for short sense wiring.
 - [ ] Wire brown ignition/enable from Ford Upfitter `#3` through `F-15 3A`.
-- [ ] Wire PH-VAN red from the `F-04` alternator/load-side stud through the Mersen `USCC1/ATDR15` `15A` Class-CC branch; wire PH-VAN black to Lynx/system negative.
+- [ ] Wire PH-VAN red from the `F-04` alternator/load-side stud through the Eaton/Bussmann `HEB-AA` + Littelfuse `KLKD015.T` `15A/600VAC/DC` in-line branch; secure it in the loom with no DC fuse panel or DIN enclosure; wire PH-VAN black to Lynx/system negative.
 - [ ] Wire blue field lead through Mechman adapter.
 - [ ] Dead-end/protect unused yellow stator/tach unless explicitly required.
 - [ ] Protect unused yellow/green CAN connector unless compatible CAN/BMS integration is later added.

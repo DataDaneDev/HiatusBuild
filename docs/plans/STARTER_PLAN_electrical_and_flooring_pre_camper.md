@@ -135,10 +135,10 @@ Do not finalize these yet:
 ## 3.6 Alternator path execution baseline (now locked)
 - Build around the dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48`) only; obsolete pre-Mechman charger layout dependencies are removed from active planning.
 - Keep Lynx Slot 3 reserved for the alternator branch (`F-04` now re-baselined in the fuse schedule).
-- Reserve mounting/service access for APM-48, `F-04 200A/80V` bank-end alternator branch fuse access, the Mersen `USCC1/ATDR15` PH-VAN branch, and the Wakespeed shunt after the SmartShunt in the common battery-negative path. Purple/high faces battery/SmartShunt, grey/low faces Lynx/system, and no `5A` sense fuses are used.
+- Reserve mounting/service access for APM-48, `F-04 200A/80V` bank-end alternator branch fuse access, the Eaton/Bussmann `HEB-AA` + Littelfuse `KLKD015.T` in-line PH-VAN branch, and the Wakespeed shunt on the battery side of the hard-mounted SmartShunt in the common battery-negative path. Purple/high faces battery negative, grey/low faces SmartShunt/Lynx, and no `5A` sense fuses are used. Do not add a DC fuse panel or DIN enclosure.
 - Reserve a small protected control-wire path from Ford `Upfitter #3` to the WS500 brown ignition/enable lead (`F-15` local inline fuse at the upfitter-to-WS500 handoff).
 - Use existing uncut `2/0` stock for the alternator `+` and dedicated negative run until measured field routing proves otherwise.
-- Do not energize alternator charging until the remaining kit inventory, Mersen PH-VAN branch, field-voltage/derate setting, APM-48 placement, `F-04 200A/80V` protection, shunt-at-battery configuration, and shutdown sequence are confirmed.
+- Do not energize alternator charging until the remaining kit inventory, in-line `HEB-AA/KLKD015.T` PH-VAN branch, field-voltage/derate setting, APM-48 placement, `F-04 200A/80V` protection, shunt-at-battery configuration, and shutdown sequence are confirmed.
 
 ---
 

@@ -625,6 +625,15 @@ related:
 - Result: `battery negative combine -> SmartShunt -> Wakespeed 500A/50mV shunt -> Lynx/system negative`; purple/high faces battery/SmartShunt, grey/low faces Lynx/system, configure `Shunt at Battery`. Alternator `B- -> dedicated 2/0 -> Lynx negative`. `F-04=200A/80V`. PH-VAN red uses Mersen `USCC1 + ATDR15` in a small separate DC DIN enclosure, fed from the `F-04` alternator/load-side stud.
 - Follow-up: read and record the Mechman-supplied WS500 configuration before altering it; confirm shunt stud fit, output/nameplate, charge ceiling, field derate, current sign, temp sensors, APM state, and `<0.1V` charge/return drops during controlled commissioning.
 
+- ID: D-067
+- Date: 2026-08-09
+- Decision: Preserve the SmartShunt-to-Lynx hard connection by putting the Wakespeed shunt on the battery side, and eliminate the separate DC fuse-panel/DIN-enclosure concept.
+- Context: The owner confirmed the Victron SmartShunt is physically hard-attached to the Lynx and rejected a bulky DC fuse panel. Series-shunt order does not change the net battery current measured when every source and load remains on the Lynx/system side.
+- Decision drivers: fit the real mechanical layout, preserve both shunts' full-current measurement, avoid any bypass, protect the PH-VAN red lead at 48V-bank fault potential, and minimize volume and part count.
+- Result: `battery negative combine -> Wakespeed 500A/50mV shunt -> Victron SmartShunt -> Lynx/system negative`; purple/high faces battery negative and grey/low faces SmartShunt/Lynx. Configure `Shunt at Battery`. PH-VAN red uses one Eaton/Bussmann `HEB-AA` in-line holder with one Littelfuse `KLKD015.T` `15A/600VAC/DC` midget fuse next to `F-04`; no DC fuse panel, DIN rail, or enclosure.
+- Supersedes: D-066 only where it placed the Wakespeed shunt after the SmartShunt or selected the `USCC1/ATDR15` DIN-enclosure package. D-066's `Shunt at Battery`, no-`5A`-sense-fuses, and no-bypass requirements remain active.
+- Follow-up: verify Wakespeed-shunt stud fit and jumper length before cable fabrication; commission against a clamp meter and verify positive charging-current sign.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.

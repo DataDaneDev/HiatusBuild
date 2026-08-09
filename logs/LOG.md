@@ -1,3 +1,9 @@
+## 2026-08-09 — SmartShunt hard-mount preserved; PH-VAN protection moved fully in-line
+
+- Owner confirmed the Victron SmartShunt is hard-attached to the Lynx and rejected a bulky DC fuse panel. Corrected the common-negative order to `battery negative combine -> Wakespeed 500A/50mV shunt -> Victron SmartShunt -> Lynx/system negative`; purple/high faces battery negative, grey/low faces SmartShunt/Lynx, and the regulator remains `Shunt at Battery`. Series order changes physical fit, not the current through either shunt.
+- Replaced the Mersen DIN-enclosure PH-VAN branch with one Eaton/Bussmann `HEB-AA` in-line holder and one Littelfuse `KLKD015.T` `15A/600VAC/DC` midget fuse secured in the loom next to `F-04`. No DC fuse panel, DIN rail, enclosure, or `5A` sense-wire fuses are added.
+- Updated the canonical electrical architecture, fuse schedule, overview, install guide, starter/live checklists, procurement list, tracking decision `D-067`, and BOM row `171`.
+
 ## 2026-08-08 — Whole-system WS500 review moved shunt to common battery negative
 
 - Superseded the earlier dedicated alternator-negative-shunt plan after comparing all four credible layouts. Final standalone/no-CAN default now follows Wakespeed's PH-VAN/internal-BMS example: `battery negative combine -> Victron SmartShunt -> Wakespeed 500A/50mV shunt -> Lynx/system negative`, with purple/high toward battery and grey/low toward Lynx; configure `Shunt at Battery`.
