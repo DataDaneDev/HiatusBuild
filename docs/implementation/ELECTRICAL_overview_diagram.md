@@ -398,7 +398,7 @@ Retired from active architecture:
 | `C-19` | Orion `12V -` -> 12V fuse block integrated `-` bus / main `-` stud | `12V` | Charger output return | `F-07` protects paired positive | `6 AWG` | `2.5 ft` (`ASSUMED`) |
 | `C-19A` | 12V buffer battery `+` -> `F-11` -> `SW-12V-BATT` -> 12V fuse block main `+` stud | `12V` | Buffer source path and service isolation path | `F-11` `100A` class | `4 AWG` planned | `2.5 ft` (`ASSUMED`) |
 | `C-19B` | 12V buffer battery `-` -> 12V fuse block integrated `-` bus / main `-` stud | `12V` | Buffer battery return path | N/A (paired with `C-19A`) | `4 AWG` planned | `2.5 ft` (`ASSUMED`) |
-| `C-20` | Reserved 12V panel -> future Starlink direct-DC conversion | `12V` | Not active; Standard 4 X remains on its supplied AC power path | No fuse installed until exact converter/input is selected | No conductor committed | Pull string/conduit only if useful while access is open |
+| `C-20` | 12V panel -> purchased Starlink DC converter | `12V` | Purchased converter is the planned primary path; supplied AC power remains fallback until bench/load acceptance | Dedicated `20A` ATO/ATC branch fuse planned; size remains limited by received input lead and installed conductor | Red/yellow marine duplex planned; `12 AWG` only within about `6 ft` one-way, otherwise `10 AWG` | HOLD energization until converter markings, measured route, fuse/wire, ventilation, polarity, heat, and reboot stability pass |
 | `C-21` | 12V panel -> Fridge | `12V` | Branch load | `F-10` `15A` | `12 AWG duplex` | `12 ft` (`ASSUMED`, far-load branch; upsize avoids the prior voltage-drop warning) |
 | `C-22` | 12V panel -> LF Bros diesel-heater harness | `12V` | Startup/cooldown branch; keep energized through controller-commanded shutdown | `F-10` `15A` (retain any supplied harness fuse; verify coordination) | `12 AWG duplex` | `8 ft` (`ASSUMED`; measure before final cable landing) |
 | `C-23` | 12V panel -> Water pump | `12V` | Branch load | `F-10` `10A` | `14 AWG duplex` | `8 ft` (`ASSUMED`, near-load branch) |
@@ -458,7 +458,7 @@ Calculation basis for drop screening:
 | `C-19` | Orion `12V -` | Fuse block integrated `-` bus / main `-` stud | `F-07` paired | `30A` | `6 AWG` | `2.5 ft` | `0.49%` @ `12V` | Row `29` (`6 AWG black`) | PASS |
 | `C-19A` | Buffer battery `+` | Fuse block main `+` stud (via `F-11/SW`) | `F-11 100A` | `50A` design | `4 AWG` | `2.5 ft` | `0.52%` @ `12V` | Row `30` (`4 AWG red`) | PASS |
 | `C-19B` | Buffer battery `-` | Fuse block integrated `-` bus / main `-` stud | N/A | `50A` design | `4 AWG` | `2.5 ft` | `0.52%` @ `12V` | Row `30` (`4 AWG black`) | PASS |
-| `C-20` | 12V fuse panel | Future Starlink direct-DC conversion | None active | N/A | No conductor committed | N/A | N/A | Conditional BOM row `27` | RESERVE; use supplied AC power path until exact converter is selected |
+| `C-20` | 12V fuse panel | Purchased Starlink DC converter | Dedicated `20A` ATO/ATC branch planned; not installed | Measure received input/current behavior | `12 AWG` marine duplex only within about `6 ft` one-way; otherwise `10 AWG` | Measure | Recalculate from measured route/current | Converter row `27`; branch allowance row `350` | HOLD; factory AC remains fallback until fuse/wire/ventilation plus loaded heat/voltage/reboot testing pass |
 | `C-21` | 12V fuse panel | Fridge | `F-10 15A` | `7A` | `12 AWG duplex` | `12 ft` | `2.23%` @ `12V` | Row `116` / field `12 AWG duplex` stock | PASS |
 | `C-22` | 12V fuse panel | LF Bros diesel-heater harness | `F-10 15A` + supplied harness fuse if present | `10A` startup screen | `12 AWG duplex` | `8 ft` assumed | `2.12%` @ `12V` | Field `12 AWG duplex` stock | PASS; measure final run, test startup voltage, and preserve cooldown power |
 | `C-23` | 12V fuse panel | Water pump | `F-10 10A` | `7A` | `14 AWG duplex` | `8 ft` | `2.36%` @ `12V` | Row `32` (`14 AWG duplex`) | PASS |
@@ -555,7 +555,7 @@ Torque reference (verify against your exact manuals/hardware):
 - Portable EMS in source-side shore path before camper inlet
 - Single combined 6-way AC DIN enclosure with isolated AC-in and AC-out neutral paths plus common equipment grounding/PE handling
 - AC-out `30A` main breaker plus `20A`/`20A` branch breaker and GFCI receptacle hardware
-- Receptacle boxes + `120V` outlets (current purchased baseline `2` GFCI receptacles/covers in row `15`; inactive row `112` records the closed separate box/faceplate allowance)
+- Receptacle boxes + `120V` outlets (current purchased baseline `2` first-in-chain GFCI receptacles/covers in row `15`; active row `112` now records six purchased old-work boxes for field-fit downstream devices, but device count/covers/clamps/fill/access/testing remain open)
 - AC-out-2 reserve-only capped route (no energized Phase 1 branch hardware)
 - USB PD station branch hardware (`3` stations / independent routes owner-reported `2026-08-05`: `1x` office and `2x` Galley; row `115` owns the exact purchased Acegoo evidence while the additional station purchase provenance remains untracked)
 - Camper audio hardware: Kicker `46KMC2` source branch, Kicker `49PTRTP10` powered sub branch, `AUDIO-HU` 15A source protection, `AUDIO-SUB` 40A source fuse, RCA/speaker/remote wiring

@@ -151,7 +151,7 @@ Purchased / locked 2026-05-16:
 Can still defer during first live charge even though purchased:
 
 - AC-out branch energization and receptacle load testing
-- BOM `15`: the two purchased GFCI receptacles/covers; inactive rows `111` and `112` preserve the obsolete downstream-receptacle and closed separate box/faceplate concepts
+- BOM `15`: the two purchased first-in-chain GFCI receptacles/covers; inactive row `111` preserves the formerly closed downstream-device concept, while active row `112` now records the purchased six-pack of old-work boxes. Final downstream device count, covers/plates, clamps, conductor fill, wall fit, accessibility, and whole-chain GFCI testing remain open.
 - BOM `113`: AC branch cable
 
 ### Battery first-charge hold points

@@ -13,9 +13,9 @@ related:
 
 # Electrical AC BOM (Phase 1)
 
-As-of date: `2026-08-05`
+As-of date: `2026-08-10`
 
-Purpose: maintain the purchased Phase 1 AC architecture baseline: portable `30A` EMS, `30A` shore inlet/locking cord with a modular `25 ft` TT-30 extension, one `6-way` DIN enclosure, `30A` AC-in breaker, `30A` AC-out main breaker, and two active `20A` GFCI-protected AC-out branches. Final physical outlet locations and enclosure access remain measurement-gated in the installed camper.
+Purpose: maintain the purchased Phase 1 AC architecture baseline: portable `30A` EMS, `30A` shore inlet/locking cord with a modular `25 ft` TT-30 extension, one `6-way` DIN enclosure, `30A` AC-in breaker, `30A` AC-out main breaker, and two active `20A` GFCI-protected AC-out branches. A six-pack of old-work boxes is now purchased for the reopened downstream-receptacle option; final outlet count, physical locations, box/cover fit, cable restraint, and enclosure access remain measurement-gated in the installed camper.
 
 Related docs:
 - `docs/implementation/ELECTRICAL_overview_diagram.md`
@@ -45,7 +45,7 @@ Related docs:
 ### AC-out chain (inverter-backed branch distribution)
 - `MultiPlus AC-out-1 -> 10/3 feeder -> combined 6-way AC DIN enclosure -> 30A UL489 AC-out main breaker -> 20A Branch A + 20A Branch B -> GFCI receptacle per branch`
 - The two first-in-chain receptacles remain `20A` self-test GFCIs: Branch A = office/driver side, Branch B = Galley/passenger side. Owner reports both are wired on separate breakers as of `2026-08-05`; electrical commissioning remains open.
-- A small number of downstream standard receptacles is reopened as a field-fit plan, not yet a purchase lock. Continue each chain only from the corresponding first GFCI's `LOAD` terminals with `12 AWG` conductors, listed accessible boxes/clamps, and downstream GFCI-protected labeling/testing. More outlets do not increase the `20A` branch capacity.
+- A small number of downstream standard receptacles is reopened as a field-fit plan, not yet a device-count lock. Six Wocloer `14 cu in` old-work boxes are purchased in row `112`, but receptacles, covers/plates, compatible cable restraints, conductor fill, wall-stack fit, and final count still require inventory/field validation. Continue each chain only from the corresponding first GFCI's `LOAD` terminals with `12 AWG` conductors, listed accessible boxes/clamps, and downstream GFCI-protected labeling/testing. More outlets do not increase the `20A` branch capacity.
 - AC-out branch hardware is not required to perform the initial AC-in-only battery charging test, but it is now included in the purchased Phase 1 cart.
 
 ### Neutral and ground handling
@@ -93,7 +93,7 @@ These rows unblock safe MultiPlus shore charging and should not wait on final re
 | MultiPlus/chassis and shell bonding materials | field-measured | `10 AWG` green stranded copper minimum for MultiPlus `M6 PE` to verified truck chassis; separate shell bond jumper; M6/tinned lugs, protected chassis attachment, compatible aluminum-interface hardware/compound | `51`, `339` | Inventory/buy |
 | GFCI receptacles | `2` | `20A` self-test GFCI receptacles, one per active branch | `15` | Purchased |
 | Standard downstream receptacles | Field count TBD | Reopened `2026-08-05`; standard receptacles only downstream of the first GFCI `LOAD`, same branch conductor gauge, accessible listed boxes | inactive historical `111`; add new active procurement only if inventory is short | Measure/inventory before buy |
-| Outlet boxes + covers/faceplates + clamps | `2` first-GFCI sets plus field-count downstream sets | First GFCI hardware was already closed; each added downstream device needs its own listed accessible box, cover/plate, and cable restraint | inactive historical `112`; use on-hand stock or add new evidence | Inventory/fit gate |
+| Outlet boxes + covers/faceplates + clamps | `2` first-GFCI sets plus field-count downstream sets | Six `14 cu in` old-work boxes purchased; each added downstream device still needs a compatible cover/plate, cable restraint, conductor-fill check, and accessible installation | active row `112` | Boxes purchased; count/fit/access gate open |
 | AC branch cable | `30 ft` purchased | `12/3` stranded triplex branch cable (`C-31/C-32`) | `113` | Purchased |
 | Shore + AC-in/AC-out feeder cable | `20 ft` purchased | `10/3` stranded triplex for `C-28/C-29/C-30` (`30A` paths) | `114` | Purchased |
 | Strain relief/cable glands | per enclosure entries | Use assorted on-hand entry hardware sized during physical layout | `44` | On-hand fitment stock |
@@ -127,7 +127,7 @@ Use this checklist as the continuing acceptance gate before sustained shore char
 - Confirm one unique AC-in chain exists: `shore source/adapters -> portable EMS -> cord -> inlet -> AC-in breaker -> MultiPlus AC-in`.
 - Confirm one unique AC-out-1 chain exists: `MultiPlus AC-out-1 -> 30A AC-out main -> 20A branch breakers -> GFCI receptacles`.
 - Confirm `AC-out-2` is documented as reserve-only and not active in Phase 1 procurement.
-- Confirm current receptacle count is locked to `2` active GFCI receptacles unless a later layout revision reopens downstream receptacles.
+- Confirm the two first-in-chain GFCIs remain the only branch-origin devices; downstream receptacle count remains field-fit and must use the first GFCI's `LOAD` terminals, compatible listed boxes/covers/clamps, and whole-chain testing.
 
 ### 2) Protection coordination
 - Confirm AC-in breaker is `30A` and AC-in conductors are `10 AWG`.
@@ -168,6 +168,6 @@ Use this checklist as the continuing acceptance gate before sustained shore char
 ## Procurement Notes
 - DIN rail is a mounting method; breaker listing and rating remain the controlling requirement.
 - Lowest-cost listed policy is acceptable only if each selected device has verifiable NRTL listing (`UL` or `ETL`) for intended use.
-- Purchased SKU lock is recorded in `bom/bom_estimated_items.csv` for rows `13`, `327`, `14`, `15`, `41`, `107`, `108`, `109`, `110`, `330`, `113`, `114`, `123`, `179`, and `180`. Rows `13`/`327` are the AC-in/AC-out `30A` pair; rows `110`/`330` are the two `20A` branch breakers. Row `181` was same-order tire-deflator/off-road support hardware and is intentionally outside AC scope.
-- Inactive BOM rows `111` and `112` preserve the obsolete downstream-receptacle concept and closed separate box/faceplate allowance. The two active GFCIs/covers are purchased in row `15`; no separate box/faceplate procurement remains.
+- Purchased SKU lock is recorded in `bom/bom_estimated_items.csv` for rows `13`, `327`, `14`, `15`, `41`, `107`, `108`, `109`, `110`, `112`, `330`, `113`, `114`, `123`, `179`, and `180`. Rows `13`/`327` are the AC-in/AC-out `30A` pair; rows `110`/`330` are the two `20A` branch breakers. Row `112` is the purchased old-work box six-pack, not evidence that six downstream devices are approved. Row `181` was same-order tire-deflator/off-road support hardware and is intentionally outside AC scope.
+- Inactive BOM row `111` preserves the formerly closed downstream-receptacle concept. Row `112` was restored to the active BOM after the `2026-08-07` box purchase; covers/plates, cable restraints, device inventory, conductor fill, wall-stack fit, accessibility, and final count remain open.
 - Current utilization note (`2026-05-16`): AC protection chain and purchase scope are locked for a `30A` system with two active `20A` branches. Do not add a third active AC branch without revisiting the AC-out main/enclosure/feed plan.

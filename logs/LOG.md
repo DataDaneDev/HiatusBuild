@@ -1,3 +1,10 @@
+## 2026-08-10 — Amazon month export and Starlink cost evidence reconciled
+
+- Reconciled the owner-provided Amazon export: `19` lines / `19` units / `$425.22` item subtotal from `2026-08-05` through `2026-08-09`; ignored its duplicate trailing header and added only sanitized date/title/public ASIN evidence to `references/amazon_order_history.csv`.
+- Every line maps to the build/truck BOM. Converted planned Starlink converter/pigtail/coil/cables/crimper and WS500 items to exact purchase evidence; restored AC box row `112`; corrected the two bug-screen item subtotals; added rug, adjustable-vent, heat-shield, Starlink coupler, and 1010-bracket stock. The Amazon reconciliation changed the active BOM by `+$56.29`, not the full export subtotal, because many lines already had costs or estimates.
+- Added the owner-reported `$405` aggregate purchase total for the Standard 4 X kit plus OEM mobility mount in row `79`. The Mouser passthrough package remains the existing `$46.31` item subtotal in row `346`, with no duplicate cost. Updated the separate recurring-service tracker to the current `$55/month`; exact plan name is unrecorded and unlimited service is planned later.
+- Active BOM moved from `$59,850.32` to `$60,311.61`, a combined `+$461.29`. Purchases do not clear installation gates: Starlink OD/termination/load/full-stroke/roof-contact tests, exact `3A` F-15 fuse verification, WS500 USB data proof, AC box/count/cover/clamp/fill/access checks, and final placement of the vent/heat-shield stock remain open. Full audit: `bom/amazon_order_history_reconciliation_2026-08-10.md`.
+
 ## 2026-08-10 — Final roof-solar architecture locked at 600W Arch Pro / 150-45
 
 - Reconciled the supplied `138 x 63 in` measured-roof analysis with the HiatusBuild source of truth and corrected the older repo's `134 x 62 in` CMPower/Lensun posture. MaxxAir is laterally centered; the conservative solver keepout is `X=29...63`, `Y=23...40` pending the exact rear flange/open-lid survey.
@@ -63,9 +70,9 @@
 
 ## 2026-08-05 — Rear and passenger-hatch bug screens ordered
 
-- Ordered one Yotache custom rear-entry magnetic screen in finished `60 in W x 46 in H`, black thickened mesh with middle magnetic opening. Owner-provided single-item order total is `$113.67`; item/tax split was not supplied. Expected arrival is `2026-08-24` through `2026-09-01`.
-- Ordered one Risareyi black thickened reinforced-polyester magnetic screen in actual `24 in x 64 in` at an owner-provided single-item order total of `$28.95`; item/tax split was not supplied. Install it rotated `90 degrees` as `64 in W x 24 in H`, turning the center seam into a horizontal hatch opening. Expected arrival is `2026-08-27`.
-- Combined recorded purchase total is `$142.62`. Rear nominal overlap is `2.25 in` per side and `1.75 in` at top with the bottom flush. The rotated passenger screen provides `3.25 in` nominal side overlap; after the estimated `1.5 in` bracket contour, about `1.75 in` per side remains for fixed hook-and-loop attachment. Receipt, adhesive compatibility, full hatch travel, gasket clearance, and installed fit remain acceptance gates.
+- Ordered one Yotache custom rear-entry magnetic screen in finished `60 in W x 46 in H`, black thickened mesh with middle magnetic opening. The 2026-08-10 Amazon export supplies a `$105.99` item subtotal, replacing the earlier `$113.67` order-total basis. Expected arrival is `2026-08-24` through `2026-09-01`.
+- Ordered one Risareyi black thickened reinforced-polyester magnetic screen in actual `24 in x 64 in`. The 2026-08-10 Amazon export supplies a `$26.99` item subtotal, replacing the earlier `$28.95` order-total basis. Install it rotated `90 degrees` as `64 in W x 24 in H`, turning the center seam into a horizontal hatch opening. Expected arrival is `2026-08-27`.
+- Combined item subtotal is `$132.98`. Rear nominal overlap is `2.25 in` per side and `1.75 in` at top with the bottom flush. The rotated passenger screen provides `3.25 in` nominal side overlap; after the estimated `1.5 in` bracket contour, about `1.75 in` per side remains for fixed hook-and-loop attachment. Receipt, adhesive compatibility, full hatch travel, gasket clearance, and installed fit remain acceptance gates.
 
 ## 2026-08-05 — Initial rear and passenger-side bug-screen geometry study (superseded)
 
