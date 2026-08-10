@@ -190,7 +190,7 @@ Reason:
 - The real hazard is a cascade where the second and third battery also disconnect under active alternator charge.
 
 ## What is still not fully closed
-- Physical inventory/procurement confirmation for `F-04` `200A/80V` MEGA stock, the Eaton/Bussmann `HEB-AA` + Littelfuse `KLKD015.T` in-line `PH-VAN` branch package, and the `F-15` `3A` Upfitter-control hardware.
+- `F-04` `200A/80V` MEGA stock and the Eaton/Bussmann `HEB-AA` + Littelfuse `KLKD015.T` in-line `PH-VAN` branch package were ordered `2026-08-09`; receipt, body-marking, physical fit, and small termination-stock checks remain open. Procurement/physical inventory confirmation for the separate `F-15` `3A` Upfitter-control hardware also remains open.
 - Physical fit, stud-size, and jumper-length confirmation for the Wakespeed shunt inserted on the battery side of the SmartShunt in the common battery-negative path; the SmartShunt-to-Lynx connection does not move.
 - Exact Mechman field-voltage/WS500 derate setting and alternator negative/case-isolation behavior in the installed kit.
 - Official vendor confirmation that the documented Dumfume battery/BMS behavior is acceptable with the `WS500`.

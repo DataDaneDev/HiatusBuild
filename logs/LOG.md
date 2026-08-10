@@ -1,3 +1,8 @@
+## 2026-08-09 — F-04 and PH-VAN fuse package purchased
+
+- Owner confirmed an Amazon order for Victron `CIP138200020` `200A/80V` MEGA five-pack (`$46.75`), Eaton/Bussmann `HEB-AA` `600V` in-line holder (`$16.83`), and Littelfuse `KLKD015.T` `15A/600VAC/DC` fuse (`$7.29`): `$70.87` combined item subtotal before unprovided tax/shipping.
+- Updated BOM rows `170` and `171` from `Planned` to `Purchased`. Receipt/body-marking/fit remain pending; also verify one `14 AWG x M8` ring terminal and one sealed `14-to-16 AWG` splice are in stock before installation.
+
 ## 2026-08-09 — Solar geometry audit rejects 800W CIGS; 66in cassette gate set
 
 - Corrected the earlier solar recommendation: `800W` Yuma CIGS is impossible on the supplied `134 x 62 in` roof model because `8x` compact 100W panels occupy `61.53 sqft` and `4x` 200W panels occupy `59.37 sqft`, both larger than the complete `57.69 sqft` roof before MaxxFan, Starlink, rails, spacing, or drainage.

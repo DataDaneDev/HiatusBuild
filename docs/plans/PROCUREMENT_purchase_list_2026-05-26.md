@@ -123,9 +123,9 @@ Posture: not a blocker. Re-measure before buying. Carry-extra-fuel is acceptable
   - Final install: one verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) in Lynx Slot 4 feeding the existing `6 AWG` Orion input pair directly. Retire standalone `F-06`; no DIN rail, pigtails, reducers, butt splices, or additional input holder.
   - Treat the purchased `20A` FKS fuses, empty FKS housings, and `30A/58V` MIDI stock as unused/dead-end inventory. Do not repurpose them for the final WS500 branch.
 
-- **WS500 alternator purchase package**
-  - `F-04`: Victron `CIP138200020`, `200A/80V` MEGA, five-pack. Install one in Lynx Slot 3 and carry one spare.
-  - `PH-VAN` red: Eaton/Bussmann `HEB-AA` water-resistant in-line holder (Amazon ASIN `B000LDA1WI`) + Littelfuse `KLKD015.T` `15A/600VAC/DC` fast-acting midget fuse (Amazon ASIN `B013DDUSOS`). Use short on-hand `14 AWG` pigtails and one sealed splice to the `16 AWG` harness. Feed from the alternator/load side of `F-04`. This is a single in-line loom component; do not add a DC fuse panel, DIN rail, or enclosure.
+- **WS500 alternator purchase package — ordered `2026-08-09`; receipt/marking checks pending**
+  - `F-04`: Victron `CIP138200020`, `200A/80V` MEGA, five-pack purchased at `$46.75` item subtotal. Install one in Lynx Slot 3 after confirming body markings and fit; retain spare stock.
+  - `PH-VAN` red: Eaton/Bussmann `HEB-AA` water-resistant in-line holder (Amazon ASIN `B000LDA1WI`, `$16.83`) + Littelfuse `KLKD015.T` `15A/600VAC/DC` fast-acting midget fuse (Amazon ASIN `B013DDUSOS`, `$7.29`) purchased at `$24.12` combined item subtotal. Use short `14 AWG` pigtails and a sealed `14-to-16 AWG` splice. The source pigtail uses an M8 ring terminal on the same F-04 external/cable-side stud as the `2/0` alternator lug. Verify those small termination parts in on-hand stock before installation. This remains one in-line loom component; do not add a DC fuse panel, DIN rail, or enclosure.
   - Common negative: place the Wakespeed `500A/50mV` shunt on the battery side of the hard-mounted Victron SmartShunt: `battery negative combine -> Wakespeed shunt -> SmartShunt -> Lynx`. Purple/high faces battery negative and grey/low faces SmartShunt/Lynx. No `5A` sense fuses.
   - Routing: one `50 ft` roll of `3/4 in` split nylon loom, one `20-pack` of `1 in` cushioned P-clamps, and one correctly fitting red alternator-B+ boot set.
 
