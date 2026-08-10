@@ -15,7 +15,7 @@ related:
 
 # Electrical Topology Diagram (Implementation v6)
 
-As-of date: `2026-07-19`
+As-of date: `2026-08-10`
 
 Purpose: provide a complete, install-level electrical topology for the current build scope, including all major electrical components, fuse IDs, fuse housings, planned wire gauges, and estimated one-way run lengths for procurement planning.
 
@@ -98,11 +98,15 @@ flowchart LR
         UP3 -. "12V control feed" .-> F15 -. "brown ignition/enable wire" .-> WS500
     end
 
-    subgraph PV_PATH["Solar Path (placeholder / modeling-only)"]
-        PVFINAL["Final solar module/string set\n(not locked; shore then alternator first)"]
-        F09X["gPV string fusing/combiner\nas required by final datasheets"]
+    subgraph PV_PATH["Solar Path (selected 600W / 3S2P)"]
+        PVA["3x Arch Pro 100W in series\n97.2V Vmp / 113.4V Voc"]
+        PVB["3x Arch Pro 100W in series\n97.2V Vmp / 113.4V Voc"]
+        PVCOMB["Matched 2-to-1 branch pair\nor listed 2-string combiner\nno F-09 presently planned"]
+        PVDISC["Two-pole PV load-break\nopen before service disconnect"]
         MPPT["Victron SmartSolar\nMPPT 150/45"]
-        PVFINAL -- "PV wire and roof-entry layout TBD" --> F09X --> MPPT
+        PVA --> PVCOMB
+        PVB --> PVCOMB
+        PVCOMB -- "6.4A STC array Isc\nroute/gauge finalization pending" --> PVDISC --> MPPT
     end
 
     subgraph HOUSE_48V["House 48V Core"]
@@ -113,9 +117,10 @@ flowchart LR
         F01B["F-01B 200A Class T\nBlue Sea block (provisional)"]
         F01C["F-01C 200A Class T\nBlue Sea block (provisional)"]
         POSBUS["48V + busbar (battery-side)\ncombine after Class T fuses"]
-        NEGBUS["48V - busbar (battery-side)\ncombine before SmartShunt"]
+        NEGBUS["48V - busbar (battery-side)\ncombine before both shunts"]
         DISC["48V disconnect\nVictron 275A"]
-        SHUNT["SmartShunt 300A\nmain negative path"]
+        WSSHUNT["WS500 500A/50mV shunt\ncommon battery negative"]
+        SHUNT["SmartShunt 300A\nhard-mounted at Lynx"]
         LYNX["Victron Lynx Distributor M10\n+ bus / - bus / 4 MEGA slots"]
         F04["F-04 200A/80V MEGA\nLynx Slot 3 alternator branch"]
         MULTI["MultiPlus-II\n48/3000/35-50"]
@@ -132,9 +137,9 @@ flowchart LR
     BATA -- "2/0 AWG -, ~2.5 ft" --> NEGBUS
     BATB -- "2/0 AWG -, ~2.5 ft" --> NEGBUS
     BATC -- "2/0 AWG -, ~2.5 ft" --> NEGBUS
-    NEGBUS -- "2/0 AWG -, ~2.5 ft" --> SHUNT
-    SHUNT -- "short 2/0 AWG -" --> WSSHUNT["WS500 500A/50mV shunt\ncommon battery negative"]
-    WSSHUNT -- "2/0 AWG -" --> LYNX
+    NEGBUS -- "2/0 AWG -, ~2.5 ft" --> WSSHUNT
+    WSSHUNT -- "short 2/0 AWG -" --> SHUNT
+    SHUNT -- "hard-mounted connection" --> LYNX
     LYNX -. "OEM Victron sense harness" .- SHUNT
 
     LYNX -- "Slot 1: F-02 125A MEGA\n2/0 AWG +, ~2.5 ft" --> MULTI
@@ -355,7 +360,7 @@ flowchart LR
 | `F-05` | `40A` MEGA, body-marked `>=58VDC`; Victron `CIP138040020 40A/80V` replacement fallback | Lynx integrated slot holder | Lynx Slot 4; Orion `48V` input feeder |
 | `F-06` | Not installed / retired standalone input-fuse position | No holder | MIDI/FKS/DIN concepts superseded; do not stack after `F-05` |
 | `F-07` | `60A MEGA` (`80V` Victron replacement stock) | Victron MEGA fuse holder | Electrical cabinet at Orion `12V +` source end |
-| `F-09` PV string OCP positions | Quantity/rating TBD from final module `Isc`, maximum-series-fuse value, parallel-string count, and applicable PV rules; no `A/B/C` count is active | Listed PV-rated fuse/combiner hardware only if the final design requires it | Roof-entry/service area; location unlocked |
+| `F-09` PV string OCP positions | `0` planned for the selected two-string Arch Pro `3S2P` array; one peer string cannot approach the module's `15A` series-fuse rating | Add listed `gPV` hardware only if received labels, conductor/connector limits, or applicable PV rules require it | Roof-entry/service area if reopened |
 | `F-10` | Per branch (`ATO/ATC`) | Integrated blade sockets in generic 12V fuse block | Electrical cabinet |
 | `AUDIO-HU` / `12V-12` | `15A` source/head-unit branch; KMC2 harness also contains a `15A ATM` fuse | 12V fuse block branch plus KMC2 harness fuse | Electrical cabinet to driver-side DC shelf/source face |
 | `AUDIO-SUB` | `40A` external fuse for Kicker PTRTP10 powered sub branch | Inline/MRBF/AFS/ANL-class holder matched to selected 4 AWG kit; use `40A`, not a generic `100A` kit fuse | Within about `18 in` of the 12V source takeoff feeding the powered sub |
@@ -378,8 +383,8 @@ Retired from active architecture:
 | `C-02C` | Battery C `+` -> `F-01C` | `48V` | Battery branch, fuse-limited | `F-01C` `200A` provisional | `2/0 AWG` | `2.5 ft` planning placeholder; balance total loop path |
 | `C-03` | Class T outputs -> battery-side `48V +` busbar -> disconnect input | `48V` | Combined trunk current | `F-01A/B/C` | `2/0 AWG` each branch | `2.5 ft each branch` (`ASSUMED`, `4` conductors in rollup) |
 | `C-04` | Disconnect output -> Lynx `+` bus | `48V` | Aggregate discharge design current (`165A = F-02 125A + Orion F-05 40A`) | Upstream Class T fuses | `2/0 AWG` | `2.5 ft` (`ASSUMED`) |
-| `C-05` | Battery negatives -> battery-side `48V -` busbar -> SmartShunt battery side | `48V` | Mixed-path rollup: `3x` battery-negative branches at `82.5A` design each + `NEGBUS_TO_SHUNT` trunk at `165A` aggregate | N/A (main negative path) | `2/0 AWG` each branch | `2.5 ft each branch` (`ASSUMED`, `4` conductors in rollup) |
-| `C-06` | SmartShunt load side -> Lynx `-` bus | `48V` | Aggregate return current | N/A | `2/0 AWG` | `2.5 ft` (`ASSUMED`) |
+| `C-05` | Battery negatives -> battery-side `48V -` busbar -> Wakespeed shunt battery/high side | `48V` | Mixed-path rollup: `3x` battery-negative branches at `82.5A` design each + `NEGBUS_TO_WSSHUNT` trunk at `165A` aggregate | N/A (main negative path) | `2/0 AWG` each branch | `2.5 ft each branch` (`ASSUMED`, `4` conductors in rollup) |
+| `C-06` | Wakespeed shunt system/low side -> short `2/0` jumper -> SmartShunt battery side -> hard-mounted SmartShunt load side/Lynx `-` connection | `48V` | Aggregate return current | N/A | `2/0 AWG` jumper; no separate SmartShunt-to-Lynx cable | `0.5 ft` jumper placeholder; field fit required |
 | `C-06A` | Lynx positive tap -> SmartShunt positive sense/power lead | `48V` | Shunt electronics supply (very low current) | Factory inline fuse in OEM harness | OEM harness lead | `2.5 ft` (`ASSUMED`) |
 | `C-07` | Lynx Slot 1 (`F-02`) -> MultiPlus `DC+` | `48V` | Inverter branch, fuse-limited | `F-02` `125A` | `2/0 AWG` (manual minimum `AWG 1` on short runs) | `2.5 ft` (`ASSUMED`) |
 | `C-08` | MultiPlus `DC-` -> Lynx `-` bus | `48V` | Inverter return current | `F-02` protects paired positive | `2/0 AWG` | `2.5 ft` (`ASSUMED`) |
@@ -400,7 +405,7 @@ Retired from active architecture:
 | `C-24` | 12V panel -> CO + propane detector | `12V` | Branch load | `F-10` `3A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-25` | 12V panel -> LED lights + dimmer (Hiatus pre-installed) | `12V` | Branch load | `F-10` `5A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-26` | `48V` system positive/negative -> `CERBO-PWR` -> Cerbo GX power input | `48V` | Cerbo electronics feed (`~3W`) | `CERBO-PWR` `1A-3A` inline fuse | `18 AWG` red/black duplex acceptable | `2.5 ft` (`ASSUMED`, cabinet internal) |
-| `C-27` | Final PV strings -> required OCP/combiner or junction -> two-pole load-break disconnect -> MPPT PV input | Exact final string voltage (`4S` candidates under review) | Final string and combined current | `F-09` only if required by final parallel-string/module data | Gauge and PV cable type TBD from final current, voltage drop, connector, and moving-jumper design | Route and lengths unlocked pending roof survey |
+| `C-27` | Two Arch Pro `3S` strings -> matched branch pair or two-string combiner -> two-pole load-break disconnect -> MPPT PV input | `97.2V Vmp`; `113.4V Voc`; `142.29V` cold-design Voc at `-40F` | `6.2A Imp`; `6.4A Isc` STC | No `F-09` presently planned; reopen only from received-label/code review | `10 AWG` PV cable planning class; final wet/flex moving section must be voltage-, flex-, UV-, and route-rated | Lengths/OD/strain relief unlocked pending roof-travel survey |
 | `C-28` | Shore source/adapters -> portable EMS -> shore cord -> shore inlet -> combined AC DIN enclosure / AC input breaker | `120VAC` | Source-limited shore current (adapter-constrained at source) | `30A` AC input breaker/disconnect baseline with source-current-limit settings policy | `10/3` shore feed to inlet/AC-in area | `8 ft` (`ASSUMED`) |
 | `C-29` | AC input breaker/disconnect -> MultiPlus AC-in | `120VAC` | MultiPlus AC input current (`30A` hardware basis) | Upstream `30A` AC breaker/disconnect (`C-28`) | `10 AWG` stranded AC conductors | `2.5 ft` (`ASSUMED`, cabinet internal) |
 | `C-30` | MultiPlus AC-out-1 -> combined AC DIN enclosure / AC-out main breaker | `120VAC` | Inverter-backed AC-out feeder current (`30A` system cap) | `30A` AC-out main breaker | `10/3` stranded AC feeder | `2.5 ft` (`ASSUMED`, cabinet internal) |
@@ -438,8 +443,8 @@ Calculation basis for drop screening:
 | `C-02C` | Battery C `+` | `F-01C` | `F-01C 200A` | `77.5A` interim design branch share | `2/0 AWG` | `2.5 ft` planning placeholder; field layout may use unequal positive lengths if total loop path is balanced | `0.059%` @ `51.2V` planning placeholder | Row `28` (`2/0 red`) | PASS |
 | `C-03` | Class T load studs | `48V +` bus / disconnect input | `F-01A/B/C` | `77.5A` interim per branch | `2/0 AWG` | `2.5 ft` each (`x4` conductors) | `0.059%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
 | `C-04` | Disconnect output | Lynx `+` bus | Upstream Class T | `155A` interim / `145A` final aggregate | `2/0 AWG` | `2.5 ft` | `0.12%` @ `51.2V` interim | Row `28` (`2/0 red`) | PASS |
-| `C-05` | Battery `-` branches | SmartShunt battery side via `48V -` bus | N/A | `77.5A` per battery-negative branch; row rollup also includes one `155A` interim trunk (`NEGBUS_TO_SHUNT`) | `2/0 AWG` | `2.5 ft` each (`x4` conductors) | `0.12%` @ `51.2V` (worst-case rollup) | Row `28` (`2/0 black`) | PASS |
-| `C-06` | SmartShunt load side | Lynx `-` bus | N/A | `155A` interim / `145A` final aggregate return | `2/0 AWG` | `2.5 ft` | `0.12%` @ `51.2V` interim | Row `28` (`2/0 black`) | PASS |
+| `C-05` | Battery `-` branches | Wakespeed shunt battery/high side via `48V -` bus | N/A | `77.5A` per battery-negative branch; row rollup also includes one `155A` interim trunk (`NEGBUS_TO_WSSHUNT`) | `2/0 AWG` | `2.5 ft` each (`x4` conductors) | `0.12%` @ `51.2V` (worst-case rollup) | Row `28` (`2/0 black`) | PASS |
+| `C-06` | Wakespeed shunt system/low side | SmartShunt battery side; SmartShunt load side remains hard-mounted to Lynx `-` | N/A | `155A` interim / `145A` final aggregate return | Short `2/0 AWG` jumper | `0.5 ft` placeholder | `0.024%` @ `51.2V` interim | Row `28` (`2/0 black`) | HOLD physical stud/jumper fit; no SmartShunt-to-Lynx cable |
 | `C-06A` | Lynx positive tap | SmartShunt sense/power lead | OEM inline fuse | OEM harness current | OEM harness | `2.5 ft` | N/A (low-current OEM lead) | Row `23` (kit harness) | PASS |
 | `C-07` | Lynx Slot 1 `DC+` | MultiPlus `DC+` | `F-02 125A` | `125A` | `2/0 AWG` | `2.5 ft` | `0.10%` @ `51.2V` | Row `28` (`2/0 red`) | PASS |
 | `C-08` | MultiPlus `DC-` | Lynx `-` bus | `F-02` paired | `125A` | `2/0 AWG` | `2.5 ft` | `0.10%` @ `51.2V` | Row `28` (`2/0 black`) | PASS |
@@ -460,7 +465,7 @@ Calculation basis for drop screening:
 | `C-24` | 12V fuse panel | CO+propane detector | `F-10 3A` | `0.2A` | `18/2` | `8 ft` | `0.17%` @ `12V` | Row `33` (`18/2`) | PASS |
 | `C-25` | 12V fuse panel | LED lights + dimmer (Hiatus pre-installed) | `F-10 5A` | `5A` | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |
 | `C-26` | 48V system feed | Cerbo GX | `CERBO-PWR 1A-3A` | `~3W` | `18 AWG` duplex acceptable | `2.5 ft` | N/A (low-current electronics feed) | Low-current install stock / row `22` device | PASS |
-| `C-27` | Final PV strings / required OCP-combiner / two-pole disconnect | MPPT PV input | `F-09` quantity/rating TBD; final design may not require individual string fuses | Candidate combined `Isc` and route TBD | PV gauge/type unlocked | Roof and moving-jumper routes unlocked | Recalculate from final SKUs and measured lengths | Row `31` is stock/allowance only | HOLD — `2026-08-09` roof geometry gate and exact electrical release remain open |
+| `C-27` | Arch Pro `3S2P` branch/combiner + two-pole disconnect | MPPT PV input | No `F-09` presently planned | `6.4A Isc` STC; `6.91A` hot/tolerance screen | `10 AWG` PV planning class | Roof and moving-jumper routes unlocked | Recalculate drop from measured length | Rows `31`, `106`, `121` | HOLD final labels/route/commissioning; cold screen `142.29V` at `-40F`; estimated hot/tolerance Vmp `70.91V` at `+85C` before route drop |
 | `C-28` | Shore inlet path | AC input breaker/disconnect | Source-limited AC OCP | `30A` hardware basis | `10/3` | `8 ft` | `0.40%` @ `120VAC` | Row `114` (`10/3 shore + AC-in/out feed`) | PASS |
 | `C-29` | AC input breaker/disconnect | MultiPlus AC-in | Upstream AC OCP | `30A` hardware basis | `10 AWG AC` | `2.5 ft` | `0.12%` @ `120VAC` | Row `114` (`10/3 shore + AC-in/out feed`) | PASS |
 | `C-30` | MultiPlus AC-out-1 | AC-out main breaker | `30A` AC-out main | `30A` hardware basis | `10/3` | `2.5 ft` | `0.12%` @ `120VAC` | Row `114` (`10/3 shore + AC-in/out feed`) | PASS |
@@ -486,12 +491,12 @@ Calculation basis for drop screening:
 | Gauge / cable family | Estimated total | Source circuits | BOM row |
 | --- | --- | --- | --- |
 | `2/0 AWG` red | `42.5 ft` | `C-01`, `C-02`, `C-02C`, `C-03`, `C-04`, `C-07`, `C-11` | `28` |
-| `2/0 AWG` black | `35.0 ft` | `C-05`, `C-06`, `C-08`, `C-12` | `28` |
+| `2/0 AWG` black | `33.0 ft` | `C-05`, `C-06`, `C-08`, `C-12` | `28` |
 | `6 AWG` red | `7.5 ft` | `C-09`, `C-13/C-14`, `C-18` | `29` |
 | `6 AWG` black | `7.5 ft` | `C-10`, `C-15`, `C-19` | `29` |
 | `4 AWG` red | `10.5 ft` (`2.5 ft` existing + `8 ft` audio sub planning branch) | `C-19A`, `C-43` | `30`, `192` |
 | `4 AWG` black | `10.5 ft` (`2.5 ft` existing + `8 ft` audio sub return) | `C-19B`, `C-44` | `30`, `192` |
-| PV cable stock/allowance | placeholder only | `C-27` final module/string topology deferred; do not infer gauge, combiner/fuse count, disconnect, moving-jumper, or roof entry from the retired `3S3P` model | `31` |
+| `10 AWG` PV cable allowance | Route length pending | `C-27` Arch Pro `3S2P`; stationary PV plus separately qualified wet/flex moving jumper; no `F-09` presently planned | `31`, `106`, `121` |
 | `14 AWG duplex` | `16 ft` | `C-23`, `C-36` | `32` |
 | `18/2` | `24.0 ft` plus separate Cerbo low-current duplex | `C-24`, `C-25`, `C-37`; Cerbo `C-26` uses 48V fused low-current duplex | `33` / low-current stock |
 | `12 AWG AC branch cable` | `30 ft` (`C-33` excluded in Phase 1) | `C-31`, `C-32` | `113` |
@@ -521,8 +526,9 @@ Assumptions:
 | `POSBUS_TO_DISC` | `1` | `48V +` busbar -> disconnect input | red | `2/0` | `2.5 ft` (`ASSUMED`) | `M10` | `M10` |
 | `DISC_TO_LYNX+` | `1` | disconnect output -> Lynx `+` input | red | `2/0` | `2.5 ft` (`ASSUMED`) | `M10` | `M10` |
 | `BATT-_A/B/C` | `3` | Battery `-` -> `48V -` busbar | black | `2/0` | `2.5 ft` each (`ASSUMED`) | `M8` | `M10` |
-| `NEGBUS_TO_SHUNT` | `1` | `48V -` busbar -> SmartShunt battery side | black | `2/0` | `2.5 ft` (`ASSUMED`) | `M10` | `M10` |
-| `SHUNT_TO_LYNX-` | `1` | SmartShunt load side -> Lynx `-` input | black | `2/0` | `2.5 ft` (`ASSUMED`) | `M10` | `M10` |
+| `NEGBUS_TO_WSSHUNT` | `1` | `48V -` busbar -> Wakespeed shunt battery/high side | black | `2/0` | `2.5 ft` (`ASSUMED`) | `M10` | Verify shunt stud |
+| `WSSHUNT_TO_SMARTSHUNT` | `1` | Wakespeed shunt system/low side -> SmartShunt battery side | black | `2/0` | `0.5 ft` placeholder | Verify shunt stud | `M10` |
+| `SMARTSHUNT_TO_LYNX-` | `0` cable | SmartShunt load side remains hard-mounted directly to Lynx `-` input | — | — | Existing stud connection | `M10` | `M10` |
 | `LYNX_SLOT1_TO_MULTI+` | `1` | Lynx Slot 1 `DC+` -> MultiPlus `DC+` | red | `2/0` | `2.5 ft` (`ASSUMED`) | `M8` | `M8` |
 | `LYNX_TO_MULTI-` | `1` | Lynx `-` -> MultiPlus `DC-` | black | `2/0` | `2.5 ft` (`ASSUMED`) | `M8` | `M8` |
 
@@ -561,7 +567,7 @@ Torque reference (verify against your exact manuals/hardware):
 ## Assumptions (Explicit)
 1. Cable sizing assumes fine-strand copper conductors (OFC welding-cable baseline for high-current DC paths), enclosed vehicle routing, and the estimated one-way lengths listed in this document.
 2. Voltage-drop design intent used here: `<=2%` on major `48V` power runs and `<=3%` on `12V` branch circuits.
-3. `F-09` PV string fuse value (`15A`) remains provisional until final module datasheet max-series-fuse rating is confirmed.
+3. The selected two-string Arch Pro `3S2P` array presently uses no individual `F-09` fuses. Received labels must confirm `3.2A Isc` and `15A` maximum series-fuse rating; reopen OCP only if conductor/connector limits or applicable PV rules require it.
 4. Cerbo GX feed is now a small inline fused `48V` feed (`CERBO-PWR`) from the system/load side of the main disconnect during bench commissioning, so the Cerbo powers down with the house system.
 5. Orion branch uses one source-side fuse only: `F-05 40A` MEGA, body-marked at least `58VDC`, in Lynx Slot 4 feeding the existing `6 AWG` input pair directly. The `58VDC` minimum is tied to the locked `56.8V` charge ceiling; use Victron `CIP138040020 40A/80V` if replacement is needed. Standalone `F-06` is retired; do not add an inline fuse after the Lynx slot.
 6. No low-voltage-disconnect (LVD) automation is included in Phase 1; protection is source fusing plus manual `SW-12V-BATT` isolation.

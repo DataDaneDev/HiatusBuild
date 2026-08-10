@@ -1,147 +1,206 @@
 ---
 aliases:
   - Solar configuration matrix
+  - Hiatus roof solar decision
+  - Arch Pro 600W roof array
 tags:
   - hiatus/study
   - hiatus/solar
-status: historical
+status: active
 related:
   - "[[SYSTEMS]]"
   - "[[ELECTRICAL_48V_ARCHITECTURE]]"
+  - "[[STARLINK_SOLAR_MOVING_UMBILICAL]]"
 ---
 
-# Solar Configuration Matrix (48V House Baseline)
+# Solar Configuration Matrix — Final Roof Architecture
 
-As-of date: `2026-03-20`
+As-of date: `2026-08-10`
 
-> **Historical electrical/weight screen only — not a roof-fit baseline.** The `2026-08-09` measured-envelope audit found that the prior `800-1200W CIGS` recommendations are geometrically impossible on the modeled `134 x 62 in` roof before fan/Starlink clearances. Current solar posture and layout gates live in [`STARLINK_SOLAR_MOVING_UMBILICAL.md`](../plans/STARLINK_SOLAR_MOVING_UMBILICAL.md#solar-geometry-audit-and-current-recommendation). Preserve the tables below as decision history; do not use their `GREEN`/`YELLOW` flags for procurement.
+## Decision
 
-Purpose: re-screen roof solar configurations after updated mechanical constraint:
-- House bank: `48V` nominal (`51.2V` LiFePO4 class)
-- Controller baseline: `Victron SmartSolar MPPT 150/45`
-- **Hard cap from Hiatus:** `75 lbs` total panel weight on roof
-- Scope in this revision: `rigid` and `flexible` panel paths
+Select:
 
-Flag meaning:
-- `GREEN`: viable candidate on current baseline and under `75 lbs` cap (still verify final datasheet values and cold-weather `Voc` correction).
-- `YELLOW`: usable but conditional (thermal margin, durability, mounting, or lifecycle caveats).
-- `RED`: fails current baseline due to weight and/or electrical incompatibility.
+- **Array:** `6x BougeRV Arch Pro 100W`, SKU `SP003`, `600W` total.
+- **Controller:** retain the purchased Victron SmartSolar `MPPT 150/45`.
+- **Wiring:** two identical `3S` strings in parallel (`3S2P`).
+- **Mounting:** four modules direct-bonded to the clear fiberglass plane using BougeRV's prescribed polyurethane adhesive-rib method; two modules fully supported on one removable, ventilated, track-supported side cassette above one Yakima track.
+- **Starlink:** TRIO Gen 3 Standard Speedmount on the purchased VHB-backed steel discs and rubber-coated magnets, directly on the fiberglass only after all four feet prove full contact; preserve the through-bolted/crossbar path as fallback.
+- **Rejected architecture:** no full-roof aluminum deck and no rigid-panel rack.
 
-## Decision Snapshot (given 75 lb hard cap)
-- The original higher-watt rigid plans are effectively eliminated by weight (`800–1000W` rigid sets were `~90–130 lbs`).
-- Under current known rigid weights, realistic rigid options top out around `~480–700W` while staying `<75 lbs`.
-- Flexible solar is now the practical path to keep higher roof coverage and stay under the cap, but must be designed around heat, mounting method, and shorter expected service life vs rigid.
+This freezes the **product, topology, and mounting architecture**. It does not authorize panel purchase or adhesive work until the release gates below pass.
 
-## Updated Candidate Configurations
+## Measured roof baseline
 
-### A) Rigid options (re-screened for 75 lb cap)
-| Option | Wiring | String Voc (STC) | Total wattage | Total weight (lbs) | Flag (`150/45` + 75 lb cap) | Notes |
-| --- | --- | ---: | ---: | ---: | --- | --- |
-| `3x 200W` (`Voc 37.44V`) | `3S1P` | `112.32V` | `600W` | `70.20` | `GREEN` | Best high-output rigid option currently under weight cap. |
-| `5x 100W` (`Voc 22.79V`) | `5S1P` | `113.95V` | `500W` | `65.00` | `GREEN` | Good voltage margin; lower roof watts. |
-| `4x 120W` (`Voc 33.69V`) | `4S1P` | `134.76V` | `480W` | `63.48` | `GREEN` | Electrically strong; verify cold `Voc` by climate. |
-| `3x 175W` (`Voc 24.48V`) | `3S1P` | `73.44V` | `525W` | `63.60` | `YELLOW` | `3S` may run tighter voltage margin in very hot roof conditions. |
-| `1x 400W` (`Voc 37.10V`) | `1S1P` | `37.10V` | `400W` | `45.21` | `RED` | `1S` is generally unsuitable for reliable `48V` charging with MPPT headroom. |
-| `4x 175W` (`Voc 24.48V`) | `4S1P` | `97.92V` | `700W` | `84.80` | `RED` | Electrically solid, but fails `75 lb` hard cap. |
+Permanent coordinate system:
 
-### B) Flexible options (practical path to fuller roof coverage)
-> Flexible entries are based on common market classes (not a locked model selection yet). Final lock requires exact module datasheets.
+- origin: front-left corner of the clear fiberglass rectangle;
+- `X`: front to rear;
+- `Y`: left to right;
+- clear fiberglass: `138.0 x 63.0 in` inside the Yakima tracks;
+- track step: `0.625 in` above fiberglass;
+- MaxxAir is laterally centered; current conservative keepout is `X=29...63`, `Y=23...40`;
+- Starlink/TRIO planning envelope: `25.4 x 17.1 in`;
+- all-up moving-roof addition cap: `75 lb`.
 
-| Option class | Typical per-panel stats (market range) | Example wiring | Array STC watts | Approx array weight | Flag (`150/45` + 75 lb cap) | Notes |
-| --- | --- | --- | ---: | ---: | --- | --- |
-| `8x 100W` ETFE mono-flex | `100W`, `Voc ~22–24V`, `~4.5–6.5 lbs` each | `4S2P` (`Voc ~88–96V`) | `800W` | `~36–52 lbs` | `GREEN` | Strong balance of watts vs weight. Ensure mounting allows heat shedding. |
-| `10x 100W` ETFE mono-flex | `100W`, `Voc ~22–24V`, `~4.5–6.5 lbs` each | `5S2P` (`Voc ~110–120V`) | `1000W` | `~45–65 lbs` | `GREEN` | Highest practical roof wattage while remaining under cap for most products. |
-| `4x 200W` ETFE mono-flex | `200W`, `Voc ~24–28V`, `~8–11 lbs` each | `4S1P` (`Voc ~96–112V`) | `800W` | `~32–44 lbs` | `GREEN` | Fewer penetrations/wires; confirm real panel dimensions and roof fit. |
-| `6x 150W` CIGS-flex class | `150W`, `Voc ~20–26V`, `~5–8 lbs` each | `3S2P` or `4S2P*` | `900W` | `~30–48 lbs` | `YELLOW` | Excellent low weight and shade tolerance, but specific voltage varies widely by model; wiring must match selected datasheet. |
-| `12x 100W` flex (dense fill) | `100W`, `Voc ~22–24V`, `~4.5–6.5 lbs` each | `6S2P` (`Voc ~132–144V`) | `1200W` | `~54–78 lbs` | `YELLOW` | Can exceed weight with heavier panels and may approach `150V` cold limit; climate check mandatory. |
+The `X=63` fan boundary remains conservative until the **outer rear roof-flange edge** is measured; MaxxAir requires at least `8 in` clear behind that flange.
 
-`*` `4S2P` only if selected module `Voc` and cold correction stay safely below controller maximum.
+## Geometry proof
 
-### C) Model-level matrix (Renogy + BougeRV Yuma candidates)
-> Added for direct panel comparison with dimensions and pricing so CAD fit can be screened quickly.
-> Pricing is volatile; values below are snapshot inputs as of `2026-03-20` plus your provided quotes where noted.
-> **Section C flag intent (for your current goal):** `GREEN` means a clean exact-`1000W` path exists on a single `Victron 150/45`; `YELLOW` means electrically compatible module family, but exact `1000W` is not clean on one controller.
+An independent integer optimizer was rerun with:
 
-| Model | Tech / mount style | Rated power | Dimensions (in) | Weight (lbs) | STC electrical (`Vmp` / `Voc`) | Efficiency | Price basis (USD each) | Normalized value (`$/W`, `W/sqft`, `W/lb`) | `150/45` 48V stringing fit | Flag | Verdict |
-| --- | --- | ---: | --- | ---: | --- | ---: | --- | --- | --- | --- | --- |
-| `Renogy RNG-100DB-H` | Mono flex | `100W` | `48.0 x 21.6 x 0.08` | `4.2` | `18.9V / 22.5V` | `21%` | `$115` (your quote), `$139.99` (Renogy listing reference) | `1.15-1.40`, `13.9`, `23.8` | `4S` and `5S` both viable on `150/45`; `5S2P` supports `1000W` target if roof fit works. | `GREEN` | Best `$ / W` in this set, but standard mono-flex durability remains the main risk unless mounted with airflow and low-strain support. |
-| `BougeRV Yuma 100W Pre-Punched` (`ISE152`) | CIGS flex, drilled | `100W` | `43.1 x 27.1 x 0.06` | `3.24` | `24.0V / 30.5V` | `17%` | `$200` (your quote), `$219.99` (BougeRV listing reference) | `2.00-2.20`, `12.3`, `30.9` | Use `3S`/`4S` only. `5S` is not acceptable (`152.5V` STC before cold correction). | `YELLOW` | Strong durability-profile candidate vs conventional mono-flex; very light; exact `1000W` on one controller is awkward (`800W` or `1200W` are clean). |
-| `BougeRV Yuma 100W Adhesive-Long` (`ISE137`, "100L") | CIGS flex, long strip | `100W` | `82.2 x 13.7 x 0.06` | `4.63` | `24.0V / 30.5V` | `17%` | `$249.99` (BougeRV listing reference) | `2.50`, `12.8`, `21.6` | Use `3S`/`4S` only. | `YELLOW` | Best fit-helper shape for narrow roof lanes/CAD packing, but exact `1000W` on one controller is awkward (`800W` or `1200W` are clean). |
-| `BougeRV Yuma 200W Adhesive` (`ISE138`) | CIGS flex, long rectangle | `200W` | `82.2 x 26.0 x 0.06` | `8.44` | `24.0V / 30.4V` | `17%` | `$419.99` (BougeRV listing reference) | `2.10`, `13.5`, `23.7` | Use `3S`/`4S` only. | `YELLOW` | Good compromise if you want fewer modules/cable runs; exact `1000W` on one controller is not a clean string set (`800W` or `1200W` are clean). |
-| `BougeRV Yuma 200W Pre-Punched` (`ISE154`) | CIGS flex, drilled | `200W` | `82.8 x 27.1 x 0.06` | `5.95` | `24.0V / 30.4V` | `17%` | `$409.99` (BougeRV listing reference) | `2.05`, `12.8`, `33.6` | Use `3S`/`4S` only. | `YELLOW` | High-priority CAD candidate for robust mechanical fastening and fewer panels; exact `1000W` on one controller is not a clean string set (`800W` or `1200W` are clean). |
+- measured `138 x 63 in` fiberglass;
+- centered `17 in` fan width;
+- conservative fan rear keepout through `X=63`;
+- `1 in` panel-to-panel and panel-to-fan gaps;
+- `2 in` Starlink clearance;
+- `1 in` exterior support margin;
+- panel and Starlink rotation allowed.
 
-Notes:
-- BougeRV web pages can mix variant blocks in one view; lock each final part by `SKU` and downloaded manual before purchase.
-- Local reference PDF for BougeRV in this repo is image-based; electrical/dimension values above were cross-checked from current BougeRV product pages/manual links.
+The best six-panel solution needs only **two** modules outside the direct-bond skin envelope; one outside module is infeasible under those constraints. The solution is mirrorable left/right.
 
-### D) Full-array comparison (targeting `~1000W`)
-> This is the array-level view you asked for: what each configuration looks like when scaled to a `~1000W` goal.
-> `Victron 150/45` power limit is not the blocker at `~1000W`; string architecture and panel `Voc/Vmp` classes are the blocker.
+![Final 600W Arch Pro roof layout](../../media/diagrams/roof-solar-2026-08-10/roof-solar-final-arch-pro-layout.svg)
 
-| Configuration | Panels for ~1000W | Array watts | Est. total footprint (sqft, raw panel area) | Est. total weight (lbs) | Est. total cost (USD) | Normalized (`$/W`, `W/sqft`, `W/lb`) | Clean single-`150/45` wiring for this wattage? | Closest clean single-controller options |
-| --- | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |
-| `Renogy RNG-100DB-H` | `10 x 100W` | `1000W` | `72.0` | `42.0` | `$1,150-$1,399.90` | `1.15-1.40`, `13.9`, `23.8` | `YES` (`5S2P`) | N/A (`1000W` is clean). |
-| `Yuma 100W Pre-Punched (ISE152)` | `10 x 100W` | `1000W` | `81.1` | `32.4` | `$2,000-$2,199.90` | `2.00-2.20`, `12.3`, `30.9` | `NO` (no clean equal-string layout at exact `1000W` on one controller). | `800W` (`4S2P`) or `1200W` (`3S4P`). |
-| `Yuma 100W Adhesive-Long (ISE137 / 100L)` | `10 x 100W` | `1000W` | `78.2` | `46.3` | `$2,499.90` | `2.50`, `12.8`, `21.6` | `NO` (same `Voc/Vmp` class as Yuma 100 pre-punched). | `800W` (`4S2P`) or `1200W` (`3S4P`). |
-| `Yuma 200W Adhesive (ISE138)` | `5 x 200W` | `1000W` | `74.2` | `42.2` | `$2,099.95` | `2.10`, `13.5`, `23.7` | `NO` (cannot build a clean exact-`1000W` string set on one `150/45`). | `800W` (`4S1P`) or `1200W` (`3S2P`, `6` panels). |
-| `Yuma 200W Pre-Punched (ISE154)` | `5 x 200W` | `1000W` | `77.9` | `29.8` | `$2,049.95` | `2.05`, `12.8`, `33.6` | `NO` (same `Voc/Vmp` class as other Yuma modules). | `800W` (`4S1P`) or `1200W` (`3S2P`, `6` panels). |
+| Item | String | X | Y | Installed L x W | Mount |
+| --- | --- | ---: | ---: | ---: | --- |
+| Arch P1 | A | `4.0` | `-2.1` | `38.3 x 24.1` | Side cassette |
+| Arch P2 | B | `89.1` | `37.9` | `38.3 x 24.1` | Direct bond |
+| Arch P3 | A | `64.0` | `23.0` | `24.1 x 38.3` | Direct bond, rotated |
+| Arch P4 | B | `93.8` | `1.0` | `38.3 x 24.1` | Direct bond |
+| Arch P5 | B | `54.5` | `-2.1` | `38.3 x 24.1` | Side cassette |
+| Arch P6 | A | `1.0` | `23.0` | `24.1 x 38.3` | Direct bond, rotated |
+| Starlink/TRIO | — | `27.1` | `42.0` | `25.4 x 17.1` | VHB discs + removable magnets |
 
-Practical implication:
-- If `1000W` exact on a **single** `Victron 150/45` is mandatory, this shortlist strongly favors `Renogy 100W` (`5S2P`).
-- If CIGS durability is mandatory, accept a clean CIGS step size of either `800W` or `1200W` (or add a second MPPT and redesign around compatible string voltages).
+These coordinates are **packing proof, not bond marks**. The side cassette support envelope is approximately `91 x 26 in` before final edge/fairing details.
 
-## Flexible-Solar Specific Findings (important)
-1. **Weight advantage is decisive now.**
-   - Flexible arrays can deliver `~800–1000W` under `75 lbs`, whereas rigid options in this project context mostly cap out around `~500–600W`.
+### Mechanical correction to the prior analysis
 
-2. **Heat management is the #1 performance/lifetime lever.**
-   - Fully bonded flexible modules run hotter than standoff rigid modules.
-   - Hotter cell temps reduce instantaneous output and can accelerate adhesive/backsheet aging.
-   - Prefer mounting details that allow at least partial airflow paths and avoid trapping water.
+A flexible panel cannot transition from the fiberglass plane across a track that stands `5/8 in` proud using only a narrow `~1.35 in/side` infill strip. Any module that crosses the track must remain on one continuous support plane. The selected layout solves this honestly by putting the full footprint of only two modules on one side cassette; the other four stay directly on fiberglass.
 
-3. **Lifecycle expectation is usually shorter than rigid.**
-   - Practical planning assumption: flexible modules often have shorter real-world service life than framed rigid modules (especially in high-heat mobile-roof duty).
-   - Procurement should prioritize clear warranty language (power warranty + product warranty + exclusions for mobile/RV use and bonding method).
+## Electrical audit
 
-4. **Material stack matters.**
-   - Prefer ETFE-front flexible modules over older PET-front constructions for abrasion/UV resistance.
-   - Verify junction box potting quality, cable strain relief, and backsheet temperature rating.
+BougeRV's current `SP003` data:
 
-5. **Electrical architecture still matters on 48V.**
-   - Even with flex, avoid low-series strings that can lose MPPT headroom on very hot days.
-   - For `Renogy RNG-100DB-H` (`Voc 22.5V`), `4S` or `5S` strings are generally viable.
-   - For `BougeRV Yuma` modules (`Voc ~30.4-30.5V`), design around `3S` or `4S`; avoid `5S`.
+| Parameter | One module | One `3S` string | `3S2P` array |
+| --- | ---: | ---: | ---: |
+| Pmax | `100W` | `300W` | `600W` |
+| Vmp | `32.4V` | `97.2V` | `97.2V` |
+| Voc | `37.8V` | `113.4V` | `113.4V` |
+| Imp | `3.1A` | `3.1A` | `6.2A` |
+| Isc | `3.2A` | `3.2A` | `6.4A` |
+| Series-fuse rating | `15A` | — | — |
 
-## Recommended Path (revision)
-### Preferred near-term direction
-- Keep a **flexible-first target of `~800–1000W`** under the `75 lb` cap, but split by chemistry class:
-  - **Cost-first and exact-`1000W` path (single controller):** `Renogy 100W` class (`5S2P`).
-  - **Durability-first CIGS path:** prioritize `Yuma 200W Pre-Punched` for CAD at a clean `800W` (`4S1P`) or `1200W` (`3S2P`).
-  - **Fit-first CIGS path:** evaluate `Yuma 100L` in CAD where narrow roof channels are needed.
+Controller checks:
 
-### Conservative fallback
-- If lifecycle risk of flex is unacceptable, select **`3x 200W` rigid (`600W`)** as the best under-cap rigid configuration.
+- Victron `150/45`: `150V` absolute maximum PV Voc, `145V` startup/operating maximum, and `50A` maximum array Isc.
+- At `-40 C / -40 F`, applying BougeRV's `-0.3%/K` Voc coefficient and full `+5%` Voc tolerance gives **`142.29V`** for one `3S` string: below both Victron limits.
+- The tolerance-aware `3S` string reaches `145V` near `-47.6 C / -53.7 F`; colder connected operation requires a new calculation or PV isolation.
+- BougeRV explicitly specifies at least three modules in series for a `48V` battery. As a conservative hot-operation screen at the panel's `+85 C` limit, using the published `-0.35%/K` Pmax coefficient, published `+0.048%/K` Isc coefficient as an Imp proxy, and `-5%` voltage tolerance gives about **`70.91V`** estimated `3S` Vmp. That is about `9.11V` above Victron's `56.8V + 5V` startup threshold before route drop. Because BougeRV does not publish a direct Vmp coefficient, final measured route-drop and hot-roof commissioning remain gates.
+- A conservative array-Isc check at the panel's `+85 C` operating limit, including `+5%` Isc tolerance and `+0.048%/K`, is about **`6.91A`**: far below the controller's `50A` limit.
+- `600W / 56.8V` is about **`10.56A`** of ideal battery-side charge current, well below the controller's `45A` rating.
+- Two parallel strings do not ordinarily need individual string fuses because only one peer string can backfeed a faulted string and the module series-fuse rating is `15A`. Confirm this against received labels, conductor ampacity, connector ratings, and final PV rules before deleting `F-09` from the as-built schedule.
 
-## Pre-Purchase Validation Checklist (must-do before lock)
-1. Collect exact datasheets for 2–3 finalist flexible modules and verify:
-   - `Voc`, `Vmp`, `Isc`, `Imp`, `Voc temp coefficient`, dimensions, weight, min bend radius.
-2. Run cold correction with your worst-case ambient:
-   - `Voc_cold = Voc_stc * (1 + |temp_coeff_Voc| * (25C - T_cold))`
-   - Keep corrected string `Voc` below controller absolute max with safety margin.
-3. Confirm hot-weather MPPT headroom:
-   - Ensure expected hot `Vmp` still comfortably exceeds battery charging voltage.
-4. Confirm mounting stack-up:
-   - Adhesive system (e.g., VHB pattern + sealant), cable routing, drip paths, and serviceability.
-5. Confirm warranty fit for vehicle roof use:
-   - Explicitly check exclusions related to curvature, bonding method, and vibration/mobile duty.
+## Mounting decision
 
-## Legacy weight basis retained from prior study (rigid)
-- `320W=32.9 lbs`, `120W=15.87 lbs`, `100W=13 lbs`, `175W=21.2 lbs`, `200W=23.4 lbs`, `400W=45.21 lbs`.
+### Four direct-bond modules
 
-## Source References (for this update)
-- Local datasheet: `references/100-Watt 12-Volt Flexible Monocrystalline Solar Panel RNG-100DB-H.pdf` (Renogy `RNG-100DB-H` electrical/mechanical specs).
-- BougeRV model pages used for live variant pricing/specs on `2026-03-20`:
-  - `https://www.bougerv.com/products/100w-flexible-solar-panel`
-  - `https://www.bougerv.com/products/200-watt-cigs-flexible-solar-kit`
-  - `https://www.bougerv.com/products/200-watt-cigs-flexible-solar-system-kit`
-  - `https://www.bougerv.com/products/yuma-200w-cigs-flexible-solar-panel-square-with-holes`
+Follow the Arch Pro manual rather than fully laminating the backsheet to the roof:
+
+1. Clean the panel backs and roof bond zones.
+2. Use multi-purpose polyurethane sealant/adhesive in strips at least `0.25 in` wide, spaced every `6.5 in`, leaving airflow channels.
+3. Add adhesive at the windward edge.
+4. Apply firm, distributed pressure.
+5. Hold the roof stationary for the specified `48 h` cure.
+
+Do not substitute an unspecified full-coverage tape pattern. Preserve drainage, junction-box access, cable bend radius, and a documented removal method.
+
+### Two-module side cassette
+
+Use one simple rectangular carrier, not a secondary roof:
+
+- full support beneath both modules;
+- top plane at or above the track top, with no panel bending over the `0.625 in` step;
+- removable track attachment;
+- no structural dependence on bare aluminum rubbing fiberglass;
+- controlled roof clearance or broad compliant isolation at any anti-flutter contact;
+- windward fairing and sealed/rounded edges;
+- final mass target `<=20 lb` for cassette, brackets, isolation, and fasteners;
+- structural load path and highway-uplift proof before adhesive work.
+
+A planning-only `~91 x 26 in` cassette made from thin aluminum skin plus shallow angle stiffeners appears capable of staying inside the mass target, but exact alloy, thickness, stock geometry, fasteners, track connection, and uplift proof are still engineering gates.
+
+## Weight budget
+
+| Item | Planning mass |
+| --- | ---: |
+| `6x` Arch Pro modules | `27.6 lb` |
+| Starlink Standard + TRIO mount | `~10.4 lb` |
+| Fixed subtotal | **`38.0 lb`** |
+| Remaining under `75 lb` | **`37.0 lb`** |
+
+The remaining `37 lb` must cover the cassette, magnets/discs, adhesive, PV cable/connectors, roof gland, moving jumper, disconnect, clamps, labels, and fasteners. Weigh the complete roof package rather than relying on estimates.
+
+## Energy consequence
+
+Using the project's existing `68%` end-to-end planning factor:
+
+| Effective sun | Daily harvest | Core-workday deficit (`3,915Wh`) | Winter-workday deficit (`4,829Wh`) |
+| ---: | ---: | ---: | ---: |
+| `2 PSH` | `816Wh` | `3,099Wh` | `4,013Wh` |
+| `4 PSH` | `1,632Wh` | `2,283Wh` | `3,197Wh` |
+| `5 PSH` | `2,040Wh` | `1,875Wh` | `2,789Wh` |
+
+Solar remains a charge-source reducer, not workday autonomy. Break-even is about `9.60 PSH/day` for the core profile and `11.84 PSH/day` for the winter profile. The dedicated `48V` alternator and shore charging remain essential.
+
+## Why this wins
+
+| Candidate | Why it lost to the selected `600W` array |
+| --- | --- |
+| `4x Yuma CIGS = 400W` | Clean direct-bond durability path, but loses `544Wh/day` at `4 PSH` and severe-cold Voc margin is tighter. CIGS durability is plausible, not proven enough here to justify one-third less array power. |
+| `5x Yuma CIGS = 500W` | Requires a `250V` controller and still gives less output. |
+| `5x XPLOR 125 = 625W` | The nominal `63 in` fit depends on impractical near-zero spacing/edge tolerance; a practical layout needs added support, costs much more, and lacks the required published cold-Voc coefficient in the reviewed documentation. |
+| `2x Arch 200 + 4x Arch 100 = 800W` | Requires a `250V` controller and a materially wider supported carrier. At `4 PSH`, it adds only `544Wh/day` over the selected array while reintroducing the fabrication the build is trying to avoid. |
+| `7x Lensun 130 = 910W` | Strong watts/weight/cost, but the tested layout needs about a `69.1 in` supported envelope, broad carrier coverage, a `250V` controller, and accepts a general `24-month` workmanship warranty whose exclusions include insufficient ventilation. |
+| Full aluminum solar deck | Provides ventilation, roof shade, and removability, but fan framing, stiffening, uplift, track transitions, fairing, vibration isolation, and weight turn it into a second roof. |
+| Rigid modules | Useful service life and cooling, but realistic `600-800W` rigid arrays plus rack and Starlink do not credibly stay below the complete `75 lb` moving-roof cap. |
+
+## Release gates
+
+### Purchase release
+
+These must pass before ordering panels or dedicated cassette hardware:
+
+- [ ] Measure MaxxAir **outer rear roof-flange edge**, full open-lid footprint, and service/removal envelope.
+- [ ] Measure track top width, outside-to-outside spacing, outer roof land, crown, and cassette attachment geometry.
+- [ ] Place `1:1` Arch Pro templates including junction boxes, `33.5 in` leads, connectors, adhesive ribs, and service loops.
+- [ ] Place the assembled Starlink/TRIO on all four magnet/disc feet; prove full contact, cable bend, removal, and tether path.
+- [ ] Cycle the fan and Starlink removal with all templates present.
+- [ ] Freeze which roof side receives the mirrorable cassette.
+- [ ] Complete a cassette load/uplift/fairing design and preliminary itemized weight budget showing the complete roof package can remain `<=75 lb` with contingency.
+- [ ] Obtain insurer/Hiatus acceptance if required for adhesive-bonded roof additions.
+
+### Installation / adhesive release
+
+These pass after receipt and before roof bonding or travel:
+
+- [ ] Verify received `SP003` labels, dimensions, lead exits, connectors, and polarity; update cold Voc if connected operation below `-40 F` is intended.
+- [ ] Build and load-check the cassette; prove full support, removable track load path, highway uplift/fairing, drainage, and no-rub roof isolation.
+- [ ] Weigh the **actual complete** moving-roof package at `<=75 lb`.
+- [ ] Lock compatible branch connectors or a listed two-string combiner, PV cable, two-pole disconnect, moving jumper, gland, strain relief, labels, and final OCP decision.
+- [ ] Confirm estimated hot-string voltage minus measured route drop still clears the maximum configured battery voltage by at least Victron's `5V` startup requirement.
+- [ ] Bond a representative coupon or noncritical test piece with the exact polyurethane product and cure process; verify adhesion and a controlled removal method.
+- [ ] Complete stationary-roof hot-operation commissioning before travel acceptance.
+
+## Source references
+
+- [BougeRV Arch Pro 100W official product page](https://www.bougerv.com/products/arch-pro-12v-24v-100w-flexible-solar-panel)
+- [BougeRV Arch Pro official installation manual](https://cdn.shopify.com/s/files/1/2672/9544/files/ArchPro_-2025-6-26.pdf?v=1756200936)
+- [Victron SmartSolar MPPT 150/35 and 150/45 datasheet](https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-150-35-%26-150-45-EN.pdf)
+- [MAXXFAN Deluxe installation manual](https://library.maxxair.com/wp-content/uploads/2023/03/11e90001k_maxxfan-deluxe-install-11-2017.pdf)
+- [TRIO VHB-backed magnet mounting discs](https://www.trioflatmount.com/products/vhb-backed-magnet-mount-pads)
+- [Lensun 130W product page](https://lensunsolar.com/products/lensun-130w-black-flexible-solar-panel)
+- [Lensun warranty policy](https://lensunsolar.com/pages/warranty-policy)
+
+## Historical note
+
+Earlier `134 x 62 in`, `134 x 66 in`, `800-1200W CIGS`, portable/foldable Lensun, Solbian, XPLOR, CMPower, and full-deck studies were useful exploration but are superseded by the measured `138 x 63 in` roof, centered fan, current products, and the decision above. Historical coordinates are not fabrication instructions.

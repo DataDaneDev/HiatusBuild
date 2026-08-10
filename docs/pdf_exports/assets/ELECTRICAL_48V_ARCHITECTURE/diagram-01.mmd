@@ -12,9 +12,9 @@ flowchart LR
     BATA -. "2/0 AWG -" .-> NEGBUS["48V - battery-side bus"]
     BATB -. "2/0 AWG -" .-> NEGBUS
     BATC -. "2/0 AWG -" .-> NEGBUS
-    NEGBUS --> SHUNT["SmartShunt 300A"]
-    SHUNT --> WSSHUNT["WS500 500A/50mV shunt\nShunt at Battery"]
-    WSSHUNT --> LYNX
+    NEGBUS --> WSSHUNT["WS500 500A/50mV shunt\nShunt at Battery"]
+    WSSHUNT --> SHUNT["SmartShunt 300A\nhard-mounted at Lynx"]
+    SHUNT --> LYNX
 
     ALT48["Secondary 48V alternator"] --> F04["F-04 200A/80V MEGA"]
     F04 --> LYNX

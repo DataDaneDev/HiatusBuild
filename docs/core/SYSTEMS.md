@@ -31,17 +31,17 @@ related:
 - Fuse IDs, locations, housing methods, spares, and BOM mapping: [ELECTRICAL_fuse_schedule](../implementation/ELECTRICAL_fuse_schedule.md)
 - Voltage architecture trade study (`12V` vs `48V`): [ELECTRICAL_12V_vs_48V_trade_study](../studies/ELECTRICAL_12V_vs_48V_trade_study.md)
 - Alternator architecture trade study history (research archive only; final decisions moved to the canonical `48V` architecture doc): [ELECTRICAL_48V_dual_alternator_trade_study](../studies/ELECTRICAL_48V_dual_alternator_trade_study.md)
-- Solar option screening history (electrical/weight only; current roof-fit posture is in the moving-roof plan): [SOLAR_configuration_matrix](../studies/SOLAR_configuration_matrix.md)
+- Canonical roof-solar architecture, geometry, electrical proof, and release gates: [SOLAR_configuration_matrix](../studies/SOLAR_configuration_matrix.md)
 - Electrical decisions, risks, and unresolved items: [TRACKING](TRACKING.md)
 
-### Planning snapshot (base model as-of `2026-08-05`)
+### Planning snapshot (base model as-of `2026-08-10`)
 - Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).
 - House architecture: `48V` core with Orion-Tr Smart `48V->12V` charging/step-down feeding a shared battery-backed `12V` junction.
 - Inverter/charger: Victron MultiPlus-II `48/3000/35-50`, DC/inverter mode live-tested with no observed errors.
 - Charge sources in current BOM: solar MPPT, dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48` migration baseline), shore AC charger path.
 - Monitoring and protection: Cerbo GX, SmartShunt, battery temp sensing, Class T primary fuse + branch fusing.
 - AC protection chain is purchased/locked for Phase 1 (`shore source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> single 6-way AC DIN enclosure -> 30A AC-in breaker -> MultiPlus -> 30A AC-out main -> two 20A GFCI branches`). AC-in/MultiPlus charging has passed a short limited-current live test; AC-out branch/GFCI commissioning remains pending.
-- Current build phase: the electrical module, Galley/cooler support, water tank, and returned Bench extrusion are owner-reported hard-mounted; the Orion/`12V` path is operational. Owner reports the pump, fridge, KUS sender, three independent USB-PD branches, and both first-in-chain GFCIs are wired/routed; labels, protection, polarity/continuity, LINE/LOAD/PE, configuration, and functional tests remain open. Battery 1 completed the corrected isolated charge cycle, Battery 2 reached absorption, and Battery 3 remains pending before rest/`<=0.1V` matching and parallel-bank commissioning. The final walnut install has a mid-September `2026` target. Roof work now has a selected one-panel Starlink interface/protective removable-mount architecture but remains mockup- and bench-test-gated before any wall/cable cut; solar is deferred and separate.
+- Current build phase: the electrical module, Galley/cooler support, water tank, and returned Bench extrusion are owner-reported hard-mounted; the Orion/`12V` path is operational. Owner reports the pump, fridge, KUS sender, three independent USB-PD branches, and both first-in-chain GFCIs are wired/routed; labels, protection, polarity/continuity, LINE/LOAD/PE, configuration, and functional tests remain open. Battery 1 completed the corrected isolated charge cycle, Battery 2 reached absorption, and Battery 3 remains pending before rest/`<=0.1V` matching and parallel-bank commissioning. The final walnut install has a mid-September `2026` target. Roof work has selected Starlink and `600W` Arch Pro solar architectures but remains template, contact, structural, route, and all-up-weight gated before cuts, panel purchase, or adhesive work.
 
 ### Physical integration snapshot (`2026-08-05`)
 - Electrical module, Galley/cooler support, and returned Bench extrusion are positively hard-mounted and tied together; owner reports the integrated assembly is extremely stiff. Final mobile restraint is now localized to positive capture/strapping for the `3x 48V` batteries, the separate `12V` battery, and the ICECO cooler plus final terminal/cable protection.
@@ -82,8 +82,8 @@ related:
 | Legacy single-12V upgrade path | Mechman `370A` + Big 3 path is deprecated under the dual-`48V` migration baseline | `bom/bom_inactive_items.csv` rows `103` and `104` |
 | DC-DC charger | Orion-Tr Smart `48/12 30A` (`360W`); `48V` input is protected by `F-05 40A` MEGA (`>=58VDC`) in Lynx Slot 4 with no second inline fuse, and `12V` output is separately protected by `F-07 60A/80V` | `bom/bom_estimated_items.csv` row 20 |
 | 12V buffer battery | `12V 100Ah LiFePO4` on shared 12V junction (`F-11` + `SW-12V-BATT`) | `bom/bom_estimated_items.csv` rows 21, 124, and 125 |
-| Solar array candidates | Current high-output target is `800W` high-efficiency mono-flex (`4x130W + 4x70W`, `4S2P`) on shallow vented Yakima-track cassettes **only if** a field survey proves `134 x 66 in` safe supported width. Conservative premium direct-bond fallback is `4x Solbian SP138 = 552W`, `4S1P`, on the modeled `134 x 62 in` skin. Prior `800-1200W` Yuma CIGS guidance is rejected by roof geometry; Yuma is `400W` on the purchased controller or `500W` only with an MPPT change. | `bom/bom_estimated_items.csv` row 24 + `docs/plans/STARLINK_SOLAR_MOVING_UMBILICAL.md` |
-| Solar controller | SmartSolar `MPPT 150/45` | `bom/bom_estimated_items.csv` row 25 |
+| Solar array posture | Final architecture is `6x BougeRV Arch Pro 100W SP003 = 600W`: four modules direct-bonded to fiberglass per BougeRV's polyurethane adhesive-rib method and two fully supported on one removable track-side cassette. Final measured roof baseline is `138 x 63 in`; the MaxxAir is laterally centered. Purchase waits on the `1:1` template, fan/Starlink survey, cassette design, and preliminary `<=75 lb` budget; bonding/travel wait on received-label, actual-weight, cassette-load, bond-coupon, and hot-operation gates. | `bom/bom_estimated_items.csv` row 24 + `docs/studies/SOLAR_configuration_matrix.md` |
+| Solar controller | Retain the purchased SmartSolar `MPPT 150/45`; wire the Arch Pro array `3S2P`. Per string: `97.2V Vmp`, `113.4V Voc`, `3.1A Imp`, `3.2A Isc`. Tolerance-aware cold Voc is `142.29V` at `-40F`. Estimated hot/tolerance Vmp is `70.91V` at `+85C`, about `9.11V` above the `56.8V + 5V` startup threshold before route drop; final measured drop and hot-roof commissioning remain gates. | `bom/bom_estimated_items.csv` row 25 |
 | Load profiles (BOM + owner-supplied office loads) | `core_workday`, `winter_workday`, `minimal_idle_day` | `bom/load_model_wh.csv` |
 | Owner-supplied office assumptions | Laptop + 27 inch 1440p monitor + tablet/peripheral charging | `bom/load_model_wh.csv` rows marked `Owner-Supplied` |
 
@@ -114,25 +114,18 @@ Load totals below are from `bom/load_model_wh.csv` model v5 (BOM loads plus the 
 ### Charging potential
 All values are planning-level and should be replaced with measured charge logs after shakedown tests.
 
-#### Solar charging (geometry-gated `500W / 552W / 800W` cases)
+#### Solar charging (`600W` final architecture)
 
-Solar remains procurement-gated, but it is no longer represented by the stale `900W / 3S3P` placeholder. The `2026-08-09` roof audit established three useful planning cases:
+The `2026-08-10` final roof decision is `6x BougeRV Arch Pro 100W = 600W`, `3S2P`, on the purchased SmartSolar `150/45`. Four modules use direct fiberglass bonding; two use one compact track-side cassette. This replaces the stale `134 x 62 in` CMPower/Lensun/Solbian decision set.
 
-- `500W`: physical Yuma CIGS ceiling on the modeled `134 x 62 in` roof; requires a `250V` controller for a `5S` string, so the purchased `150/45` limits Yuma to `400W / 4S`.
-- `552W`: `4x Solbian SP138 / 4S1P` premium direct-bond candidate that fits the conservative `134 x 62 in` model and remains electrically compatible with the purchased `150/45`, subject to final cold-`Voc` proof.
-- `800W`: `4x Lensun 130W + 4x Lensun 70W / 4S2P` high-output candidate that needs a field-proven `134 x 66 in` shallow track-cassette field; it does not fit the `62 in` field with realistic edges, spacing, and the full fan buffer.
+Use the existing `68%` end-to-end planning factor until measured harvest exists. It may be optimistic for the four hot direct-bond modules and conservative for the two ventilated cassette modules.
 
-Use the existing `68%` end-to-end planning factor until measured harvest exists. This remains conservative for ventilated cassettes and may be optimistic for hot direct-bond modules; final product-specific modeling must replace it.
-
-| Array case at `68%` | 2 PSH day | 4 PSH day | 5 PSH day | Net vs `core_workday` at 4 PSH | Net vs `winter_workday` at 4 PSH |
+| `600W` at `68%` | 2 PSH day | 4 PSH day | 5 PSH day | Net vs `core_workday` at 4 PSH | Net vs `winter_workday` at 4 PSH |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| `500W` | `680 Wh` | `1,360 Wh` | `1,700 Wh` | `-2,555 Wh/day` | `-3,469 Wh/day` |
-| `552W` | `751 Wh` | `1,501 Wh` | `1,877 Wh` | `-2,414 Wh/day` | `-3,328 Wh/day` |
-| `800W` | `1,088 Wh` | `2,176 Wh` | `2,720 Wh` | `-1,739 Wh/day` | `-2,653 Wh/day` |
+| Final Arch Pro array | `816 Wh` | `1,632 Wh` | `2,040 Wh` | `-2,283 Wh/day` | `-3,197 Wh/day` |
 
-- Break-even at the `800W / 68%` case is `7.20 PSH/day` for `core_workday` and `8.88 PSH/day` for `winter_workday`; roof solar reduces charge-source dependence but does not provide guaranteed workday autonomy.
-- The Victron `150/45` current/power capacity is not the bottleneck at `800W`; final module voltage, cold `Voc`, hot `Vmp`, matched string operating voltage, and physical fit are the gates.
-- Current roof-fit owner and source links: `docs/plans/STARLINK_SOLAR_MOVING_UMBILICAL.md`.
+- Break-even is `9.60 PSH/day` for `core_workday` and `11.84 PSH/day` for `winter_workday`; roof solar is supplemental charging, not guaranteed workday autonomy.
+- Current roof-fit, mounting, electrical proof, and release gates: `docs/studies/SOLAR_configuration_matrix.md`.
 
 #### Alternator charging (dedicated `48V` secondary alternator path)
 - Active migration baseline: Mechman dual-alternator kit + WS500 regulator + APM-48 protection module.
@@ -162,7 +155,7 @@ Use the existing `68%` end-to-end planning factor until measured harvest exists.
 
 ### Operational implications and constraints
 - Battery capacity now supports roughly `2.5-3.1` office-workdays without charging in the conservative future-audio model, depending on season and reserve policy; actual near-term office-only use may be better.
-- At the geometry-gated `800W` case and base `68%` factor, `4` PSH still leaves a material daily deficit for both `core_workday` and `winter_workday`; the `552W` direct-bond and lower CIGS cases increase that deficit further. Roof solar is a charge-source reducer, not guaranteed workday autonomy.
+- At the selected `600W` case and base `68%` factor, `4` PSH still leaves `2,283Wh/day` and `3,197Wh/day` deficits for the modeled core and winter workdays. Roof solar is a charge-source reducer, not guaranteed workday autonomy.
 - Shore charging can materially recover SOC in a single evening (`~6.18h` from `20%` to `100%` in bulk-ideal terms).
 - Alternator recovery potential is expected to materially exceed the obsolete pre-Mechman charger path once the dedicated `48V` alternator path is commissioned.
 - Current execution risk is no longer charger-capacity-limited operation; it is migration/commissioning quality (fitment, regulation, protection, and measured thermal behavior).
@@ -228,12 +221,12 @@ Method:
 4. Build final fuse matrix with part numbers, quantities, and BOM row mapping.
 
 ## Solar
-- Current direction: flexible-first design path due roof `75 lb` hard panel-weight cap.
-- Near-term project policy: keep solar final procurement/string lock deferred deeper into build while preserving routing/passthrough reservations now.
+- Final architecture: `6x BougeRV Arch Pro 100W = 600W`, `3S2P`, on the purchased Victron `150/45`; four direct-bond modules plus one removable two-module side cassette.
+- Panel purchase waits on the survey/templates, cassette design, preliminary weight budget, and any required insurer/Hiatus acceptance; bonding/travel then remain blocked by the separate post-receipt gates in `docs/studies/SOLAR_configuration_matrix.md`.
 - Hardwall popup wiring baseline for planning: no hidden in-wall solar run; use exterior-rated coiled jumper cable(s) from roof solar exit to a lower-shell weatherproof passthrough.
 - BOM scope for that routing method is tracked in `bom/bom_estimated_items.csv` row `121`.
-- Open points: exact passthrough location, connector standard (`MC4` direct vs bulkhead adapter strategy), and final flexible module/string configuration before SKU lock.
-- Energy takeaway from current modeled load: moving from sub-`600W` class toward `~800-1000W` flexible can materially reduce daily deficit, but modeled office-workday profiles still require charging strategy integration (solar + alternator + shore).
+- Open points: exact passthrough location, branch connector/combiner method, cassette side/load path, and final moving-jumper route.
+- Energy takeaway: the extra harvest from `800-910W` candidates does not justify a `250V` controller plus broad carrier/deck fabrication. Keep the `600W` roof simple and rely on the dedicated `48V` alternator and shore path for predictable recovery.
 
 ### Electrical reference maintenance workflow
 - Update trigger conditions:

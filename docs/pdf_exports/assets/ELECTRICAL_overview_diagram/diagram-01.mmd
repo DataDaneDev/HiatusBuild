@@ -10,11 +10,15 @@ flowchart LR
         UP3 -. "12V control feed" .-> F15 -. "brown ignition/enable wire" .-> WS500
     end
 
-    subgraph PV_PATH["Solar Path (placeholder / modeling-only)"]
-        PVFINAL["Final solar module/string set\n(not locked; shore then alternator first)"]
-        F09X["gPV string fusing/combiner\nas required by final datasheets"]
+    subgraph PV_PATH["Solar Path (selected 600W / 3S2P)"]
+        PVA["3x Arch Pro 100W in series\n97.2V Vmp / 113.4V Voc"]
+        PVB["3x Arch Pro 100W in series\n97.2V Vmp / 113.4V Voc"]
+        PVCOMB["Matched 2-to-1 branch pair\nor listed 2-string combiner\nno F-09 presently planned"]
+        PVDISC["Two-pole PV load-break\nopen before service disconnect"]
         MPPT["Victron SmartSolar\nMPPT 150/45"]
-        PVFINAL -- "PV wire and roof-entry layout TBD" --> F09X --> MPPT
+        PVA --> PVCOMB
+        PVB --> PVCOMB
+        PVCOMB -- "6.4A STC array Isc\nroute/gauge finalization pending" --> PVDISC --> MPPT
     end
 
     subgraph HOUSE_48V["House 48V Core"]
@@ -25,9 +29,10 @@ flowchart LR
         F01B["F-01B 200A Class T\nBlue Sea block (provisional)"]
         F01C["F-01C 200A Class T\nBlue Sea block (provisional)"]
         POSBUS["48V + busbar (battery-side)\ncombine after Class T fuses"]
-        NEGBUS["48V - busbar (battery-side)\ncombine before SmartShunt"]
+        NEGBUS["48V - busbar (battery-side)\ncombine before both shunts"]
         DISC["48V disconnect\nVictron 275A"]
-        SHUNT["SmartShunt 300A\nmain negative path"]
+        WSSHUNT["WS500 500A/50mV shunt\ncommon battery negative"]
+        SHUNT["SmartShunt 300A\nhard-mounted at Lynx"]
         LYNX["Victron Lynx Distributor M10\n+ bus / - bus / 4 MEGA slots"]
         F04["F-04 200A/80V MEGA\nLynx Slot 3 alternator branch"]
         MULTI["MultiPlus-II\n48/3000/35-50"]
@@ -44,9 +49,9 @@ flowchart LR
     BATA -- "2/0 AWG -, ~2.5 ft" --> NEGBUS
     BATB -- "2/0 AWG -, ~2.5 ft" --> NEGBUS
     BATC -- "2/0 AWG -, ~2.5 ft" --> NEGBUS
-    NEGBUS -- "2/0 AWG -, ~2.5 ft" --> SHUNT
-    SHUNT -- "short 2/0 AWG -" --> WSSHUNT["WS500 500A/50mV shunt\ncommon battery negative"]
-    WSSHUNT -- "2/0 AWG -" --> LYNX
+    NEGBUS -- "2/0 AWG -, ~2.5 ft" --> WSSHUNT
+    WSSHUNT -- "short 2/0 AWG -" --> SHUNT
+    SHUNT -- "hard-mounted connection" --> LYNX
     LYNX -. "OEM Victron sense harness" .- SHUNT
 
     LYNX -- "Slot 1: F-02 125A MEGA\n2/0 AWG +, ~2.5 ft" --> MULTI

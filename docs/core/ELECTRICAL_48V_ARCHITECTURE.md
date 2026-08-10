@@ -23,7 +23,7 @@ related:
 - Keep unresolved vendor gates, risk state, and follow-up closure items in `docs/core/TRACKING.md`.
 - Keep broad project sequencing and day-to-day execution framing in `docs/core/PROJECT.md` or the active plan docs.
 
-As-of date: `2026-07-19`
+As-of date: `2026-08-10`
 
 Purpose: hold the finalized, concise `48V` house and alternator architecture in one place so wiring, protection, shutdown behavior, and BOM references are easy to understand without re-reading the historical trade studies.
 
@@ -64,6 +64,8 @@ Related docs:
 | Inverter/charger | MultiPlus-II `48/3000/35-50` | `12` |
 | 48V to 12V charger | Orion-Tr Smart `48/12-30`; fed directly from Lynx Slot 4 through one verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) into the existing `6 AWG` input pair; no separate inline/DIN input fuse; keep `6 AWG` and `F-07 60A/80V` on 12V output | `20`, `10`, `11` |
 | Monitoring | Cerbo GX + SmartShunt `300A` | `22`, `23` |
+| Solar controller | Purchased Victron SmartSolar `MPPT 150/45`; retain it for the final array | `25` |
+| Solar array | `6x BougeRV Arch Pro 100W SP003 = 600W`, wired as two identical `3S` strings in parallel. Per string: `97.2V Vmp`, `113.4V Voc`, `3.1A Imp`, `3.2A Isc`; `142.29V` worst-case calculated Voc at `-40F` with the module's full `+5%` Voc tolerance | `24` |
 | Alternator kit | Mechman `48V` secondary alternator kit with `WS500` | `168` |
 | Load-dump clamp | Balmar `APM-48` | `169` |
 | Alternator branch fuse | `F-04` `200A/80V` MEGA in Lynx Slot 3 | `170` |
@@ -95,9 +97,9 @@ flowchart LR
     BATA -. "2/0 AWG -" .-> NEGBUS["48V - battery-side bus"]
     BATB -. "2/0 AWG -" .-> NEGBUS
     BATC -. "2/0 AWG -" .-> NEGBUS
-    NEGBUS --> SHUNT["SmartShunt 300A"]
-    SHUNT --> WSSHUNT["WS500 500A/50mV shunt\nShunt at Battery"]
-    WSSHUNT --> LYNX
+    NEGBUS --> WSSHUNT["WS500 500A/50mV shunt\nShunt at Battery"]
+    WSSHUNT --> SHUNT["SmartShunt 300A\nhard-mounted at Lynx"]
+    SHUNT --> LYNX
 
     ALT48["Secondary 48V alternator"] --> F04["F-04 200A/80V MEGA"]
     F04 --> LYNX
@@ -195,6 +197,8 @@ Reason:
 - Exact Mechman field-voltage/WS500 derate setting and alternator negative/case-isolation behavior in the installed kit.
 - Official vendor confirmation that the documented Dumfume battery/BMS behavior is acceptable with the `WS500`.
 - Whether future automatic fault-interlock logic should be added on the WS500 `Feature-In` or through an external relay.
+- Solar purchase release: final MaxxAir/track survey, `1:1` panel/Starlink templates, two-panel cassette design, preliminary itemized `<=75 lb` budget, and any required insurer/Hiatus acceptance. Product/topology are locked; purchase is not yet released.
+- Solar installation/travel release: received labels/polarity, built-cassette load/uplift proof, actual complete `<=75 lb` weigh-in, branch/disconnect/cable/umbilical/entry hardware, bond-coupon/removal proof, estimated hot-string voltage minus measured route drop, and stationary hot-roof commissioning.
 
 ## Rule for future edits
 - Update this file first for any `48V` architecture, alternator-control, or shutdown-strategy change.

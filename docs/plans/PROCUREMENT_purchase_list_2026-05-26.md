@@ -183,7 +183,7 @@ Ordering posture: WIP shopping cart / prototype material only. Do **not** buy th
 - Panel skins.
 - Cosmetic trim.
 - Large diesel tank.
-- Solar panels, PV combiner, and PV string fuses until shore/alternator charging are more proven and the roof passthrough/service-loop strategy is reopened.
+- `6x BougeRV Arch Pro 100W` panels and dedicated cassette hardware until the roof/fan/Starlink survey, `1:1` templates, cassette design, preliminary `<=75 lb` budget, and any required insurer/Hiatus acceptance pass. After receipt, bonding/travel remain blocked by label/polarity verification, built-cassette load proof, actual all-up weight, bond coupon, final PV route hardware, and hot-roof commissioning. The selected `3S2P` topology does not presently call for individual string fuses.
 - Custom/fancy bracket packs beyond prototype hardware.
 
 ## 2026-05-27 Amazon purchase captured
