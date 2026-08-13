@@ -10,15 +10,11 @@ flowchart LR
         UP3 -. "12V control feed" .-> F15 -. "brown ignition/enable wire" .-> WS500
     end
 
-    subgraph PV_PATH["Solar Path (selected 600W / 3S2P)"]
-        PVA["3x Arch Pro 100W in series\n97.2V Vmp / 113.4V Voc"]
-        PVB["3x Arch Pro 100W in series\n97.2V Vmp / 113.4V Voc"]
-        PVCOMB["Matched 2-to-1 branch pair\nor listed 2-string combiner\nno F-09 presently planned"]
+    subgraph PV_PATH["Solar Path (purchased 700W / candidate 4S)"]
+        PVA["4x Renogy 175W in series\n78.0V Vmp / 95.6V Voc"]
         PVDISC["Two-pole PV load-break\nopen before service disconnect"]
         MPPT["Victron SmartSolar\nMPPT 150/45"]
-        PVA --> PVCOMB
-        PVB --> PVCOMB
-        PVCOMB -- "6.4A STC array Isc\nroute/gauge finalization pending" --> PVDISC --> MPPT
+        PVA -- "9.50A STC Isc\n114.86V cold screen at -40C\nhot-start proof pending" --> PVDISC --> MPPT
     end
 
     subgraph HOUSE_48V["House 48V Core"]

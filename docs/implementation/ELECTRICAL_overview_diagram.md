@@ -15,7 +15,7 @@ related:
 
 # Electrical Topology Diagram (Implementation v6)
 
-As-of date: `2026-08-10`
+As-of date: `2026-08-12`
 
 Purpose: provide a complete, install-level electrical topology for the current build scope, including all major electrical components, fuse IDs, fuse housings, planned wire gauges, and estimated one-way run lengths for procurement planning.
 
@@ -98,15 +98,11 @@ flowchart LR
         UP3 -. "12V control feed" .-> F15 -. "brown ignition/enable wire" .-> WS500
     end
 
-    subgraph PV_PATH["Solar Path (selected 600W / 3S2P)"]
-        PVA["3x Arch Pro 100W in series\n97.2V Vmp / 113.4V Voc"]
-        PVB["3x Arch Pro 100W in series\n97.2V Vmp / 113.4V Voc"]
-        PVCOMB["Matched 2-to-1 branch pair\nor listed 2-string combiner\nno F-09 presently planned"]
+    subgraph PV_PATH["Solar Path (purchased 700W / candidate 4S)"]
+        PVA["4x Renogy 175W in series\n78.0V Vmp / 95.6V Voc"]
         PVDISC["Two-pole PV load-break\nopen before service disconnect"]
         MPPT["Victron SmartSolar\nMPPT 150/45"]
-        PVA --> PVCOMB
-        PVB --> PVCOMB
-        PVCOMB -- "6.4A STC array Isc\nroute/gauge finalization pending" --> PVDISC --> MPPT
+        PVA -- "9.50A STC Isc\n114.86V cold screen at -40C\nhot-start proof pending" --> PVDISC --> MPPT
     end
 
     subgraph HOUSE_48V["House 48V Core"]
@@ -360,7 +356,7 @@ flowchart LR
 | `F-05` | `40A` MEGA, body-marked `>=58VDC`; Victron `CIP138040020 40A/80V` replacement fallback | Lynx integrated slot holder | Lynx Slot 4; Orion `48V` input feeder |
 | `F-06` | Not installed / retired standalone input-fuse position | No holder | MIDI/FKS/DIN concepts superseded; do not stack after `F-05` |
 | `F-07` | `60A MEGA` (`80V` Victron replacement stock) | Victron MEGA fuse holder | Electrical cabinet at Orion `12V +` source end |
-| `F-09` PV string OCP positions | `0` planned for the selected two-string Arch Pro `3S2P` array; one peer string cannot approach the module's `15A` series-fuse rating | Add listed `gPV` hardware only if received labels, conductor/connector limits, or applicable PV rules require it | Roof-entry/service area if reopened |
+| `F-09` PV string OCP position | `0` planned for the purchased single-string Renogy `4S` candidate; no peer string can backfeed it | Add listed `gPV` hardware only if received labels, conductor/connector limits, or applicable PV rules require it | Roof-entry/service area if reopened |
 | `F-10` | Per branch (`ATO/ATC`) | Integrated blade sockets in generic 12V fuse block | Electrical cabinet |
 | `AUDIO-HU` / `12V-12` | `15A` source/head-unit branch; KMC2 harness also contains a `15A ATM` fuse | 12V fuse block branch plus KMC2 harness fuse | Electrical cabinet to driver-side DC shelf/source face |
 | `AUDIO-SUB` | `40A` external fuse for Kicker PTRTP10 powered sub branch | Inline/MRBF/AFS/ANL-class holder matched to selected 4 AWG kit; use `40A`, not a generic `100A` kit fuse | Within about `18 in` of the 12V source takeoff feeding the powered sub |
@@ -405,7 +401,7 @@ Retired from active architecture:
 | `C-24` | 12V panel -> CO + propane detector | `12V` | Branch load | `F-10` `3A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-25` | 12V panel -> LED lights + dimmer (Hiatus pre-installed) | `12V` | Branch load | `F-10` `5A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-26` | `48V` system positive/negative -> `CERBO-PWR` -> Cerbo GX power input | `48V` | Cerbo electronics feed (`~3W`) | `CERBO-PWR` `1A-3A` inline fuse | `18 AWG` red/black duplex acceptable | `2.5 ft` (`ASSUMED`, cabinet internal) |
-| `C-27` | Two Arch Pro `3S` strings -> matched branch pair or two-string combiner -> two-pole load-break disconnect -> MPPT PV input | `97.2V Vmp`; `113.4V Voc`; `142.29V` cold-design Voc at `-40F` | `6.2A Imp`; `6.4A Isc` STC | No `F-09` presently planned; reopen only from received-label/code review | `10 AWG` PV cable planning class; final wet/flex moving section must be voltage-, flex-, UV-, and route-rated | Lengths/OD/strain relief unlocked pending roof-travel survey |
+| `C-27` | Purchased Renogy `4S` string -> two-pole load-break disconnect -> MPPT PV input | `78.0V Vmp`; `95.6V Voc`; `114.86V` nominal-coefficient cold Voc at `-40C` | `8.98A Imp`; `9.50A Isc` STC | No `F-09` presently planned for one string; reopen only from received-label/code review | `10 AWG` PV cable remains the conservative planning class; final wet/flex moving section must be voltage-, flex-, UV-, and route-rated | Lengths/OD/strain relief unlocked pending roof-travel survey; hot restart/tracking proof required |
 | `C-28` | Shore source/adapters -> portable EMS -> shore cord -> shore inlet -> combined AC DIN enclosure / AC input breaker | `120VAC` | Source-limited shore current (adapter-constrained at source) | `30A` AC input breaker/disconnect baseline with source-current-limit settings policy | `10/3` shore feed to inlet/AC-in area | `8 ft` (`ASSUMED`) |
 | `C-29` | AC input breaker/disconnect -> MultiPlus AC-in | `120VAC` | MultiPlus AC input current (`30A` hardware basis) | Upstream `30A` AC breaker/disconnect (`C-28`) | `10 AWG` stranded AC conductors | `2.5 ft` (`ASSUMED`, cabinet internal) |
 | `C-30` | MultiPlus AC-out-1 -> combined AC DIN enclosure / AC-out main breaker | `120VAC` | Inverter-backed AC-out feeder current (`30A` system cap) | `30A` AC-out main breaker | `10/3` stranded AC feeder | `2.5 ft` (`ASSUMED`, cabinet internal) |
@@ -465,7 +461,7 @@ Calculation basis for drop screening:
 | `C-24` | 12V fuse panel | CO+propane detector | `F-10 3A` | `0.2A` | `18/2` | `8 ft` | `0.17%` @ `12V` | Row `33` (`18/2`) | PASS |
 | `C-25` | 12V fuse panel | LED lights + dimmer (Hiatus pre-installed) | `F-10 5A` | `5A` | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |
 | `C-26` | 48V system feed | Cerbo GX | `CERBO-PWR 1A-3A` | `~3W` | `18 AWG` duplex acceptable | `2.5 ft` | N/A (low-current electronics feed) | Low-current install stock / row `22` device | PASS |
-| `C-27` | Arch Pro `3S2P` branch/combiner + two-pole disconnect | MPPT PV input | No `F-09` presently planned | `6.4A Isc` STC; `6.91A` hot/tolerance screen | `10 AWG` PV planning class | Roof and moving-jumper routes unlocked | Recalculate drop from measured length | Rows `31`, `106`, `121` | HOLD final labels/route/commissioning; cold screen `142.29V` at `-40F`; estimated hot/tolerance Vmp `70.91V` at `+85C` before route drop |
+| `C-27` | Purchased Renogy `4S` string + two-pole disconnect | MPPT PV input | No `F-09` presently planned | `9.50A Isc` STC | `10 AWG` PV planning class | Roof and moving-jumper routes unlocked | Recalculate drop from measured length | Rows `31`, `106`, `121` | HOLD received labels/route/commissioning; nominal cold screen `114.86V` at `-40C`; indirect hot estimate reaches the `56.8V + 5V` startup threshold near `70C` before route drop |
 | `C-28` | Shore inlet path | AC input breaker/disconnect | Source-limited AC OCP | `30A` hardware basis | `10/3` | `8 ft` | `0.40%` @ `120VAC` | Row `114` (`10/3 shore + AC-in/out feed`) | PASS |
 | `C-29` | AC input breaker/disconnect | MultiPlus AC-in | Upstream AC OCP | `30A` hardware basis | `10 AWG AC` | `2.5 ft` | `0.12%` @ `120VAC` | Row `114` (`10/3 shore + AC-in/out feed`) | PASS |
 | `C-30` | MultiPlus AC-out-1 | AC-out main breaker | `30A` AC-out main | `30A` hardware basis | `10/3` | `2.5 ft` | `0.12%` @ `120VAC` | Row `114` (`10/3 shore + AC-in/out feed`) | PASS |
@@ -496,7 +492,7 @@ Calculation basis for drop screening:
 | `6 AWG` black | `7.5 ft` | `C-10`, `C-15`, `C-19` | `29` |
 | `4 AWG` red | `10.5 ft` (`2.5 ft` existing + `8 ft` audio sub planning branch) | `C-19A`, `C-43` | `30`, `192` |
 | `4 AWG` black | `10.5 ft` (`2.5 ft` existing + `8 ft` audio sub return) | `C-19B`, `C-44` | `30`, `192` |
-| `10 AWG` PV cable allowance | Route length pending | `C-27` Arch Pro `3S2P`; stationary PV plus separately qualified wet/flex moving jumper; no `F-09` presently planned | `31`, `106`, `121` |
+| `10 AWG` PV cable allowance | Route length pending | `C-27` purchased Renogy `4S`; stationary PV plus separately qualified wet/flex moving jumper; no `F-09` presently planned | `31`, `106`, `121` |
 | `14 AWG duplex` | `16 ft` | `C-23`, `C-36` | `32` |
 | `18/2` | `24.0 ft` plus separate Cerbo low-current duplex | `C-24`, `C-25`, `C-37`; Cerbo `C-26` uses 48V fused low-current duplex | `33` / low-current stock |
 | `12 AWG AC branch cable` | `30 ft` (`C-33` excluded in Phase 1) | `C-31`, `C-32` | `113` |
@@ -567,7 +563,7 @@ Torque reference (verify against your exact manuals/hardware):
 ## Assumptions (Explicit)
 1. Cable sizing assumes fine-strand copper conductors (OFC welding-cable baseline for high-current DC paths), enclosed vehicle routing, and the estimated one-way lengths listed in this document.
 2. Voltage-drop design intent used here: `<=2%` on major `48V` power runs and `<=3%` on `12V` branch circuits.
-3. The selected two-string Arch Pro `3S2P` array presently uses no individual `F-09` fuses. Received labels must confirm `3.2A Isc` and `15A` maximum series-fuse rating; reopen OCP only if conductor/connector limits or applicable PV rules require it.
+3. The purchased Renogy panels are currently screened as one `4S` string and presently use no `F-09` series fuse because no peer string can backfeed them. Received labels must confirm Isc and maximum series-fuse rating; reopen OCP if conductor/connector limits or applicable PV rules require it.
 4. Cerbo GX feed is now a small inline fused `48V` feed (`CERBO-PWR`) from the system/load side of the main disconnect during bench commissioning, so the Cerbo powers down with the house system.
 5. Orion branch uses one source-side fuse only: `F-05 40A` MEGA, body-marked at least `58VDC`, in Lynx Slot 4 feeding the existing `6 AWG` input pair directly. The `58VDC` minimum is tied to the locked `56.8V` charge ceiling; use Victron `CIP138040020 40A/80V` if replacement is needed. Standalone `F-06` is retired; do not add an inline fuse after the Lynx slot.
 6. No low-voltage-disconnect (LVD) automation is included in Phase 1; protection is source fusing plus manual `SW-12V-BATT` isolation.

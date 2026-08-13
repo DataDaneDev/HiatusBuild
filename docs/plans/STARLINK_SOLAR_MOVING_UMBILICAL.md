@@ -1,7 +1,7 @@
 # Starlink + solar moving-roof umbilical
 
-Status: **one-panel Starlink architecture selected; `600W` Arch Pro solar architecture selected; all roof adhesive/panel work remains release-gated**
-Last current-source check: `2026-08-10`
+Status: **one-panel Starlink architecture selected; `700W` Renogy panels purchased; solar mounting and hot-operation acceptance reopened**
+Last current-source check: `2026-08-12`
 
 ## Decision
 
@@ -9,7 +9,7 @@ Complete Starlink as its own pathway now. Install one dedicated rugged shielded 
 
 The Standard 4 X hardware kit and OEM mobility mount are purchased at an owner-reported `$405` aggregate total. Current service is `$55/month`; the exact plan name was not supplied, and the owner intends to move to an unlimited plan later. Recurring service stays in `bom/bom_misc_items.csv`, not the one-time build total.
 
-Solar remains separate from the Starlink penetration. The selected array is `6x BougeRV Arch Pro 100W`, `3S2P`, on the purchased Victron `150/45`; its exterior moving jumper, roof entry, and two-pole PV load-break remain measured-route purchase gates. Starlink and PV do not share conductors, connectors, or a guessed oversize gland.
+Solar remains separate from the Starlink penetration. The owner purchased `4x Renogy 175W flexible monocrystalline panels = 700W`; the current electrical candidate is one `4S` string on the purchased Victron `150/45`, subject to received-label and hot restart/tracking proof. Its exterior moving jumper, roof entry, and two-pole PV load-break remain measured-route purchase gates. Starlink and PV do not share conductors, connectors, or a guessed oversize gland.
 
 This supersedes the prior no-new-hole/existing-service-route baseline, twin-coil-now, chain-first, guided-loose-loop, and shared-entry recommendations. The existing truck-bed service route and complete factory cable remain recovery paths, not the normal finished installation.
 
@@ -86,30 +86,30 @@ Preferred known-fit alternative is eight genuine Yakima [`8810074` Anchor Plate 
 
 The protective frame improves side/edge survival but does not make the terminal branch-proof. For tight, brushy routes, disconnect the cable and tether and stow/ground-deploy the dish. A thick limb contacting the face or using the frame as a lever is still a no-go for roof carriage.
 
-## Solar geometry audit and final architecture
+## Solar geometry audit and purchased-array posture
 
 The measured roof baseline is now `138 x 63 in` inside the Yakima tracks, not the older `134 x 62 in` model. The MaxxAir is laterally centered: current conservative keepout is `X=29...63`, `Y=23...40`; exact rear roof-flange and open-lid dimensions remain release measurements. The track top is `0.625 in` above fiberglass.
 
-The final product/topology selection is:
+The current product/topology posture is:
 
-- `6x BougeRV Arch Pro 100W SP003 = 600W`;
-- two identical `3S` strings in parallel to the purchased SmartSolar `150/45`;
-- four panels direct-bonded to fiberglass using BougeRV's spaced polyurethane adhesive-rib method;
-- two panels fully supported on one removable, ventilated side cassette attached at one Yakima track;
+- `4x Renogy 175W flexible monocrystalline = 700W`, purchased `2026-08-12`;
+- one candidate `4S` string to the purchased SmartSolar `150/45`, pending received labels and hot commissioning;
+- two panels fit inside the skin in the current screen;
+- one full panel crosses each side track and therefore needs continuous full-footprint support; mounting/attachment design remains open;
 - Starlink/TRIO on the purchased VHB discs and rubber-coated magnets directly on fiberglass, with full-foot contact and independent track tether.
 
-The optimizer used `1 in` panel/fan gaps, `2 in` Starlink clearance, and `1 in` support margins. It proved that six Arch modules fit only when at least two full panel footprints leave the direct-bond plane; the selected two-module cassette gives an approximately `66.1 in` supported envelope and is mirrorable left/right. A narrow strip alone is not enough because a flexible module cannot bend across the `5/8 in` track step or bridge a void.
+The new optimizer used `1 in` panel/fan gaps, `2 in` Starlink clearance, and `1 in` direct-panel edge margins. It found no all-inside-skin solution and no one-side-support solution within the screened `10 in` projection allowance. The current two-side solution has two inside-skin panels and one full supported panel crossing each side track. A narrow strip is not enough because a flexible module cannot bend across the `5/8 in` track step or bridge a void.
 
-Per `3S` string the array is `97.2V Vmp`, `113.4V Voc`, `3.1A Imp`, and `3.2A Isc`. Applying Arch Pro's full `+5%` Voc tolerance and `-0.3%/K` coefficient gives `142.29V` at `-40F`. A conservative published-coefficient screen estimates `70.91V` hot/tolerance Vmp at `+85C`, about `9.11V` above the `56.8V + 5V` startup threshold before route drop; measured drop and hot-roof commissioning remain gates because no direct Vmp coefficient is published. No individual string fuse is presently planned for two parallel strings; received labels, conductors/connectors, and applicable PV rules remain the as-built gate.
+Using Renogy's current official G2 data pending received-label confirmation, `4S` is `78.0V Vmp`, `95.6V Voc`, `8.98A Imp`, and `9.50A Isc`. The published `-0.31%/C` Voc coefficient gives `114.86V` nominal cold Voc at `-40C`, comfortably under Victron's limits. Hot start is the concern: an indirect published-coefficient estimate reaches about `61.87V` at `70C`, essentially the current `56.8V + 5V` startup threshold before route drop. One string has no peer-string backfeed, so no individual string fuse is presently planned; received labels, conductors/connectors, disconnect rating, and applicable PV rules remain the as-built gate.
 
-This deliberately rejects the full aluminum secondary roof. It also rejects rigid arrays under the complete `75 lb` moving-roof cap, `400-500W` CIGS for poor roof leverage, and the `800-910W` paths because their extra harvest requires a `250V` controller plus materially broader carrier/deck fabrication.
+The earlier Arch Pro layout and adhesive method are superseded. Do not infer that purchase itself approves direct bonding, two-side support fabrication, or the existing controller under worst-case hot conditions.
 
-Canonical geometry, weight budget, electrical math, coordinates, adhesive method, alternatives, and release checklist: [`SOLAR_configuration_matrix.md`](../studies/SOLAR_configuration_matrix.md).
+Canonical geometry, weight budget, electrical math, candidate coordinates, mounting constraints, and release checklist: [`SOLAR_configuration_matrix.md`](../studies/SOLAR_configuration_matrix.md).
 
 ### Current-source anchors
 
-- [BougeRV Arch Pro 100W](https://www.bougerv.com/products/arch-pro-12v-24v-100w-flexible-solar-panel)
-- [BougeRV Arch Pro installation manual](https://cdn.shopify.com/s/files/1/2672/9544/files/ArchPro_-2025-6-26.pdf?v=1756200936)
+- [Renogy support page — 175W flexible panel](https://www.renogy.com/pages/175-watt-monocrystalline-solar-flexible-panels-rng-175db-h-html)
+- [Renogy official RNG-175DB-H-G2 datasheet](https://cdn.shopify.com/s/files/1/0631/0137/0483/files/RNG-175DB-H-G2_20Datasheet.pdf?v=1752029087)
 - [Victron SmartSolar `150/45` datasheet](https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-150-35-%26-150-45-EN.pdf)
 - [MAXXFAN Deluxe installation manual](https://library.maxxair.com/wp-content/uploads/2023/03/11e90001k_maxxfan-deluxe-install-11-2017.pdf)
 - [TRIO VHB-backed magnet pads](https://www.trioflatmount.com/products/vhb-backed-magnet-mount-pads)
@@ -194,9 +194,9 @@ The prior rejection applied to a two-panel layout, which added unnecessary chass
 
 Current documented purchased/ordered hardware is `$957.75` on the BOM basis: `$405` for the Standard 4 X kit plus OEM mobility mount, `$365` for the TRIO frame and magnet/disc package, `$46.31` Mouser item subtotal, and `$141.44` of Amazon interface/DC/tool components. The Mouser checkout total also carried `$8.49` of unallocated shipping/tax that is excluded from component rows. The `$9.99` basic tester, measured DC cable/fuse/terminations, panel fasteners/strain relief, roof-track attachment, and independent tether remain outside that purchased total. Procurement does not clear the fit gates: receipt/markings, cable OD, continuity/shield, converter heat/reboot behavior, wall stack, full roof stroke, magnet/disc contact, and loaded Starlink stability remain open.
 
-## Solar moving jumper — architecture selected, route hardware deferred
+## Solar moving jumper — purchased array, route hardware deferred
 
-Do not buy, route, or pre-drill for the solar jumper yet. Array data are now locked to Arch Pro `3S2P` (`113.4V Voc` and `6.4A Isc` at STC; `142.29V` cold-design Voc at `-40F`), but total moving length, roof travel, support points, conductor derating, connector family, and passthrough location still require field measurement. PV remains electrically and mechanically separate from Starlink even if anchors share the same general area.
+Do not buy, route, or pre-drill for the solar jumper yet. The current Renogy `4S` planning screen is `95.6V Voc` and `9.50A Isc` at STC with `114.86V` nominal-coefficient cold Voc at `-40C`, but the received labels, total moving length, roof travel, support points, conductor derating, connector family, and passthrough location still require field measurement. PV remains electrically and mechanically separate from Starlink even if anchors share the same general area.
 
 Required cable properties:
 
@@ -247,7 +247,7 @@ Record all dimensions in both roof-down and roof-up states:
 3. desired retracted coil-body length and maximum allowed outward projection;
 4. available connector/gland hole diameter and interior service access;
 5. an existing rigid feature that actually projects farther outward than the coils, if any;
-6. total one-way PV cable route, moving-jumper extension/retraction geometry, and actual cable OD; the array is locked to Arch Pro `3S2P`, `142.29V` cold-design Voc, and `6.4A` STC array Isc;
+6. total one-way PV cable route, moving-jumper extension/retraction geometry, and actual cable OD; current Renogy `4S` planning values are `114.86V` nominal-coefficient cold Voc and `9.50A` STC Isc pending received labels;
 7. actual OD of any purchased prototype cable before ordering Neutrik carriers or cable glands.
 
 ## Acceptance tests

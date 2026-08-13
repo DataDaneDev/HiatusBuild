@@ -2,7 +2,7 @@
 aliases:
   - Solar configuration matrix
   - Hiatus roof solar decision
-  - Arch Pro 600W roof array
+  - Renogy 700W roof array
 tags:
   - hiatus/study
   - hiatus/solar
@@ -13,194 +13,167 @@ related:
   - "[[STARLINK_SOLAR_MOVING_UMBILICAL]]"
 ---
 
-# Solar Configuration Matrix — Final Roof Architecture
+# Solar Configuration Matrix — Purchased Renogy 700W Array
 
-As-of date: `2026-08-10`
+As-of date: `2026-08-12`
 
-## Decision
+## Current decision
 
-Select:
+- **Purchased:** `4x Renogy 175W 12V flexible monocrystalline panels = 700W` on `2026-08-12`.
+- **Purchase evidence:** `$649.36` merchandise, `-$32.46` `WELCOME5` discount, `$616.90` net item subtotal, free shipping, `$44.73` estimated tax, and `$661.63` checkout total.
+- **Controller:** retain the purchased Victron SmartSolar `MPPT 150/45` for fit testing and commissioning.
+- **Electrical candidate:** one `4S` series string. `2S2P` does not provide enough PV voltage for a `48V` bank, and unequal strings must not be paralleled on one tracker.
+- **Mounting:** reopened. The previous BougeRV-specific four-direct/one-two-panel-cassette architecture and adhesive-rib instructions do not transfer to the larger Renogy panels.
+- **Status:** panels are purchased, not released for roof bonding or travel. Verify the exact received SKU, labels, dimensions, leads/connectors, polarity, and current installation manual before finalizing any cut, adhesive, support, or wiring decision.
 
-- **Array:** `6x BougeRV Arch Pro 100W`, SKU `SP003`, `600W` total.
-- **Controller:** retain the purchased Victron SmartSolar `MPPT 150/45`.
-- **Wiring:** two identical `3S` strings in parallel (`3S2P`).
-- **Mounting:** four modules direct-bonded to the clear fiberglass plane using BougeRV's prescribed polyurethane adhesive-rib method; two modules fully supported on one removable, ventilated, track-supported side cassette above one Yakima track.
-- **Starlink:** TRIO Gen 3 Standard Speedmount on the purchased VHB-backed steel discs and rubber-coated magnets, directly on the fiberglass only after all four feet prove full contact; preserve the through-bolted/crossbar path as fallback.
-- **Rejected architecture:** no full-roof aluminum deck and no rigid-panel rack.
+This supersedes D-069's `6x BougeRV Arch Pro 100W = 600W / 3S2P` product and layout decision. It preserves the measured roof, existing-controller preference, `75 lb` complete moving-roof cap, separate Starlink/PV pathways, and post-receipt commissioning gates.
 
-This freezes the **product, topology, and mounting architecture**. It does not authorize panel purchase or adhesive work until the release gates below pass.
+## Evidence boundary
+
+The checkout screenshot identifies the product as **Renogy 175 Watt 12 Volt Flexible Monocrystalline Solar Panel**, quantity `4`, but does not show a model suffix. Renogy's current support page names SKU `RNG-175DB-H`; its official linked G2 datasheet is the present planning basis. The received labels control if they differ.
+
+Official G2 planning data:
+
+| Parameter | One panel | `4S` candidate |
+| --- | ---: | ---: |
+| Pmax | `175W` | `700W` |
+| Vmp | `19.5V` | `78.0V` |
+| Voc | `23.9V` | `95.6V` |
+| Imp | `8.98A` | `8.98A` |
+| Isc | `9.50A` | `9.50A` |
+| Max series fuse | `15A` | — |
+| Dimensions | `59.2 x 26.5 x 0.1 in` | — |
+| Weight | `6.2 lb` | `24.8 lb` total |
+| Voc coefficient | `-0.31%/C` | — |
+| Pmax coefficient | `-0.42%/C` | — |
+| Isc coefficient | `+0.05%/C` | — |
+
+The reviewed datasheet does not state a module-voltage manufacturing tolerance. Do not present the calculations below as received-label acceptance.
 
 ## Measured roof baseline
 
-Permanent coordinate system:
-
-- origin: front-left corner of the clear fiberglass rectangle;
-- `X`: front to rear;
-- `Y`: left to right;
-- clear fiberglass: `138.0 x 63.0 in` inside the Yakima tracks;
+- clear fiberglass inside the Yakima tracks: `138.0 x 63.0 in`;
+- coordinate origin: front-left corner of the clear fiberglass rectangle;
+- `X`: front to rear; `Y`: left to right;
 - track step: `0.625 in` above fiberglass;
-- MaxxAir is laterally centered; current conservative keepout is `X=29...63`, `Y=23...40`;
+- MaxxAir conservative keepout: `X=29...63`, `Y=23...40`;
 - Starlink/TRIO planning envelope: `25.4 x 17.1 in`;
-- all-up moving-roof addition cap: `75 lb`.
+- complete moving-roof addition cap: `75 lb`.
 
-The `X=63` fan boundary remains conservative until the **outer rear roof-flange edge** is measured; MaxxAir requires at least `8 in` clear behind that flange.
+The exact MaxxAir rear flange/open-lid/service envelope and track/crown geometry remain field measurements.
 
-## Geometry proof
+## Geometry re-screen
 
-An independent integer optimizer was rerun with:
+The Renogy panels are materially larger than the superseded `38.3 x 24.1 in` Arch Pro modules. A new integer-packing screen used:
 
-- measured `138 x 63 in` fiberglass;
-- centered `17 in` fan width;
-- conservative fan rear keepout through `X=63`;
-- `1 in` panel-to-panel and panel-to-fan gaps;
+- the measured `138 x 63 in` skin;
+- the current fan keepout;
+- `1 in` panel-to-panel and panel-to-fan separation;
 - `2 in` Starlink clearance;
-- `1 in` exterior support margin;
-- panel and Starlink rotation allowed.
+- `1 in` outer skin margins for direct panels;
+- panel and Starlink rotation;
+- up to `10 in` supported projection beyond either side track.
 
-The best six-panel solution needs only **two** modules outside the direct-bond skin envelope; one outside module is infeasible under those constraints. The solution is mirrorable left/right.
+No all-inside-skin solution was found. No solution was found with support outside only one side within that `10 in` screen. A two-side-support packing solution was found with two full panels inside the skin and one full supported panel crossing each side track.
 
-![Final 600W Arch Pro roof layout](../../media/diagrams/roof-solar-2026-08-10/roof-solar-final-arch-pro-layout.svg)
+![Renogy 700W candidate packing screen](../../media/diagrams/roof-solar-2026-08-12/roof-solar-renogy-700w-candidate.svg)
 
-| Item | String | X | Y | Installed L x W | Mount |
-| --- | --- | ---: | ---: | ---: | --- |
-| Arch P1 | A | `4.0` | `-2.1` | `38.3 x 24.1` | Side cassette |
-| Arch P2 | B | `89.1` | `37.9` | `38.3 x 24.1` | Direct bond |
-| Arch P3 | A | `64.0` | `23.0` | `24.1 x 38.3` | Direct bond, rotated |
-| Arch P4 | B | `93.8` | `1.0` | `38.3 x 24.1` | Direct bond |
-| Arch P5 | B | `54.5` | `-2.1` | `38.3 x 24.1` | Side cassette |
-| Arch P6 | A | `1.0` | `23.0` | `24.1 x 38.3` | Direct bond, rotated |
-| Starlink/TRIO | — | `27.1` | `42.0` | `25.4 x 17.1` | VHB discs + removable magnets |
+| Item | X | Y | Installed L x W | Posture |
+| --- | ---: | ---: | ---: | --- |
+| Renogy P1 | `20.1` | `41.0` | `59.2 x 26.5` | Full support/cassette; projects `4.5 in` past one side |
+| Renogy P2 | `20.1` | `-4.5` | `59.2 x 26.5` | Full support/cassette; projects `4.5 in` past opposite side |
+| Renogy P3 | `107.8` | `0.0` | `26.5 x 59.2` | Inside skin, rotated |
+| Renogy P4 | `80.3` | `0.0` | `26.5 x 59.2` | Inside skin, rotated |
+| Starlink/TRIO | `1.0` | `1.0` | `17.1 x 25.4` | Candidate packing location, rotated |
 
-These coordinates are **packing proof, not bond marks**. The side cassette support envelope is approximately `91 x 26 in` before final edge/fairing details.
-
-### Mechanical correction to the prior analysis
-
-A flexible panel cannot transition from the fiberglass plane across a track that stands `5/8 in` proud using only a narrow `~1.35 in/side` infill strip. Any module that crosses the track must remain on one continuous support plane. The selected layout solves this honestly by putting the full footprint of only two modules on one side cassette; the other four stay directly on fiberglass.
+These coordinates are **packing evidence, not installation marks**. The two outside panels require continuous full-footprint support on two sides, not narrow infill strips or bending over the `0.625 in` track step. The actual junction boxes, lead exits, grommets, fasteners/adhesive zones, roof crown, drainage, cassette brackets, wind fairing, and Starlink removal path can invalidate the screen.
 
 ## Electrical audit
 
-BougeRV's current `SP003` data:
+### Controller maximums
 
-| Parameter | One module | One `3S` string | `3S2P` array |
-| --- | ---: | ---: | ---: |
-| Pmax | `100W` | `300W` | `600W` |
-| Vmp | `32.4V` | `97.2V` | `97.2V` |
-| Voc | `37.8V` | `113.4V` | `113.4V` |
-| Imp | `3.1A` | `3.1A` | `6.2A` |
-| Isc | `3.2A` | `3.2A` | `6.4A` |
-| Series-fuse rating | `15A` | — | — |
+- Victron `150/45`: `150V` absolute maximum PV open-circuit voltage and `145V` startup/operating maximum. Current Victron references differ between `45A` and `50A` for maximum array short-circuit current; the candidate `9.50A` is far below either value.
+- Renogy `4S` at STC: `95.6V Voc` and `9.50A Isc`; both are comfortably below the controller maximums.
+- Applying the published `-0.31%/C` Voc coefficient from `25C` to `-40C` gives **`114.86V` nominal calculated cold Voc**.
+- A non-manufacturer `+5%` voltage stress screen gives `120.61V`; this is still below `145V`, but it is not a substitute for received-label/tolerance data.
 
-Controller checks:
+### Hot-start concern
 
-- Victron `150/45`: `150V` absolute maximum PV Voc, `145V` startup/operating maximum, and `50A` maximum array Isc.
-- At `-40 C / -40 F`, applying BougeRV's `-0.3%/K` Voc coefficient and full `+5%` Voc tolerance gives **`142.29V`** for one `3S` string: below both Victron limits.
-- The tolerance-aware `3S` string reaches `145V` near `-47.6 C / -53.7 F`; colder connected operation requires a new calculation or PV isolation.
-- BougeRV explicitly specifies at least three modules in series for a `48V` battery. As a conservative hot-operation screen at the panel's `+85 C` limit, using the published `-0.35%/K` Pmax coefficient, published `+0.048%/K` Isc coefficient as an Imp proxy, and `-5%` voltage tolerance gives about **`70.91V`** estimated `3S` Vmp. That is about `9.11V` above Victron's `56.8V + 5V` startup threshold before route drop. Because BougeRV does not publish a direct Vmp coefficient, final measured route-drop and hot-roof commissioning remain gates.
-- A conservative array-Isc check at the panel's `+85 C` operating limit, including `+5%` Isc tolerance and `+0.048%/K`, is about **`6.91A`**: far below the controller's `50A` limit.
-- `600W / 56.8V` is about **`10.56A`** of ideal battery-side charge current, well below the controller's `45A` rating.
-- Two parallel strings do not ordinarily need individual string fuses because only one peer string can backfeed a faulted string and the module series-fuse rating is `15A`. Confirm this against received labels, conductor ampacity, connector ratings, and final PV rules before deleting `F-09` from the as-built schedule.
+Victron requires PV voltage to exceed battery voltage by `5V` to start and by `1V` to continue operating. At the current `56.8V` charge target, the corresponding screens are `61.8V` and `57.8V` before route drop.
 
-## Mounting decision
+Renogy does not publish a direct Vmp temperature coefficient in the reviewed G2 datasheet. Using the published Pmax coefficient and Isc coefficient as an Imp proxy produces only an estimate:
 
-### Four direct-bond modules
+| Estimated module temperature | Estimated `4S` Vmp | Margin over `56.8V + 5V` startup screen |
+| ---: | ---: | ---: |
+| `65C` | `63.62V` | `+1.82V` before route drop |
+| `70C` | `61.87V` | `+0.07V` before route drop |
+| `75C` | `60.12V` | `-1.68V` before route drop |
+| `85C` | `56.64V` | `-5.16V` before route drop |
 
-Follow the Arch Pro manual rather than fully laminating the backsheet to the roof:
+This does **not** prove the array/controller combination unusable: the panels should normally start while cooler in the morning, and Victron's running threshold is lower. It does mean a hot restart near a full battery is marginal and the prior Arch Pro hot-voltage release cannot be reused. Treat direct bonding, route drop, and hot-roof restart/continuity testing as hard commissioning gates. If hot restart or sustained hot tracking fails, changing controller architecture may be required; do not pre-buy another controller before testing the received panels.
 
-1. Clean the panel backs and roof bond zones.
-2. Use multi-purpose polyurethane sealant/adhesive in strips at least `0.25 in` wide, spaced every `6.5 in`, leaving airflow channels.
-3. Add adhesive at the windward edge.
-4. Apply firm, distributed pressure.
-5. Hold the roof stationary for the specified `48 h` cure.
+### String protection
 
-Do not substitute an unspecified full-coverage tape pattern. Preserve drainage, junction-box access, cable bend radius, and a documented removal method.
-
-### Two-module side cassette
-
-Use one simple rectangular carrier, not a secondary roof:
-
-- full support beneath both modules;
-- top plane at or above the track top, with no panel bending over the `0.625 in` step;
-- removable track attachment;
-- no structural dependence on bare aluminum rubbing fiberglass;
-- controlled roof clearance or broad compliant isolation at any anti-flutter contact;
-- windward fairing and sealed/rounded edges;
-- final mass target `<=20 lb` for cassette, brackets, isolation, and fasteners;
-- structural load path and highway-uplift proof before adhesive work.
-
-A planning-only `~91 x 26 in` cassette made from thin aluminum skin plus shallow angle stiffeners appears capable of staying inside the mass target, but exact alloy, thickness, stock geometry, fasteners, track connection, and uplift proof are still engineering gates.
+One series string has no peer string that can backfeed it, so no individual `F-09` string fuse is presently planned. The module's published maximum series-fuse rating is `15A`. Confirm received labels, conductor ampacity, connector ratings, disconnect rating, and applicable mobile-PV rules before as-built release.
 
 ## Weight budget
 
 | Item | Planning mass |
 | --- | ---: |
-| `6x` Arch Pro modules | `27.6 lb` |
+| `4x` Renogy panels | `24.8 lb` |
 | Starlink Standard + TRIO mount | `~10.4 lb` |
-| Fixed subtotal | **`38.0 lb`** |
-| Remaining under `75 lb` | **`37.0 lb`** |
+| Fixed subtotal | **`35.2 lb`** |
+| Remaining under `75 lb` | **`39.8 lb`** |
 
-The remaining `37 lb` must cover the cassette, magnets/discs, adhesive, PV cable/connectors, roof gland, moving jumper, disconnect, clamps, labels, and fasteners. Weigh the complete roof package rather than relying on estimates.
+The remaining `39.8 lb` must cover both support cassettes/carriers, magnets/discs, adhesive or fasteners, PV cable/connectors, roof entry, moving jumper, disconnect, clamps, labels, fairings, isolation, and all hardware. Weigh the actual complete moving-roof package.
 
 ## Energy consequence
 
-Using the project's existing `68%` end-to-end planning factor:
+Using the existing `68%` end-to-end planning factor:
 
 | Effective sun | Daily harvest | Core-workday deficit (`3,915Wh`) | Winter-workday deficit (`4,829Wh`) |
 | ---: | ---: | ---: | ---: |
-| `2 PSH` | `816Wh` | `3,099Wh` | `4,013Wh` |
-| `4 PSH` | `1,632Wh` | `2,283Wh` | `3,197Wh` |
-| `5 PSH` | `2,040Wh` | `1,875Wh` | `2,789Wh` |
+| `2 PSH` | `952Wh` | `2,963Wh` | `3,877Wh` |
+| `4 PSH` | `1,904Wh` | `2,011Wh` | `2,925Wh` |
+| `5 PSH` | `2,380Wh` | `1,535Wh` | `2,449Wh` |
 
-Solar remains a charge-source reducer, not workday autonomy. Break-even is about `9.60 PSH/day` for the core profile and `11.84 PSH/day` for the winter profile. The dedicated `48V` alternator and shore charging remain essential.
-
-## Why this wins
-
-| Candidate | Why it lost to the selected `600W` array |
-| --- | --- |
-| `4x Yuma CIGS = 400W` | Clean direct-bond durability path, but loses `544Wh/day` at `4 PSH` and severe-cold Voc margin is tighter. CIGS durability is plausible, not proven enough here to justify one-third less array power. |
-| `5x Yuma CIGS = 500W` | Requires a `250V` controller and still gives less output. |
-| `5x XPLOR 125 = 625W` | The nominal `63 in` fit depends on impractical near-zero spacing/edge tolerance; a practical layout needs added support, costs much more, and lacks the required published cold-Voc coefficient in the reviewed documentation. |
-| `2x Arch 200 + 4x Arch 100 = 800W` | Requires a `250V` controller and a materially wider supported carrier. At `4 PSH`, it adds only `544Wh/day` over the selected array while reintroducing the fabrication the build is trying to avoid. |
-| `7x Lensun 130 = 910W` | Strong watts/weight/cost, but the tested layout needs about a `69.1 in` supported envelope, broad carrier coverage, a `250V` controller, and accepts a general `24-month` workmanship warranty whose exclusions include insufficient ventilation. |
-| Full aluminum solar deck | Provides ventilation, roof shade, and removability, but fan framing, stiffening, uplift, track transitions, fairing, vibration isolation, and weight turn it into a second roof. |
-| Rigid modules | Useful service life and cooling, but realistic `600-800W` rigid arrays plus rack and Starlink do not credibly stay below the complete `75 lb` moving-roof cap. |
+Ideal battery-side current at `56.8V` is about `12.32A`, well below the controller's `45A` rating. Break-even is about `8.22 PSH/day` for the core profile and `10.14 PSH/day` for the winter profile. Solar remains supplemental; alternator and shore charging remain essential.
 
 ## Release gates
 
-### Purchase release
+### Receipt and geometry
 
-These must pass before ordering panels or dedicated cassette hardware:
+- [ ] Verify exact received model/SKU and photograph all four labels.
+- [ ] Verify each panel's dimensions, weight, lead lengths/exits, connector manufacturer, polarity, grommet layout, and current manual.
+- [ ] Measure the MaxxAir outer rear flange, full open-lid/service envelope, track top/outside spacing, outer roof lands, crown, drainage, and cassette attachment geometry.
+- [ ] Cut/place `1:1` Renogy templates including junction boxes, leads/connectors, grommets, mounting zones, and service loops.
+- [ ] Place the assembled Starlink/TRIO and cycle fan operation, Starlink removal, and all cable paths with templates present.
 
-- [ ] Measure MaxxAir **outer rear roof-flange edge**, full open-lid footprint, and service/removal envelope.
-- [ ] Measure track top width, outside-to-outside spacing, outer roof land, crown, and cassette attachment geometry.
-- [ ] Place `1:1` Arch Pro templates including junction boxes, `33.5 in` leads, connectors, adhesive ribs, and service loops.
-- [ ] Place the assembled Starlink/TRIO on all four magnet/disc feet; prove full contact, cable bend, removal, and tether path.
-- [ ] Cycle the fan and Starlink removal with all templates present.
-- [ ] Freeze which roof side receives the mirrorable cassette.
-- [ ] Complete a cassette load/uplift/fairing design and preliminary itemized weight budget showing the complete roof package can remain `<=75 lb` with contingency.
-- [ ] Obtain insurer/Hiatus acceptance if required for adhesive-bonded roof additions.
+### Mechanical release
 
-### Installation / adhesive release
+- [ ] Decide whether the exact received manual supports direct bonding, grommet fastening, a carrier, or a hybrid; do not reuse BougeRV adhesive instructions.
+- [ ] Engineer two continuous full-footprint supports/cassettes or find a better field-proven layout. No panel may bridge a void or bend across the track step.
+- [ ] Prove track load path, windward fairing, highway uplift, edge protection, drainage, no-rub isolation, removal/service access, and controlled thermal behavior.
+- [ ] Weigh the actual complete moving-roof package at `<=75 lb` with contingency.
+- [ ] Confirm insurer/Hiatus acceptance if required.
 
-These pass after receipt and before roof bonding or travel:
+### Electrical and travel release
 
-- [ ] Verify received `SP003` labels, dimensions, lead exits, connectors, and polarity; update cold Voc if connected operation below `-40 F` is intended.
-- [ ] Build and load-check the cassette; prove full support, removable track load path, highway uplift/fairing, drainage, and no-rub roof isolation.
-- [ ] Weigh the **actual complete** moving-roof package at `<=75 lb`.
-- [ ] Lock compatible branch connectors or a listed two-string combiner, PV cable, two-pole disconnect, moving jumper, gland, strain relief, labels, and final OCP decision.
-- [ ] Confirm estimated hot-string voltage minus measured route drop still clears the maximum configured battery voltage by at least Victron's `5V` startup requirement.
-- [ ] Bond a representative coupon or noncritical test piece with the exact polyurethane product and cure process; verify adhesion and a controlled removal method.
-- [ ] Complete stationary-roof hot-operation commissioning before travel acceptance.
+- [ ] Confirm `4S` polarity and received-label Voc/Isc before connection.
+- [ ] Lock compatible series connectors/extensions, PV cable, two-pole DC-PV load-break, moving jumper, roof entry, strain relief, labels, and final OCP decision.
+- [ ] Measure end-to-end route drop.
+- [ ] Commission stationary in cool and hot conditions; specifically prove morning start, hot restart near the configured charge target, sustained hot tracking, connector/cable temperature, and no dropout.
+- [ ] Complete representative attachment coupon/removal proof where adhesive is used.
+- [ ] Do not accept highway travel until structural load proof, actual weight, cable restraint, attachment inspection, and hot electrical commissioning pass.
 
 ## Source references
 
-- [BougeRV Arch Pro 100W official product page](https://www.bougerv.com/products/arch-pro-12v-24v-100w-flexible-solar-panel)
-- [BougeRV Arch Pro official installation manual](https://cdn.shopify.com/s/files/1/2672/9544/files/ArchPro_-2025-6-26.pdf?v=1756200936)
-- [Victron SmartSolar MPPT 150/35 and 150/45 datasheet](https://www.victronenergy.com/upload/documents/Datasheet-SmartSolar-charge-controller-MPPT-150-35-%26-150-45-EN.pdf)
+- [Renogy support page — 175W flexible panel / SKU RNG-175DB-H](https://www.renogy.com/pages/175-watt-monocrystalline-solar-flexible-panels-rng-175db-h-html)
+- [Renogy official RNG-175DB-H-G2 datasheet](https://cdn.shopify.com/s/files/1/0631/0137/0483/files/RNG-175DB-H-G2_20Datasheet.pdf?v=1752029087)
+- [Victron SmartSolar MPPT 150/35 and 150/45 manual](https://www.victronenergy.com/media/pg/Manual_SmartSolar_MPPT_150-35__150-45/en/index-en.html)
 - [MAXXFAN Deluxe installation manual](https://library.maxxair.com/wp-content/uploads/2023/03/11e90001k_maxxfan-deluxe-install-11-2017.pdf)
 - [TRIO VHB-backed magnet mounting discs](https://www.trioflatmount.com/products/vhb-backed-magnet-mount-pads)
-- [Lensun 130W product page](https://lensunsolar.com/products/lensun-130w-black-flexible-solar-panel)
-- [Lensun warranty policy](https://lensunsolar.com/pages/warranty-policy)
 
 ## Historical note
 
-Earlier `134 x 62 in`, `134 x 66 in`, `800-1200W CIGS`, portable/foldable Lensun, Solbian, XPLOR, CMPower, and full-deck studies were useful exploration but are superseded by the measured `138 x 63 in` roof, centered fan, current products, and the decision above. Historical coordinates are not fabrication instructions.
+The `2026-08-10` Arch Pro `600W / 3S2P` optimization remains useful history but is superseded by the owner-confirmed Renogy purchase. Its panel coordinates, adhesive-rib method, one-cassette architecture, electrical values, and weight subtotal are not fabrication instructions for the Renogy panels.

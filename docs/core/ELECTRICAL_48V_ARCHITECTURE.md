@@ -23,7 +23,7 @@ related:
 - Keep unresolved vendor gates, risk state, and follow-up closure items in `docs/core/TRACKING.md`.
 - Keep broad project sequencing and day-to-day execution framing in `docs/core/PROJECT.md` or the active plan docs.
 
-As-of date: `2026-08-10`
+As-of date: `2026-08-12`
 
 Purpose: hold the finalized, concise `48V` house and alternator architecture in one place so wiring, protection, shutdown behavior, and BOM references are easy to understand without re-reading the historical trade studies.
 
@@ -65,7 +65,7 @@ Related docs:
 | 48V to 12V charger | Orion-Tr Smart `48/12-30`; fed directly from Lynx Slot 4 through one verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) into the existing `6 AWG` input pair; no separate inline/DIN input fuse; keep `6 AWG` and `F-07 60A/80V` on 12V output | `20`, `10`, `11` |
 | Monitoring | Cerbo GX + SmartShunt `300A` | `22`, `23` |
 | Solar controller | Purchased Victron SmartSolar `MPPT 150/45`; retain it for the final array | `25` |
-| Solar array | `6x BougeRV Arch Pro 100W SP003 = 600W`, wired as two identical `3S` strings in parallel. Per string: `97.2V Vmp`, `113.4V Voc`, `3.1A Imp`, `3.2A Isc`; `142.29V` worst-case calculated Voc at `-40F` with the module's full `+5%` Voc tolerance | `24` |
+| Solar array | Purchased `4x Renogy 175W flexible monocrystalline = 700W`; current candidate is one `4S` string at `78.0V Vmp`, `95.6V Voc`, `8.98A Imp`, and `9.50A Isc`. Published `-0.31%/C` Voc coefficient gives `114.86V` nominal calculated Voc at `-40C`. Exact received labels and hot-start/tracking behavior remain acceptance gates. | `24` |
 | Alternator kit | Mechman `48V` secondary alternator kit with `WS500` | `168` |
 | Load-dump clamp | Balmar `APM-48` | `169` |
 | Alternator branch fuse | `F-04` `200A/80V` MEGA in Lynx Slot 3 | `170` |

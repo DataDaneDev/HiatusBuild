@@ -652,13 +652,22 @@ related:
 - Result: independent optimization proved a mirrorable six-Arch layout with four modules inside the `63 in` direct-bond skin and two full modules on one approximately `91 x 26 in` side cassette. Each `3S` string is `97.2V Vmp`, `113.4V Voc`, and `3.2A Isc`; tolerance-aware cold Voc is `142.29V` at `-40F`. Estimated hot/tolerance Vmp is `70.91V` at `+85C` before route drop, so measured-drop and hot-roof commissioning remain gates. Panels plus Starlink/TRIO are `38.0 lb`, leaving `37.0 lb` for cassette and all roof hardware. D-068's stale `134 x 66 in` cassette-field/Lensun/Solbian posture is superseded.
 - Follow-up: panel purchase waits on the exact fan/track survey, `1:1` panel/Starlink templates, cassette design, preliminary `<=75 lb` budget, and any required insurer/Hiatus acceptance. Bonding/travel wait on received labels, built-cassette load proof, actual all-up weight, bond coupon/removal proof, PV branch/disconnect/jumper/entry release, measured hot-voltage margin, and hot-roof commissioning. Canonical proof: `docs/studies/SOLAR_configuration_matrix.md`.
 
+- ID: D-070
+- Date: 2026-08-12
+- Decision: Supersede D-069's Arch Pro product/layout with the owner-confirmed purchase of `4x Renogy 175W flexible monocrystalline panels = 700W`; screen one `4S` string on the purchased Victron `150/45` while reopening the roof mounting layout.
+- Context: Checkout evidence shows quantity `4`, `$649.36` merchandise, `-$32.46` `WELCOME5` discount, free shipping, `$44.73` estimated tax, and `$661.63` checkout total. The screenshot does not show a model suffix; Renogy's current official `RNG-175DB-H-G2` datasheet is planning evidence until the received labels control.
+- Decision drivers: honor the actual purchase without pretending the larger panels inherit Arch Pro geometry, adhesive instructions, or electrical margins; retain the existing controller if commissioning proves it; preserve the `75 lb` complete moving-roof cap and separate Starlink/PV pathways.
+- Result: current G2 data give `4S = 78.0V Vmp / 95.6V Voc / 8.98A Imp / 9.50A Isc`; nominal-coefficient cold Voc is `114.86V` at `-40C`, comfortably below Victron's limits. Hot restart is the electrical concern: an indirect published-coefficient estimate reaches about `61.87V` at `70C`, essentially the `56.8V + 5V` startup threshold before route drop. A packing solver found no all-inside-skin solution and no one-side-support solution within a `10 in` projection screen; a two-side-support candidate fits two panels inside the skin plus one fully supported panel across each side track. Panels plus Starlink/TRIO are about `35.2 lb`, leaving `39.8 lb` for supports and all remaining roof hardware.
+- Supersedes: D-069's `6x Arch Pro`, `3S2P`, four-direct/one-cassette coordinates, Arch Pro adhesive method, and purchase gate. D-069's measured roof baseline, controller-reuse preference, complete-weight cap, separate route, and commissioning discipline remain active.
+- Follow-up: verify received SKU/labels/manual, build `1:1` templates including junction boxes/leads/grommets, field-check both side-support envelopes and Starlink/fan service, design/load-prove full-footprint supports and fairings, weigh the complete package, and prove cool start plus hot restart/tracking before bonding or travel. Canonical proof: `docs/studies/SOLAR_configuration_matrix.md`.
+
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
 - Impact (1-5): 4
 - Likelihood (1-5): 3
-- Mitigation: Treat `75 lb` as the complete moving-roof addition cap unless Hiatus states otherwise. The selected panel plus Starlink/TRIO subtotal is `38.0 lb`; weigh cassette, magnets/discs, adhesive, connectors/cable, gland, jumper, disconnect, clamps, labels, and fasteners as one system and validate lift effort/strut margin before panel purchase.
-- Trigger: Solar template/cassette release or any roof-weight change.
+- Mitigation: Treat `75 lb` as the complete moving-roof addition cap unless Hiatus states otherwise. The purchased Renogy panels plus Starlink/TRIO subtotal is about `35.2 lb`, leaving `39.8 lb`; weigh both full-footprint supports/cassettes, magnets/discs, adhesive or fasteners, connectors/cable, gland, jumper, disconnect, fairings, clamps, labels, and all hardware as one system and validate lift effort/strut margin before attachment or travel.
+- Trigger: Renogy template/support release or any roof-weight change.
 - Owner: Sunny
 - Status: Open
 

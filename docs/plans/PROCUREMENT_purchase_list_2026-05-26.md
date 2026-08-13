@@ -183,7 +183,7 @@ Ordering posture: WIP shopping cart / prototype material only. Do **not** buy th
 - Panel skins.
 - Cosmetic trim.
 - Large diesel tank.
-- `6x BougeRV Arch Pro 100W` panels and dedicated cassette hardware until the roof/fan/Starlink survey, `1:1` templates, cassette design, preliminary `<=75 lb` budget, and any required insurer/Hiatus acceptance pass. After receipt, bonding/travel remain blocked by label/polarity verification, built-cassette load proof, actual all-up weight, bond coupon, final PV route hardware, and hot-roof commissioning. The selected `3S2P` topology does not presently call for individual string fuses.
+- **Panels are purchased:** `4x Renogy 175W flexible monocrystalline = 700W` on `2026-08-12`; do not buy attachment/support hardware yet. First verify received SKU/labels/manual and place `1:1` templates including junction boxes, leads, connectors, and grommets. The current screen needs one fully supported panel across each side track plus two inside-skin panels. Release support hardware only after fan/Starlink cycling, two-side load/uplift/fairing design, preliminary `<=75 lb` budget, and any required insurer/Hiatus acceptance. Bonding/travel also require actual weight, attachment proof, final PV route hardware, and hot `4S`/`150-45` commissioning. A single series string does not presently call for individual string fuses.
 - Custom/fancy bracket packs beyond prototype hardware.
 
 ## 2026-05-27 Amazon purchase captured

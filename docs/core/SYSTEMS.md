@@ -34,14 +34,14 @@ related:
 - Canonical roof-solar architecture, geometry, electrical proof, and release gates: [SOLAR_configuration_matrix](../studies/SOLAR_configuration_matrix.md)
 - Electrical decisions, risks, and unresolved items: [TRACKING](TRACKING.md)
 
-### Planning snapshot (base model as-of `2026-08-10`)
+### Planning snapshot (base model as-of `2026-08-12`)
 - Battery bank: `3x 48V 100Ah LiFePO4` from BOM row 3 (`15.36 kWh` nominal at `51.2V` battery nominal).
 - House architecture: `48V` core with Orion-Tr Smart `48V->12V` charging/step-down feeding a shared battery-backed `12V` junction.
 - Inverter/charger: Victron MultiPlus-II `48/3000/35-50`, DC/inverter mode live-tested with no observed errors.
 - Charge sources in current BOM: solar MPPT, dedicated `48V` secondary alternator path (`Mechman + WS500 + APM-48` migration baseline), shore AC charger path.
 - Monitoring and protection: Cerbo GX, SmartShunt, battery temp sensing, Class T primary fuse + branch fusing.
 - AC protection chain is purchased/locked for Phase 1 (`shore source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> single 6-way AC DIN enclosure -> 30A AC-in breaker -> MultiPlus -> 30A AC-out main -> two 20A GFCI branches`). AC-in/MultiPlus charging has passed a short limited-current live test; AC-out branch/GFCI commissioning remains pending.
-- Current build phase: the electrical module, Galley/cooler support, water tank, and returned Bench extrusion are owner-reported hard-mounted; the Orion/`12V` path is operational. Owner reports the pump, fridge, KUS sender, three independent USB-PD branches, and both first-in-chain GFCIs are wired/routed; labels, protection, polarity/continuity, LINE/LOAD/PE, configuration, and functional tests remain open. Battery 1 completed the corrected isolated charge cycle, Battery 2 reached absorption, and Battery 3 remains pending before rest/`<=0.1V` matching and parallel-bank commissioning. The final walnut install has a mid-September `2026` target. Roof work has selected Starlink and `600W` Arch Pro solar architectures but remains template, contact, structural, route, and all-up-weight gated before cuts, panel purchase, or adhesive work.
+- Current build phase: the electrical module, Galley/cooler support, water tank, and returned Bench extrusion are owner-reported hard-mounted; the Orion/`12V` path is operational. Owner reports the pump, fridge, KUS sender, three independent USB-PD branches, and both first-in-chain GFCIs are wired/routed; labels, protection, polarity/continuity, LINE/LOAD/PE, configuration, and functional tests remain open. Battery 1 completed the corrected isolated charge cycle, Battery 2 reached absorption, and Battery 3 remains pending before rest/`<=0.1V` matching and parallel-bank commissioning. The final walnut install has a mid-September `2026` target. Starlink architecture is selected and `4x Renogy 175W` solar panels are purchased, but all roof work remains received-part, template, contact, structural, route, hot-operation, and all-up-weight gated before cuts or attachment work.
 
 ### Physical integration snapshot (`2026-08-05`)
 - Electrical module, Galley/cooler support, and returned Bench extrusion are positively hard-mounted and tied together; owner reports the integrated assembly is extremely stiff. Final mobile restraint is now localized to positive capture/strapping for the `3x 48V` batteries, the separate `12V` battery, and the ICECO cooler plus final terminal/cable protection.
@@ -82,8 +82,8 @@ related:
 | Legacy single-12V upgrade path | Mechman `370A` + Big 3 path is deprecated under the dual-`48V` migration baseline | `bom/bom_inactive_items.csv` rows `103` and `104` |
 | DC-DC charger | Orion-Tr Smart `48/12 30A` (`360W`); `48V` input is protected by `F-05 40A` MEGA (`>=58VDC`) in Lynx Slot 4 with no second inline fuse, and `12V` output is separately protected by `F-07 60A/80V` | `bom/bom_estimated_items.csv` row 20 |
 | 12V buffer battery | `12V 100Ah LiFePO4` on shared 12V junction (`F-11` + `SW-12V-BATT`) | `bom/bom_estimated_items.csv` rows 21, 124, and 125 |
-| Solar array posture | Final architecture is `6x BougeRV Arch Pro 100W SP003 = 600W`: four modules direct-bonded to fiberglass per BougeRV's polyurethane adhesive-rib method and two fully supported on one removable track-side cassette. Final measured roof baseline is `138 x 63 in`; the MaxxAir is laterally centered. Purchase waits on the `1:1` template, fan/Starlink survey, cassette design, and preliminary `<=75 lb` budget; bonding/travel wait on received-label, actual-weight, cassette-load, bond-coupon, and hot-operation gates. | `bom/bom_estimated_items.csv` row 24 + `docs/studies/SOLAR_configuration_matrix.md` |
-| Solar controller | Retain the purchased SmartSolar `MPPT 150/45`; wire the Arch Pro array `3S2P`. Per string: `97.2V Vmp`, `113.4V Voc`, `3.1A Imp`, `3.2A Isc`. Tolerance-aware cold Voc is `142.29V` at `-40F`. Estimated hot/tolerance Vmp is `70.91V` at `+85C`, about `9.11V` above the `56.8V + 5V` startup threshold before route drop; final measured drop and hot-roof commissioning remain gates. | `bom/bom_estimated_items.csv` row 25 |
+| Solar array posture | Purchased `4x Renogy 175W flexible monocrystalline panels = 700W` on `2026-08-12`. The current official `RNG-175DB-H-G2` datasheet is the planning basis until the received labels confirm the exact SKU. A new packing screen fits two panels inside the measured `138 x 63 in` skin and one fully supported panel across each side track; this is not installation release. Mounting, junction-box/cable geometry, support/load/fairing design, and actual `<=75 lb` proof remain open. | `bom/bom_estimated_items.csv` row 24 + `docs/studies/SOLAR_configuration_matrix.md` |
+| Solar controller | Retain the purchased SmartSolar `MPPT 150/45` for a candidate single `4S` Renogy string: `78.0V Vmp`, `95.6V Voc`, `8.98A Imp`, and `9.50A Isc`. Published-coefficient cold Voc is `114.86V` at `-40C`, well below the controller maximum. Hot-start margin is narrow: the datasheet lacks a direct Vmp coefficient and a published-coefficient estimate reaches about `61.87V` at `70C`, essentially the `56.8V + 5V` startup threshold before route drop. Received-label proof and hot-roof restart/tracking commissioning remain hard gates. | `bom/bom_estimated_items.csv` row 25 |
 | Load profiles (BOM + owner-supplied office loads) | `core_workday`, `winter_workday`, `minimal_idle_day` | `bom/load_model_wh.csv` |
 | Owner-supplied office assumptions | Laptop + 27 inch 1440p monitor + tablet/peripheral charging | `bom/load_model_wh.csv` rows marked `Owner-Supplied` |
 
@@ -114,17 +114,17 @@ Load totals below are from `bom/load_model_wh.csv` model v5 (BOM loads plus the 
 ### Charging potential
 All values are planning-level and should be replaced with measured charge logs after shakedown tests.
 
-#### Solar charging (`600W` final architecture)
+#### Solar charging (`700W` purchased array)
 
-The `2026-08-10` final roof decision is `6x BougeRV Arch Pro 100W = 600W`, `3S2P`, on the purchased SmartSolar `150/45`. Four modules use direct fiberglass bonding; two use one compact track-side cassette. This replaces the stale `134 x 62 in` CMPower/Lensun/Solbian decision set.
+The owner purchased `4x Renogy 175W flexible panels = 700W` on `2026-08-12`. The candidate electrical posture is one `4S` string on the purchased SmartSolar `150/45`; exact received labels and hot-roof behavior control final acceptance. Mounting is reopened because the larger Renogy footprint supersedes the Arch Pro four-direct/one-cassette layout.
 
-Use the existing `68%` end-to-end planning factor until measured harvest exists. It may be optimistic for the four hot direct-bond modules and conservative for the two ventilated cassette modules.
+Use the existing `68%` end-to-end planning factor until measured harvest exists. It may be optimistic if hot panels are directly bonded or if the `4S` string operates near the controller's hot-voltage threshold.
 
-| `600W` at `68%` | 2 PSH day | 4 PSH day | 5 PSH day | Net vs `core_workday` at 4 PSH | Net vs `winter_workday` at 4 PSH |
+| `700W` at `68%` | 2 PSH day | 4 PSH day | 5 PSH day | Net vs `core_workday` at 4 PSH | Net vs `winter_workday` at 4 PSH |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Final Arch Pro array | `816 Wh` | `1,632 Wh` | `2,040 Wh` | `-2,283 Wh/day` | `-3,197 Wh/day` |
+| Purchased Renogy array | `952 Wh` | `1,904 Wh` | `2,380 Wh` | `-2,011 Wh/day` | `-2,925 Wh/day` |
 
-- Break-even is `9.60 PSH/day` for `core_workday` and `11.84 PSH/day` for `winter_workday`; roof solar is supplemental charging, not guaranteed workday autonomy.
+- Break-even is `8.22 PSH/day` for `core_workday` and `10.14 PSH/day` for `winter_workday`; roof solar is supplemental charging, not guaranteed workday autonomy.
 - Current roof-fit, mounting, electrical proof, and release gates: `docs/studies/SOLAR_configuration_matrix.md`.
 
 #### Alternator charging (dedicated `48V` secondary alternator path)
@@ -155,7 +155,7 @@ Use the existing `68%` end-to-end planning factor until measured harvest exists.
 
 ### Operational implications and constraints
 - Battery capacity now supports roughly `2.5-3.1` office-workdays without charging in the conservative future-audio model, depending on season and reserve policy; actual near-term office-only use may be better.
-- At the selected `600W` case and base `68%` factor, `4` PSH still leaves `2,283Wh/day` and `3,197Wh/day` deficits for the modeled core and winter workdays. Roof solar is a charge-source reducer, not guaranteed workday autonomy.
+- At the purchased `700W` case and base `68%` factor, `4` PSH still leaves `2,011Wh/day` and `2,925Wh/day` deficits for the modeled core and winter workdays. Roof solar is a charge-source reducer, not guaranteed workday autonomy.
 - Shore charging can materially recover SOC in a single evening (`~6.18h` from `20%` to `100%` in bulk-ideal terms).
 - Alternator recovery potential is expected to materially exceed the obsolete pre-Mechman charger path once the dedicated `48V` alternator path is commissioned.
 - Current execution risk is no longer charger-capacity-limited operation; it is migration/commissioning quality (fitment, regulation, protection, and measured thermal behavior).
@@ -221,12 +221,12 @@ Method:
 4. Build final fuse matrix with part numbers, quantities, and BOM row mapping.
 
 ## Solar
-- Final architecture: `6x BougeRV Arch Pro 100W = 600W`, `3S2P`, on the purchased Victron `150/45`; four direct-bond modules plus one removable two-module side cassette.
-- Panel purchase waits on the survey/templates, cassette design, preliminary weight budget, and any required insurer/Hiatus acceptance; bonding/travel then remain blocked by the separate post-receipt gates in `docs/studies/SOLAR_configuration_matrix.md`.
+- Purchased array: `4x Renogy 175W flexible monocrystalline = 700W`; candidate topology is one `4S` string on the purchased Victron `150/45` pending received-label and hot-restart/tracking proof.
+- The former Arch Pro layout is superseded. Current packing evidence needs one fully supported panel across each side track plus two panels inside the skin; final mounting waits on received geometry/manual, `1:1` templates, two-side support/load/fairing design, actual weight, and any required insurer/Hiatus acceptance.
 - Hardwall popup wiring baseline for planning: no hidden in-wall solar run; use exterior-rated coiled jumper cable(s) from roof solar exit to a lower-shell weatherproof passthrough.
 - BOM scope for that routing method is tracked in `bom/bom_estimated_items.csv` row `121`.
-- Open points: exact passthrough location, branch connector/combiner method, cassette side/load path, and final moving-jumper route.
-- Energy takeaway: the extra harvest from `800-910W` candidates does not justify a `250V` controller plus broad carrier/deck fabrication. Keep the `600W` roof simple and rely on the dedicated `48V` alternator and shore path for predictable recovery.
+- Open points: exact passthrough location, series-connector/extension method, both side-support/load paths, and final moving-jumper route.
+- Energy takeaway: `700W` remains supplemental and mechanically nontrivial. Do not buy a different controller or fabricate roof supports until the received Renogy panels pass template, weight, and hot `4S`/`150-45` commissioning screens; rely on the dedicated `48V` alternator and shore path for predictable recovery.
 
 ### Electrical reference maintenance workflow
 - Update trigger conditions:
