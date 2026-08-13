@@ -1,3 +1,10 @@
+## 2026-08-13 — Continuous front-gap solar retractile selected
+
+- Selected one continuously installed PV retractile in the protected camper-to-cab gap, eliminating both the exposed side route and a manual Velcro/slack-release step before raising the roof. There is no exterior PV quick disconnect. The helix remains fully outside; only a stationary factory straight lower tail passes through a fixed-shell compression gland, with separate structural clamps preventing spring load at the gland or electrical terminals.
+- Moved the preferred moving/stationary conductor class to `12 AWG x 2` unless final route/derating disproves it. At `9.5A`, `78V`, and a conservative `20 ft` one-way route, screened drop is about `0.733V / 0.94%`; the modest `10 AWG` gain does not presently justify its likely moving mass and package penalty.
+- Current compact stock lead is Coil Cable Specialist `1203PU06`: `12/3`, `600V`, `25A`, approximately `0.400 in` cable / `1.500 in` coil, and `$61.25` for the `1 ft -> 5 ft` version. It remains on hold for measured roof travel and written `>=150VDC`, coiled-ampacity, tangent, wet/outdoor, cold, and force data. Autac is the no-MOQ custom `12/2` fallback. No trustworthy Amazon product cleared the voltage/documentation screen.
+- Cord and penetration purchase remain held for routed endpoint measurements at all roof positions, front-gap storage/guard envelope, roof-down cab/bed articulation clearance, tangent/drip-loop/gland geometry, and a full-size spring-force mockup. The fixed IMO two-pole PV load-break and no-`F-09` one-string posture remain unchanged.
+
 ## 2026-08-12 — Starlink cable terminations completed; removable direct solar mount reopened
 
 - Owner completed both Neutrik cable assemblies. The green retractile cable was an exceptionally tight fit and required lubricant and substantial insertion force, but every green-coil conductor passed DMM continuity at the finished ends. Repeat the same conductor test on the short jumper; shield-shell continuity, loaded Starlink heat/dropout/reboot behavior, spray/retention, and full-roof-stroke strain relief remain acceptance gates.

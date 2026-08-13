@@ -1,7 +1,7 @@
 # Starlink + solar moving-roof umbilical
 
-Status: **both Starlink Neutrik cable assemblies terminated; green-coil conductors continuity-proven; panel location/cut and loaded commissioning remain gated; `700W` Renogy solar mounting remains open**
-Last current-source check: `2026-08-12`
+Status: **both Starlink Neutrik cable assemblies terminated; green-coil conductors continuity-proven; panel location/cut and loaded commissioning remain gated; continuous front-gap PV coil selected as the measured mockup path**
+Last current-source check: `2026-08-13`
 
 ## Decision
 
@@ -9,9 +9,9 @@ Complete Starlink as its own pathway now. Install one dedicated rugged shielded 
 
 The Standard 4 X hardware kit and OEM mobility mount are purchased at an owner-reported `$405` aggregate total. Current service is `$55/month`; the exact plan name was not supplied, and the owner intends to move to an unlimited plan later. Recurring service stays in `bom/bom_misc_items.csv`, not the one-time build total.
 
-Solar remains separate from the Starlink penetration. The owner purchased `4x Renogy 175W flexible monocrystalline panels = 700W`; the current electrical candidate is one `4S` string on the purchased Victron `150/45`, subject to received-label and hot restart/tracking proof. Its exterior moving jumper, roof entry, and two-pole PV load-break remain measured-route purchase gates. Starlink and PV do not share conductors, connectors, or a guessed oversize gland.
+Solar remains separate from the Starlink penetration. The owner purchased `4x Renogy 175W flexible monocrystalline panels = 700W`; the current electrical candidate is one `4S` string on the purchased Victron `150/45`, subject to received-label and hot restart/tracking proof. The selected moving-path concept is one continuous retractile cord in the protected camper-to-cab gap: its factory straight lower tail—not the helix—passes through one fixed-camper compression gland. There is no exterior PV quick disconnect and no manual roof-up/roof-down cable-release step. Exact cord, anchors, guard, gland, and two-pole PV load-break remain measured-route purchase gates. Starlink and PV do not share conductors, connectors, or a guessed oversize gland.
 
-This supersedes the prior no-new-hole/existing-service-route baseline, twin-coil-now, chain-first, guided-loose-loop, and shared-entry recommendations. The existing truck-bed service route and complete factory cable remain recovery paths, not the normal finished installation.
+This supersedes the prior no-new-hole/existing-service-route baseline, removable-PV-coil, chain-first, guided-loose-loop, and shared-entry recommendations. The existing truck-bed service route and complete factory Starlink cable remain recovery paths, not the normal finished installation.
 
 ## Why the other two moving-section concepts lost
 
@@ -29,7 +29,7 @@ Without an added spring reel, elastic take-up, or guided carriage, it is simply 
 
 A route is sheltered only if an existing rigid camper feature projects outward farther than the cable and the cable stays inside that feature's contact shadow through the full roof stroke. No such location has been physically confirmed. The earlier `front guard` wording referred to an imagined fabricated pouch/deflector, not an existing Hiatus component, and is withdrawn.
 
-No exterior always-connected cable is branch-proof. Normal-road mode keeps the coils attached; tight-trail mode powers/isolate the circuits, removes the coils, and caps the fixed ends.
+No exterior cable is branch-proof. The front camper-to-cab gap is the lead PV protection envelope because it avoids the exposed camper sides, but it is not accepted as `sheltered` until a roof-down cab/bed articulation and road-vibration mockup proves positive clearance. Starlink remains removable for tight-trail mode; the continuous PV cord remains installed and requires no normal roof-motion intervention.
 
 ## Selected Starlink physical layout
 
@@ -194,30 +194,53 @@ The prior rejection applied to a two-panel layout, which added unnecessary chass
 
 Current documented purchased/ordered hardware is `$957.75` on the BOM basis: `$405` for the Standard 4 X kit plus OEM mobility mount, `$365` for the TRIO frame and magnet/disc package, `$46.31` Mouser item subtotal, and `$141.44` of Amazon interface/DC/tool components. The Mouser checkout total also carried `$8.49` of unallocated shipping/tax that is excluded from component rows. The separate `$9.99` tester has been retired; measured DC cable/fuse/terminations, panel fasteners/strain relief, roof-track attachment, and independent tether remain outside that purchased total. Completed conductor continuity does not clear the remaining gates: shield continuity, converter heat/reboot behavior, final Starlink location, wall stack and official cutout proof, full roof stroke, magnet/disc contact, and loaded Starlink stability remain open.
 
-## Solar moving jumper — purchased array, route hardware deferred
+## Solar moving path — continuous front-gap retractile
 
-Do not buy, route, or pre-drill for the solar jumper yet. The current Renogy `4S` planning screen is `95.6V Voc` and `9.50A Isc` at STC with `114.86V` nominal-coefficient cold Voc at `-40C`, but the received labels, total moving length, roof travel, support points, conductor derating, connector family, and passthrough location still require field measurement. PV remains electrically and mechanically separate from Starlink even if anchors share the same general area.
+### Selected architecture
 
-Required cable properties:
+```text
+MOVING ROOF
+  4x Renogy 175W in one 4S string
+    -> fixed roof harness / matched service connection
+    -> upper structural jacket clamp
+    -> factory straight upper tangent
+    -> vertical retractile helix in camper-to-cab gap
 
-- two copper current-carrying conductors sized from final array current and total route voltage drop;
-- jacket/conductor system explicitly rated above the final cold-array voltage;
-- wet/outdoor, UV, oil, abrasion, and repeated-flex suitability;
-- relaxed length and full-extension data for the actual finished coil;
-- independent strain relief at both ends.
+FIXED CAMPER SHELL
+  factory straight lower tangent
+    -> lower structural jacket clamp
+    -> broad supported bend + drip loop
+    -> exterior clamp
+    -> IP68 compression gland through fixed camper shell
+    -> interior clamp
+    -> two-pole PV load-break
+    -> Victron SmartSolar 150/45
+```
 
-### Current candidate posture
+The concept is **continuous across the shell**. Only a smooth, full-round, stationary factory straight tail passes through the gland. The helix, first/last coil throat, or any sliding section must never enter or work inside the gland. The gland seals; independent clamps on real camper structure carry spring force and road load. Nothing attaches to or mechanically bridges into the truck cab.
 
-| Item | Link / price posture | Decision |
+Orient the coil vertically with its axis parallel to roof travel. Prefer axial/drop tangents at both ends. Keep the complete helix outside in a smooth, drained open channel or guard attached only to camper structure; do not put the coil in a tight tube. The lower tail forms a drip loop before approaching the gland straight and normal to the wall. A roof-side matched MC4-family service connection may remain, but only as a matched-brand, de-energized service connector—not a normal roof-motion step or a load-break.
+
+### Cable release specification
+
+- Preferred moving conductor: `12 AWG x 2`, finely stranded copper, with `12/3` acceptable only if the third conductor is individually capped at both ends and no green/green-yellow conductor is used for PV current.
+- Require written continuous suitability for at least `150VDC`, `>=14.8A` at worst parked/retracted coiling and ambient, repeated flexing, wet/outdoor/UV/ozone/oil/abrasion service, and the selected cold-temperature floor.
+- Require a dimensioned drawing: cable/coil OD tolerance, retracted body, safe working extension, upper/lower tangent direction and length, transition throats, bend radius, and force-versus-extension curve.
+- Normal full-up use stays within `80%` of the cord's rated extension and leaves at least `20%` or `6 in` unused travel, whichever is greater. The advertised stretched length is not the normal operating point.
+- `12 AWG` is electrically sufficient unless final route/derating disproves it. At `9.5A`, `78V`, and a conservative `20 ft` one-way route, screened drop is about `0.733V / 0.94%`; `10 AWG` would reduce this to `0.460V / 0.59%` but typically adds moving mass, coil bulk, and spring load.
+
+### Current market screen
+
+| Candidate | Verified posture | Decision |
 | --- | --- | --- |
-| igus `CF9-UL-60-04`, 10 AWG 4C straight chainflex | [Nassau National Cable](https://nassaunationalcable.com/products/igus-cf9-ul-60-04-10-awg-4c-stranded-bare-copper-unshielded-tpe-1000v-chainflex-cf9-ul-control-cable) — `$9.32/ft`, `15-day ARO`, shipping calculated at check | **Remove from the lead BOM.** It is affordable relative to Alpha EcoFlex, but it is straight four-conductor chain cable, not a retractile coil. It only solves flex life if a carrier/controlled loop is retained. |
-| `RCC102SEO-1`, 10/2 SEOW 600 V retractile cord | [Wire & Cable Your Way](https://www.wireandcableyourway.com/retractable-cord-10-2-seow-600v) | Correct product class; current page requires a quote instead of presenting a checkout price. Hold until measured relaxed/extended requirements are known. |
-| Generic Amazon 10 AWG PUR spring-cable listing | Current 2-conductor/2 m selection was about `$398` with long delivery during this check | **Reject as not reasonably priced.** |
-| Trailer power coils with two 10 AWG conductors | Common on Amazon | **Reject for now.** Their low-voltage vehicle-cord rating does not establish suitability for the possible `150 V` PV circuit, and unused conductors add unnecessary bulk. |
+| [Coil Cable Specialist `1203PU06`](https://www.coilcablespecialist.com/products/12-awg-3-conductor-ul-retractable-black-cord-1203pu06), `12/3`, `600V`, `25A`, black FR polyurethane | `0.400 +/-0.010 in` cable OD; `1.500 +/-0.250 in` coil OD; `1 ft -> 5 ft` through `10 ft -> 50 ft`; regular/tangent selector; shortest stock version `$61.25` at check. Manufacturer family claims UV/moisture/oil/abrasion resistance and continuous cycling, but the SKU has no drawing or explicit DC/PV/cold/coiled-ampacity statement. | **Lead stock prototype after written answers.** Best compact package and price found. Ask for tangent drawing/lead length, `>=150VDC` approval, coiled ampacity, wet/outdoor and cold ratings. Use only two non-green conductors; cap the third. |
+| [Wire & Cable Your Way `RCC102SEO-1`](https://www.wireandcableyourway.com/retractable-coil-cord-10-2-seow-ul-csa-1ft-retracted-5ft-extended), `10/2 SEOW` | `600V` product class, `30A`, `0.617 in` cable OD, `-50C` to `105C`, `1 ft -> 5 ft`; visible page requires price contact while embedded data showed about `$56.92`. Tail and coil OD are unpublished. | **Budget exact-two-conductor backup.** Get written `>=150VDC`, straight-tail/tangent drawing, coil OD, force, price, and lead time. Bulkier cable than the CCS lead. |
+| [McMaster `7088K227`](https://www.mcmaster.com/7088K227), outdoor `12/2 SOW` | `600VAC`, `25A`, UL listed/CSA, `-40F` to `190F`, UV/moisture/oil/abrasion resistant; `0.600 in` cable OD, `2.3 in` coil OD; `2 ft -> 10 ft` about `$174.91`, `4 ft -> 20 ft` about `$274.78`. Straight-tail dimensions and DC approval are absent. | **Best fully documented outdoor stock fallback, not the slim lead.** Buy only after DC and tail confirmation; package may be unnecessarily large. |
+| [Autac custom retractile](https://autacusa.com/build-your-cord/) | Configurator supports conductor count, material, retracted/extended lengths, coil OD, and independent A/B axial or radial tangent lengths. Current vendor posture says no MOQ, `1-3` business-day quote, and typical `4-6` week custom lead. | **Lead custom path** if stock CCS geometry or ratings fail. Quote `12/2`, tinned copper, FR TPU/TPE, explicit `>=150VDC`, compact OD, and a long axial lower tail. |
+| Amazon Iron Forge `12/3` SJEOW (`B0CKD1SV6H`) | `$34.99`, `3 ft -> 8 ft`, but finished assembly is listed only `125V`, `15A`, with no DC rating, tail dimension, or coil OD. | **Reject.** Only about `10V` above the current `114.86V` cold-Voc screen and no defensible DC/PV evidence. |
+| Trailer/liftgate coils and generic Amazon spring cords | Usually `12/24V` use or omit voltage, wet/UV, geometry, and dynamic-duty evidence. | **Reject.** Gauge alone does not qualify a cord for this PV source circuit. |
 
-No trustworthy, reasonably priced, checkout-ready Amazon 10 AWG two-conductor PV-capable retractile cable was found in this pass. Do not substitute a cheap low-voltage trailer coil. `10 AWG` remains the planning class, subject to measured moving length, ampacity/derating, and voltage-drop release.
-
-For frequent trail removal, use one connector family across the roof harness and removable coil. MC4/MC4-compatible connectors are acceptable only as matched-brand, de-energized service disconnects; do not mix brands or unplug under PV load. Exact connectors wait for the panel harness brand and array current.
+No blind Amazon buy cleared this use. Do not order even the lead CCS cord until the actual roof stroke and routed endpoint distances prove whether `1 ft -> 5 ft` provides the required reserve. If that geometry passes, request written technical confirmation rather than paying for a much larger cord by default.
 
 ## Compact PV disconnect
 
@@ -240,15 +263,15 @@ Selection gates:
 
 ## Measurements needed before purchase lock
 
-Record all dimensions in both roof-down and roof-up states:
+Record all dimensions in roof-down, quarter, half, three-quarter, and roof-up states:
 
-1. actual vertical movement between the proposed fixed and moving anchors;
-2. lower and upper tangent length from connector to strain-relief clamp;
-3. desired retracted coil-body length and maximum allowed outward projection;
-4. available connector/gland hole diameter and interior service access;
-5. an existing rigid feature that actually projects farther outward than the coils, if any;
-6. total one-way PV cable route, moving-jumper extension/retraction geometry, and actual cable OD; current Renogy `4S` planning values are `114.86V` nominal-coefficient cold Voc and `9.50A` STC Isc pending received labels;
-7. actual OD of any purchased prototype cable before ordering Neutrik carriers or cable glands.
+1. routed centerline distance between proposed moving-roof and fixed-shell clamp centers at every position—not only vertical roof stroke;
+2. lateral/fore-aft offset and angular change at both endpoints through the stroke;
+3. continuous front-gap height, width, and depth for the coil/guard, plus the roof-down retracted-storage envelope;
+4. cab-to-camper swept clearance with roof down during a controlled articulation check; static level-shop clearance is insufficient;
+5. lower and upper factory tangent lengths needed from the undisturbed coil throats through both structural clamps, drip loop, gland, internal clamp, and terminations;
+6. gland wall thickness, flat sealing land, hole/access envelope, straight approach, rear bend clearance, and received cord OD tolerance;
+7. complete one-way PV route. Current Renogy `4S` planning values are `114.86V` nominal-coefficient cold Voc and `9.50A` STC Isc pending received labels.
 
 ## Acceptance tests
 
@@ -260,15 +283,17 @@ Record all dimensions in both roof-down and roof-up states:
 4. Repeat with the coil relaxed and extended.
 5. Preserve the complete factory cable as the recovery spare.
 
-### Physical mockup
+### Physical mockup and moving-cord acceptance
 
-1. Use rope/cheap spring cable between proposed anchored points.
-2. Cycle roof down, intermediate, and fully raised; the roof must never pull on a connector.
-3. Confirm the down-state coil stays close to the body and does not fall below or outside the chosen profile.
-4. Cycle repeatedly and inspect for coils winding together, slap, rub, pinch, and snag.
-5. Prove trail removal and cap/stow workflow before drilling final holes.
+1. Use a full-size surrogate matching the candidate retracted length, coil OD, tangents, and approximate spring force between proposed structural clamp centers.
+2. Cycle roof down through every intermediate state to fully raised at least `20` times before drilling; prove no cab contact, turn inversion, pinch, hard stop, or tail movement at the gland.
+3. Bench-measure pull at down, `25%`, `50%`, `75%`, and full-up equivalents. Provisional acceptance is `<=5 lbf` incremental full-up pull and `<=10%` of measured lift-assist margin unless Hiatus approves more.
+4. Confirm the down-state helix retracts naturally into the drained guard without being axially crushed, falling below the guide, or slapping the cab/camper.
+5. Proof the real endpoint clamps at twice maximum measured operating force for one minute with no jacket slip, bracket motion, gland displacement, or terminal load.
+6. After final de-energized install, complete at least `100` roof cycles; inspect the throats, jacket, clamps, guide, gland, and witness marks before energization.
+7. Spray-test the drip loop/gland and complete a progressive roof-down road/articulation shakedown with witness material before normal travel.
 
 ### Trail-mode sequence
 
 - Starlink: power down -> disconnect/remove coil -> cap fixed/moving RJ45 ends -> secure adapter pigtails.
-- Solar: open the PV-rated disconnect -> verify current is stopped -> disconnect/remove the solar coil -> cap both ends.
+- Solar: no normal trail or roof-motion disconnect step. The continuous front-gap cord stays installed. Open the fixed two-pole PV load-break only for electrical service; matched roof-side service connectors are unplugged only de-energized.

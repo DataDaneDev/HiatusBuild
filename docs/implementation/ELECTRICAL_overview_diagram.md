@@ -100,9 +100,10 @@ flowchart LR
 
     subgraph PV_PATH["Solar Path (purchased 700W / candidate 4S)"]
         PVA["4x Renogy 175W in series\n78.0V Vmp / 95.6V Voc"]
+        PVCORD["Continuous 12 AWG-class retractile\nfront gap -> stationary tail -> gland"]
         PVDISC["Two-pole PV load-break\nopen before service disconnect"]
         MPPT["Victron SmartSolar\nMPPT 150/45"]
-        PVA -- "9.50A STC Isc\n114.86V cold screen at -40C\nhot-start proof pending" --> PVDISC --> MPPT
+        PVA -- "9.50A STC Isc\n114.86V cold screen at -40C\nhot-start proof pending" --> PVCORD --> PVDISC --> MPPT
     end
 
     subgraph HOUSE_48V["House 48V Core"]
@@ -401,7 +402,7 @@ Retired from active architecture:
 | `C-24` | 12V panel -> CO + propane detector | `12V` | Branch load | `F-10` `3A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-25` | 12V panel -> LED lights + dimmer (Hiatus pre-installed) | `12V` | Branch load | `F-10` `5A` | `18/2` | `8 ft` (`ASSUMED`, near-load branch) |
 | `C-26` | `48V` system positive/negative -> `CERBO-PWR` -> Cerbo GX power input | `48V` | Cerbo electronics feed (`~3W`) | `CERBO-PWR` `1A-3A` inline fuse | `18 AWG` red/black duplex acceptable | `2.5 ft` (`ASSUMED`, cabinet internal) |
-| `C-27` | Purchased Renogy `4S` string -> two-pole load-break disconnect -> MPPT PV input | `78.0V Vmp`; `95.6V Voc`; `114.86V` nominal-coefficient cold Voc at `-40C` | `8.98A Imp`; `9.50A Isc` STC | No `F-09` presently planned for one string; reopen only from received-label/code review | `10 AWG` PV cable remains the conservative planning class; final wet/flex moving section must be voltage-, flex-, UV-, and route-rated | Lengths/OD/strain relief unlocked pending roof-travel survey; hot restart/tracking proof required |
+| `C-27` | Purchased Renogy `4S` string -> continuous front-gap retractile -> fixed-shell gland -> two-pole load-break -> MPPT PV input | `78.0V Vmp`; `95.6V Voc`; `114.86V` nominal-coefficient cold Voc at `-40C` | `8.98A Imp`; `9.50A Isc` STC; `14.8A` conservative conductor screen | No `F-09` presently planned for one string; reopen only from received-label/code review | Preferred `12 AWG x 2` fixed/moving PV path after final route/derating proof; moving cord requires written `>=150VDC`, coiled ampacity, wet/UV/flex/cold ratings and stationary straight tail through the gland | No exterior PV quick disconnect; lengths/OD/tangents/clamps/guard/gland remain on full-stroke and articulation HOLD; hot restart/tracking proof required |
 | `C-28` | Shore source/adapters -> portable EMS -> shore cord -> shore inlet -> combined AC DIN enclosure / AC input breaker | `120VAC` | Source-limited shore current (adapter-constrained at source) | `30A` AC input breaker/disconnect baseline with source-current-limit settings policy | `10/3` shore feed to inlet/AC-in area | `8 ft` (`ASSUMED`) |
 | `C-29` | AC input breaker/disconnect -> MultiPlus AC-in | `120VAC` | MultiPlus AC input current (`30A` hardware basis) | Upstream `30A` AC breaker/disconnect (`C-28`) | `10 AWG` stranded AC conductors | `2.5 ft` (`ASSUMED`, cabinet internal) |
 | `C-30` | MultiPlus AC-out-1 -> combined AC DIN enclosure / AC-out main breaker | `120VAC` | Inverter-backed AC-out feeder current (`30A` system cap) | `30A` AC-out main breaker | `10/3` stranded AC feeder | `2.5 ft` (`ASSUMED`, cabinet internal) |
@@ -461,7 +462,7 @@ Calculation basis for drop screening:
 | `C-24` | 12V fuse panel | CO+propane detector | `F-10 3A` | `0.2A` | `18/2` | `8 ft` | `0.17%` @ `12V` | Row `33` (`18/2`) | PASS |
 | `C-25` | 12V fuse panel | LED lights + dimmer (Hiatus pre-installed) | `F-10 5A` | `5A` | `18/2` | `8 ft` | `4.26%` @ `12V` | Row `33` (`18/2`) | WARN (`18/2` only if shorter run/lower current) |
 | `C-26` | 48V system feed | Cerbo GX | `CERBO-PWR 1A-3A` | `~3W` | `18 AWG` duplex acceptable | `2.5 ft` | N/A (low-current electronics feed) | Low-current install stock / row `22` device | PASS |
-| `C-27` | Purchased Renogy `4S` string + two-pole disconnect | MPPT PV input | No `F-09` presently planned | `9.50A Isc` STC | `10 AWG` PV planning class | Roof and moving-jumper routes unlocked | Recalculate drop from measured length | Rows `31`, `106`, `121` | HOLD received labels/route/commissioning; nominal cold screen `114.86V` at `-40C`; indirect hot estimate reaches the `56.8V + 5V` startup threshold near `70C` before route drop |
+| `C-27` | Purchased Renogy `4S` string + continuous front-gap retractile + two-pole disconnect | MPPT PV input | No `F-09` presently planned | `9.50A Isc` STC / `14.8A` conservative conductor screen | Preferred `12 AWG x 2` after route/derating proof | Full route pending; `20 ft` one-way screen | `0.94%` at `9.5A / 78V` for `12 AWG` | Rows `31`, `106`, `121` | HOLD received labels, endpoint/tangent/gland geometry, `>=150VDC` and coiled-ampacity proof, articulation/full-stroke mockup, and hot restart/tracking commissioning |
 | `C-28` | Shore inlet path | AC input breaker/disconnect | Source-limited AC OCP | `30A` hardware basis | `10/3` | `8 ft` | `0.40%` @ `120VAC` | Row `114` (`10/3 shore + AC-in/out feed`) | PASS |
 | `C-29` | AC input breaker/disconnect | MultiPlus AC-in | Upstream AC OCP | `30A` hardware basis | `10 AWG AC` | `2.5 ft` | `0.12%` @ `120VAC` | Row `114` (`10/3 shore + AC-in/out feed`) | PASS |
 | `C-30` | MultiPlus AC-out-1 | AC-out main breaker | `30A` AC-out main | `30A` hardware basis | `10/3` | `2.5 ft` | `0.12%` @ `120VAC` | Row `114` (`10/3 shore + AC-in/out feed`) | PASS |
@@ -492,7 +493,7 @@ Calculation basis for drop screening:
 | `6 AWG` black | `7.5 ft` | `C-10`, `C-15`, `C-19` | `29` |
 | `4 AWG` red | `10.5 ft` (`2.5 ft` existing + `8 ft` audio sub planning branch) | `C-19A`, `C-43` | `30`, `192` |
 | `4 AWG` black | `10.5 ft` (`2.5 ft` existing + `8 ft` audio sub return) | `C-19B`, `C-44` | `30`, `192` |
-| `10 AWG` PV cable allowance | Route length pending | `C-27` purchased Renogy `4S`; stationary PV plus separately qualified wet/flex moving jumper; no `F-09` presently planned | `31`, `106`, `121` |
+| `12 AWG` PV cable allowance | Route length pending | `C-27` purchased Renogy `4S`; stationary path plus continuous front-gap wet/flex retractile with a stationary straight lower gland tail; no `F-09` presently planned | `31`, `106`, `121` |
 | `14 AWG duplex` | `16 ft` | `C-23`, `C-36` | `32` |
 | `18/2` | `24.0 ft` plus separate Cerbo low-current duplex | `C-24`, `C-25`, `C-37`; Cerbo `C-26` uses 48V fused low-current duplex | `33` / low-current stock |
 | `12 AWG AC branch cable` | `30 ft` (`C-33` excluded in Phase 1) | `C-31`, `C-32` | `113` |
