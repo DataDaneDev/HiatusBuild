@@ -9,7 +9,7 @@ Complete Starlink as its own pathway now. Install one dedicated rugged shielded 
 
 The Standard 4 X hardware kit and OEM mobility mount are purchased at an owner-reported `$405` aggregate total. Current service is `$55/month`; the exact plan name was not supplied, and the owner intends to move to an unlimited plan later. Recurring service stays in `bom/bom_misc_items.csv`, not the one-time build total.
 
-Solar remains separate from the Starlink penetration. The owner purchased `4x Renogy 175W flexible monocrystalline panels = 700W`; the current electrical candidate is one `4S` string on the purchased Victron `150/45`, subject to received-label and hot restart/tracking proof. The selected moving-path concept is one continuous retractile cord in the protected camper-to-cab gap: its factory straight lower tail—not the helix—passes through one fixed-camper compression gland. There is no exterior PV quick disconnect and no manual roof-up/roof-down cable-release step. Exact cord, anchors, guard, gland, and two-pole PV load-break remain measured-route purchase gates. Starlink and PV do not share conductors, connectors, or a guessed oversize gland.
+Solar remains separate from the Starlink penetration. The owner purchased `4x Renogy 175W flexible monocrystalline panels = 700W`; the current electrical candidate is one `4S` string on the purchased Victron `150/45`, subject to received-label and hot restart/tracking proof. The selected moving-path concept is one continuous retractile cord in the protected camper-to-cab gap: its factory straight lower tail—not the helix—passes through one fixed-camper compression gland, then transitions at an accessible interior two-splice point to stationary `12/2`. There is no exterior PV quick disconnect and no manual roof-up/roof-down cable-release step. The preliminary endpoint-span estimate is about `3 ft` roof-down to `7 ft` roof-up, but the maximum-rated assembly must exceed the measured full-up span rather than reaching hard extension there. Exact cord, anchors, guard, gland, and two-pole PV load-break remain measured-route purchase gates. Starlink and PV do not share conductors, connectors, or a guessed oversize gland.
 
 This supersedes the prior no-new-hole/existing-service-route baseline, removable-PV-coil, chain-first, guided-loose-loop, and shared-entry recommendations. The existing truck-bed service route and complete factory Starlink cable remain recovery paths, not the normal finished installation.
 
@@ -201,7 +201,9 @@ Current documented purchased/ordered hardware is `$957.75` on the BOM basis: `$4
 ```text
 MOVING ROOF
   4x Renogy 175W in one 4S string
-    -> fixed roof harness / matched service connection
+    -> three direct panel-to-panel series links
+    -> only two free string-end leads (PV+ and PV-)
+    -> compact two-polarity roof transition box
     -> upper structural jacket clamp
     -> factory straight upper tangent
     -> vertical retractile helix in camper-to-cab gap
@@ -213,34 +215,73 @@ FIXED CAMPER SHELL
     -> exterior clamp
     -> IP68 compression gland through fixed camper shell
     -> interior clamp
+    -> accessible two-splice transition to stationary 12/2
+    -> stationary interior 12/2 run
     -> two-pole PV load-break
     -> Victron SmartSolar 150/45
 ```
 
-The concept is **continuous across the shell**. Only a smooth, full-round, stationary factory straight tail passes through the gland. The helix, first/last coil throat, or any sliding section must never enter or work inside the gland. The gland seals; independent clamps on real camper structure carry spring force and road load. Nothing attaches to or mechanically bridges into the truck cab.
+The concept is **continuous across the shell**. Only a smooth, full-round, stationary factory straight tail passes through the gland. The helix, first/last coil throat, splice, stripped jacket, or any sliding section must never enter or work inside the gland. The gland seals; independent clamps on real camper structure carry spring force and road load. Nothing attaches to or mechanically bridges into the truck cab.
 
-Orient the coil vertically with its axis parallel to roof travel. Prefer axial/drop tangents at both ends. Keep the complete helix outside in a smooth, drained open channel or guard attached only to camper structure; do not put the coil in a tight tube. The lower tail forms a drip loop before approaching the gland straight and normal to the wall. A roof-side matched MC4-family service connection may remain, but only as a matched-brand, de-energized service connector—not a normal roof-motion step or a load-break.
+Orient the coil vertically with its axis parallel to roof travel. Prefer axial/drop tangents at both ends. Keep the complete helix outside in a smooth, drained open channel or guard attached only to camper structure; do not put the coil in a tight tube. The lower tail forms a drip loop before approaching the gland straight and normal to the wall. A roof-side matched solar-connector service connection may remain, but only as a matched-brand, de-energized service connector—not a normal roof-motion step or a load-break.
+
+The owner's internal-splice concept is valid and preferred over buying a retractile with a long stationary interior tail. After the cord is independently clamped inside the shell, make exactly two polarity-marked splices to fixed `12/2` in an accessible protected location. [Pacer `12/2` duplex boat cable](https://www.pacergroup.net/duplex-cable-12-awg/) is a relevant stationary-run class because the manufacturer specifies fine-stranded tinned copper and `600V`; the actual purchased cable still needs its exact wet/temperature markings checked. [3M `MH10BCX`](https://www.3mcanada.ca/3M/en_CA/p/d/v000076893/) is a relevant `12-10 AWG`, adhesive-lined, water/salt-sealed butt-splice class with a published `600V` building-wire rating. Release any butt splice only after confirming it accepts the retractile's exact extra-fine stranding, using the specified ratcheting crimper, completing a pull test, and supporting both cables so the splice carries no mechanical load. Keep this transition accessible rather than burying it in the wall.
 
 ### Cable release specification
 
 - Preferred moving conductor: `12 AWG x 2`, finely stranded copper, with `12/3` acceptable only if the third conductor is individually capped at both ends and no green/green-yellow conductor is used for PV current.
 - Require written continuous suitability for at least `150VDC`, `>=14.8A` at worst parked/retracted coiling and ambient, repeated flexing, wet/outdoor/UV/ozone/oil/abrasion service, and the selected cold-temperature floor.
 - Require a dimensioned drawing: cable/coil OD tolerance, retracted body, safe working extension, upper/lower tangent direction and length, transition throats, bend radius, and force-versus-extension curve.
-- Normal full-up use stays within `80%` of the cord's rated extension and leaves at least `20%` or `6 in` unused travel, whichever is greater. The advertised stretched length is not the normal operating point.
+- Treat **overall clamp-center span**, **active helix length**, and **straight tangent lengths** as separate dimensions. The current owner estimate is about `3 ft` overall roof-down and `7 ft` overall roof-up; it is not yet a released cut dimension.
+- Normal full-up use stays within `80%` of the active helix's rated extension and leaves at least `20%` or `6 in` unused travel, whichever is greater. If measured full-up span is really `7 ft`, a cord advertised as `7 ft` maximum overall is too short. For an idealized `5:1` active helix with `3 ft` overall retracted, the `80%` screen requires at least `16 in` of natural helix, `20 in` combined tangents, and `100 in / 8.33 ft` rated overall reach; quote roughly `8.5-9 ft` after final routed geometry is measured.
+- The interior `12/2` splice shortens only the stationary retractile tail. It does not reduce the moving clamp-center range the helix must accommodate.
 - `12 AWG` is electrically sufficient unless final route/derating disproves it. At `9.5A`, `78V`, and a conservative `20 ft` one-way route, screened drop is about `0.733V / 0.94%`; `10 AWG` would reduce this to `0.460V / 0.59%` but typically adds moving mass, coil bulk, and spring load.
 
 ### Current market screen
 
 | Candidate | Verified posture | Decision |
 | --- | --- | --- |
-| [Coil Cable Specialist `1203PU06`](https://www.coilcablespecialist.com/products/12-awg-3-conductor-ul-retractable-black-cord-1203pu06), `12/3`, `600V`, `25A`, black FR polyurethane | `0.400 +/-0.010 in` cable OD; `1.500 +/-0.250 in` coil OD; `1 ft -> 5 ft` through `10 ft -> 50 ft`; regular/tangent selector; shortest stock version `$61.25` at check. Manufacturer family claims UV/moisture/oil/abrasion resistance and continuous cycling, but the SKU has no drawing or explicit DC/PV/cold/coiled-ampacity statement. | **Lead stock prototype after written answers.** Best compact package and price found. Ask for tangent drawing/lead length, `>=150VDC` approval, coiled ampacity, wet/outdoor and cold ratings. Use only two non-green conductors; cap the third. |
-| [Wire & Cable Your Way `RCC102SEO-1`](https://www.wireandcableyourway.com/retractable-coil-cord-10-2-seow-ul-csa-1ft-retracted-5ft-extended), `10/2 SEOW` | `600V` product class, `30A`, `0.617 in` cable OD, `-50C` to `105C`, `1 ft -> 5 ft`; visible page requires price contact while embedded data showed about `$56.92`. Tail and coil OD are unpublished. | **Budget exact-two-conductor backup.** Get written `>=150VDC`, straight-tail/tangent drawing, coil OD, force, price, and lead time. Bulkier cable than the CCS lead. |
-| [McMaster `7088K227`](https://www.mcmaster.com/7088K227), outdoor `12/2 SOW` | `600VAC`, `25A`, UL listed/CSA, `-40F` to `190F`, UV/moisture/oil/abrasion resistant; `0.600 in` cable OD, `2.3 in` coil OD; `2 ft -> 10 ft` about `$174.91`, `4 ft -> 20 ft` about `$274.78`. Straight-tail dimensions and DC approval are absent. | **Best fully documented outdoor stock fallback, not the slim lead.** Buy only after DC and tail confirmation; package may be unnecessarily large. |
-| [Autac custom retractile](https://autacusa.com/build-your-cord/) | Configurator supports conductor count, material, retracted/extended lengths, coil OD, and independent A/B axial or radial tangent lengths. Current vendor posture says no MOQ, `1-3` business-day quote, and typical `4-6` week custom lead. | **Lead custom path** if stock CCS geometry or ratings fail. Quote `12/2`, tinned copper, FR TPU/TPE, explicit `>=150VDC`, compact OD, and a long axial lower tail. |
+| [TPC Wire `60241` Trex-Onics High-Flex Ultra-Coil](https://www.tpcwire.com/products/wire-cable/control-cables-instrumentation/trex-onics-high-flex-ultra-coil-retractiles) | Manufacturer data: security-yellow `12/4`, tinned `168x34` stranding, `600V`, `30A`, `-40C`, sunlight/oil resistant, continuous-cycle polyurethane/TPE; `0.417 in` cable OD and `1.8 in` coil OD. Its `1 ft -> 5 ft` **active helix** has two additional `12 in` leads, proving a `3 ft -> 7 ft` overall assembly. | **Best documented geometry/durability reference, not a released buy.** It would be at hard extension if the installed full-up span is actually `7 ft`, and stock yellow `12/4` is needlessly bulky electrically. Ask TPC for black `12/2` with more than `7 ft` safe overall span and force data. |
+| TPC Wire `60242` Trex-Onics High-Flex Ultra-Coil | Same `12/4`, `0.417 in` cable, `1.8 in` coil, `600V` construction with a `2 ft -> 10 ft` active helix and two additional `12 in` leads: `4 ft -> 12 ft` overall. | **Stock geometry fallback only.** It has ample roof-up reach but is about `1 ft` too long at the estimated roof-down span; do not axially crush it to fit. A custom shorter tangent/helix is cleaner. |
+| [Coil Cable Specialist `1203PU06`](https://www.coilcablespecialist.com/products/12-awg-3-conductor-ul-retractable-black-cord-1203pu06), `12/3`, `600V`, `25A`, black FR polyurethane | `0.400 +/-0.010 in` cable OD; `1.500 +/-0.250 in` coil OD; shortest listing `$61.25` at check. The page says `1 ft -> 5 ft` but does not prove whether that excludes tangents; no dimensioned drawing, DC/PV, cold, force, or coiled-ampacity statement was found. | **Compact price lead on hold.** It may be the right physical package if the vendor proves additional tangents and a safe span beyond measured full-up. Do not infer `3 ft -> 7 ft` from its current listing. |
+| [Nassau `123SOOW1TO5`](https://nassaunationalcable.com/products/12-3-soow-ul-csa-retractable-coil-cord-1ft-retracted-5ft-extended), black `12/3 SOOW` | `$85.22` and in stock at check; `600V`, `25/20A`, `-40C` to `90C`, sunlight/oil/moisture/abrasion resistant; `0.63 in` cable OD and `2.31 in` coil OD. Tangents and total endpoint length are unpublished. | **Documented budget stock fallback, but bulky.** Require a drawing, DC statement, force/cycle data, and proof that the `1-5 ft` length excludes adequate tangents. |
+| [Nassau `102SOOW1TO5`](https://nassaunationalcable.com/products/10-2-soow-ul-csa-retractable-coil-cord-1ft-retracted-5ft-extended), `10/2 SOOW` | `$110.50` and in stock at check; exact two conductors, `600V`, `30A`, `-50C` to `105C`, `0.617 in` cable OD. Tangent length, coil OD, force, and total endpoint length are unpublished. | **Exact conductor-count fallback, not preferred.** Its larger/stiffer 10 AWG package buys negligible electrical benefit and forces a larger gland. |
+| [Autac custom retractile](https://autacusa.com/build-your-cord/) | Configurator supports conductor count, material, retracted/extended lengths, coil OD, and independent A/B axial or radial tangent lengths. Current vendor posture says no MOQ, `1-3` business-day quote, and typical `4-6` week custom lead. | **Lead exact-fit path.** Quote black `12/2` tinned copper, FR TPU/TPE, explicit `>=150VDC`, outdoor wet/UV/cold/continuous-cycle service, about `3 ft` overall retracted, roughly `8.5-9 ft` rated overall reach pending measurements, and extension force at each roof position. |
+| [Philatron custom power coil](https://philatron.com/coil-cable/power-coil-cable.php) / [Galaxy custom retractile](https://www.galaxywire.com/applications/retractile/) | Both advertise custom conductor/length/material builds. Philatron publishes outdoor SJEOW/SEOW product families; Galaxy publishes `34-10 AWG`, application-specific voltage, PU/TPE options, and `-65C` to `105C` capability. | **Second-source RFQ paths.** Require a signed application-specific drawing and ratings package; generic family capability is not purchase release. |
 | Amazon Iron Forge `12/3` SJEOW (`B0CKD1SV6H`) | `$34.99`, `3 ft -> 8 ft`, but finished assembly is listed only `125V`, `15A`, with no DC rating, tail dimension, or coil OD. | **Reject.** Only about `10V` above the current `114.86V` cold-Voc screen and no defensible DC/PV evidence. |
 | Trailer/liftgate coils and generic Amazon spring cords | Usually `12/24V` use or omit voltage, wet/UV, geometry, and dynamic-duty evidence. | **Reject.** Gauge alone does not qualify a cord for this PV source circuit. |
 
-No blind Amazon buy cleared this use. Do not order even the lead CCS cord until the actual roof stroke and routed endpoint distances prove whether `1 ft -> 5 ft` provides the required reserve. If that geometry passes, request written technical confirmation rather than paying for a much larger cord by default.
+No blind Amazon buy cleared this use. The TPC data resolve the terminology question: a `1-5 ft` active helix can legitimately be a `3-7 ft` assembly when it has two additional `12 in` tangents. They do **not** release a `3-7 ft` cord for a measured `7 ft` operating span, because that would consume all extension reserve. Measure first, then seek a custom compact `12/2` or a stock cord whose dimensioned safe working span clears full-up with reserve.
+
+### Four-panel junction and roof transition
+
+There is no electrical `4-to-1` junction in the selected `4S1P` topology. Make three one-to-one series connections between adjacent panels; the two unmatched ends are the entire array output. A four-input solar branch connector is parallel hardware: it would turn the array into `4P`, leaving only about `19.5V Vmp` while raising array current toward `38A`, which is unsuitable for charging the `48V` bank through the `150/45`.
+
+The useful compact hardware is instead a **two-polarity transition box**:
+
+```text
+P1 --series-- P2 --series-- P3 --series-- P4
+free PV- end ---------------------------------\
+                                                  compact transition box -> one jacketed retractile
+free PV+ end ---------------------------------/
+```
+
+- Use direct received-panel connectors for the three series links wherever they reach. Add only exact manufacturer-approved male-to-female extensions where the physical layout requires them; do not cross-mate lookalike solar-connector brands.
+- Preserve the panel leads. After inspecting the received connector manufacturer/markings, one matching extension cable can be cut into complementary male and female pigtails for the two string ends if its length and polarity work.
+- [Bud `PN-1322`](https://www.budind.com/product/nema-ip-rated-boxes/pn-series-nema-box/ip65-nema-4x-box-pn-1322/) is a current compact box screen: UV-stabilized polycarbonate, UL 508, NEMA 4/4X, IP65/IP66, about `4.53 x 2.56 x 2.17 in` outside. It gets two OD-matched small glands for the separate PV pigtails and one gland for the intact retractile jacket. Verify entry spacing, bend radius, and actual splice volume before drilling it.
+- Inside the box, make exactly two polarity-separated, strain-free transitions. Lead method is a manufacturer-approved crimp splice compatible with both the PV pigtail and the retractile's extra-fine stranding; two secured [WAGO `221-2401`](https://www.wago.com/us/wire-splicing-connectors/inline-splicing-connector-with-lever/p/221-2401) `20A/600V` inline connectors are the accessible fallback when the exact conductors are within their approval range. The box—not a bare connector—provides weather protection.
+- Independently clamp all three cables. Neither glands nor splices carry roof-motion load. No combiner, rooftop string-fuse box, or four-way branch is presently needed for one series string.
+
+### Premium fixed-shell gland
+
+The on-hand anonymous gland assortment is acceptable for mockup sizing, not the finished continuously exposed moving-roof PV boundary.
+
+- **Lead for a compact `~10-11 mm` retractile tail:** [LAPP SKINTOP `MS-M-XL` M20, `53112025`](https://www.lapp.com/en_US/us/skintop-ms-m-xl/skintop-msr-m-xl/p/53112025), plus M20 brass locknut `52103020`. Manufacturer data specify `7-13 mm` cable range, `12 mm` long connection thread, nickel-plated brass, included body O-ring, IP68 at `10 bar`, IP69, NEMA Types `1/4X/6/12`, fixed `-40C` to `100C`, and documented strain relief. It fits the `0.400-0.417 in` CCS/TPC cord class with useful tolerance. Electrically isolate and bed the brass hardware where it meets the aluminum shell/backer.
+- **If the laminated wall stack defeats the LAPP thread:** PFLITSCH blueglobe `bg 820ms` provides a `15 mm` long M20 thread and `9-14 mm` furnished sealing range; procurement and exact approval evidence are less straightforward in the US, so obtain the exact SKU/datasheet before cutting.
+- **Nonmetal fallback:** black Heyco-Tite `M4340` includes a nylon locknut and panel sealing ring, has a `10.4 mm` M20 thread and `4.3-11.4 mm` IP68 range, and avoids metal/backer galvanic concerns. Confirm the received cord remains below `11.4 mm` and obtain Heyco's exact UL cable range if that listing is a release gate.
+- **If a bulky `~0.62-0.63 in / 15.7-16.0 mm` SOOW cord wins:** none of those M20 choices fits. Move to LAPP `MS-M-XL` M25 `53112035`, `9-17 mm`, rather than squeezing an undersized seal.
+
+Measure the finished cord OD at several clock positions and the entire wall/backer/seal/locknut stack. Preserve straight approach and wrench access. Clamp outside and inside so the cable is stationary at the gland, witness-mark both faces after torque, then hose-test, roof-cycle, and reinspect for slip or water tracks.
 
 ## Compact PV disconnect
 

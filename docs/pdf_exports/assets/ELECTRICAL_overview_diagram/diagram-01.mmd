@@ -12,10 +12,12 @@ flowchart LR
 
     subgraph PV_PATH["Solar Path (purchased 700W / candidate 4S)"]
         PVA["4x Renogy 175W in series\n78.0V Vmp / 95.6V Voc"]
-        PVCORD["Continuous 12 AWG-class retractile\nfront gap -> stationary tail -> gland"]
+        PVJ["Two-polarity transition box\nnot a 4-to-1 combiner"]
+        PVCORD["Continuous 12 AWG-class retractile\n~3 ft down / ~7 ft up estimate\nstationary tail -> premium gland"]
+        PVFIX["Two accessible sealed splices\nto stationary 12/2"]
         PVDISC["Two-pole PV load-break\nopen before service disconnect"]
         MPPT["Victron SmartSolar\nMPPT 150/45"]
-        PVA -- "9.50A STC Isc\n114.86V cold screen at -40C\nhot-start proof pending" --> PVCORD --> PVDISC --> MPPT
+        PVA -- "three series mates leave two end leads\n9.50A STC Isc / 114.86V cold screen\nhot-start proof pending" --> PVJ --> PVCORD --> PVFIX --> PVDISC --> MPPT
     end
 
     subgraph HOUSE_48V["House 48V Core"]
