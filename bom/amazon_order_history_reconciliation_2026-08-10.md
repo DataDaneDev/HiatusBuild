@@ -66,8 +66,8 @@ All `19` lines map to Hiatus/F-350 work or on-hand build stock. No line was excl
 
 ## Remaining acceptance/procurement gates
 
-- Starlink: receive/inspect Mouser and TRIO parts; verify cable OD/conductors, crimp quality, pins `1-8`, shield continuity, converter heat/voltage behavior, loaded dropouts/reboots, full roof stroke, wall stack, magnet/disc contact, tether, and direct-OEM recovery.
-- RJ45 testing: the VCELINK crimper is purchased; basic continuity tester row `360` remains planned. A budget continuity tester is not a Cat6A certifier.
+- Starlink follow-up as of `2026-08-12`: both Neutrik cable assemblies are complete, and every green-coil conductor passed owner DMM continuity. Repeat the conductor check on the short jumper; then verify shield continuity, converter heat/voltage behavior, loaded dropouts/reboots, full roof stroke and strain relief, final panel wall stack/cut, magnet/disc contact, tether, and direct-OEM recovery.
+- RJ45 testing update: the VCELINK crimper is purchased. Basic continuity tester row `360` was retired after the owner's DMM method succeeded; a budget continuity tester would not certify Cat6A or replace the remaining shield and loaded-system tests.
 - WS500 `F-15`: inspect the purchased mixed fuse pack for an exact `3A` ATO/ATC fuse and verify holder/wire markings and splice fit.
 - WS500 USB: verify the purchased USB-A-to-B cable carries data before relying on it for profile capture.
 - AC boxes: do not infer six downstream receptacles from a six-pack purchase. Inventory receptacles/covers/clamps and prove box fill, listing/markings, wall fit, accessibility, grounding, GFCI `LOAD` routing, and whole-chain trip/reset.

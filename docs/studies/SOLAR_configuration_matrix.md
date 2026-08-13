@@ -152,6 +152,8 @@ Ideal battery-side current at `56.8V` is about `12.32A`, well below the controll
 ### Mechanical release
 
 - [ ] Decide whether the exact received manual supports direct bonding, grommet fastening, a carrier, or a hybrid; do not reuse BougeRV adhesive instructions.
+- [ ] Treat ordinary adhesive-backed hook-and-loop or a full perimeter/center grid as **not released** for highway travel. Current Renogy product guidance for this module family calls for silicone structural adhesive across the backside in mobile use and says grommets are for non-mobile applications. VELCRO Brand markets an engineered commercial-roof solar fastener system, and Renogy also publishes a user-story example using industrial adhesive Velcro, but neither source supplies a Hiatus-specific mobile wind-uplift design or approves generic consumer tape for this received panel/gelcoat stack.
+- [ ] If removability remains a requirement, develop a shallow removable carrier/cassette mechanically anchored to the Yakima tracks, with the panel attached to the carrier by the exact received Renogy instructions or written Renogy approval. Do not count a few-millimeter hook-and-loop/VHB thickness as useful ventilation: a closed perimeter/grid can trap water/debris and partition rather than create a verified open airflow path.
 - [ ] Engineer two continuous full-footprint supports/cassettes or find a better field-proven layout. No panel may bridge a void or bend across the track step.
 - [ ] Prove track load path, windward fairing, highway uplift, edge protection, drainage, no-rub isolation, removal/service access, and controlled thermal behavior.
 - [ ] Weigh the actual complete moving-roof package at `<=75 lb` with contingency.
@@ -169,6 +171,9 @@ Ideal battery-side current at `56.8V` is about `12.32A`, well below the controll
 ## Source references
 
 - [Renogy support page — 175W flexible panel / SKU RNG-175DB-H](https://www.renogy.com/pages/175-watt-monocrystalline-solar-flexible-panels-rng-175db-h-html)
+- [Renogy 175W product mounting recommendation — silicone structural adhesive for mobile use](https://eu.renogy.com/products/175-watt-12-volt-flexible-monocrystalline-solar-panel)
+- [VELCRO Brand engineered commercial-roof solar fastener overview](https://www.velcro.com/news-and-blog/2025/07/mounting-solar-panels-on-roofs-with-velcro-brand/)
+- [3M Dual Lock SJ3550 technical data — typical values require application-specific evaluation](https://multimedia.3m.com/mws/media/2366370O/3M-Dual-Lock-Reclosable-Fastener-SJ3550.pdf)
 - [Renogy official RNG-175DB-H-G2 datasheet](https://cdn.shopify.com/s/files/1/0631/0137/0483/files/RNG-175DB-H-G2_20Datasheet.pdf?v=1752029087)
 - [Victron SmartSolar MPPT 150/35 and 150/45 manual](https://www.victronenergy.com/media/pg/Manual_SmartSolar_MPPT_150-35__150-45/en/index-en.html)
 - [MAXXFAN Deluxe installation manual](https://library.maxxair.com/wp-content/uploads/2023/03/11e90001k_maxxfan-deluxe-install-11-2017.pdf)
