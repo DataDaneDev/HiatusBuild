@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc">
   <title id="title">Hiatus Renogy 700 watt candidate packing screen</title>
-  <desc id="desc">Measured 138 by 63 inch roof with centered MaxxAir, Starlink, two Renogy panels inside the roof skin, and one fully supported panel crossing each side track.</desc>
+  <desc id="desc">Measured 138 by 63 inch roof with centered MaxxAir, Starlink, two Renogy panels inside the roof skin, and one direct-mount panel crossing each side track.</desc>
   <defs>
     <style>
       .t { font: 16px system-ui, sans-serif; fill: #17212b; }
@@ -10,7 +10,6 @@
       .track { stroke: #5b6770; stroke-width: 5; }
       .inside { fill: #c9ead8; stroke: #237a4b; stroke-width: 2; }
       .support { fill: #f6d5a8; stroke: #b96900; stroke-width: 2; }
-      .carrier { fill: none; stroke: #b96900; stroke-width: 3; stroke-dasharray: 8 5; }
       .fan { fill: #f5c6c6; stroke: #a53232; stroke-width: 2; }
       .star { fill: #c8ddf4; stroke: #2c67a0; stroke-width: 2; }
       .dim { stroke: #677783; stroke-width: 1.3; marker-start: url(#a); marker-end: url(#a); }
@@ -19,25 +18,22 @@
   </defs>
 
   <text x="74" y="32" class="t" font-weight="700">Candidate packing: 4× Renogy 175W = 700W · measured 138×63 in roof</text>
-  <text x="74" y="55" class="s">Screen only—not installation marks · 1 in panel/fan gaps · 2 in Starlink clearance · exact received hardware and supports can invalidate</text>
+  <text x="74" y="55" class="s">Screen only—not installation marks · 1 in panel/fan gaps · 2 in Starlink clearance · exact received panel/roof lands can invalidate</text>
 
   <!-- 5.8 px per inch, roof origin x=90 y=145 -->
   <rect x="90" y="145" width="800.4" height="365.4" rx="6" class="roof"/>
   <line x1="90" y1="145" x2="890.4" y2="145" class="track"/>
   <line x1="90" y1="510.4" x2="890.4" y2="510.4" class="track"/>
 
-  <!-- Full-footprint supported areas around one panel on each side -->
-  <rect x="200.6" y="373.8" width="355.0" height="165.3" rx="5" class="carrier"/>
-  <rect x="200.6" y="116.0" width="355.0" height="165.3" rx="5" class="carrier"/>
 
   <!-- P1 X20.1..79.3 Y41..67.5 -->
   <rect x="206.6" y="382.8" width="343.4" height="153.7" rx="4" class="support"/>
-  <text x="219" y="408" class="s" font-weight="700">P1 · full support</text>
+  <text x="219" y="408" class="s" font-weight="700">P1 · direct mount</text>
   <text x="219" y="428" class="tiny">59.2×26.5 · 4.5 in beyond track</text>
 
   <!-- P2 X20.1..79.3 Y-4.5..22 -->
   <rect x="206.6" y="118.9" width="343.4" height="153.7" rx="4" class="support"/>
-  <text x="219" y="144" class="s" font-weight="700">P2 · full support</text>
+  <text x="219" y="144" class="s" font-weight="700">P2 · direct mount</text>
   <text x="219" y="164" class="tiny">59.2×26.5 · 4.5 in beyond track</text>
 
   <!-- Fan X29..63 Y23..40 -->
@@ -68,9 +64,9 @@
   <text x="934" y="327" class="s" transform="rotate(90 934 327)">63 in inside track-to-track</text>
 
   <rect x="74" y="78" width="16" height="16" class="inside"/><text x="98" y="91" class="s">inside-skin panel</text>
-  <rect x="228" y="78" width="16" height="16" class="support"/><text x="252" y="91" class="s">full supported panel</text>
-  <rect x="414" y="78" width="16" height="16" class="fan"/><text x="438" y="91" class="s">fan keepout</text>
-  <rect x="544" y="78" width="16" height="16" class="star"/><text x="568" y="91" class="s">Starlink</text>
+  <rect x="228" y="78" width="16" height="16" class="support"/><text x="252" y="91" class="s">direct-mount cross-track panel</text>
+  <rect x="454" y="78" width="16" height="16" class="fan"/><text x="478" y="91" class="s">fan keepout</text>
+  <rect x="590" y="78" width="16" height="16" class="star"/><text x="614" y="91" class="s">Starlink</text>
 
-  <text x="74" y="607" class="tiny">Hard gates: received SKU/labels/manual · 1:1 templates and junction boxes · two-side support/load/fairing design · ≤75 lb actual total · hot 4S/150-45 commissioning.</text>
+  <text x="74" y="607" class="tiny">Gates: received panel/manual · 1:1 roof mockup · coupon + one-panel shakedown · ≤75 lb actual · hot 4S commissioning.</text>
 </svg>

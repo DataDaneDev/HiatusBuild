@@ -452,20 +452,20 @@ Goal: fit and commission the purchased `700W` Renogy array without turning it in
 
 - [x] Record purchase: `4x Renogy 175W flexible monocrystalline = 700W`, purchased `2026-08-12`; BOM uses the `$616.90` discounted net item subtotal and excludes `$44.73` estimated tax.
 - [~] Electrical planning screen: current official G2 data give `4S = 78.0V Vmp / 95.6V Voc / 9.50A Isc`; published-coefficient cold Voc is `114.86V` at `-40C`. The maximum-voltage screen passes, but estimated hot-start margin becomes negligible around `70C` before route drop; exact received labels and hot restart/tracking remain required.
-- [~] Planning geometry: measured `138 x 63 in` fiberglass, centered MaxxAir, and `0.625 in` track step remain active. Current solver evidence finds no all-inside or one-side-support packing within the screened constraints; the two-side candidate has two inside-skin panels and one fully supported panel across each side track.
+- [~] Planning geometry: measured `138 x 63 in` fiberglass, centered MaxxAir, and `0.625 in` track step remain active. Current solver evidence finds no all-inside packing within the screened constraints; the candidate has two inside-skin panels and one direct-mount panel crossing each side track, using the real roof lands. Add a small local spacer/taper only if the actual panel mockup shows a sharp crease.
 - [ ] Verify the exact received SKU, four labels, dimensions, weight, junction-box/lead exits, connectors, polarity, grommet layout, and current manufacturer installation manual.
-- [ ] Measure the MaxxAir outer rear roof-flange edge, open-lid/service envelope, track top/outside geometry, roof crown, cassette attachment land, drainage, and cable exits.
+- [ ] Measure the MaxxAir outer rear roof-flange edge, open-lid/service envelope, track top/outside geometry, outside fiberglass lands, roof crown, direct-mount track-step transition, drainage, and cable exits.
 - [ ] Cut/place `1:1` Renogy templates including junction boxes, actual leads/connectors, grommets, manufacturer-approved attachment zones, and service loops; cycle the fan and Starlink removal.
 - [ ] Place the assembled Starlink/TRIO on all four magnet/disc feet; prove full contact, removal, cable bend, and independent track tether.
-- [ ] Field-check both side-support envelopes, then complete continuous full-footprint support, track-load, highway-uplift, windward-fairing, drainage, thermal, and no-rub isolation design. Do not bridge a void or bend a panel over either raised track.
-- [ ] Complete a preliminary itemized weight budget with contingency showing the package can remain `<=75 lb`; Renogy panels plus Starlink/TRIO are about `35.2 lb`, leaving `39.8 lb` before supports and all hardware.
+- [ ] Field-check both outside roof lands and raised-track transitions. Keep direct roof attachment; add nothing if the actual panel makes the transition smoothly, or only a small local spacer/taper if needed. No carrier, cassette, or connecting rack is in scope.
+- [ ] Complete a preliminary itemized weight budget with contingency showing the package can remain `<=75 lb`; Renogy panels plus Starlink/TRIO are about `35.2 lb`, leaving `39.8 lb` before direct-mount materials and all remaining hardware.
 - [ ] Confirm insurer/Hiatus acceptance if required for adhesive-bonded roof additions.
-- [ ] **Support-hardware release:** buy no dedicated carrier/attachment package until the preceding receipt, survey, template, design, and preliminary-weight gates pass.
-- [ ] Build/load-check both required support structures and weigh the **actual complete** moving-roof package at `<=75 lb`.
+- [ ] **Mounting-material release:** buy no bulk reclosable fastener or direct-bond adhesive until the exact panel backside, substrate compatibility, hot-temperature requirement, pattern, removal method, and representative coupon pass. Do not develop carrier hardware.
+- [ ] For the removable path, trial an industrial solar-capable reclosable fastener—roughly `1 in` full perimeter plus center cross/internal strips—then prove engagement, hot soak, windward-edge peel resistance, drainage, and controlled removal on one panel before repeating. Structural silicone direct bond remains the simple fallback.
 - [ ] Lock matched series connectors/extensions, PV conductor, two-pole DC-PV load-break, roof entry, strain relief, labels, and moving jumper. No branch pair/combiner or `F-09` string fuse is presently planned for one string; confirm from received labels/conductors/code.
 - [ ] Where adhesive is used, bond a representative coupon/test piece with the exact manufacturer-compatible product and cure method; verify adhesion and controlled removal.
 - [ ] Measure route drop and complete cool-start plus stationary hot-roof restart/tracking commissioning near the configured battery-charge target. Do not assume the indirect hot-Vmp estimate proves acceptance.
-- [ ] **Installation release:** do not bond panels or accept travel until the received-label, actual-weight, support-load, final-route, attachment-proof, and hot-operation gates pass.
+- [ ] **Installation release:** do not attach all panels or accept travel until the received-label, actual-weight, final-route, one-panel attachment/shakedown proof, and hot-operation gates pass.
 
 Canonical decision and coordinates: `docs/studies/SOLAR_configuration_matrix.md`.
 

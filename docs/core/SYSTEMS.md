@@ -82,7 +82,7 @@ related:
 | Legacy single-12V upgrade path | Mechman `370A` + Big 3 path is deprecated under the dual-`48V` migration baseline | `bom/bom_inactive_items.csv` rows `103` and `104` |
 | DC-DC charger | Orion-Tr Smart `48/12 30A` (`360W`); `48V` input is protected by `F-05 40A` MEGA (`>=58VDC`) in Lynx Slot 4 with no second inline fuse, and `12V` output is separately protected by `F-07 60A/80V` | `bom/bom_estimated_items.csv` row 20 |
 | 12V buffer battery | `12V 100Ah LiFePO4` on shared 12V junction (`F-11` + `SW-12V-BATT`) | `bom/bom_estimated_items.csv` rows 21, 124, and 125 |
-| Solar array posture | Purchased `4x Renogy 175W flexible monocrystalline panels = 700W` on `2026-08-12`. The current official `RNG-175DB-H-G2` datasheet is the planning basis until the received labels confirm the exact SKU. A new packing screen fits two panels inside the measured `138 x 63 in` skin and one fully supported panel across each side track; this is not installation release. Mounting, junction-box/cable geometry, support/load/fairing design, and actual `<=75 lb` proof remain open. | `bom/bom_estimated_items.csv` row 24 + `docs/studies/SOLAR_configuration_matrix.md` |
+| Solar array posture | Purchased `4x Renogy 175W flexible monocrystalline panels = 700W` on `2026-08-12`. The current official `RNG-175DB-H-G2` datasheet is the planning basis until the received labels confirm the exact SKU. A new packing screen fits two panels inside the measured `138 x 63 in` skin and one direct-mount panel across each side track, using real roof lands and a small local track-step spacer only if the actual panel needs it; this is not installation release. Direct roof attachment is locked as the architecture; evaluate industrial removable fastener vs structural silicone after receipt. Carrier/cassette/rack fabrication is excluded unless the owner reopens it. Junction-box/cable geometry and actual `<=75 lb` proof remain open. | `bom/bom_estimated_items.csv` row 24 + `docs/studies/SOLAR_configuration_matrix.md` |
 | Solar controller | Retain the purchased SmartSolar `MPPT 150/45` for a candidate single `4S` Renogy string: `78.0V Vmp`, `95.6V Voc`, `8.98A Imp`, and `9.50A Isc`. Published-coefficient cold Voc is `114.86V` at `-40C`, well below the controller maximum. Hot-start margin is narrow: the datasheet lacks a direct Vmp coefficient and a published-coefficient estimate reaches about `61.87V` at `70C`, essentially the `56.8V + 5V` startup threshold before route drop. Received-label proof and hot-roof restart/tracking commissioning remain hard gates. | `bom/bom_estimated_items.csv` row 25 |
 | Load profiles (BOM + owner-supplied office loads) | `core_workday`, `winter_workday`, `minimal_idle_day` | `bom/load_model_wh.csv` |
 | Owner-supplied office assumptions | Laptop + 27 inch 1440p monitor + tablet/peripheral charging | `bom/load_model_wh.csv` rows marked `Owner-Supplied` |
@@ -116,7 +116,7 @@ All values are planning-level and should be replaced with measured charge logs a
 
 #### Solar charging (`700W` purchased array)
 
-The owner purchased `4x Renogy 175W flexible panels = 700W` on `2026-08-12`. The candidate electrical posture is one `4S` string on the purchased SmartSolar `150/45`; exact received labels and hot-roof behavior control final acceptance. Mounting is reopened because the larger Renogy footprint supersedes the Arch Pro four-direct/one-cassette layout.
+- The owner purchased `4x Renogy 175W flexible panels = 700W` on `2026-08-12`. The candidate electrical posture is one `4S` string on the purchased SmartSolar `150/45`; exact received labels and hot-roof behavior control final acceptance. Direct roof attachment is the mounting baseline because the larger Renogy footprint supersedes the Arch Pro layout; industrial removable fastener vs structural silicone remains the material decision. Do not reintroduce a carrier/cassette/rack unless the owner explicitly reopens it.
 
 Use the existing `68%` end-to-end planning factor until measured harvest exists. It may be optimistic if hot panels are directly bonded or if the `4S` string operates near the controller's hot-voltage threshold.
 
@@ -222,11 +222,11 @@ Method:
 
 ## Solar
 - Purchased array: `4x Renogy 175W flexible monocrystalline = 700W`; candidate topology is one `4S` string on the purchased Victron `150/45` pending received-label and hot-restart/tracking proof.
-- The former Arch Pro layout is superseded. Current packing evidence needs one fully supported panel across each side track plus two panels inside the skin; final mounting waits on received geometry/manual, `1:1` templates, two-side support/load/fairing design, actual weight, and any required insurer/Hiatus acceptance.
+- The former Arch Pro layout is superseded. Current packing evidence places one direct-mount panel across each side track plus two panels inside the skin. Final mounting waits on received geometry/manual, `1:1` templates, proof of the outside fiberglass lands and minimal step infill, exact removable-fastener or structural-silicone stack, one-panel shakedown, actual weight, and any required insurer/Hiatus acceptance.
 - Hardwall popup wiring baseline for planning: no hidden in-wall solar run; use exterior-rated coiled jumper cable(s) from roof solar exit to a lower-shell weatherproof passthrough.
 - BOM scope for that routing method is tracked in `bom/bom_estimated_items.csv` row `121`.
-- Open points: exact passthrough location, series-connector/extension method, both side-support/load paths, and final moving-jumper route.
-- Energy takeaway: `700W` remains supplemental and mechanically nontrivial. Do not buy a different controller or fabricate roof supports until the received Renogy panels pass template, weight, and hot `4S`/`150-45` commissioning screens; rely on the dedicated `48V` alternator and shore path for predictable recovery.
+- Open points: exact passthrough location, series-connector/extension method, direct-mount/track-step details, and final moving-jumper route.
+- Energy takeaway: `700W` remains supplemental. Do not buy a different controller or bulk mounting material until the received Renogy panels pass template, substrate/heat coupon, weight, and hot `4S`/`150-45` commissioning screens; rely on the dedicated `48V` alternator and shore path for predictable recovery.
 
 ### Electrical reference maintenance workflow
 - Update trigger conditions:

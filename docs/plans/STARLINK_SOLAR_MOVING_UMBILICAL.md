@@ -95,14 +95,14 @@ The current product/topology posture is:
 - `4x Renogy 175W flexible monocrystalline = 700W`, purchased `2026-08-12`;
 - one candidate `4S` string to the purchased SmartSolar `150/45`, pending received labels and hot commissioning;
 - two panels fit inside the skin in the current screen;
-- one full panel crosses each side track and therefore needs continuous full-footprint support; mounting/attachment design remains open;
+- one full panel crosses each side track; direct roof attachment remains the baseline, using the real roof lands on both sides and a small local spacer/taper only if the actual panel mockup shows a sharp crease at the `0.625 in` step;
 - Starlink/TRIO on the purchased VHB discs and rubber-coated magnets directly on fiberglass, with full-foot contact and independent track tether.
 
-The new optimizer used `1 in` panel/fan gaps, `2 in` Starlink clearance, and `1 in` direct-panel edge margins. It found no all-inside-skin solution and no one-side-support solution within the screened `10 in` projection allowance. The current two-side solution has two inside-skin panels and one full supported panel crossing each side track. A narrow strip is not enough because a flexible module cannot bend across the `5/8 in` track step or bridge a void.
+The new optimizer used `1 in` panel/fan gaps, `2 in` Starlink clearance, and `1 in` direct-panel edge margins. It found no all-inside-skin solution within the screened `10 in` projection allowance. The current solution has two inside-skin panels and one direct-mount panel crossing each side track. Confirm usable fiberglass land outside each track and mock the actual panel over the `5/8 in` step. Add nothing if it makes a smooth allowed transition; otherwise use only a small local spacer/taper.
 
 Using Renogy's current official G2 data pending received-label confirmation, `4S` is `78.0V Vmp`, `95.6V Voc`, `8.98A Imp`, and `9.50A Isc`. The published `-0.31%/C` Voc coefficient gives `114.86V` nominal cold Voc at `-40C`, comfortably under Victron's limits. Hot start is the concern: an indirect published-coefficient estimate reaches about `61.87V` at `70C`, essentially the current `56.8V + 5V` startup threshold before route drop. One string has no peer-string backfeed, so no individual string fuse is presently planned; received labels, conductors/connectors, disconnect rating, and applicable PV rules remain the as-built gate.
 
-The earlier Arch Pro layout and adhesive method are superseded. Do not infer that purchase itself approves direct bonding, two-side support fabrication, or the existing controller under worst-case hot conditions.
+The earlier Arch Pro layout and adhesive method are superseded. Direct roof attachment is the owner-selected architecture; carrier/cassette/rack fabrication is excluded unless the owner reopens it. Final choice between an industrial removable fastener and structural-silicone direct bonding still waits on the received panel, substrate/heat coupon, and one-panel shakedown. Do not infer that purchase itself approves the existing controller under worst-case hot conditions.
 
 Canonical geometry, weight budget, electrical math, candidate coordinates, mounting constraints, and release checklist: [`SOLAR_configuration_matrix.md`](../studies/SOLAR_configuration_matrix.md).
 

@@ -23,7 +23,7 @@ As-of date: `2026-08-12`
 - **Purchase evidence:** `$649.36` merchandise, `-$32.46` `WELCOME5` discount, `$616.90` net item subtotal, free shipping, `$44.73` estimated tax, and `$661.63` checkout total.
 - **Controller:** retain the purchased Victron SmartSolar `MPPT 150/45` for fit testing and commissioning.
 - **Electrical candidate:** one `4S` series string. `2S2P` does not provide enough PV voltage for a `48V` bank, and unequal strings must not be paralleled on one tracker.
-- **Mounting:** reopened. The previous BougeRV-specific four-direct/one-two-panel-cassette architecture and adhesive-rib instructions do not transfer to the larger Renogy panels.
+- **Mounting:** direct roof attachment is the owner-selected baseline. The previous BougeRV-specific four-direct/one-cassette architecture and adhesive-rib instructions do not transfer to the larger Renogy panels; do not reintroduce a carrier, rack, or cassette unless the owner explicitly reopens that direction.
 - **Status:** panels are purchased, not released for roof bonding or travel. Verify the exact received SKU, labels, dimensions, leads/connectors, polarity, and current installation manual before finalizing any cut, adhesive, support, or wiring decision.
 
 This supersedes D-069's `6x BougeRV Arch Pro 100W = 600W / 3S2P` product and layout decision. It preserves the measured roof, existing-controller preference, `75 lb` complete moving-roof cap, separate Starlink/PV pathways, and post-receipt commissioning gates.
@@ -80,13 +80,13 @@ No all-inside-skin solution was found. No solution was found with support outsid
 
 | Item | X | Y | Installed L x W | Posture |
 | --- | ---: | ---: | ---: | --- |
-| Renogy P1 | `20.1` | `41.0` | `59.2 x 26.5` | Full support/cassette; projects `4.5 in` past one side |
-| Renogy P2 | `20.1` | `-4.5` | `59.2 x 26.5` | Full support/cassette; projects `4.5 in` past opposite side |
+| Renogy P1 | `20.1` | `41.0` | `59.2 x 26.5` | Direct roof attachment candidate; projects `4.5 in` past one side track |
+| Renogy P2 | `20.1` | `-4.5` | `59.2 x 26.5` | Direct roof attachment candidate; projects `4.5 in` past opposite side track |
 | Renogy P3 | `107.8` | `0.0` | `26.5 x 59.2` | Inside skin, rotated |
 | Renogy P4 | `80.3` | `0.0` | `26.5 x 59.2` | Inside skin, rotated |
 | Starlink/TRIO | `1.0` | `1.0` | `17.1 x 25.4` | Candidate packing location, rotated |
 
-These coordinates are **packing evidence, not installation marks**. The two outside panels require continuous full-footprint support on two sides, not narrow infill strips or bending over the `0.625 in` track step. The actual junction boxes, lead exits, grommets, fasteners/adhesive zones, roof crown, drainage, cassette brackets, wind fairing, and Starlink removal path can invalidate the screen.
+These coordinates are **packing evidence, not installation marks**. The two outside panels must use the real fiberglass lands on both sides of each track. Mock the actual `0.625 in` track transition first; if the real panel makes the short transition without a sharp crease, no added structure is needed. If it does not, use only a simple local spacer/taper—not a carrier. The actual outside roof lands, junction boxes, lead exits, grommets, fastener/adhesive zones, roof crown, drainage, and Starlink removal path can invalidate the screen.
 
 ## Electrical audit
 
@@ -125,7 +125,7 @@ One series string has no peer string that can backfeed it, so no individual `F-0
 | Fixed subtotal | **`35.2 lb`** |
 | Remaining under `75 lb` | **`39.8 lb`** |
 
-The remaining `39.8 lb` must cover both support cassettes/carriers, magnets/discs, adhesive or fasteners, PV cable/connectors, roof entry, moving jumper, disconnect, clamps, labels, fairings, isolation, and all hardware. Weigh the actual complete moving-roof package.
+The remaining `39.8 lb` must cover magnet discs, direct-mount adhesive/reclosable fastener, any small track-step spacer proven necessary, PV cable/connectors, roof entry, moving jumper, disconnect, clamps, labels, isolation, and all hardware. Weigh the actual complete moving-roof package.
 
 ## Energy consequence
 
@@ -145,17 +145,18 @@ Ideal battery-side current at `56.8V` is about `12.32A`, well below the controll
 
 - [ ] Verify exact received model/SKU and photograph all four labels.
 - [ ] Verify each panel's dimensions, weight, lead lengths/exits, connector manufacturer, polarity, grommet layout, and current manual.
-- [ ] Measure the MaxxAir outer rear flange, full open-lid/service envelope, track top/outside spacing, outer roof lands, crown, drainage, and cassette attachment geometry.
+- [ ] Measure the MaxxAir outer rear flange, full open-lid/service envelope, track top/outside spacing, outer roof lands, crown, drainage, and the exact direct-mount transition across each track step.
 - [ ] Cut/place `1:1` Renogy templates including junction boxes, leads/connectors, grommets, mounting zones, and service loops.
 - [ ] Place the assembled Starlink/TRIO and cycle fan operation, Starlink removal, and all cable paths with templates present.
 
 ### Mechanical release
 
-- [ ] Decide whether the exact received manual supports direct bonding, grommet fastening, a carrier, or a hybrid; do not reuse BougeRV adhesive instructions.
-- [ ] Treat ordinary adhesive-backed hook-and-loop or a full perimeter/center grid as **not released** for highway travel. Current Renogy product guidance for this module family calls for silicone structural adhesive across the backside in mobile use and says grommets are for non-mobile applications. VELCRO Brand markets an engineered commercial-roof solar fastener system, and Renogy also publishes a user-story example using industrial adhesive Velcro, but neither source supplies a Hiatus-specific mobile wind-uplift design or approves generic consumer tape for this received panel/gelcoat stack.
-- [ ] If removability remains a requirement, develop a shallow removable carrier/cassette mechanically anchored to the Yakima tracks, with the panel attached to the carrier by the exact received Renogy instructions or written Renogy approval. Do not count a few-millimeter hook-and-loop/VHB thickness as useful ventilation: a closed perimeter/grid can trap water/debris and partition rather than create a verified open airflow path.
-- [ ] Engineer two continuous full-footprint supports/cassettes or find a better field-proven layout. No panel may bridge a void or bend across the track step.
-- [ ] Prove track load path, windward fairing, highway uplift, edge protection, drainage, no-rub isolation, removal/service access, and controlled thermal behavior.
+- [ ] Keep the architecture simple: direct roof attachment only. The owner has repeatedly rejected a carrier/cassette or connecting rack because its fabrication, height, weight, snag exposure, and redesign burden are disproportionate to this side task.
+- [ ] Treat an industrial reclosable fastener as a legitimate removable candidate—not generic consumer fabric Velcro. Renogy's official user-story guidance says industrial adhesive Velcro around the perimeter and back should provide spacing and roof retention; 3M's reclosable-fastener design guide explicitly includes fastening flexible solar panels to roofing membrane with strength to resist wind; VELCRO Brand markets outdoor solar fasteners for flexible panels. These establish a credible path, not automatic approval of an arbitrary retail strip.
+- [ ] Candidate pattern for a coupon and one-panel trial: about `1 in` full perimeter plus a center cross or comparable internal strips, fully engaged, with a replaceable windward-edge tape/cap only if the real mockup leaves an exposed peel start. On a nominal `59.2 x 26.5 in` panel, a `1 in` perimeter plus center cross is about `248 in2` of fastener area—well beyond 3M's `4 in2/lb` static starting point—but highway edge peel and adhesive/substrate performance still control.
+- [ ] Select the exact fastener **and adhesive on each side** after receipt. 3M `SJ3870` Type 250 plus `SJ3871` Type 400 is a relevant low-surface-energy, indoor/outdoor candidate pair, but the current sheets list only `60C / 140F` long-term temperature resistance. A hot panel/roof coupon must pass before buying rolls; a high-temperature or plain-backed fastener with separately selected compatible adhesive may be the better final stack.
+- [ ] Where a panel crosses a raised track, first mock the real panel across the actual roof lands. Add nothing if the transition is smooth and within the panel's received instructions; otherwise use only the smallest local spacer/taper needed to avoid a sharp crease. Do not turn it into a frame or secondary roof.
+- [ ] Prove roof-side and panel-side adhesion, complete engagement, windward-edge peel resistance, drainage, hot-soak behavior, controlled removal, and low-speed-to-highway inspection on the simplest representative trial.
 - [ ] Weigh the actual complete moving-roof package at `<=75 lb` with contingency.
 - [ ] Confirm insurer/Hiatus acceptance if required.
 
@@ -174,6 +175,9 @@ Ideal battery-side current at `56.8V` is about `12.32A`, well below the controll
 - [Renogy 175W product mounting recommendation — silicone structural adhesive for mobile use](https://eu.renogy.com/products/175-watt-12-volt-flexible-monocrystalline-solar-panel)
 - [VELCRO Brand engineered commercial-roof solar fastener overview](https://www.velcro.com/news-and-blog/2025/07/mounting-solar-panels-on-roofs-with-velcro-brand/)
 - [3M Dual Lock SJ3550 technical data — typical values require application-specific evaluation](https://multimedia.3m.com/mws/media/2366370O/3M-Dual-Lock-Reclosable-Fastener-SJ3550.pdf)
+- [3M reclosable-fastener design selection guide — flexible solar/roofing-membrane wind application](https://assets.testequity.com/te1/Documents/pdf/3m/3M_Reclosable-Fasteners-Design-Selection_Guide_0224.pdf)
+- [3M Dual Lock SJ3870 current technical data — Type 250, modified acrylic/LSE adhesive](https://multimedia.3m.com/mws/media/2366356O/3m-dual-lock-reclosable-fastener-sj3870.pdf)
+- [3M Dual Lock SJ3871 current technical data — Type 400, modified acrylic/LSE adhesive](https://multimedia.3m.com/mws/media/2366436O/3M-Dual-Lock-Reclosable-Fastener-SJ3871.pdf?pif=001123)
 - [Renogy official RNG-175DB-H-G2 datasheet](https://cdn.shopify.com/s/files/1/0631/0137/0483/files/RNG-175DB-H-G2_20Datasheet.pdf?v=1752029087)
 - [Victron SmartSolar MPPT 150/35 and 150/45 manual](https://www.victronenergy.com/media/pg/Manual_SmartSolar_MPPT_150-35__150-45/en/index-en.html)
 - [MAXXFAN Deluxe installation manual](https://library.maxxair.com/wp-content/uploads/2023/03/11e90001k_maxxfan-deluxe-install-11-2017.pdf)
