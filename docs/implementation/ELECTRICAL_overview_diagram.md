@@ -47,13 +47,14 @@ Related docs:
 - Short AC-in shore-charge test passed at household-source current limits: about `1294W` shore input and about `54.3V x 21.6A` battery charging in bulk.
 - MultiPlus LiFePO4 charge profile is programmed/owner-verified by supervised first-battery behavior. Owner reports the Orion/`12V` buffer path now charges and operates correctly. Hold open: permanent-path shore dead checks/first-use acceptance, full-bank charge/rest/match/parallel closeout, AC-out branch/GFCI, alternator commissioning, Cerbo hard-mounting, and final strain-relief/abrasion-control.
 
-## Current Physical Installation Snapshot (`2026-08-03`)
-- The electrical module is hard-mounted through the finished Lonseal/plywood floor into registered truck-bed hardpoints and tied into the hard-mounted Bench/Galley extrusion structure. Owner reports the integrated assembly is extremely stiff; remaining mobile restraint is battery/cooler capture plus terminal/cable protection.
+## Current Physical Installation Snapshot (`2026-08-27`)
+- The electrical module is hard-mounted through the finished Lonseal/plywood floor into registered truck-bed hardpoints and tied into the hard-mounted Bench/Galley extrusion structure. Owner reports the integrated assembly is extremely stiff; remaining mobile restraint includes batteries, cooler, air fryer, bench lid, monitor/laptop hardware, rigid cargo, and terminal/cable protection.
 - The driver-rear shore inlet and exterior-to-module cable route are installed. One accessible, enclosed, conductor/gauge-rated three-wire `L/N/PE` splice into the AC-input side remains before dead checks and controlled energization.
 - All three batteries' positive and negative `2/0 AWG` branch cables are cut, lugged, heat-shrunk, and landed at the battery-side busbars. Battery 1 completed the corrected isolated charge cycle, Battery 2 resumed and reached absorption on `2026-08-03`, and Battery 3 remains pending; keep all three isolated until their rested voltages are matched within `0.1V` before paralleling.
 - The `12V` buffer-battery/Orion branch is owner-reported operational. Keep its negative direct to the fuse-panel main negative stud, not through `SW-12V-BATT`; the positive path remains `F-11 -> SW-12V-BATT -> panel main +`.
-- Owner report `2026-08-03`: the ICECO appliance lead is landed on `12V-02`, protected by a `15A` blade fuse, and switched. Its appliance pigtail is `16 AWG`; exposed positive switch terminals still require individual insulation and temporary hard mounting before normal powered work. Verify connector polarity and voltage drop before appliance acceptance.
-- Owner report `2026-08-05`: the pump, ICECO/fridge feed, and KUS sender circuit are wired; three separate `12 AWG / 15A` USB-PD branches are routed (`1x` Desk and `2x` Galley); and the Desk and Galley GFCIs are wired on separate breakers. Commissioning remains open for exact fuse/slot labels, polarity/load tests, KUS configuration/sanity check, AC LINE/LOAD/PE proof, and GFCI trip/reset. The third PD branch's actual source slot must be audited and labeled rather than inferred from this document.
+- Owner report `2026-08-27`: Starlink Standard 4 X is wired, switched, and working from the direct-DC branch. The ICECO/fridge and water pump are wired and switched; loaded functional proof remains part of branch closeout. Starlink uses a dedicated `20A` blade fuse. Three separately fused charging outlets are installed: driver-side `100W` and two passenger-side `65W`. Preserve exact slot/fuse labels, polarity, terminal covers, loaded voltage-drop/heat tests, and final switch/service-face mounting.
+- Owner report `2026-08-27`: `C-31` Desk/office and `C-32` Galley/passenger branches each feed one origin GFCI plus one downstream duplex, for four duplex devices/eight plug positions total. Before routine use or closure, prove breaker values, `12 AWG`, branch separation, AC `LINE/LOAD/PE`, box/clamp/fill, downstream protection from each GFCI `LOAD`, trip/reset in inverter and accepted-shore modes, and representative load behavior.
+- The current narrow switch bundle is temporary and not acceptable as a finish state. De-energize correctly, individually insulate/label DC switch terminals, and mount them on a removable plywood/ABS service face. Any adjacent `120V` receptacle stays in its own listed covered box with cable clamps and PE continuity; do not mount exposed AC device backs in the DC switch cavity.
 
 ### Orion fuse discriminator — one input fuse only
 - Lynx Slot 4 / `F-05`: **Orion `48V` input positive**, one verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) feeding the existing `6 AWG` directly. This is the final single input fuse.
@@ -98,7 +99,7 @@ flowchart LR
         UP3 -. "12V control feed" .-> F15 -. "brown ignition/enable wire" .-> WS500
     end
 
-    subgraph PV_PATH["Solar Path (purchased 700W / candidate 4S)"]
+    subgraph PV_PATH["Solar Path (received 700W / selected 4S1P)"]
         PVA["4x Renogy 175W in series\n78.0V Vmp / 95.6V Voc"]
         PVJ["Two-polarity transition box\nnot a 4-to-1 combiner"]
         PVCORD["Continuous 12 AWG-class retractile\n~24 in down / ~52 in up estimate\nstationary tail -> premium gland"]
@@ -165,7 +166,7 @@ flowchart LR
     F11["F-11 100A class\nbattery main fuse"]
     SW12["SW-12V-BATT\nmanual battery disconnect"]
 
-    STAR["12V-01 Starlink direct-DC reserve\nno active fuse/wire"]
+    STAR["12V-01 Starlink Standard 4 X direct DC\n20A blade / owner-reported working"]
     FRIDGE["12V-02 Fridge\n15A / 12 AWG"]
     HEATER["12V-03 Diesel heater\n15A / 12 AWG"]
     PUMP["12V-04 Water pump\n10A / 14 AWG"]
@@ -295,7 +296,7 @@ flowchart LR
 ### AC Operating Behavior (Expected)
 - Shore present: MultiPlus transfer relay closes, AC-in is passed to AC-out paths, and charger stage charges the `48V` bank.
 - Shore absent: MultiPlus transfers to inverter mode and powers `AC-out-1` from battery; `AC-out-2` drops by design.
-- AC-in hardware is `30A` (`source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> 30A breaker -> 10 AWG AC-in conductors`); set MultiPlus input current limit to actual source (`15A`, `20A`, or `30A`) to avoid pedestal/source breaker trips.
+- AC-in hardware is `30A` (`source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> 30A breaker -> 10 AWG AC-in conductors`); set the MultiPlus limit to source-specific permitted draw—`10A` for first household tests and `12A` maximum policy on a normal `15A` outlet, or the accepted policy/rating for `20A`/`30A` service.
 - Initial battery charging may use AC-in-only mode with AC-out branch loads disconnected.
 
 ### AC Safety/Protection Chain (What Must Exist)
@@ -314,7 +315,7 @@ flowchart LR
 - Shore interface: `30A` RV-style inlet baseline with adapter kit for `15A`/`20A` hookups.
 - AC input protection: portable EMS + combined DIN enclosure + `30A` AC input breaker/disconnect upstream of MultiPlus AC-in.
 - AC-out-1 distribution: `30A` AC-out main plus two protected `20A` branches with GFCI-at-first-outlet strategy.
-- Receptacle plan: `2` first-in-chain `120V` GFCI receptacles remain required, one per active branch: Branch A = office/driver side, Branch B = galley/passenger side. Owner reopened a small number of downstream receptacles on `2026-08-05`; final count/locations remain field-fit gated and must continue from each first GFCI's `LOAD` terminals with `12 AWG` conductors, accessible listed boxes, and full-chain trip testing.
+- Receptacle plan/as-built report (`2026-08-27`): Branch A office/driver and Branch B galley/passenger each have one first-in-chain `20A` self-test GFCI plus one downstream duplex on the corresponding GFCI `LOAD`, for four duplex devices/eight plug positions total. Keep both `20A` branches, `12 AWG`, listed accessible boxes/covers/clamps, and whole-chain trip/reset/load testing.
 - USB charging plan: `3` DC-fed USB PD station assemblies on separate `12V` branches (`1` office, `2` Galley), each standardized to `15A / 12 AWG`. The third branch's actual fuse-panel slot/label is a field-audit item.
 - AC-out-2 remains reserve-only in Phase 1 (labeled capped route; no energized branch hardware procured).
 

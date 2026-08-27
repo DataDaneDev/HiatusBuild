@@ -484,12 +484,12 @@ related:
 
 - ID: D-051
 - Date: 2026-07-05
-- Decision: Commission final high-touch interior wood surfaces from Nick in black walnut after templates/dimensions are locked.
-- Context: Owner discussed final wood surfaces with Nick and wants the camper to use three related black walnut pieces rather than unrelated commodity tops: Galley counter, Desk top, and L-shaped Bench/lid top.
+- Decision: Commission final high-touch interior wood surfaces from the fabricator in black walnut after templates/dimensions are locked.
+- Context: Owner discussed final wood surfaces with the fabricator and wants the camper to use three related black walnut pieces rather than unrelated commodity tops: Galley counter, Desk top, and L-shaped Bench/lid top.
 - Options considered: keep plywood/butcher-block-only finish path, source marketplace/tabletop material, or commission custom black walnut pieces.
 - Decision drivers: intentional furniture-grade interior, matching Galley/Desk/Bench design language, and the opportunity to use a controlled live edge at the Galley entry end.
 - Result: current surface baseline is a black walnut live-edge Galley countertop, likely `~4 ft x 19 in` pending exact confirmation, `1.5 in` preferred / `2 in` acceptable thickness, with the last `~15 in` curving inward if the slab allows; a dimensional black walnut computer desk top; and a dimensional black walnut L-shaped Bench/lid top supported on aluminum-extrusion tabs with gas struts if actual weight/geometry work. Finish default is satin polyurethane or equivalent durable clear film, with epoxy used selectively for void/check stabilization rather than full flood coat unless deliberately chosen.
-- Follow-up: create plywood/templates and dimension packet for Nick; confirm final Galley length/width, sink/faucet/appliance clearances, support tabs, Desk depth/height, Bench hinge/strut/latch geometry, finish sample, price, and schedule before premium cuts.
+- Follow-up: create plywood/templates and dimension packet for the fabricator; confirm final Galley length/width, sink/faucet/appliance clearances, support tabs, Desk depth/height, Bench hinge/strut/latch geometry, finish sample, price, and schedule before premium cuts.
 
 - ID: D-052
 - Date: 2026-07-10
@@ -685,14 +685,46 @@ related:
 - Context: An exposed side route creates avoidable branch/snag risk, while a hand-managed slack bundle or Velcro keeper adds a failure-prone step before roof raising. The front gap can automatically store and extend the moving length if the coil/tangents are correctly sized and kept clear of independent cab/bed motion.
 - Decision drivers: automatic pop-up operation, no remembered setup step, minimum side projection, continuous weather boundary, limited electrical-panel volume, serviceability, spring load, gland sealing, and cab/camper articulation.
 - Result: preferred cable class is `12 AWG x 2`; at `9.5A`, `78V`, and `20 ft` one-way its screened drop is about `0.733V / 0.94%`. Owner correction on `2026-08-25` fixes the pop-up stroke at `28 in` and puts the working envelope near `24 in` overall down / `52 in` up, not the earlier `3-7 ft` estimate. The practical target is therefore a short `1-5 ft` stock class or custom black `12/2` around `24 in` relaxed and `60-66 in` rated overall—not `2-10 ft` or `8.5-9 ft`. Current stock lead is Coil Cable Specialist `1203PM06-5T` (`12/3`, `600V`, `25A`, `$63.25`, tangent), held for exact overall/tangent drawing plus written `>=150VDC`, wet/UV/cold/coiled-ampacity and force data; cap the unused green conductor at both ends if accepted. A short stationary lower tail may pass through the gland and transition after the interior clamp through exactly two accessible sealed butt splices to fixed `12/2`. Four panels remain `4S1P`: use three series mates and only the two free string-end leads into a compact two-polarity transition box; no four-to-one branch/combiner. LAPP SKINTOP `MS-M-XL` `53112025` is the premium M20 gland for a measured `7-13 mm` tail; `1203PM06` itself requires the M25 `53112035` because its stated cable-OD tolerance begins above `13 mm`. The IMO `SI32-PEL64R-2` remains the fixed two-pole service load-break; one `4S` string presently has no `F-09` string fuse.
-- Follow-up: measure routed clamp-center separation at roof down/quarter/half/three-quarter/up; map the front-gap and cab articulation envelope; inspect received panel connector markings; size factory tangents, drip loop, structural clamps, gland/wall stack, compact two-polarity box, and drained guard; request signed cable data/drawing and force curve; then complete full-size force/full-stroke/articulation mockup before purchase or drilling.
+- Follow-up: inspect the exact ordered cord on receipt and record SKU/rating/geometry; measure routed clamp-center separation at roof down/quarter/half/three-quarter/up; map front-gap/cab articulation; size tangents, structural clamps, gland/wall stack, transition box, and drained guard; then complete full-force/full-stroke/articulation mockup before drilling or energizing.
+
+- ID: D-074
+- Date: 2026-08-27
+- Decision: Treat the owner-reported working Starlink route, wired/switched fridge and pump, and physically installed three DC charging outlets/four AC duplex devices as real build progress—but not blanket functional or commissioning proof—and build one narrow removable switch/service face before finish paneling.
+- Context: Starlink Standard 4 X now operates from the installed retractile/pass-through and switched direct-DC conversion on a `20A` blade fuse. The driver side has one `100W` DC charging outlet; the passenger side has two separately branched `65W` outlets. Each active AC branch has one GFCI origin plus one downstream duplex. The switches remain loose/tape-covered and difficult to identify.
+- Decision drivers: honor the real build without overclaiming unrecorded tests, eliminate accessible energized terminals, preserve serviceability, and maintain AC/DC physical separation.
+- Result: mount/label each DC switch and individually insulate its terminals on a removable face. Any adjacent `120V` device remains in its own listed covered box with cable clamp and PE continuity. Closeout still requires exact fuse/slot labels, polarity, loaded voltage-drop/heat, AC `LINE/LOAD/PE`, GFCI trip/reset and downstream protection, representative load, and post-drive inspection.
+- Follow-up: complete the service face and branch acceptance records before covering the electrical bay.
+
+- ID: D-075
+- Date: 2026-08-27
+- Decision: Proceed with the received Renogy four-panel direct-to-roof path using the exact controlling structural-silicone system; keep the physical fit as evidence but gate all-panel bonding behind exact-material coupon/cure and one-panel shakedown.
+- Context: All four panels have arrived. One-panel physical test-fit plus measured layout indicates the four-panel package coexists with Starlink and MaxxAir and uses nearly the full roof. Silicone and the ordered PV retractile cord are not yet installed; exact product evidence for both remains to be recorded.
+- Decision drivers: actual fit, owner rejection of carrier/rack complexity, replacement of generic reclosable-fastener speculation with the intended bonding method, and high consequence of attachment or moving-cord failure.
+- Result: roof wash/decontamination, substrate/backsheet compatibility, application pattern, cure, drainage, one-panel static/heat/water/roof-cycle proof, temporary independent test restraint, private low-speed shakedown, then deliberate staged-speed road acceptance remain gates before routine highway use or repeating all panel bonds. Also retain `<=75 lb` complete moving-roof weight, received-cord rating/geometry, structural strain relief, full `28 in` articulation, route drop, and hot MPPT restart/tracking gates; adhesive cable bases are guides only.
+- Follow-up: photograph panel labels/manual, identify silicone and cord SKUs, run the coupon/templates, then execute the staged one-panel static/private-low-speed/controlled-road sequence before repeating.
+
+- ID: D-076
+- Date: 2026-08-27
+- Decision: Preserve the current `24 in x 48 in` Desk as the starting envelope and delay any reduction toward `20 in` until the rear storage module and actual chair are installed/mock-fitted; try a folding/stowed chair first.
+- Context: A backrest/wheel base may intrude into the aisle, but trimming the storage module and walnut Desk would create major rework and permanently reduce the mission-critical workstation.
+- Decision drivers: office-first mission, reversibility, actual aisle/entry evidence, chair stowage leverage, and avoiding a premature four-inch Desk sacrifice.
+- Result: no cabinet trim or walnut Desk cut from the current concern alone. The monitor and laptop arms are work-position devices; travel requires padded hard-stop cradles and positive mechanical restraints that do not load the LCD, arm joints, or Desk edge.
+- Follow-up: run seated, entry, roof-down, and travel-cargo mockups with all real components.
+
+- ID: D-077
+- Date: 2026-08-27
+- Decision: Route final sink cutouts with the actual sink and soap dispenser at the planned mid-September walnut appointment; do not lock graywater yet. First mock a vented, positively retained, normally closed removable vessel around `2.5 gal`.
+- Context: Sink/drain clearance over the fresh tank and continuous slope remain uncertain; an open ground drain or immediate under-truck tank would add legal, spill, heat, freeze, penetration, and service problems.
+- Decision drivers: direct fixture proof, minimum irreversible walnut work, winterization, parking-lot use, legal discharge discipline, and easy shakedown service.
+- Result: route no cut from nominal dimensions alone. Prove bowl/flange/faucet/soap/drain/support/tank stack and continuous fall with a waterless trap. Treat the nominal `2.5 gal` vessel as a first fit/service candidate, not a locked tank; open ground discharge remains optional only where lawful/appropriate, never the default.
+- Follow-up: build the full-height drain mockup before walnut routing and verify vessel size, venting, retention, filled lift/removal path, and spill behavior.
 
 ## Risk register
 - ID: R-001
 - Risk: Roof load from rigid/flexible solar + Starlink + fan may exceed comfortable strut margin.
 - Impact (1-5): 4
 - Likelihood (1-5): 3
-- Mitigation: Treat `75 lb` as the complete moving-roof addition cap unless Hiatus states otherwise. The purchased Renogy panels plus Starlink/TRIO subtotal is about `35.2 lb`, leaving `39.8 lb`; weigh magnet discs, direct-mount adhesive/reclosable fastener, any small track-step spacer proven necessary, connectors/cable, gland, jumper, disconnect, clamps, labels, and all hardware as one system and validate lift effort/strut margin before attachment or travel.
+- Mitigation: Treat `75 lb` as the complete moving-roof addition cap unless Hiatus states otherwise. The received Renogy panels plus Starlink/TRIO subtotal is about `35.2 lb`, leaving `39.8 lb`; weigh structural silicone, any minimal track-step taper, connectors/cable, gland, jumper, disconnect, structural clamps/guard, labels, and all hardware as one system and validate lift effort/strut margin before all-panel bonding or travel.
 - Trigger: Renogy template/support release or any roof-weight change.
 - Owner: Sunny
 - Status: Open
@@ -701,7 +733,7 @@ related:
 - Risk: Remaining service-map decisions (solar, shore, diesel, and the selected HOTTAP water-service interface) can still drive bad penetrations or inaccessible closeout geometry.
 - Impact (1-5): 4
 - Likelihood (1-5): 3
-- Mitigation: Validate each complete inside/outside route before cutting. For Starlink, mock the Neutrik panel wall stack, interior cable/service access, retractile-jumper travel/strain relief, and all-four-foot TRIO magnet/VHB-disc contact plus tether; preserve the through-bolted crossbar and OEM-cable recovery paths. For solar, prove the separate PV entry, moving jumper, service disconnect, and strain relief. For hot water, prove the rear-box cylinder restraint/vents, purchased Quick-Release HOTTAP Bracket backing and HOTTAP V2 Mount Cover, single BLUE/RED camper plate, supplied-hose reach, port protection, and operating clearances; no propane passthrough enters the camper.
+- Mitigation: Validate each complete inside/outside route before cutting or closing. For the installed Starlink penetration, inspect backing/gasket/core-edge seal, rear cable/service access, cap/latch, strain relief, loaded behavior, spray, full roof motion, and first-drive condition; preserve the OEM-cable recovery path. For solar, identify and prove the ordered PV moving cord on receipt, then validate the separate PV entry, structural clamps/guard, full articulation, service disconnect, and inside splice path. For diesel, survey the truck fuel tank/vehicle lines and mock the complete heater/fuel/exhaust/intake route. For hot water, prove rear-box cylinder restraint/vents, bracket/cover, BLUE/RED interface, hose reach, port protection, and operating clearances; no propane passthrough enters the camper.
 - Trigger: Any final shell/floor/wall penetration or permanent service-map closeout.
 - Owner: Sunny
 - Status: Open
@@ -764,28 +796,28 @@ related:
 - Risk: AC shock/fire risk from neutral-ground misconfiguration or incomplete GFCI/RCD protection on branch circuits.
 - Impact (1-5): 5
 - Likelihood (1-5): 2
-- Mitigation: Preserve AC protection chain (`source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> AC-in breaker -> MultiPlus -> 30A AC-out main -> 20A branch breakers -> GFCI receptacles`), validate outlet polarity and GFCI/RCD operation at commissioning, keep AC-in and AC-out neutrals isolated, and verify ground continuity/chassis bonding. Short AC-in shore-charge test passed; AC-out/GFCI validation remains open.
-- Trigger: AC branch wiring completion and AC-out/GFCI live test.
+- Mitigation: Preserve AC protection chain (`source/adapters -> portable EMS -> shore cord -> L5-30 inlet -> AC-in breaker -> MultiPlus -> 30A AC-out main -> 20A branch breakers -> GFCI origin -> downstream duplex from LOAD`). Owner reports four duplex devices wired. Inspect listed boxes/covers/clamps and validate `LINE/LOAD/PE`, PE/chassis continuity, downstream protection, polarity, and GFCI operation in inverter and accepted-shore modes before routine use.
+- Trigger: Switch/service-face closeout, any AC branch change, and first full branch/GFCI load test.
 - Owner: Sunny
-- Status: Partially mitigated; AC-in function passed, AC-out/GFCI pending
+- Status: Partially mitigated; physical device count is known/wired, formal AC-out/GFCI acceptance pending
 
 - ID: R-010
-- Risk: Roof-to-shell coiled solar jumper routing can chafe, snag, or leak at passthrough points if cable travel and strain relief are not validated through popup cycles.
+- Risk: The ordered front-gap PV retractile, owner-planned compact penetration above Starlink, and exterior panel leads can chafe, leak, snag branches, or load terminals if gland size is assumed before cord receipt or if adhesive guides/connectors carry spring, wind, or branch force.
 - Impact (1-5): 4
 - Likelihood (1-5): 3
-- Mitigation: Use UV/weather-rated cable, abrasion sleeves, drip loop + strain relief, and repeat open/close travel-cycle checks before final sealing.
-- Trigger: First full roof open/close cycle test with finalized cable length and routing.
+- Mitigation: Record the exact cord/gland ratings; use real upper/lower structural jacket clamps plus redundant exterior/interior restraint, drained guard/drip loop, and adhesive guides only as secondary routing aids. Prove the full roof cycle and truck-cab articulation, spray, force, hot/coiled current, and first-drive condition. Disconnect/remove Starlink for tight brush; accept no assumption that the PV cord is branch-proof.
+- Trigger: Cord receipt, PV gland drill, first full roof-cycle/articulation test, first energized array, and first brush/highway use.
 - Owner: Sunny
-- Status: Open
+- Status: Open; cord owner-reported ordered, installation not released
 
 - ID: R-011
-- Risk: AC scope churn (final receptacle count and branch utilization not fully closed) can delay SKU lock and cabinet fit validation.
+- Risk: Adding devices or confusing device count with branch capacity could overload or complicate the two active AC branches.
 - Impact (1-5): 4
-- Likelihood (1-5): 3
-- Mitigation: D-044 closed the purchase gate with one explicit branch/receptacle map: two active `20A` GFCI branches behind a `30A` AC-out main in one `6-way` DIN enclosure. Do not add a third active AC branch without revisiting feed/protection/enclosure scope.
-- Trigger: Any attempt to add AC receptacles/branches beyond the purchased `2x` GFCI baseline.
+- Likelihood (1-5): 2
+- Mitigation: Device count is now owner-reported fixed at one GFCI plus one downstream duplex per branch. Keep the purchased `30A` AC-out main and `2x 20A` branches; more plug positions do not increase branch/inverter capacity. Do not add a third branch or more devices without reopening protection, box-fill, load, and enclosure scope.
+- Trigger: Any attempt to add AC devices/branches or run simultaneous high-draw appliances.
 - Owner: Sunny
-- Status: Mitigated by D-044; monitor install fit
+- Status: Mitigated for scope; install validation and load discipline remain
 
 - ID: R-012
 - Risk: Travel/logistics compression could put the truck too far from Bellingham for the May 7 `9:00 AM` install.
@@ -845,10 +877,28 @@ related:
 - Risk: Passenger-side lofted fridge/wet-spine plumbing can become inaccessible, freeze-prone, or hazardous to adjacent batteries if the `36 gal` tank fittings, pump, accumulator, graywater cassette, fill/vent lines, heater branches, or leak paths are trapped behind finished work without a known disassembly path.
 - Impact (1-5): 5
 - Likelihood (1-5): 3
-- Mitigation: Owner confirms four molded ports on each end—two visibly large and two smaller—with no original obvious/open top port. The tank is now physically strapped into the hard-mounted Galley structure, but the `2026-07-27` first `FLS-U` assembly damaged at least one backing-ring thread, left one screw without clamp load, and poured water through the main gasket during an inverted test. Preserve top sender access and hold water service/first fill—not dry fabrication—until the seized screw and damaged C-ring are recovered without enlarging the opening, the ring/main gasket/matched long screws are replaced, the sealing land/sender flange are inspected, and the leak test passes. Continue to require continuous gravity-fill fall, unrestricted vent rise, compact minimum-fitting pump/accumulator pack, wet/dry separation, leak inspection, and a documented cooler/panel/80/20 removal sequence.
-- Trigger: Building passenger-side lofted fridge skeleton, galley cabinetry, tank restraint, pump board, battery bench partition, graywater cassette, or rear shower/fill/vent hatch.
+- Mitigation: The KUS replacement under-ring/main gasket/matched screws are installed and sender access is preserved. Hold first fill/final water closeout until fill/vent, sink/drain, and dry pressure/dwell tests pass. Build a continuously falling gray drain to a vented, positively retained, normally closed removable cassette; preserve pump/strainer service, wet/dry separation, leak inspection, and the documented module/tank removal sequence.
+- Trigger: Sink/walnut routing, first fill, graywater mockup, pump commissioning, finish paneling, or passenger/rear module closure.
 - Owner: Sunny
-- Status: Open
+- Status: Partially mitigated; sender hardware installed, complete water/drain acceptance open
+
+- ID: R-019
+- Risk: Diesel-heater fuel, exhaust, combustion-air, and hot-surface routing near the truck gasoline tank/plywood can create fire, vapor, CO, abrasion, or service hazards if the proposed location is released from eyeballed clearance and heat shielding alone.
+- Impact (1-5): 5
+- Likelihood (1-5): 3
+- Mitigation: Dry-fit the heater, rear storage module, tank/pump/floor penetration, complete exhaust/intake/muffler/termination, fuel line, electrical harness, and warm-air path together. Use manufacturer clearances, sealed edge protection, combustion-safe noncombustible shielding with air gap where specified, protected support at short intervals, and the documented metering-pump orientation: outlet toward the heater and upward about `45 degrees`. Keep every exhaust joint/termination out of the truck fuel-tank heat/vapor envelope. Leak-test, CO-test, heat-soak, and inspect with the truck stationary before road use; have a qualified installer review any unresolved fuel-tank clearance.
+- Trigger: Heater/storage-module dry fit, floor drilling, first fuel connection, first burn, and first drive after installation.
+- Owner: Sunny
+- Status: Open; current concept is not installation-released
+
+- ID: R-020
+- Risk: Direct-bond flexible solar panels can detach, trap water, overheat, or damage the roof/panel if silicone compatibility, preparation, cure, drainage, thermal behavior, or windward-edge peel is assumed from fit alone.
+- Impact (1-5): 5
+- Likelihood (1-5): 2
+- Mitigation: Identify the exact panel/backsheet/manual and structural-silicone system; wash/decontaminate and prep per controlling instructions; pass a representative coupon; install one panel first; then pass static inspection, cure, roof cycles, heat/water exposure, and a temporary independent track-anchored test restraint. Run a private/closed-course low-speed test with inspection stops before a deliberate progressive road-acceptance test with staged speed/stops. Only after that controlled test passes may routine highway use or the remaining panel bonds proceed.
+- Trigger: Silicone receipt, first bond, first roof cycle, heat soak, and progressive road shakedown.
+- Owner: Sunny
+- Status: Open; panels fit physically but bonding/travel release remains held
 
 ## Open questions
 - Recover the actual `2026-07-15` #650 completion time if possible; otherwise keep evening `2026-07-18` as an earliest-only heavy-furniture planning estimate.
@@ -857,21 +907,22 @@ related:
 - Build and prove positive restraint for the `3x 48V` batteries, separate `12V` battery, and ICECO cooler while the service bay remains open; preserve battery extraction and emergency fuse/disconnect access.
 - Create the final `36 gal` tank port map from physical inspection: verify the reported four end ports per side (two large/two small), identify exact thread sizes and any membrane-covered top boss, then lock KUS sender location/backing, upper-end gravity fill/vent, low north pump outlet, low tank drain, spare/plug ports, and manufacturer-compatible fitting methods.
 - Verify the newly tightened tank-strap plusnut screws achieved clean full thread engagement; witness-mark the hardware and recheck after the first loaded drive.
-- Finish the installed shore inlet's enclosed `L/N/PE` splice/dead checks. Separately, repeat the conductor test on the completed short Starlink jumper; verify shield-shell continuity and loaded Starlink behavior; then locate/mock the selected `NE8FDX-P6-W` in fixed-body structure below the moving seam, verify rear service access/wall stack/cap clearance, cycle the terminated coil through full popup travel with strain relief, and dry-fit the TRIO frame/magnet-pad geometry before cutting the wall or bonding discs. Both Neutrik cable assemblies are already complete.
-- Lock Nick black-walnut commission details: exact Galley counter length/width (`~4 ft x 19 in` target pending confirmation), `1.5 in` vs `2 in` thickness, last `~15 in` live-edge curve, Desk dimensions, L-shaped Bench/lid hinge/support/gas-strut geometry, finish sample, price, and delivery timing.
+- Finish the installed shore inlet's enclosed `L/N/PE` splice/dead checks. For the working Starlink route, record backing/core-edge seal, rear strain relief, cap/retention/spray, shield-shell, loaded heat/dropout/reboot, full roof motion, and first-drive inspection. For PV, identify the ordered cord/gland and prove structural supports/full articulation before drilling.
+- Lock the mid-September black-walnut routing packet: bring actual sink and soap dispenser; confirm Galley (`~4 ft x 19 in` target), Desk, and L-shaped Bench dimensions, thickness, curve, support/no-drill zones, drain stack, hinge/gas-strut geometry, latch, finish, price, and pickup/install timing.
 - Verify the now-integrated electrical/Bench/Galley structure's remaining road details: battery/cooler capture, terminal covers, fastener witness marks, anti-rattle interfaces, strain relief, and emergency disconnect/fuse access.
 - Log parallel-bank current-sharing/voltage behavior under controlled charge/load; use similar total loop resistance per battery path rather than forcing equal positive-only leads.
 - Finalize ICECO travel restraint using its foot-level tie points, a low-stretch strap to anchored extrusion, an aisle-side hard stop, and a soft camper-wall bumper without blocking vents, lid swing, power-cord bend, or pump access.
 - Measure the driver-side desk/monitor/electrical-shelf roof-down sweep envelope, choose the primary monitor mechanism (`rising VESA spine` vs under-desk flip-up vs quick-release sleeve), and validate that the stowed face-down cradle supports bezel/back-shell/VESA structure rather than loading the LCD panel.
 - Lock workstation travel restraints: monitor mast/carriage latch, monitor arm hard stop, desk leaf latch, storage-door/service-panel latch standard, and cable-chain/service-loop path below the roof-safe line.
-- Confirm actual seated work envelope: chair/stool height, desk height/depth, monitor viewing distance, knee clearance, footrest need, and reachable AC/DC/USB-C station locations.
+- Install/mock the rear driver-side storage module and actual chair with the full `24 in` Desk before trimming anything. Try folding/stowed-chair handling first; reduce toward `20 in` only if entry/aisle and full-workday tests still fail.
+- Freeze the LF Bros heater only after a full dry fit with storage module, fuel tank, floor penetration, under-bed metering pump/filter/line, truck gasoline-tank envelope, exhaust/intake/muffler/termination, warm-air path, wiring, service removal, and measured manufacturer clearances. Resolve any gasoline-tank/heat-vapor overlap before drilling.
 - Preserve KUS sender access and the documented Galley/tank disassembly path now that the `36 gal` tank and surrounding structure are hard-mounted. Gravity-fill vent nipple measurement is captured (`10 mm` OD main land, `11 mm` OD largest barb); replacement vent tube dry-fit remains open.
-- Validate purchased galley fixtures/appliances in the integrated counter module: Sarlai sink cutout, FORIOUS faucet under-counter clearance, drain/graywater path, Duxtop induction use/stow location, and Ninja SP151 cubby heat/retention/plug access.
+- Validate purchased galley fixtures/appliances in the integrated counter/storage modules: real Sarlai sink/soap/faucet cutout and under-counter stack, continuously falling drain and first removable gray-vessel candidate around `2.5 gal`, Duxtop use/stow, and Ninja SP151 manufacturer heat clearances, mechanical appliance cradle, internal rack/basket/pan anti-rattle, and plug/service access.
 - Lock drain/graywater, pump service-valve, and winterization details as discrete procurement rows; sink/faucet are now purchased and logged in BOM rows `207-208`.
 - Mock the purchased SHURflo/SEAFLO pack in the `6 in` cooler-to-battery gap with strainer access, vibration isolation, nonconductive splash separation, and a drained leak path away from battery terminals/cabling. Two purchased EFIELD `1/2 in PEX-B x 3/8 in OD compression male` adapters terminate the FORIOUS faucet hoses. Install one of the four purchased YVSKM `1/2 in PEX-B x 1/2 in female-swivel` adapters at the accumulator outlet and retain three spares; inspect receipt, markings, gasket/seat fit, and potable-use documentation before acceptance, then cold-pressure-test the assembly. Use the purchased RecPro `30 in` double-FIP braided hose on the pump side and verify the post-accumulator tee, BLUE/RED valve access, service-plate backer, and continuous PEX routes before cutting the rear wall.
 - Propane hot-water direction and rear-box package are locked; physical fit-up remains open. Receive and fit the HOTTAP/bracket/cover, Flame King cylinder, CALPOSE gauge, bracket/strap pack, and Safoner propane-hose pass-through in the rear box. The AWW stone mat is outdoor shower gear. Prototype one complete direct-profile camper-water port with the real HOTTAP hose before buying the second or drilling; retain QD3 only as fallback.
 - Exact autonomy target by season and reserve floor policy (20% SOC currently modeled)
-- Inventory and photograph the remaining loose Mechman/WS500 kit contents—especially temperature sensors, harness branches, terminals, and any supplied fusing—before alternator commissioning; the alternator and WS500 purchase and `PH-VAN` harness identity are owner-confirmed.
+- Alternator closeout: inventory the exact `F-04`, HEB/KLKD PH-VAN package, both temperature sensors, harness branches, terminals, supports, APM, and USB cable. In a de-energized session, connect to the WS500, record firmware/hardware, read/save the existing configuration before changes, and verify the final profile independently before first field enable.
 - Confirm Wakespeed support status for the documented `Dumfume 51.2V 100Ah` battery manual (`58.4V` charge voltage, `20-50A` recommended charge current per battery, `1S4P` max expansion) before final commissioning of the `WS500`-controlled alternator path
 - `PH-VAN` harness polarity is confirmed; confirm whether the Mechman `48V` alternator field is `12V` or true `48V` before applying/removing Wakespeed `48V` field-derate settings.
 - Before alternator commissioning, recheck belt tracking, idler alignment, fastener torque/witness marks, noise, field isolation, and output isolation. Mechanically installed/belted but electrically disabled staged driving has been owner/Mechman-confirmed acceptable after those mechanical checks; this does not authorize partial charging.

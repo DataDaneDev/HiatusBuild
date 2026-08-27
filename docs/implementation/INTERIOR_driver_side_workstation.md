@@ -16,11 +16,11 @@ related:
 
 # Driver-Side Workstation, Monitor, Electrical Shelf, and Storage Mechanisms
 
-As-of date: `2026-07-05`
+As-of date: `2026-08-27`
 
 Purpose: capture a buildable design direction for the driver/left-side workstation and electrical-closet interface so the camper can support full-time work, preserve pop-down roof clearance, keep DC electronics/laptop plugs accessible, and gain storage without ruining ergonomics.
 
-Status: **draft implementation baseline**, refreshed after the `2026-07-05` black-walnut surface commission direction. Do not convert this into exact extrusion cuts, drawer-slide lengths, panel skins, or final penetrations until post-install shell measurements, hard-mounted electrical-board/closet checks, DC shelf checks, diesel-heater service checks, and roof-popdown sweep tests pass.
+Status: **active measured-mockup baseline**, refreshed `2026-08-27`. The desk/monitor hardware is on hand but not yet accepted as furniture or travel cargo. Preserve the current `24 in x 48 in` desk until the real rear storage module and actual chair are in place; test a folding/stowed chair before sacrificing desk depth. Do not reduce toward `20 in`, cut walnut, or mount arms until seated ergonomics, aisle/entry, heater/service, and roof-down envelopes all pass. Adjustable arms are work-position devices only; each monitor/laptop platform needs a padded hard-stop cradle and positive mechanical travel latch/strap that does not load the screen, arm joints, or desk edge.
 
 Related docs:
 - `docs/core/SYSTEMS.md`
@@ -65,7 +65,7 @@ Bottom line: the monitor can feel Ergotron-sturdy while working, but it must bec
   - cardboard-mocked electrical box plus a step box projecting from/integrating with it;
   - projecting DC electronics / laptop-plug shelf or box toward the computer desk and camper entry doors;
   - low diesel heater zone with service access;
-  - `24 in x 48 in` desk around the wheel-well area, integrated with the electrical step box;
+  - `24 in x 48 in` desk remains the preserved starting envelope around the wheel-well area, integrated with the electrical step box. Mock the installed rear storage module plus actual chair first; try folding/stowed-chair handling before trimming. A `20 in` depth is a fallback only after measured aisle/entry and seated-work tests show the `24 in` version fails.
   - stow-low monitor mechanism and shallow storage only where they do not steal knee room, entry clearance, or service access.
 - The Iceco/fridge is now passenger-side in the lofted wet-spine module; do not size the driver-side desk around a fridge tower.
 - Current furniture CAD and `2026-05-04` generated diagrams are reference-only after the installed-shell layout change.
@@ -222,7 +222,7 @@ Use if travel robustness matters more than one-motion deployment.
 ### Desk top
 
 - Final material direction: commissioned dimensional black walnut, matching the Galley and Bench/lid finish language, after a plywood template proves fit.
-- Prototype/MVP material: `3/4 in` plywood or laminated birch remains valid for fit testing and can act as the pattern Nick uses for the walnut top.
+- Prototype/MVP material: `3/4 in` plywood or laminated birch remains valid for fit testing and can act as the pattern the fabricator uses for the walnut top.
 - Shape: slightly radiused front edge; clipped or rounded aisle-side corner to avoid hip strikes.
 - Depth: favor enough forearm support for typing/mousing; avoid going so deep that entry/aisle movement suffers.
 - Mounting: T-slot underframe or cleats tied into the driver-wall service spine; avoid relying on a single Lagun-style point for the primary full-time desk unless used only as a fold-out auxiliary leaf.
@@ -354,7 +354,7 @@ Every moving workstation element needs a primary mechanical restraint:
 
 - monitor carriage/mast: captive pin or locking slide stop;
 - monitor face-down cradle: over-center latch or compression latch;
-- monitor arm: strapped or clamped against a padded hard stop;
+- monitor arm: strapped or clamped into a padded, positively retained hard-stop cradle; the strap is a secondary restraint and must not load the LCD face, arm joints, or desk edge;
 - desk fold leaf: latch open and latch closed;
 - drawers/bins: positive marine/RV latch, not just soft-close slides;
 - service panels: quarter-turn/captive fasteners;
@@ -428,7 +428,7 @@ Optional upgrade: a simple microswitch/reed-switch indicator on the monitor stow
 ## 14) Open design choices
 
 - Exact monitor mechanism: rising mast vs under-desk flip-up vs quick-release sleeve.
-- Exact desk length/depth/height after chair and roof-envelope measurement, then Nick's final walnut dimension/template packet.
+- Exact desk length/depth/height after chair and roof-envelope measurement, then the fabricator's final walnut dimension/template packet.
 - Whether the monitor uses AC brick, DC-native power, or USB-C display/power through a dock.
 - Final storage split between shallow cubbies, soft pockets, toe-kick, and bench-step storage.
 - Final hardware ecosystem for latches, slides, and T-slot standard.

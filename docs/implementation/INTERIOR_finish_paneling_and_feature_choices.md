@@ -31,7 +31,7 @@ Current physical context:
 - The passenger-side Galley connects to the Bench/cooler area and will carry the sink/faucet, fixed wet spine, drain/graywater path, cooler/fridge support, and the interior BLUE cold-out / RED hot-return plumbing for the selected rear-box HOTTAP; no interior water-heater cubby is reserved.
 - The driver-side workstation should visually relate to the galley without sacrificing real work ergonomics.
 - Available panel stock includes some `1/2 in` and `3/4 in` plywood. Working assumption: `1/2 in` for vertical/front/removable faces; `3/4 in` for tops, bench lids, cooler-bearing surfaces, and other load surfaces.
-- Owner is leaning toward commissioning three final black walnut surfaces from Nick: a live-edge Galley countertop, a dimensional-lumber computer desk top, and a dimensional-lumber L-shaped Bench/lid top.
+- Owner is leaning toward commissioning three final black walnut surfaces from the fabricator: a live-edge Galley countertop, a dimensional-lumber computer desk top, and a dimensional-lumber L-shaped Bench/lid top.
 
 ---
 
@@ -108,24 +108,24 @@ Minimum rule: if a panel covers service-critical hardware, it must be removable 
 
 ### 3.2 Commissioned black walnut surface direction — `2026-07-05`
 
-Current owner/Nick commission target:
+Current owner/fabricator commission target:
 
 | Surface | Current target | Material / thickness | Finish direction | Open confirmations |
 | --- | --- | --- | --- | --- |
 | Galley countertop | Black walnut live-edge slab, likely `~4 ft x 19 in` based on owner phrasing; confirm the exact dimension sheet before cutting | Prefer `1.5 in` finished thickness; accept `2 in` if the right slab is only available thicker | Satin protective film finish; no raw/oiled-only cooking surface | Confirm exact length (`4 ft` vs transcript ambiguity), final width, sink/faucet/appliance clearances, support tabs, and entry-side live-edge curve |
-| Galley entry-side feature zone | Last `~15 in` of the Galley counter should use a live edge that curves inward if Nick can source the right slab | Same slab as main counter if possible | Same sealed finish; live edge cleaned, softened, and wipeable | Physical sweep test with the one-barn-door entry path; no barky/splintery snag edge |
+| Galley entry-side feature zone | Last `~15 in` of the Galley counter should use a live edge that curves inward if the fabricator can source the right slab | Same slab as main counter if possible | Same sealed finish; live edge cleaned, softened, and wipeable | Physical sweep test with the one-barn-door entry path; no barky/splintery snag edge |
 | Driver-side computer desk | Black walnut dimensional-lumber top | Thickness TBD by board availability, weight, and desk frame support | Same sheen/tone family as Galley; comfortable front wrist edge | Final desk depth/height after seated work test and roof/entry clearance |
 | L-shaped Bench/lid top | Black walnut dimensional-lumber L-shaped top over the storage cubby | Thickness TBD; account for mass before gas-strut sizing | Same finish family, all faces sealed | Hinge line, gas-strut geometry, latch/closed retention, open-state support, and service reach |
 
 Design intent:
 
 - Treat these as **siblings from one wood/finish language**: black walnut tone, satin sheen, softened edges, and quiet hardware.
-- Use plywood or MDF templates first. Do not ask Nick to cut premium walnut to final shape from guessed geometry.
+- Use plywood or MDF templates first. Do not ask the fabricator to cut premium walnut to final shape from guessed geometry.
 - The Galley live edge should be functional furniture, not a raw slab edge: remove loose bark/cambium, ease sharp spots, stabilize checks/voids, seal thoroughly, and avoid dirt/water traps at the sink/entry edge.
 - A `1.5 in` Galley slab is the preferred weight/fit target. `2 in` is acceptable if the slab is clearly better, but re-check sink/faucet reach, counter height, support tabs, and visual bulk before committing.
 - For the Bench/lid top, gas struts are plausible but should be sized from actual lid weight and hinge geometry after the walnut blank is known. Add closed-state latching and a mechanical backup/open stop; do not rely on struts alone as travel retention.
 
-Finish recommendation for Nick to test on walnut offcuts:
+Finish recommendation for the fabricator to test on walnut offcuts:
 
 1. **Default:** satin polyurethane or comparable durable clear film finish, applied in multiple thin coats.
 2. **Use-case rule:** acceptable for a cooking/prep surface after full cure, but still use cutting boards/trivets; do not treat the walnut as a butcher-block cutting surface.
@@ -135,7 +135,7 @@ Finish recommendation for Nick to test on walnut offcuts:
 
 ### 3.3 Rough board-foot estimate for the desk + Galley
 
-Use this as a legacy buying estimate for `3/4 in`-equivalent rough planning only. The Nick black-walnut commission should be quoted from actual templates/dimensions and actual slab/board yield, especially if final thickness is `1.5-2 in` rather than `3/4 in`.
+Use this as a legacy buying estimate for `3/4 in`-equivalent rough planning only. The fabricator black-walnut commission should be quoted from actual templates/dimensions and actual slab/board yield, especially if final thickness is `1.5-2 in` rather than `3/4 in`.
 
 Assumptions:
 
@@ -213,7 +213,7 @@ Bad uses:
 
 ### 3.7 Finish direction
 
-Default finish: **clear or lightly warmed satin**, not glossy. For the commissioned black walnut pieces, use a durable cured film finish such as satin polyurethane unless Nick recommends a comparable shop finish he has confidence in for wipe-down kitchen/desk use.
+Default finish: **clear or lightly warmed satin**, not glossy. For the commissioned black walnut pieces, use a durable cured film finish such as satin polyurethane unless the fabricator recommends a comparable shop finish he has confidence in for wipe-down kitchen/desk use.
 
 Beginner-friendly sequence:
 
@@ -683,7 +683,7 @@ Avoid:
    - Bench/cooler bearing surfaces.
    - Use them to validate fit before premium wood.
 
-6. **Prepare Nick's walnut dimension packet**
+6. **Prepare the fabricator's walnut dimension packet**
    - Galley counter template with exact length/width, sink/faucet/appliance clearances, support-tab locations, and the last `~15 in` inward-curving live-edge target.
    - Desk top template with final seated work height/depth and front wrist-edge treatment.
    - L-shaped Bench/lid template with hinge line, support tabs, latch positions, gas-strut candidate zones, and service-clearance notes.
@@ -751,8 +751,8 @@ Avoid:
 ## 12) Near-term action list
 
 1. Pick target wood tone: black walnut is the current final-surface direction; plywood remains the template/prototype material.
-2. Convert the Nick black-walnut commission into a dimension packet: Galley `~4 ft x 19 in` target confirmation, last `~15 in` inward live-edge curve, desk top, and L-shaped Bench/lid template.
-3. Make finish samples on walnut/offcut scrap: satin polyurethane as the default, any warmer/oil-look option Nick recommends, and epoxy only as a selective crack/void filler sample.
+2. Convert the fabricator black-walnut commission into a dimension packet: Galley `~4 ft x 19 in` target confirmation, last `~15 in` inward live-edge curve, desk top, and L-shaped Bench/lid template.
+3. Make finish samples on walnut/offcut scrap: satin polyurethane as the default, any warmer/oil-look option the fabricator recommends, and epoxy only as a selective crack/void filler sample.
 4. Prototype one `1/2 in` overlay panel with final spacer/fastener style.
 5. Prototype or source one smoked acrylic/polycarbonate sample.
 6. Mock the `45°` front cupboard in cardboard, including the smoked angled front plus rounded wood-cap/nosing idea.
@@ -766,7 +766,7 @@ Avoid:
 
 ## 13) Recommendation summary
 
-- **Use existing plywood intelligently first.** It is the fastest way to prove geometry before Nick cuts premium black walnut.
+- **Use existing plywood intelligently first.** It is the fastest way to prove geometry before the fabricator cuts premium black walnut.
 - **Make Galley and desk siblings, not twins.** Same wood tone, sheen, edge profile, and hardware/reveal discipline are enough.
 - **Current final-surface direction is black walnut.** Galley live-edge counter, dimensional-lumber desk, and L-shaped Bench/lid should repeat the same satin finish language.
 - **Use `1/2 in` for vertical/removable faces and `3/4 in` for tops/load surfaces.** Add spacers for reveal instead of using heavy panels everywhere.

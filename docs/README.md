@@ -9,7 +9,7 @@ status: active
 
 # Docs Map
 
-Use this folder map when deciding where a document belongs. Current repo posture is **permanent-floor cure plus utilities-first restrained module reinstall** (`2026-07-16`): keep active truth in the owner docs below, and treat pre-install/readiness plans as historical references unless explicitly refreshed.
+Use this folder map when deciding where a document belongs. Current repo posture is **working utility closeout plus solar/heater/interior integration** (`2026-08-27`): Starlink, fridge, pump, DC charging outlets, and four duplex AC devices are wired; the immediate safety task is the labeled temporary switch/service face; solar, diesel-heater/fuel routing, graywater, final walnut, alternator commissioning, travel restraint, and finish paneling retain explicit gates. Treat pre-install/readiness plans as historical references unless explicitly refreshed.
 
 ## Obsidian navigation
 - Start with [00 Home](../00%20Home.md) for daily navigation.
@@ -49,15 +49,15 @@ Use this folder map when deciding where a document belongs. Current repo posture
 - [ELECTRICAL_overview_diagram](implementation/ELECTRICAL_overview_diagram.md): implementation topology, conductor IDs, branch maps, diagrams, and active electrical assumptions.
 - [ELECTRICAL_fuse_schedule](implementation/ELECTRICAL_fuse_schedule.md): fuse IDs, amperages, holder/fuse families, Orion Lynx Slot 4 `F-05`, spare policy, and BOM row mapping.
 - [ELECTRICAL_Mechman_WS500_APM48_install_guide](implementation/ELECTRICAL_Mechman_WS500_APM48_install_guide.md): detailed shop guide for Mechman `48V` alternator, WS500, APM-48, staged-install/drivability gates, first-run tests, and shutdown/fault handling.
-- [ELECTRICAL_AC_BOM](implementation/ELECTRICAL_AC_BOM.md): purchased Phase 1 AC hardware and Branch A/B outlet intent.
+- [ELECTRICAL_AC_BOM](implementation/ELECTRICAL_AC_BOM.md): Phase 1 AC hardware, owner-reported four-device Branch A/B as-built count, and formal acceptance gates.
 - [ELECTRICAL_bench_layout_and_test_guide](implementation/ELECTRICAL_bench_layout_and_test_guide.md): staged electrical commissioning, first-live results, hard-mounting/access checks, and post-live wiring/strain-relief validation.
 - [FLOORING_subfloor_build_process](implementation/FLOORING_subfloor_build_process.md): permanent floor as-built state, cure/post-cure checks, hardpoint recovery, and finish-floor serviceability.
 - Rule: implementation docs may expand the core baseline, but they should not silently redefine it.
 
 ## Plans
 - [plans](plans/): active execution plans, procurement aids, WIP carts, and historical references.
-- [LIVE_BUILD_CHECKLIST](plans/LIVE_BUILD_CHECKLIST.md): live running build checklist and cure/integration-gate tracker; update whenever practical build state, blockers, or next shop actions change.
-- [PROJECT_build_order_of_operations](plans/PROJECT_build_order_of_operations.md): active floor-cure, tank/electrical dependency, penetration, and restrained-reinstall sequence.
+- [LIVE_BUILD_CHECKLIST](plans/LIVE_BUILD_CHECKLIST.md): live running build checklist and current switch/utility/solar/heater/water/interior gate tracker; update whenever practical build state, blockers, or next shop actions change.
+- [PROJECT_build_order_of_operations](plans/PROJECT_build_order_of_operations.md): active working-utility closeout, penetration, heater/storage, walnut/drain, alternator, restraint, and finish-panel sequence.
 - [STARLINK_SOLAR_MOVING_UMBILICAL](plans/STARLINK_SOLAR_MOVING_UMBILICAL.md): removable Starlink jumper plus continuous front-gap PV retractile architecture, current cable market screen, measurement gates, and acceptance tests.
 - [PROCUREMENT_purchase_list_2026-05-26](plans/PROCUREMENT_purchase_list_2026-05-26.md): dated procurement snapshot; `bom/bom_estimated_items.csv` owns active item/status truth and `bom/bom_inactive_items.csv` preserves returned/retired stable-ID history.
 - [TNUTZ_80_20_HARDWARE_MODEL_2026-06-01](plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md): consolidated WIP TNUTZ `10-series` cart, hardware model, visual-aid owner, and pointer to dated module cut-list workbooks under `plans/assets/module-cutlists/`.

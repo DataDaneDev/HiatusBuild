@@ -15,16 +15,17 @@ related:
 
 # Solar Configuration Matrix — Purchased Renogy 700W Array
 
-As-of date: `2026-08-12`
+As-of date: `2026-08-27`
 
 ## Current decision
 
-- **Purchased:** `4x Renogy 175W 12V flexible monocrystalline panels = 700W` on `2026-08-12`.
+- **Received/test-fit:** `4x Renogy 175W 12V flexible monocrystalline panels = 700W`, purchased `2026-08-12` and owner-reported on hand by `2026-08-27`. One-panel physical test-fit plus measured layout indicates coexistence with Starlink/MaxxAir and near-total roof use.
 - **Purchase evidence:** `$649.36` merchandise, `-$32.46` `WELCOME5` discount, `$616.90` net item subtotal, free shipping, `$44.73` estimated tax, and `$661.63` checkout total.
 - **Controller:** retain the purchased Victron SmartSolar `MPPT 150/45` for fit testing and commissioning.
-- **Electrical candidate:** one `4S` series string. `2S2P` does not provide enough PV voltage for a `48V` bank, and unequal strings must not be paralleled on one tracker.
-- **Mounting:** direct roof attachment is the owner-selected baseline. The previous BougeRV-specific four-direct/one-cassette architecture and adhesive-rib instructions do not transfer to the larger Renogy panels; do not reintroduce a carrier, rack, or cassette unless the owner explicitly reopens that direction.
-- **Status:** panels are purchased, not released for roof bonding or travel. Verify the exact received SKU, labels, dimensions, leads/connectors, polarity, and current installation manual before finalizing any cut, adhesive, support, or wiring decision.
+- **Electrical topology:** one `4S1P` series string. `2S2P` does not provide enough PV voltage for a `48V` bank, and unequal strings must not be paralleled on one tracker.
+- **Mounting:** direct roof attachment with the exact controlling structural-silicone product/preparation/cure. Do not reintroduce a carrier, rack, cassette, or generic consumer reclosable fastener unless the owner explicitly reopens that direction.
+- **Moving route:** the PV retractile cord is owner-reported ordered. Preserve only the two free `4S1P` string-end leads through one two-conductor route; received cord/rating/gland/full-motion proof and structural exterior restraint remain open.
+- **Status:** physical fit is encouraging but does not release bonding or travel. Record the exact received SKU/labels/connectors/manual; prove roof/substrate preparation, coupon, drainage, cure, one-panel shakedown, full moving-route behavior, actual weight, route drop, and hot restart/tracking.
 
 This supersedes D-069's `6x BougeRV Arch Pro 100W = 600W / 3S2P` product and layout decision. It preserves the measured roof, existing-controller preference, `75 lb` complete moving-roof cap, separate Starlink/PV pathways, and post-receipt commissioning gates.
 
@@ -86,7 +87,7 @@ No all-inside-skin solution was found. No solution was found with support outsid
 | Renogy P4 | `80.3` | `0.0` | `26.5 x 59.2` | Inside skin, rotated |
 | Starlink/TRIO | `1.0` | `1.0` | `17.1 x 25.4` | Candidate packing location, rotated |
 
-These coordinates are **packing evidence, not installation marks**. The two outside panels must use the real fiberglass lands on both sides of each track. Mock the actual `0.625 in` track transition first; if the real panel makes the short transition without a sharp crease, no added structure is needed. If it does not, use only a simple local spacer/taper—not a carrier. The actual outside roof lands, junction boxes, lead exits, grommets, fastener/adhesive zones, roof crown, drainage, and Starlink removal path can invalidate the screen.
+These coordinates remain **packing provenance, not installation marks**. Owner test-fit `2026-08-27` is stronger current evidence that the four-panel/Starlink/MaxxAir package fits while using nearly the complete roof, but full `1:1` templates still control exact panel edges, track transitions, junction boxes, lead exits, grommets, drainage, fan service, Starlink removal, and structural clamp locations. Add no carrier; use only a minimal local taper if the actual panel/manual requires it at a track step.
 
 ## Electrical audit
 
@@ -143,31 +144,27 @@ Ideal battery-side current at `56.8V` is about `12.32A`, well below the controll
 
 ### Receipt and geometry
 
-- [ ] Verify exact received model/SKU and photograph all four labels.
+- [~] All four panels are received; one-panel physical test-fit plus measured layout indicates coexistence with Starlink/MaxxAir and near-total roof use. Photograph/record exact SKU and all four labels.
 - [ ] Verify each panel's dimensions, weight, lead lengths/exits, connector manufacturer, polarity, grommet layout, and current manual.
-- [ ] Measure the MaxxAir outer rear flange, full open-lid/service envelope, track top/outside spacing, outer roof lands, crown, drainage, and the exact direct-mount transition across each track step.
-- [ ] Cut/place `1:1` Renogy templates including junction boxes, leads/connectors, grommets, mounting zones, and service loops.
-- [ ] Place the assembled Starlink/TRIO and cycle fan operation, Starlink removal, and all cable paths with templates present.
+- [ ] Place full `1:1` templates with junction boxes, leads/connectors, grommets, attachment zones, service loops, exact track transitions, drainage, and structural cord supports; cycle fan operation and Starlink removal.
 
 ### Mechanical release
 
-- [ ] Keep the architecture simple: direct roof attachment only. The owner has repeatedly rejected a carrier/cassette or connecting rack because its fabrication, height, weight, snag exposure, and redesign burden are disproportionate to this side task.
-- [ ] Treat an industrial reclosable fastener as a legitimate removable candidate—not generic consumer fabric Velcro. Renogy's official user-story guidance says industrial adhesive Velcro around the perimeter and back should provide spacing and roof retention; 3M's reclosable-fastener design guide explicitly includes fastening flexible solar panels to roofing membrane with strength to resist wind; VELCRO Brand markets outdoor solar fasteners for flexible panels. These establish a credible path, not automatic approval of an arbitrary retail strip.
-- [ ] Candidate pattern for a coupon and one-panel trial: about `1 in` full perimeter plus a center cross or comparable internal strips, fully engaged, with a replaceable windward-edge tape/cap only if the real mockup leaves an exposed peel start. On a nominal `59.2 x 26.5 in` panel, a `1 in` perimeter plus center cross is about `248 in2` of fastener area—well beyond 3M's `4 in2/lb` static starting point—but highway edge peel and adhesive/substrate performance still control.
-- [ ] Select the exact fastener **and adhesive on each side** after receipt. 3M `SJ3870` Type 250 plus `SJ3871` Type 400 is a relevant low-surface-energy, indoor/outdoor candidate pair, but the current sheets list only `60C / 140F` long-term temperature resistance. A hot panel/roof coupon must pass before buying rolls; a high-temperature or plain-backed fastener with separately selected compatible adhesive may be the better final stack.
-- [ ] Where a panel crosses a raised track, first mock the real panel across the actual roof lands. Add nothing if the transition is smooth and within the panel's received instructions; otherwise use only the smallest local spacer/taper needed to avoid a sharp crease. Do not turn it into a frame or secondary roof.
-- [ ] Prove roof-side and panel-side adhesion, complete engagement, windward-edge peel resistance, drainage, hot-soak behavior, controlled removal, and low-speed-to-highway inspection on the simplest representative trial.
-- [ ] Weigh the actual complete moving-roof package at `<=75 lb` with contingency.
-- [ ] Confirm insurer/Hiatus acceptance if required.
+- [x] Architecture remains direct roof attachment only; no carrier/cassette/rack or generic consumer hook-and-loop is active.
+- [ ] Verify the exact structural-silicone product is allowed for the received panel backsheet and roof substrate; document roof wash/decontamination, both-side preparation, bead/pattern, application temperature, cure window, drainage, and removal/service implications.
+- [ ] Bond a representative coupon with the exact materials and cure. Inspect adhesion, edge peel, hot-soak behavior, water tracks, and roof/backsheet damage before panel work.
+- [ ] Install one panel first. After cure, pass static inspection, heat/water exposure, roof cycles, and a temporary independent track-anchored test restraint. Then run a private/closed-course low-speed test with inspection stops; only after it passes, run a deliberate progressive road-acceptance test with staged speed/stop inspections.
+- [ ] Where a panel crosses a raised track, add nothing if the actual panel/manual permits the transition; otherwise use only the smallest local taper needed to avoid a sharp crease.
+- [ ] Weigh the actual complete moving-roof package at `<=75 lb` with contingency and confirm insurer/Hiatus acceptance if required.
 
 ### Electrical and travel release
 
-- [ ] Confirm `4S` polarity and received-label Voc/Isc before connection.
-- [ ] Lock compatible series connectors/extensions, PV cable, two-pole DC-PV load-break, moving jumper, roof entry, strain relief, labels, and final OCP decision.
-- [ ] Measure end-to-end route drop.
-- [ ] Commission stationary in cool and hot conditions; specifically prove morning start, hot restart near the configured charge target, sustained hot tracking, connector/cable temperature, and no dropout.
-- [ ] Complete representative attachment coupon/removal proof where adhesive is used.
-- [ ] Do not accept highway travel until structural load proof, actual weight, cable restraint, attachment inspection, and hot electrical commissioning pass.
+- [ ] Confirm `4S1P` polarity and received-label Voc/Isc before connection. Use three panel-to-panel series mates and only the two free string ends; no combiner.
+- [~] PV retractile cord is owner-reported ordered. On receipt record exact product/conductors/OD and prove `>=150VDC`, wet/UV/cold/coiled ampacity, tangents, spring force, gland fit, structural clamps/guard, and full `28 in` roof/cab articulation before drilling.
+- [ ] Lock compatible series connectors/extensions, compact two-pole transition, continuous `12 AWG` two-conductor moving route, fixed two-pole DC-PV load-break, short stationary run, MPPT entry, labels, and final OCP decision. Adhesive zip-tie bases are guides only; structural supports carry spring/wind/branch loads.
+- [ ] Confirm MPPT battery-output protection is `F-03 60A/80V MEGA` in Lynx Slot 2 and remove/quarantine any misrated `32V` substitute.
+- [ ] Measure end-to-end route drop and commission stationary in cool/hot conditions: morning start, hot restart near charge target, sustained tracking, cable/connector temperature, and no dropout.
+- [ ] Do not accept the remaining panel bonds or routine highway travel until exact-material cure, one-panel static/heat/water/roof-cycle proof, temporary independent test restraint, private low-speed test, controlled staged-speed road acceptance, actual weight, cable/penetration restraint, full-motion proof, attachment inspection, and hot electrical commissioning pass.
 
 ## Source references
 

@@ -20,8 +20,8 @@ related:
 - Keep exact topology, fuse, conductor, and bench procedure detail in `docs/implementation/`.
 
 ## Snapshot
-- As-of date: 2026-07-26
-- Phase: hard-mounted electrical integration, bank/shore/12V commissioning, then wet-spine installation
+- As-of date: 2026-08-27
+- Phase: working utility closeout plus solar/heater/interior integration
 - Install milestone: May 7, 2026 Hiatus install is historical context; the real camper shell and integrated module fit now control physical decisions
 - Mission: build a reliable off-grid camper workspace suitable for full-time professional use
 
@@ -37,17 +37,17 @@ related:
 - Provide ergonomic, repeatable workstation setup
 - Keep system serviceable and safe in multi-climate travel use
 
-## Current execution focus (electrical closeout into wet-spine integration)
+## Current execution focus (working utilities into solar/heater/interior integration)
 - Use [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md) for active sequence and [LIVE_BUILD_CHECKLIST](../plans/LIVE_BUILD_CHECKLIST.md) for shop actions. Earlier install-window plans are historical references unless explicitly refreshed.
-- The one-piece Lonseal remains the permanent finish over the three-piece `3/4 in` plywood floor. The electrical module, Galley/cooler support, water tank, and the returned Bench extrusion bridge are owner-reported hard-mounted; the integrated structure is extremely stiff.
-- Remaining road restraint is specific rather than architectural: positively capture and strap the `3x 48V` batteries and separate `12V` battery, restrain the ICECO at its foot-level tie points with a lateral hard stop, and finish terminal/cable protection.
-- All three `48V` batteries' `2/0 AWG` positive/negative branch cables are complete and landed. Battery 1 completed the corrected isolated charge cycle, Battery 2 remained in normal upper-`54V` bulk at the overnight `2026-08-02/03` checkpoint, and Battery 3 remains pending. Rest/record all three and parallel only at `<=0.1V` maximum-to-minimum spread.
-- The Orion charges the `12V` buffer battery and the camper `12V` system operates correctly. The driver-rear shore inlet/cable route is installed; the enclosed `L/N/PE` splice and dead checks remain open before permanent-path use.
-- The `36 gal` wheel-well tank is hard-mounted with two metal straps into truck-bed-wall plusnuts, and all three passenger-rear pass-throughs are installed. The KUS under-ring/gasket/hardware repair, fill/vent, sink/faucet termination, and dry pressure/dwell test remain the water-service gates.
-- Immediate interior sequence is battery/cooler restraint -> plywood Galley counter and sink/faucet -> Galley/Desk wire pulls while access is open -> Desk/storage reinstall -> KUS/water acceptance as parts arrive.
-- Starlink's active baseline is the purchased/ordered one-panel package: terminal weather-retention pigtail -> removable retractile roof jumper -> Neutrik fixed-body bulkhead -> shielded interior cable -> Router 3 pigtail, with the complete OEM cable preserved for direct ground recovery. Bench-test the pigtails, coil, terminations, shield, and purchased DC converter; measure wall stack and full popup travel before any wall cut, coil cut, VHB bond, or roof-mount commitment.
-- Electrical system status remains live-proven at the system level, but permanent shore AC-in, AC-out/GFCI, full-bank commissioning, final road restraint, and alternator first-charge remain separate gates. Hot water remains the propane-only HOTTAP V2 rear-box package; solar and audio remain later workstreams.
-- Black-walnut Galley/Desk/Bench finish surfaces remain template-gated after final floor height and module geometry are proven.
+- The permanent Lonseal floor, electrical/Galley/Bench structure, water tank, and primary utility routes are installed. Remaining road restraint is specific: positive capture for the `3x 48V` batteries, separate `12V` battery, ICECO, appliances, bench lid, monitor/laptop assembly, plus terminal/cable protection.
+- Starlink Standard 4 X works from its switched dedicated `12V` conversion branch through a `20A` blade fuse, including the fixed-body pass-through and retractile jumper. The fridge and pump are wired and switched. Three independent charging branches are installed: one driver-side `100W` DC outlet and two passenger-side `65W` DC outlets, each separately fused.
+- Four duplex `120V` receptacles are wired: two devices/four plug positions on each side. Device count is closed, but branch acceptance remains open for listed boxes/covers/clamps, `LINE/LOAD`, downstream GFCI protection, polarity, PE continuity, labels, and trip/reset in inverter and shore modes.
+- The immediate safety correction is one narrow removable switch/service face. Individually insulate and label every DC switch terminal; mount any `120V` device in a listed covered box physically separated from DC terminals. Loose electrical tape is not a finished live-terminal barrier.
+- All four Renogy `175W` panels have arrived; one-panel physical test-fit plus measured layout indicates compatibility with Starlink and MaxxAir while using nearly the whole roof. Keep the one-string `4S1P` topology on the Victron `150/45`; direct-roof bonding waits on exact silicone/substrate preparation and coupon/cure proof. The PV retractile cord is ordered and still needs received-property, gland, structural-clamp, spring-force, and full-motion proof.
+- The LF Bros diesel heater is the main unresolved systems install. Dry-lay the heater, sealed floor turret, complete underbody exhaust/intake/fuel route, fuel tank, and rear driver-side storage module as one package. Heat shield is supplemental; proximity to the truck fuel tank, fuel/EVAP/brake lines, wiring, undercoating, and combustibles remains a hard release gate. Prefer exterior diesel storage; any interior tank needs sealed, externally vented spill containment outside normal living/electrical storage.
+- A mid-September black-walnut counter/desk routing appointment is planned. Bring the actual sink and soap dispenser; prove bowl, drain body, faucet/soap hardware, support rails, and drain slope over the water tank before final cuts. Graywater remains a mockup decision; first test a vented, positively retained, normally closed removable vessel around `2.5 gal`.
+- Alternator architecture is unchanged. Main remaining work is `F-04 200A/80V`, both WS500 temperature sensors, configuration read/save/program via the purchased USB-A-to-B cable, and controlled first charge.
+- Preserve the roughly `24 in` desk until the rear module, real chair, knees, and aisle are mocked. Monitor/laptop arms need padded hard stops and positive restraint without LCD pressure; gas struts need actual lid-force geometry plus a closed latch/open stop; the air fryer needs hard stops and a strap/latch rather than tape alone. Final skins wait until heater, drain, electrical, and service-access tests pass.
 
 ## Scope
 - In scope: electrical, charging, solar, communications, interior structure/cabinetry, operations process, maintenance tracking
@@ -55,7 +55,7 @@ related:
 
 ## Requirements baseline (draft)
 - Workday autonomy target: load model v5 profiles indicate `3,915 Wh/day` (`core_workday`), `4,829 Wh/day` (`winter_workday`), and `624 Wh/day` (`minimal_idle_day`), including conservative future-audio allowance; actual near-term office-only use may be lower. Battery reserve floor policy is `20%` minimum SOC
-- Connectivity reliability target: Starlink is planned primary path; fallback strategy still TBD
+- Connectivity reliability target: Starlink is the primary path and its installed direct-DC/pass-through/retractile route works; complete weather/travel acceptance and preserve the OEM-cable/ground-deployment recovery path.
 - Thermal comfort and electronics protection limits: TBD
 - System safety requirements: fusing, disconnects, wire protection, labeling, service access
 
@@ -80,38 +80,39 @@ related:
 - M6: electrical/Bench/Galley/tank hard-mount and `12V` checkpoints complete; battery matching/restraint, shore splice, wet-side acceptance, and Galley wiring closeout underway
 - M7: shakedown and punch-list closure
 
-## Build sequencing baseline (as-of 2026-08-03)
-- The permanent floor and integrated electrical/Bench/Galley/tank hard-mount gates have passed. Keep the battery bay, Galley counter underside, KUS opening, and hidden Desk/storage wire routes open while the remaining restraint, charging, plumbing, and wiring gates close.
-- Canonical sequence: insulate/temporarily mount the live ICECO switch -> terminate/configure KUS -> wire/test pump -> pull every access-dependent Galley/Desk AC/DC/control branch -> build individual battery/cooler restraint -> finish Battery 3 charge/rest and match -> parallel and commission the `3x 48V` bank -> finish KUS/fill/vent/sink water acceptance -> reinstall Desk/storage -> mid-September `2026` final-walnut installation -> shore/AC-out and alternator closeout -> shakedown. Full temporary tops are dropped.
+## Build sequencing baseline (as-of 2026-08-27)
+- The permanent floor and main structure are installed. Keep heater/fuel, sink/drain, switch/service, battery, and hidden-route access open until each subsystem is tested and positively restrained.
+- Canonical sequence: temporary labeled switch/service face -> DC/AC closeout tests -> weather-window solar attachment and moving-cord proof -> diesel-heater/storage dry layout and underbody survey -> mid-September sink/soap/walnut routing -> graywater mockup/completion -> WS500/fuse/sensor alternator commissioning -> rear storage/desk/real-chair fit -> bench/appliance/monitor travel restraint -> final skins -> shakedown.
 - Detailed owner docs:
   - [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md)
   - [FLOORING_subfloor_build_process](../implementation/FLOORING_subfloor_build_process.md)
   - [LIVE_BUILD_CHECKLIST](../plans/LIVE_BUILD_CHECKLIST.md)
 
 ## Immediate next decisions
-- **Battery/cooler restraint:** build low battery perimeter/divider capture tied into anchored extrusion or through-bolted structural plywood with backing, then strap each battery individually without crossing terminals/displays. Use the ICECO foot-level tie points with a low-stretch cam strap plus an aisle-side hard stop and soft wall bumper.
-- **Immediate electrical endpoints:** individually insulate and temporarily hard-mount the ICECO switch, terminate/configure KUS, wire/test the `14 AWG / 10A` pump branch, then pull every access-dependent Galley/Desk AC/DC/control route while the modules remain open.
-- **Battery order:** finish Battery 2's cycle and Battery 3 individually; record all three rested voltages; parallel only at `<=0.1V` spread; then verify polarity, branch protection, SmartShunt synchronization, disconnect, current sharing, covers, and cable support.
-- **Galley/Desk order:** skip full temporary tops. Preserve and record the sink/faucet/support/no-drill geometry for the mid-September `2026` final-walnut target; reinstall Desk/storage only after hidden routes are pulled.
-- **KUS/water service:** replacement under-ring/main gasket/matched hardware are installed. Keep top sender access open through Cerbo setup and the final fill/pressure/dwell leak proof.
-- **Starlink transition:** ground deployment with the complete OEM cable is accepted for the first trip. The Neutrik one-panel interface, weather-retention pigtails, retractile coil, panel jumper/coupler, TRIO protective/attachment package, and DC converter are purchased/ordered but not installation-accepted. Measure popup travel, wall stack, connector/cable OD, and roof contact; bench-test continuity/shield/loaded power/heat/reboots; do not cut the sidewall/coil or bond mount discs until those gates pass. `DS-H-MULTI-BLK` and `TBH-4` are withdrawn from the active route.
+- **Switch/service face:** cut and mount the narrow removable face now. Keep `120V` in a listed covered box with cable clamps and PE continuity, physically separate AC from DC, individually insulate every switch terminal, and label the fuse/slot/load before normal powered work.
+- **Solar release:** verify received panel labels/connectors and exact silicone/substrate/cure instructions; wash/decontaminate the roof; coupon-test the stack; attach and shakedown one panel before repeating. Preserve `4S1P`; only the two free string ends enter the two-conductor transition/disconnect/MPPT route.
+- **PV moving route:** when the ordered cord arrives, verify exact conductors, OD, voltage/wet/UV/cold rating, tangents, spring force, and the full `28 in` roof stroke. Use structural redundant exterior clamps/guarding; adhesive cable mounts may guide but may not carry spring or highway load.
+- **Diesel heater/storage:** dry-fit both before drilling. Release only after mapping the turret and complete underside route around the truck fuel tank and all fuel/EVAP/brake lines, wiring, undercoating, and combustibles. Keep exhaust/muffler outside; prefer exterior fuel, or use sealed externally vented containment if a tank must be inside.
+- **Counter/drain:** bring the actual sink and soap dispenser to the mid-September routing appointment. Prove drain-body/support/tank clearances and continuous slope; mock a vented, positively retained, normally closed removable vessel around `2.5 gal` before locking the graywater design.
+- **Alternator:** fit `F-04`, both temperature sensors, and final support/protection; read and save the current WS500 profile before changing it; then program and run the controlled first-charge guide.
+- **Interior fit/restraint:** preserve the `24 in` desk pending actual chair/aisle mockup. Give the air fryer hard stops plus strap/latch, give the monitor/laptop assembly a padded arm-unloading cradle without LCD pressure, and size bench gas struts from measured lid geometry with a separate latch and open stop.
 - **Payload:** capture door-sticker payload and staged scale weights. Treat total payload, rear axle load, rear tire load, and left/right balance as active constraints.
 
 ## Electrical-to-shakedown sequence
-Purpose: finish the hard-mounted utilities and close furniture around tested systems without rebuilding access twice.
+Purpose: close tested utilities and finish the interior without rebuilding access twice.
 
-1. **Open-access 12V/sender endpoints**
-   - Protect and mount the ICECO switch, finish the KUS-to-Cerbo pair, and wire/prove the SHURflo branch before moving the Desk/storage modules back in.
-2. **Hidden rough-in**
-   - Pull Galley and Desk DC/AC/control/data routes while access is open. Use a temporary switch/service plate where needed; final decorative paneling follows tested wiring rather than leading it.
-3. **Battery-bank commissioning and restraint**
-   - Finish Battery 2's cycle and Battery 3 individually, rest and record all three voltages, add hard perimeter/divider capture plus individual cam straps, parallel only within `0.1V`, then verify branch protection, polarity, disconnect, Lynx/shunt, covers, extraction, and current sharing.
-4. **Wet-side acceptance**
-   - Configure/sanity-check the installed KUS sender, finish fill/vent and sink plumbing, then run the dry pressure/dwell test with the service openings still accessible.
-5. **Communications and AC closeout**
-   - Use ground-deployed Starlink as the first-trip fallback while the retractile route is bench/geometry tested; finish the shore `L/N/PE` splice/dead checks and AC-out/GFCI acceptance without burying either service path.
-6. **Module closure, final tops, and shakedown**
-   - Reinstall the Desk/storage modules after hidden wiring, prepare the final templates for the mid-September `2026` walnut target, finish panels/retainers and terminal protection, torque/witness-mark, drive locally, and inspect for floor damage, leaks, insert spin, abrasion, module movement, and fastener loss.
+1. **Safe temporary service face and branch closeout**
+   - Hard-mount/label the DC switches; keep the AC device in its own listed covered box. Verify every DC fuse/slot, polarity, load, and drop; verify both AC chains' boxes/clamps, `LINE/LOAD`, PE, polarity, and GFCI trip/reset under inverter and shore power.
+2. **Solar weather-window work**
+   - Verify the panel labels, connectors, direct-bond product, roof preparation, coupon, and cure. Prove one panel before repeating. On cord receipt, prove the two-end `4S1P` path, structural clamps/guard, gland, disconnect, full stroke, articulation, and MPPT entry before travel.
+3. **Heater/storage integration**
+   - Dry-lay heater, sealed turret, underbody exhaust/intake/fuel route, fuel containment, and rear storage together. Drill only after the underside vehicle-line/heat/combustible survey passes; complete functional/CO/leak checks before skins.
+4. **Countertop, sink, and graywater**
+   - Route the actual sink/soap hardware at the mid-September walnut appointment only after support/tank/service clearances pass. Prove continuous drain slope and mock the waterless-trap/vent/retention/removal path with a normally closed vessel around `2.5 gal` before locking size or location.
+5. **Alternator and remaining road restraint**
+   - Complete `F-04`, sensors, protection, WS500 profile backup/programming, and controlled first charge. Finish battery/ICECO/appliance/bench-lid/monitor restraint, terminal covers, and abrasion protection.
+6. **Measured interior closure and shakedown**
+   - Mock the real chair, rear module, `24 in` desk, and aisle before trimming. Then complete positive latches/cradles, final skins, torque/witness marks, local drive, and post-drive inspection for leaks, abrasion, movement, heat, and fastener loss.
 
 ### Cabinetry approach (recommended)
 - Treat 80/20 as the *structure* and simple panels as the *skins*.

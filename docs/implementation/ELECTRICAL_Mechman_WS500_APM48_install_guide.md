@@ -17,7 +17,7 @@ related:
 
 # Mechman `48V` Alternator + WS500 + APM-48 Install Guide
 
-As-of date: `2026-08-08`
+As-of date: `2026-08-27`
 
 Purpose: one shop-reference document for installing and commissioning the Hiatus dedicated `48V` secondary alternator path: Mechman `48V` alternator/bracket, Wakespeed `WS500`, Balmar `APM-48`, Ford Upfitter `#3` enable, and the existing `48V` house bank/Lynx architecture.
 
@@ -32,6 +32,7 @@ This is an implementation guide, not a substitute for the official manuals. Use 
 - House distribution: Victron Lynx Distributor, SmartShunt, MultiPlus-II `48/3000/35-50`, Orion-Tr Smart `48/12-30`.
 - Manual charge enable: Ford `Upfitter Switch #3 -> F-15 3A inline fuse -> WS500 brown ignition/enable wire`.
 - Main alternator branch: `2/0 AWG` positive through `F-04 200A/80V MEGA` at Lynx Slot 3 / house-bank end; dedicated `2/0 AWG` negative direct to Lynx/system negative. The Wakespeed `500A/50mV` shunt sits on the battery side of the SmartShunt in the common battery-negative path; the SmartShunt remains hard-attached to the Lynx.
+- Current closeout report (`2026-08-27`): the owner has the Eaton/Bussmann `HEB-AA` holder/package for the `PH-VAN` feed. Remaining work includes confirming/installing `F-04`, both temperature sensors, final cable/support/terminal work, then reading/saving/programming the WS500 through the purchased USB A-to-B/printer-style cable. Do not energize field or perform first charge until the full preflight, profile, sensor, APM, shunt-polarity, enable/fuse, and shutdown-response gates below pass.
 
 ## Current physical/staged-driving status
 
@@ -392,6 +393,10 @@ Do not treat WS500 Feature-In as solved yet:
 - Phase 1 leaves white Feature-In reserved.
 - Future use may be forced float/standby/charge-disable if a reliable signal is added.
 - With current Dumfume internal-BMS/no-CAN batteries, there is no confirmed BMS warning signal to feed Feature-In before disconnect.
+
+### WS500 bench-configuration gate
+
+Treat this as a separate de-energized bench session, not the first-engine-run task. Leave Upfitter `#3` OFF and the alternator field disabled; remove the WS500 cover only as directed by the current Wakespeed manual, protect the board from static/metal debris, and connect the purchased USB A-to-B/printer-style cable to the documented internal USB port. Establish communications, record firmware/hardware identity, read and save/export the existing configuration before changing anything, then enter and independently verify the build-specific values below. Replace the cover and complete a second read-back before field enable. Do not guess a canned profile or blindly apply the `25%` field derate—the Mechman field specification controls.
 
 ### Phase 4 — WS500 profile/configuration checks
 

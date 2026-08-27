@@ -21,11 +21,11 @@ related:
 
 # Interior Furniture Layout and Galley Design Concepts
 
-As-of date: `2026-08-03`
+As-of date: `2026-08-27`
 
 Purpose: capture the active furniture/layout direction for the Hiatus/F-350 camper before final cuts. This document owns the interior **layout concept**, driver-side electrical-module/bench/desk integration, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, galley/plumbing service strategy, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`; the finish/paneling/storage feature-design detail now lives in `docs/implementation/INTERIOR_finish_paneling_and_feature_choices.md`.
 
-Status: **draft implementation baseline for hard-mounted electrical and wet-spine integration**, refreshed `2026-08-03`. The electrical module, Galley/cooler support, water tank, and returned Bench extrusion are now owner-reported hard-mounted and extremely stiff as an integrated structure. The open physical gates are ICECO switch protection, KUS/pump and hidden-route wiring, individual battery/cooler travel restraint, isolated Battery 3 charge/rest/matching, and final water acceptance while the Desk/storage modules remain out. The replacement KUS `FLS-U` ring/gasket/hardware is installed; keep it visible through final leak proof. Full temporary tops are dropped, and the final walnut installation has a mid-September `2026` target. Hot water remains locked to the propane-only rear-box Joolca HOTTAP V2 package. Keep final skins and Desk/storage reinstall gated on installed wiring and service validation.
+Status: **working interior-integration baseline**, refreshed `2026-08-27`. The hard-mounted electrical/Galley/Bench structure is in place; Starlink is working, while the fridge and pump are owner-reported wired/switched and the three DC charging outlets/four AC duplex devices are physically installed pending closeout tests. The next geometry gates are the safe removable switch/service face, diesel heater plus rear storage module, mid-September walnut/sink routing, graywater slope/cassette, actual chair/aisle/desk mockup, bench lid/struts, positive monitor travel cradle, air-fryer retention, and removable finish panels. Do not close access around heater/fuel/exhaust, sink/drain, electrical service, batteries, or hidden routes before their tests pass. Hot water remains locked to the propane-only rear-box Joolca HOTTAP V2 package.
 
 Orientation convention throughout:
 
@@ -116,21 +116,23 @@ Owner-provided build update confirms the electrical module has moved from freest
 
 Travel rule: **the floor hard-mount alone is not the final road-restraint gate**. Drive only after the electrical module is tied into the Bench/adjacent structure or otherwise given verified anti-rack bracing, with panels/diagonals/latches installed enough to control racking and cargo/projectile risk.
 
-### Integrated structure update — 2026-08-02
+### Integrated structure and utility update — 2026-08-27
 
-- Owner reports the electrical module, Galley/cooler support, and reinstalled Bench extrusion are hard-mounted together and the resulting assembly is extremely stiff.
-- The `36 gal` wheel-well tank is physically hard-mounted with two metal straps into the truck-bed-wall plusnut locations. The KUS sender remains a service/leak gate, not a reason to treat the tank as loose; preserve sender-opening access and the documented frame/tank disassembly path.
-- The remaining road-restraint work is specific: low perimeter/divider capture plus individual over-case straps for the `3x 48V` batteries and separate `12V` battery, plus foot-level restraint and lateral hard stops for the ICECO cooler.
-- Full temporary top fabrication is dropped. Pull Galley DC/AC/data and control wiring now while access is open, keep Desk/storage modules out until their hidden routes are installed, and prepare sink/faucet/support/no-drill templates for the mid-September `2026` final-walnut target. A rough removable Galley sheet is optional only if fixture geometry or interim protection requires it.
+- The electrical module, Galley/cooler support, water tank, and Bench extrusion remain hard-mounted as a stiff integrated structure.
+- The KUS replacement under-ring/gasket/hardware are installed. Keep sender access open and hold first-fill closeout until fill/vent, sink terminations, and dry pressure/dwell testing prove no leak.
+- Owner reports Starlink working; fridge and pump wired/switched; and all three DC charging outlets plus both two-device AC branches physically installed. Preserve labeling, polarity/GFCI/PE/load tests and the removable service face before panel closure.
+- The rear driver-side storage module is not installed. Dry-fit it with the LF Bros heater, fuel-tank/floor penetration, under-bed pump route, hot exhaust/intake, electrical service, air-fryer home, chair/aisle, and desk before drilling or trimming.
+- Prepare exact templates for the planned mid-September black-walnut routing appointment. Bring the actual sink and soap dispenser; route no drain/faucet/support cut until the full stack is physically proven.
+- Bench lid uses the available gas struts only after actual lid mass and mounting geometry are known. Add hinge, closed latch, anti-rattle bumpers, and mechanical open/overtravel control; more struts are not a substitute for correct force/lever geometry.
 
 ### Black walnut surface commission update — 2026-07-05
 
-Owner is leaning toward commissioning three final black walnut pieces from Nick after the current module geometry is locked:
+Owner is leaning toward commissioning three final black walnut pieces from the fabricator after the current module geometry is locked:
 
 1. **Passenger-side Galley countertop**
    - Target: black walnut live-edge slab, likely `~4 ft x 19 in` based on owner phrasing; confirm exact dimension sheet before cutting.
    - Thickness: `1.5 in` preferred; `2 in` acceptable if the best slab requires it.
-   - Entry end: last `~15 in` should use a live edge that curves inward if Nick can source a suitable slab, so the camper entrance feels intentional and less snag-prone.
+   - Entry end: last `~15 in` should use a live edge that curves inward if the fabricator can source a suitable slab, so the camper entrance feels intentional and less snag-prone.
    - The live edge must remain functional: cleaned/eased/sealed, no loose bark, no dirt/water trap, and no hip/shoulder snag with the one-barn-door entry path.
 2. **Driver-side computer desk top**
    - Target: dimensional black walnut rather than generic phenolic/Richlite as the final surface, while keeping plywood templates for fit validation first.
@@ -460,11 +462,11 @@ Implications:
 3. **Mandatory bare-tank truck dry fit:** after the floor cure gate, protect the Lonseal and place only the empty tank in the truck. Check wheel-well contact, extrusion/fridge envelope, plusnut/bracket reach, sender-removal clearance, fill/vent bend radius, continuous hose fall/rise, plumbing-pack access, low drain, and where a leak would travel.
 4. **Freeze the port map:** with the reported end-port-only geometry, default the gravity fill to an upper large end port and the vent to the highest suitable upper small end port. Neither needs a literal top-surface penetration if both communicate with the tank airspace and the fill hose falls continuously from the exterior hatch while the unrestricted vent rises continuously to its nipple. Verify whether a membrane-covered top boss exists before cutting a separate KUS sender opening.
 5. **Choose fitting methods:** use tank-manufacturer-approved molded, spin-weld, or properly backed bulkhead/under-ring methods appropriate to the polyethylene wall and access. The KUS sender method is KUS/Wema `FLS-U` stainless SAE five-hole C-ring under-ring plus the main sender gasket and the matched long `FLS-U` screws; do not treat sealant or self-tapping screws alone as structure. KUS's separate gasket-mounting kit uses short screws with bonded metal/rubber sealing washers. Do not peel or transplant those rubber pieces onto the long under-ring screws; the official `FLS-U` manual depicts the long screws plain.
-6. **Recover and retest the cut sender opening:** owner report `2026-07-27` confirms the `60 mm / 2-3/8 in` opening was cut and the first assembly attempted, but backing out the long screws damaged at least one ring thread. One screw is seized or spins without axial movement/clamp load, and an inverted water test pours through the main gasket. Remove the other screws; try gentle upward load while backing out a free-spinning screw, then remove only the failed screw head if necessary while protecting the polyethylene, tethering the C-ring, and capturing all swarf. Lift the sender, rotate the damaged ring/shank out through the opening, and replace the ring, main gasket, and all matched long screws rather than tapping oversize, installing a thread insert, or using RTV as a clamp substitute. Inspect the tank sealing land and sender flange for gouge, crack, bend, or distortion. Hand-start every screw and tighten incrementally in a star pattern with a hand driver; stop on any premature binding. Repeat a static wetting/inverted leak test before the extrusion locks access.
+6. **Sender repair complete; preserve and prove:** owner report `2026-08-27` says the replacement `FLS-U` under-ring, main gasket, and matched screws are installed. Keep the opening accessible; inspect the sealing land/flange, hand-check clamp consistency, and include the sender in the final static/dry pressure-dwell leak proof before first-fill closeout. Do not infer leak acceptance from hardware installation alone.
 7. **Install wet-side first:** hard-mount the tank restraint and compact pump/accumulator pack before passenger-side furniture closure. Support the flex/PEX transitions, protect the wet/dry boundary, and preserve the documented cooler/panel/frame removal path; do not add fittings solely to make the assembly quick-removable.
 8. **Cut the exterior fill/vent last:** physically prove the installed tank endpoints, hose fall/vent rise, backing, service access, and spill/overflow path from both sides before cutting the camper/bed-side interface.
 
-Current execution update (`2026-08-02`): step 7 has progressed through tank restraint—the tank is strapped to the truck-bed-wall plusnut locations inside the hard-mounted Galley structure. The KUS under-ring/gasket repair, final fill/vent hookup, sink/faucet termination, and dry pressure/dwell test remain the water-service acceptance gates.
+Current execution update (`2026-08-27`): the tank is strapped into the hard-mounted Galley structure and the replacement KUS under-ring/gasket/hardware are installed. Final fill/vent hookup, actual sink/faucet/soap/drain stack, continuous graywater slope, and dry pressure/dwell/leak proof remain the water-service acceptance gates.
 
 ### Propane hot-water routing baseline (`2026-08-01` installed camper ports)
 
@@ -541,7 +543,7 @@ Purchase posture: the `2026-07-26` propane shower setup includes one HOTTAP V2 E
 
 The grey AWW foldable `23.6 x 15.5 in` stone mat is for outdoor showers.
 
-For sink graywater, start with a removable under-sink vessel before adding an under-truck tank. Mock `2.5 gal` (`~20.9 lb` water) and `5 gal` (`~41.7 lb` water) sizes with the actual sink drain. The baseline should include a compact waterless trap, vented container connection, positive travel retention, removable spill tray/leak-sensor point, and a lift path that works when full. An under-truck gray tank remains a post-shakedown option because it adds a bed penetration, external vent/dump hardware, road-debris protection, freeze exposure, and legal-dump discipline; its dump valve should not be treated as a normally open drain.
+For sink graywater, keep architecture open until the actual sink/drain/tank mockup. First test candidate: a removable vented under-sink vessel around `2.5 gal` (`~20.9 lb` water) with a compact waterless trap, continuous fall without a flat run across the fresh-tank crown, positive travel retention, normally closed outlet, spill/leak visibility, and a lift path that works when full. Do not make open ground discharge the default; use a campsite-approved hose/valve mode only where lawful and appropriate. An under-truck gray tank remains post-shakedown because it adds penetration, freeze, vent/dump, heat/exhaust, and road-debris exposure.
 
 ### Countertop and appliance strategy
 Use convertible surfaces:
@@ -549,10 +551,10 @@ Use convertible surfaces:
 - Small sink with flush cover.
 - Purchased galley fixture baseline: Sarlai drop-in/workstation sink, black topmount, `15 in x 15 in` exterior with approx. `11 in x 13 in` interior basin, plus FORIOUS black pull-out faucet with soap dispenser.
 - Current fit assumption: an `18-19 in` countertop with about `14 in` clear extrusion opening is probably workable because the chosen sink is topmount, but the actual sink cutout, faucet shank/nut/hose bends, drain/graywater path, and any local rail/connector drop still need field validation before final cuts.
-- Final Galley surface direction: commission a black walnut live-edge slab after the plywood template is proven; current owner target is likely `~4 ft x 19 in`, `1.5 in` preferred thickness / `2 in` acceptable, with the last `~15 in` of the entry end curving inward if the slab allows.
+- Final Galley surface direction: commission a black walnut live-edge slab at the planned mid-September routing appointment; bring the actual sink and soap dispenser. Current target is likely `~4 ft x 19 in`, `1.5 in` preferred thickness / `2 in` acceptable, with the last `~15 in` of the entry end curving inward if the slab allows.
 - Treat the final walnut counter as protected furniture, not a raw cutting board: satin polyurethane or equivalent durable finish, all faces/cutouts/live edges sealed, and epoxy limited to void/check stabilization unless the full flood-coat look is intentionally selected.
 - Removable Duxtop `8100MC/BT-180G3` induction cooktop stored vertically or in a retained slot when not in use; cooking position must keep pan handle, cord, GFCI outlet, and countertop heat clearance clear of the sink/faucet.
-- Dedicated low cubby for the Ninja SP151 air-fryer/toaster oven with positive travel restraint, heat clearance, crumb-cleanout access, and a plug/service path that does not cross the wet bay.
+- Dedicated low cubby for the Ninja SP151 air-fryer/toaster oven with a screwed/through-bolted or mechanically latched cradle and positive appliance retention; adhesive tape alone is not the primary crash restraint. Preserve manufacturer heat clearances, ventilation, crumb-cleanout, and a plug/service path away from the wet bay. Internals must also be quiet/retained: use their designed nesting if secure, or heat-compatible silicone/metal clips and padded stops outside cooking airflow; never leave loose rack, basket, or pan parts free to hammer the glass/heating elements during travel.
 - Cutting board / sink cover slot.
 - Collapsible dish tub instead of a deep domestic sink if vertical volume is tight.
 - Low appliance bay can remain flexible around the Ninja SP151 for dry food bins or a removable appliance crate only if they do not compromise heat clearance, graywater access, or wet/dry separation. No interior water-heater cubby is reserved.
