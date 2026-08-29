@@ -20,6 +20,11 @@ Purpose: short-term buy list for finishing the live-tested electrical board as a
 
 Scope note: this is a purchase aid, not a final cut list. Do not order final extrusion cuts, drawer slides, panel skins, or cosmetic trim from this document alone.
 
+## Vehicle transport purchase captured `2026-08-28`
+
+- **E-Moto Rack Complete Dual E-Moto Carrier System:** purchased for truck/e-moto transport. The recorded purchase basis is the `$526.40` selection-time item price plus `$49.00` shipping, or `$575.40` before unprovided tax. Public product reference: <https://shop.emotorack.com/products/complete-dual-bike-system-1>.
+- Receipt and inspection remain pending. Before carrying the Talaria, prove `2 in` receiver fit, Warp 9 peg interface, anti-rattle/fastener setup, RangeMax swingout and rear-clearance geometry, and a progressive loaded road test.
+
 ## Private procurement evidence
 
 When the owner requests reconciliation, Atlas can use a private, read-only Gmail connection to locate Amazon order confirmations, invoices/receipts, shipment notices, returns, and refunds relevant to this build. Mailbox access is task-driven rather than continuous monitoring. Only sanitized build facts may enter this public repo: item, quantity, price, useful order-total components, purchase date, and fulfillment/refund status. Omit the email address, raw message or attachment, order number, delivery address, payment details, and unrelated personal purchases; reconcile extracted facts against the BOM before treating them as project state.

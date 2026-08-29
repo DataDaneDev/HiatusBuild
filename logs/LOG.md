@@ -1,3 +1,8 @@
+## 2026-08-28 — Dual e-moto carrier added to truck BOM
+
+- Owner confirmed purchase of the E-Moto Rack Complete Dual E-Moto Carrier System for truck/e-moto transport. BOM row `361` records the `$526.40` selection-time item price plus `$49.00` owner-confirmed shipping, or `$575.40` before unprovided tax.
+- Active BOM increased from `$60,152.54` to `$60,727.94`. Receipt, `2 in` receiver fit, Warp 9 peg interface, RangeMax swingout and rear-clearance mockup, and loaded road acceptance remain pending.
+
 ## 2026-08-27 — Working-utility checkpoint and next dependency gates
 
 - Owner reports the fixed-body Starlink pass-through/retractile jumper and Standard 4 X direct-DC conversion are operational. Starlink is switched on a dedicated `20A` blade fuse. Final label, backing/core-edge seal, rear strain relief, shield-shell, cap/retention/spray, loaded heat/dropout/reboot, full roof-motion, and post-drive checks remain.
