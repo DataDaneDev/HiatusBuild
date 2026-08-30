@@ -1,3 +1,9 @@
+## 2026-08-30 — 60 mm diesel-heater floor turret purchased
+
+- Owner confirmed purchase of the CaLeQi stainless `60 mm / 2.37 in` diesel-heater turret, Amazon ASIN `B0DSLFF77Q`, at the observed `$19.99` item price; exact paid total was not provided. Nominal geometry is a `200 x 180 mm` top plate with a `125 mm` circular skirt.
+- The depth is intentionally longer than the permanent `3/4 in` plywood/Lonseal/bed stack rather than an automatic overhang error. Depending on rib-high versus valley geometry, the skirt should project roughly `0.9-1.6 in` below the bed underside; actual underbody obstruction and road-exposure clearance controls.
+- On receipt, dry-fit the LF Bros studs and supplied gasket to the turret before any truck cut, measure the real skirt/weld, place the plate on the finished-floor plane with skirt downward, and survey the truck fuel tank, fuel/EVAP/brake lines, wiring, crossmembers, undercoating, pipe sweeps, and service reach. The original flat plate is not stacked with the turret; adhesive heat shield remains secondary edge protection rather than the primary CO/weather barrier.
+
 ## 2026-08-30 — Diesel tank package purchased; LF Bros tank reassigned to graywater
 
 - Owner confirmed purchase of the eight-item Amazon diesel package: EVIL ENERGY `10 gal` aluminum tank with listed `3-90 ohm` sender, small-line feed adapter/shutoff/barb/sealant, and remote `5/16 in` rollover-vent hose/valve. BOM row `65` records the captured `$200.28` pre-tax listing-price sum; the exact paid total was not provided. Listing imagery indicates the filler cap and two lower `-10AN` caps are included, so no duplicate cap is planned pending delivered-parts inventory.

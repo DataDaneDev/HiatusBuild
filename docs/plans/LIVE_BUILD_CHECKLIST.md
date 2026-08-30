@@ -20,7 +20,7 @@ related:
 
 # Live Build Checklist — Electrical Commissioning + Wet-Spine Integration
 
-As-of: `2026-08-12`
+As-of: `2026-08-30`
 
 Owner: Sunny / Dane
 
@@ -57,7 +57,7 @@ It does **not** replace the owner docs:
 - Adhesive cable raceway/zip-tie bases are accepted as routing aids, not structural road-load support. Use T-slot anchors/P-clamps or equivalent structural redundant restraint at exits, direction changes, connectors, service loops, and on the exterior PV run so adhesive alone never carries spring, wind, or branch load.
 - Starlink's installed route and direct-DC conversion work. Retain the complete OEM cable for recovery and remove/stow the roof equipment for tight brush. Perform final label, connector-cap/retention, spray, roof-motion, loaded-heat, and post-drive inspection before calling the route travel-accepted.
 - All four Renogy `175W` panels have arrived. One-panel physical test-fit plus measured layout indicates coexistence with Starlink/MaxxAir and near-total roof use. Keep one `4S1P` string on the Victron `150/45`; direct bonding waits on exact silicone/substrate preparation, coupon/cure proof, and one-panel shakedown. The PV retractile cord is ordered; verify its exact conductors, OD/gland fit, ratings, tangents, spring force, and full `28 in` roof stroke on receipt.
-- The LF Bros heater is the main unresolved systems install. The EVIL ENERGY `10 gal` diesel tank/feed/vent package is purchased, and the LF Bros `10 L` plastic tank is reassigned to graywater. Coordinate the heater, sealed floor turret, full underbody exhaust/intake/fuel route, tank restraint/containment, and rear driver-side storage module before drilling or installing the module. Heat shield is supplemental; vehicle fuel tank/line/EVAP/brake/wiring/undercoating/combustible clearance remains a hard gate.
+- The LF Bros heater is the main unresolved systems install. The EVIL ENERGY `10 gal` diesel tank/feed/vent package and CaLeQi `60 mm / 2.37 in` stainless turret are purchased, and the LF Bros `10 L` plastic tank is reassigned to graywater. The turret depth is acceptable only after a physical underside check: dry-fit the LF Bros studs/gasket to the delivered plate, measure the actual `125 mm` skirt and weld, place it skirt-down on the finished-floor plane, and verify that its projected depth plus intake/exhaust pipe sweeps clear the truck tank, fuel/EVAP/brake lines, wiring, crossmembers, undercoating, and road exposure before making the single round penetration. Do not stack the original flat plate. Heat-shield sheet is secondary edge protection, not the primary turret wall or CO/weather seal.
 
 ## Historical July 4 sprint strategy
 
