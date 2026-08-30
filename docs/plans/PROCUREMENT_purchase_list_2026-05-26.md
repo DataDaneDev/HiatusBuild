@@ -12,9 +12,9 @@ related:
   - "[[ELECTRICAL_fuse_schedule]]"
 ---
 
-# Active Procurement Purchase List — refreshed 2026-06-01
+# Active Procurement Purchase List — refreshed 2026-08-30
 
-Freshness note `2026-06-01`: filename date is historical; this is the current short-horizon procurement surface. Use it for shopping-cart posture, not final cut/fabrication geometry.
+Freshness note `2026-08-30`: filename date is historical; this is the current short-horizon procurement surface. Use it for shopping-cart posture, not final cut/fabrication geometry. The diesel-tank section now records the purchased package and receipt gates; do not reuse its superseded candidate posture.
 
 Purpose: short-term buy list for finishing the live-tested electrical board as a hard-mounted, strain-relieved mobile module, plus only the supporting interior/prototype items that should not block that work.
 
@@ -35,7 +35,7 @@ When the owner requests reconciliation, Atlas can use a private, read-only Gmail
 2. Finish electrical-board hard-mount, protection, labeling, strain-relief, and abrasion-control hardware after checking what is now on hand.
 3. Orion input cleanup is reduced to one Lynx-compatible fuse: obtain a verified `40A` MEGA (`58VDC` minimum under the locked `56.8V` charge ceiling; Victron `CIP138040020 40A/80V` is the replacement fallback) for Slot 4 if verified stock is not already on hand. No standalone `F-06`, DIN holder, or additional inline fuse hardware is required.
 4. WIP TNUTZ shopping cart for `10-series` prototype stock/hardware after reviewing the visual aids and current module assumptions; do not treat it as final-cut geometry.
-5. Diesel heater tank later, after physical re-measurement.
+5. Inventory and fit-check the purchased diesel tank/feed/vent package; do not buy duplicate caps or alternate tank hardware unless delivered inventory disproves the selected setup.
 
 ## Amazon / Victron purchase list
 
@@ -105,19 +105,13 @@ Known interface: gravity-fill vent nipple measured around `10 mm OD` on the main
   - Do not use the previous `1/2 in ID x 5/8 in OD` tube for this vent nipple; it is too large.
   - `7/16 in ID` is last-resort only and should be clamped and vent/leak checked.
 
-### Diesel heater fuel tank
+### Diesel heater fuel tank — purchased `2026-08-30`
 
-Posture: not a blocker. Re-measure before buying. Carry-extra-fuel is acceptable until the final tank/service envelope is validated.
-
-- **Possible slim candidate if actual clearance is at least ~3.5 in**
-  - Candidate: `10 L / 2.64 gal` stainless parking-heater fuel tank for Webasto/Eberspacher-style heaters.
-  - Link: <https://www.amazon.com/Parking-Stainless-Eberspacher-Replacement-Distance/dp/B0G4RP11X8>
-  - Planning caveat: prior search suggested no clean off-the-shelf `5-10 gal` tank fits a true ~`17 in x 3 in` opening; the `3 in` depth is the blocker.
-
-- **Decision rule**
-  - If measured usable depth is under ~`3.5 in`, skip this class of off-the-shelf tank.
-  - If `5-10 gal` is mandatory, expect custom slim tank or alternate mounting.
-  - If lower capacity is acceptable, a `10 L` slim tank can remain a candidate.
+- **Selected package:** EVIL ENERGY `10 gal` aluminum tank with listed `3-90 ohm` sender plus the small-line feed adapter/shutoff/barb/sealant and remote `5/16 in` rollover-vent hose/valve recorded in BOM row `65` (`$200.28` captured pre-tax listing-price sum; exact receipt total not provided).
+- **Receipt gate:** verify the filler cap, both lower `-10AN` outlets/caps, both upper `-10AN` ports, sender leads/endpoints/direction, every purchased adapter/valve/hose, and shipping condition. Determine whether the filler cap is sealed or vented: the remote rollover valve must be the only atmospheric vent path unless any cap vent has equivalent rollover shutoff. Do not buy duplicate caps or alternate tank/feed/vent parts before this inventory.
+- **Fit gate:** prove approximately `86 lb` full-tank restraint, exterior mounting or liquid-tight externally vented containment, serviceable filler/shutoff, upright external rollover vent, filter/pump placement, protected original `5 mm OD / 2 mm ID` LF Bros line entry, and the complete heater/exhaust/intake/storage geometry before drilling or fueling.
+- **Joint rule:** diesel-rated thread sealant belongs only on tapered NPT joints per its instructions. AN fittings seal at the flare seat; inspect those seats and put no tape/sealant on AN threads. Leak-test a small outdoor test fill before service.
+- **Displaced tank:** the LF Bros `10 L` plastic tank is assigned to removable graywater and must remain never-fueled.
 
 ## Mouser / electrical cleanup list
 
@@ -187,7 +181,7 @@ Ordering posture: WIP shopping cart / prototype material only. Do **not** buy th
 - Drawer slides.
 - Panel skins.
 - Cosmetic trim.
-- Large diesel tank.
+- Additional diesel tank/feed/vent hardware; the selected package is purchased and awaits delivered-parts inventory/fit proof.
 - **Panels are purchased:** `4x Renogy 175W flexible monocrystalline = 700W` on `2026-08-12`; do not buy attachment/support hardware yet. First verify received SKU/labels/manual and place `1:1` templates including junction boxes, leads, connectors, and grommets. The current screen needs one fully supported panel across each side track plus two inside-skin panels. Release support hardware only after fan/Starlink cycling, two-side load/uplift/fairing design, preliminary `<=75 lb` budget, and any required insurer/Hiatus acceptance. The selected PV moving route is one continuous front-gap retractile with a factory straight lower tail through a fixed-shell gland—no exterior quick disconnect. Do not buy the cord or drill until full-stroke endpoint distances, roof-down articulation clearance, tangent/gland geometry, and written `>=150VDC`/coiled-ampacity/outdoor-flex ratings pass. Bonding/travel also require actual weight, attachment proof, final PV route hardware, and hot `4S`/`150-45` commissioning. A single series string does not presently call for individual string fuses.
 - Custom/fancy bracket packs beyond prototype hardware.
 

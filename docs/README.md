@@ -9,7 +9,7 @@ status: active
 
 # Docs Map
 
-Use this folder map when deciding where a document belongs. Current repo posture is **working utility closeout plus solar/heater/interior integration** (`2026-08-27`): Starlink, fridge, pump, DC charging outlets, and four duplex AC devices are wired; the immediate safety task is the labeled temporary switch/service face; solar, diesel-heater/fuel routing, graywater, final walnut, alternator commissioning, travel restraint, and finish paneling retain explicit gates. Treat pre-install/readiness plans as historical references unless explicitly refreshed.
+Use this folder map when deciding where a document belongs. Current repo posture is **working utility closeout plus solar/heater/interior integration** (`2026-08-30`): Starlink, fridge, pump, DC charging outlets, and four duplex AC devices are wired; the immediate safety task is the labeled temporary switch/service face; the `10 gal` diesel tank/feed/vent package is purchased and the LF Bros `10 L` tank is selected for graywater; solar, physical heater/fuel fit-up, sink/drain mockup, final walnut, alternator commissioning, travel restraint, and finish paneling retain explicit gates. Treat pre-install/readiness plans as historical references unless the active build checklist points back to them.
 
 ## Obsidian navigation
 - Start with [00 Home](../00%20Home.md) for daily navigation.

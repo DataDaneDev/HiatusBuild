@@ -21,11 +21,11 @@ related:
 
 # Interior Furniture Layout and Galley Design Concepts
 
-As-of date: `2026-08-27`
+As-of date: `2026-08-30`
 
 Purpose: capture the active furniture/layout direction for the Hiatus/F-350 camper before final cuts. This document owns the interior **layout concept**, driver-side electrical-module/bench/desk integration, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, galley/plumbing service strategy, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`; the finish/paneling/storage feature-design detail now lives in `docs/implementation/INTERIOR_finish_paneling_and_feature_choices.md`.
 
-Status: **working interior-integration baseline**, refreshed `2026-08-27`. The hard-mounted electrical/Galley/Bench structure is in place; Starlink is working, while the fridge and pump are owner-reported wired/switched and the three DC charging outlets/four AC duplex devices are physically installed pending closeout tests. The next geometry gates are the safe removable switch/service face, diesel heater plus rear storage module, mid-September walnut/sink routing, graywater slope/cassette, actual chair/aisle/desk mockup, bench lid/struts, positive monitor travel cradle, air-fryer retention, and removable finish panels. Do not close access around heater/fuel/exhaust, sink/drain, electrical service, batteries, or hidden routes before their tests pass. Hot water remains locked to the propane-only rear-box Joolca HOTTAP V2 package.
+Status: **working interior-integration baseline**, refreshed `2026-08-30`. The hard-mounted electrical/Galley/Bench structure is in place; Starlink is working, while the fridge and pump are owner-reported wired/switched and the three DC charging outlets/four AC duplex devices are physically installed pending closeout tests. The next geometry gates are the safe removable switch/service face, purchased diesel tank plus heater/rear storage module, mid-September walnut/sink routing, LF Bros `10 L` graywater cassette, actual chair/aisle/desk mockup, bench lid/struts, positive monitor travel cradle, air-fryer retention, and removable finish panels. Do not close access around heater/fuel/exhaust, sink/drain, electrical service, batteries, or hidden routes before their tests pass. Hot water remains locked to the propane-only rear-box Joolca HOTTAP V2 package.
 
 Orientation convention throughout:
 
@@ -80,9 +80,9 @@ Build the camper as a serviceable, separated wet/dry systems cluster around a cl
    - Electrical panel/closet extends up to the `46 in` maximum interior build height.
    - A shelf/box can project toward the computer desk/camper entry doors for DC electronics, laptop plugs, and office power access.
    - Diesel heater stays low in the driver-side utility zone, physically separated from battery and wet-service cavities.
-4. **Exterior diesel preference = keep fuel outside the cabin.**
-   - Investigate a narrow truck-bed-wall diesel tank, ideally around `8 gal` and roughly `3 in x 17 in` if a product exists.
-   - Preferred fill/spill/pump exposure is outside, with only a protected fuel line passing through a grommet or sealed bulkhead to the heater.
+4. **Purchased diesel package = keep fuel outside the cabin or in sealed containment.**
+   - The EVIL ENERGY `10 gal` aluminum tank/feed/vent package is purchased; the LF Bros `10 L` plastic tank is reassigned to graywater and must remain never-fueled.
+   - Preferred tank/fill/vent/pump exposure is outside, with only a protected fuel line passing through a grommet or sealed bulkhead to the heater. Any interior tank location requires liquid-tight externally vented containment and positive restraint for approximately `86 lb` full mass.
 
 Bottom line: the new layout is better because the fridge, tank, pump, batteries, electrical closet, and heater now form a real serviceable 3D systems package instead of a flat garage-floor mockup. The tradeoff is that rough 80/20 skeleton work becomes part of layout validation, not just final cabinetry.
 
@@ -543,7 +543,7 @@ Purchase posture: the `2026-07-26` propane shower setup includes one HOTTAP V2 E
 
 The grey AWW foldable `23.6 x 15.5 in` stone mat is for outdoor showers.
 
-For sink graywater, keep architecture open until the actual sink/drain/tank mockup. First test candidate: a removable vented under-sink vessel around `2.5 gal` (`~20.9 lb` water) with a compact waterless trap, continuous fall without a flat run across the fresh-tank crown, positive travel retention, normally closed outlet, spill/leak visibility, and a lift path that works when full. Do not make open ground discharge the default; use a campsite-approved hose/valve mode only where lawful and appropriate. An under-truck gray tank remains post-shakedown because it adds penetration, freeze, vent/dump, heat/exhaust, and road-debris exposure.
+For sink graywater, use the never-fueled LF Bros `10 L / 2.64 gal` plastic tank as the first removable cassette; it carries about `22.1 lb` of water when full. Keep the top cap accessible for cleanout, add an external vent, positively retain the tank, and preserve a lift/removal path. The sink side remains mockup-gated: inventory the actual basket/tailpiece, then use a compact waterless trap and a continuously falling `3/4-1 in` smooth-wall hose into a top inlet. The existing `1/2 in` clear hose is too small for the sink drain but is useful for a low dump leg through a gasketed bulkhead, short hose, and accessible normally closed full-flow valve. Hold any tank hole until the exact bulkhead has adequate flat seal land and inside access. Keep the discharge end capped during travel and discharge only where lawful/appropriate. An under-truck gray tank remains post-shakedown because it adds penetration, freeze, vent/dump, heat/exhaust, and road-debris exposure.
 
 ### Countertop and appliance strategy
 Use convertible surfaces:
