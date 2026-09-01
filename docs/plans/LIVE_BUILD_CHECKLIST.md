@@ -199,7 +199,7 @@ Goal: prove full-time work geometry before building clever monitor mechanisms or
 - [~] Apply owner-identified Desk/storage corrections from the first test install before locking top/panel geometry.
 - [ ] Mark these `D` on the floor before final desk cuts if any uncut pieces remain: `1-3`, `5-1`, `6-1`, `7-2`, `7-3`, `8-2`, `8-4`, `9-1`, `9-3`, `10-1`, `10-2`, `10-4`, `12-2`, `12-3`, `15-4`, `16-3`, `17-1`, `17-2`, `18-2`, `18-3`, `19-1`, `20-1`, `20-2`, `21-1`.
 - [~] Reconfirm driver-side desk footprint near wheel well; current target remains roughly `24 in x 48 in` until measured fit says otherwise.
-- [ ] Mock chair/stool position and seated elbow height.
+- [~] FLEXISPOT Foldex purchased `2026-09-01`; on receipt, fully lower/fold it and mock seated elbow height plus the five-star base against the Desk, wheel well, and aisle.
 - [ ] Check knee/foot clearance around wheel well and electrical step projection.
 - [~] Place rough desktop or template at target height.
 - [ ] Confirm entry/exit movement and hip/shoulder clearance.
@@ -518,7 +518,7 @@ These are the things most likely to be forgotten when the focus is only modules/
 
 ## Human factors
 
-- [ ] Install/mock the rear storage module, real chair, knees, and roughly `24 in` desk together before trimming cabinetry or top. Try the folding/stowed-chair option first; shrink toward `20 in` only if measured seated and entry/aisle tests still fail.
+- [~] FLEXISPOT Foldex purchased `2026-09-01`; after receipt, install/mock the rear storage module, real chair, knees, and roughly `24 in` desk together before trimming cabinetry or top. Fully lower/fold the chair and test entry/aisle plus road restraint before any reduction toward `20 in`.
 - [ ] Step into cabover repeatedly using the bench/step mockup before final lid/panel choices.
 - [ ] Simulate a workday cable mess: laptop, monitor, keyboard, mouse, phone, tablet, Starlink/router.
 - [ ] Simulate cooking/cleaning path: sink cover, induction, Ninja, trash, dish tub, graywater removal.

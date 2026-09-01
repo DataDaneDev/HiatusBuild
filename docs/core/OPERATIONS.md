@@ -175,7 +175,7 @@ Use this only as a manual rollback reference if the MultiPlus settings need to b
 - Log each incident or near-miss in `logs/LOG.md` and add unresolved hazards to `docs/core/TRACKING.md`.
 
 ## Marketplace sourcing routine (from workbook)
-- Daily 5-minute scan: 80/20 extrusion, RV water tank, sink/faucet, office chair, monitor arm, cooktop, fridge, diesel heater, camper parts.
+- Daily 5-minute scan: 80/20 extrusion, RV water tank, sink/faucet, monitor arm, cooktop, fridge, diesel heater, camper parts. Office-chair sourcing is closed by the purchased FLEXISPOT Foldex unless physical fit fails.
 - Save searches and enable notifications to capture liquidation listings quickly.
 - Prioritize used-commercial office gear over consumer-tier furniture for daily work ergonomics.
 - Use strict safety screening for electrical components, especially used batteries and charging hardware.
@@ -185,7 +185,7 @@ Use this only as a manual rollback reference if the MultiPlus settings need to b
 ## Used-parts target pricing anchors
 - 80/20 extrusion: target `$2-$4/ft` (vs higher retail).
 - Plywood and hardwood: target `$40-$60/sheet` for usable cabinet-grade material.
-- Office chair: target `$200-$400` for premium used models.
+- Office chair: purchased FLEXISPOT Foldex at `$210`; reopen used-chair sourcing only if the received chair fails the desk/aisle/stowage mockup.
 - Monitor arm: target `$50-$120` with adequate load rating.
 - Water tank: target `$30-$100` with food-safe/NSF confirmation.
 - Solar panels: target around `$0.30-$0.50/W` where condition is verified.

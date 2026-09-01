@@ -708,8 +708,8 @@ related:
 - Decision: Preserve the current `24 in x 48 in` Desk as the starting envelope and delay any reduction toward `20 in` until the rear storage module and actual chair are installed/mock-fitted; try a folding/stowed chair first.
 - Context: A backrest/wheel base may intrude into the aisle, but trimming the storage module and walnut Desk would create major rework and permanently reduce the mission-critical workstation.
 - Decision drivers: office-first mission, reversibility, actual aisle/entry evidence, chair stowage leverage, and avoiding a premature four-inch Desk sacrifice.
-- Result: no cabinet trim or walnut Desk cut from the current concern alone. The monitor and laptop arms are work-position devices; travel requires padded hard-stop cradles and positive mechanical restraints that do not load the LCD, arm joints, or Desk edge.
-- Follow-up: run seated, entry, roof-down, and travel-cargo mockups with all real components.
+- Result: no cabinet trim or walnut Desk cut from the current concern alone. Owner purchased the FLEXISPOT Foldex folding ergonomic office chair on `2026-09-01`, which supports the folding/stowed direction but does not clear physical geometry until received. The monitor and laptop arms are work-position devices; travel requires padded hard-stop cradles and positive mechanical restraints that do not load the LCD, arm joints, or Desk edge.
+- Follow-up: on receipt, fully lower/fold the FLEXISPOT chair and run seated, entry, roof-down, desk/base/aisle, caster/glide, and travel-cargo mockups with all real components.
 
 - ID: D-077
 - Date: 2026-08-27

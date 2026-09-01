@@ -1,3 +1,9 @@
+## 2026-09-01 — FLEXISPOT Foldex office chair purchased
+
+- Owner confirmed purchase of the FLEXISPOT Foldex folding ergonomic office chair at `$210.00`; seller, tax/shipping, and exact color variant were not provided. BOM row `100` now records the purchased chair and supersedes the deferred Tervo Model U estimate.
+- Selection closes the chair purchase class but not physical acceptance. On receipt, fully lower and fold the chair, measure the real folded height and five-star base, verify caster-stem or bell-glide compatibility, and run seated, entry/aisle, desk, and road-restraint mockups.
+- Preserve the current roughly `24 in x 48 in` Desk until the purchased chair and rear storage module pass that integrated mockup; do not trim the workstation from nominal chair dimensions.
+
 ## 2026-08-30 — 60 mm diesel-heater floor turret purchased
 
 - Owner confirmed purchase of the CaLeQi stainless `60 mm / 2.37 in` diesel-heater turret, Amazon ASIN `B0DSLFF77Q`, at the observed `$19.99` item price; exact paid total was not provided. Nominal geometry is a `200 x 180 mm` top plate with a `125 mm` circular skirt.
