@@ -245,7 +245,7 @@ Goal: build the galley datum so cooler/fridge/plumbing fitment stops being guess
 - [~] The separate BLUE/RED camper penetrations and direct QDs are installed. Continue to hold the rear-box HOTTAP/propane package until the purchased Quick-Release HOTTAP Bracket backing and HOTTAP V2 Mount Cover, cylinder restraint/venting, regulator service hatch, supplied-hose reach, and operating clearances are physically proven.
 - [x] Mock passenger-side fridge/cooler position with real handles, hinge/lid swing, cord bend, and hand clearance; the real cooler now sits on the hard-mounted extrusion support.
 - [ ] Confirm raised fridge/cooler height target, currently about `16 in` above floor/service zone.
-- [ ] Confirm relationship to `36 gal` wheel-well tank envelope.
+- [ ] Confirm relationship to `35 gal` wheel-well tank envelope.
 - [x] Build the lofted fridge/cooler support skeleton as a service exoskeleton, not a sealed cabinet.
 - [x] Tie Galley to Bench/electrical structure with removable plates/bolts reachable from the aisle/top/service openings; owner reports the integrated frame and returned Bench extrusion are hard-mounted and very stiff.
 - [~] Add positive fridge/cooler travel restraint and hard stops. Use the cooler's foot-level tie points with a low-stretch cam strap to the support extrusion rather than over-tightening a ratchet strap across the case; add one aisle-side hard stop and a closed-cell/EPDM bumper at the camper-wall contact area.
@@ -378,7 +378,7 @@ Goal: preserve the installed permanent floor and registered hardpoints while fin
 - [ ] Monitor known edges/hardpoints after wet/dusty drives and module work. Investigate only actual loose/expanding areas, moisture/dust trails, swelling, insert spin, or floor movement; do not reopen the floor speculatively.
 - [ ] Protect Lonseal with clean hardboard/cardboard/blankets during every extrusion/module/battery move; never drag parts across it.
 - [x] Hard-mount the electrical module first, using the registered rivnuts and verified support path. Initial hard mount is complete; integrated anti-rack/final road restraint remains a separate closeout gate.
-- [x] Install and restrain the `36 gal` tank within the hard-mounted Galley structure. Keep sender/fittings accessible and prove water acceptance separately.
+- [x] Install and restrain the `35 gal` tank within the hard-mounted Galley structure. Keep sender/fittings accessible and prove water acceptance separately.
 - [ ] Torque/witness-mark final module fasteners, then perform a low-consequence shakedown and inspect/retorque for insert spin, vinyl indentation, moisture, abrasion, leaks, or module shift.
 
 ## 11. Panels, skins, latches, storage, and travel retention
@@ -468,7 +468,7 @@ Goal: avoid building a beautiful overloaded rattle box.
 
 - [ ] Record door-sticker payload if not already captured.
 - [ ] Weigh major staged modules if practical: batteries, electrical module, bench, desk, galley, tank, water, tools.
-- [ ] Plan water as variable payload: `36 gal` full is about `300 lb` water alone, `320+ lb` installed with tank/brackets/hoses.
+- [ ] Plan water as variable payload: `35 gal` full is about `292 lb` water alone, `312+ lb` installed with tank/brackets/hoses.
 - [ ] Keep dense storage low and balanced; avoid stacking heavy pantry/tools high on passenger wall with full water.
 - [ ] Verify module bolts/hardpoints after the first short drive.
 - [ ] Listen for rattles; identify panel, extrusion, latch, cable, and appliance noise sources.

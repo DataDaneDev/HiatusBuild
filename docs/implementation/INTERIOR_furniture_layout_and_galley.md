@@ -69,7 +69,7 @@ Build the camper as a serviceable, separated wet/dry systems cluster around a cl
 
 1. **Passenger side = lofted fridge / wet spine / water-tank module.**
    - Iceco/fridge returns to the passenger side, raised about `16 in` on an extrusion exoskeleton.
-   - The fridge slightly overlaps the `36 gal` wheel-well water tank envelope, so the frame must be mocked in 3D before exact cuts.
+   - The fridge slightly overlaps the `35 gal` wheel-well water tank envelope, so the frame must be mocked in 3D before exact cuts.
    - Pump and accumulator sit in the measured `6 in` gap below the cooler support toward the batteries, on a thin vibration-isolated service plate with strainer-bowl access, a nonconductive splash divider, and a drained leak path away from battery terminals/cabling.
    - Sink/graywater/fill/vent/winterization remain cold-first and hot-ready.
 2. **Battery bench = separated energy mass adjacent to wet spine, not mixed plumbing storage.**
@@ -157,7 +157,7 @@ CAB / BULKHEAD / CABOVER
 │ Electrical closet / panel    │ Lofted Iceco/fridge skeleton │
 │ Up to 46 in build height     │ ~16 in raised over service   │
 │ DC electronics shelf/box     │ Slight tank overlap          │
-│ Laptop plugs / office power  │ 36 gal wheel-well tank       │
+│ Laptop plugs / office power  │ 35 gal wheel-well tank       │
 ├──────────────────────────────┼──────────────────────────────┤
 │ DRIVER MID                   │ PASSENGER MID                │
 │ Fixed computer desk          │ Pump + accumulator below     │
@@ -266,7 +266,7 @@ Recommended roles:
 
 - Lofted Iceco/fridge about `16 in` above the floor/tank service zone.
 - `10-series` or targeted 80/20 exoskeleton to support the fridge and define service-panel edges.
-- Under-fridge pump/accumulator/strainer/manifold bay next to the `36 gal` wheel-well tank.
+- Under-fridge pump/accumulator/strainer/manifold bay next to the `35 gal` wheel-well tank.
 - Battery bench adjacent to the plumbing bay, with hard separation between wet service and battery/electrical cavities.
 - Cushion-compatible bench top/lid when the Hiatus bed cushions are not deployed as the bed.
 
@@ -445,8 +445,8 @@ Water mass planning values:
 
 - `10 gal`: about `83.5 lb`
 - `20 gal`: about `166.9 lb`
-- `36 gal`: about `300.4 lb`
-- Installed full tank, brackets, hoses, and hardware: plan around `320+ lb`
+- `35 gal`: about `292.1 lb`
+- Installed full tank, brackets, hoses, and hardware: plan around `312+ lb`
 
 Implications:
 
@@ -621,7 +621,7 @@ Travel-retention standards:
 Recommended material logic:
 
 - **10-series / light rail / L-track / strut:** default for interior module framing, accessory rails, panels, baskets, hooks, removable dividers, wet-spine retainers, and soft-storage retention when the load is not clearly structural/dynamic.
-- **15-series T-slot:** no longer a broad starter-stock default after the `36 gal` wheel-well tank downscope. Use only for measured heavy/dynamic modules that prove they need the stiffness: possibly the lofted fridge support, electrical closet frame, battery bench structure, monitor mast/spine, or desk frame.
+- **15-series T-slot:** no longer a broad starter-stock default after the `35 gal` wheel-well tank downscope. Use only for measured heavy/dynamic modules that prove they need the stiffness: possibly the lofted fridge support, electrical closet frame, battery bench structure, monitor mast/spine, or desk frame.
 - **Plywood:** main carcasses, L-shaped electrical backer, lids, service panels.
 - **Phenolic/Richlite/laminated birch:** desk and galley top candidates if budget/weight tolerates it.
 - **HDPE/ABS/aluminum panels:** wet-service access panels, shower hatch backing, removable scuff/kick plates.

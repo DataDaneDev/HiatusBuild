@@ -1,3 +1,9 @@
+## 2026-09-01 — Water-tank and Lonseal order reconciled
+
+- Owner supplied the purchase record for the flooring/tank order: one `35 gal` Sprinter/Transit wheel-well tank at `$349.00`, eight linear feet of Lonwood Madera Topseal in Oregano at `$45.28/ft` / `$362.24`, and one gallon of Lonseal 650 adhesive at `$141.73`; item subtotal reconciles to `$852.97`.
+- Order shipping was `$119.00` and tax was `$63.98`, producing the owner-confirmed `$1,035.95` checkout total. BOM row `363` records shipping; order-level tax remains excluded under the BOM data contract.
+- BOM rows `73`, `149`, and `150` now use the confirmed item subtotals. The tank record corrects the prior `36 gal` assumption to the purchased `35 gal` product; current planning payload is about `292 lb` of water and roughly `312+ lb` installed full.
+
 ## 2026-09-01 — FLEXISPOT Foldex office chair purchased
 
 - Owner confirmed purchase of the FLEXISPOT Foldex folding ergonomic office chair at `$210.00`; seller, tax/shipping, and exact color variant were not provided. BOM row `100` now records the purchased chair and supersedes the deferred Tervo Model U estimate.

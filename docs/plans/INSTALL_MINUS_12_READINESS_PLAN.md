@@ -64,7 +64,7 @@ Install appointment:
 
 - Iceco fridge and the earlier water-tank assumptions invalidated the prior CAD location: the cooler/fridge did not open where planned.
 - Historical note: the May 4 working assumption moved the fridge/cooler toward rear-left/bottom-left; this has since been superseded by the May 14 passenger-side lofted fridge/wet-spine baseline, and existing furniture CAD remains reference-only.
-- Water-tank plan has changed from a tall/skinny vertical tank needing a heavy exoskeleton to a purchased `36 gal` wheel-well tank: lower, wider, bracketed, and intended to plusnut into bed walls.
+- Water-tank plan has changed from a tall/skinny vertical tank needing a heavy exoskeleton to a purchased `35 gal` wheel-well tank: lower, wider, bracketed, and intended to plusnut into bed walls.
 - Aluminum extrusion should be downscoped: do not buy the prior broad `15-series` starter order just to restrain the old vertical tank concept.
 - A faucet is now a missing discrete purchase item.
 - Hot water remains unresolved: electric tanked may be viable later, electric tankless is not realistic on the current inverter scale, and portable propane should be treated as outdoor-use-only unless a specific unit is listed for enclosed/RV use.
@@ -226,7 +226,7 @@ Treat current furniture CAD as stale/reference-only until the fridge and purchas
 
 ### Starter order strategy
 
-Do not buy the previous broad `15-series` starter package unless a remaining module has a real freestanding structural need. The purchased `36 gal` wheel-well tank removes the old vertical-tank exoskeleton requirement.
+Do not buy the previous broad `15-series` starter package unless a remaining module has a real freestanding structural need. The purchased `35 gal` wheel-well tank removes the old vertical-tank exoskeleton requirement.
 
 Historical order posture:
 
@@ -257,7 +257,7 @@ Defer:
 1. Measure actual Iceco body, handles, hinge/lid sweep, compressor vent side, and cord exit.
 2. Measure driver-side desk/monitor roof-down sweep envelope and mock the stow-low monitor block before committing to rising mast, under-desk flip-up, or quick-release sleeve geometry.
 3. Mock seated workstation ergonomics: chair/stool height, desk height/depth, knee/foot clearance, monitor viewing distance, cable/outlet reach, and whether storage intrudes on the workday posture.
-4. Dry-fit the purchased `36 gal` wheel-well tank: body envelope, fitting protrusions, bracket locations, plusnut access, service clearance, drain/fill/vent routing, and whether a secondary floor/tie-down load path is needed.
+4. Dry-fit the purchased `35 gal` wheel-well tank: body envelope, fitting protrusions, bracket locations, plusnut access, service clearance, drain/fill/vent routing, and whether a secondary floor/tie-down load path is needed.
 5. Historical May 4 step: tape/cardboard floor envelopes for the then-current rear-left fridge candidate, wheel-well tank, electrical, galley, and workstation. Current active layout should instead tape the passenger-side lofted fridge/wet-spine, tank overlap, battery bench, electrical closet/DC shelf, and workstation.
 6. Verify lid opening, slide extension if used, aisle/door clearance, ventilation, tie-downs, travel locks, cable service loops, and service access.
 7. Re-CAD block envelopes first.
