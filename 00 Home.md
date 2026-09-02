@@ -13,7 +13,7 @@ Start here when opening the project in Obsidian.
 
 ## Active Now
 - [Project](docs/core/PROJECT.md) - scope, milestones, fixed constraints, near-term priorities.
-- [Build order of operations](docs/plans/PROJECT_build_order_of_operations.md) - active switch-panel, solar/heater, countertop/drain, alternator, workstation, and panel-closeout dependency sequence.
+- [Build order of operations](docs/plans/PROJECT_build_order_of_operations.md) - active PE safety, heater/diesel/storage, Bubinga/sink/graywater, alternator, solar, workstation, and panel-closeout dependency sequence.
 - [Live build checklist](docs/plans/LIVE_BUILD_CHECKLIST.md) - running execution gates and hold points.
 - [Flooring subfloor build process](docs/implementation/FLOORING_subfloor_build_process.md) - permanent as-built floor state, cure/post-cure checks, hardpoints, and reinstall owner.
 - [Interior furniture and galley](docs/implementation/INTERIOR_furniture_layout_and_galley.md) - current office-first passenger-side lofted fridge/wet-spine, separated battery bench, and 10-series/overlay-panel furniture direction.

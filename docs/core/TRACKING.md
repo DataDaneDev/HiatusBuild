@@ -490,6 +490,7 @@ related:
 - Decision drivers: intentional furniture-grade interior, matching Galley/Desk/Bench design language, and the opportunity to use a controlled live edge at the Galley entry end.
 - Result: current surface baseline is a black walnut live-edge Galley countertop, likely `~4 ft x 19 in` pending exact confirmation, `1.5 in` preferred / `2 in` acceptable thickness, with the last `~15 in` curving inward if the slab allows; a dimensional black walnut computer desk top; and a dimensional black walnut L-shaped Bench/lid top supported on aluminum-extrusion tabs with gas struts if actual weight/geometry work. Finish default is satin polyurethane or equivalent durable clear film, with epoxy used selectively for void/check stabilization rather than full flood coat unless deliberately chosen.
 - Follow-up: create plywood/templates and dimension packet for the fabricator; confirm final Galley length/width, sink/faucet/appliance clearances, support tabs, Desk depth/height, Bench hinge/strut/latch geometry, finish sample, price, and schedule before premium cuts.
+- Supersession (`2026-09-02`): owner selected two live-edge Bubinga pieces instead: `48 in` Galley and `47 in` Desk. The Bench/lid remains a separate unfinished item; D-051 is preserved only as historical design provenance.
 
 - ID: D-052
 - Date: 2026-07-10
@@ -710,6 +711,7 @@ related:
 - Decision drivers: office-first mission, reversibility, actual aisle/entry evidence, chair stowage leverage, and avoiding a premature four-inch Desk sacrifice.
 - Result: no cabinet trim or walnut Desk cut from the current concern alone. Owner purchased the FLEXISPOT Foldex folding ergonomic office chair on `2026-09-01`, which supports the folding/stowed direction but does not clear physical geometry until received. The monitor and laptop arms are work-position devices; travel requires padded hard-stop cradles and positive mechanical restraints that do not load the LCD, arm joints, or Desk edge.
 - Follow-up: on receipt, fully lower/fold the FLEXISPOT chair and run seated, entry, roof-down, desk/base/aisle, caster/glide, and travel-cargo mockups with all real components.
+- Follow-up (`2026-09-02`): the final Desk material is now a `47 in` live-edge Bubinga piece. The chair/aisle/roof-down and monitor/laptop travel-restraint gates remain; the earlier walnut wording is historical.
 
 - ID: D-077
 - Date: 2026-08-27
@@ -718,6 +720,7 @@ related:
 - Decision drivers: direct fixture proof, minimum irreversible walnut work, winterization, parking-lot use, legal discharge discipline, and easy shakedown service.
 - Result: route no cut from nominal dimensions alone. Prove bowl/flange/faucet/soap/drain/support/tank stack and continuous fall with a waterless trap. Treat the nominal `2.5 gal` vessel as a first fit/service candidate, not a locked tank; open ground discharge remains optional only where lawful/appropriate, never the default.
 - Follow-up: build the full-height drain mockup before walnut routing and verify vessel size, venting, retention, filled lift/removal path, and spill behavior.
+- Follow-up (`2026-09-02`): the sink will be routed into the selected `48 in` live-edge Bubinga Galley piece at the mid-September appointment. Fresh-water plumbing, KUS, and the main tank are already operational; only the new sink joints and separate graywater system remain in this workstream.
 
 - ID: D-078
 - Date: 2026-08-30
@@ -852,7 +855,7 @@ related:
 - Mitigation: Keep heavy modules off for `72 hr` after actual adhesive completion; remove/clean/reinstall temporary clamp bolts carefully during cure; remove boards and photograph/inspect all edges, hardpoints, and raised/hollow areas after cure; accept stable cosmetic irregularity or define a localized repair before modules hide it. Protect the floor during every reinstall.
 - Trigger: Binding/spinning hardpoint bolt, loose/expanding edge or hollow area, board/washer imprinting, moisture, substrate movement, or damage during module reinstall.
 - Owner: Sunny
-- Status: Realized/monitoring; glue-down completed `2026-07-15`, post-cure inspection pending
+- Status: Accepted/monitoring; glue-down completed `2026-07-15`, subsequent installed use and owner-reported shakedown are good, and rework is now evidence-triggered only
 
 - ID: R-015
 - Risk: Modules can rack, shift, or create service problems if rivnuts are poorly set, bolts are inaccessible, clamp load crosses unsupported EPS, or heavy assemblies are left visibly loose.
@@ -861,7 +864,7 @@ related:
 - Mitigation: Use the owner-selected stainless rivnuts, verify firm collapse/no spin and usable threads, keep clamp load off EPS, record the location map, preserve service access, and use practical tabs/tie-ins where a heavier module needs more than one point of retention.
 - Trigger: Pickup-box drilling, insert procurement/installation, heavy-module reinstall, filling the water tank, installing batteries, or any road test.
 - Owner: Sunny
-- Status: Open / rivnut installation and restrained-reinstall gate
+- Status: Mitigated/monitoring; modules, batteries, and ICECO are restrained and the owner reports a successful existing-camper shakedown. Keep witness-mark/service-access inspection for newly disturbed or added hardware.
 
 - ID: R-016
 - Risk: Battery first-charge or paralleling error can create BMS trips, high-current faults, or mismatched parallel-bank behavior.
@@ -870,7 +873,7 @@ related:
 - Mitigation: MultiPlus LiFePO4 profile has been configured/owner-verified by first-battery behavior; keep source-current limit matched to the shore circuit, log voltage/SOC/temp during meaningful charge sessions, and verify parallel-bank behavior during future controlled charge/load use.
 - Trigger: Sustained shore charging, any high-SOC charge session, and first logged parallel-bank current-sharing check.
 - Owner: Sunny
-- Status: Partially mitigated; charger-profile programming closed, parallel-bank behavior and physical install/strain-relief gates still open
+- Status: Mitigated/monitoring; the `1S3P` bank has been paralleled and used for an extended period and the batteries are restrained. A current-sharing log remains useful diagnostic evidence but is no longer a paralleling-release gate.
 
 - ID: R-017
 - Risk: Workstation/monitor/electrical-shelf mechanisms can collide with the pop-down roof or become vibration projectiles if stow height, cable loops, shelves, panels, or latches are validated from assumptions instead of real shell measurements.
@@ -885,10 +888,10 @@ related:
 - Risk: Passenger-side lofted fridge/wet-spine plumbing can become inaccessible, freeze-prone, or hazardous to adjacent batteries if the `35 gal` tank fittings, pump, accumulator, graywater cassette, fill/vent lines, heater branches, or leak paths are trapped behind finished work without a known disassembly path.
 - Impact (1-5): 5
 - Likelihood (1-5): 3
-- Mitigation: The KUS replacement under-ring/main gasket/matched screws are installed and sender access is preserved. Hold first fill/final water closeout until fill/vent, sink/drain, and dry pressure/dwell tests pass. Use the selected never-fueled LF Bros `10 L` tank as a vented, positively retained, normally closed removable gray cassette; mock the actual sink tailpiece/waterless trap and a continuously falling `3/4-1 in` drain while preserving pump/strainer service, wet/dry separation, leak inspection, and the documented module/tank removal sequence.
-- Trigger: Sink/walnut routing, first fill, graywater mockup, pump commissioning, finish paneling, or passenger/rear module closure.
+- Mitigation: Fresh-water tank, KUS sender, pump/accumulator, fill/vent, PEX, and rear service ports have seen extensive installed use. Preserve sender/pump access and the known disassembly path. For the remaining work, seal/leak-check the new sink/faucet joints and use the selected never-fueled LF Bros `10 L` tank as a vented, positively retained, normally closed removable gray cassette with a continuously falling `3/4-1 in` sink drain.
+- Trigger: Sink/Bubinga routing, graywater installation, disturbed fresh-water joints, finish paneling, or passenger/rear module closure.
 - Owner: Sunny
-- Status: Partially mitigated; sender hardware installed, complete water/drain acceptance open
+- Status: Fresh-water portion mitigated/operational; sink and graywater integration remain open
 
 - ID: R-019
 - Risk: Diesel-heater fuel, exhaust, combustion-air, and hot-surface routing near the truck gasoline tank/plywood can create fire, vapor, CO, abrasion, or service hazards if the proposed location is released from eyeballed clearance and heat shielding alone.
@@ -908,7 +911,23 @@ related:
 - Owner: Sunny
 - Status: Open; panels fit physically but bonding/travel release remains held
 
-## Open questions
+## Current open questions — `2026-09-02`
+
+- Close the MultiPlus external PE/chassis connection and separate conductive-shell bond; verify continuous PE, no unintended PE-to-DC-negative jumper or fixed downstream neutral-ground bond, and GFCI behavior in inverter and accepted-shore modes.
+- Finish the solar roof side: exact roof/backsheet preparation and structural-silicone cure, `4S1P` panel interconnects, moving-cord support/guarding, then controlled first PV commissioning. The pass-through, two-pole disconnect, stationary wiring, and MPPT landing are already complete.
+- Finish the alternator path by wiring the protected PH-VAN red lead, reading/saving/programming the WS500, completing the preflight, and running controlled first charge.
+- Install the heater/diesel/rear-storage package as one system: turret/bed cut and seals, underbody intake/exhaust/fuel routing, spare-tire-area tank cradle and mounting points, remote fill/vent, first burn, CO/leak/heat checks, and post-install inspection.
+- Route/install the `48 in` Bubinga Galley and `47 in` Bubinga Desk; add the sink and a vented/restrained graywater cassette, preserving service and disassembly access.
+- Receive and fit the HOTTAP, then complete the already-mocked propane package, clearances, leak test, and first burn.
+- Complete the still-open interior items: air fryer, Bench lid, monitor/laptop travel cradles, general storage/retention, and chair/Desk/aisle/roof-down fit after the ordered chair arrives.
+- Complete the labeled removable DC switch/service face if it is not already done; keep DC contacts insulated and separated from enclosed AC work.
+- Record loaded axle/total weights if not already captured; the owner reports the existing camper shakedown is good, but every newly installed solar/heater/HOTTAP/interior item still needs its own post-install check.
+
+Owner-confirmed completed state that should not be reopened without contrary evidence: the `1S3P` battery bank has been paralleled for an extended period; batteries and ICECO are restrained; all four `120V` outlet devices are in enclosures and the `12V`/`48V`/`120V` systems have seen regular use; fresh-water plumbing/KUS/tank are operational; and the existing camper shakedown is good.
+
+## Archived open-question backlog through `2026-09-01` — historical/reference only
+
+The bullets below preserve prior planning and unresolved-detail provenance. They are not the current execution queue; use the section above and the live checklist first.
 - Recover the actual `2026-07-15` #650 completion time if possible; otherwise keep evening `2026-07-18` as an earliest-only heavy-furniture planning estimate.
 - During cure, back out/clean/reinstall the temporary edge-board bolts one at a time and record any binding, galling, or spinning rivnut.
 - After cure, photograph/classify the mild waviness/bumps and lifted edges: stable cosmetic condition vs localized loose/raised/hollow repair area.

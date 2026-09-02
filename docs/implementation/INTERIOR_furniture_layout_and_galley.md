@@ -21,11 +21,11 @@ related:
 
 # Interior Furniture Layout and Galley Design Concepts
 
-As-of date: `2026-08-30`
+As-of date: `2026-09-02`
 
 Purpose: capture the active furniture/layout direction for the Hiatus/F-350 camper before final cuts. This document owns the interior **layout concept**, driver-side electrical-module/bench/desk integration, passenger-side lofted fridge/wet-spine exoskeleton, separated battery bench, galley/plumbing service strategy, high-density furniture ideas, and loose furniture construction intent. The driver-side monitor/workstation mechanism detail remains in `docs/implementation/INTERIOR_driver_side_workstation.md`; the finish/paneling/storage feature-design detail now lives in `docs/implementation/INTERIOR_finish_paneling_and_feature_choices.md`.
 
-Status: **working interior-integration baseline**, refreshed `2026-08-30`. The hard-mounted electrical/Galley/Bench structure is in place; Starlink is working, while the fridge and pump are owner-reported wired/switched and the three DC charging outlets/four AC duplex devices are physically installed pending closeout tests. The next geometry gates are the safe removable switch/service face, purchased diesel tank plus heater/rear storage module, mid-September walnut/sink routing, LF Bros `10 L` graywater cassette, actual chair/aisle/desk mockup, bench lid/struts, positive monitor travel cradle, air-fryer retention, and removable finish panels. Do not close access around heater/fuel/exhaust, sink/drain, electrical service, batteries, or hidden routes before their tests pass. Hot water remains locked to the propane-only rear-box Joolca HOTTAP V2 package.
+Status: **working interior-integration baseline**, refreshed `2026-09-02`. The hard-mounted electrical/Galley/Bench structure, paralleled/restrained battery bank, restrained ICECO, working Starlink/`12V`/`48V`, enclosed four-device `120V`, and fresh-water/KUS/tank systems are in service. Final surfaces are a `48 in` Galley and `47 in` Desk in live-edge Bubinga; the earlier three-piece black-walnut concept is superseded. The next geometry gates are the diesel tank plus heater/rear storage module, mid-September Bubinga/sink routing, LF Bros `10 L` graywater cassette, ordered chair/aisle/Desk fit, Bench lid/struts, positive monitor/laptop travel state, air-fryer home, and removable finish panels. Hot water remains locked to the propane-only rear-box Joolca HOTTAP V2 package, but the appliance has not arrived and propane is only mocked.
 
 Orientation convention throughout:
 
@@ -107,27 +107,29 @@ Owner-provided build update confirms the electrical module has moved from freest
 
 - The electrical backer was trimmed to inset cleanly into the `80/20` electrical frame.
 - Component positions were adjusted for actual MultiPlus depth; the change is a packaging/mechanical fit correction, not a change to the active `48V` electrical architecture.
-- The module is hard-mounted through the permanent finished floor to registered truck-bed hardpoints. Fit is clean and current stationary stiffness is acceptable; it will stiffen further when tied into the Bench, and that tie-in remains required before road use.
-- The MultiPlus and combined AC breaker enclosure were removed before the lift to reduce module weight. Embedded pronged/spiked T-nuts in the plywood backer preserve easy front-side remounting and avoid loose through-bolt nuts behind the board.
-- All three batteries' branch cable sets are cut, lugged, heat-shrunk, and landed at the battery-side busbars while the bay remains open. Batteries stay isolated until individual charge/rest/voltage matching is complete.
-- Near-term module strategy is electrical closeout first: remount heavy AC equipment, install/prove shore AC-in, commission the matched `3x 48V` bank and `12V` junction, then bench-test and install the tank/wet spine before closing the Bench/Galley around either service zone.
+- The module is hard-mounted through the permanent finished floor to registered truck-bed hardpoints and tied into the Bench/Galley structure; owner reports the integrated assembly is very stiff and the existing camper shakedown is good.
+- The MultiPlus and combined AC breaker enclosure were temporarily removed for the lift and are now installed. All four outlet boxes and remaining `120V` work are enclosed; preserve PE/chassis/shell, GFCI/polarity, and service-access checks.
+- All three batteries' branch cable sets are complete, the `1S3P` bank has been paralleled for an extended period, and the batteries are positively restrained. Preserve extraction and electrical-service access while building the Bench lid.
+- Current module strategy is completion rather than first-power staging: close PE/chassis/shell and GFCI/polarity checks, integrate the heater/fuel/rear-storage package, install the Bubinga/sink/graywater work, then finish air-fryer/monitor/laptop/storage retention and removable panels.
 - Available extra material includes two extra sticks, one `2010` extra-thick two-slot/two-bar stick, and regular angle stock; use these as fit/brace/prototype material before waiting on perfect final hardware.
 - Pending dedicated `80/20` nuts/hardware should not block mock-fit, but final travel configuration should use the correct fastener standard, witness marks, and anti-rattle/retention hardware.
 
-Travel rule: **the floor hard-mount alone is not the final road-restraint gate**. Drive only after the electrical module is tied into the Bench/adjacent structure or otherwise given verified anti-rack bracing, with panels/diagonals/latches installed enough to control racking and cargo/projectile risk.
+Travel rule: **the installed baseline has completed a successful owner-reported shakedown**. Reapply positive-restraint and post-drive inspection gates to each newly added air fryer, Bench lid, monitor/laptop package, storage item, heater/fuel assembly, HOTTAP, and solar installation.
 
-### Integrated structure and utility update — 2026-08-27
+### Integrated structure and utility update — 2026-09-02
 
 - The electrical module, Galley/cooler support, water tank, and Bench extrusion remain hard-mounted as a stiff integrated structure.
-- The KUS replacement under-ring/gasket/hardware are installed. Keep sender access open and hold first-fill closeout until fill/vent, sink terminations, and dry pressure/dwell testing prove no leak.
-- Owner reports Starlink working; fridge and pump wired/switched; and all three DC charging outlets plus both two-device AC branches physically installed. Preserve labeling, polarity/GFCI/PE/load tests and the removable service face before panel closure.
+- Fresh-water plumbing, the KUS sender, and the tank are complete and have seen extensive use. Keep access only for the future sink joints and separate graywater system.
+- Owner reports regular use of Starlink, fridge, pump, all three DC charging outlets, and `12V`/`48V`/`120V`. All four outlet boxes are enclosed; preserve specific labeling, GFCI/polarity/PE, chassis/shell bonding, terminal, and cable-support checks before panel closure.
 - The rear driver-side storage module is not installed. Dry-fit it with the LF Bros heater, fuel-tank/floor penetration, under-bed pump route, hot exhaust/intake, electrical service, air-fryer home, chair/aisle, and desk before drilling or trimming.
-- Prepare exact templates for the planned mid-September black-walnut routing appointment. Bring the actual sink and soap dispenser; route no drain/faucet/support cut until the full stack is physically proven.
+- Prepare exact templates for the planned mid-September Bubinga routing work: `48 in` Galley and `47 in` Desk. Bring the actual sink and soap dispenser; route no drain/faucet/support cut until the full stack is physically proven.
 - Bench lid uses the available gas struts only after actual lid mass and mounting geometry are known. Add hinge, closed latch, anti-rattle bumpers, and mechanical open/overtravel control; more struts are not a substitute for correct force/lever geometry.
 
-### Black walnut surface commission update — 2026-07-05
+### Historical black-walnut surface concept — 2026-07-05; superseded 2026-09-02
 
-Owner is leaning toward commissioning three final black walnut pieces from the fabricator after the current module geometry is locked:
+Current decision: use two live-edge Bubinga pieces—`48 in` Galley and `47 in` Desk. The Bench lid remains a separate unfinished item. The older three-piece black-walnut concept below is retained only as design provenance; it is not current material or procurement guidance.
+
+Historical concept: the owner was leaning toward commissioning three final black walnut pieces from the fabricator after the module geometry locked:
 
 1. **Passenger-side Galley countertop**
    - Target: black walnut live-edge slab, likely `~4 ft x 19 in` based on owner phrasing; confirm exact dimension sheet before cutting.
@@ -243,7 +245,7 @@ The driver-side electrical/desk zone and adjacent battery bench have to solve th
 - **Electrical module tie-in:** treat the hard-mounted electrical tower as a braced part of the bench/desk system, not an independent road-travel object. The bench/step frame should add lateral restraint and anti-rack support while preserving service access to disconnects, fuses, Cerbo, Orion, AC enclosure, and cable clamps.
 - **Battery well:** low, restrained, partitioned from wet-service volume, and sized so batteries can be extracted without dismantling the whole interior. Use a low extrusion perimeter with dividers/hard stops to prevent fore/aft and side-to-side movement, then strap each battery down individually to anchored extrusion/T-slot points. Tie the cage into the hard-mounted Bench/electrical frame or through-bolted structural plywood with backing; wood screws into plywood alone are not the primary dynamic load path. Keep straps off terminals, displays, and sharp edges.
 - **Flat divider board:** separates battery bay below from bench storage/cushion use above; treat this as a protective service boundary, not just a shelf.
-- **Lift/hinged lid:** lid must open for battery/storage access and include mechanical stays, gas struts, or controlled support sized to the actual lid weight; loose lift-off panels become projectiles. If the final L-shaped top is black walnut, verify hinge line, support tabs, strut geometry, closed latch, and service reach before cutting the finished lid.
+- **Lift/hinged lid:** lid must open for battery/storage access and include mechanical stays, gas struts, or controlled support sized to the actual lid weight; loose lift-off panels become projectiles. The lid material is not yet locked; verify hinge line, support tabs, strut geometry, closed latch, and service reach before cutting it.
 - **Electrical closet:** use a vertical backer/closet face for serviceable fuses, disconnects, Lynx/Shunt/12V hardware, and labels, with dead-front protection where daily furniture users can touch it.
 - **DC shelf/box:** acceptable toward the desk/entry if it remains shallow, ventilated, spill-protected, and does not block entry movement.
 - **Service slit/access door:** keep emergency disconnect/fuse inspection reachable without pulling cushions or unloading the cabover.
@@ -428,11 +430,11 @@ Owner measurement on `2026-05-12`: the gravity-fill vent nipple measures about `
 
 Use a stainless clamp, avoid kinking the vent line, and re-check after the first fill/drive cycle.
 
-### Tank-specific notes
+### Tank-specific notes — installed baseline plus historical fit logic
 
-Owner-confirmed physical port geometry (`2026-07-16`): the tank has four molded ports on each end, with two visibly large and two smaller ports per end, and no obvious/open top port. Exact model and thread sizes remain unconfirmed. The pattern resembles common wheel-well tanks advertised with `1.5 in` and `1/2 in` female NPT end ports, but that resemblance is not sufficient to order fittings. Inspect for a membrane-covered top boss, model/logo markings, and supplied plugs; verify each selected thread physically before procurement.
+Current owner state (`2026-09-02`): the `35 gal` tank, KUS sender, gravity fill/vent, pump/accumulator, interior PEX, and rear service ports are complete and have seen extensive installed use. Preserve access and leak-check only newly added or disturbed joints. The port-discovery map below is retained as pre-install provenance, not current procurement work.
 
-Provisional role map, subject to the installed-orientation dry fit:
+Historical provisional role map from the pre-install dry fit:
 
 - Upper large end port nearest the exterior hatch: gravity fill.
 - Upper small end port that remains highest in normal fill orientation: unrestricted vent/overflow to the hatch vent nipple.
@@ -455,7 +457,7 @@ Implications:
 - Verify bracket/plusnut locations and decide whether a secondary floor/tie-down path is needed.
 - Keep dense pantry/tools away from the high passenger wall if the water tank is full; use lighter/bulkier storage above the tank.
 
-### Tank workbench-to-install sequence (`2026-07-16`)
+### Historical tank workbench-to-install sequence (`2026-07-16`) — completed/reference
 
 1. **Inventory before cutting:** photograph every molded opening and cap, measure threads/neck IDs/ODs, and label only temporary candidate functions (`fill`, `vent`, `pump outlet`, `drain`, `sender`, `spare`). Do not infer function from port size alone.
 2. **Workbench mockup:** place the empty tank in its installed orientation on blocks; lay out the KUS sender, gravity-fill hose, vent hose, pump-outlet flex loop, drain, restraint brackets, and compact fixed pump/accumulator pack. Verify sender length against internal depth at the actual proposed location.
@@ -466,7 +468,7 @@ Implications:
 7. **Install wet-side first:** hard-mount the tank restraint and compact pump/accumulator pack before passenger-side furniture closure. Support the flex/PEX transitions, protect the wet/dry boundary, and preserve the documented cooler/panel/frame removal path; do not add fittings solely to make the assembly quick-removable.
 8. **Cut the exterior fill/vent last:** physically prove the installed tank endpoints, hose fall/vent rise, backing, service access, and spill/overflow path from both sides before cutting the camper/bed-side interface.
 
-Current execution update (`2026-08-27`): the tank is strapped into the hard-mounted Galley structure and the replacement KUS under-ring/gasket/hardware are installed. Final fill/vent hookup, actual sink/faucet/soap/drain stack, continuous graywater slope, and dry pressure/dwell/leak proof remain the water-service acceptance gates.
+Current execution update (`2026-09-02`): fresh-water tank, KUS, fill/vent, pump/accumulator, interior PEX, and rear service ports are operational and have seen extensive use. Remaining wet work is the new sink/faucet termination after Bubinga routing and the separate vented/restrained graywater cassette; leak-check only new or disturbed fresh-water joints.
 
 ### Propane hot-water routing baseline (`2026-08-01` installed camper ports)
 
@@ -529,7 +531,7 @@ The low south tank boss stays unopened or low-profile plugged at the entry footp
 
 The purchased appliance is the **Joolca HOTTAP V2 Essentials**. The purchase plan previously carried an owner-supplied `35,000 BTU` figure, but Joolca's current US product page on `2026-07-26` states `27,000 BTU` and up to `6 L/min / 1.6 GPM`; verify the received data label before locking the burner rating or reusing the older number in thermal calculations. The current manual lists a `1.2 m / 4 ft` LPG hose plus one `5 m` shower-hose assembly split into `1 m / 3 ft` and `4 m / 13 ft` red water-hose sections. Joolca's support documentation permits a camper-trailer pump source, Melnor QuickConnect fittings, vehicle mounting, and connection to an existing kitchen faucet. The purchased SHURflo `4008` is nominally `3.0 GPM` / `55 PSI`. Joolca says HOTTAP continues to operate at high elevation but loses efficiency/output as air thins; it publishes no hard numeric altitude ceiling, so prove ignition and useful temperature rise at intended Colorado elevation while the heater remains returnable.
 
-The HOTTAP remains directly mounted to the exterior side of the bumper box. Through-bolt the purchased Quick-Release HOTTAP Bracket—previously documented as Joolca's vehicle quick plate—to structural backing; do not rely on aluminum skin alone for road vibration. Use the purchased HOTTAP V2 Mount Cover for dust/travel protection and remove/open it as required before operation. The external location recovers box storage and physically separates the burner from the cylinder compartment. LP and water stay disconnected for travel.
+The HOTTAP remains planned for direct mounting to the exterior side of the bumper box, but the appliance has not arrived as of `2026-09-02`; propane geometry is mocked only. Through-bolt the purchased Quick-Release HOTTAP Bracket—previously documented as Joolca's vehicle quick plate—to structural backing; do not rely on aluminum skin alone for road vibration. Use the purchased HOTTAP V2 Mount Cover for dust/travel protection and remove/open it as required before operation. The external location recovers box storage and physically separates the burner from the cylinder compartment. LP and water must be disconnected for travel. Final location waits on the received appliance and bracket, Joolca's actual clearances, hose/regulator reach, door swing, box vent paths, service access, and first leak/flow/ignition proof.
 
 Before ignition, clear/remove the mounted cover and verify that the installed exterior position still satisfies Joolca's current manual clearances. Measure from the heater faces/exhaust to the nearest box wall/door, camper surface, vent opening, stored object, or open cover; marketing photos do not waive the manual. Do not operate the HOTTAP inside the open-front box. A fan does not change the appliance's outdoor-use classification.
 
@@ -551,8 +553,8 @@ Use convertible surfaces:
 - Small sink with flush cover.
 - Purchased galley fixture baseline: Sarlai drop-in/workstation sink, black topmount, `15 in x 15 in` exterior with approx. `11 in x 13 in` interior basin, plus FORIOUS black pull-out faucet with soap dispenser.
 - Current fit assumption: an `18-19 in` countertop with about `14 in` clear extrusion opening is probably workable because the chosen sink is topmount, but the actual sink cutout, faucet shank/nut/hose bends, drain/graywater path, and any local rail/connector drop still need field validation before final cuts.
-- Final Galley surface direction: commission a black walnut live-edge slab at the planned mid-September routing appointment; bring the actual sink and soap dispenser. Current target is likely `~4 ft x 19 in`, `1.5 in` preferred thickness / `2 in` acceptable, with the last `~15 in` of the entry end curving inward if the slab allows.
-- Treat the final walnut counter as protected furniture, not a raw cutting board: satin polyurethane or equivalent durable finish, all faces/cutouts/live edges sealed, and epoxy limited to void/check stabilization unless the full flood-coat look is intentionally selected.
+- Final Galley surface direction: `48 in` live-edge Bubinga at the planned mid-September routing work; bring the actual sink and soap dispenser. The final Desk surface is a separate `47 in` live-edge Bubinga piece.
+- Treat the final Bubinga counter/Desk as protected furniture, not a raw cutting board: use a durable clear finish, seal all faces/cutouts/live edges, and limit epoxy to void/check stabilization unless the full flood-coat look is intentionally selected.
 - Removable Duxtop `8100MC/BT-180G3` induction cooktop stored vertically or in a retained slot when not in use; cooking position must keep pan handle, cord, GFCI outlet, and countertop heat clearance clear of the sink/faucet.
 - Dedicated low cubby for the Ninja SP151 air-fryer/toaster oven with a screwed/through-bolted or mechanically latched cradle and positive appliance retention; adhesive tape alone is not the primary crash restraint. Preserve manufacturer heat clearances, ventilation, crumb-cleanout, and a plug/service path away from the wet bay. Internals must also be quiet/retained: use their designed nesting if secure, or heat-compatible silicone/metal clips and padded stops outside cooking airflow; never leave loose rack, basket, or pan parts free to hammer the glass/heating elements during travel.
 - Cutting board / sink cover slot.

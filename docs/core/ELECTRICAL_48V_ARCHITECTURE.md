@@ -43,16 +43,17 @@ Related docs:
 - `Upfitter #3` is a low-current control signal only. It does not carry alternator output current.
 - `WS500` white `Feature-In` is reserved for future fault-interlock work, not required in Phase 1.
 
-## Current commissioning state (`2026-08-02`)
+## Current commissioning state (`2026-09-02`)
 - `48V` bus has been live-tested: owner measured `55.5V` throughout the system, including at the MultiPlus.
 - MultiPlus-II DC/inverter mode has been switched on with inverter light illuminated, slight normal hum, and no reported error lights.
 - SmartShunt and Orion-Tr Smart are visible in VictronConnect.
 - Cerbo GX access point/remote-console workflow is active; Cerbo power is a small inline fused feed from the `48V` system side and MultiPlus communication is via `VE.Bus` RJ45.
 - Shore charging has been tested through the MultiPlus at household-outlet current limits. The first short test proved basic AC-in/charger function; later owner verification redid the settings and confirmed first-battery behavior entered bulk, then quickly transitioned to absorption at/near `100%` as planned.
 - MultiPlus LiFePO4 charge-profile programming/verification is treated as closed for the current shore-charger setup. Current target is `56.8V` absorption/charge, `54.0V` float, short absorption dwell, equalization off, conservative LiFePO4 storage behavior, and source-current limit matched to the actual shore circuit. The Dumfume manual's `58.4V +/-0.2V` value is documented, but because the same manual also lists `58.4V` as charge-limit/over-charge protection voltage, it is not the active routine charger target. `DVCC` remains disabled unless a documented BMS/GX control path is added.
-- The electrical module is hard-mounted through the finished floor to registered truck-bed hardpoints and is now tied into the hard-mounted Bench/Galley extrusion structure; owner reports the integrated assembly is extremely stiff. The remaining road-restraint work is battery/cooler capture plus terminal/cable protection. The driver-rear shore inlet and cable route are physically installed. One accessible, enclosed, conductor/gauge-rated three-wire `L/N/PE` splice into the AC-input side remains before dead checks and first use.
-- All three batteries' `2/0 AWG` branch leads are cut, lugged, heat-shrunk, and landed at the battery-side positive/negative busbars. The three batteries are not yet paralleled: Battery 1 completed the corrected isolated charge cycle, Battery 2 remained in normal upper-`54V` bulk at the overnight `2026-08-02/03` checkpoint, and Battery 3 remains pending before individual rest/record and `<=0.1V` matching.
-- Owner reports the Orion now charges the `12V` buffer battery correctly and the `12V` system is operating as intended. Remaining commissioning gates are the shore `L/N/PE` splice plus polarity/PE/neutral-isolation checks, supervised permanent-path shore proof, individual charge/rest/`<=0.1V` matching and parallel-bank closeout, AC-out branch/GFCI commissioning, secondary-alternator commissioning, final Cerbo mounting, and board strain-relief/abrasion-control.
+- The electrical module is hard-mounted and tied into the hard-mounted Bench/Galley structure. Owner reports the batteries and ICECO are positively restrained; the not-yet-installed air fryer, bench lid, monitor/laptop package, and other storage remain separate retention work.
+- All three batteries' `2/0 AWG` branch leads are complete, and the `3x 48V` bank has been permanently paralleled and in regular use for an extended period. The earlier Battery 2/3 isolated-charge staging language is historical and no longer an active prerequisite.
+- Owner reports regular use of the `12V`, `48V`, and `120V` systems. All four duplex outlet boxes and the other `120V` enclosures are complete. Remaining AC safety verification is explicit GFCI `LINE/LOAD`/downstream trip behavior, polarity, PE continuity, neutral-isolation behavior, and the required MultiPlus-to-chassis plus shell bonds—not another enclosure build.
+- Solar pass-through, disconnect, fixed wiring, and MPPT landing are complete; no panels are connected. The secondary alternator remains disconnected, with the protected PH-VAN red lead and Wakespeed read/save/programming preceding controlled first charge.
 
 ## Locked component set
 | Function | Locked baseline | BOM row(s) |

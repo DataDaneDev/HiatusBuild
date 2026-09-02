@@ -13,9 +13,9 @@ related:
 
 # Electrical AC BOM (Phase 1)
 
-As-of date: `2026-08-27`
+As-of date: `2026-09-02`
 
-Purpose: maintain the installed Phase 1 AC architecture baseline: portable `30A` EMS, `30A` shore inlet/locking cord with modular `25 ft` TT-30 extension, one `6-way` DIN enclosure, `30A` AC-in breaker, `30A` AC-out main breaker, and two active `20A` GFCI-protected AC-out branches. Owner report `2026-08-27`: each branch has one origin GFCI plus one downstream duplex, four duplex devices/eight plug positions total. Final acceptance still requires device/box/cover/clamp/fill inspection, `LINE/LOAD/PE` proof, downstream protection, GFCI trip/reset in inverter and accepted-shore modes, representative loading, and service-face/dead-front closeout.
+Purpose: maintain the installed Phase 1 AC architecture baseline: portable `30A` EMS, `30A` shore inlet/locking cord with modular `25 ft` TT-30 extension, one `6-way` DIN enclosure, `30A` AC-in breaker, `30A` AC-out main breaker, and two active `20A` GFCI-protected AC-out branches. Owner report `2026-09-02`: all `120V` work is in enclosures, including four duplex devices/eight plug positions total, and the system has seen regular use. Physical enclosure count is closed. Final safety acceptance still requires explicit `LINE/LOAD/PE` proof, downstream protection, GFCI trip/reset in inverter and accepted-shore modes, polarity/neutral-isolation checks, the MultiPlus external PE/chassis and separate shell bonds, and representative-load verification.
 
 Related docs:
 - `docs/implementation/ELECTRICAL_overview_diagram.md`
@@ -26,10 +26,10 @@ Related docs:
 ## Historical provenance
 - [INSTALL_MINUS_12_READINESS_PLAN](../plans/INSTALL_MINUS_12_READINESS_PLAN.md) preserves the May 7 install-window AC planning context; this file owns current Phase 1 AC procurement/implementation.
 
-## Physical shore-inlet install gate (`2026-07-19`)
+## Historical physical shore-inlet install gate (`2026-07-19`) — closed/superseded by as-built state
 
-- The L5-30 inlet remains purchased but not yet cut into the camper/bed-side interface.
-- The electrical module is now hard-mounted. The MultiPlus and combined AC breaker enclosure were removed for the lift and must be remounted into the backer's embedded pronged/spiked T-nuts before the final shore path is terminated.
+- The L5-30 inlet was then purchased but not yet cut into the camper/bed-side interface.
+- The electrical module was hard-mounted. The MultiPlus and combined AC breaker enclosure had been removed for the lift and still required remounting at that time.
 - From the remounted AC-in breaker endpoint, mock the full `10/3` path to the candidate exterior inlet with required bend radius, cable support, drip/water management, service loop, strain relief, and access to both sides of the cut.
 - Any small cable opening through the plywood electrical backer requires a correctly sized grommet/bushing or gland plus independent cable support/strain relief; bare `10/3` must not bear on a raw plywood edge.
 - Confirm the exterior cover swing, connector clearance, wall/backing thickness, hidden structure/no-drill zone, butyl bedding land, finish-seal geometry, and a path that does not share the wet-side chase.
@@ -44,8 +44,8 @@ Related docs:
 
 ### AC-out chain (inverter-backed branch distribution)
 - `MultiPlus AC-out-1 -> 10/3 feeder -> combined 6-way AC DIN enclosure -> 30A UL489 AC-out main breaker -> 20A Branch A + 20A Branch B -> GFCI receptacle per branch`
-- The two first-in-chain receptacles are `20A` self-test GFCIs: Branch A = office/driver side, Branch B = Galley/passenger side. Owner report `2026-08-27`: each GFCI now feeds one downstream duplex from its `LOAD` side, for four duplex devices/eight plug positions total. Electrical acceptance remains open.
-- Inspect all four devices in listed accessible boxes with covers and compatible cable clamps; confirm conductor fill, wall-stack fit, `12 AWG`, `LINE/LOAD/PE`, PE continuity, labels, GFCI trip/reset, whole-chain downstream protection, and representative loads in inverter and accepted-shore modes.
+- The two first-in-chain receptacles are `20A` self-test GFCIs: Branch A = office/driver side, Branch B = Galley/passenger side. Owner report `2026-09-02`: each GFCI feeds one downstream duplex from its `LOAD` side, all four devices are enclosed, and AC has seen regular use. Formal electrical acceptance remains open only for the explicit safety/functional checks below.
+- Do not reopen the box-count task. Confirm `12 AWG`, `LINE/LOAD/PE`, PE continuity, labels, GFCI trip/reset, whole-chain downstream protection, polarity/neutral isolation, and representative loads in inverter and accepted-shore modes.
 - AC-out branch hardware is not required to perform the initial AC-in-only battery charging test, but it is now included in the purchased Phase 1 cart.
 
 ### Neutral and ground handling

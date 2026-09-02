@@ -16,11 +16,11 @@ related:
 
 # Driver-Side Workstation, Monitor, Electrical Shelf, and Storage Mechanisms
 
-As-of date: `2026-08-30`
+As-of date: `2026-09-02`
 
 Purpose: capture a buildable design direction for the driver/left-side workstation and electrical-closet interface so the camper can support full-time work, preserve pop-down roof clearance, keep DC electronics/laptop plugs accessible, and gain storage without ruining ergonomics.
 
-Status: **active measured-mockup baseline**, refreshed `2026-08-30`. The desk/monitor hardware is on hand but not yet accepted as furniture or travel cargo. Preserve the current `24 in x 48 in` desk until the real rear storage module and actual chair are in place; test a folding/stowed chair before sacrificing desk depth. Do not reduce toward `20 in`, cut walnut, or mount arms until seated ergonomics, aisle/entry, heater/service, and roof-down envelopes all pass. Adjustable arms are work-position devices only; each monitor/laptop platform needs a padded hard-stop cradle and positive mechanical travel latch/strap that does not load the screen, arm joints, or desk edge.
+Status: **active measured-mockup baseline**, refreshed `2026-09-02`. The final Desk surface is a `47 in` live-edge Bubinga piece; the FLEXISPOT Foldex chair is ordered but not yet physically accepted in the camper. Preserve the approximately `24 in` desk depth until the real rear storage module and chair are in place. Do not trim the Bubinga or mount the monitor/laptop hardware until seated ergonomics, aisle/entry, heater/service, and roof-down envelopes pass. Adjustable arms are work-position devices only; each monitor/laptop platform needs a padded hard-stop cradle and positive mechanical travel latch/strap that does not load the screen, arm joints, or Desk edge.
 
 Related docs:
 - `docs/core/SYSTEMS.md`
@@ -221,8 +221,8 @@ Use if travel robustness matters more than one-motion deployment.
 
 ### Desk top
 
-- Final material direction: commissioned dimensional black walnut, matching the Galley and Bench/lid finish language, after a plywood template proves fit.
-- Prototype/MVP material: `3/4 in` plywood or laminated birch remains valid for fit testing and can act as the pattern the fabricator uses for the walnut top.
+- Final material direction: the selected `47 in` live-edge Bubinga Desk, visually paired with the `48 in` Bubinga Galley.
+- Prototype/MVP material: `3/4 in` plywood or laminated birch remains valid for fit testing and can act as the pattern for support, cable, and mechanism locations before the Bubinga is drilled or trimmed.
 - Shape: slightly radiused front edge; clipped or rounded aisle-side corner to avoid hip strikes.
 - Depth: favor enough forearm support for typing/mousing; avoid going so deep that entry/aisle movement suffers.
 - Mounting: T-slot underframe or cleats tied into the driver-wall service spine; avoid relying on a single Lagun-style point for the primary full-time desk unless used only as a fold-out auxiliary leaf.
@@ -431,7 +431,7 @@ Optional upgrade: a simple microswitch/reed-switch indicator on the monitor stow
 ## 14) Open design choices
 
 - Exact monitor mechanism: rising mast vs under-desk flip-up vs quick-release sleeve.
-- Exact desk length/depth/height after chair and roof-envelope measurement, then the fabricator's final walnut dimension/template packet.
+- Exact installed support/depth/height and any trim/no-drill zones after chair and roof-envelope measurement against the selected `47 in` Bubinga Desk piece.
 - Whether the monitor uses AC brick, DC-native power, or USB-C display/power through a dock.
 - Final storage split between shallow cubbies, soft pockets, toe-kick, and bench-step storage.
 - Final hardware ecosystem for latches, slides, and T-slot standard.

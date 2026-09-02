@@ -37,17 +37,19 @@ related:
 - Provide ergonomic, repeatable workstation setup
 - Keep system serviceable and safe in multi-climate travel use
 
-## Current execution focus (working utilities into solar/heater/interior integration)
+## Current execution focus (working camper into solar/heater/interior completion)
 - Use [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md) for active sequence and [LIVE_BUILD_CHECKLIST](../plans/LIVE_BUILD_CHECKLIST.md) for shop actions. Earlier install-window plans are historical references unless explicitly refreshed.
-- The permanent Lonseal floor, electrical/Galley/Bench structure, water tank, and primary utility routes are installed. Remaining road restraint is specific: positive capture for the `3x 48V` batteries, separate `12V` battery, ICECO, appliances, bench lid, monitor/laptop assembly, plus terminal/cable protection.
-- Starlink Standard 4 X works from its switched dedicated `12V` conversion branch through a `20A` blade fuse, including the fixed-body pass-through and retractile jumper. The fridge and pump are wired and switched. Three independent charging branches are installed: one driver-side `100W` DC outlet and two passenger-side `65W` DC outlets, each separately fused.
-- Four duplex `120V` receptacles are wired: two devices/four plug positions on each side. Device count is closed, but branch acceptance remains open for listed boxes/covers/clamps, `LINE/LOAD`, downstream GFCI protection, polarity, PE continuity, labels, and trip/reset in inverter and shore modes.
+- The permanent Lonseal floor and main electrical/Galley/Bench structure are installed. The `3x 48V` bank has been paralleled and in regular use for an extended period; the batteries and ICECO are positively restrained. Remaining interior retention is the not-yet-installed air fryer, bench lid, monitor/laptop package, and other storage/cargo.
+- Starlink Standard 4 X, the fridge, pump, three separately fused DC charging outlets, and the installed `12V`/`48V` system are in regular owner-reported use.
+- All four duplex `120V` receptacles and the associated `120V` work are enclosed and in regular owner-reported use. Physical box/enclosure completion is closed; retain explicit checks for GFCI `LINE/LOAD` and downstream trip behavior, polarity, PE continuity, labels, and the separate MultiPlus/chassis/shell bonding task.
 - The immediate safety correction is one narrow removable switch/service face. Individually insulate and label every DC switch terminal; mount any `120V` device in a listed covered box physically separated from DC terminals. Loose electrical tape is not a finished live-terminal barrier.
-- All four Renogy `175W` panels have arrived; one-panel physical test-fit plus measured layout indicates compatibility with Starlink and MaxxAir while using nearly the whole roof. Keep the one-string `4S1P` topology on the Victron `150/45`; direct-roof bonding waits on exact silicone/substrate preparation and coupon/cure proof. The PV retractile cord is ordered and still needs received-property, gland, structural-clamp, spring-force, and full-motion proof.
+- All four Renogy `175W` panels have arrived. The solar pass-through, two-pole disconnect, fixed wiring, and MPPT connection are complete; no panels are connected yet. Remaining work is exact-material roof preparation/caulk-bonding, panel series wiring, roof-side cable support, and controlled PV commissioning on the existing `4S1P`/Victron `150/45` architecture.
 - The LF Bros diesel heater is the main unresolved systems install. The EVIL ENERGY `10 gal` tank/feed/vent package is purchased; dry-lay it with the heater, sealed floor turret, complete underbody exhaust/intake/fuel route, and rear driver-side storage module. Heat shield is supplemental; proximity to the truck fuel tank, fuel/EVAP/brake lines, wiring, undercoating, combustibles, full-tank restraint, and exterior or liquid-tight externally vented containment remain hard release gates.
-- A mid-September black-walnut counter/desk routing appointment is planned. The LF Bros `10 L / 2.64 gal` plastic tank is selected as the never-fueled removable graywater cassette. Bring the actual sink and soap dispenser; prove bowl, actual tailpiece/waterless trap, faucet/soap hardware, support rails, `3/4-1 in` continuously falling drain, top tank inlet/vent, retention/removal, and low dump valve before final cuts. Reserve the on-hand `1/2 in` clear hose for the dump leg, not the sink drain.
-- Alternator architecture is unchanged. Main remaining work is `F-04 200A/80V`, both WS500 temperature sensors, configuration read/save/program via the purchased USB-A-to-B cable, and controlled first charge.
-- Preserve the roughly `24 in` desk until the rear module, real chair, knees, and aisle are mocked. Monitor/laptop arms need padded hard stops and positive restraint without LCD pressure; gas struts need actual lid-force geometry plus a closed latch/open stop; the air fryer needs hard stops and a strap/latch rather than tape alone. Final skins wait until heater, drain, electrical, and service-access tests pass.
+- Fresh-water plumbing, the KUS sender, and the `35 gal` tank are complete and have seen substantial owner-reported use. Remaining wet work is the sink after the mid-September counter work and the separate graywater system.
+- Final wood direction is two live-edge Bubinga pieces: `48 in` Galley and `47 in` Desk. The earlier three-piece black-walnut concept is superseded; the Bench lid remains a separate unfinished item.
+- Alternator charging is still disconnected. Owner-reported remaining install work is the protected PH-VAN red lead and Wakespeed read/save/programming, followed by the controlled first-charge verification.
+- The FLEXISPOT Foldex chair is ordered. The HOTTAP has not arrived; propane geometry is mocked but final HOTTAP mounting, hose/clearance proof, leak test, and first burn wait on receipt.
+- The existing camper has completed a successful owner-reported shakedown. Newly installed solar, heater/fuel, HOTTAP, and interior restraints still require their own post-install checks.
 
 ## Scope
 - In scope: electrical, charging, solar, communications, interior structure/cabinetry, operations process, maintenance tracking
@@ -77,25 +79,24 @@ related:
 - M3: camper installed / physical shell available for real measurements
 - M4: subsystem bench validation complete
 - M5: measured interior block envelopes and service map complete
-- M6: electrical/Bench/Galley/tank hard-mount and `12V` checkpoints complete; battery matching/restraint, shore splice, wet-side acceptance, and Galley wiring closeout underway
-- M7: shakedown and punch-list closure
+- M6: electrical/Bench/Galley/tank hard-mount, battery parallel/restraint, fresh plumbing/KUS, enclosed AC devices, and working `12V`/`48V` utility systems complete
+- M7: solar, heater/fuel, sink/graywater, alternator, HOTTAP, and interior-storage completion; existing camper shakedown passed, with subsystem-specific shakedowns still required
 
-## Build sequencing baseline (as-of 2026-08-30)
-- The permanent floor and main structure are installed. Keep heater/fuel, sink/drain, switch/service, battery, and hidden-route access open until each subsystem is tested and positively restrained.
-- Canonical sequence: temporary labeled switch/service face -> DC/AC closeout tests -> weather-window solar attachment and moving-cord proof -> purchased diesel-tank/heater/storage dry layout and underbody survey -> mid-September sink/soap/walnut routing -> `10 L` graywater mockup/completion -> WS500/fuse/sensor alternator commissioning -> rear storage/desk/real-chair fit -> bench/appliance/monitor travel restraint -> final skins -> shakedown.
+## Build sequencing baseline (as-of 2026-09-02)
+- The permanent floor, main structure, battery bank/restraint, fresh-water system, enclosed AC devices, and primary utility systems are in service. Keep heater/fuel, sink/graywater, solar, alternator, HOTTAP, switch/service, and hidden-route access open until each new subsystem is finished and tested.
+- Canonical sequence: heater turret and diesel-tank/storage integration -> mid-September Bubinga/sink geometry -> graywater -> protected PH-VAN red plus Wakespeed programming/first alternator charge -> solar caulk/bond/wire/commission -> HOTTAP receipt/mount/commission -> bench lid/air fryer/monitor/laptop/storage -> final skins and subsystem-specific shakedowns.
 - Detailed owner docs:
   - [PROJECT_build_order_of_operations](../plans/PROJECT_build_order_of_operations.md)
   - [FLOORING_subfloor_build_process](../implementation/FLOORING_subfloor_build_process.md)
   - [LIVE_BUILD_CHECKLIST](../plans/LIVE_BUILD_CHECKLIST.md)
 
 ## Immediate next decisions
-- **Switch/service face:** cut and mount the narrow removable face now. Keep `120V` in a listed covered box with cable clamps and PE continuity, physically separate AC from DC, individually insulate every switch terminal, and label the fuse/slot/load before normal powered work.
-- **Solar release:** verify received panel labels/connectors and exact silicone/substrate/cure instructions; wash/decontaminate the roof; coupon-test the stack; attach and shakedown one panel before repeating. Preserve `4S1P`; only the two free string ends enter the two-conductor transition/disconnect/MPPT route.
-- **PV moving route:** when the ordered cord arrives, verify exact conductors, OD, voltage/wet/UV/cold rating, tangents, spring force, and the full `28 in` roof stroke. Use structural redundant exterior clamps/guarding; adhesive cable mounts may guide but may not carry spring or highway load.
+- **Electrical safety closeout:** finish the labeled removable DC switch/service face. The `120V` enclosures and four outlet boxes are complete and operational; verify GFCI downstream trip behavior, polarity, PE continuity, and the MultiPlus/chassis/shell bonds rather than reopening the box-count task.
+- **Solar release:** the pass-through, disconnect, stationary wiring, and MPPT landing are complete. Verify exact caulk/adhesive preparation and cure, then bond, series-wire, structurally support, and commission the panels in `4S1P`; only the two free string ends enter the completed two-conductor transition/disconnect/MPPT route.
 - **Diesel heater/storage:** inventory the purchased tank/feed/vent package and dry-fit it with the heater/storage before drilling. Release only after mapping the turret and complete underside route around the truck fuel tank and all fuel/EVAP/brake lines, wiring, undercoating, and combustibles, plus approximately `86 lb` full-tank restraint and external vent/containment. Keep exhaust/muffler outside.
-- **Counter/drain:** bring the actual sink and soap dispenser to the mid-September routing appointment. Prove drain-body/support/tank clearances and continuous slope into the selected never-fueled LF Bros `10 L` tank; use the existing `1/2 in` clear hose only for the normally closed dump leg.
-- **Alternator:** fit `F-04`, both temperature sensors, and final support/protection; read and save the current WS500 profile before changing it; then program and run the controlled first-charge guide.
-- **Interior fit/restraint:** preserve the `24 in` desk pending actual chair/aisle mockup. Give the air fryer hard stops plus strap/latch, give the monitor/laptop assembly a padded arm-unloading cradle without LCD pressure, and size bench gas struts from measured lid geometry with a separate latch and open stop.
+- **Counter/drain:** fit the actual sink and soap dispenser to the `48 in` Bubinga Galley surface at the mid-September appointment. Fresh plumbing and KUS are operational; finish only the sink termination and separate graywater system.
+- **Alternator:** complete the protected PH-VAN red lead, read/save/program the WS500, then run the controlled first-charge guide.
+- **Interior fit/restraint:** accept the ordered chair against the `47 in` Bubinga Desk and aisle. Build the bench lid, air-fryer home, monitor/laptop travel cradle, and remaining storage.
 - **Payload:** capture door-sticker payload and staged scale weights. Treat total payload, rear axle load, rear tire load, and left/right balance as active constraints.
 
 ## Electrical-to-shakedown sequence
@@ -108,9 +109,9 @@ Purpose: close tested utilities and finish the interior without rebuilding acces
 3. **Heater/storage integration**
    - Inventory/dry-lay the purchased `10 gal` tank/feed/vent package with the heater, sealed turret, underbody exhaust/intake/fuel route, containment, and rear storage. Drill only after the underside vehicle-line/heat/combustible survey and full-tank restraint pass; complete functional/CO/leak checks before skins.
 4. **Countertop, sink, and graywater**
-   - Route the actual sink/soap hardware at the mid-September walnut appointment only after support/tank/service clearances pass. Prove the actual tailpiece/waterless trap and continuous `3/4-1 in` fall into the vented, retained, normally closed LF Bros `10 L` gray tank before cutting.
+   - Route the actual sink/soap hardware at the mid-September Bubinga appointment only after support/tank/service clearances pass. Prove the actual tailpiece/waterless trap and continuous `3/4-1 in` fall into the vented, retained, normally closed LF Bros `10 L` gray tank before cutting.
 5. **Alternator and remaining road restraint**
-   - Complete `F-04`, sensors, protection, WS500 profile backup/programming, and controlled first charge. Finish battery/ICECO/appliance/bench-lid/monitor restraint, terminal covers, and abrasion protection.
+   - Wire the protected PH-VAN red lead, read/save/program the WS500, complete the preflight, and run controlled first charge. Batteries and ICECO are already restrained; finish air-fryer/Bench-lid/monitor/laptop/general-storage retention, terminal covers, and abrasion protection.
 6. **Measured interior closure and shakedown**
    - Mock the real chair, rear module, `24 in` desk, and aisle before trimming. Then complete positive latches/cradles, final skins, torque/witness marks, local drive, and post-drive inspection for leaks, abrasion, movement, heat, and fastener loss.
 

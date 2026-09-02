@@ -20,7 +20,7 @@ related:
 
 # Interior Finish, Paneling, Storage, and Feature Choices
 
-As-of date: `2026-07-05`
+As-of date: `2026-09-02`
 
 Purpose: synthesize the open **creative-but-useful** design choices for the Hiatus/F-350 interior as the build moves from raw `10-series` extrusion skeletons toward finished galley/desk/bench surfaces. This document does not replace the layout owner doc. It owns the finish language, panel strategy, storage feature decisions, wood/countertop direction, and validation gates that make the galley and workstation feel like one intentional system rather than disconnected shop-built modules.
 
@@ -31,7 +31,7 @@ Current physical context:
 - The passenger-side Galley connects to the Bench/cooler area and will carry the sink/faucet, fixed wet spine, drain/graywater path, cooler/fridge support, and the interior BLUE cold-out / RED hot-return plumbing for the selected rear-box HOTTAP; no interior water-heater cubby is reserved.
 - The driver-side workstation should visually relate to the galley without sacrificing real work ergonomics.
 - Available panel stock includes some `1/2 in` and `3/4 in` plywood. Working assumption: `1/2 in` for vertical/front/removable faces; `3/4 in` for tops, bench lids, cooler-bearing surfaces, and other load surfaces.
-- Owner is leaning toward commissioning three final black walnut surfaces from the fabricator: a live-edge Galley countertop, a dimensional-lumber computer desk top, and a dimensional-lumber L-shaped Bench/lid top.
+- Final surface direction is owner-confirmed: two live-edge Bubinga pieces, a `48 in` Galley counter and a `47 in` Desk top. The earlier three-piece black-walnut concept is historical; Bench/lid material remains separate and unfinished.
 
 ---
 
@@ -43,7 +43,7 @@ Build the interior as:
 
 The best current default is:
 
-1. **Wood tops:** use `3/4 in` plywood templates/substrates to prove fit, but the current final-surface direction is commissioned black walnut for the Galley counter, driver-side desk, and L-shaped Bench/lid top once exact dimensions are locked.
+1. **Wood tops:** use templates/substrates to prove cutouts and support, then install the selected `48 in` Galley and `47 in` Desk live-edge Bubinga pieces. Keep the Bench/lid as a separate material and geometry decision.
 2. **Vertical panels:** use `1/2 in` plywood overlay panels for most living-facing fronts and removable skins.
 3. **Service zones:** leave `80/20` visible or cover with quick-removable service panels. Do not hide pumps, valves, fuses, disconnects, drains, winterization fittings, or module tie-in bolts behind permanent skins.
 4. **Feature panels:** use smoked/tinted acrylic or polycarbonate selectively, especially at the `45°` Galley front cupboard/transition, small cubbies, or useful inspection windows.
@@ -102,11 +102,13 @@ Minimum rule: if a panel covers service-critical hardware, it must be removable 
 | `3/4 in` plywood with finished/painted edges | Warm/utility hybrid, exposed plywood cleanup | Forgiving, easy touch-up, can tie into smoked/dark service accents | Sloppy paint lines look DIY | Good for visible edges and service-adjacent surfaces |
 | Butcher block / edge-glued countertop | Final high-touch galley + desk surfaces | Warm, substantial, refinishable, “real furniture” | Heavier, moves with humidity, sink edges need aggressive sealing | Good upgrade if one source piece can feed both desk and galley |
 | Used hardwood tabletop | Matching desk/galley source material | Often cheap, already flat/finished, can look polished | Verify solid wood or quality veneer; avoid particleboard near sink | Excellent Marketplace target |
-| Live-edge slab | Accent/focal feature, controlled Galley entry-side edge | Unique and memorable | Heavy, irregular, harder to seal, dirt-catching, awkward near sink if raw/barky | Planned for the black walnut Galley counter only if the live edge is cleaned/eased/sealed and does not compromise entry or wipe-down |
+| Live-edge slab | Accent/focal feature, controlled Galley entry-side edge | Unique and memorable | Heavy, irregular, harder to seal, dirt-catching, awkward near sink if raw/barky | Selected in Bubinga for the Galley and Desk; clean/ease/seal the live edge and preserve entry and wipe-down function |
 | Prefinished cabinet plywood | Vertical panels, doors, service covers | Stable, clean, less finishing labor | Edges still need banding; less “rustic” | Good if a local cabinet shop has remnants |
 | Laminate/HPL over plywood | Wet-resistant galley work surface | Durable and wipeable | Less warm unless wood-look; harder to repair invisibly | Good fallback if wood maintenance becomes annoying |
 
-### 3.2 Commissioned black walnut surface direction — `2026-07-05`
+### 3.2 Historical black-walnut surface direction — `2026-07-05`; superseded `2026-09-02`
+
+The current selection is two live-edge Bubinga pieces: `48 in` Galley and `47 in` Desk. The section below is retained only as design provenance and is not current material, quantity, or Bench-lid guidance.
 
 Current owner/fabricator commission target:
 
@@ -213,7 +215,7 @@ Bad uses:
 
 ### 3.7 Finish direction
 
-Default finish: **clear or lightly warmed satin**, not glossy. For the commissioned black walnut pieces, use a durable cured film finish such as satin polyurethane unless the fabricator recommends a comparable shop finish he has confidence in for wipe-down kitchen/desk use.
+Default finish: **clear or lightly warmed satin**, not glossy. For the commissioned Bubinga Galley and Desk pieces, use the fabricator's durable cured wipe-down finish and verify sink-cutout sealing; keep the same sheen/edge language across both surfaces.
 
 Beginner-friendly sequence:
 
@@ -229,9 +231,9 @@ Beginner-friendly sequence:
 10. Seal all faces, edges, undersides, holes, and cutouts.
 11. Reinstall with mechanical fasteners.
 
-For sink-adjacent wood, seal the cutout edge aggressively. Raw plywood or end grain near the sink is where water damage starts. On live-edge walnut, remove loose bark/cambium, soften the hand-contact edge, stabilize checks/voids if needed, and seal the full irregular edge so it does not become a dirt/water trap.
+For sink-adjacent wood, seal the cutout edge aggressively. Raw plywood or end grain near the sink is where water damage starts. On live-edge Bubinga, remove loose bark/cambium, soften the hand-contact edge, stabilize checks/voids if needed, and seal the full irregular edge so it does not become a dirt/water trap.
 
-Epoxy posture: use epoxy as a selective stabilizer/filler for voids, knots, cracks, or a small intentional feature. Do **not** default to a full pour/flood coat on black walnut unless the plastic-gloss look is explicitly desired and accepted as harder to repair/touch up than a satin film finish.
+Epoxy posture: use epoxy as a selective stabilizer/filler for voids, knots, cracks, or a small intentional feature. Do **not** default to a full pour/flood coat on the Bubinga unless the plastic-gloss look is explicitly desired and accepted as harder to repair/touch up than a satin film finish.
 
 ### 3.8 Wood species and scent posture
 
@@ -504,12 +506,12 @@ Validate:
 
 ### 7.5 L-shaped Bench/lid top and gas struts
 
-The current final-surface direction is a black walnut dimensional-lumber L-shaped Bench/lid top over the storage cubby, supported by tabs/lands on the aluminum extrusion and lifted with gas struts if the geometry works.
+The Bench/lid remains a separate unfinished item; no current material selection is recorded. Support the eventual lid on tabs/lands on the aluminum extrusion and use gas struts only if the measured lid mass and geometry work.
 
 Build rules:
 
 - Prototype the L-shape in plywood first and verify it clears cushions, cabover step use, desk movement, Galley access, and service-panel removal.
-- Let the walnut lid bear on real `80/20` tabs/cleats/support lands, not on cosmetic skins.
+- Let the lid bear on real `80/20` tabs/cleats/support lands, not on cosmetic skins.
 - Size gas struts only after actual lid weight, hinge line, opening angle, and mount points are known.
 - Add a positive closed-state latch and anti-rattle bumpers; gas struts help lift/hold open but are not travel retention.
 - Add a mechanical open stop, backup prop, or strut geometry that cannot over-center into the roof/wall/cabover path.
@@ -750,15 +752,15 @@ Avoid:
 
 ## 12) Near-term action list
 
-1. Pick target wood tone: black walnut is the current final-surface direction; plywood remains the template/prototype material.
-2. Convert the fabricator black-walnut commission into a dimension packet: Galley `~4 ft x 19 in` target confirmation, last `~15 in` inward live-edge curve, desk top, and L-shaped Bench/lid template.
-3. Make finish samples on walnut/offcut scrap: satin polyurethane as the default, any warmer/oil-look option the fabricator recommends, and epoxy only as a selective crack/void filler sample.
+1. Bring the real sink and soap dispenser to the mid-September Bubinga routing appointment; prove support, faucet/soap clearance, drain stack, and sealed cutout before routing.
+2. Lock the `48 in` Galley and `47 in` Desk support/no-drill zones and installed edge orientation from the actual pieces.
+3. Confirm the fabricator's Bubinga finish and sink-cutout sealing method; use epoxy only as a selective crack/void stabilizer unless a flood coat is deliberately chosen.
 4. Prototype one `1/2 in` overlay panel with final spacer/fastener style.
 5. Prototype or source one smoked acrylic/polycarbonate sample.
 6. Mock the `45°` front cupboard in cardboard, including the smoked angled front plus rounded wood-cap/nosing idea.
 7. Mark every Galley/Bench face by category: finished wood, service removable, smoked feature, or exposed `80/20`.
-8. Mock Galley, desk, and L-shaped Bench/lid tops in `3/4 in` plywood.
-9. Calculate Bench/lid weight and gas-strut geometry only after the walnut thickness/dimensions are known.
+8. Mock the sink/drain/support stack against the real Galley piece; mock the Bench/lid separately in `3/4 in` plywood.
+9. Calculate Bench/lid weight and gas-strut geometry only after its material, thickness, and dimensions are known.
 10. Select one latch family for clean doors and one utility latch family for service panels.
 11. Hold final countertop, final skins, final floor, and final battery-trapped work until the validation gates above pass.
 
@@ -766,9 +768,9 @@ Avoid:
 
 ## 13) Recommendation summary
 
-- **Use existing plywood intelligently first.** It is the fastest way to prove geometry before the fabricator cuts premium black walnut.
+- **Use existing plywood intelligently first.** It is the fastest way to prove sink/drain/support geometry before routing the premium Bubinga.
 - **Make Galley and desk siblings, not twins.** Same wood tone, sheen, edge profile, and hardware/reveal discipline are enough.
-- **Current final-surface direction is black walnut.** Galley live-edge counter, dimensional-lumber desk, and L-shaped Bench/lid should repeat the same satin finish language.
+- **Current final-surface direction is Bubinga for Galley and Desk.** The `48 in` Galley and `47 in` Desk are live-edge siblings; the Bench/lid remains a separate unfinished item.
 - **Use `1/2 in` for vertical/removable faces and `3/4 in` for tops/load surfaces.** Add spacers for reveal instead of using heavy panels everywhere.
 - **Use smoked acrylic/polycarbonate as a selective feature.** Best candidate: the `45°` front Galley cupboard/transition.
 - **Favor bins, elastic cubbies, and a few latched drawers.** Drawers are useful but should not dominate before dimensions are stable.

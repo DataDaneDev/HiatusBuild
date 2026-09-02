@@ -9,7 +9,7 @@ status: active
 
 # Docs Map
 
-Use this folder map when deciding where a document belongs. Current repo posture is **working utility closeout plus solar/heater/interior integration** (`2026-08-30`): Starlink, fridge, pump, DC charging outlets, and four duplex AC devices are wired; the immediate safety task is the labeled temporary switch/service face; the `10 gal` diesel tank/feed/vent package is purchased and the LF Bros `10 L` tank is selected for graywater; solar, physical heater/fuel fit-up, sink/drain mockup, final walnut, alternator commissioning, travel restraint, and finish paneling retain explicit gates. Treat pre-install/readiness plans as historical references unless the active build checklist points back to them.
+Use this folder map when deciding where a document belongs. Current repo posture is **working-system closeout plus charging, heater, wet-finish, and interior integration** (`2026-09-02`): `12V`/`48V`/`120V`, the paralleled battery bank, battery/ICECO restraint, Starlink, fresh-water plumbing, KUS, tank, and the existing-camper shakedown are owner-reported operational. Remaining work centers on MultiPlus PE/chassis/shell bonding, solar roof-side bonding/wiring/commissioning, PH-VAN red plus Wakespeed programming/first charge, the heater/diesel/rear-storage package, the `48 in` Galley and `47 in` Desk live-edge Bubinga surfaces with sink/graywater, HOTTAP/propane completion, and air-fryer/Bench-lid/monitor/laptop/storage closeout. Treat pre-install/readiness plans as historical references unless the active build checklist points back to them.
 
 ## Obsidian navigation
 - Start with [00 Home](../00%20Home.md) for daily navigation.
@@ -57,7 +57,7 @@ Use this folder map when deciding where a document belongs. Current repo posture
 ## Plans
 - [plans](plans/): active execution plans, procurement aids, WIP carts, and historical references.
 - [LIVE_BUILD_CHECKLIST](plans/LIVE_BUILD_CHECKLIST.md): live running build checklist and current switch/utility/solar/heater/water/interior gate tracker; update whenever practical build state, blockers, or next shop actions change.
-- [PROJECT_build_order_of_operations](plans/PROJECT_build_order_of_operations.md): active working-utility closeout, penetration, heater/storage, walnut/drain, alternator, restraint, and finish-panel sequence.
+- [PROJECT_build_order_of_operations](plans/PROJECT_build_order_of_operations.md): active PE safety closeout, heater/storage, Bubinga/sink/graywater, alternator, solar, restraint, and finish-panel sequence.
 - [STARLINK_SOLAR_MOVING_UMBILICAL](plans/STARLINK_SOLAR_MOVING_UMBILICAL.md): removable Starlink jumper plus continuous front-gap PV retractile architecture, current cable market screen, measurement gates, and acceptance tests.
 - [PROCUREMENT_purchase_list_2026-05-26](plans/PROCUREMENT_purchase_list_2026-05-26.md): dated procurement snapshot; `bom/bom_estimated_items.csv` owns active item/status truth and `bom/bom_inactive_items.csv` preserves returned/retired stable-ID history.
 - [TNUTZ_80_20_HARDWARE_MODEL_2026-06-01](plans/TNUTZ_80_20_HARDWARE_MODEL_2026-06-01.md): consolidated WIP TNUTZ `10-series` cart, hardware model, visual-aid owner, and pointer to dated module cut-list workbooks under `plans/assets/module-cutlists/`.

@@ -1,3 +1,13 @@
+## 2026-09-02 — Owner operational-state reconciliation and remaining-build reset
+
+- Owner reports the `1S3P` battery bank has been paralleled for an extended period; batteries and ICECO are positively restrained; the `12V`, `48V`, and `120V` systems have seen regular use; and all four duplex AC devices are in enclosures. Physical enclosure, bank-paralleling, and battery/ICECO restraint tasks are closed. MultiPlus PE/chassis/shell bonding and explicit GFCI/polarity/neutral checks remain separate safety closeout work.
+- Solar fixed-side infrastructure is complete through the shell pass-through, two-pole disconnect, stationary wiring, and MPPT landing; no panels are connected. Remaining PV work is roof/backsheet preparation, structural-silicone bonding/cure, `4S1P` panel wiring, moving-cord support/guarding, and controlled commissioning.
+- Alternator charging remains disabled/not yet active. Owner reports the remaining physical/configuration work as the protected PH-VAN red lead plus Wakespeed read/save/programming before preflight and controlled first charge.
+- Fresh-water plumbing, KUS sender, and the `35 gal` tank are complete and have seen extensive use. The sink remains pending the mid-September counter work, and graywater remains a separate unfinished system.
+- Final surfaces are two live-edge Bubinga pieces: `48 in` Galley and `47 in` Desk. The prior three-piece black-walnut direction is superseded; the Bench lid remains separate. The FLEXISPOT Foldex chair is ordered. Air fryer, Bench lid, monitor/laptop travel state, and other storage remain open.
+- HOTTAP delivery remains pending. Propane geometry is mocked but final appliance/bracket/cylinder integration, clearances, leak test, and first burn wait on receipt.
+- Owner reports the existing camper shakedown is good. That closes the stale blanket road-release hold; each newly added solar, heater/fuel, HOTTAP, alternator-charging, or interior-restraint item still receives its own post-install check.
+
 ## 2026-09-02 — Heater-turret jigsaw prep complete
 
 - Owner scored and peeled the Lonseal waste circle; a thin top plywood layer came away inside the waste area, and the physical turret seats correctly in the resulting shallow recess. The unused routed `1/2 in` template fits as a rigid jigsaw shoe riser.

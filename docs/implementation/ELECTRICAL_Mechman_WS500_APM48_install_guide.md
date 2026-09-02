@@ -17,7 +17,7 @@ related:
 
 # Mechman `48V` Alternator + WS500 + APM-48 Install Guide
 
-As-of date: `2026-08-27`
+As-of date: `2026-09-02`
 
 Purpose: one shop-reference document for installing and commissioning the Hiatus dedicated `48V` secondary alternator path: Mechman `48V` alternator/bracket, Wakespeed `WS500`, Balmar `APM-48`, Ford Upfitter `#3` enable, and the existing `48V` house bank/Lynx architecture.
 
@@ -32,7 +32,7 @@ This is an implementation guide, not a substitute for the official manuals. Use 
 - House distribution: Victron Lynx Distributor, SmartShunt, MultiPlus-II `48/3000/35-50`, Orion-Tr Smart `48/12-30`.
 - Manual charge enable: Ford `Upfitter Switch #3 -> F-15 3A inline fuse -> WS500 brown ignition/enable wire`.
 - Main alternator branch: `2/0 AWG` positive through `F-04 200A/80V MEGA` at Lynx Slot 3 / house-bank end; dedicated `2/0 AWG` negative direct to Lynx/system negative. The Wakespeed `500A/50mV` shunt sits on the battery side of the SmartShunt in the common battery-negative path; the SmartShunt remains hard-attached to the Lynx.
-- Current closeout report (`2026-08-27`): the owner has the Eaton/Bussmann `HEB-AA` holder/package for the `PH-VAN` feed. Remaining work includes confirming/installing `F-04`, both temperature sensors, final cable/support/terminal work, then reading/saving/programming the WS500 through the purchased USB A-to-B/printer-style cable. Do not energize field or perform first charge until the full preflight, profile, sensor, APM, shunt-polarity, enable/fuse, and shutdown-response gates below pass.
+- Current closeout report (`2026-09-02`): alternator charging remains disabled/not yet connected as an active charge source. The owner reports only two remaining physical/configuration items: wire the protected `PH-VAN` red lead and read/save/program the WS500 through the purchased USB A-to-B/printer-style cable. Treat the full preflight below as a verification pass over the as-built hardware—not a claim that every older unchecked inventory line is still undone. Do not energize field or perform first charge until the PH-VAN feed, saved/programmed profile, sensor/APM/shunt/enable/fuse topology, and shutdown-response gates below pass.
 
 ## Current physical/staged-driving status
 
