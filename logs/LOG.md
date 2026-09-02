@@ -1,3 +1,9 @@
+## 2026-09-02 — Diesel remote-fill package purchased; exterior cradle direction locked
+
+- Owner confirmed purchase of the final diesel remote-fill/vent/isolation package. BOM rows `364-366` split the `$156.86` filler, `$25.98` final vent, and `$11.99` isolation strip. Together they capture eight Amazon items at a `$139.80` listing-price subtotal plus Speedway Motors `91676553` at an owner-confirmed `$55.03` checkout, or `$194.83` combined. With the earlier `$200.28` tank/feed package in row `65`, recorded diesel storage/feed/fill/vent purchases total `$395.11`; Amazon tax remains unprovided.
+- Final purchased fill path uses the Boltigen angled `2 in` bed-wall deck fill, fuel-rated straight/45-degree `2 in` hoses, beaded YSIL straight/90-degree aluminum joiners, and Speedway 12-bolt tank flange. Final vent path uses the upper `-10AN` port, EVIL ENERGY `5/16 in` barb adapter, KINTLE hose, and upright rollover valve terminating outside under the bed. The prior separate rollover valve/hose in row `65` are superseded install stock, not the active configuration.
+- Owner drafted an exterior cradle for the former spare-tire location using `1010`, on-hand gusseted `2 x 2 in` aluminum angle, through-bolted/threaded-end verticals, T-nut `90s`, and neoprene isolation. Next gate is to identify sound crossmember/frame attachment points and prove backside access, bolt/load path, positive capture, vehicle-line clearance, and full axle/tire travel before cutting or drilling.
+
 ## 2026-09-01 — Water-tank and Lonseal order reconciled
 
 - Owner supplied the purchase record for the flooring/tank order: one `35 gal` Sprinter/Transit wheel-well tank at `$349.00`, eight linear feet of Lonwood Madera Topseal in Oregano at `$45.28/ft` / `$362.24`, and one gallon of Lonseal 650 adhesive at `$141.73`; item subtotal reconciles to `$852.97`.
