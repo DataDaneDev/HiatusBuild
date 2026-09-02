@@ -1,3 +1,9 @@
+## 2026-09-02 — Heater-turret jigsaw prep complete
+
+- Owner scored and peeled the Lonseal waste circle; a thin top plywood layer came away inside the waste area, and the physical turret seats correctly in the resulting shallow recess. The unused routed `1/2 in` template fits as a rigid jigsaw shoe riser.
+- Planned plywood cut is `2026-09-03`: remove the nearby `12V` battery and isolate its terminals, loosen obstructing extrusion as needed to keep the jigsaw flat, verify actual maximum blade downstroke leaves roughly `1/8-3/16 in` of plywood over the bed, then drill inside the waste and cut with a clean wood scroll blade. After removing the plywood/EPS and reinspecting, cut the aluminum bed separately with the short metal blade.
+- Decoupled the turret opening from the still-open spare-tire cradle hardpoint decision. The turret keeps its own location/underbody/blade-control gate; cradle fabrication and truck attachment drilling still wait on verified crossmember/frame load paths and axle/tire clearance.
+
 ## 2026-09-02 — Diesel remote-fill package purchased; exterior cradle direction locked
 
 - Owner confirmed purchase of the final diesel remote-fill/vent/isolation package. BOM rows `364-366` split the `$156.86` filler, `$25.98` final vent, and `$11.99` isolation strip. Together they capture eight Amazon items at a `$139.80` listing-price subtotal plus Speedway Motors `91676553` at an owner-confirmed `$55.03` checkout, or `$194.83` combined. With the earlier `$200.28` tank/feed package in row `65`, recorded diesel storage/feed/fill/vent purchases total `$395.11`; Amazon tax remains unprovided.
