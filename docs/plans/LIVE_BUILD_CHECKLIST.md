@@ -42,7 +42,7 @@ It does **not** replace the owner docs:
 ## Current build posture
 
 - Owner report `2026-09-02`: the `3x 48V` bank has been paralleled for an extended period, and the `12V`, `48V`, and `120V` systems have all seen regular use.
-- All `120V` work is in enclosures, including all four duplex outlet boxes. Do not reopen the physical box-count task; retain explicit GFCI `LINE/LOAD`/downstream trip, polarity, PE continuity, neutral-isolation, and MultiPlus/chassis/shell bonding checks.
+- All `120V` work is in enclosures, including all four duplex outlet boxes, and the owner confirms the MultiPlus is grounded to truck chassis. Do not reopen the physical box-count or chassis-ground installation tasks; retain verification of the installed MultiPlus `M6 PE` bond, the separate conductive-shell bond, GFCI `LINE/LOAD`/downstream trip, polarity, PE continuity, and neutral isolation.
 - The batteries and ICECO are positively restrained. Remaining interior/cargo work is the not-yet-installed air fryer, Bench lid, monitor/laptop travel state, and other storage.
 - Fresh-water plumbing, the KUS sender, and the `35 gal` tank are complete and have been used extensively. Remaining wet work is the sink after the mid-September counter work and the separate graywater system; leak-check the new sink joints when installed.
 - Final surfaces are two live-edge Bubinga pieces: `48 in` Galley and `47 in` Desk. The earlier three-piece black-walnut concept is superseded. The FLEXISPOT Foldex chair is ordered and awaits installed fit/aisle acceptance.
@@ -275,7 +275,7 @@ Goal: preserve the completed/operational fresh-water system, then add the sink a
 Goal: make the already-live electrical system safe, labeled, restrained, and tested in the camper/module context.
 
 - [x] Owner report `2026-09-02`: `12V`, `48V`, and `120V` have seen regular use; all four outlet boxes and the remaining `120V` work are enclosed; the `3x 48V` bank is paralleled; batteries and ICECO are restrained.
-- [ ] Keep the specific PE/chassis/shell bonding, GFCI/polarity, labeling, terminal-cover, and cable-support checks below; do not re-open completed physical enclosure or battery-staging work.
+- [ ] Keep the specific installed-MultiPlus-ground verification, separate shell-bond, GFCI/polarity, labeling, terminal-cover, and cable-support checks below; do not re-open completed physical enclosure, chassis-ground installation, or battery-staging work.
 
 - [ ] Confirm main `48V` disconnect operation and shutdown sequence label.
 - [ ] Confirm MultiPlus `I/O/II` behavior and safe default state.
@@ -296,10 +296,12 @@ Goal: make the already-live electrical system safe, labeled, restrained, and tes
 - [ ] If access will close, provision `C-22` LF Bros heater with `12 AWG` duplex / `15A` while preserving controller-commanded cooldown power, and `C-24` listed CO alarm with `18 AWG` duplex / `3A` on an always-on branch.
 - [ ] Confirm Cerbo power, VE.Bus/RJ45, Wi-Fi/console access, and source label `Shore power`.
 - [x] AC-in path and enclosed `120V` distribution are owner-confirmed operational.
-- [ ] Before sustained shore charging or AC-out use, bond the MultiPlus external `M6 PE` lug to a verified truck-chassis point with `10 AWG` green stranded copper (`4 mm²` manual minimum). Add a separate corrosion-compatible aluminum-shell bond to the same equipment-ground network; do not leave the MultiPlus PE open or use shell/80/20 as its only path.
+- [x] Owner report `2026-09-02`: the MultiPlus is grounded to the truck chassis; physical installation of that ground is closed.
+- [ ] At the next de-energized inspection, verify the installed ground originates at the MultiPlus external `M6 PE` lug, uses at least `4 mm²` / selected `10 AWG` green stranded copper with suitable terminations, and lands at a sound truck-chassis point. Record the endpoint and continuity result rather than rebuilding a confirmed connection blindly.
+- [ ] Add or verify a separate corrosion-compatible aluminum-shell bond to the same equipment-ground network; do not use shell/80/20 as the MultiPlus's only PE path.
 - [ ] Keep AC and DC grounding roles separate: no jumper from MultiPlus case/PE to Lynx negative or the `12V` negative bus, and no fixed downstream neutral-ground bond. Leave the MultiPlus internal ground relay enabled for normal inverter/shore transfer behavior.
 - [ ] After Mechman ground style is physically identified, verify whether its case-ground plus dedicated `2/0` negative establishes the house-negative/chassis reference and confirm no parallel chassis path bypasses the SmartShunt.
-- [~] AC-out branches are in routine use. Close the remaining explicit grounding/bonding, polarity, and GFCI acceptance checks without reopening enclosure construction.
+- [~] AC-out branches are in routine use. Close the remaining installed-ground verification, shell bonding, polarity, neutral-isolation, and GFCI acceptance checks without reopening enclosure or chassis-ground construction.
 - [ ] Test GFCI trip/reset on both intended AC branch areas: office and galley.
 - [ ] Test DC USB/PD outlets under realistic laptop/phone/tablet load.
 - [~] Owner confirms the camper lights operate from the live `12V` junction; still verify final branch/fuse label and dimmer behavior on `12V-06`.
@@ -528,7 +530,7 @@ Run this before assuming a weekend task is blocked.
 
 ## Current order — `2026-09-02`
 
-1. **Protective-earth closeout:** install/verify the MultiPlus-to-truck-chassis bond and separate shell bond; then prove PE continuity, neutral isolation, polarity, and both GFCI chains.
+1. **Protective-earth closeout:** verify the owner-confirmed installed MultiPlus-to-truck-chassis ground, install/verify the separate shell bond, then prove PE continuity, neutral isolation, polarity, and both GFCI chains.
 2. **Heater/fuel/storage package:** finish the staged jigsaw/turret cut, then dry-fit and install the underside combustion route, diesel cradle/fill/vent/feed, pump, and rear module as one package.
 3. **Bubinga/sink/graywater:** route the `48 in` Galley and `47 in` Desk pieces, install/leak-check the sink, and complete the separate vented/retained graywater system.
 4. **Alternator:** wire the protected PH-VAN red lead, read/save/program the WS500, and run controlled first charge.
@@ -558,6 +560,6 @@ Run this before assuming a weekend task is blocked.
 - [HOLD] No final countertop sink cutout until faucet/drain/rail clearance is physically proven.
 - [HOLD] No final Bubinga cuts until plywood templates, support tabs, service access, entry sweep, and finish sample are approved.
 - [HOLD] No final panels over electrical/plumbing until labels, strain relief, leak/functional tests, and service access pass.
-- [CLOSED AC ENCLOSURES / HOLD BONDING] Shore and all four outlet boxes are enclosed and in regular use. Before continued routine `120V` use, close the unresolved MultiPlus-to-chassis and shell bonds plus PE continuity, neutral isolation, polarity, and GFCI trip/reset proof.
+- [CLOSED AC ENCLOSURES + MULTIPLUS CHASSIS GROUND / HOLD VERIFICATION + SHELL BOND] Shore and all four outlet boxes are enclosed and in regular use, and the MultiPlus is owner-confirmed grounded to truck chassis. Verify that installed bond, close/verify the separate shell bond, and complete PE continuity, neutral isolation, polarity, and GFCI trip/reset proof.
 - [CLOSED FRESH-WATER SERVICE] Gravity fill, highest-point vent, KUS, tank, pump, and rear service ports are in regular use; only sink and graywater integration remain.
 - [CLOSED PV PENETRATION / HOLD PANELS] PV pass-through, disconnect, stationary conductors, and MPPT landing are complete. No all-panel bond/travel acceptance until roof preparation, exact caulk/cure, roof-side support, full roof/cab motion, and hot-operation tests pass.
