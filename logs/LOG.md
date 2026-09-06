@@ -1,3 +1,11 @@
+## 2026-09-05 — Diesel remote-fill field fit and vent completion
+
+- Owner reports the vent line is physically complete. Valve orientation, sole atmospheric rollover path, and first-fill leak/vent testing remain unverified rather than silently closed.
+- Current remote-fill fit is angled bed-wall filler -> lateral 45-degree hose dogleg -> owner-described stainless coupler -> straight hose -> 90-degree joiner -> Speedway flange. Owner cut off the 90's tank-facing bead/barb end for clearance and plans a roughly `4 in` coupling sleeve with intended `2 in` engagement each side. The 45-degree hose has a slight kink; no photo or measured remaining stub length has been provided.
+- Owner intends supplied gasket plus through-bolts (possibly `M4`) at the open-air bed-wall flange, without additional sealant. This flange bedding decision is separate from fuel-tight hose connections.
+- Engineering follow-up, not physical completion: inspect bend opening and resolve a true crease/collapse rather than relying on an external clamp to reshape it; deburr/clean the cut fitting, verify straight insertion and supported clamp lands, resolve retention after bead removal, and avoid a forced metal-to-metal butt. No first-fill acceptance is implied by fit-up or sleeve length alone.
+- Owner reordered the direct EVIL ENERGY `10AN -> 1/8 NPT` adapter; receipt/fit and replacement cost are not confirmed. Next work is pump/heater fuel plumbing and fused wiring, then a small outdoor diesel leak test, prime, supervised first burn with working CO detection, and powered controller-commanded cooldown. No new BOM cost was invented.
+
 ## 2026-09-02 — Owner operational-state reconciliation and remaining-build reset
 
 - Owner reports the `1S3P` battery bank has been paralleled for an extended period; batteries and ICECO are positively restrained; the `12V`, `48V`, and `120V` systems have seen regular use; and all four duplex AC devices are in enclosures. Physical enclosure, bank-paralleling, and battery/ICECO restraint tasks are closed. MultiPlus PE/chassis/shell bonding and explicit GFCI/polarity/neutral checks remain separate safety closeout work.
