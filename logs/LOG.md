@@ -1,3 +1,10 @@
+## 2026-09-06 — Heater fuel-route fit and turret/muffler decision
+
+- Owner reports the external diesel tank package is largely assembled and the gravity-fill pass-through is near completion. The straight-through fuel filter is mounted vertically, and the external metering pump is laid out with its outlet toward the heater and about `45 degrees` upward; the small fuel line remains to be run and no fuel/leak acceptance is implied.
+- Turret seal selection is Permatex Ultra Copper high-temperature RTV, not the diesel-rated NPT thread sealant: one hidden mechanically compressed continuous gasket under the turret flange at the Lonseal plane, inside the fastener line and around penetrations, plus a separate `360-degree` skirt-to-aluminum weather/cavity seal through the truck-bed ribs. Keep the factory heater gasket between heater and turret, allow `24 h` full cure before heat, and use a thin noncombustible metal collar/backer if a lower gap exceeds the product's roughly `1/4 in` published fill rather than bridging it with foam/wood/EPS.
+- LF Bros' official muffler-connection video resolves the supplied two-stub muffler: retain the long corrugated exhaust as one run from heater to one muffler stub; the other bare stub is the terminal outlet. The demonstrated snip is a short longitudinal relief cut at the pipe end, not cutting the exhaust run in half. Hard-mount the muffler outside by its bracket, follow any actual flow arrow, point any condensate drain down, and preserve fall, intake separation, and vehicle/fuel-line heat clearance.
+- Sequence correction: dry-mock the complete underside exhaust/intake route and connector access before final turret seal/cure, then complete fuel line and fused wiring. First fuel still waits on fill-hose kink/bead-retention review, vent/rollover inspection, small outdoor leak test, working CO detection, supervised first burn, and controller-commanded cooldown.
+
 ## 2026-09-05 — Diesel remote-fill field fit and vent completion
 
 - Owner reports the vent line is physically complete. Valve orientation, sole atmospheric rollover path, and first-fill leak/vent testing remain unverified rather than silently closed.
